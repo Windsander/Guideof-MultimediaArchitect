@@ -8,27 +8,15 @@
 在此基础上，色彩学就颜色的合成，产生了三大理论：加法混合论、减法混合论、中性混合论。从物理意义上讲，加法混合论代表着自然界中自发光物体的光源色彩混合，减法混合论代表着反光物体反射光色彩混合情况，中性混合论依赖人类生理特征进行的色彩还原形式。加法混合论和减法混合论分别在光学领域和艺术领域，得到了广泛的应用。所以，加法混合论所采用的红（Red）、绿（Green）、蓝（Blue）三基色被称为光学三原色（RGB），减法混合论所采用的深红（Cyan）、青（Magenta）、黄（Yellow）三基色被称为颜料三原色（CMY）。
 
 <center>
-<div style="align:center" >
-   <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-      display: inline-block;
-      color: #999;
-      padding: 2px;">
-  	</div>
-
-   <img style="border-radius: 0.3125em;
+<img style="border-radius: 0.3125em;
       box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
       width = "300" height = "400"
       src="../../Pictures/color%20wheel.jpg" alt=""/>
-   <br>
-   
-   图 3.1-1 色轮（Color Wheel）与颜色（Vienna，1772）[\[2\]][ref]
+</center>
 
-   <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-      display: inline-block;
-      color: #999;
-      padding: 2px;">
-  	</div>
-</div>
+<center>
+
+图 3.1-1 色轮（Color Wheel）与颜色（Vienna，1772）[\[2\]][ref]
 </center>
 
 1802年，托马斯·杨（Thomas Young，1773 - 1829）在对可见光谱范围内光线波长测量时，发现人眼对红绿蓝三色光波极为敏感。杨确定了人眼中存在 3 种能够感知不同波长的光感神经纤维，佐证了光学三原色的生理基础，并粗略的测定了人的三色感知范围 [\[3\]][ref]。
