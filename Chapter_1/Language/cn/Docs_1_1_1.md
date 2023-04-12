@@ -215,9 +215,9 @@ $$
 
 显然，大部分信号都是有限时间下的，且基本都能满足无穷区间的狄利克雷条件，也因此可以使用傅里叶变换分解。
 
-如果频率范围在 $$\omega \in [\omega_{0},\ \omega_{1}]$$ ，对于选定的时间点 $$t = t_c$$ ，有频率 $$\omega$$ 、原函数 $$f(t)$$ 在 $$t = t_c$$ 时的取值 $$f(t_c)$$ 、基底函数族 $${\mathcal {F}}_{\omega}(t)$$ 锁定时间 $$t = t_c$$ 的变体 $${\mathcal {F}}_{t_c}(\omega)$$ ，构成该频率范围的频域投影（FDP [Frequency Domain Projection]）；
+如果频率范围在 $$\omega \in [\omega_{0},\ \omega_{1}]$$ ，对于选定的时间点 $$t = t_c$$ ，有频率 $$\omega$$ 、原函数 $$f(t)$$ 在 $$t = t_c$$ 时的取值 $$f(t_c)$$ 、基底函数族 $${\mathcal {F}}_{\omega}(t)$$ 锁定时间 $$t = t_c$$ 的变体 $${\mathcal {F}}_{t_c}(\omega)$$ ，构成该频率范围的 **频域投影（FDP [Frequency Domain Projection]）**；
 
-反之，如果时间范围在 $$t\in [\ t_0,\ \ t_1]$$ ，对于频率范围 $$\omega \in [\omega_{0},\ \omega_{1}]$$ ，有时间 $$t$$ 、原函数 $$f(t)$$ 、基底函数族 $${\mathcal {F}}_{\omega}(t) $$，就构成了原函数在该时间范围的时域投影（TDP [Time Domain Projection]）。
+反之，如果时间范围在 $$t\in [\ t_0,\ \ t_1]$$ ，对于频率范围 $$\omega \in [\omega_{0},\ \omega_{1}]$$ ，有时间 $$t$$ 、原函数 $$f(t)$$ 、基底函数族 $${\mathcal {F}}_{\omega}(t) $$，就构成了原函数在该时间范围的 **时域投影（TDP [Time Domain Projection]）**。
 
 两者的区别仅在于观察角度的不同：
 
