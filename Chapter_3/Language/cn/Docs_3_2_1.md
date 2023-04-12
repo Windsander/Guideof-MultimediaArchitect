@@ -14,32 +14,11 @@ $$
 光亮度的测量方法在格拉斯曼时期，并没有太好的量化标准，因此更多的是作为一个参数来配合其他要素进行颜色描述的。现如今，对于光亮度的国际统一测量标准如下图所示：
 
 <center>
-   <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-      display: inline-block;
-      color: #999;
-      padding: 2px;">
-  	</div>
-
+<figure>
    <img style="border-radius: 0.3125em;
       box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
       width = "500" height = "350"
       src="../../Pictures/luminance%20definition.png" alt=""/>
-   <br>
-   
-   
-
-   <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-      display: inline-block;
-      color: #999;
-      padding: 2px;">
-  	</div>
-</center>
-
-<center>
-<figure>
-   <img 
-      width = "500" height = "350"
-      src="../../Pictures/luminance%20definition.png" alt="">
    <figcaption>
       <p>图 3.2.1-1 光亮度测量实验与关键变量示意图</p>
    </figcaption>
