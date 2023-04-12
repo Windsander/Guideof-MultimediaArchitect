@@ -26,7 +26,7 @@
 	    * [1.5.1 标量量化（SQ [Scalar Quantization]）]()
 	    * [1.5.2 矢量量化（VQ [Vector Quantization]）]()
 	    * [1.5.3 率失真择优量化（RDOQ [Rate Distortion Optimized Quantization]）]()
-
+    * [【参考文献】](Chapter_1/Language/cn/References_1.md)
 * [三、色彩的运用与存储](Chapter_3/Language/cn/Apex_3_Introduce.md)
     * [3.1 色彩基础](Chapter_3/Language/cn/Docs_3_1.md)
     * [3.2 颜色三要素（Three Elements of Color）](Chapter_3/Language/cn/Docs_3_2.md)
@@ -58,3 +58,4 @@
 	    * [3.6.1 色彩格式（Color Format）与色彩存储](Chapter_3/Language/cn/Docs_3_6_1.md)
 	    * [3.6.2 RGB 体系色彩格式](Chapter_3/Language/cn/Docs_3_6_2.md)
 	    * [3.6.3 YUV 体系色彩格式](Chapter_3/Language/cn/Docs_3_6_3.md)
+	* [【参考文献】](Chapter_3/Language/cn/References_3.md)
