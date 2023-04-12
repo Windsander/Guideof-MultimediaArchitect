@@ -26,13 +26,24 @@ $$
       src="../../Pictures/luminance%20definition.png" alt=""/>
    <br>
    
-   图 3.2.1-1 光亮度测量实验与关键变量示意图
+   
 
    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
       display: inline-block;
       color: #999;
       padding: 2px;">
   	</div>
+</center>
+
+<center>
+<figure>
+   <img 
+      width = "500" height = "350"
+      src="../../Pictures/luminance%20definition.png" alt="">
+   <figcaption>
+      <p>图 3.2.1-1 光亮度测量实验与关键变量示意图</p>
+   </figcaption>
+</figure>
 </center>
 
 
