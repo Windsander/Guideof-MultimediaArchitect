@@ -6,7 +6,7 @@
         * [1.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）](Chapter_1/Language/cn/Docs_1_1_1.md)
         * [1.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）](Chapter_1/Language/cn/Docs_1_1_2.md)
         * [1.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）](Chapter_1/Language/cn/Docs_1_1_3.md)
-    * [1.2 傅里叶变换的概念延伸-常用滤波算法]()
+    * [1.2 傅里叶变换的概念延伸-常用滤波算法](Chapter_1/Language/cn/Docs_1_2.md)
         * [1.2.1 双边滤波（Bilateral Filter）]()
 	    * [1.2.2 高斯滤波（Gauss Filter）]()
 	    * [1.2.3 索贝尔滤波（Sobel Filter）]()
