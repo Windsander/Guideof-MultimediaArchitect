@@ -3,7 +3,7 @@
 
 **傅立叶变换（FT [Fourier Transform]）** [\[1\]](References_1.md) 可理解为：任意函数都存在由给定复指数函数空间（Complex Exponential Functions Space）的一组正交基（Orthogonal Bases），使得原函数可以被分解为该复指数函数空间下最大完备解的权重向量形式表示 [\[2\]](References_1.md) 。利用原函数与分量函数内积为该方向解分量且正交基内任意两个方向的方向函数内积为 0 的特点，来用解的人为限定有限维度子集逼近函数本身的数学方法 [\[3\]](References_1.md) 。这里，描述构成原函数的分量函数集与其所占权重分量（即求得的正交基），共同构成了该函数的傅里叶基（Fourier Basis）[\[4\]](References_1.md) [\[5\]](References_1.md)。
 
-如果记原函数为 $F$，复指数函数空间为 $M = [f_1,f_2,\dots ,f_n]$，傅里叶基为 ${\mathcal {F}} = [\hat{f}_1,\hat{f}_2,\dots ,\hat{f}_n]$，且 $n_{max} = N$，则这一关系从空间投影变换角度来看 [6]，可以表示为：
+如果记原函数为 $$F$$，复指数函数空间为 $$M = [f_1,f_2,\dots ,f_n]$$，傅里叶基为 $${\mathcal {F}} = [\hat{f}_1,\hat{f}_2,\dots ,\hat{f}_n]$$，且 $$n_{max} = N$$，则这一关系从空间投影变换角度来看 [6]，可以表示为：
 
 $$
 {\displaystyle 
