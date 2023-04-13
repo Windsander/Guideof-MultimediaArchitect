@@ -10,9 +10,24 @@
 
 李述博（Arikan.Li）
 
+
+<center>
+<figure>
+   <img style="border-radius: 0.3125em;
+      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+      width = "640" height = "480"
+      src="Cover/author_introduce_photo.jpg" alt="">
+   <figcaption>
+      <p> CV工程师 & 架构师 & Baker </p>
+   </figcaption>
+</figure>
+</center>
+
 一名 CV工程师 & 架构师
 
 >“名字仅是代号，知识才是真理。”
+
+<br>
 
 写作难度较大，各种资料查阅、相关知识点梳理以及辅助Demo和配套项目开发，带来了极大的压力。因此，您的您宝贵支持与意见，将是作者的重要的力量之源。
 
