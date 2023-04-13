@@ -160,20 +160,10 @@ $$
 
 <center>
 <figure>
-   <p align='left'>
-    <img style="border-radius: 0.3125em;
+   <img style="border-radius: 0.3125em;
       box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "200" height = "200"
-      src="../../Pictures/cs_c_HSV.png" alt="">
-    <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "200" height = "200"
-      src="../../Pictures/cs_c_HSI.png" alt="">
-    <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "200" height = "200"
-      src="../../Pictures/cs_c_HSL.png" alt="">
-   </p>
+      width = "600" height = "250"
+      src="../../Pictures/cs_c_HSVIL.png" alt="">
    <figcaption>
       <p>图 3.5.7-5 HSV、HSI、HSL（Lightness）色差切面（Chrominance Slice）示意图</p>
    </figcaption>
@@ -219,18 +209,8 @@ $$
 <figure>
    <img style="border-radius: 0.3125em;
       box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "400" height = "200"
-      src="../../Pictures/cs_s_HSV.png" alt="">
-
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "400" height = "200"
-      src="../../Pictures/cs_s_HSI.png" alt="">
-
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "400" height = "200"
-      src="../../Pictures/cs_s_HSL.png" alt="">
+      width = "400" height = "800"
+      src="../../Pictures/cs_s_HSVIL.png" alt="">
    <figcaption>
       <p>图 3.5.7-6 HSV、HSI、HSL（Lightness）切面拓扑示意图</p>
    </figcaption>
