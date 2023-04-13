@@ -1,0 +1,51 @@
+{
+    "title": "《音视频开发技术手册》©",
+    "author": "李述博 (Arikan.Li)",
+    "language": "zh-hans",
+    "styles": {
+        "website": "styles/common.css",
+        "ebook": "styles/common.css",
+        "pdf": "styles/common.css",
+        "mobi": "styles/common.css",
+        "epub": "styles/common.css"
+    },
+    "plugins": [
+        "-lunr", 
+        "-search", 
+        "search-pro",
+		"insert-logo",
+		"custom-favicon",
+		"tbfed-pagefooter",
+		"back-to-top-button",
+		"-sharing", "sharing-plus",
+		"splitter",
+		"code"
+    ],
+    "pluginsConfig": {
+		"favicon": "Cover/book_favicon.ico",
+		"insert-logo": {
+			"url": "Cover/book_logo.png",
+			"style": "background: none; max-height: 30px; min-height: 30px"
+		},
+		"tbfed-pagefooter": {
+            "copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved",
+            "modify_label": "Last Updated:",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+		"sharing": {
+			"douban": true,
+			"facebook": true,
+			"google": true,
+			"pocket": true,
+			"qq": true,
+			"qzone": true,
+			"twitter": true,
+			"weibo": true,
+		 "all": [
+			  "douban", "weibo", "zhihu", 
+			  "facebook", "google", "instapaper", "linkedin", "twitter", 
+			  "messenger", "qq", "qzone", "viber", "whatsapp"
+		  ]
+	  }
+    }
+}
