@@ -9,7 +9,7 @@ CIE 以线性等式关系构建了 XYZ 系统与 RGB 系统的转换，以三刺
 
 从 $$R \rightarrow X$$  的转换因子为 $$C_{rx}$$ ，从 $$G \rightarrow Y$$ 的转换因子为 $$C_{gy}$$ ，从 $$B \rightarrow Z$$ 的转换因子为 $$C_{bz}$$ 
 
-那么 XYZ 色彩空间的配色函数为：
+那么 XYZ 色彩空间的 **配色函数** 为：
 
 $$
 C_{XYZ} =  X \cdot C_{rx}R + Y \cdot C_{gy}G  + Z \cdot C_{bz}B = Vector[X, Y, Z]

@@ -15,7 +15,7 @@
 </figure>
 </center>
 
-对于 CMY 色彩空间，如果记目标颜色为 $$C_{CMY}$$ ，那么配色函数为：
+对于 CMY 色彩空间，如果记目标颜色为 $$C_{CMY}$$ ，那么 **配色函数** 为：
 
 $$
 C_{CMY} =  C \cdot Cyan + M \cdot Magenta  + Y \cdot Yellow = Vector[C, M, Y]

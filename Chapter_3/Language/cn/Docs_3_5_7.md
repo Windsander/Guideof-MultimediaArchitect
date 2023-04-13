@@ -221,7 +221,7 @@ $$
 
 ## **三要素色彩空间的配色函数**
 
-现在，所有要素准备齐全。如果记目标颜色为 $$C_{HSL}$$ ，则 HSL 配色函数如下：
+现在，所有要素准备齐全。如果记目标颜色为 $$C_{HSL}$$ ，则 HSL  **配色函数** 如下：
 
 $$
 {\displaystyle C_{HSL} = H \cdot Hue + S \cdot Saturation + L \cdot Luminance = Vector[H, S, L]} 
