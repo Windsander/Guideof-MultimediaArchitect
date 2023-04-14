@@ -85,21 +85,18 @@ $$
  \begin{aligned}
    F^{-1}(n)&={
      \begin{cases}
-       {{n}^{3}}                            & \ \ \ n > \delta \\
-       {{3\delta ^{2}}}(n-{\frac {4}{29})}  & \ \ \ n \le \delta 
+       {n^3}                            & \ \ \ n > \delta \\
+       {3\delta ^2}(n-{\frac {4}{29})}  & \ \ \ n \le \delta 
      \end{cases}
    }\ \ \ , \ \ \delta ={\tfrac {6}{29}}
-
  \end{aligned}
 }
 $$
 
 可见，XYZ 与 LAB 间的转换关系，并不是线性的。由于 CIE LAB 中的白点直接参与了转换运算，白点调参对 LAB 的影响程度会更大一些。带入色差公式 $${\displaystyle 
- \begin{align*}
- \begin{split} 
+ \begin{aligned}
    {\displaystyle \Delta C = {\sqrt {\left(\Delta a^{\star}\right)^{2}+\left(\Delta b^{\star}\right)^{2}}}}
- \end{split}
- \end{align*}
+ \end{aligned}
 }$$ 会发现，通过这种方式切割得到的整个人眼可见光色域范围，色差均匀程度依赖于白点的同时，也并非完全均匀。越靠近色度图白点，色差变化越小；越靠近色度图边缘，色差变化越大，**不过相较于 XYZ 已有很大改善** 。
 
 

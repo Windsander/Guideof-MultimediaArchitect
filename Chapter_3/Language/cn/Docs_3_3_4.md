@@ -19,13 +19,11 @@ CIE 在三个刺激函数为基准下，确定了的不同波长光的三刺激�
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
+ \begin{aligned}
    &{\displaystyle X =\int _{0}^{\infty }S(\lambda )\,{\overline {x}}(\lambda )\,d\lambda  } \\
    &{\displaystyle Y =\int _{0}^{\infty }S(\lambda )\,{\overline {y}}(\lambda )\,d\lambda  } \\
    &{\displaystyle Z =\int _{0}^{\infty }S(\lambda )\,{\overline {z}}(\lambda )\,d\lambda  } \\
- \end{split}
- \end{align*}
+ \end{aligned}
 }
 $$
 
@@ -47,13 +45,11 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
+ \begin{aligned}
    &{\displaystyle {\overline {x}}(\lambda ) = 1.056g(\lambda ;\ 599.8,\ 37.9,\ 31.0)+0.362g(\lambda ;\ 442.0,\ 16.0,\ 26.7)-0.065g(\lambda ;\ 501.1,\ 20.4,\ 26.2) } \\
    &{\displaystyle {\overline {y}}(\lambda ) = 0.821g(\lambda ;\ 568.8,\ 46.9,\ 40.5)+0.286g(\lambda ;\ 530.9,\ 16.3,\ 31.1)  } \\
    &{\displaystyle {\overline {z}}(\lambda ) = 1.217g(\lambda ;\ 437.0,\ 11.8,\ 36.0)+0.681g(\lambda ;\ 459.0,\ 26.0,\ 13.8)  } \\
- \end{split}
- \end{align*}
+ \end{aligned}
 }
 $$
 

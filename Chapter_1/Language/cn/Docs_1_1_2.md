@@ -31,9 +31,15 @@ $$
 {\displaystyle 
  \begin{aligned}
     &\omega = \vert {\vec{k}} \vert = \sqrt{({\tfrac{2 \pi \cdot u}{U}})^2 + ({\tfrac{2 \pi \cdot v}{V}})^2} = \tfrac{2 \pi}{\lambda} \\ 
-       & \ \ \ \rightarrow {\xi}^2 \ \ + \ \ {\eta}^2 \ =  \ {\omega}^2 \\
-    {{\mathcal {F}}_{\omega}(x,y)} &= e^{i \vec{k} \cdot (x,y)^T } = e^{i \cdot {2 \pi} (\tfrac{u}{U}x+\tfrac{v}{V}y)}  = {{\mathcal {F}}_{\xi}(x)} \cdot {{\mathcal {F}}_{\eta}(y)} \\
+       & \quad \rightarrow {\xi}^2 \ \ + \ \ {\eta}^2 \ =  \ {\omega}^2 \\
  \end{aligned}
+}
+$$
+$$
+{\displaystyle 
+ {\mathcal {F}_{\omega}(x,y)} = e^{i \vec{k} \cdot (x,y)^T } 
+     = e^{i \cdot {2 \pi} (\tfrac{u}{U}x+\tfrac{v}{V}y)} 
+     = {\mathcal {F}_{\xi}(x)} \cdot {\mathcal {F}_{\eta}(y)}
 }
 $$
 
@@ -107,7 +113,7 @@ $$
 
 二维离散傅里叶变换（2D-DFT）分为 **空域离散化（SDD [Spacial Domain Discrete]）** 和 **频域离散化（FDD [Frequency Domain Discrete]）** 。当然，此处的空域为二维空域（平面），是不包含 $$z$$ 轴的。我们将两者结合称为 **空频离散化（SFD [Spacial Frequency Discrete]）**。
 
-如果取任意点 $$\vec{P}(x,y)$$ 可取 $$x \in [0, \ 1, \ \dots , \ W]$$ ， $$y \in [0, \ 1, \ \dots , \ H]$$ ，只取整数位置。同时， $$u \in [-\tfrac{U}{2}, \ \dots , \ +\tfrac{U}{2}]$$ 、 $$v \in [-\tfrac{V}{2}, \ \dots , \ +\tfrac{V}{2}]$$ ，有离散 $$\vec{k} \in [\vec{k_0}, \ \vec{k_1}, \ \dots, \ \vec{k_{n}}]$$ ， $$n = UV = HW$$ ，则：
+如果取任意点 $$\vec{P}(x,y)$$ 可取 $$x \in [0, \ 1, \ \ ...\  , \ W]$$ ， $$y \in [0, \ 1, \ \ ...\  , \ H]$$ ，只取整数位置。同时， $$u \in [-\tfrac{U}{2}, \ \ ...\  , \ +\tfrac{U}{2}]$$ 、 $$v \in [-\tfrac{V}{2}, \ \ ...\  , \ +\tfrac{V}{2}]$$ ，有离散 $$\vec{k} \in [\vec{k_0}, \ \vec{k_1}, \ \ ...\ , \ \vec{k_{n}}]$$ ， $$n = UV = HW$$ ，则：
 
 $$
 {\displaystyle 
@@ -123,7 +129,7 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   {\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\vec{k_0}},&{\mathcal {F}}_{\vec{k_1}},\dots,{\mathcal {F}}_{\vec{k_n}}]  \\
+   {\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\vec{k_0}},&{\mathcal {F}}_{\vec{k_1}},\ ...\ ,{\mathcal {F}}_{\vec{k_n}}]  \\
    \hat{f}(u,v) = \sum_{x = 0}^{W} \sum_{y = 0}^{H}  f(x,y) \cdot e^{-i (ux+vy)}  \ \ \ \ \ \Leftrightarrow & \ \ \ \ \ 
    f(x,y) = \frac{1}{U\cdot V} \sum_{u=-U/2}^{+U/2} \sum_{v= -V/2}^{+V/2} \hat{f}(u,v) \cdot {\mathcal {F}}_{\omega}(x, y) \\
  \end{aligned}

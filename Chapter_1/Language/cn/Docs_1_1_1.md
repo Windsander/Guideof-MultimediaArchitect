@@ -69,8 +69,8 @@ $$
 {\displaystyle 
  \begin{aligned}
    s(t)  &= \frac{1}{N}\sum_{n = 0}^{N} \hat{a}_{\omega} \cdot cos(\omega t) + i \cdot \hat{b}_{\omega} \cdot sin(\omega t)\\
-   \hat{a}_{\omega}  &= \hat{s}(-\omega) + \hat{s}(\omega)  \ \ \ \ \ 
-   \hat{b}_{\omega}  = \tfrac{1}{i} \cdot (\hat{s}(-\omega)-\hat{s}(\omega)) \\
+   \hat{a}_{\omega}  &= \hat{s}(-\omega) + \hat{s}(\omega)  \quad \quad 
+   \hat{b}_{\omega}  = \tfrac{1}{i} \cdot (\hat{s}(-\omega)-\hat{s}(\omega))
  \end{aligned}
 }
 $$
@@ -80,8 +80,8 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   {\mathcal {S}}_{\omega}(t) : \ \ \ \
-   \angle\phi_{\omega} = \arctan(\tfrac{\hat{a}_{\omega}}{\hat{b}_{\omega}}) \ \ \ \ 
+   {\mathcal {S}}_{\omega}(t) : \quad 
+   \angle\phi_{\omega} = \arctan(\tfrac{\hat{a}_{\omega}}{\hat{b}_{\omega}}) \quad 
    A_{\omega} = \sqrt{ (\hat{a}_{\omega}) ^2 + (\hat{b}_{\omega}) ^2 } \\
  \end{aligned}
 }
@@ -165,7 +165,7 @@ $$
 }
 $$
 
-使 $$$ b_{\omega}$$ 可取复数域，就可以转换为：
+使 $$b_{\omega}$$ 可取复数域，就可以转换为：
 
 $$
 {\displaystyle 
@@ -180,7 +180,7 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   {\mathcal {F}}_{\omega}(t) : \ \ \ \
+   {\mathcal {F}}_{\omega}(t) : \quad
    \angle\phi_{\omega} = \arctan(\tfrac{\hat{a}_{\omega}}{\hat{b}_{\omega}}) \ \ \ \ 
    A_{\omega} = \sqrt{ (\hat{a}_{\omega}) ^2 + (\hat{b}_{\omega}) ^2 } \\
  \end{aligned}
@@ -251,7 +251,7 @@ $$
 }
 $$
 
-以时间采样（切片）数量为 $${n_1}$，转为级数形式：
+以时间采样（切片）数量为 $${n_1}$$ ，转为级数形式：
 
 $$
 {\displaystyle 
@@ -273,7 +273,7 @@ $$
 }
 $$
 
-以频率采样（切片）数量为 $${n_2}$，转为级数形式：
+以频率采样（切片）数量为 $${n_2}$$ ，转为级数形式：
 
 $$
 {\displaystyle 
@@ -288,7 +288,7 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   {\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\omega_1},{\mathcal {F}}_{\omega_2},\dots,{\mathcal {F}}_{\omega_{n_2}}] \\
+   {\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\omega_1},{\mathcal {F}}_{\omega_2},\ ...\ ,{\mathcal {F}}_{\omega_{n_2}}] \\
  \end{aligned}
 }
 $$
@@ -298,7 +298,7 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   {\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\omega_1},&{\mathcal {F}}_{\omega_2},\dots,{\mathcal {F}}_{\omega_{n_2}}]  \\
+   {\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\omega_1},&{\mathcal {F}}_{\omega_2},\ ...\ ,{\mathcal {F}}_{\omega_{n_2}}]  \\
    \hat{f}(\omega) = \sum_{t = t_0}^{t_{n_1}} f(t) \cdot e^{-i \omega t}  \ \ \ \ \ &\Leftrightarrow \ \ \ \ \ 
    f(t) = \frac{1}{n_2} \sum_{\omega = \omega_0}^{\omega_{n_2}} \hat{f}(\omega) \cdot {\mathcal {F}}_{\omega}(t) \\
  \end{aligned}

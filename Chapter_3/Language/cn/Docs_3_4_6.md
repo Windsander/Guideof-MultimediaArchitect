@@ -55,12 +55,10 @@ CIE 为了量化显色指数的测量标准，在 1995 年给出了一组被称�
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle (u, v) = ({\frac  {4x}{-2x+12y+3}}, \ {\frac  {6y}{-2x+12y+3}}) } \\
-   &{\displaystyle (U^*, V^*, W^*)   = (13W^{*} \cdot (u-u_{0}), \ \ \ 13W^{*} \cdot (v-v_{0}), \ \ \ {25Y^{\frac {1}{3}}-17}}) \\
- \end{split}
- \end{align*}
+ \begin{aligned}
+   (u, v) &= ({\frac  {4x}{-2x+12y+3}}, \ {\frac  {6y}{-2x+12y+3}}) \\
+   (U^*, V^*, W^*) &= (13W^{*} \cdot (u-u_{0}), \ \ \ 13W^{*} \cdot (v-v_{0}), \ \ \ {25Y^{\frac {1}{3}}-17}) 
+ \end{aligned}
 }
 $$
 
@@ -68,11 +66,9 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   {\displaystyle \Delta C = \Delta E(U^*, V^*, W^*)={\sqrt {\left(\Delta U^{*}\right)^{2}+\left(\Delta V^{*}\right)^{2}+\left(\Delta W^{*}\right)^{2}}}}
- \end{split}
- \end{align*}
+ \begin{aligned}
+   \Delta C = \Delta E(U^*, V^*, W^*)={\sqrt {\left(\Delta U^{*}\right)^{2}+\left(\Delta V^{*}\right)^{2}+\left(\Delta W^{*}\right)^{2}}}
+ \end{aligned}
 }
 $$
 
@@ -80,11 +76,9 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   {\displaystyle Ra = 100 - 4.6 \cdot \Delta E_{UVW} = 100 - 4.6 \cdot \Delta C}
- \end{split}
- \end{align*}
+ \begin{aligned}
+   Ra = 100 - 4.6 \cdot \Delta E_{UVW} = 100 - 4.6 \cdot \Delta C
+ \end{aligned}
 }
 $$
 

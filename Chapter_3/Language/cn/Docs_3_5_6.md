@@ -28,13 +28,13 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   &{\displaystyle (x, y) = (\ \ \ {\frac {X}{X+Y+Z}} \ \ \ \ , \ \ \ {\frac {Y}{X+Y+Z}}  \ \ \ \ ) } \\ 
-   &{\displaystyle (u, v) = ({\frac  {4x}{-2x+12y+3}}, \ {\frac  {9y}{-2x+12y+3}}) } \\
-   &{\displaystyle (u^{\star }, v^{\star }, L^{\star }) = F\!\left({Y}\right) \cdot (
+   &(x, y) = (\ \ \ {\frac {X}{X+Y+Z}} \ \ \ \ , \ \ \ {\frac {Y}{X+Y+Z}}  \ \ \ \ ) \\ 
+   &(u, v) = ({\frac  {4x}{-2x+12y+3}}, \ {\frac  {9y}{-2x+12y+3}}) \\
+   &(u^{\star }, v^{\star }, L^{\star }) = F\!\left({Y}\right) \cdot (
                         13 \cdot \left(u-u_{D65}\right), \ \ \ 
                         13 \cdot \left(v-v_{D65}\right), \ \ \ 
                         1\ 
-    )}  \\
+    )  \\
  \end{aligned}
 }
 $$
@@ -46,8 +46,8 @@ $$
  \begin{aligned}
    L^{\star } = F(Y)&={
      \begin{cases}
-       {\left( {\frac {29}{3}} \right)^3  \cdot {{\frac {Y}{Y_{D65}}}}}       & \ \ \  {\frac {Y}{Y_{D65}}} \le \delta ^{3} \\
-       {116 \cdot {\sqrt [3]{{\frac {Y}{Y_{D65}}}}} \ - 16}                   & \ \ \  {\frac {Y}{Y_{D65}}} > \delta ^{3} 
+       {\left( {\frac {29}{3}} \right)^3  \cdot {\frac {Y}{Y_{D65}}}}       & \ \ \  {\frac {Y}{Y_{D65}}} \le \delta ^{3} \\
+       {116 \cdot {\sqrt [3]{\frac {Y}{Y_{D65}}}} \ - 16}                   & \ \ \  {\frac {Y}{Y_{D65}}} > \delta ^{3} 
      \end{cases}
    }\ \ \ , \ \ \delta ={\tfrac {6}{29}}
 
@@ -60,17 +60,17 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   &{\displaystyle (u, v) = (
+   &(u, v) = (
                         {\frac {u^{\star }}{13 \cdot L^{\star }}}  + u_{D65}\ \ , \ \ 
                         {\frac {v^{\star }}{13 \cdot L^{\star }}}  + v_{D65} \ 
                         
-    )}  \\
-   &{\displaystyle (x, y) = ({\frac  {9u}{6u-16v+12}}\ \ , \ {\frac  {4v}{6u-16v+12}} \ ) }  \\
-   &{\displaystyle (X, Y, Z) =  F^{-1}(L^{\star }) \cdot (
+    )  \\
+   &(x, y) = ({\frac  {9u}{6u-16v+12}}\ \ , \ {\frac  {4v}{6u-16v+12}} \ )  \\
+   &(X, Y, Z) =  F^{-1}(L^{\star }) \cdot (
                         {\frac {9 u}{4 v}}, \ \ \ 
                         1, \ \ \ 
                         {\frac {12 - 3 u - 20 v}{4 v}} \ 
-    )}  \\
+    ) \\
  \end{aligned}
 }
 $$

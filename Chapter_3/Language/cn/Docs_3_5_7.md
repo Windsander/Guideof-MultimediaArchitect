@@ -73,19 +73,17 @@ HSL 色彩空间，以该平面做为 **基准平面** 。取从 **青色（Cyan
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle M=\max(R,G,B)} \\
-   &{\displaystyle C =\operatorname {max} (R,G,B) - \operatorname {min} (R,G,B) } \\
-   &{\displaystyle H = 
-     60^{\circ } \times {\begin{cases} 
+ \begin{aligned}
+   &M=\max(R,G,B) \\
+   &C =\text {max} (R,G,B) - \text {min} (R,G,B) \\
+   &H = 
+     60^ \circ \times {\begin{cases} 
        \mathrm {undefined}       ,& {\text{if }} C=0 \\
        {\frac {G-B} {C}} + 0     ,& {\text{if }} M=R \\
        {\frac {B-R} {C}} + 2     ,& {\text{if }} M=G \\
        {\frac {R-G} {C}} + 4     ,& {\text{if }} M=B
-     \end{cases}}} \\
- \end{split}
- \end{align*}
+     \end{cases}} \\
+ \end{aligned}
 }
 $$
 
@@ -109,12 +107,10 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle \alpha =R-G\cdot \cos(60^{\circ })-B\cdot \cos(60^{\circ })={\tfrac {1}{2}}(2R-G-B)} \\
-   &{\displaystyle \beta =G\cdot \sin(60^{\circ })-B\cdot \sin(60^{\circ })={\tfrac {\sqrt {3}}{2}}(G-B)} \\
- \end{split}
- \end{align*}
+ \begin{aligned}
+   &\alpha =R-G\cdot \cos(60^ \circ)-B\cdot \cos(60^ \circ)={\tfrac {1}{2}}(2R-G-B) \\
+   &\beta =G\cdot \sin(60^ \circ)-B\cdot \sin(60^ \circ)={\tfrac {\sqrt {3}}{2}}(G-B) \\
+ \end{aligned}
 }
 $$
 
@@ -128,11 +124,9 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle H =\operatorname {atan2} (\beta ,\alpha )}
- \end{split}
- \end{align*}
+ \begin{aligned}
+   &H =\text{atan2} (\beta ,\alpha )
+ \end{aligned}
 }
 $$
 
@@ -146,17 +140,15 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle V = \max(R,G,B) = M} \\
-   &{\displaystyle I \ = \operatorname {avg} (R,G,B)={\tfrac {(R+G+B)}{3}}} \\
-   &{\displaystyle L = \operatorname {mid} (R,G,B)={\tfrac {(\max(R,G,B)+\min(R,G,B))}{2}}} \\
- \end{split}
- \end{align*}
+ \begin{aligned}
+   &V = \max(R,G,B) = M \\
+   &I \ = \text{avg} (R,G,B)={\tfrac {(R+G+B)}{3}} \\
+   &L = \text {mid} (R,G,B)={\tfrac {(\max(R,G,B)+\min(R,G,B))}{2}} \\
+ \end{aligned}
 }
 $$
 
-如果我们取色调（Hue） $$H$$ 为 $$50^{\circ }$$ （偏黄） & $$230^{\circ }$$ （偏蓝）。以色差 $$C$$ 和光亮度构成坐标系，取色差 $$C$$ 为横轴，各模型光亮度参数为纵轴。那么条件下  在 HSV、HSI、HSL（Lightness）的 **色差切面（Chrominance Slice）** ，就如下图所示：
+如果我们取色调（Hue） $$H$$ 为 $$50^ \circ$$ （偏黄） & $$230^ \circ$$ （偏蓝）。以色差 $$C$$ 和光亮度构成坐标系，取色差 $$C$$ 为横轴，各模型光亮度参数为纵轴。那么条件下  在 HSV、HSI、HSL（Lightness）的 **色差切面（Chrominance Slice）** ，就如下图所示：
 
 <center>
 <figure>
@@ -178,28 +170,23 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle S_{V}={
+ \begin{aligned}
+   &S_{V}={
         \begin{cases}
           {0}, &{\text{if }} V = 0 \\
           {\frac {C}{V}}, \ \ &{\text{otherwise}}
-        \end{cases}}
-    } \\
-   &{\displaystyle S_{I}={
+        \end{cases}} \\
+   &S_{I}={
         \begin{cases}
           {0}, &{\text{if }} I = 0 \\
           {1-{\frac {\min(R,G,B)}{I}}}, \ \ &{\text{if }} {I \neq 0}
-        \end{cases}}
-    } \\
-   &{\displaystyle S_{L}={
+        \end{cases}} \\
+   &S_{L}={
         \begin{cases} 
           {0}, &{\text{if }} L = 1 {\text{ or }} L = 0 \\
           {\frac {C}{1-|2L-1|}}, \ \ \ \ \ \ &{\text{otherwise}} 
-        \end{cases}}
-    } \\
- \end{split}
- \end{align*}
+        \end{cases}} \\
+ \end{aligned}
 }
 $$
 
@@ -231,14 +218,12 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle \alpha = {\tfrac {1}{2}}(2R-G-B)} \ \ \ \ \ \
-    {\displaystyle \beta = {\tfrac {\sqrt {3}}{2}}(G-B)} \ \ \ \ \ \ \\ 
-   &{\displaystyle C = {\sqrt {\alpha ^{2}+\beta ^{2}}} \approx (\max(R,G,B) - min(R,G,B))} = \operatorname {range} (R,G,B) \\
-
- \end{split}
- \end{align*}
+ \begin{aligned}
+   &\quad \quad \quad \quad \quad 
+    \alpha = {\tfrac {1}{2}}(2R-G-B) \quad \quad \quad
+    \beta = {\tfrac {\sqrt {3}}{2}}(G-B) \ \ \ \ \ \ \\ 
+   & C = {\sqrt {\alpha ^{2}+\beta ^{2}}} \approx (\max(R,G,B) - min(R,G,B)) = \text {range} (R,G,B) \\
+ \end{aligned}
 }
 $$
 
@@ -246,40 +231,35 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-
+ \begin{aligned}
    &F_{HSV} ={
     \begin{cases}
-      &{\displaystyle H = \operatorname {atan2} (\beta ,\alpha )} \\
-      &{\displaystyle S = \operatorname {range} (R,G,B) \cdot \max(R,G,B)^{-1} } \\
-      &{\displaystyle V = \max(R,G,B)} \\
+      & H = \text {atan2} (\beta ,\alpha ) \\
+      & S = \text {range} (R,G,B) \cdot \max(R,G,B)^{-1} \\
+      & V = \max(R,G,B) \\
     \end{cases}
    } \\
 
    &F_{HSI} ={
     \begin{cases}
-      &{\displaystyle H = \operatorname {atan2} (\beta ,\alpha )} \\
-      &{\displaystyle S = {
+      & H = \text {atan2} (\beta ,\alpha ) \\
+      & S = {
           \begin{cases}
             {0}, &{\text{if }} I = 0 \\
-            1- {\min(R,G,B)} \cdot {\operatorname {avg} (R,G,B)^{-1}}, \ \ &{\text{if }} {I \neq 0}
-          \end{cases}}
-       } \\
-      &{\displaystyle I \ = \operatorname {avg} (R,G,B)={\tfrac {(R+G+B)}{3}}} \\
+            1- {\min(R,G,B)} \cdot {\text {avg} (R,G,B)^{-1}}, \ \ &{\text{if }} {I \neq 0}
+          \end{cases}} \\
+      & I \ = \text {avg} (R,G,B)={\tfrac {(R+G+B)}{3}} \\
     \end{cases}
    } \\
 
    &F_{HSL} ={
     \begin{cases}
-      &{\displaystyle H = \operatorname {atan2} (\beta ,\alpha )} \\
-      &{\displaystyle S = \tfrac {1}{2} \cdot \operatorname {range} (R,G,B)} \cdot {\min(L,\ 1 - L)}^{-1} \\
-      &{\displaystyle L = \operatorname {mid} (R,G,B)={\tfrac {(\max(R,G,B)+\min(R,G,B))}{2}}} \\
+      & H = \text {atan2} (\beta ,\alpha ) \\
+      & S = \tfrac {1}{2} \cdot \text {range} (R,G,B) \cdot {\min(L,\ 1 - L)}^{-1} \\
+      & L = \text {mid} (R,G,B)={\tfrac {(\max(R,G,B)+\min(R,G,B))}{2}} \\
     \end{cases}
    } \\
-
- \end{split}
- \end{align*}
+ \end{aligned}
 }
 $$
 
@@ -287,56 +267,42 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
+ \begin{aligned}
+   & H ,\ {\angle_{const}} \in [0^ \circ,\ 360^ \circ) \\
+   &{F_{HSV}}^{-1} = {
+      \begin{cases}
+        & k = \{(\tfrac {\angle_{const} + H}{60^ \circ})\ \bmod\ 6\} \\
+        & sector = \max(0,\ \min(k,\ 4-k,\ 1)) \\
+        & f(H,S,V)_{\angle_{const}} = f_{\angle_{const}} ^{hsv} = V-VS \cdot sector \\
+      \end{cases}
+    } \Rightarrow 
+      (R,G,B) = {F_{HSV}}^{-1}(H,S,V) = (f_{300^ \circ}^{hsv},\ f_{180^ \circ}^{hsv},\ f_{60^ \circ}^{hsv}) \\
 
+   &{F_{HSI}}^{-1} = {
+      \begin{cases}
+        & k = \{(\tfrac {\angle_{const} + H}{60^ \circ})\ \bmod\ 6\} \\
+        & sector = \max(0,\ \min(k,\ 4-k,\ 1)) \\
+        & f(H,S,I)_{\angle_{const}} = f_{\angle_{const}} ^{hsi} = I-IS \cdot sector \\ 
+      \end{cases}
+    } \Rightarrow 
+      (R,G,B) = {F_{HSI}}^{-1}(H,S,I) = (f_{300^ \circ}^{hsi},\ f_{180^ \circ}^{hsi},\ f_{60^ \circ}^{hsi}) \\
 
-   &{\displaystyle H ,\ {\angle_{const}} \in [0^{\circ },\ 360^{\circ })} \\
-   &{F_{HSV}}^{-1} 
-     \begin{split} 
-       &={
-         \begin{cases}
-           &{\displaystyle k = \{{(\tfrac {{\angle_{const}} + H}{60^{\circ }}}){\ \bmod\ {6}}}\} \\
-           &{\displaystyle sector = \max(0,\ \min(k,\ 4-k,\ 1))} \\
-           &{\displaystyle f(H,S,V)_{\angle_{const}} = f_{\angle_{const}} ^{hsv} = V-VS \cdot sector} \\ 
-         \end{cases}
-         }
-       \Rightarrow \ (R,G,B) = {F_{HSV}}^{-1}(H,S,V) = {\displaystyle (f_{300^{\circ }}^{hsv},\ f_{180^{\circ }}^{hsv},\ f_{60^{\circ }}^{hsv})} 
-     \end{split} \\
-
-   &{F_{HSI}}^{-1} 
-     \begin{split} 
-       &={
-         \begin{cases}
-           &{\displaystyle k = \{{(\tfrac {{\angle_{const}} + H}{60^{\circ }}}){\ \bmod\ {6}}}\} \\
-           &{\displaystyle sector = \max(0,\ \min(k,\ 4-k,\ 1))} \\
-           &{\displaystyle f(H,S,I)_{\angle_{const}} = f_{\angle_{const}} ^{hsi} = I-IS \cdot sector} \\ 
-         \end{cases}
-         }
-       \Rightarrow \ (R,G,B) = {F_{HSI}}^{-1}(H,S,I) = {\displaystyle (f_{300^{\circ }}^{hsi},\ f_{180^{\circ }}^{hsi},\ f_{60^{\circ }}^{hsi})} 
-     \end{split} \\
-
-   &{F_{HSL}}^{-1}
-    \begin{split} 
-       &={
-         \begin{cases}
-           &{\displaystyle k = \{{(\tfrac {{\angle_{const}} + H}{60^{\circ }}}){\ \bmod\ {6}}}\} \\
-           &{\displaystyle sector = \max(0,\ \min(k,\ 4-k,\ 1))} \\
-           &{\displaystyle f(H,S,L)_{\angle_{const}} = f_{\angle_{const}} ^{hsl} = {L - LS \cdot sector}}\\ 
-         \end{cases}
-         }
-       \Rightarrow \ (R,G,B) = {F_{HSL}}^{-1}(H,S,L) = {\displaystyle (f_{300^{\circ }}^{hsl},\ f_{180^{\circ }}^{hsl},\ f_{60^{\circ }}^{hsl})} 
-     \end{split} \\
-
- \end{split}
- \end{align*}
+   &{F_{HSL}}^{-1} = {
+      \begin{cases}
+        & k = \{(\tfrac {\angle_{const} + H}{60^ \circ})\ \bmod\ 6\} \\
+        & sector = \max(0,\ \min(k,\ 4-k,\ 1)) \\
+        & f(H,S,L)_{\angle_{const}} = f_{\angle_{const}} ^{hsl} = {L - LS \cdot sector}\\ 
+      \end{cases}
+    } \Rightarrow 
+      (R,G,B) = {F_{HSL}}^{-1}(H,S,L) = (f_{300^ \circ}^{hsl},\ f_{180^ \circ}^{hsl},\ f_{60^ \circ}^{hsl}) \\
+ \end{aligned}
 }
 $$
 
 即：
 
 $$
-(R,G,B) = {F}^{-1}(H,S,L) = {\displaystyle (f_{300^{\circ }},\ f_{180^{\circ }},\ f_{60^{\circ }})} 
+(R,G,B) = {F}^{-1}(H,S,L) = (f_{300^ \circ},\ f_{180^ \circ},\ f_{60^ \circ})
 $$
 
 可以看出，**排除** $$C_{RGB} \rightarrow C_{HSL}$$ 后 HSL 代表值的不同外， $$F^{-1}$$ **并不存在显著差异**。这正是因为 HSV、HSI、HSL（Lightness）三者的色彩空间设定，在本质上是一样的而产生的结果。 **差异只存在于几何切面的抽象上。** 

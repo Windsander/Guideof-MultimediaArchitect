@@ -12,7 +12,7 @@
     },
     "plugins": [
 		"splitter", "expandable-chapters-small", 
-		"anchor-navigation-ex", "tbfed-pagefooter",
+		"back-to-top-button", "tbfed-pagefooter",
 		"insert-logo", "custom-favicon",
 		"simple-page-toc",
         "-lunr", 
@@ -44,13 +44,6 @@
             "copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved",
             "modify_label": "Last Updated:",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
-        },
-		"anchor-navigation-ex": {
-            "isRewritePageTitle": true,
-            "isShowTocTitleIcon": true,
-            "tocLevel1Icon": "fa fa-hand-o-right",
-            "tocLevel2Icon": "fa fa-hand-o-right",
-            "tocLevel3Icon": "fa fa-hand-o-right"
         },
 		"sharing": {
 			"zhihu": true,

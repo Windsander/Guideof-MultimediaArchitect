@@ -44,10 +44,16 @@ $$
 取出入面积及立体角相等，记同等出入面积为 $$A$$ ，立体角为 $$\Omega$$ ，照射角为 $$\theta$$ ，则有：
 
 $$
-{d} \Omega = {d} \Omega _{\Sigma } = {d} \Omega _{S} \\
-{d} \theta = {d} \theta _{\Sigma } = {d} \theta _{S} \\
-{d} A = {d} {\Sigma } = {d} {S} \\
-{\displaystyle L_{\mathrm {v}}={\frac {\mathrm {d} ^{2}\Phi _{\mathrm {v} }}{\mathrm {d} A\,\mathrm {d} \Omega \cos \theta }}}
+{\displaystyle 
+ \begin{aligned}
+   &{d} \Omega = {d} \Omega _{\Sigma } = {d} \Omega _{S} \\
+   &{d} \theta \ = {d} \theta _{\Sigma }\ = {d} \theta _{S} \\
+   &{d} A = {d} {\Sigma }\ \  = {d} {S} \\
+ \end{aligned}
+}
+$$
+$$
+L_{\mathrm {v}} = {\frac {\mathrm {d} ^{2}\Phi _{\mathrm {v} }}{\mathrm {d} A\,\mathrm {d} \Omega \cos \theta }}
 $$
 
 公式中，
