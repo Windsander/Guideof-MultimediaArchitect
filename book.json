@@ -3,6 +3,10 @@
 	"description": "音视频开发资料查询好帮手",
     "author": "李述博 (Arikan.Li)",
     "language": "zh-hans",
+	"root": ".",
+    "structure": {
+        "readme": "README.md"
+    },
     "styles": {
         "website": "styles/common.css",
         "ebook": "styles/common.css",
@@ -25,6 +29,7 @@
 		"donate"
     ],
     "pluginsConfig": {
+		"favicon": "Cover/book_favicon.ico",
 		"chart": {
             "type": "c3"
         },
@@ -36,10 +41,6 @@
 			"url": "Cover/book_logo.png",
 			"style": "background: none; max-height: 30px; min-height: 30px"
 		},
-		"favicon": {
-            "shortcut": "Cover/book_favicon.ico",
-            "bookmark": "Cover/book_favicon.ico"
-        },
 		"tbfed-pagefooter": {
             "copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved",
             "modify_label": "Last Updated:",
