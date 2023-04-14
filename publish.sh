@@ -10,8 +10,8 @@ fi
 echo '开始执行 publish 命令'
 # 生成静态文件
 echo '执行命令: gitbook build .'
-# gitbook install
-# gitbook build
+gitbook install
+gitbook build
 
 # 进入生成的文件夹
 echo "执行命令: cd ./_book\n"
