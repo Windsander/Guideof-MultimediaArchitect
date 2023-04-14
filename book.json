@@ -15,6 +15,7 @@
         "epub": "styles/common.css"
     },
     "plugins": [
+		"advanced-emoji",
 		"splitter", "expandable-chapters-small", 
 		"back-to-top-button", "tbfed-pagefooter",
 		"insert-logo", "custom-favicon",
@@ -29,16 +30,19 @@
 		"donate"
     ],
     "pluginsConfig": {
-		"favicon": "Cover/book_favicon.ico",
+		"favicon": "/Cover/book_favicon.ico",
 		"chart": {
             "type": "c3"
+        },
+		"hide-element": {
+            "elements": [".gitbook-link"]
         },
 		"simple-page-toc": {
             "maxDepth": 3,
             "skipFirstH1": true
         },
 		"insert-logo": {
-			"url": "Cover/book_logo.png",
+			"url": "/Cover/book_logo.png",
 			"style": "background: none; max-height: 30px; min-height: 30px"
 		},
 		"tbfed-pagefooter": {
@@ -49,7 +53,7 @@
 		"sharing": {
 			"zhihu": true,
 			"douban": false,
-			"facebook": false,
+			"facebook": true,
 			"google": true,
 			"hatenaBookmark": false,
 			"instapaper": false,
@@ -60,15 +64,14 @@
 			"qq": false,
 			"qzone": true,
 			"stumbleupon": false,
-			"twitter": false,
+			"twitter": true,
 			"viber": false,
 			"vk": false,
 			"weibo": true,
 			"whatsapp": false,
 			"all": [
-				"zhihu", "weibo", 
-				"facebook", "google", "twitter",
-				"instapaper", "linkedin", "pocket", "stumbleupon"
+				"zhihu", "weibo", "qzone", "line",
+				"facebook", "google", "twitter", "linkedin"
 			]
 		},
 		"rss": {
@@ -84,8 +87,8 @@
 			]
 		},
 		"donate": {
-			"wechat": "Cover/book_donate_wechat.png",
-			"alipay": "Cover/book_donate_alipay.png",
+			"wechat": "/Cover/book_donate_wechat.png",
+			"alipay": "/Cover/book_donate_alipay.png",
 			"title": "",
 			"button": "buy me a coffee",
 			"alipayText": "WeChat",

@@ -14,7 +14,7 @@ $$
    &C={
         \begin{cases}
           &{\displaystyle gCA: \{\Delta C ={\sqrt {\Delta H ^{2} + \Delta S ^{2} }}  \approx {distance} (C_1,\ C_2)} \} \\
-          &{\displaystyle sCA: \{ {\Delta C}|_{({\Delta H = 0})} = {\sqrt {\Delta S ^{2}}} = \Delta S \approx {range} (C_1,\ C_2) \} }\\
+          &{\displaystyle sCA: \{ {\Delta C}|_{({\Delta H = 0})} = {\sqrt {\Delta S ^{2}}} = \Delta S \approx {range} (C_1,\ C_2) \} }
         \end{cases}} \\
  \end{aligned}
 }
