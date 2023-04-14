@@ -1,0 +1,7 @@
+.idea/*
+.git/*
+._.*
+._*
+
+_book
+node_modules
