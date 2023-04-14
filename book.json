@@ -15,6 +15,7 @@
         "epub": "styles/common.css"
     },
     "plugins": [
+		"theme-default",
 		"advanced-emoji",
 		"splitter", "expandable-chapters-small", 
 		"back-to-top-button", "tbfed-pagefooter",
