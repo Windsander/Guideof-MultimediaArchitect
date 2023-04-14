@@ -1,5 +1,6 @@
 {
     "title": "《音视频开发技术手册》©",
+	"description": "音视频开发资料查询好帮手",
     "author": "李述博 (Arikan.Li)",
     "language": "zh-hans",
     "styles": {
@@ -10,42 +11,91 @@
         "epub": "styles/common.css"
     },
     "plugins": [
+		"splitter", "expandable-chapters-small", 
+		"anchor-navigation-ex", "tbfed-pagefooter",
+		"insert-logo", "custom-favicon",
+		"simple-page-toc",
         "-lunr", 
-        "-search", 
-        "search-pro",
-		"insert-logo",
-		"custom-favicon",
-		"tbfed-pagefooter",
-		"back-to-top-button",
+        "-search", "search-pro",
 		"-sharing", "sharing-plus",
-		"splitter",
-		"code"
+		"graph", "chart", "local-video",
+		"katex",
+		"code",
+		"rss",
+		"donate"
     ],
     "pluginsConfig": {
-		"favicon": "Cover/book_favicon.ico",
+		"chart": {
+            "type": "c3"
+        },
+		"simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
+        },
 		"insert-logo": {
 			"url": "Cover/book_logo.png",
 			"style": "background: none; max-height: 30px; min-height: 30px"
 		},
+		"favicon": {
+            "shortcut": "Cover/book_favicon.ico",
+            "bookmark": "Cover/book_favicon.ico"
+        },
 		"tbfed-pagefooter": {
             "copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved",
             "modify_label": "Last Updated:",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
+		"anchor-navigation-ex": {
+            "isRewritePageTitle": true,
+            "isShowTocTitleIcon": true,
+            "tocLevel1Icon": "fa fa-hand-o-right",
+            "tocLevel2Icon": "fa fa-hand-o-right",
+            "tocLevel3Icon": "fa fa-hand-o-right"
+        },
 		"sharing": {
-			"douban": true,
-			"facebook": true,
+			"zhihu": true,
+			"douban": false,
+			"facebook": false,
 			"google": true,
-			"pocket": true,
-			"qq": true,
+			"hatenaBookmark": false,
+			"instapaper": false,
+			"line": true,
+			"linkedin": true,
+			"messenger": false,
+			"pocket": false,
+			"qq": false,
 			"qzone": true,
-			"twitter": true,
+			"stumbleupon": false,
+			"twitter": false,
+			"viber": false,
+			"vk": false,
 			"weibo": true,
-		 "all": [
-			  "douban", "weibo", "zhihu", 
-			  "facebook", "google", "instapaper", "linkedin", "twitter", 
-			  "messenger", "qq", "qzone", "viber", "whatsapp"
-		  ]
-	  }
+			"whatsapp": false,
+			"all": [
+				"zhihu", "weibo", 
+				"facebook", "google", "twitter",
+				"instapaper", "linkedin", "pocket", "stumbleupon"
+			]
+		},
+		"rss": {
+			"title": "《音视频开发技术手册》©",
+			"description": "音视频开发资料查询好帮手",
+			"author": "李述博 (Arikan.Li)",
+			"feed_url": "http://arikanli.gitbook.io/rss",
+			"site_url": "http://arikanli.gitbook.io/",
+			"managingEditor": "me@arikanli.com",
+			"webMaster": "me@arikanli.com",
+			"categories": [
+				"gitbook"
+			]
+		},
+		"donate": {
+			"wechat": "Cover/book_donate_wechat.png",
+			"alipay": "Cover/book_donate_alipay.png",
+			"title": "",
+			"button": "buy me a coffee",
+			"alipayText": "WeChat",
+			"wechatText": "AliPay"
+		}
     }
 }
