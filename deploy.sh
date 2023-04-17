@@ -3,5 +3,5 @@
 echo '开始执行 deploy 命令'
 gitbook install
 gitbook build
-gitbook server
+gitbook serve
 echo '完成部署.'
