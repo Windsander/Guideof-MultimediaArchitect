@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>http://arikanli.gitbook.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 14 Apr 2023 13:13:38 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 17 Apr 2023 06:22:31 GMT</lastBuildDate>
         <atom:link href="http://arikanli.gitbook.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -295,6 +295,13 @@
             <description><![CDATA[[1] Isaac Newton, Hypothesis explaining the properties of light, Letter from Newton to Henry Oldenburg, dated 14 December 1675.]]></description>
             <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/References_3.html</link>
             <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/References_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[买杯咖啡]]></title>
+            <description><![CDATA[如果您愿意为本书爆肝的作者买一些精神食粮，来让他当一名 24H 狼灭的话...]]></description>
+            <link>http://arikanli.gitbook.io/DONATE.html</link>
+            <guid isPermaLink="true">http://arikanli.gitbook.io/DONATE.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
     </channel>
