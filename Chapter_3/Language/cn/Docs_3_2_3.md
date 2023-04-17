@@ -35,9 +35,13 @@ CD 代表纯色分量强度，记为 $$D_{b}$$ ；
 假设 C点的颜色为 $$(R_{C},G_{C},B_{C})$$，我们就有：
 
 $$
-R_{C} = D_{a} O_{pure} + D_{b} R_{D} = (1-D_{b}) O_{pure} + D_{b} R_{D} \\
-G_{C} = D_{a} O_{pure} + D_{b} G_{D} = (1-D_{b}) O_{pure} + D_{b} G_{D} \\
-B_{C} = D_{a} O_{pure} + D_{b} B_{D} = (1-D_{b}) O_{pure} + D_{b} B_{D}
+{\displaystyle 
+ \begin{aligned}
+   R_{C} = D_{a} O_{pure} + D_{b} R_{D} = (1-D_{b}) O_{pure} + D_{b} R_{D} \\
+   G_{C} = D_{a} O_{pure} + D_{b} G_{D} = (1-D_{b}) O_{pure} + D_{b} G_{D} \\
+   B_{C} = D_{a} O_{pure} + D_{b} B_{D} = (1-D_{b}) O_{pure} + D_{b} B_{D}
+ \end{aligned}
+}
 $$
 
 而 $$D_{b}$$ 就是饱和度 $$S$$ 。整个格拉斯曼颜色混合律就可以用一个公式表示了：

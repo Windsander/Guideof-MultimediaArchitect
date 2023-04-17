@@ -19,18 +19,14 @@
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle {I _{\mathrm {e}}} = {\frac {\mathrm {d} \Phi _{\mathrm {e} }}{\mathrm {d} \Omega}} 
+ \begin{aligned}
+   &{I _{\mathrm {e}}} = {\frac {\mathrm {d} \Phi _{\mathrm {e} }}{\mathrm {d} \Omega}} 
                      \rightarrow  
-                   {\Phi _{\mathrm {e}}} = \int _{\Sigma } I_e \cdot  {d} \Omega } \\
-   &{\displaystyle E_{\mathrm {e}} = {\frac {\mathrm {d} \Phi _{\mathrm {e} }}{\mathrm {d} A}}} \ \ \ \ 
-    {\displaystyle {\displaystyle L_{\mathrm {e}}
-                      ={\frac {\mathrm {d} ^{2}\Phi _{\mathrm {e} }}{\mathrm {d} A\,\mathrm {d} \Omega \cos \theta }}
+                   {\Phi _{\mathrm {e}}} = \int _{\Sigma } I_e \cdot  {d} \Omega  \\
+   &E_{\mathrm {e}} = {\frac {\mathrm {d} \Phi _{\mathrm {e} }}{\mathrm {d} A}} \quad
+    L_{\mathrm {e}} ={\frac {\mathrm {d} ^{2}\Phi _{\mathrm {e} }}{\mathrm {d} A\,\mathrm {d} \Omega \cos \theta }}
                       ={\frac {\mathrm {d} E _{\mathrm {e} }}{d \Omega \cdot \cos \theta }}
-                   }} \\
- \end{split}
- \end{align*}
+ \end{aligned}
 }
 $$
 
@@ -61,11 +57,11 @@ $$
 	
 $$
 {\displaystyle 
-u_{\lambda }\ (\lambda,T)
-={\frac {8\pi hc}{\lambda^{5}}} \cdot {\frac {1}{e^{\tfrac{hc} {\lambda kT}}-1}}
-={\displaystyle {\frac {4\pi}{c}} \cdot I_e (v) }
-={\frac {8\pi hv^3}{c^{5}}} \cdot {\frac {1}{e^{\tfrac{hv} {kT}}-1}}
-={u_{v }\ (v,T)}
+   u_{\lambda }\ (\lambda,T)
+   ={\frac {8\pi hc}{\lambda^{5}}} \cdot {\frac {1}{e^{\tfrac{hc} {\lambda kT}}-1}}
+   ={\frac {4\pi}{c}} \cdot I_e (v)
+   ={\frac {8\pi hv^3}{c^{5}}} \cdot {\frac {1}{e^{\tfrac{hv} {kT}}-1}}
+   ={u_{v }\ (v,T)}
 }
 $$
 
@@ -90,7 +86,7 @@ $$
 
 图上能明显看到，当物体处于不同色温时，其黑体辐射的总能量被分配到了不同波长光波携带。最终辐射波的情况，则是由不同区段的波长叠加而成，其叠加的强度则和对应波长携带的能量强度正相关。我们取 **360nm - 780nm 可见光谱（Visible Spectrum）** 范围，那么上图就有如下的展示了：
 
-center>
+<center>
 <figure>
    <img style="border-radius: 0.3125em;
       box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
@@ -110,13 +106,11 @@ center>
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle Q = {L_e} \cdot dA = {\frac {1}{K}} \cdot {I_v} \cdot {\frac {\mathrm {d} \Phi _{\mathrm {v} }}{\mathrm  {dA^2} \cos{\theta }}} \cdot dA 
-                         = \int _{360nm} ^{780nm}  u_{\lambda }\ (\lambda,T_0) \cdot {d} {\lambda} 
-                         \approx \sum _{360nm} ^{780nm} u_{\lambda }\ (T_0) \cdot {\lambda}  } \\
- \end{split}
- \end{align*}
+ \begin{aligned}
+   &Q = {L_e} \cdot dA = {\frac {1}{K}} \cdot {I_v} \cdot {\frac {\mathrm {d} \Phi _{\mathrm {v} }}{\mathrm  {dA^2} \cos{\theta }}} \cdot dA 
+      = \int _{360nm} ^{780nm}  u_{\lambda }\ (\lambda,T_0) \cdot {d} {\lambda} 
+        \approx \sum _{360nm} ^{780nm} u_{\lambda }\ (T_0) \cdot {\lambda} 
+ \end{aligned}
 }
 $$
 
@@ -126,15 +120,13 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle Q = {\frac {1}{K}} \cdot {L_v} \cdot {dA} = {\frac {1}{K}} \cdot {\frac {{I_v}}{dA}} 
-                     = \sum _{360nm} ^{780nm} u_{\lambda }\ (T_0) \cdot {\lambda}  
-                        \ \ \rightarrow \ \  
-                   Q = {L_v}  \cdot \sum _{360nm} ^{780nm} {\frac {{u_{\lambda}}}{{I_v}}}  \lambda  \cdot {\mathrm K }
-                     = {L_v}  \cdot \sum _{360nm} ^{780nm} {\frac {{u_{\lambda}}}{{I_e}}}  \lambda } \\
- \end{split}
- \end{align*}
+ \begin{aligned}
+   &Q = {\frac {1}{K}} \cdot {L_v} \cdot {dA} = {\frac {1}{K}} \cdot {\frac {I_v}{dA}} 
+      = \sum _{360nm} ^{780nm} u_{\lambda }\ (T_0) \cdot {\lambda}  
+        \ \ \rightarrow \ \  
+    Q = {L_v}  \cdot \sum _{360nm} ^{780nm} {\frac {u_{\lambda}}{I_v}}  \lambda  \cdot {\mathrm K }
+      = {L_v}  \cdot \sum _{360nm} ^{780nm} {\frac {u_{\lambda}}{I_e}}  \lambda  \\
+ \end{aligned}
 }
 $$
 
@@ -142,20 +134,18 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle Mapping(C_0, L_0) = {L_0}  \cdot \sum _{360nm} ^{780nm} {\frac {{u_{\lambda}}}{{I_e}}}  \lambda
-                                     = F(C_0, L_0)} \\
- \end{split}
- \end{align*}
-} \\
+ \begin{aligned}
+   &Mapping(C_0, L_0) = {L_0}  \cdot \sum _{360nm} ^{780nm} {\frac {u_{\lambda}}{I_e}}  \lambda
+                      = F(C_0, L_0) \\
+ \end{aligned}
+}
+$$
+$$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle C_0 = Convert( \sum _{360nm} ^{780nm} {\frac {{u_{\lambda}}}{{I_e}}}  \lambda )
-                       = F( \sum _{360nm} ^{780nm} {\frac {{u_{\lambda}}}{{I_e}}}  \lambda )} \\
- \end{split}
- \end{align*}
+ \begin{aligned}
+   &C_0 = Convert( \sum _{360nm} ^{780nm} {\frac {u_{\lambda}}{I_e}}  \lambda )
+                       = F( \sum _{360nm} ^{780nm} {\frac {u_{\lambda}}{I_e}}  \lambda ) \\
+ \end{aligned}
 }
 $$
 

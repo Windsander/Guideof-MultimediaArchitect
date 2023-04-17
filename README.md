@@ -22,14 +22,14 @@
 
 ## **难度导向**
 
-### **入门：必需掌握的音视频基础，**
+### **入门：必需掌握的音视频基础**
 ### **对应：入门/初级音视频工程师（T2-1～T2-3｜T5～T7）**
 
 入门的四章也是概念与基础理论最多的章节了。这几张的工程实践较少，但非常重要的原理、规格、定义及多。是后续更为复杂的工程实践中，被音视频工程师们做为根基般的存在。因此非常重要。
 
 	第一章 音视频常用基础算法，属于纯数理基础，对音视频开发过程中常用的 图像/音频 的 分析/处理 算法，进行了梳理和讲解；本章列出的部分，是作者在筛选掉大量非必需算法后的最小知识集合。
 
-	第二章 数字音频的保存与还原，同上。
+	第二章 数字音频的保存与还原，本章从声学和心理声学角度对音频的相关工程量，以及数模转换和分析对比的关键概念进行了阐述。结合发展与规格演进，提供整体音频工程概念的梳理。
 
 	第三章 图像色彩的运用与存储，从色彩学发展史到工业体系对色彩的规格定义，章节大章以工程概念的递进关系进行介绍，并在小章节中按照相关规格原理的发现提出时间顺序进行了由浅入深的推导说明。从而保证前后逻辑和发展上的连贯性。
 
@@ -120,3 +120,10 @@
 	    * [3.6.1 色彩格式（Color Format）与色彩存储](Chapter_3/Language/cn/Docs_3_6_1.md)
 	    * [3.6.2 RGB 体系色彩格式](Chapter_3/Language/cn/Docs_3_6_2.md)
 	    * [3.6.3 YUV 体系色彩格式](Chapter_3/Language/cn/Docs_3_6_3.md)
+
+
+<br>
+<br>
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。<br />
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.

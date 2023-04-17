@@ -25,11 +25,9 @@ CIE XYZ 色彩空间取用 [X=1, Y=1, Z=1] 构成的三棱锥底面所在平面�
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split}  
+ \begin{aligned}
    &{\displaystyle Plane :\{ {X+Y+Z} = 1 \}} \\ 
- \end{split}
- \end{align*}
+ \end{aligned}
 }
 $$
 
@@ -37,13 +35,11 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split}  
+ \begin{aligned}
    &Set:\ (x+y+z) = 1 \ \ \ {Then:} \\
    &{\displaystyle Chromaticity:\{ (x,y) = ({\frac {X}{X+Y+Z}}, {\frac {Y}{X+Y+Z}}) \} } \\ 
    &{\displaystyle Luminance:\{ Y \} } \\ 
- \end{split}
- \end{align*}
+ \end{aligned}
 }
 $$
 	

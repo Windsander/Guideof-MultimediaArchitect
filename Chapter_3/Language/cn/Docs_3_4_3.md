@@ -10,17 +10,13 @@
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle C={
+ \begin{aligned}
+   &C={
         \begin{cases}
-          &{\displaystyle gCA: \{\Delta C ={\sqrt {\Delta H ^{2} + \Delta S ^{2} }}  \approx \operatorname {distance} (C_1,\ C_2)} \} \\
-          &{\displaystyle sCA: \{ {\Delta C}|_{({\Delta H = 0})} = {\sqrt {\Delta S ^{2}}} = \Delta S \approx \operatorname {range} (C_1,\ C_2) \} }\\
-        \end{cases}}
-    } \\
-   
- \end{split}
- \end{align*}
+          &{\displaystyle gCA: \{\Delta C ={\sqrt {\Delta H ^{2} + \Delta S ^{2} }}  \approx {distance} (C_1,\ C_2)} \} \\
+          &{\displaystyle sCA: \{ {\Delta C}|_{({\Delta H = 0})} = {\sqrt {\Delta S ^{2}}} = \Delta S \approx {range} (C_1,\ C_2) \} }
+        \end{cases}} \\
+ \end{aligned}
 }
 $$
 
@@ -28,11 +24,9 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
-   &{\displaystyle C = {\sqrt {\Delta x ^{2} + \Delta y ^{2} }}} \\ 
- \end{split}
- \end{align*}
+ \begin{aligned}
+   &C = {\sqrt {\Delta x ^{2} + \Delta y ^{2} }} \\ 
+ \end{aligned}
 }
 $$
 

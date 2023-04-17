@@ -21,13 +21,11 @@ CIE 在两者实验的基础上，确定了以 **光谱功率分布（SPD [Spect
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
+ \begin{aligned}
    &{\displaystyle R =\int _{0}^{\infty }S(\lambda )\,{\overline {r}}(\lambda )\,d\lambda  } \\
    &{\displaystyle G =\int _{0}^{\infty }S(\lambda )\,{\overline {g}}(\lambda )\,d\lambda  } \\
    &{\displaystyle B =\int _{0}^{\infty }S(\lambda )\,{\overline {b}}(\lambda )\,d\lambda  } \\
- \end{split}
- \end{align*}
+ \end{aligned}
 }
 $$
 

@@ -1,7 +1,12 @@
 {
     "title": "《音视频开发技术手册》©",
+	"description": "音视频开发资料查询好帮手",
     "author": "李述博 (Arikan.Li)",
     "language": "zh-hans",
+	"root": ".",
+    "structure": {
+        "readme": "README.md"
+    },
     "styles": {
         "website": "styles/common.css",
         "ebook": "styles/common.css",
@@ -10,42 +15,77 @@
         "epub": "styles/common.css"
     },
     "plugins": [
+		"theme-default",
         "-lunr", 
-        "-search", 
-        "search-pro",
-		"insert-logo",
-		"custom-favicon",
-		"tbfed-pagefooter",
-		"back-to-top-button",
+        "-search", "search-pro",
+		"insert-logo", "custom-favicon",
+		"rss", "github",
+		"expandable-chapters", "chapter-fold", 
+		"back-to-top-button", "tbfed-pagefooter",
+		"simple-page-toc",
+		"graph", "chart", "local-video",
+		"advanced-emoji",
+		"splitter", 
+		"code", "katex",
 		"-sharing", "sharing-plus",
-		"splitter",
-		"code"
+		"alerts"
     ],
     "pluginsConfig": {
-		"favicon": "Cover/book_favicon.ico",
+		"favicon": "/Cover/book_favicon.ico",
+		"chart": {
+            "type": "c3"
+        },
+		"hide-element": {
+            "elements": [".gitbook-link"]
+        },
 		"insert-logo": {
-			"url": "Cover/book_logo.png",
+			"url": "/Cover/book_logo.png",
 			"style": "background: none; max-height: 30px; min-height: 30px"
 		},
+        "simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
+        },
 		"tbfed-pagefooter": {
             "copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved",
             "modify_label": "Last Updated:",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
+		"github": {
+            "url": "https://github.com/Windsander"
+        },
+		"rss": {
+			"title": "《音视频开发技术手册》©",
+			"description": "音视频开发资料查询好帮手",
+			"author": "李述博 (Arikan.Li)",
+			"feed_url": "http://arikanli.gitbook.io/rss",
+			"site_url": "http://arikanli.gitbook.io/",
+			"managingEditor": "me@arikanli.com",
+			"webMaster": "me@arikanli.com",
+			"categories": [
+				"gitbook"
+			]
+		},
 		"sharing": {
-			"douban": true,
-			"facebook": true,
+			"douban": false,
+			"facebook": false,
 			"google": true,
-			"pocket": true,
-			"qq": true,
-			"qzone": true,
-			"twitter": true,
+			"hatenaBookmark": false,
+			"instapaper": false,
+			"line": false,
+			"linkedin": true,
+			"messenger": false,
+			"pocket": false,
+			"qq": false,
+			"qzone": false,
+			"stumbleupon": false,
+			"twitter": false,
+			"viber": false,
+			"vk": false,
 			"weibo": true,
-		 "all": [
-			  "douban", "weibo", "zhihu", 
-			  "facebook", "google", "instapaper", "linkedin", "twitter", 
-			  "messenger", "qq", "qzone", "viber", "whatsapp"
-		  ]
-	  }
+			"whatsapp": false,
+			"all": [
+			]
+		}
     }
 }
