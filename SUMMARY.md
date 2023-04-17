@@ -61,3 +61,4 @@
 	    * [3.6.2 RGB 体系色彩格式](Chapter_3/Language/cn/Docs_3_6_2.md)
 	    * [3.6.3 YUV 体系色彩格式](Chapter_3/Language/cn/Docs_3_6_3.md)
 	* [【参考文献】](Chapter_3/Language/cn/References_3.md)
+* [<font color=oragan> =[>> 赞助本作© <<]= </font>](DONATE.md)

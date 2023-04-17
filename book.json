@@ -28,7 +28,7 @@
 		"splitter", 
 		"code", "katex",
 		"-sharing", "sharing-plus",
-		"alerts", "donate"
+		"alerts"
     ],
     "pluginsConfig": {
 		"favicon": "/Cover/book_favicon.ico",
@@ -86,14 +86,6 @@
 			"whatsapp": false,
 			"all": [
 			]
-		},
-		"donate": {
-			"wechat": "/Cover/book_donate_wechat.png",
-			"alipay": "/Cover/book_donate_alipay.png",
-			"title": "",
-			"button": "doughnut",
-			"alipayText": "WeChat",
-			"wechatText": "AliPay"
 		}
     }
 }
