@@ -1,6 +1,6 @@
 # Table of contents
 
-* [《音视频开发技术手册》©](README.md)
+* [《音视频架构师手册》©](README.md)
 * [<font color=oragan> =[>> 关于作者© <<]= </font>](AUTHOR.md)
 * [<font color=red> =[>> 版权申明© <<]= </font>](COPYRIGHT.md)
 * [一、音视频常用基础算法](Chapter_1/Language/cn/Apex_1_Introduce.md)
