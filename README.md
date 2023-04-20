@@ -48,7 +48,7 @@
 
 **为方便您定位章节难度，此处提供 [<font color=red> =[>> 难度向导 <<]= </font>](GUIDER.md) 建议。**
 
-受限于作者，本书难免存在一些不足，您可以 **[**Book-issues**](https://github.com/Windsander/Guideof-MultimediaArchitect/issues)** 进行反馈，感谢您的帮助！
+受限于作者，本书难免存在一些不足，您可以 **[Book-issues](https://github.com/Windsander/Guideof-MultimediaArchitect/issues)** 进行反馈，感谢您的帮助！
 
 - - -
 
