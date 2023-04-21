@@ -3,7 +3,7 @@
 <p align='left'>
 <a href="https://github.com/Windsander" target="_blank"><img src="https://img.shields.io/badge/作者-@Arikan.Li-000000.svg?style=flat&logo=GitHub"></a>
 <a href="https://www.zhihu.com/people/ArikanLi" target="_blank"><img src="https://img.shields.io/badge/小岛上的黑桃六-@Arikan.Li-000000.svg?style=flat&logo=zhihu"></a>
-<a href="https://arikan-lis-library.gitbook.io/av-tech-dev-toolbook/" target="_blank"><img alt="GitBook" src="https://img.shields.io/github/stars/Windsander/Project_M?label=Stars&style=flat&logo=GitBook"></a>
+<a href="https://github.com/Windsander/Guideof-MultimediaArchitect" target="_blank"><img alt="GitBook" src="https://img.shields.io/github/stars/Windsander/Guideof-MultimediaArchitect?label=Stars&style=flat&logo=GitBook"></a>
 </p>
 
 [<font color=oragan> =[>> 关于作者© <<]= </font>](AUTHOR.md)
