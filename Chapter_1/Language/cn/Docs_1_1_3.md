@@ -46,8 +46,64 @@ $$
 }
 $$
 
-**要点就出现在这里，带入分组情况，上式可化为：**
+带入 $$K$$ 分组情况（ $$T = NK$$ ），上式可化为：
 
+$$
+{\displaystyle 
+ \begin{aligned}
+   \hat{f}(n)  =\sum_{k=1}^{K}\sum_{(k-1)N}^{t = kN} f(t) \cdot e^{-i \tfrac{2\pi n}{T} t }  \quad \quad &\Leftrightarrow \quad \quad
+   f(t) = \frac{1}{N} \sum_{n=1}^{N} \hat{f}(n) \cdot {\mathcal {F}}_{\omega}(t)
+ \end{aligned}
+}
+$$
+
+即强度系数 $$\hat{f}(n)$$ 存在展开式：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   \hat{f}(n)  &= \sum_{k=1}^{K}\sum_{(k-1)N}^{t = kN} f(t) \cdot e^{-i \tfrac{2\pi n}{T} t } \\
+               &= \sum_{t=1}^{N} f(t) \cdot e^{-i \tfrac{2\pi t}{T} \cdot n } 
+                     + \sum_{t=N+1}^{2N} f(t) \cdot e^{-i \tfrac{2\pi t}{T} \cdot n } 
+                     + \ ...\ 
+                     + \sum_{(K-1)N+1}^{t=KN} f(t) \cdot e^{-i \tfrac{2\pi t}{T} \cdot n } 
+                     + \ f(0) \\
+               &= \sum_{t=1}^{N} f(t) \cdot e^{-i \tfrac{2\pi t}{T} \cdot n } 
+                     + \sum_{t=1}^{N} f(t+N) \cdot e^{-i \tfrac{2\pi (t+N)}{T} \cdot n } 
+                     + \ ...\ 
+                     + \sum_{t=1}^{N} f(t + (K-1)N) \cdot e^{-i \tfrac{2\pi (t + (K-1)N)}{T} \cdot n } 
+                     + \ f(0) \\
+               &= \sum_{k=1}^{K} \sum_{t=1}^{N} f(t+ (k-1)N) \cdot e^{-i \tfrac{2\pi t}{T} n } \cdot e^{-i \tfrac{2\pi (k-1)}{K} n } + \ f(0)
+ \end{aligned}
+}
+$$
+
+**要点就出现在这里**，此时，由于有限基底函数族 $${\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\omega_1}, {\mathcal {F}}_{\omega_2},\dots,{\mathcal {F}}_{\omega_N}]$$ 的拟合样本选取自各个分组的对应角标数据，则显然任意 $${\mathcal {F}}_{\omega_i}$$ 的周期都有 $$T_i = \tfrac{2\pi n}{\omega_i} \geq N$$ 且必然有 $$T_i \mod N = 0$$ 。另外， $$f(0)$$ 信号初相可以直接取 $$f(0) = 0$$ ，而不影响结果。因此，强度系数 $$\hat{f}(n)$$ 关于 $$k$$ 的展开式能进一步精简为：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   \hat{f}(n)  &= \sum_{k=1}^{K} (\sum_{t=1}^{N} f(t+ (k-1)N) \cdot e^{-i \tfrac{2\pi t}{T} n }) \cdot e^{-i \tfrac{2\pi (k-1)}{K} n } \\
+               &= \sum_{k=1}^{K} e^{-i \tfrac{2\pi (k-1)}{K} n } \cdot (\sum_{(k-1)N}^{t = kN} f(t) \cdot  {\mathcal {F}}_{\omega}^{-1}(n))
+ \end{aligned}
+}
+$$
+
+记 $$\hat{f}_k(n) =\sum_{(k-1)N}^{t = kN} f(t) \cdot  {\mathcal {F}}_{\omega}^{-1}(n)$$ ，则 $$\hat{f}_k(n)$$ 即为分组样本子集 $$[S_1,S_2,\ ...\ , S_K]$$ 在自己的分组样本区间 $$S_k \in [S((k-1) \cdot N),\ S(k \cdot N)]$$ 内，进行离散傅里叶变换的分组强度系数结果。而 $$e^{-i \tfrac{2\pi (k-1)}{K} n }$$ 在样本顺序 $$n$$ 给定时，只与所处分组的组序 $$k$$ 有关，且本身在三角函数空间表现为 $$n(k-1)$$ 的角度固定值，所以我们记其为旋转因子（Rotation Factor） $$R_k(n) = e^{-i \tfrac{2\pi (k-1)}{K} n }$$ 。
+
+将 $$\hat{f}_k(n)$$ 、 $$R_k(n)$$ 带入 $$\hat{f}(n)$$ ，则 $$\hat{f}(n)$$ 最终表现为：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   R_1(n) & = 1 \\
+   \hat{f}(n)  &= \sum_{k=1}^{K} R_k(n) \cdot \hat{f}_k(n) = R_1(n) \cdot \hat{f}_1(n) +  R_2(n) \cdot \hat{f}_2(n) + \ ...\ + R_K(n) \cdot \hat{f}_K(n) \\
+   \hat{f}(n)  &= \hat{f}_1(n) +  R_2(n) \cdot \hat{f}_2(n) + \ ...\ + R_K(n) \cdot \hat{f}_K(n) 
+ \end{aligned}
+}
+$$
+
+**上式就是时域抽取（DIT）的分组离散傅立叶（Group DFT）的通用完整过程**。但是，大费周章的这么做有什么用处呢？
 
 
 [ref]: References_1.md 
