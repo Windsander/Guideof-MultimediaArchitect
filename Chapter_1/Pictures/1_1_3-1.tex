@@ -33,7 +33,7 @@
     \end{scope}
     
     % Draw: sin_cos
-    \draw (#1:2mm) node[angle_color] {$\angle\phi_{#3}$};
+    \draw (#1+5:2mm) node[angle_color] {$\angle\phi_{#3}$};
     \draw [important line, sin_color] {
         (#2:1cm) -- 
             node[left =1pt] {$a_{#3}$} 
@@ -88,9 +88,9 @@
     \foo draw_complex_exponential{180}{210}{k+\pi}            {3mm}
     \foo draw_complex_exponential{270}{300}{k+\frac{3\pi}{2}} {4mm}
 
-     % Draw: Rectangle-180
-    % \foo draw_complex_exponential{30}{k}
-    % \foo draw_complex_exponential{210}{k+\pi}
+    % Draw: Rectangle-180
+    % \foo draw_complex_exponential{01} {30} {k}                {1mm}
+    % \foo draw_complex_exponential{180}{210}{k+\pi}            {3mm}
 }
 %==================================== END ====================================
 \end{tikzpicture}
