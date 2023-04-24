@@ -15,7 +15,6 @@ $$
    \vdots  \\
    f_n     \\
 \end{bmatrix}} \cdot [\hat{f}_1,\hat{f}_2,\ ...\ ,\hat{f}_n]
-   \\
  \end{aligned}
 }
 $$
