@@ -1,6 +1,6 @@
 \documentclass{standalone}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta, bending, positioning, intersections}
+\usetikzlibrary{arrows.meta, bending, positioning, intersections, backgrounds}
 \tikzset{x=0.6cm,y=0.6cm, >={Stealth[bend]}}
 
 \begin{document}  
@@ -14,34 +14,41 @@
 
 % Define: Colors
 \colorlet{shadow}{white!00}
-\colorlet{anglecover}{green!20}
-\colorlet{anglecolor}{green!50!black}
+\colorlet{angle_cover}{green!20}
+\colorlet{angle_color}{green!50!black}
 \colorlet{amplitude}{orange!80!black}
 \colorlet{sin_color}{red}
 \colorlet{cos_color}{blue}
 
 %================================== Prepare ==================================
-\def\foo draw_complex_exponential#1#2{
-    % Draw: Rectangle-#1
-    \filldraw [fill=anglecover, draw=anglecolor] { 
-        (0,0) -- (3mm, 0pt) arc [start angle=0, end angle=30, radius=3mm]
-    };
-    \draw (15:2mm) node[anglecolor] {$\angle\phi_{#2}$};
+\def\foo draw_complex_exponential#1#2#3#4{
+    % Draw: Angle-#1~#2
+    \begin{scope}[on background layer]
+        \draw [dashed, angle_color, ->] { 
+            (0,0) -- (0:#4) arc [start angle=0, end angle=#1, radius=#4]
+        };
+        \filldraw [fill=angle_cover, draw=angle_color] { 
+            (0,0) -- (#1:#4) arc [start angle=#1, end angle=#2, radius=#4]
+        };
+    \end{scope}
+    
+    % Draw: sin_cos
+    \draw (#1:2mm) node[angle_color] {$\angle\phi_{#3}$};
     \draw [important line, sin_color] {
-        (#1:1cm) -- 
-            node[left =1pt, fill=shadow] {$a_{#2}$} 
-        (#1:1cm |- x axis)
+        (#2:1cm) -- 
+            node[left =1pt] {$a_{#3}$} 
+        (#2:1cm |- x axis)
     };
     \draw [important line, cos_color] {
-        (#1:1cm |- x axis) -- 
-            node[above=2pt, fill=shadow] {$b_{#2}$} 
+        (#2:1cm |- x axis) -- 
+            node[above=2pt] {$b_{#3}$} 
         (0,0)
     };
 
     % Draw: Calculate line-cross
     \path [name path=circle_holder] (0,0) circle [radius = 1cm];
     \path [name path=line_upward] (1.0cm, 0) -- (1.0cm, 1.0cm);
-    \path [name path=line_sloped] (0.0cm, 0) -- (#1:1.5cm);
+    \path [name path=line_sloped] (0.0cm, 0) -- (#2:1.5cm);
     \draw [name intersections={of=circle_holder and line_sloped, by=p}]
         [very thick, dashed, orange] {
         (1.0cm,0) -- 
@@ -52,7 +59,7 @@
     };
     \draw [important line, amplitude] {
         (0,0) -- 
-            node[above=2pt] {$R_{#2}(n) = e^{-i \frac{2\pi ({#2}-1)}{K} n}$} 
+            node[above=2pt] {$R_{#3}(n) = e^{-i \frac{2\pi ({#3}-1)}{K} n}$} 
         (p)
     };
 }
@@ -76,10 +83,10 @@
     \draw (0,0) circle [radius = 1cm];
     
     % Draw: Rectangle-90
-    \foo draw_complex_exponential{30}{k}
-    \foo draw_complex_exponential{120}{k+\frac{\pi}{2}}
-    \foo draw_complex_exponential{210}{k+\pi}
-    \foo draw_complex_exponential{300}{k+\frac{3\pi}{2}}
+    \foo draw_complex_exponential{0}  {30} {k}                {1mm}
+    \foo draw_complex_exponential{90} {120}{k+\frac{\pi}{2}}  {2mm}
+    \foo draw_complex_exponential{180}{210}{k+\pi}            {3mm}
+    \foo draw_complex_exponential{270}{300}{k+\frac{3\pi}{2}} {4mm}
 
      % Draw: Rectangle-180
     % \foo draw_complex_exponential{30}{k}
