@@ -11,16 +11,54 @@
     important line/.style={very thick},
     information text/.style={rounded corners,fill=red!10,inner sep=1ex}
 ]
+
+% Define: Colors
+\colorlet{shadow}{white!00}
+\colorlet{anglecover}{green!20}
+\colorlet{anglecolor}{green!50!black}
+\colorlet{amplitude}{orange!80!black}
+\colorlet{sin_color}{red}
+\colorlet{cos_color}{blue}
+
+%================================== Prepare ==================================
+\def\foo draw_complex_exponential#1#2{
+    % Draw: Rectangle-#1
+    \filldraw [fill=anglecover, draw=anglecolor] { 
+        (0,0) -- (3mm, 0pt) arc [start angle=0, end angle=30, radius=3mm]
+    };
+    \draw (15:2mm) node[anglecolor] {$\angle\phi_{#2}$};
+    \draw [important line, sin_color] {
+        (#1:1cm) -- 
+            node[left =1pt, fill=shadow] {$a_{#2}$} 
+        (#1:1cm |- x axis)
+    };
+    \draw [important line, cos_color] {
+        (#1:1cm |- x axis) -- 
+            node[above=2pt, fill=shadow] {$b_{#2}$} 
+        (0,0)
+    };
+
+    % Draw: Calculate line-cross
+    \path [name path=circle_holder] (0,0) circle [radius = 1cm];
+    \path [name path=line_upward] (1.0cm, 0) -- (1.0cm, 1.0cm);
+    \path [name path=line_sloped] (0.0cm, 0) -- (#1:1.5cm);
+    \draw [name intersections={of=circle_holder and line_sloped, by=p}]
+        [very thick, dashed, orange] {
+        (1.0cm,0) -- 
+            % node [right=1pt] {
+            %     $\angle\phi_{\omega} = \frac{\color{red}\sin \alpha}{\color{blue}\cos \alpha}$
+            % } 
+        (p)
+    };
+    \draw [important line, amplitude] {
+        (0,0) -- 
+            node[above=2pt] {$R_{#2}(n) = e^{-i \frac{2\pi ({#2}-1)}{K} n}$} 
+        (p)
+    };
+}
+
 %=================================== Start ===================================
 {
-    % Define: Colors
-    \colorlet{shadow}{white!00}
-    \colorlet{anglecover}{green!20}
-    \colorlet{anglecolor}{green!50!black}
-    \colorlet{amplitude}{orange!80!black}
-    \colorlet{sincolor}{red}
-    \colorlet{coscolor}{blue}
-    
     % Define: Axis
     \draw [help lines, step = 0.5cm] (-2.0, -2.0) grid (2.0, 2.0);
     \begin{scope}[axes]
@@ -36,38 +74,16 @@
 
     % Draw: Circle
     \draw (0,0) circle [radius = 1cm];
+    
+    % Draw: Rectangle-90
+    \foo draw_complex_exponential{30}{k}
+    \foo draw_complex_exponential{120}{k+\frac{\pi}{2}}
+    \foo draw_complex_exponential{210}{k+\pi}
+    \foo draw_complex_exponential{300}{k+\frac{3\pi}{2}}
 
-    % Draw: Rectangle-30
-    \filldraw [fill=anglecover, draw=anglecolor] { 
-        (0,0) -- (3mm, 0pt) arc [start angle=0, end angle=30, radius=3mm]
-    };
-    \draw (15:2mm) node[anglecolor] {$\angle\phi_{\omega}$};
-    \draw [important line, sincolor] {
-        (30:1cm) -- 
-            node[left =1pt, fill=shadow] {$\hat{a}_{\omega}$} 
-        (30:1cm |- x axis)
-    };
-    \draw [important line, coscolor] {
-        (30:1cm |- x axis) -- 
-            node[above=2pt, fill=shadow] {$\hat{b}_{\omega}$} 
-        (0,0)
-    };
-
-    % Draw: Calculate line-cross
-    \path [name path=circle_holder] (0,0) circle [radius = 1cm];
-    \path [name path=line_upward] (1.0cm, 0) -- (1.0cm, 1.0cm);
-    \path [name path=line_sloped] (0.0cm, 0) -- (30:1.5cm);
-    \draw [name intersections={of=circle_holder and line_sloped, by=p}]
-        [very thick,orange] {
-        (1.0cm,0) -- 
-            % node [right=1pt] {
-            %     $\angle\phi_{\omega} = \frac{\color{red}\sin \alpha}{\color{blue}\cos \alpha}$
-            % } 
-        (p)
-    };
-    \draw [important line, amplitude] {
-        (0,0) -- node[above=2pt, fill=shadow] {$A_{\omega}$} (p)
-    };
+     % Draw: Rectangle-180
+    % \foo draw_complex_exponential{30}{k}
+    % \foo draw_complex_exponential{210}{k+\pi}
 }
 %==================================== END ====================================
 \end{tikzpicture}
