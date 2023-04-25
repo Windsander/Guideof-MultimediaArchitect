@@ -59,9 +59,9 @@ $$
 }
 $$
 
-根据根据欧拉公式（Euler's Formula）可知 $${\displaystyle 
+根据 **欧拉公式（Euler's Formula）** 可知 $${\displaystyle 
  \begin{aligned}
-   e^{ix} = cos(x) + i \cdot sin(x) \\
+   e^{ix} = cos(x) + i \cdot sin(x)
  \end{aligned}
 }$$ ， 带入上式有：
 

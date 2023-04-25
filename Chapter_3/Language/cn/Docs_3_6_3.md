@@ -144,7 +144,7 @@ $$
  \begin{aligned}
    (Y-16)  \cdot 255 &= (+0.299 \cdot R + 0.587 \cdot G + 0.114 \cdot B) \cdot (235 - 16) \\
    (U-128)  \cdot 255 &= (-0.299 \cdot R - 0.587 \cdot G + 0.886 \cdot B) \cdot (235 - 16) \\
-   (V-128)  \cdot 255 &= (+0.701 \cdot R - 0.587 \cdot G - 0.114 \cdot B) \cdot (235 - 16) \\
+   (V-128)  \cdot 255 &= (+0.701 \cdot R - 0.587 \cdot G - 0.114 \cdot B) \cdot (235 - 16) 
  \end{aligned}
 }
 $$
@@ -156,7 +156,7 @@ $$
 {\begin{bmatrix} 
    0.257     &    0.504     &   0.098    \\
   -0.148     &   -0.291     &   0.439    \\
-   0.439     &   -0.368     &  -0.071    \\
+   0.439     &   -0.368     &  -0.071    
 \end{bmatrix}}
 \cdot
 \left(
@@ -203,7 +203,7 @@ $$
 <figure>
    <img style="border-radius: 0.3125em;
       box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "1100" height = "2250"
+      width = "1100" height = "2050"
       src="../../Pictures/YUV_digital_data_format（V）.png" alt="">
    <figcaption>
       <p>图 3.6.3-5 YUV 存储格式（Data Format）谱系图</p>
@@ -217,7 +217,7 @@ $$
 <figure>
    <img style="border-radius: 0.3125em;
       box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "1100" height = "2500"
+      width = "1100" height = "2300"
       src="../../Pictures/YUV_digital_data_format_table.png" alt="">
    <figcaption>
       <p>图 3.6.3-6 YUV 存储格式（Data Format）对比说明</p>

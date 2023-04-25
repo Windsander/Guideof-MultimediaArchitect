@@ -82,7 +82,7 @@ $$
        {\frac {G-B} {C}} + 0     ,& {\text{if }} M=R \\
        {\frac {B-R} {C}} + 2     ,& {\text{if }} M=G \\
        {\frac {R-G} {C}} + 4     ,& {\text{if }} M=B
-     \end{cases}} \\
+     \end{cases}} 
  \end{aligned}
 }
 $$
@@ -143,7 +143,7 @@ $$
  \begin{aligned}
    &V = \max(R,G,B) = M \\
    &I \ = \text{avg} (R,G,B)={\tfrac {(R+G+B)}{3}} \\
-   &L = \text {mid} (R,G,B)={\tfrac {(\max(R,G,B)+\min(R,G,B))}{2}} \\
+   &L = \text {mid} (R,G,B)={\tfrac {(\max(R,G,B)+\min(R,G,B))}{2}} 
  \end{aligned}
 }
 $$
@@ -185,7 +185,7 @@ $$
         \begin{cases} 
           {0}, &{\text{if }} L = 1 {\text{ or }} L = 0 \\
           {\frac {C}{1-|2L-1|}}, \ \ \ \ \ \ &{\text{otherwise}} 
-        \end{cases}} \\
+        \end{cases}} 
  \end{aligned}
 }
 $$
@@ -236,7 +236,7 @@ $$
     \begin{cases}
       & H = \text {atan2} (\beta ,\alpha ) \\
       & S = \text {range} (R,G,B) \cdot \max(R,G,B)^{-1} \\
-      & V = \max(R,G,B) \\
+      & V = \max(R,G,B) 
     \end{cases}
    } \\
 
@@ -248,7 +248,7 @@ $$
             {0}, &{\text{if }} I = 0 \\
             1- {\min(R,G,B)} \cdot {\text {avg} (R,G,B)^{-1}}, \ \ &{\text{if }} {I \neq 0}
           \end{cases}} \\
-      & I \ = \text {avg} (R,G,B)={\tfrac {(R+G+B)}{3}} \\
+      & I \ = \text {avg} (R,G,B)={\tfrac {(R+G+B)}{3}} 
     \end{cases}
    } \\
 
@@ -256,9 +256,9 @@ $$
     \begin{cases}
       & H = \text {atan2} (\beta ,\alpha ) \\
       & S = \tfrac {1}{2} \cdot \text {range} (R,G,B) \cdot {\min(L,\ 1 - L)}^{-1} \\
-      & L = \text {mid} (R,G,B)={\tfrac {(\max(R,G,B)+\min(R,G,B))}{2}} \\
+      & L = \text {mid} (R,G,B)={\tfrac {(\max(R,G,B)+\min(R,G,B))}{2}} 
     \end{cases}
-   } \\
+   } 
  \end{aligned}
 }
 $$
@@ -268,32 +268,35 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   & H ,\ {\angle_{const}} \in [0^ \circ,\ 360^ \circ) \\
-   &{F_{HSV}}^{-1} = {
+    H ,\ {\angle_{const}} &\in [0^ \circ,\ 360^ \circ) \\
+   {F_{HSV}}^{-1} &= {
       \begin{cases}
         & k = \{(\tfrac {\angle_{const} + H}{60^ \circ})\ \bmod\ 6\} \\
         & sector = \max(0,\ \min(k,\ 4-k,\ 1)) \\
-        & f(H,S,V)_{\angle_{const}} = f_{\angle_{const}} ^{hsv} = V-VS \cdot sector \\
+        & f(H,S,V)_{\angle_{const}} = f_{\angle_{const}} ^{hsv} = V-VS \cdot sector 
       \end{cases}
-    } \Rightarrow 
+    } \\
+   &\Rightarrow 
       (R,G,B) = {F_{HSV}}^{-1}(H,S,V) = (f_{300^ \circ}^{hsv},\ f_{180^ \circ}^{hsv},\ f_{60^ \circ}^{hsv}) \\
-
-   &{F_{HSI}}^{-1} = {
+   \\
+   {F_{HSI}}^{-1} &= {
       \begin{cases}
         & k = \{(\tfrac {\angle_{const} + H}{60^ \circ})\ \bmod\ 6\} \\
         & sector = \max(0,\ \min(k,\ 4-k,\ 1)) \\
-        & f(H,S,I)_{\angle_{const}} = f_{\angle_{const}} ^{hsi} = I-IS \cdot sector \\ 
+        & f(H,S,I)_{\angle_{const}} = f_{\angle_{const}} ^{hsi} = I-IS \cdot sector  
       \end{cases}
-    } \Rightarrow 
+    } \\
+    &\Rightarrow 
       (R,G,B) = {F_{HSI}}^{-1}(H,S,I) = (f_{300^ \circ}^{hsi},\ f_{180^ \circ}^{hsi},\ f_{60^ \circ}^{hsi}) \\
-
-   &{F_{HSL}}^{-1} = {
+   \\
+   {F_{HSL}}^{-1} &= {
       \begin{cases}
         & k = \{(\tfrac {\angle_{const} + H}{60^ \circ})\ \bmod\ 6\} \\
         & sector = \max(0,\ \min(k,\ 4-k,\ 1)) \\
-        & f(H,S,L)_{\angle_{const}} = f_{\angle_{const}} ^{hsl} = {L - LS \cdot sector}\\ 
+        & f(H,S,L)_{\angle_{const}} = f_{\angle_{const}} ^{hsl} = {L - LS \cdot sector} 
       \end{cases}
-    } \Rightarrow 
+    } \\
+    &\Rightarrow 
       (R,G,B) = {F_{HSL}}^{-1}(H,S,L) = (f_{300^ \circ}^{hsl},\ f_{180^ \circ}^{hsl},\ f_{60^ \circ}^{hsl}) \\
  \end{aligned}
 }
