@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>http://arikanli.gitbook.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 20 Apr 2023 08:27:56 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Apr 2023 11:14:33 GMT</lastBuildDate>
         <atom:link href="http://arikanli.gitbook.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -29,6 +29,13 @@
             <description><![CDATA[本书由 李述博©（Arikan.Li©）独立完成]]></description>
             <link>http://arikanli.gitbook.io/COPYRIGHT.html</link>
             <guid isPermaLink="true">http://arikanli.gitbook.io/COPYRIGHT.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[难度向导]]></title>
+            <description><![CDATA[入门的四章也是概念与基础理论最多的章节了。这几张的工程实践较少，但非常重要的原理、规格、定义及多。是后续更为复杂的工程实践中，被音视频工程师们做为根基般的存在。因此非常重要。]]></description>
+            <link>http://arikanli.gitbook.io/GUIDER.html</link>
+            <guid isPermaLink="true">http://arikanli.gitbook.io/GUIDER.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
@@ -60,8 +67,8 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[1.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）]]></title>
-            <description><![CDATA[信号学中，将沿空间分布的信号称为二维信号（2D Signal）。图像信号就是二维信号。]]></description>
+            <title><![CDATA[1.1.3 快速傅立叶（FFT [Fast Fourier Transform]）]]></title>
+            <description><![CDATA[快速傅立叶是对离散傅立叶的数学逼近。其旨在通过有限点的分布拟合，快速逼近离散傅立叶变换结果。]]></description>
             <link>http://arikanli.gitbook.io/Chapter_1/Language/cn/Docs_1_1_3.html</link>
             <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_1/Language/cn/Docs_1_1_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
