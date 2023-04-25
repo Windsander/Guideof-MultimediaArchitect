@@ -13,11 +13,13 @@
 
 这就是库利-图奇算法的关键，在后续的算法的演进过程中逐步被提炼，形成了时域抽取这一核心概念 [\[11\]][ref] 。
 
-## **快速傅里叶变换的核心 - 时域抽取（DIT [Decimation-in-Time]）**
+## **时域抽取（DIT [Decimation-in-Time]）**
 
 **时域抽取（DIT [Decimation-in-Time]）是从时域（TD [Time Domain]）对一维信号进行可逆解构的一种数学工具。** 它的工作流包含有两个阶段：
 
-**分组离散傅立叶（Grouped DFT）** 和 **旋转因子转换（Rotation Factor Convert）** ；
+**分组离散傅立叶（Grouped DFT）** 和 **旋转因子转换（Rotation Factor Convert）**
+
+<br>
 
 ## **时域抽取第一步 - 分组离散傅立叶（Grouped DFT）**
 
