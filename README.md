@@ -54,16 +54,17 @@
 
 ## **目录**
 
-### 基础实践篇
+### 多媒体工程基础 & 音视频分析
 
 * [一、音视频常用基础算法](Chapter_1/Language/cn/Apex_1_Introduce.md)
     * [1.1 信号分析的核心算法-傅立叶变换](Chapter_1/Language/cn/Docs_1_1.md)
         * [1.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）](Chapter_1/Language/cn/Docs_1_1_1.md)
         * [1.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）](Chapter_1/Language/cn/Docs_1_1_2.md)
         * [1.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）](Chapter_1/Language/cn/Docs_1_1_3.md)
+		* [1.1.4 快速傅里叶矩阵化 - 多常数乘法矩阵逼近（Matrix-MCM Approch）](Chapter_1/Language/cn/Docs_1_1_4.md)
     * [1.2 傅里叶变换的概念延伸-常用滤波算法]()
-        * [1.2.1 双边滤波（Bilateral Filter）]()
-	    * [1.2.2 高斯滤波（Gauss Filter）]()
+	    * [1.2.1 高斯滤波（Gauss Filter）]()
+        * [1.2.2 双边滤波（Bilateral Filter）]()
 	    * [1.2.3 索贝尔滤波（Sobel Filter）]()
 	    * [1.2.4 非极大值抑制（NMS [Non-Maximum Suppression]）]()
     * [1.3 时间冗余控制-常用区域检测与运动矢量算法]()
@@ -81,6 +82,27 @@
 	    * [1.5.1 标量量化（SQ [Scalar Quantization]）]()
 	    * [1.5.2 矢量量化（VQ [Vector Quantization]）]()
 	    * [1.5.3 率失真择优量化（RDOQ [Rate Distortion Optimized Quantization]）]()
+
+* [二、数字音频的保存与还原](Chapter_2/Language/cn/Apex_2_Introduce.md)
+    * [2.1 音频基础](Chapter_2/Language/cn/Docs_2_1.md)
+	* [2.2 音频三要素（Three Elements of Audio）]()
+		* [2.2.1 幅度 & 响度（Volume）]()
+		* [2.2.2 频率 & 音调（Pitch）]()
+		* [2.2.3 波形 & 音色（Timbre）]()
+	* [2.3 音频的解构]()
+		* [2.3.1 时域图（Time Domain Graph） & 频域图（Frequency Domain Graph）]()
+		* [2.3.2 频谱图（Spectrogram）]()
+		* [2.3.3 主观调性（Tone）& 调性网络（Tonnetz）]()
+	* [2.4 音频的采样与调制]()
+		* [2.4.1 数字信号（Digital Signal）& 模拟信号（Analog Signal）]()
+		* [2.4.3 采样率（Sample Rate） & 采样位深（Bit Depth） & 采样声道（Channel）]()
+		* [2.4.2 脉冲编码调制（PCM [Pulse-Code Modulation]）]()
+		* [2.4.3 脉冲密度调制（PDM [Pulse-Density Modulation]）]()
+	* [2.5 音频的存储]()
+		* [2.5.1 音频格式（Audio Format）]()
+		* [2.5.2 无压缩编码格式（Uncompressed Encode）]()
+		* [2.5.3 无损压缩编码格式（Lossless Encode）]()
+		* [2.5.4 有损压缩编码格式（Uncompressed Encode）]()
 
 * [三、色彩的运用与存储](Chapter_3/Language/cn/Apex_3_Introduce.md)
     * [3.1 色彩基础](Chapter_3/Language/cn/Docs_3_1.md)
@@ -113,6 +135,22 @@
 	    * [3.6.1 色彩格式（Color Format）与色彩存储](Chapter_3/Language/cn/Docs_3_6_1.md)
 	    * [3.6.2 RGB 体系色彩格式](Chapter_3/Language/cn/Docs_3_6_2.md)
 	    * [3.6.3 YUV 体系色彩格式](Chapter_3/Language/cn/Docs_3_6_3.md)
+
+* [四、音视频的单帧与帧分析]()
+	* [4.1 单帧的概念]()
+		* [4.1.1 音频帧（Chunk）& 视频帧（Frame）]()
+		* [4.1.2 时间戳（Timestamp）]()
+	* [4.1 常用分析工具介绍]()
+		* [4.1.1 视频分析 StreamEye & YUV-Viewer]()
+		* [4.1.2 音频分析 Audacity & Sonic Visualizer]()
+	* [4.2 常用分析 Python 库介绍]()
+		* [4.2.1 常用 Python 数学库（Numpy、Pandas、Mateplotlib）]()
+		* [4.2.2 视频分析库 ffmpeg-py、color-science]()
+		* [4.2.3 音频分析库 librosa]()
+	* [4.3 通过 Python 的手写程序片处理]()
+		* [4.3.1 搭建基本分析环境]()
+		* [4.3.2 分析一段音频]()
+		* [4.3.3 分析一段视频]()
 
 
 <br>
