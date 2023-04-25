@@ -30,7 +30,7 @@ $$
  \begin{aligned}
    {\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\omega_1},{\mathcal {F}}_{\omega_2},& \ ...\ ,{\mathcal {F}}_{\omega_N}] \quad \quad T = NK \\
    \hat{f}(\omega) = \sum_{t = 0}^{T} f(t) \cdot e^{-i \omega t}  \ \ \ \ \ &\Leftrightarrow \ \ \ \ \ 
-   f(t) = \frac{1}{K} \sum_{\omega_0}^{\omega_N} \hat{f}(\omega) \cdot {\mathcal {F}}_{\omega}(t)
+   f(t) = \frac{1}{K} \sum_{\omega_0}^{\omega_N} \hat{f}(\omega) \cdot {\mathcal {F}}_{\omega}(t) \\
  \end{aligned}
 }
 $$
@@ -43,7 +43,7 @@ $$
    \hat{f}(\omega) = \sum_{t = 0}^{T} f(t) \cdot e^{-i \omega t} &\rightarrow \hat{f}(n)  =\sum_{t = 0}^{T} f(t) \cdot e^{-i \tfrac{2\pi n}{T} t } \\
    f(t) = \frac{1}{K} \sum_{\omega_0}^{\omega_{N}} \hat{f}(\omega) \cdot {\mathcal {F}}_{\omega}(t)  &\rightarrow f(t) = \frac{1}{K} \sum_{n=1}^{N} \hat{f}(n) \cdot {\mathcal {F}}_{\omega}(t) \\
    \hat{f}(n)  =\sum_{t = 0}^{T} f(t) \cdot e^{-i \tfrac{2\pi n}{T} t }  \quad \quad &\Leftrightarrow \quad \quad
-   f(t) = \frac{1}{K} \sum_{n=1}^{N} \hat{f}(n) \cdot {\mathcal {F}}_{\omega}(t)
+   f(t) = \frac{1}{K} \sum_{n=1}^{N} \hat{f}(n) \cdot {\mathcal {F}}_{\omega}(t) \\
  \end{aligned}
 }
 $$
@@ -75,7 +75,7 @@ $$
                      + \ ...\ 
                      + \sum_{t=1}^{N} f(t + (K-1)N) \cdot e^{-i \tfrac{2\pi (t + (K-1)N)}{T} \cdot n } 
                      + \ f(0) \\
-               &= \sum_{k=1}^{K} \sum_{t=1}^{N} f(t+ (k-1)N) \cdot e^{-i \tfrac{2\pi t}{T} n } \cdot e^{-i \tfrac{2\pi (k-1)}{K} n } + \ f(0)
+               &= \sum_{k=1}^{K} \sum_{t=1}^{N} f(t+ (k-1)N) \cdot e^{-i \tfrac{2\pi t}{T} n } \cdot e^{-i \tfrac{2\pi (k-1)}{K} n } + \ f(0) \\
  \end{aligned}
 }
 $$
@@ -86,7 +86,7 @@ $$
 {\displaystyle 
  \begin{aligned}
    \hat{f}(n)  &= \sum_{k=1}^{K} (\sum_{t=1}^{N} f(t+ (k-1)N) \cdot e^{-i \tfrac{2\pi t}{T} n }) \cdot e^{-i \tfrac{2\pi (k-1)}{K} n } \\
-               &= \sum_{k=1}^{K} e^{-i \tfrac{2\pi (k-1)}{K} n } \cdot (\sum_{(k-1)N}^{t = kN} f(t) \cdot  {\mathcal {F}}_{\omega}^{-1}(n))
+               &= \sum_{k=1}^{K} e^{-i \tfrac{2\pi (k-1)}{K} n } \cdot (\sum_{(k-1)N}^{t = kN} f(t) \cdot  {\mathcal {F}}_{\omega}^{-1}(n)) \\
  \end{aligned}
 }
 $$
@@ -100,7 +100,7 @@ $$
  \begin{aligned}
    R_1(n) & = 1 \\
    \hat{f}(n)  &= \sum_{k=1}^{K} R_k(n) \cdot \hat{f}_k(n) = R_1(n) \cdot \hat{f}_1(n) +  R_2(n) \cdot \hat{f}_2(n) + \ ...\ + R_K(n) \cdot \hat{f}_K(n) \\
-   \hat{f}(n)  &= \hat{f}_1(n) +  R_2(n) \cdot \hat{f}_2(n) + \ ...\ + R_K(n) \cdot \hat{f}_K(n) 
+   \hat{f}(n)  &= \hat{f}_1(n) +  R_2(n) \cdot \hat{f}_2(n) + \ ...\ + R_K(n) \cdot \hat{f}_K(n)  \\
  \end{aligned}
 }
 $$
