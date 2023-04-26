@@ -24,8 +24,8 @@
 
 %=================================== Start ===================================
 {
-    \node[box=4] (box-t) {$N/2$ \\\\ DFT};
-    \node[box=4, below=of box-t] (box-b) {$N/2$ \\\\ DFT};
+    \node[box=4] (box-t) {$N = \frac{T}{2}$ \\\\ DFT};
+    \node[box=4, below=of box-t] (box-b) {$N = \frac{T}{2}$ \\\\ DFT};
 
     \foreach \s[count=\i] [
         evaluate={\sa=int(\s*2)},
