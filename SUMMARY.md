@@ -1,9 +1,10 @@
 # Table of contents
 
 * [《音视频架构师手册》©](README.md)
-* [<font color=oragan> =[>> 关于作者© <<]= </font>](AUTHOR.md)
-* [<font color=red> =[>> 版权申明© <<]= </font>](COPYRIGHT.md)
-* [<font color=red> =[>> 难度向导© <<]= </font>](GUIDER.md)
+	* [<font color=oragan> =[>> 关于作者© <<]= </font>](AUTHOR.md)
+	* [<font color=red> =[>> 版权申明© <<]= </font>](COPYRIGHT.md)
+	* [<font color=red> =[>> 难度向导© <<]= </font>](GUIDER.md)
+	* [<font color=oragan> =[>> 赞助本作© <<]= </font>](DONATE.md)
 * [一、音视频常用基础算法](Chapter_1/Language/cn/Apex_1_Introduce.md)
     * [1.1 信号分析的核心算法-傅立叶变换](Chapter_1/Language/cn/Docs_1_1.md)
         * [1.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）](Chapter_1/Language/cn/Docs_1_1_1.md)
@@ -63,4 +64,3 @@
 	    * [3.6.2 RGB 体系色彩格式](Chapter_3/Language/cn/Docs_3_6_2.md)
 	    * [3.6.3 YUV 体系色彩格式](Chapter_3/Language/cn/Docs_3_6_3.md)
 	* [【参考文献】](Chapter_3/Language/cn/References_3.md)
-* [<font color=oragan> =[>> 赞助本作© <<]= </font>](DONATE.md)
