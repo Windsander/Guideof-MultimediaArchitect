@@ -1,6 +1,6 @@
 \documentclass{standalone}
 \usepackage{tikz}
-\usetikzlibrary{positioning,circuits.ee.IEC}
+\usetikzlibrary{positioning, circuits.ee.IEC, decorations.pathreplacing}
 
 \begin{document}
 \begin{tikzpicture}
@@ -24,15 +24,15 @@
 
 %=================================== Start ===================================
 {
-    \node[box=4] (box-t) {$N = \frac{T}{2}$ \\\\ DFT};
-    \node[box=4, below=of box-t] (box-b) {$N = \frac{T}{2}$ \\\\ DFT};
+    \node[box=4] (box-t) {$N = \frac{T}{2}$ \\\\ DFT \\ ${\mathcal {F}}_{\omega}$};
+    \node[box=4, below=of box-t] (box-b) {$N = \frac{T}{2}$ \\\\ DFT \\ ${\mathcal {F}}_{\omega}$};
 
     \foreach \s[count=\i] [
         evaluate={\sa=int(\s*2)},
         evaluate={\sb=int(\s*2+1)}
     ] in {0,1,2,3} {
-        \path (box-t-\i-west) edge node[at end, left]{$S[{\sa}] = S_1[\s]$} ++(left:.5);
-        \path (box-b-\i-west) edge node[at end, left]{$S[{\sb}] = S_2[\s]$} ++(left:.5);
+        \path (box-t-\i-west) edge node[at end, left](f-t-\i){$f({\sa})$} ++(left:.5);
+        \path (box-b-\i-west) edge node[at end, left](f-b-\i){$f({\sb})$} ++(left:.5);
     }
     \foreach \b/\s[count=\k] in {t/1, b/2} {
         \foreach \i [
@@ -41,9 +41,23 @@
         ] in {1,...,4} {
             \node [contact] (conn-\b-\i) at ([shift=(right:1.5)] box-\b-\i-east) {}
             edge node[above] {$\hat{f}_{\s}(\j)$} (box-\b-\i-east)
-            node [contact, label=right:{$f(\J)$}] (conn-\b-\i') at ([shift=(right:5)] box-\b-\i-east) {};
+            node [contact, label=right:{$\hat{f}(\J)$}](conn-\b-\i') at ([shift=(right:5)] box-\b-\i-east) {};
         }
     }  
+
+    \node (S-1-0) [left=of f-t-1, left=3pt] {};
+    \node (S-1-1) [left=of f-t-4, left=3pt] {};
+    \node (S-2-0) [left=of f-b-1, left=3pt] {};
+    \node (S-2-1) [left=of f-b-4, left=3pt] {};
+    \node (S-1) [left=of f-t-1, left=23pt] {};
+    \node (S-2) [left=of f-b-4, left=23pt] {};
+    \draw[decorate, decoration={brace,mirror}] (S-1-0) -- node[left=2pt] {$S^{\prime}_1$} (S-1-1);
+    \draw[decorate, decoration={brace,mirror}] (S-2-0) -- node[left=2pt] {$S^{\prime}_2$} (S-2-1);
+    \draw[decorate, decoration={brace,mirror}] (S-1) -- node[left=2pt] {$S$} (S-2);
+
+    \node (O-1) [right=of conn-t-1', right=23pt] {};
+    \node (O-2) [right=of conn-b-4', right=23pt] {};
+    \draw[decorate, decoration={brace}] (O-1) -- node[right=2pt] {$\hat{f}$} (O-2);
 
     \begin{scope}[every info/.append style={font=\scriptsize, inner sep=+.5pt}]
     {

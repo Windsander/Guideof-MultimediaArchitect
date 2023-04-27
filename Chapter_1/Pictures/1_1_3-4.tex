@@ -1,0 +1,93 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning, circuits.ee.IEC, arrows, decorations.pathreplacing}
+
+\begin{document}
+\begin{tikzpicture}
+[
+    yscale=1.0, xscale=1.2, node distance=0.3cm, auto,
+    % The strategy is to create nodes with names: N-column-row
+    % Input nodes are named N-0-0 ... N-0-7
+    % Output nodes are named N-8-0 ... N-8-5
+    circuit ee IEC
+]
+
+%=================================== Start ===================================
+\tikzstyle{n}   = [circle, fill, minimum size=4pt,inner sep=0pt, outer sep=0pt]
+\tikzstyle{mul} = [circle, draw, inner sep=-1pt]
+\tikzstyle{box} = [
+    draw, align=center, shape=rectangle, minimum width=1.5cm, minimum height=3.5cm,
+    append after command={
+        % see also: https://tex.stackexchange.com/a/129668
+        \foreach \side in {east, west} {
+            \foreach \i in {1,...,#1} {
+            %  oordinate (\tikzlastnode-\i-\side)
+            %  at ($(\tikzlastnode.north \side)!{(\i-.5)/(#1)}!(\tikzlastnode.south \side)$)
+                (\tikzlastnode.north \side) edge[draw=none, line to]
+                    coordinate[pos=(\i-.5)/(#1)] (\tikzlastnode-\i-\side) (\tikzlastnode.south \side)
+            }
+        }
+    }
+]
+
+% Define two helper counters
+\newcounter{x} \newcounter{y}
+{
+    % \node[box=4] (box-t) {$N = \frac{T}{2}$ \\\\ DFT};
+    % \node[box=4, below=of box-t] (box-b) {$N = \frac{T}{2}$ \\\\ DFT};
+
+    % Draw groups
+    \foreach \y in {0,...,7}
+        \node (S-\y) at (-1.25,-\y) {};
+    \draw[decorate, decoration={brace,mirror}] (S-0) -- node[left=2pt] {$S_1$} (S-3);
+    \draw[decorate, decoration={brace,mirror}] (S-4) -- node[left=2pt] {$S_2$} (S-7);
+    
+
+    % Draw inputs
+    \foreach \y in {0,...,7}
+        \node[n, pin={[pin edge={latex'-,black}]left:$f(\y)$}]
+              (N-0-\y) at (0,-\y) {};
+    % Draw outputs
+    \foreach \y / \idx / \p in {0/0/1, 1/1/1, 2/0/2, 3/1/2, 4/0/1, 5/1/1, 6/0/2, 7/1/2}
+        \node[n, pin={[pin edge={-latex',black}]right:$R_{\p}\hat{f}_{\p}(\idx)$}]
+              (N-5-\y) at (3,-\y) {};
+   % draw connector nodes
+    \foreach \y in {0,...,7}
+        \foreach \x / \c in {1/1, 2/3, 3/4}
+            \node[n, name=N-\c-\y] at (\x,-\y) {};
+    % draw x nodes
+    \foreach \y in {0,...,7}
+        \foreach \x / \c  in {1/2}
+            \node[mul, right of=N-\x-\y] (N-\c-\y) {${\times}$};
+    
+    % horizontal connections
+    % Note the use of simple counter arithmetics to get correct
+    % indexes.
+    \foreach \y in {0,...,7}
+        \foreach \x in {0,1,3}
+        {
+            \setcounter{x}{\x}\stepcounter{x}
+            \path (N-\x-\y) edge[-] (N-\arabic{x}-\y);
+        }
+    % Draw the W_8 coefficients
+    \setcounter{y}{0}
+    \foreach \i / \j / \p in {0/1/0, 1/1/0, 2/1/0, 3/1/0, 0/2/1, 1/2/1, 2/2/1, 3/2/1} 
+    {
+        \path (N-2-\arabic{y}) edge[-] node {$\hat{f}_{\j}(\i)$}
+              (N-3-\arabic{y});
+        \addtocounter{y}{1}
+    }
+    % Connect nodes
+    \foreach \sourcey / \desty in {0/4, 1/5, 2/6, 3/7,
+                                   4/0, 5/1, 6/2, 7/3}
+       \path (N-0-\sourcey.east) edge[-] (N-1-\desty.west);
+    \foreach \sourcey / \desty in {0/2, 1/3, 
+                                   2/0, 3/1,
+                                   4/6, 5/7, 
+                                   6/4, 7/5}
+        \path (N-3-\sourcey.east) edge[-] (N-4-\desty.west);
+}
+%==================================== END ====================================
+
+\end{tikzpicture}
+\end{document}
