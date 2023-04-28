@@ -86,7 +86,7 @@ $$
 {\displaystyle 
  \begin{aligned}
    \hat{f}(n)  &= \sum_{k=1}^{K} (\sum_{t=0}^{N-1} f(t+ (k-1)N) \cdot e^{-i \tfrac{2\pi t}{T} n }) \cdot e^{-i \tfrac{2\pi (k-1)}{K} n } \\
-               &= \sum_{k=1}^{K} e^{-i \tfrac{2\pi (k-1)}{K} n } \cdot [\sum_{(k-1)N}^{kN-1} \vert_t \ f(t) \cdot  \mathcal {F}_{\omega}^{-1}(tn) \quad ]
+               &= \sum_{k=1}^{K} e^{-i \tfrac{2\pi (k-1)}{K} n } \cdot [\sum_{(k-1)N}^{kN-1} \vert_t \ f(t) \cdot  \mathcal {F}_{\omega}^{-1}(tn) \quad ] \\
  \end{aligned}
 }
 $$
@@ -228,18 +228,18 @@ $$
     {
       \begin{bmatrix} 
         f(0)    \\
-        f(1)    \\
+        f(1)    
       \end{bmatrix}
     }   = 
     {
       \begin{bmatrix} 
         1 \quad , +\mathcal {F}_{\omega_2}    \\
-        1 \quad , -\mathcal {F}_{\omega_2}    \\
+        1 \quad , -\mathcal {F}_{\omega_2}    
       \end{bmatrix}
     } \cdot {
       \begin{bmatrix} 
         \hat{f}(0)    \\
-        \hat{f}(1)    \\
+        \hat{f}(1)    
       \end{bmatrix}
     }
    \\
