@@ -9,28 +9,30 @@
 
 在库利-图奇算法提出的时候，分治法已经被广泛的用来做计算机数组求最大值（Max）和排序（Sort）的处理当中。虽然离散的数组和周期信号之间，在信息密度和特征上存在较大差异。但如果考虑到周期信号沿传播维度重复，和傅里叶变换傅里叶基的特征，会发现：
 
-如果将一维信号离散傅里叶变换的有限基底函数族 $${\mathcal {F}}_{\omega}$$ 构成的傅里叶基看作最小元，那么对其在时域上进行分组重排，也是可行的。从而使信号的一组基底函数基，能够以树状结构分类，并拆解特征表示原信号函数。
+如果将一维信号离散傅里叶变换的有限基底函数族 $$\mathcal {F}_{\omega}$$ 构成的傅里叶基看作最小元，那么对其在时域上进行分组重排，也是可行的。从而使信号的一组基底函数基，能够以树状结构分类，并拆解特征表示原信号函数。
 
 这就是库利-图奇算法的关键，在后续的算法的演进过程中逐步被提炼，形成了时域抽取这一核心概念 [\[11\]][ref] 。
 
-## **快速傅里叶变换的核心 - 时域抽取（DIT [Decimation-in-Time]）**
+## **时域抽取（DIT [Decimation-in-Time]）**
 
 **时域抽取（DIT [Decimation-in-Time]）是从时域（TD [Time Domain]）对一维信号进行可逆解构的一种数学工具。** 它的工作流包含有两个阶段：
 
-**分组离散傅立叶（Grouped DFT）** 和 **旋转因子转换（Rotation Factor Convert）** ；
+**分组离散傅立叶（Grouped DFT）** 和 **旋转因子转换（Rotation Factor Convert）**
+
+<br>
 
 ## **时域抽取第一步 - 分组离散傅立叶（Grouped DFT）**
 
-**分组离散傅立叶（Grouped DFT）** 是指，在信号的单个周期 $$T$$ 内，以等间距有限次取  个原始离散采样后。将周期内所有采样点信息以 $$step =\tfrac {T}{K} = N$$ 的步长等分，得到 $$K$$ 组顺序连续的子采样分组，依照组别记为样本子集 $$[S_1,S_2,\ ...\ , S_K]$$ 。每组子集都有 $$S_k \in [S((k-1) \cdot N),\ S(k \cdot N)]$$ 的样本取样区间。
+**分组离散傅立叶（Grouped DFT）** 是指，在信号的单个周期 $$T$$ 内，以等间距有限次取  个原始离散采样后。将周期内所有采样点信息以 $$step =\tfrac {T}{K} = N$$ 的步长等分，得到 $$K$$ 组顺序连续的子采样分组，依照组别记为样本子集 $$[S_1,S_2,\ ...\ , S_K]$$ 。每组子集都有 $$S_k \in [f_k((k-1) \cdot N),\ f_k(k \cdot N))$$ 的样本取样区间。
 
-此时，记组内索引为 $$n$$ ，有 $$n \in [1,\ N]$$ 。按照顺序从各组中，取组内索引位置为 $$n$$ 的元素，组成包含数据量为 $${\mathcal {F}}_{\omega_n}$$ 的基底函数 $${\mathcal {F}}_{\omega_n}$$ 的波峰数组。可以逐个拟合，得到一组当前一维信号的有限基底函数族 $${\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\omega_1}, {\mathcal {F}}_{\omega_2},\ ...\ ,{\mathcal {F}}_{\omega_N}]$$ ，记为当前解的最小傅立叶基。根据一维离散傅立叶变换有：
+此时，记组内索引为 $$n$$ ，有 $$n \in [1,\ N]$$ 。按照顺序从各组中，取组内索引位置为 $$n$$ 的元素，组成包含数据量为 $$\mathcal {F}_{\omega_n}$$ 的基底函数 $$\mathcal {F}_{\omega_n}$$ 的波峰数组。可以逐个拟合，得到一组当前一维信号的有限基底函数族 $$\mathcal {F}_{\omega} = [\mathcal {F}_{\omega_1}, \mathcal {F}_{\omega_2},\ ...\ ,\mathcal {F}_{\omega_N}]$$ ，记为当前解的最小傅立叶基。根据一维离散傅立叶变换有：
 
 $$
 {\displaystyle 
  \begin{aligned}
-   {\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\omega_1},{\mathcal {F}}_{\omega_2},& \ ...\ ,{\mathcal {F}}_{\omega_N}] \quad \quad T = NK \\
+   \mathcal {F}_{\omega} = [\mathcal {F}_{\omega_1},\mathcal {F}_{\omega_2},& \ ...\ ,\mathcal {F}_{\omega_N}] \quad \quad T = NK \\
    \hat{f}(\omega) = \sum_{t = 0}^{T} f(t) \cdot e^{-i \omega t}  \ \ \ \ \ &\Leftrightarrow \ \ \ \ \ 
-   f(t) = \frac{1}{K} \sum_{\omega_0}^{\omega_N} \hat{f}(\omega) \cdot {\mathcal {F}}_{\omega}(t) \\
+   f(t) = \frac{1}{K} \sum_{\omega_0}^{\omega_N} \hat{f}(\omega) \cdot \mathcal {F}_{\omega}(t) \\
  \end{aligned}
 }
 $$
@@ -41,9 +43,9 @@ $$
 {\displaystyle 
  \begin{aligned}
    \hat{f}(\omega) = \sum_{t = 0}^{T} f(t) \cdot e^{-i \omega t} &\rightarrow \hat{f}(n)  =\sum_{t = 0}^{T} f(t) \cdot e^{-i \tfrac{2\pi n}{T} t } \\
-   f(t) = \frac{1}{K} \sum_{\omega_0}^{\omega_{N}} \hat{f}(\omega) \cdot {\mathcal {F}}_{\omega}(t)  &\rightarrow f(t) = \frac{1}{K} \sum_{n=1}^{N} \hat{f}(n) \cdot {\mathcal {F}}_{\omega}(t) \\
+   f(t) = \frac{1}{N} \sum_{\omega_0}^{\omega_{N}} \hat{f}(\omega) \cdot \mathcal {F}_{\omega}(t)  &\rightarrow f(t) = \frac{1}{N} \sum_{n=1}^{N} \hat{f}(n) \cdot \mathcal {F}_{\omega}(t) \\
    \hat{f}(n)  =\sum_{t = 0}^{T} f(t) \cdot e^{-i \tfrac{2\pi n}{T} t }  \quad \quad &\Leftrightarrow \quad \quad
-   f(t) = \frac{1}{K} \sum_{n=1}^{N} \hat{f}(n) \cdot {\mathcal {F}}_{\omega}(t) \\
+   f(t) = \frac{1}{N} \sum_{n=1}^{N} \hat{f}(n) \cdot \mathcal {F}_{\omega}(t)
  \end{aligned}
 }
 $$
@@ -53,8 +55,8 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   \hat{f}(n)  =\sum_{k=1}^{K}\sum_{(k-1)N}^{t = kN} f(t) \cdot e^{-i \tfrac{2\pi n}{T} t }  \quad \quad &\Leftrightarrow \quad \quad
-   f(t) = \frac{1}{N} \sum_{n=1}^{N} \hat{f}(n) \cdot {\mathcal {F}}_{\omega}(t)
+   \hat{f}(n)  =\sum_{k=1}^{K}\sum_{(k-1)N}^{t = kN-1} f(t) \cdot e^{-i \tfrac{2\pi n}{T} t }  \quad \quad &\Leftrightarrow \quad \quad
+   f(t) = \frac{1}{N} \sum_{n=1}^{N} \hat{f}(n) \cdot \mathcal {F}_{\omega}(t)
  \end{aligned}
 }
 $$
@@ -64,34 +66,32 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   \hat{f}(n)  &= \sum_{k=1}^{K}\sum_{(k-1)N}^{t = kN} f(t) \cdot e^{-i \tfrac{2\pi n}{T} t } \\
-               &= \sum_{t=1}^{N} f(t) \cdot e^{-i \tfrac{2\pi t}{T} \cdot n } 
-                     + \sum_{t=N+1}^{2N} f(t) \cdot e^{-i \tfrac{2\pi t}{T} \cdot n } 
+   \hat{f}(n)  &= \sum_{k=1}^{K}\sum_{(k-1)N}^{t = kN-1} f(t) \cdot e^{-i \tfrac{2\pi n}{T} t } \\
+               &= \sum_{t=0}^{N-1} f(t) \cdot e^{-i \tfrac{2\pi t}{T} \cdot n } 
+                     + \sum_{t=N}^{2N-1} f(t) \cdot e^{-i \tfrac{2\pi t}{T} \cdot n } 
                      + \ ...\ 
-                     + \sum_{(K-1)N+1}^{t=KN} f(t) \cdot e^{-i \tfrac{2\pi t}{T} \cdot n } 
-                     + \ f(0) \\
-               &= \sum_{t=1}^{N} f(t) \cdot e^{-i \tfrac{2\pi t}{T} \cdot n } 
-                     + \sum_{t=1}^{N} f(t+N) \cdot e^{-i \tfrac{2\pi (t+N)}{T} \cdot n } 
+                     + \sum_{(K-1)N}^{t=KN-1} f(t) \cdot e^{-i \tfrac{2\pi t}{T} \cdot n } \\
+               &= \sum_{t=0}^{N-1} f(t) \cdot e^{-i \tfrac{2\pi t}{T} \cdot n } 
+                     + \sum_{t=0}^{N-1} f(t+N) \cdot e^{-i \tfrac{2\pi (t+N)}{T} \cdot n } 
                      + \ ...\ 
-                     + \sum_{t=1}^{N} f(t + (K-1)N) \cdot e^{-i \tfrac{2\pi (t + (K-1)N)}{T} \cdot n } 
-                     + \ f(0) \\
-               &= \sum_{k=1}^{K} \sum_{t=1}^{N} f(t+ (k-1)N) \cdot e^{-i \tfrac{2\pi t}{T} n } \cdot e^{-i \tfrac{2\pi (k-1)}{K} n } + \ f(0) \\
+                     + \sum_{t=0}^{N-1} f(t + (K-1)N) \cdot e^{-i \tfrac{2\pi (t + (K-1)N)}{T} \cdot n } \\
+               &= \sum_{k=1}^{K} \sum_{t=0}^{N-1} f(t+ (k-1)N) \cdot e^{-i \tfrac{2\pi t}{T} n } \cdot e^{-i \tfrac{2\pi (k-1)}{K} n } \\
  \end{aligned}
 }
 $$
 
-**要点就出现在这里**，此时，由于有限基底函数族 $${\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\omega_1}, {\mathcal {F}}_{\omega_2},\ ...\ ,{\mathcal {F}}_{\omega_N}]$$ 的拟合样本选取自各个分组的对应角标数据，则显然任意 $${\mathcal {F}}_{\omega_i}$$ 的周期都有 $$T_i = \tfrac{2\pi n}{\omega_i} \geq N$$ 且必然有 $$T_i \mod N = 0$$ 。另外， $$f(0)$$ 信号初相可以直接取 $$f(0) = 0$$ ，而不影响结果。因此，强度系数 $$\hat{f}(n)$$ 关于 $$k$$ 的展开式能进一步精简为：
+**要点就出现在这里**，此时，由于有限基底函数族 $$\mathcal {F}_{\omega} = [\mathcal {F}_{\omega_1}, \mathcal {F}_{\omega_2},\ ...\ ,\mathcal {F}_{\omega_N}]$$ 的拟合样本选取自各个分组的对应角标数据，则显然任意 $$\mathcal {F}_{\omega_i}$$ 的周期都有 $$T_i = \tfrac{2\pi n}{\omega_i} \geq N$$ 且必然有 $$T_i \mod N = 0$$ 。因此，强度系数 $$\hat{f}(n)$$ 关于 $$k$$ 的展开式能进一步精简为：
 
 $$
 {\displaystyle 
  \begin{aligned}
-   \hat{f}(n)  &= \sum_{k=1}^{K} (\sum_{t=1}^{N} f(t+ (k-1)N) \cdot e^{-i \tfrac{2\pi t}{T} n }) \cdot e^{-i \tfrac{2\pi (k-1)}{K} n } \\
-               &= \sum_{k=1}^{K} e^{-i \tfrac{2\pi (k-1)}{K} n } \cdot (\sum_{(k-1)N}^{t = kN} f(t) \cdot  {\mathcal {F}}_{\omega}^{-1}(n)) \\
+   \hat{f}(n)  &= \sum_{k=1}^{K} (\sum_{t=0}^{N-1} f(t+ (k-1)N) \cdot e^{-i \tfrac{2\pi t}{T} n }) \cdot e^{-i \tfrac{2\pi (k-1)}{K} n } \\
+               &= \sum_{k=1}^{K} e^{-i \tfrac{2\pi (k-1)}{K} n } \cdot [\sum_{(k-1)N}^{kN-1} \vert_t \ f(t) \cdot  \mathcal {F}_{\omega}^{-1}(tn) \quad ]
  \end{aligned}
 }
 $$
 
-记 $$\hat{f}_k(n) =\sum_{(k-1)N}^{t = kN} f(t) \cdot  {\mathcal {F}}_{\omega}^{-1}(n)$$ ，则 $$\hat{f}_k(n)$$ 即为分组样本子集 $$[S_1,S_2,\ ...\ , S_K]$$ 在自己的分组样本区间 $$S_k \in [S((k-1) \cdot N),\ S(k \cdot N)]$$ 内，进行离散傅里叶变换的分组强度系数结果。而 $$e^{-i \tfrac{2\pi (k-1)}{K} n }$$ 在样本顺序 $$n$$ 给定时，只与所处分组的组序 $$k$$ 有关，且本身在三角函数空间表现为 $$n(k-1)$$ 的角度固定值，所以我们记其为旋转因子（Rotation Factor） $$R_k(n) = e^{-i \tfrac{2\pi (k-1)}{K} n }$$ 。
+记 $$\hat{f}_k(n) =\sum_{(k-1)N}^{kN-1} \vert_t \ f(t) \cdot  \mathcal {F}_{\omega}^{-1}(tn)$$ ，则 $$\hat{f}_k(n)$$ 即为分组样本子集 $$[S_1,S_2,\ ...\ , S_K]$$ 在自己的分组样本区间 $$S_k \in [f_k((k-1) \cdot N),\ f_k(k \cdot N))$$ 内，进行离散傅里叶变换的分组强度系数结果。而 $$e^{-i \tfrac{2\pi (k-1)}{K} n }$$ 在样本顺序 $$n$$ 给定时，只与所处分组的组序 $$k$$ 有关，且本身在三角函数空间表现为 $$n(k-1)$$ 的角度固定值，所以我们记其为旋转因子（Rotation Factor） $$R_k(n) = e^{-i \tfrac{2\pi (k-1)}{K} n }$$ 。
 
 将 $$\hat{f}_k(n)$$ 、 $$R_k(n)$$ 带入 $$\hat{f}(n)$$ ，则 $$\hat{f}(n)$$ 最终表现为：
 
@@ -180,10 +180,83 @@ $$
 
 对于 $$K$$ 取不同值时的时域抽取（DIT），为了做区分，根据 $$K$$ 值的不同被分别称为 **双模时域抽取（Radix-2 DIT）** 和 **四模时域抽取（Radix-4 DIT）** 。同理，我们将 $$K = 2$$ 时的库利-图奇算法称为 **双模快速傅里叶变换（Radix-2 FFT）**，将 $$K = 4$$ 时的库利-图奇算法称为 **四模快速傅里叶变换（Radix-4 FFT）**。两者差异如上，主要即是在划分导致推算上的不同。
 
-至于为什么快速傅里叶变换又被称为蝴蝶法这点。则和经过时域抽取（DIT）处理后，有限基底函数族 $${\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\omega_1}, {\mathcal {F}}_{\omega_2},\ ...\ ,{\mathcal {F}}_{\omega_N}]$$ 和对应强度系数 $$\hat{f}(\omega)$$ 构成解的实部 $$\hat{a}_{\omega}$$ 与虚部 $$\hat{b}_{\omega}$$ ，与 $$a_k$$ 、 $$b_k$$ 和分组 $$\hat{f}_k(n)$$ 的换算方式有关。
+至于为什么快速傅里叶变换又被称为蝴蝶法这点。则和经过时域抽取（DIT）处理后，有限基底函数族 $$\mathcal {F}_{\omega} = [\mathcal {F}_{\omega_1}, \mathcal {F}_{\omega_2},\ ...\ ,\mathcal {F}_{\omega_N}]$$ 和对应强度系数 $$\hat{f}(\omega)$$ 构成解的实部 $$\hat{a}_{\omega}$$ 与虚部 $$\hat{b}_{\omega}$$ ，与 $$a_k$$ 、 $$b_k$$ 和分组 $$\hat{f}_k(n)$$ 的换算方式有关。
 
-## **时域抽取中傅里叶基的处理 - 交叉求值与“蝴蝶”的由来**
-【WIP】
+## **快速傅里叶变化的基 - 交叉求值与“蝴蝶”的由来**
+
+以双模快速傅里叶变换（Radix-2 FFT）为例。在最简情况下，当样本取 $$T = 2$$ ，有 $$K = 2$$ 且 $$N = 1$$ ，基底函数族 $$\mathcal {F}_{\omega} = [\mathcal {F}_{\omega_1}, \mathcal {F}_{\omega_2}]$$ ，此时：
+
+ $$
+ {\displaystyle 
+ \begin{aligned}
+   \because \hat{f}_k(n) &=\sum_{(k-1)N}^{kN-1} \vert_t \ f(t) \cdot  \mathcal {F}_{\omega}^{-1}(tn) \\
+   \therefore \hat{f}(n) &=\quad \quad \hat{f}_1(n)\quad \ +\ (-1)^n \cdot R_2(n) \cdot \hat{f}_2(n)  \\
+              &= \mathcal {F}_{\omega_1}^{-1}(n) \cdot f(0) + \quad \ \mathcal {F}_{\omega_2}^{-1}(n) \cdot f(1)  \\
+              &= \quad \quad \ f(0) \ \quad +\  (-1)^n \cdot \mathcal {F}_{\omega_2}^{-1}(n) \cdot f(1)  \\
+ \end{aligned}
+}
+$$
+
+显然，对于足够小的样本，其库利-图奇解的旋转因子 $$R_k(n)$$ ，就是它所对应的傅里叶基函数与转置因子的乘机，即：
+
+$$
+R_k(n) = (-1)^n \cdot \mathcal {F}_{\omega_2}^{-1}(n) \quad , k|n \in int[0,1]
+$$
+
+**我们在傅里叶变化章节开始时提到过，傅里叶变化从空间投影变换角度，可以表示为：**
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   N \cdot F = {\mathcal {F}_{\omega}}^T \cdot \mathcal {F}   = 
+{\begin{bmatrix} 
+   \mathcal {F}_{\omega_1}    \\
+   \mathcal {F}_{\omega_2}    \\
+   \vdots  \\
+   \mathcal {F}_{\omega_n}     \\
+\end{bmatrix}} \cdot [\hat{f}_1,\hat{f}_2,\ ...\  ,\hat{f}_n]
+   \\
+ \end{aligned}
+}
+$$
+
+那么，**在引入了转置因子的情况下**，原信号 $$f(n)$$ 与 $$\hat{f}(n)$$ 的关系就可以被写为：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+    {
+      \begin{bmatrix} 
+        f(0)    \\
+        f(1)    \\
+      \end{bmatrix}
+    }   = 
+    {
+      \begin{bmatrix} 
+        1 \quad , +\mathcal {F}_{\omega_2}    \\
+        1 \quad , -\mathcal {F}_{\omega_2}    \\
+      \end{bmatrix}
+    } \cdot {
+      \begin{bmatrix} 
+        \hat{f}(0)    \\
+        \hat{f}(1)    \\
+      \end{bmatrix}
+    }
+   \\
+ \end{aligned}
+}
+$$
+
+而这个过程如果换到拓扑图表示，就是大名鼎鼎的 **“蝴蝶”** 流造型了：
+
+<center>
+<figure>
+   <img  
+      width = "330" height = "210"
+      src="../../Pictures/1_1_3-3.png" alt="">
+</figure>
+</center>
+
 
 
 [ref]: References_1.md 
