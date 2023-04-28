@@ -34,14 +34,24 @@
         \path (box-t-\i-west) edge node[at end, left](f-t-\i){$f({\sa})$} ++(left:.5);
         \path (box-b-\i-west) edge node[at end, left](f-b-\i){$f({\sb})$} ++(left:.5);
     }
-    \foreach \b/\s[count=\k] in {t/1, b/2} {
-        \foreach \i [
+    \foreach \b/\s[count=\k] in {t/1} {
+        \foreach \i /\r [
             evaluate={\j=int(\i-1)},
-            evaluate={\J=int(ifthenelse(\k==2,\j+4,\j))}
-        ] in {1,...,4} {
+            evaluate={\J=int(ifthenelse(\k==2, \j+4, \j))}
+        ] in {1/0,2/1,3/4,4/5} {
             \node [contact] (conn-\b-\i) at ([shift=(right:1.5)] box-\b-\i-east) {}
             edge node[above] {$\hat{f}_{\s}(\j)$} (box-\b-\i-east)
-            node [contact, label=right:{$\hat{f}(\J)$}](conn-\b-\i') at ([shift=(right:5)] box-\b-\i-east) {};
+            node [contact, label=right:{$\hat{f}(\r)$}](conn-\b-\i') at ([shift=(right:5)] box-\b-\i-east) {};
+        }
+    }  
+    \foreach \b/\s[count=\k] in {b/2} {
+        \foreach \i /\r [
+            evaluate={\j=int(\i-1)},
+            evaluate={\J=int(ifthenelse(\k==2, \j+4, \j))}
+        ] in {1/2,2/3,3/6,4/7} {
+            \node [contact] (conn-\b-\i) at ([shift=(right:1.5)] box-\b-\i-east) {}
+            edge node[above] {$\hat{f}_{\s}(\j)$} (box-\b-\i-east)
+            node [contact, label=right:{$\hat{f}(\r)$}](conn-\b-\i') at ([shift=(right:5)] box-\b-\i-east) {};
         }
     }  
 
