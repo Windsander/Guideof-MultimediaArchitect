@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.24)  28 APR 2023 14:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.24)  29 APR 2023 18:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Volumes/AL-Data-W04/WorkingSpace/Self-Project/Project_M/Chapter_1/Pictures/1_1_3-4.tex
-(/Volumes/AL-Data-W04/WorkingSpace/Self-Project/Project_M/Chapter_1/Pictures/1_1_3-4.tex
+**/Volumes/AL-Data-W04/WorkingSpace/Self-Project/Project_M/Chapter_1/Pictures/1_1_3-8.tex
+(/Volumes/AL-Data-W04/WorkingSpace/Self-Project/Project_M/Chapter_1/Pictures/1_1_3-8.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/standalone/standalone.cls
 Document Class: standalone 2022/10/10 v1.3b Class to compile TeX sub-files standalone
@@ -281,8 +281,8 @@ File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count285
 \l__pdf_internal_box=\box64
-) (./1_1_3-4.aux)
-\openout1 = `1_1_3-4.aux'.
+) (./1_1_3-8.aux)
+\openout1 = `1_1_3-8.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -323,26 +323,22 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 42.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 42.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 106.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 106.
  [1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./1_1_3-4.aux) ) 
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./1_1_3-8.aux) ) 
 Here is how much of TeX's memory you used:
- 14862 strings out of 476025
- 328824 string characters out of 5790017
- 1937388 words of memory out of 5000000
- 35069 multiletter control sequences out of 15000+600000
- 514110 words of font info for 38 fonts, out of 8000000 for 9000
+ 14653 strings out of 476025
+ 325555 string characters out of 5790017
+ 1888388 words of memory out of 5000000
+ 34866 multiletter control sequences out of 15000+600000
+ 512287 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,9n,104p,544b,1070s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on 1_1_3-4.pdf (1 page, 77638 bytes).
+ 102i,7n,104p,544b,1056s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on 1_1_3-8.pdf (1 page, 21021 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 21 PDF objects out of 1000 (max. 8388607)
+ 13 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

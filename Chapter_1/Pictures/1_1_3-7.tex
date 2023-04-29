@@ -37,33 +37,36 @@
     % \node[box=4, below=of box-t] (box-b) {$N = \frac{T}{2}$ \\\\ DFT};
 
     % Draw inputs
-    \foreach \y in {0,...,3}
+    \foreach \y in {0,...,7}
         \node[n, pin={[pin edge={latex'-,black}]left:$f(\y)$}]
               (N-0-\y) at (0,-\y) {};
     % Draw outputs
-    \foreach \y / \idx in {0/0, 1/1, 2/2, 3/3}
-        \node[n, pin={[pin edge={-latex',black}]right:$\hat{f}(\idx)$}]
-              (N-2-\y) at (1,-\y) {};
+    \foreach \y / \idx in {0/0, 1/2, 2/4, 3/6, 4/1, 5/3, 6/5, 7/7}
+        \node[n, pin={[pin edge={-latex',black}]right:$f(\idx)$}]
+              (N-2-\y) at (0.8,-\y) {};
+
+    \foreach \y / \idx in {0/0, 1/4, 2/2, 3/6, 4/1, 5/5, 6/3, 7/7}
+        \node[n, pin={[pin edge={-latex',black}]right:$f(\idx)$}]
+              (N-4-\y) at (3,-\y) {};
    % draw connector nodes
-    \foreach \y in {0,...,3}
-        \foreach \x / \c in {1/1}
+    \foreach \y in {0,...,7}
+        \foreach \x / \c in {0.8/1, 2.4/3}
             \node[n, name=N-\c-\y] at (\x,-\y) {};
    
     % horizontal connections
     % Note the use of simple counter arithmetics to get correct
     % indexes.
-    \foreach \x / \c in {0/olive, 1/olive, 2/olive, 3/olive}
-        \path (N-0-\x) edge[-,\c] (N-1-\x);
   
     % Connect nodes
-    \foreach \sourcey / \desty in {1/0, 2/0, 3/0}
-        \path (N-0-\sourcey.east) edge[-,olive] (N-2-\desty.west);
-    \foreach \sourcey / \desty in {0/1, 2/1, 3/1}
-        \path (N-0-\sourcey.east) edge[-,cyan] (N-2-\desty.west);
-    \foreach \sourcey / \desty in {0/2, 1/2, 3/2}
-        \path (N-0-\sourcey.east) edge[-,pink] (N-2-\desty.west);
-    \foreach \sourcey / \desty in {0/3, 1/3, 2/3}
-        \path (N-0-\sourcey.east) edge[-,green!60 ] (N-2-\desty.west);
+    \foreach \sourcey / \desty in {0/0, 1/4, 2/1, 3/5}
+        \path (N-0-\sourcey.east) edge[-, blue!40] (N-2-\desty.west);
+
+    \foreach \sourcey / \desty in {4/2, 5/6, 6/3, 7/7}
+        \path (N-0-\sourcey.east) edge[-, red!40] (N-2-\desty.west);
+    \foreach \sourcey / \desty in {0/0, 2/1, 6/5, 4/4}
+        \path (N-3-\sourcey.east) edge[-, blue!40] (N-4-\desty.west);
+    \foreach \sourcey / \desty in {1/2, 3/3, 5/6, 7/7}
+        \path (N-3-\sourcey.east) edge[-, red!40] (N-4-\desty.west);
 }
 %==================================== END ====================================
 

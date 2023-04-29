@@ -21,7 +21,7 @@
 
 <br>
 
-## **时域抽取第一步 - 分组离散傅立叶（Grouped DFT）**
+## **时域抽取 - 分组离散傅立叶（Grouped DFT）**
 
 **分组离散傅立叶（Grouped DFT）** 是指，在信号的单个周期 $$T$$ 内，以等间距有限次取  个原始离散采样后。将周期内所有采样点信息以 $$step =\tfrac {T}{K} = N$$ 的步长等分，得到 $$K$$ 组顺序连续的子采样分组，依照组别记为样本子集 $$[S_1,S_2,\ ...\ , S_K]$$ 。每组子集都有 $$S_k \in [f_k((k-1) \cdot N),\ f_k(k \cdot N))$$ 的样本取样区间。
 
@@ -109,7 +109,7 @@ $$
 
 >那么我们大费周章的这么做有什么用处呢？原因就在于旋转因子间是存在关系的。
 
-## **时域抽取第二步 - 旋转因子转换（Rotation Factor Convert）**
+## **时域抽取 - 旋转因子转换（Rotation Factor Convert）**
 
 这个问题，需要从复变函数的三角函数特性来回答。记 $$R_k(n)$$ 变换到三角函数域，其实部为 $$a_k$$ ，虚部为 $$b_k$$ 。则 $$R_k(n)$$ 可以表示为：
 
@@ -128,7 +128,7 @@ $$
 <figure>
    <img style="border-radius: 0.3125em;
       box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"  
-      width = "400" height = "400"
+      width = "600" height = "600"
       src="../../Pictures/1_1_3-1.png" alt="">
    <figcaption>
       <p>图 1.1.3-1 旋转因子的三角函数系取值演示</p>
@@ -180,11 +180,11 @@ $$
 
 对于 $$K$$ 取不同值时的时域抽取（DIT），为了做区分，根据 $$K$$ 值的不同被分别称为 **双模时域抽取（Radix-2 DIT）** 和 **四模时域抽取（Radix-4 DIT）** 。同理，我们将 $$K = 2$$ 时的库利-图奇算法称为 **双模快速傅里叶变换（Radix-2 FFT）**，将 $$K = 4$$ 时的库利-图奇算法称为 **四模快速傅里叶变换（Radix-4 FFT）**。两者差异如上，主要即是在划分导致推算上的不同。
 
-至于为什么快速傅里叶变换又被称为蝴蝶法这点。则和经过时域抽取（DIT）处理后，有限基底函数族 $$\mathcal {F}_{\omega} = [\mathcal {F}_{\omega_1}, \mathcal {F}_{\omega_2},\ ...\ ,\mathcal {F}_{\omega_N}]$$ 和对应强度系数 $$\hat{f}(\omega)$$ 构成解的实部 $$\hat{a}_{\omega}$$ 与虚部 $$\hat{b}_{\omega}$$ ，与 $$a_k$$ 、 $$b_k$$ 和分组 $$\hat{f}_k(n)$$ 的换算方式有关。
+至于为什么快速傅里叶变换又被称为蝴蝶法这点。则和经过时域抽取（DIT）处理后，有限基底函数族 $$\mathcal {F}_{\omega} = [\mathcal {F}_{\omega_1}, \mathcal {F}_{\omega_2},\ ...\ ,\mathcal {F}_{\omega_N}]$$ 的对应强度系数 $$\hat{f}(\omega)$$ 与分组 $$\hat{f}_k(n)$$ 的换算方式有关。
 
-## **快速傅里叶变化的基 - 交叉求值与“蝴蝶”的由来**
+## **处理单元最小化 - 交叉求值与“蝴蝶”的由来**
 
-以双模快速傅里叶变换（Radix-2 FFT）为例。在最简情况下，当样本取 $$T = 2$$ ，有 $$K = 2$$ 且 $$N = 1$$ ，基底函数族 $$\mathcal {F}_{\omega} = [\mathcal {F}_{\omega_1}, \mathcal {F}_{\omega_2}]$$ ，此时：
+以 **双模快速傅里叶变换（Radix-2 FFT）** 为例。在最简情况下，当样本取 $$T = 2$$ ，有 $$K = 2$$ 且 $$N = 1$$ ，基底函数族 $$\mathcal {F}_{\omega} = [\mathcal {F}_{\omega_1}, \mathcal {F}_{\omega_2}]$$ ，此时：
 
  $$
  {\displaystyle 
@@ -203,7 +203,7 @@ $$
 R_k(n) = (-1)^n \cdot \mathcal {F}_{\omega_2}^{-1}(n) \quad , k|n \in int[0,1]
 $$
 
-**我们在傅里叶变化章节开始时提到过，傅里叶变化从空间投影变换角度，可以表示为：**
+**我们在傅里叶变换章节开始时提到过，傅里叶变换从空间投影变换角度，可以表示为：**
 
 $$
 {\displaystyle 
@@ -213,7 +213,7 @@ $$
    \mathcal {F}_{\omega_1}    \\
    \mathcal {F}_{\omega_2}    \\
    \vdots  \\
-   \mathcal {F}_{\omega_n}     \\
+   \mathcal {F}_{\omega_n}
 \end{bmatrix}} \cdot [\hat{f}_1,\hat{f}_2,\ ...\  ,\hat{f}_n]
    \\
  \end{aligned}
@@ -228,18 +228,30 @@ $$
     {
       \begin{bmatrix} 
         f(0)    \\
-        f(1)    
+        f(1)
       \end{bmatrix}
     }   = 
     {
       \begin{bmatrix} 
-        1 \quad , +\mathcal {F}_{\omega_2}    \\
-        1 \quad , -\mathcal {F}_{\omega_2}    
+        1 \quad , +\mathcal{F}_{\omega_2}    \\
+        1 \quad , -\mathcal{F}_{\omega_2}
       \end{bmatrix}
     } \cdot {
       \begin{bmatrix} 
         \hat{f}(0)    \\
-        \hat{f}(1)    
+        \hat{f}(1)
+      \end{bmatrix}
+    }   = 
+    {
+      \begin{bmatrix} 
+        1 \quad , & +1    \\
+        1 \quad , & -1
+      \end{bmatrix}
+    } \cdot [\mathcal{F}_{\omega_1}, \mathcal{F}_{\omega_2}] \cdot
+    {
+      \begin{bmatrix} 
+        \hat{f}(0)    \\
+        \hat{f}(1)
       \end{bmatrix}
     }
    \\
@@ -247,7 +259,7 @@ $$
 }
 $$
 
-而这个过程如果换到拓扑图表示，就是大名鼎鼎的 **“蝴蝶”** 流造型了：
+而这个过程如果换到拓扑图表示，就是大名鼎鼎的 **“蝴蝶”** 流造型了 **（注意，颜色表示转子输出方向）** ：
 
 <center>
 <figure>
@@ -257,6 +269,196 @@ $$
 </figure>
 </center>
 
+同理，当采用 **四模快速傅里叶变换（Radix-4 FFT）** 时，有在最简情况下样本取 $$T = 4$$ 。有 $$K = 4$$ 且 $$N = 1$$ ，基底函数族 $$\mathcal {F}_{\omega} = [\mathcal {F}_{\omega_1}, \mathcal {F}_{\omega_2}, \mathcal {F}_{\omega_3}, \mathcal {F}_{\omega_4}]$$ 。省略同质的推导过程，有原信号 $$f(n)$$ 与 $$\hat{f}(n)$$ 的关系：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+    {
+      \begin{bmatrix} 
+        f(0)    \\
+        f(1)    \\
+        f(2)    \\
+        f(3)
+      \end{bmatrix}
+    }   = 
+    {
+      \begin{bmatrix} 
+        1 ,&    &1,&    &1,&    &1     \\
+        1 ,&   -&i,&   -&1,&    &i     \\
+        1 ,&   -&1,&    &1,&   -&1     \\
+        1 ,&    &i,&   -&1,&   -&i
+      \end{bmatrix}
+    } \cdot [\mathcal {F}_{\omega_1}, \mathcal {F}_{\omega_2}, \mathcal {F}_{\omega_3}, \mathcal {F}_{\omega_4}] \cdot
+    {
+      \begin{bmatrix} 
+        \hat{f}(0)    \\
+        \hat{f}(1)    \\
+        \hat{f}(2)    \\
+        \hat{f}(3)
+      \end{bmatrix}
+    }
+   \\
+ \end{aligned}
+}
+$$
+
+四模的 **“蝴蝶”** 流造型如下 **（注意，颜色表示前级数据来源）** ：
+
+<center>
+<figure>
+   <img  
+      width = "330" height = "310"
+      src="../../Pictures/1_1_3-4.png" alt="">
+</figure>
+</center>
+
+**可见，单元的最小化抽象是通用的方法论。** 对于多样本情况，只需要层层分解组装即可完成整体的快速处理。由于时间差异并不明显，但转置矩阵复杂度差异较大，因此我们一般选择 **双模（Radix-2）** 简化整体处理过程。
+
+## **分批处理层级树 - 单元组装与完整流水线**
+
+和简单情况不一样的是，更多的样本采样使得我们没办法通过一次计算就得到最终结果。而在之前的推导过程中我们提到，对于不同子样本集抽参求解 $$\hat{f}_k(n)$$ 的过程，其本质也是一个傅里叶变换，只不过在解构过程中被我们以整体进行了代指换元。因此，随着 $$T = 2^l$$ 与 $$K = 2^m$$ 的变化，对信号处理的层数 $$Layer$$ 也会产生变更有：
+
+$$
+Layer = \log_{K}(T) = \frac{l}{m}
+$$
+
+假设样本取 $$T = 4$$ ，有 $$K = 2$$ ，则 $$N = 2$$ ，此时所需层数为 $$Layer = 2$$ 。根据其上我们的分析可知，存在整合后的基底函数族为：
+
+ $$
+ \mathcal{F}_{\omega} = [\mathcal{F}_{\omega_1}, \mathcal{F}_{\omega_2}] = [\mathcal{F}_{\omega_{11}}, \mathcal{F}_{\omega_{12}}, \mathcal{F}_{\omega_{21}}, \mathcal{F}_{\omega_{22}}]
+ $$
+
+使得原信号 $$f(n)$$ 与 $$\hat{f}(n)$$ 的关系为：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   \because \hat{f}_k(n) &=\sum_{(k-1)N}^{kN-1} \vert_t \ f(t) \cdot  \mathcal{F}_{\omega}^{-1}(tn) \quad \quad \quad \quad \quad \quad
+                          mark: R_i(n) \cdot \mathcal{F}_{\omega_{ij}}^{-1}(n) = R_{ij}(n)  \vert_{(T=4,K=2)} \\
+   \therefore \hat{f}_1(n) &= \ \mathcal{F}_{\omega_{11}}^{-1}(n) \cdot f_1(0) \quad +\  (-1)^n \cdot \mathcal{F}_{\omega_{12}}^{-1}(n) \cdot f_1(1) \\
+                           &= \quad \quad \quad f(0) \quad \quad \ +\  (-1)^n \cdot \mathcal{F}_{\omega_{12}}^{-1}(n) \cdot f(2) =\quad DFT(f_1(n)) \\
+              \hat{f}_2(n) &= \ \mathcal{F}_{\omega_{21}}^{-1}(n) \cdot f_2(0) \quad +\  (-1)^n \cdot \mathcal{F}_{\omega_{22}}^{-1}(n) \cdot f_2(1) \\
+                           &= \quad \quad \quad f(1) \quad \quad \ +\  (-1)^n \cdot \mathcal{F}_{\omega_{22}}^{-1}(n) \cdot f(3) =\quad DFT(f_2(n)) \\
+   \therefore \hat{f}(n)   &= [\quad \quad \quad \quad \quad \quad \quad \quad \quad \hat{f}_1(n) \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad +
+                              \quad \quad \quad \quad \ (-1)^n \cdot R_2(n) \cdot \hat{f}_2(n)\quad \quad \quad \quad \ ]\vert_{(T=8,K=2)}  \\
+                           &= \quad \quad \quad \quad \quad \quad \quad \ R_1(n) \cdot DFT(f_1(n))\ \quad \quad \quad \quad \quad \quad \quad +
+                              \quad \quad \quad \quad \ (-1)^n \cdot R_2(n) \cdot DFT(f_2(n)) \\
+                           &= \ R_1(n) \cdot \mathcal{F}_{\omega_{11}}^{-1}(n) \cdot f(0) \ +
+                              \ (-1)^n \cdot R_1(n) \cdot \mathcal{F}_{\omega_{12}}^{-1}(n) \cdot f(2) \ + 
+                              \ (-1)^n \cdot R_2(n) \cdot f(1) \ +
+                              \ R_2(n) \cdot \mathcal{F}_{\omega_{22}}^{-1}(n) \cdot f(3)   \\
+                           &= \quad \quad \ R_{11}(n) \cdot f(0)\quad \quad +
+                              \quad \quad \ (-1)^n \cdot R_{12}(n)\cdot f(2) \quad \quad + 
+                              \ (-1)^n \cdot R_{21}(n) \cdot f(1) +
+                              \quad \quad \  R_{22}(n)\cdot f(3)   \\
+ \end{aligned}
+}
+$$
+
+同理，当 $$T = 8$$ ，有 $$K = 2$$ ，则 $$N = 4$$ ，此时所需层数为 $$Layer = 3$$ 。存在整合后的基底函数族：
+
+ $$
+ {\displaystyle 
+ \begin{aligned}
+   \mathcal{F}_{\omega} &= [\mathcal{F}_{\omega_1}, \mathcal{F}_{\omega_2}]  \\
+                           &= [\mathcal{F}_{\omega_{11}}, \mathcal{F}_{\omega_{12}}, 
+                               \mathcal{F}_{\omega_{21}}, \mathcal{F}_{\omega_{22}}] \\
+                           &= [\mathcal{F}_{\omega_{111}}, \mathcal{F}_{\omega_{112}}, 
+                               \mathcal{F}_{\omega_{121}}, \mathcal{F}_{\omega_{122}}, 
+                               \mathcal{F}_{\omega_{211}}, \mathcal{F}_{\omega_{212}}, 
+                               \mathcal{F}_{\omega_{221}}, \mathcal{F}_{\omega_{222}}]   \\
+ \end{aligned}
+}
+$$
+
+使得原信号 $$f(n)$$ 与 $$\hat{f}(n)$$ 的关系为 **（省略同质化过程）** ：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   \hat{f}(n)  =& \ R_{11}(n) \cdot \hat{f}_{11}(n) \vert_{0,4} \quad \quad +
+                  \quad \quad \ (-1)^n \cdot R_{12}(n)\cdot \hat{f}_{12}(n) \vert_{1,5} \quad \quad + 
+                  \ (-1)^n \cdot R_{21}(n) \cdot \hat{f}_{21}(1) \vert_{2,6} +
+                  \quad \quad \  R_{22}(n)\cdot \hat{f}_{22}(3) \vert_{3,7}   \\
+               =& [ R_{111}(n) \cdot f(0)\  +
+                  \ (-1)^n \cdot R_{112}(n) \cdot f(4)  +
+                  \ R_{221}(n) \cdot f(2)  +
+                  \ (-1)^n \cdot R_{222}(n) \cdot f(6) ]_{f_{even}} \quad + \\
+                & [ R_{121}(n) \cdot f(1)\  +
+                  \ (-1)^n \cdot R_{122}(n) \cdot f(5)  +
+                  \ R_{321}(n) \cdot f(3)  +
+                  \ (-1)^n \cdot R_{322}(n) \cdot f(7) ]_{f_{odds}} \\
+ \end{aligned}
+}
+$$
+
+此时的“蝴蝶”流造型，**就要复杂一些了** ：
+
+<center>
+<figure>
+   <img  
+      width = "650" height = "500"
+      src="../../Pictures/1_1_3-6.png" alt="">
+</figure>
+</center>
+
+从图上可知，每层都可以被分割为 $$2^{l_a - 1}$$ 个蝶形单元，其中 $$l_a$$ 为当前层级。而完整的计算，则需要历经共计 $$2^{l/m} - 1$$ 个单元才能完成。
+
+如果我们开始就对总样本集 $$S$$ ，按照奇偶样本分为 $$S_1^{\prime} = [f(0),\ f(2),\ f(4) ,\ f(6)]$$ 和 $$S_2^{\prime} = [f(1),\ f(3),\ f(5) ,\ f(7)]$$ 这两个子集。使单一分组求单一解，来方便分离的离散傅里叶变换调用。那么整个蝴蝶图就变成如下样子了 **（同色线表示相同流向）** ：
+
+<center>
+<figure>
+   <img  
+      width = "650" height = "500"
+      src="../../Pictures/1_1_3-5.png" alt="">
+</figure>
+</center>
+
+结果同样一致，可见奇偶分割实质上是一个以 $$K = 2$$ 为步长的抽样再迭代计算的过程。这点也能够从 $$K = 4$$ 时，四模对原数据取样 $$T = 8$$ 会使 $$f(n)$$ 被分为：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   \hat{f}(n)  =& [ R_{11}(n) \cdot f(0)\  + \ (-1)^n \cdot R_{12}(n) \cdot f(4) ]_{f_{1/4}} \quad + \\
+                & [ R_{21}(n) \cdot f(1)\  + \ (-1)^n \cdot R_{22}(n) \cdot f(5) ]_{f_{2/4}} \quad + \\
+                & [ R_{31}(n) \cdot f(2)\  + \ (-1)^n \cdot R_{32}(n) \cdot f(6) ]_{f_{3/4}} \quad + \\
+                & [ R_{41}(n) \cdot f(3)\  + \ (-1)^n \cdot R_{42}(n) \cdot f(7) ]_{f_{4/4}} \\
+ \end{aligned}
+}
+$$
+
+的情况，得到间接的阐明。
+
+因此，我们可以通过封装固定 $$K$$ 时的最小蝶形单元，采用递归的方式来计算 $$f(n)$$ 与 $$\hat{f}(n)$$ 的相互转换。分组的产生，是由顺序输入在算法作用下经过每层的蝶形单元处理后，导致的必然结果。是一个自然而然的过程而并非强行去做的设定，切勿本末倒置。
+
+>而我们期望的是有序的输出，这也就产生了对输入进行排序的要求。
+
+## **基于数据的优化 - 位反转（Bit Reversal）输入索引重排**
+
+经过前面的一系列分析，不难归纳得到：最终算法的输出顺序，是原序列经过 $$Layer - 1$$ 层反转的结果。即每个蝶形单元，会反转当前对应字样本周期跨度的一半。
+
+还是采用当 $$T = 8$$ ，有 $$K = 2$$ 时的情形。我们将所有的处理过程排除，以原样本数据序列角标的传递过程来标记处理流，则有：
+
+<center>
+<figure>
+   <img  
+      width = "500" height = "600"
+      src="../../Pictures/1_1_3-7.png" alt="">
+</figure>
+</center>
+
+当代计算机采用的二进制计数，我们将上述样本角标 **采用二进制表示** ，有：
+
+<center>
+<figure>
+   <img  
+      width = "500" height = "600"
+      src="../../Pictures/1_1_3-8.png" alt="">
+</figure>
+</center>
+
+这一现象即被称为 **位反转（Bit Reversal）**。我们可以利用这一特点，在工程运算过程中每个蝶形单元的数据装配处，以顺序序列对应位反转的角标来取用输入数据，从而保证迭代运算结果的顺序。
 
 
 [ref]: References_1.md 
