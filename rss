@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[《音视频开发技术手册》©]]></title>
+        <title><![CDATA[《音视频架构师手册》©]]></title>
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
-        <link>http://arikanli.gitbook.io/</link>
+        <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 25 Apr 2023 11:14:33 GMT</lastBuildDate>
-        <atom:link href="http://arikanli.gitbook.io/rss" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Sun, 30 Apr 2023 10:30:49 GMT</lastBuildDate>
+        <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
         <webMaster><![CDATA[me@arikanli.com]]></webMaster>
@@ -13,302 +13,302 @@
         <item>
             <title><![CDATA[《音视频架构师手册》©]]></title>
             <description><![CDATA[<font color=oragan> =[>> 关于作者© <<]= </font>]]></description>
-            <link>http://arikanli.gitbook.io/</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/</guid>
+            <link>https://arikanli.cyberfederal.io/</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[关于作者]]></title>
             <description><![CDATA[本书由 李述博©（Arikan.Li©）独立完成]]></description>
-            <link>http://arikanli.gitbook.io/AUTHOR.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/AUTHOR.html</guid>
+            <link>https://arikanli.cyberfederal.io/AUTHOR.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/AUTHOR.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[版权申明©]]></title>
             <description><![CDATA[本书由 李述博©（Arikan.Li©）独立完成]]></description>
-            <link>http://arikanli.gitbook.io/COPYRIGHT.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/COPYRIGHT.html</guid>
+            <link>https://arikanli.cyberfederal.io/COPYRIGHT.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/COPYRIGHT.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[难度向导]]></title>
             <description><![CDATA[入门的四章也是概念与基础理论最多的章节了。这几张的工程实践较少，但非常重要的原理、规格、定义及多。是后续更为复杂的工程实践中，被音视频工程师们做为根基般的存在。因此非常重要。]]></description>
-            <link>http://arikanli.gitbook.io/GUIDER.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/GUIDER.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[一、音视频常用基础算法]]></title>
-            <description><![CDATA[音视频中最为重要的组成部分，即是音频处理和视频处理。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_1/Language/cn/Apex_1_Introduce.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_1/Language/cn/Apex_1_Introduce.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[1.1 信号分析的核心算法-傅立叶变换]]></title>
-            <description><![CDATA[傅立叶变换（FT [Fourier Transform]） [1] 可理解为：任意函数都存在由给定复指数函数空间（Complex Exponential Functions Space）的一组正交基（Orthogonal Bases），使得原函数可以被分解为该复指数函数空间下最大完备解的权重向量形式表示 [2] 。利用原函数与分量函数内积为该方向解分量且正交基内任意两个方向的方向函数内积为 0 的特点，来用解的人为限定有限维度子集逼近函数本身的数学方法 [3] 。这里，描述构成原函数的分量函数集与其所占权重分量（即求得的正交基），共同构成了该函数的傅里叶基（Fourier Basis）[4] [5]。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_1/Language/cn/Docs_1_1.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_1/Language/cn/Docs_1_1.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[1.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）]]></title>
-            <description><![CDATA[信号学中，将沿平面分布的信号称为一维信号（1D Signal），例如音频信号。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_1/Language/cn/Docs_1_1_1.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_1/Language/cn/Docs_1_1_1.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[1.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）]]></title>
-            <description><![CDATA[信号学中，将沿空间分布的信号称为二维信号（2D Signal）。图像信号就是二维信号。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_1/Language/cn/Docs_1_1_2.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_1/Language/cn/Docs_1_1_2.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[1.1.3 快速傅立叶（FFT [Fast Fourier Transform]）]]></title>
-            <description><![CDATA[快速傅立叶是对离散傅立叶的数学逼近。其旨在通过有限点的分布拟合，快速逼近离散傅立叶变换结果。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_1/Language/cn/Docs_1_1_3.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_1/Language/cn/Docs_1_1_3.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[一、【参考文献】]]></title>
-            <description><![CDATA[[1] Fourier, J.B. Joseph (1878) [1822], The Analytical Theory of Heat, translated by Alexander Freeman, The University Press (translated from French).]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_1/Language/cn/References_1.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_1/Language/cn/References_1.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[三、色彩的运用与存储]]></title>
-            <description><![CDATA[自人类对世界有认知开始，从寄思于物的艺术创作，日常生活的打扮穿着，再到科学研究对物理规律的探索，色彩始终伴随左右。什么是色彩？色彩是如何被应用到视觉工程的？]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Apex_3_Introduce.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Apex_3_Introduce.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.1 色彩基础]]></title>
-            <description><![CDATA[1666年，艾萨克·牛顿（Isaac Newton，1642 - 1726） 通过光的色散实验，发现了太阳光可以分解成依次为红、橙、黄、绿、蓝、靛、紫的单色光，并可以由单色光复合而成白光 ，由此提出了 牛顿颜色原理（Newton's theory of colour） 。并于 1705 年结合他在光学领域的其他发现与猜想，编著为《光学》[1]。在此之前，亚里士多德提出的白光为一种纯粹光源才是学界共识。色散试验的伟大，在于为人们揭示了人类视觉感知色彩形式的光学物理特性。人们首次接触到了光谱（Spectrum）概念。此后，人们对光谱进行了大量基于颜色观测的研究，并逐步完成了奠基色彩学（Color Science）的理论归纳总结。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_1.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_1.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.2 颜色三要素（Three Elements of Color）]]></title>
-            <description><![CDATA[1853 年，赫尔曼·格拉斯曼（Hermann Günter Grassmann，1809 - 1877） 基于三色理论，取一组红绿蓝三色光源，尝试还原其他类型视觉单色（monochromat）的实验。这就是著名的光谱的 色度特性实验 （The Colorimetric Properties of the Spectrum） [7]。实验过程经过对红绿蓝三色灯源的水平位置调整，来间接的调整了三色最终组合情况。对比则选用了契合目标结果的参考光源。根据实验结果，格拉斯曼发现，确实可以用一个变权三元一次等式来对所有可见单色光源进行基于光学三原色（RGB）的合成。但是这样的合成是有条件的，对于部分特殊的颜色，例如橄榄绿（Vibrantgreen），就需要将红色光源摆放到隔板左边靠近对比光源的位置，才能使目标色在目标采样区域合成出来。他将这种现象称为 负色匹配（'negative' colors matching） 。而在此次试验中，格拉斯曼得到大量需要使用 1 个或 2 个 负色才能匹配的单色。这种现象的出现，在于当时的物理实验设备并不能很好的找到，合适作为人眼感知波峰基准值的光学三原色（RGB）波长，导致需要通过较多负拟合的方式，来人为的处理三相波叠加的还原它色问题。不过这并不影响实验有奠基理论产出。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_2.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_2.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.2.1 光亮度（Luminance）]]></title>
-            <description><![CDATA[光亮度（Luminance） 也被称为辉度，是指固定光所照射单位平面面积光照区域的物理发光强度，单位是尼特（ $$Nit$$ ），代表烛光每立方米（ $$cd/m^2$$ ，candela per square metre）。光亮度属于光度学（Luminosity）概念。区别于亮度（Brightness）这种用来形容人生理光强直接感受的主观描述，光亮度是从可见光谱范围计量的物理量。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_2_1.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_2_1.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.2.2 色调（Hue）]]></title>
-            <description><![CDATA[色调（Hue） 也被称为色相，指颜色实际种类。换一种角度来说。色调是对人眼可观察颜色的基础分类。通过色调，结合其他两个颜色的三要素，我们能够准确的描述自然界中能够形成的任意混合色。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_2_2.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_2_2.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.2.3 饱和度（Saturation）]]></title>
-            <description><![CDATA[*饱和度 是指颜色的浓淡程度。以其对比标准的不同，被区分为 光学饱和度（Colorfulness） 和 感官饱和度（Saturation） [10]。光学饱和度多用于工程，感官饱和度则多用于艺术设计中。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_2_3.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_2_3.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.3 色彩的衡量]]></title>
-            <description><![CDATA[光学三要素的出现，让人们在对颜色的客观描述上，能够凭借传统色彩学体系内的参数，进行有限程度的量化。但这并不足以适用于除科学计算和测定外的批量工程作业。毕竟在算力限定的条件下，我们不可能对每一寸光的每一个物理量都进行独立的计算。同时，大量繁琐且模糊的设定也无法便于简化。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_3.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_3.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.3.1 配色函数（Color Matching Functions）]]></title>
-            <description><![CDATA[配色函数（Color Matching Functions） ，又被称为色匹配函数，狭义上是用来完成从物理计量到色彩学计量的转换函数的代称。广义上，我们将用来描述一个人为设定的色彩系统里，用于量化颜色的函数称为配色函数。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_3_1.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_3_1.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.3.2 色彩空间（Color Space）]]></title>
-            <description><![CDATA[色彩空间（Color Space） 又被称为 色彩模型（Color Model） ，是对使用一组抽象参数结合配色函数（Color-Matching Functions），来表示颜色的数学系统的统称。色彩空间更多的是对学科理论的实践，我们可以将其看为对色彩学最为直观的规格应用。从设计出发点来看，色彩空间大体分为两类：设备相关（Device-Dependent） 色彩空间，和 设备无关（Device-Independent） 色彩空间。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_3_2.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_3_2.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.3.3 经典三原色函数（Trichromatic Primaries Functions）]]></title>
-            <description><![CDATA[1921 年左右，威廉·大卫·赖特（W. David Wright，1906 - 1997） ** [26] 与 约翰·吉尔德（John Guild，1889 - 1976） ** [27] 分别对光学三原色的基本度量系数进行了更为科学的测定，并分别于1928年 、1932年以论文形式发表了自己的结果。这两个实验，为 CIE 经典三原色函数（Trichromatic Primaries Functions）标准 的制定提供了极为关键的帮助。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_3_3.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_3_3.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.3.4 经典三刺激函数（Tristimulus Values Functions）]]></title>
-            <description><![CDATA[CIE 在 1931 年同年提出 CIE XYZ 色彩空间，尝试通过人为设计的色感函数 [12] [13]，来避 RGB 的 负色匹配 问题。为了区别于 CIE RGB 中，通过实验测定拟合而得的三原色色感函数。我们将新的函数称为 CIE 三刺激函数（Tristimulus Values Functions） ，用来代替原有 $${\overline {r}}(\lambda )$$ 、 $${\overline {g}}(\lambda )$$ 、 $${\overline {b}}(\lambda )$$ ，记为 $${\overline {x}}(\lambda )$$ 、 $${\overline {y}}(\lambda )$$ 、 $${\overline {z}}(\lambda )$$ 。三个刺激函数对应的刺激曲线如下图：]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_3_4.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_3_4.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.3.5 现代色彩体系（Modern Color System）]]></title>
-            <description><![CDATA[现代色彩体系（Modern Color System） 的基石，即为 1931 年由前身为国际光度委员会（1900, IPC [International Photometric Commission]）的国际照明委员会（CIE [International Commission on Illumination]) 提出的 CIE RGB & CIE YUV 色彩空间 。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_3_5.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_3_5.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.4 色彩的对比]]></title>
-            <description><![CDATA[自 1931 年 CIE RGB & CIE XYZ 色彩空间 [12] 被提出后，色彩在工程中的对比标准就被统一在了 CIE 逐步采纳、整理和定义的 一系列规格之下 。而 CIE XYZ 色彩空间具有直观客观和正向全可见光色域的特点，使得它更适合被用来作为工业应用的基准体系。所以，我们往往都会将需要处理的颜色数据， 转换到 CIE XYZ 之下进行权衡 。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.4.1 色域（Color Gamut）]]></title>
-            <description><![CDATA[色域（Color Gamut） 是一个泛指的广义概念，代表对应色彩空间可被表达的所有颜色构成的区域。不同色彩空间的色域可能是不一样的，所以必须有一个统一的度量衡系统来进行比对。被选中作为度量衡的系统必须能客观的表示颜色的物理信息，并且不受其他主观因素影响。因此，只有设备无关色彩空间可以满足要求。当前最常用的度量衡系统，就是 CIE XYZ 色彩空间。CIE XYZ 色彩空间的色域，涵盖了人眼能够观察到的整个可见光谱范围，被 CIE 称为 CIE 标准观察者色域（CIE Standard Observer Gamut） 。简称 标准色域 。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4_1.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4_1.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.4.2 色度（Chroma）& 色度平面（Chroma Plane）& 色度图（Chroma Diagram）]]></title>
-            <description><![CDATA[色度（Chroma｜Chromaticity） 是一个泛指的广义概念，是对除 光亮度（Luminance） 之外，由色调和饱和度或其衍生参数组成的颜色信息的统称。现代工程上的色度概念，最早是在 CIE XYZ 色彩空间对标准色度图的推导过程中引入的。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4_2.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4_2.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.4.3 色差（Chromatic Aberration）]]></title>
-            <description><![CDATA[色差（Chromatic Aberration） 是一个相对概念，指的是两个色度不同的颜色之间的差异。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4_3.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4_3.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.4.4 色温（Color Temperature）& 相关色温（Correlated Color Temperature）]]></title>
-            <description><![CDATA[我们在之前讲述配色函数的理论基础时，已经阐述过色温的概念了。这里做一下回顾。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4_4.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4_4.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.4.5 标准光源（Standard Illuminants）& 白点（White Point）]]></title>
-            <description><![CDATA[相比其他几个概念，色温 无疑要“物理”的多。所以在工业体系中，由色温衍生出的指标有着更多的应用。CIE 以色温参考，从 1960 年后定义了一系列指定色温的可见光光源点（族）来规范工业用光标准，被称为 标准光源（Standard Illuminants）*。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4_5.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4_5.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.4.6 显色指数（Color Rendering Index）]]></title>
-            <description><![CDATA[显色指数（CRI [Color Rendering Index]） 是用来指代设备期望表达颜色与实际展示颜色差异程度的指标，单位为 $$Ra$$ ，取值范围 $$[0 \ Ra, \ 100 \ Ra]$$ 。通俗来讲， $$0 \ Ra$$ 意味着完全偏差，比如黑洞； $$100 \ Ra$$ 则代表着 100% 的颜色还原，比如太阳。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4_6.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_4_6.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.5 经典色彩空间（Classical Color Space）]]></title>
-            <description><![CDATA[统一的标准制定和实践的演化推进总是需要循序渐进。而各个 经典色彩空间（Classical Color Space） 就是此领域内的关键节点。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.5.1 光学三原色色彩空间（RGB Color Space）]]></title>
-            <description><![CDATA[光学三原色色彩空间（RGB Color Space） 又被称为 光三原色空间 或 RGB 色彩空间 。光学三原色色彩空间，是对颜色的加法混合论的有效应用。以光学三原色（RGB）的叠波权重作为三维坐标单位轴，来表示大部分可见光颜色的一种色彩模型。从亥姆霍兹的三色理论之后，光学三原色被广泛的用来表示颜色特性，但并没有形成工程化的系统。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_1.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_1.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.5.2 颜料三原色色彩空间（CMY / CMYK Color Space）]]></title>
-            <description><![CDATA[颜料三原色色彩空间 ，根据其是否包含对黑色（Black）的描述，被分为 印刷三分色模型（CMY Color Space） 即 CMY 色彩空间 ，和 印刷四分色模型（CMYK Color Space） 即 CMYK 色彩空间 。其中，CMY 即指代颜料三原色，K 则为 Black 取尾字母，以和纯蓝色（Blue）作为区分。 颜料三原色色彩空间，是对颜色的减法混合论的直接应用。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_2.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_2.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.5.3 CIE RGB 色彩空间（CIE 1931 RGB Color Space）]]></title>
-            <description><![CDATA[在经过大量对理论的实践探索后，人们发现三维坐标系统无疑是从空间和原理上，最为合适构建色彩模型的描述载体。但传统的 RGB 色彩空间由于没有系统，且存在 基准波长校准问题 ，并不适用于现代工业。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_3.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_3.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.5.4 CIE XYZ 色彩空间（CIE 1931 XYZ Color Space）]]></title>
-            <description><![CDATA[1931年，国际照明委员会（CIE [International Commission on Illumination]） 提出，以经过设计的 XYZ 基准坐标系来锚定 RGB 边界的方案可以解决问题。这一映射方案所对应的颜色描述模型，被称为 XYZ 色彩空间（XYZ Color Space） [12] [13] 。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_4.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_4.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.5.5 CIE LAB 色彩空间（CIE 1976 L*, a*, b* color space）]]></title>
-            <description><![CDATA[1952 年，色彩科学家 里查德·塞瓦尔·亨特（Richard Sewall Hunter，1909–1991） 创建了至今任然是业界最高端颜色解决方案供应商的 亨特联合实验室（HunterLab [Hunter Associates Laboratory]） ，并在之后提出了著名的 Hunter L,a,b 色彩空间 。 Hunter L,a,b 色彩空间结合 CIE XYZ 色彩空间，共同组成了 CIE 1976 LAB 色彩空间的前身。所以，CIE LAB 与 RGB 间需要通过 XYZ 来缔结转换关系。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_5.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_5.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.5.6 CIE LUV 色彩空间（CIE 1976 L*, u*, v* color space）]]></title>
-            <description><![CDATA[1976 年，在 CIE 采纳 CIE LAB 色彩空间的同年，CIE 以 CIE 1960 UCS 和 CIE 1964 UVW（这两个在前文色彩度量中介绍过，做为补充型色彩空间，用于量化色温和 CRI 到 CIE 标准体系内）为基础 进一步拓展，提出了 CIE LUV 色彩空间。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_6.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_6.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.5.7 颜色三要素色彩空间（HSL [HSV / HSI / HSL（Lightness）]）]]></title>
-            <description><![CDATA[HSL（Hue，Saturation，Luminance） 色彩空间 又被称为 颜色三要素色彩空间 ，是对 HSV（Hue，Saturation，Value）色彩空间、 HSI（Hue，Saturation，Intensity）色彩空间、HSL（Hue，Saturation，Lightness）色彩空间的统称 ，简称 三要素色彩空间 。这里的 V（Value）、I（Intensity）、L（Lightness）其实代指的，基本等同于前文中提及的光亮度（Luminance）的简化概念 。HSI 色彩空间，在设计理念上趋同于 HSV 色彩空间。HSL(Lightness) 在 HSV 、 HSI上进行了改进整合。因此，通常所称的 HSL 色彩空间，即为 HSL（Lightness）色彩空间。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_7.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_5_7.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.6 色彩的存储]]></title>
-            <description><![CDATA[1960年，来自 贝尔实验室（Bell Laboratories） 的 穆罕默德·阿塔拉（Mohamed M. Atalla，1924 - 2009） 和 姜大元（Dawon Kahng，1931 - 1992） ，发现 金属氧化物半导体（MOS [Metal Oxide Semiconductor]） 可以借由场效应进行信息存储的现象，成功开发了 金属氧化物半导体场效应晶体管（MOSFET [Metal Oxide Semiconductor Field Effect Transistor]） 。随后，贝尔实验室（Bell Laboratories）联合喷气推进实验室（Jet Propulsion Laboratory）与其他研究机构，就 “提高图像在计算机处理过程中的效果增强” ，提出了一系列用于数字图像处理（Digital Image Processing）的方法。其中 “关于如何利用有限的物理存储空间来保存图片像素点” 的部分，为图片灰度单色存储的提供了可行方案 [44]。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_6.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_6.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.6.1 色彩格式（Color Format）]]></title>
-            <description><![CDATA[色彩格式（Color Format） 包含了计算机对颜色的 存储格式（Data Format） 和 色彩格式空间（Color Format Space） 两部分。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_6_1.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_6_1.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.6.2 RGB 体系色彩格式]]></title>
-            <description><![CDATA[原色格式（Primaries Format），或 RGB 体系色彩格式最大的特点就是在于，其对颜色表示的富集程度和存储空间大小密切相关。可以说 RGB 色彩格式中，每个通道能够占用的存储空间越大，则能够表示的颜色越多 。非常的简单粗暴。统一的，RGB 色彩格式的格式空间，即为 归一化的 CIE RGB 色彩空间 。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_6_2.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_6_2.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[3.6.3 YUV 体系色彩格式]]></title>
-            <description><![CDATA[传输格式（Transport Format） ，即当下我们常用的 YUV 色彩格式也被称为 YCbCr、YPbPr、Y′UV 色彩格式 。其中，Y/Y′ 指代光亮度分量，U/Cb/Pb 指代蓝色色度分量，V/Cr/Pr 指代红色色度分量 。YUV 色彩格式受启发自，CIE LUV 中用与 xyY 色度图有线性转换关系的 uv 分量表示平面色彩信息的思想，最初被 国际电信联盟无线电通信部门（ITU-R [International Telecommunication Union Radiocommunication Sector]） 做为 彩色图像编解码流水线（Color Image Pipeline） 的一部分提出，用来 对图片进行压缩传输 。]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_6_3.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/Docs_3_6_3.html</guid>
-            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[三、【参考文献】]]></title>
-            <description><![CDATA[[1] Isaac Newton, Hypothesis explaining the properties of light, Letter from Newton to Henry Oldenburg, dated 14 December 1675.]]></description>
-            <link>http://arikanli.gitbook.io/Chapter_3/Language/cn/References_3.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/Chapter_3/Language/cn/References_3.html</guid>
+            <link>https://arikanli.cyberfederal.io/GUIDER.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/GUIDER.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[买杯咖啡]]></title>
             <description><![CDATA[如果您愿意为本书爆肝的作者买一些精神食粮，来让他当一名 24H 狼灭的话...]]></description>
-            <link>http://arikanli.gitbook.io/DONATE.html</link>
-            <guid isPermaLink="true">http://arikanli.gitbook.io/DONATE.html</guid>
+            <link>https://arikanli.cyberfederal.io/DONATE.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/DONATE.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[一、音视频常用基础算法]]></title>
+            <description><![CDATA[音视频中最为重要的组成部分，即是音频处理和视频处理。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Apex_1_Introduce.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Apex_1_Introduce.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.1 信号分析的核心算法-傅立叶变换]]></title>
+            <description><![CDATA[傅立叶变换（FT [Fourier Transform]） [1] 可理解为：任意函数都存在由给定复指数函数空间（Complex Exponential Functions Space）的一组正交基（Orthogonal Bases），使得原函数可以被分解为该复指数函数空间下最大完备解的权重向量形式表示 [2] 。利用原函数与分量函数内积为该方向解分量且正交基内任意两个方向的方向函数内积为 0 的特点，来用解的人为限定有限维度子集逼近函数本身的数学方法 [3] 。这里，描述构成原函数的分量函数集与其所占权重分量（即求得的正交基），共同构成了该函数的傅里叶基（Fourier Basis）[4] [5]。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）]]></title>
+            <description><![CDATA[信号学中，将沿平面分布的信号称为一维信号（1D Signal），例如音频信号。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）]]></title>
+            <description><![CDATA[信号学中，将沿空间分布的信号称为二维信号（2D Signal）。图像信号就是二维信号。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.1.3 快速傅立叶（FFT [Fast Fourier Transform]）]]></title>
+            <description><![CDATA[快速傅立叶是对离散傅立叶的数学逼近。其旨在通过有限点的分布拟合，快速逼近离散傅立叶变换结果。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[一、【参考文献】]]></title>
+            <description><![CDATA[[1] Fourier, J.B. Joseph (1878) [1822], The Analytical Theory of Heat, translated by Alexander Freeman, The University Press (translated from French).]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/References_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/References_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[三、色彩的运用与存储]]></title>
+            <description><![CDATA[自人类对世界有认知开始，从寄思于物的艺术创作，日常生活的打扮穿着，再到科学研究对物理规律的探索，色彩始终伴随左右。什么是色彩？色彩是如何被应用到视觉工程的？]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Apex_3_Introduce.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Apex_3_Introduce.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.1 色彩基础]]></title>
+            <description><![CDATA[1666年，艾萨克·牛顿（Isaac Newton，1642 - 1726） 通过光的色散实验，发现了太阳光可以分解成依次为红、橙、黄、绿、蓝、靛、紫的单色光，并可以由单色光复合而成白光 ，由此提出了 牛顿颜色原理（Newton's theory of colour） 。并于 1705 年结合他在光学领域的其他发现与猜想，编著为《光学》[1]。在此之前，亚里士多德提出的白光为一种纯粹光源才是学界共识。色散试验的伟大，在于为人们揭示了人类视觉感知色彩形式的光学物理特性。人们首次接触到了光谱（Spectrum）概念。此后，人们对光谱进行了大量基于颜色观测的研究，并逐步完成了奠基色彩学（Color Science）的理论归纳总结。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.2 颜色三要素（Three Elements of Color）]]></title>
+            <description><![CDATA[1853 年，赫尔曼·格拉斯曼（Hermann Günter Grassmann，1809 - 1877） 基于三色理论，取一组红绿蓝三色光源，尝试还原其他类型视觉单色（monochromat）的实验。这就是著名的光谱的 色度特性实验 （The Colorimetric Properties of the Spectrum） [7]。实验过程经过对红绿蓝三色灯源的水平位置调整，来间接的调整了三色最终组合情况。对比则选用了契合目标结果的参考光源。根据实验结果，格拉斯曼发现，确实可以用一个变权三元一次等式来对所有可见单色光源进行基于光学三原色（RGB）的合成。但是这样的合成是有条件的，对于部分特殊的颜色，例如橄榄绿（Vibrantgreen），就需要将红色光源摆放到隔板左边靠近对比光源的位置，才能使目标色在目标采样区域合成出来。他将这种现象称为 负色匹配（'negative' colors matching） 。而在此次试验中，格拉斯曼得到大量需要使用 1 个或 2 个 负色才能匹配的单色。这种现象的出现，在于当时的物理实验设备并不能很好的找到，合适作为人眼感知波峰基准值的光学三原色（RGB）波长，导致需要通过较多负拟合的方式，来人为的处理三相波叠加的还原它色问题。不过这并不影响实验有奠基理论产出。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.2.1 光亮度（Luminance）]]></title>
+            <description><![CDATA[光亮度（Luminance） 也被称为辉度，是指固定光所照射单位平面面积光照区域的物理发光强度，单位是尼特（ $$Nit$$ ），代表烛光每立方米（ $$cd/m^2$$ ，candela per square metre）。光亮度属于光度学（Luminosity）概念。区别于亮度（Brightness）这种用来形容人生理光强直接感受的主观描述，光亮度是从可见光谱范围计量的物理量。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.2.2 色调（Hue）]]></title>
+            <description><![CDATA[色调（Hue） 也被称为色相，指颜色实际种类。换一种角度来说。色调是对人眼可观察颜色的基础分类。通过色调，结合其他两个颜色的三要素，我们能够准确的描述自然界中能够形成的任意混合色。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.2.3 饱和度（Saturation）]]></title>
+            <description><![CDATA[*饱和度 是指颜色的浓淡程度。以其对比标准的不同，被区分为 光学饱和度（Colorfulness） 和 感官饱和度（Saturation） [10]。光学饱和度多用于工程，感官饱和度则多用于艺术设计中。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.3 色彩的衡量]]></title>
+            <description><![CDATA[光学三要素的出现，让人们在对颜色的客观描述上，能够凭借传统色彩学体系内的参数，进行有限程度的量化。但这并不足以适用于除科学计算和测定外的批量工程作业。毕竟在算力限定的条件下，我们不可能对每一寸光的每一个物理量都进行独立的计算。同时，大量繁琐且模糊的设定也无法便于简化。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.3.1 配色函数（Color Matching Functions）]]></title>
+            <description><![CDATA[配色函数（Color Matching Functions） ，又被称为色匹配函数，狭义上是用来完成从物理计量到色彩学计量的转换函数的代称。广义上，我们将用来描述一个人为设定的色彩系统里，用于量化颜色的函数称为配色函数。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.3.2 色彩空间（Color Space）]]></title>
+            <description><![CDATA[色彩空间（Color Space） 又被称为 色彩模型（Color Model） ，是对使用一组抽象参数结合配色函数（Color-Matching Functions），来表示颜色的数学系统的统称。色彩空间更多的是对学科理论的实践，我们可以将其看为对色彩学最为直观的规格应用。从设计出发点来看，色彩空间大体分为两类：设备相关（Device-Dependent） 色彩空间，和 设备无关（Device-Independent） 色彩空间。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.3.3 经典三原色函数（Trichromatic Primaries Functions）]]></title>
+            <description><![CDATA[1921 年左右，威廉·大卫·赖特（W. David Wright，1906 - 1997） ** [26] 与 约翰·吉尔德（John Guild，1889 - 1976） ** [27] 分别对光学三原色的基本度量系数进行了更为科学的测定，并分别于1928年 、1932年以论文形式发表了自己的结果。这两个实验，为 CIE 经典三原色函数（Trichromatic Primaries Functions）标准 的制定提供了极为关键的帮助。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.3.4 经典三刺激函数（Tristimulus Values Functions）]]></title>
+            <description><![CDATA[CIE 在 1931 年同年提出 CIE XYZ 色彩空间，尝试通过人为设计的色感函数 [12] [13]，来避 RGB 的 负色匹配 问题。为了区别于 CIE RGB 中，通过实验测定拟合而得的三原色色感函数。我们将新的函数称为 CIE 三刺激函数（Tristimulus Values Functions） ，用来代替原有 $${\overline {r}}(\lambda )$$ 、 $${\overline {g}}(\lambda )$$ 、 $${\overline {b}}(\lambda )$$ ，记为 $${\overline {x}}(\lambda )$$ 、 $${\overline {y}}(\lambda )$$ 、 $${\overline {z}}(\lambda )$$ 。三个刺激函数对应的刺激曲线如下图：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.3.5 现代色彩体系（Modern Color System）]]></title>
+            <description><![CDATA[现代色彩体系（Modern Color System） 的基石，即为 1931 年由前身为国际光度委员会（1900, IPC [International Photometric Commission]）的国际照明委员会（CIE [International Commission on Illumination]) 提出的 CIE RGB & CIE YUV 色彩空间 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4 色彩的对比]]></title>
+            <description><![CDATA[自 1931 年 CIE RGB & CIE XYZ 色彩空间 [12] 被提出后，色彩在工程中的对比标准就被统一在了 CIE 逐步采纳、整理和定义的 一系列规格之下 。而 CIE XYZ 色彩空间具有直观客观和正向全可见光色域的特点，使得它更适合被用来作为工业应用的基准体系。所以，我们往往都会将需要处理的颜色数据， 转换到 CIE XYZ 之下进行权衡 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4.1 色域（Color Gamut）]]></title>
+            <description><![CDATA[色域（Color Gamut） 是一个泛指的广义概念，代表对应色彩空间可被表达的所有颜色构成的区域。不同色彩空间的色域可能是不一样的，所以必须有一个统一的度量衡系统来进行比对。被选中作为度量衡的系统必须能客观的表示颜色的物理信息，并且不受其他主观因素影响。因此，只有设备无关色彩空间可以满足要求。当前最常用的度量衡系统，就是 CIE XYZ 色彩空间。CIE XYZ 色彩空间的色域，涵盖了人眼能够观察到的整个可见光谱范围，被 CIE 称为 CIE 标准观察者色域（CIE Standard Observer Gamut） 。简称 标准色域 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4.2 色度（Chroma）& 色度平面（Chroma Plane）& 色度图（Chroma Diagram）]]></title>
+            <description><![CDATA[色度（Chroma｜Chromaticity） 是一个泛指的广义概念，是对除 光亮度（Luminance） 之外，由色调和饱和度或其衍生参数组成的颜色信息的统称。现代工程上的色度概念，最早是在 CIE XYZ 色彩空间对标准色度图的推导过程中引入的。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4.3 色差（Chromatic Aberration）]]></title>
+            <description><![CDATA[色差（Chromatic Aberration） 是一个相对概念，指的是两个色度不同的颜色之间的差异。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4.4 色温（Color Temperature）& 相关色温（Correlated Color Temperature）]]></title>
+            <description><![CDATA[我们在之前讲述配色函数的理论基础时，已经阐述过色温的概念了。这里做一下回顾。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4.5 标准光源（Standard Illuminants）& 白点（White Point）]]></title>
+            <description><![CDATA[相比其他几个概念，色温 无疑要“物理”的多。所以在工业体系中，由色温衍生出的指标有着更多的应用。CIE 以色温参考，从 1960 年后定义了一系列指定色温的可见光光源点（族）来规范工业用光标准，被称为 标准光源（Standard Illuminants）*。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4.6 显色指数（Color Rendering Index）]]></title>
+            <description><![CDATA[显色指数（CRI [Color Rendering Index]） 是用来指代设备期望表达颜色与实际展示颜色差异程度的指标，单位为 $$Ra$$ ，取值范围 $$[0 \ Ra, \ 100 \ Ra]$$ 。通俗来讲， $$0 \ Ra$$ 意味着完全偏差，比如黑洞； $$100 \ Ra$$ 则代表着 100% 的颜色还原，比如太阳。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.5 经典色彩空间（Classical Color Space）]]></title>
+            <description><![CDATA[统一的标准制定和实践的演化推进总是需要循序渐进。而各个 经典色彩空间（Classical Color Space） 就是此领域内的关键节点。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.5.1 光学三原色色彩空间（RGB Color Space）]]></title>
+            <description><![CDATA[光学三原色色彩空间（RGB Color Space） 又被称为 光三原色空间 或 RGB 色彩空间 。光学三原色色彩空间，是对颜色的加法混合论的有效应用。以光学三原色（RGB）的叠波权重作为三维坐标单位轴，来表示大部分可见光颜色的一种色彩模型。从亥姆霍兹的三色理论之后，光学三原色被广泛的用来表示颜色特性，但并没有形成工程化的系统。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.5.2 颜料三原色色彩空间（CMY / CMYK Color Space）]]></title>
+            <description><![CDATA[颜料三原色色彩空间 ，根据其是否包含对黑色（Black）的描述，被分为 印刷三分色模型（CMY Color Space） 即 CMY 色彩空间 ，和 印刷四分色模型（CMYK Color Space） 即 CMYK 色彩空间 。其中，CMY 即指代颜料三原色，K 则为 Black 取尾字母，以和纯蓝色（Blue）作为区分。 颜料三原色色彩空间，是对颜色的减法混合论的直接应用。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.5.3 CIE RGB 色彩空间（CIE 1931 RGB Color Space）]]></title>
+            <description><![CDATA[在经过大量对理论的实践探索后，人们发现三维坐标系统无疑是从空间和原理上，最为合适构建色彩模型的描述载体。但传统的 RGB 色彩空间由于没有系统，且存在 基准波长校准问题 ，并不适用于现代工业。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.5.4 CIE XYZ 色彩空间（CIE 1931 XYZ Color Space）]]></title>
+            <description><![CDATA[1931年，国际照明委员会（CIE [International Commission on Illumination]） 提出，以经过设计的 XYZ 基准坐标系来锚定 RGB 边界的方案可以解决问题。这一映射方案所对应的颜色描述模型，被称为 XYZ 色彩空间（XYZ Color Space） [12] [13] 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.5.5 CIE LAB 色彩空间（CIE 1976 L*, a*, b* color space）]]></title>
+            <description><![CDATA[1952 年，色彩科学家 里查德·塞瓦尔·亨特（Richard Sewall Hunter，1909–1991） 创建了至今任然是业界最高端颜色解决方案供应商的 亨特联合实验室（HunterLab [Hunter Associates Laboratory]） ，并在之后提出了著名的 Hunter L,a,b 色彩空间 。 Hunter L,a,b 色彩空间结合 CIE XYZ 色彩空间，共同组成了 CIE 1976 LAB 色彩空间的前身。所以，CIE LAB 与 RGB 间需要通过 XYZ 来缔结转换关系。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.5.6 CIE LUV 色彩空间（CIE 1976 L*, u*, v* color space）]]></title>
+            <description><![CDATA[1976 年，在 CIE 采纳 CIE LAB 色彩空间的同年，CIE 以 CIE 1960 UCS 和 CIE 1964 UVW（这两个在前文色彩度量中介绍过，做为补充型色彩空间，用于量化色温和 CRI 到 CIE 标准体系内）为基础 进一步拓展，提出了 CIE LUV 色彩空间。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.5.7 颜色三要素色彩空间（HSL [HSV / HSI / HSL（Lightness）]）]]></title>
+            <description><![CDATA[HSL（Hue，Saturation，Luminance） 色彩空间 又被称为 颜色三要素色彩空间 ，是对 HSV（Hue，Saturation，Value）色彩空间、 HSI（Hue，Saturation，Intensity）色彩空间、HSL（Hue，Saturation，Lightness）色彩空间的统称 ，简称 三要素色彩空间 。这里的 V（Value）、I（Intensity）、L（Lightness）其实代指的，基本等同于前文中提及的光亮度（Luminance）的简化概念 。HSI 色彩空间，在设计理念上趋同于 HSV 色彩空间。HSL(Lightness) 在 HSV 、 HSI上进行了改进整合。因此，通常所称的 HSL 色彩空间，即为 HSL（Lightness）色彩空间。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_7.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_7.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.6 色彩的存储]]></title>
+            <description><![CDATA[1960年，来自 贝尔实验室（Bell Laboratories） 的 穆罕默德·阿塔拉（Mohamed M. Atalla，1924 - 2009） 和 姜大元（Dawon Kahng，1931 - 1992） ，发现 金属氧化物半导体（MOS [Metal Oxide Semiconductor]） 可以借由场效应进行信息存储的现象，成功开发了 金属氧化物半导体场效应晶体管（MOSFET [Metal Oxide Semiconductor Field Effect Transistor]） 。随后，贝尔实验室（Bell Laboratories）联合喷气推进实验室（Jet Propulsion Laboratory）与其他研究机构，就 “提高图像在计算机处理过程中的效果增强” ，提出了一系列用于数字图像处理（Digital Image Processing）的方法。其中 “关于如何利用有限的物理存储空间来保存图片像素点” 的部分，为图片灰度单色存储的提供了可行方案 [44]。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.6.1 色彩格式（Color Format）]]></title>
+            <description><![CDATA[色彩格式（Color Format） 包含了计算机对颜色的 存储格式（Data Format） 和 色彩格式空间（Color Format Space） 两部分。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_6_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_6_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.6.2 RGB 体系色彩格式]]></title>
+            <description><![CDATA[原色格式（Primaries Format），或 RGB 体系色彩格式最大的特点就是在于，其对颜色表示的富集程度和存储空间大小密切相关。可以说 RGB 色彩格式中，每个通道能够占用的存储空间越大，则能够表示的颜色越多 。非常的简单粗暴。统一的，RGB 色彩格式的格式空间，即为 归一化的 CIE RGB 色彩空间 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_6_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_6_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.6.3 YUV 体系色彩格式]]></title>
+            <description><![CDATA[传输格式（Transport Format） ，即当下我们常用的 YUV 色彩格式也被称为 YCbCr、YPbPr、Y′UV 色彩格式 。其中，Y/Y′ 指代光亮度分量，U/Cb/Pb 指代蓝色色度分量，V/Cr/Pr 指代红色色度分量 。YUV 色彩格式受启发自，CIE LUV 中用与 xyY 色度图有线性转换关系的 uv 分量表示平面色彩信息的思想，最初被 国际电信联盟无线电通信部门（ITU-R [International Telecommunication Union Radiocommunication Sector]） 做为 彩色图像编解码流水线（Color Image Pipeline） 的一部分提出，用来 对图片进行压缩传输 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_6_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_6_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[三、【参考文献】]]></title>
+            <description><![CDATA[[1] Isaac Newton, Hypothesis explaining the properties of light, Letter from Newton to Henry Oldenburg, dated 14 December 1675.]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/References_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/References_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
     </channel>

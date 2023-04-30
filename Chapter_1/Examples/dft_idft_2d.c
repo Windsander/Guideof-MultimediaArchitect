@@ -21,6 +21,7 @@
  *     An = Re(Fn[t]);  Bn = Im(Fn[t])
  */
 
+#include "stdio.h"
 #include "math.h"
 
 #define PI 3.1415926f
