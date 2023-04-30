@@ -1,102 +1,81 @@
 \documentclass{standalone}
 \usepackage{tikz}
-\usetikzlibrary{positioning, circuits.ee.IEC, arrows, decorations.pathreplacing}
+\usetikzlibrary{positioning, circuits.ee.IEC, decorations.pathreplacing}
 
 \begin{document}
 \begin{tikzpicture}
+% Style
 [
-    yscale=1.0, xscale=1.2, node distance=0.3cm, auto,
-    % The strategy is to create nodes with names: N-column-row
-    % Input nodes are named N-0-0 ... N-0-7
-    % Output nodes are named N-8-0 ... N-8-5
-    circuit ee IEC
-]
-
-%=================================== Start ===================================
-\tikzstyle{n}   = [circle, fill, minimum size=4pt,inner sep=0pt, outer sep=0pt]
-\tikzstyle{mul} = [circle, draw, inner sep=-1pt]
-\tikzstyle{box} = [
-    draw, align=center, shape=rectangle, minimum width=1.5cm, minimum height=3.5cm,
-    append after command={
-        % see also: https://tex.stackexchange.com/a/129668
-        \foreach \side in {east, west} {
-            \foreach \i in {1,...,#1} {
-            %  oordinate (\tikzlastnode-\i-\side)
-            %  at ($(\tikzlastnode.north \side)!{(\i-.5)/(#1)}!(\tikzlastnode.south \side)$)
-                (\tikzlastnode.north \side) edge[draw=none, line to]
-                    coordinate[pos=(\i-.5)/(#1)] (\tikzlastnode-\i-\side) (\tikzlastnode.south \side)
+    thick, node distance=.5cm, circuit ee IEC,
+    box/.style={
+        draw, align=center, shape=rectangle, minimum width=1.5cm, minimum height=4cm,
+        append after command={% see also: https://tex.stackexchange.com/a/129668
+            \foreach \side in {east,west} {
+                \foreach \i in {1,...,#1} {
+                %  oordinate (\tikzlastnode-\i-\side)
+                %  at ($(\tikzlastnode.north \side)!{(\i-.5)/(#1)}!(\tikzlastnode.south \side)$)
+                    (\tikzlastnode.north \side) edge[draw=none, line to]
+                        coordinate[pos=(\i-.5)/(#1)] (\tikzlastnode-\i-\side) (\tikzlastnode.south \side)
+                }
             }
         }
     }
 ]
 
-% Define two helper counters
-\newcounter{x} \newcounter{y}
+%=================================== Start ===================================
 {
-    % \node[box=4] (box-t) {$N = \frac{T}{2}$ \\\\ DFT};
-    % \node[box=4, below=of box-t] (box-b) {$N = \frac{T}{2}$ \\\\ DFT};
+    \node[box=4] (box-t) {$N = \frac{T}{2}$ \\\\ DFT \\ ${\mathcal {F}}_{\omega}$};
+    \node[box=4, below=of box-t] (box-b) {$N = \frac{T}{2}$ \\\\ DFT \\ ${\mathcal {F}}_{\omega}$};
 
-    % Draw groups
-    \foreach \y in {0,...,7}
-        \node (S-\y) at (-1.25,-\y) {};
-    \draw[decorate, decoration={brace,mirror}] (S-0) -- node[left=2pt] {$S_1$} (S-3);
-    \draw[decorate, decoration={brace,mirror}] (S-4) -- node[left=2pt] {$S_2$} (S-7);
-    
-
-    % Draw inputs
-    \foreach \y in {0,...,7}
-        \node[n, pin={[pin edge={latex'-,black}]left:$f(\y)$}]
-              (N-0-\y) at (0,-\y) {};
-    % Draw outputs
-    \foreach \y / \idx in {0/0, 1/4, 2/2, 3/6, 4/1, 5/5, 6/3, 7/7}
-        \node[n, pin={[pin edge={-latex',black}]right:$\hat{f}(\idx)$}]
-              (N-7-\y) at (5,-\y) {};
-   % draw connector nodes
-    \foreach \y in {0,...,7}
-        \foreach \x / \c in {1/1, 2/3, 3/4, 4/6}
-            \node[n, name=N-\c-\y] at (\x,-\y) {};
-    % draw x nodes
-    \foreach \y in {0,...,7}
-        \foreach \x / \c  in {1/2,4/5}
-            \node[mul, right of=N-\x-\y] (N-\c-\y) {${\times}$};
-    
-    % horizontal connections
-    % Note the use of simple counter arithmetics to get correct
-    % indexes.
-    \foreach \y in {0,...,7}
-        \foreach \x in {0,1,3,4,6}
-        {
-            \setcounter{x}{\x}\stepcounter{x}
-            \path (N-\x-\y) edge[-] (N-\arabic{x}-\y);
+    \foreach \s[count=\i] [
+        evaluate={\sa=int(\s*2)},
+        evaluate={\sb=int(\s*2+1)}
+    ] in {0,1,2,3} {
+        \path (box-t-\i-west) edge node[at end, left](f-t-\i){$f({\sa})$} ++(left:.5);
+        \path (box-b-\i-west) edge node[at end, left](f-b-\i){$f({\sb})$} ++(left:.5);
+    }
+    \foreach \b/\s[count=\k] in {t/1} {
+        \foreach \i /\r /\a /\j in {1/1/f_{[0,4]}/0, 2/1/f_{[4,0]}/4, 3/1/f_{[2,6]}/2,4/1/f_{[6,2]}/6} {
+            \node [contact] (conn-\b-\i) at ([shift=(right:1.5)] box-\b-\i-east) {}
+            edge node[above] {$\hat{f}_{\r}(\a)$} (box-\b-\i-east)
+            node [contact, label=right:{$\hat{f}(\j)$}](conn-\b-\i') at ([shift=(right:5)] box-\b-\i-east) {};
         }
-    % Draw the W_8 coefficients
-    \setcounter{y}{0}
-    \foreach \i / \j / \p in {0/0/0, 1/0/0, 2/0/0, 3/0/0, 0/1/1, 1/1/1, 2/1/1, 3/1/1} 
+    }  
+    \foreach \b/\s[count=\k] in {b/2} {
+        \foreach \i /\r /\a /\J in {1/2/f_{[1,5]}/1,2/2/f_{[5,1]}/5,3/2/f_{[3,7]}/3,4/2/f_{[7,3]}/7} {
+            \node [contact] (conn-\b-\i) at ([shift=(right:1.5)] box-\b-\i-east) {}
+            edge node[above] {$\hat{f}_{\r}(\a)$} (box-\b-\i-east)
+            node [contact, label=right:{$\hat{f}(\J)$}](conn-\b-\i') at ([shift=(right:5)] box-\b-\i-east) {};
+        }
+    }  
+
+    \node (S-1-0) [left=of f-t-1, left=3pt] {};
+    \node (S-1-1) [left=of f-t-4, left=3pt] {};
+    \node (S-2-0) [left=of f-b-1, left=3pt] {};
+    \node (S-2-1) [left=of f-b-4, left=3pt] {};
+    \node (S-1) [left=of f-t-1, left=23pt] {};
+    \node (S-2) [left=of f-b-4, left=23pt] {};
+    \draw[decorate, decoration={brace,mirror}] (S-1-0) -- node[left=2pt] {$S^{\prime}_1$} (S-1-1);
+    \draw[decorate, decoration={brace,mirror}] (S-2-0) -- node[left=2pt] {$S^{\prime}_2$} (S-2-1);
+    \draw[decorate, decoration={brace,mirror}] (S-1) -- node[left=2pt] {$S$} (S-2);
+
+    \node (O-1) [right=of conn-t-1', right=23pt] {};
+    \node (O-2) [right=of conn-b-4', right=23pt] {};
+    \draw[decorate, decoration={brace}] (O-1) -- node[right=2pt] {$\hat{f}$} (O-2);
+
+    \begin{scope}[every info/.append style={font=\scriptsize, inner sep=+.5pt}]
     {
-        \path (N-2-\arabic{y}) edge[-] node {\tiny $(-1)^{\p} R^{\i\cdot\j}_{2}(\arabic{y})$}
-              (N-3-\arabic{y});
-        \addtocounter{y}{1}
+        \foreach \i [
+            evaluate={\j=int(\i-1)},
+            evaluate={\J=int(\i+3)}
+        ] in {1,...,4} {
+            \path (conn-t-\i) edge[current direction={pos=.27 , info=$+$           },blue] (conn-t-\i');
+            \path (conn-t-\i) edge[current direction={pos=.1  , info=$+$           },red ] (conn-b-\i');
+            \path (conn-b-\i) edge[current direction={pos=.87 , info={$-$}},red ] (conn-b-\i');
+            \path (conn-b-\i) edge[current direction={pos=.999, info={$-$}},blue] (conn-t-\i');
+        }
     }
-    % Draw the W_4 coefficients
-    \setcounter{y}{0}
-    \foreach \i / \j / \p in {0/0/0, 1/0/1, 0/1/0, 1/1/1, 
-                              0/0/0, 1/0/1, 0/1/0, 1/1/1}
-    {
-        \path (N-5-\arabic{y}) edge[-] node {\tiny $(-1)^{\p} R^{\i\cdot\j}_{2}$}
-              (N-6-\arabic{y});
-        \stepcounter{y}
-    }
-    % Connect nodes
-    \foreach \sourcey / \desty in {0/4, 1/5, 2/6, 3/7,
-                                   4/0, 5/1, 6/2, 7/3}
-       \path (N-0-\sourcey.east) edge[-] (N-1-\desty.west);
-    \foreach \sourcey / \desty in {0/2, 1/3, 
-                                   2/0, 3/1,
-                                   4/6, 5/7, 
-                                   6/4, 7/5}
-        \path (N-3-\sourcey.east) edge[-] (N-4-\desty.west);
-    \foreach \sourcey / \desty in {0/1, 1/0, 2/3, 3/2, 4/5, 5/4, 6/7, 7/6}
-        \path (N-6-\sourcey.east) edge[-] (N-7-\desty.west);
+    \end{scope}
 }
 %==================================== END ====================================
 
