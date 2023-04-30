@@ -410,6 +410,7 @@ $$
 现在思路有了，只需要以代码实现即可：
 
 ```C++
+#include "stdio.h"
 #include "math.h"
 
 #define PI 3.1415926f

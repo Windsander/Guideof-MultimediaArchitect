@@ -460,5 +460,257 @@ $$
 
 这一现象即被称为 **位反转（Bit Reversal）**。我们可以利用这一特点，**在工程运算过程中每个蝶形单元的数据装配处，以顺序序列对应位反转的角标来取用输入数据，从而保证迭代运算结果的顺序。**
 
+## **一维快速傅立叶变换（1D-FFT）的 C 语言实现**
+现在，万事俱备。可以进行代码实现了。先用伪码缕清算法程序化思路：
+
+```C++
+/**
+ * 1D-FFT [Fast Fourier Transform]
+ * [How to Use]
+ *   <case:>
+ *     Fo[T] = {...};
+ *     Fn[T] = {};
+ *     fft_1d(&Fo, &Fn, T);
+ * [logistic]
+ * {
+ *   result = []; // as byte array
+ *   // do Bit-Reversal
+ *   Fo_sorted = bit_reversal(Fn, Fn, T);
+ *   // do DIT:
+ *   for (int layer_at_ = 0; layer_at_ < max_layer; layer_at_++) {
+ *     layer_step_ = 2 ^ layer_at;
+ *     // do Butterfly (each layer):
+ *     for (int slice_idx_ = 0; slice_idx_ * 2 * step_ < size_; slice_idx_++) {
+ *       for (int inner_idx_ = 0; inner_idx_ < step_; inner_idx_++) {
+ *          Rotator Rn = complex_from_angle(PI * inner_idx_ / layer_step_)
+ *          then Calculate Cross(Butterfly-2x2 Matrix):
+ *              slice_out_[inner_idx_] = {
+ *                  slice_data_[inner_idx_] + slice_data_[inner_idx_ + step_] * R_
+ *              };
+ *              slice_out_[inner_idx_ + step_] = {
+ *                  slice_data_[inner_idx_] - slice_data_[inner_idx_ + step_] * R_
+ *              };
+ *       }
+ *       layer_out_[slice_idx_] = slice_out_;
+ *     }
+ *   }
+ *   return result;
+ * }
+ * @param Fo Original Function input array
+ *           (already sampled by T as count-of-time-slice)
+ * @param Fn Fourier Basis
+ *           (already sampled by N as count-of-frequency-slice)
+ * @param T  Periodic of Fo, Number of Time Slice,
+ *           (also as Number of Frequency Slice for FFT)
+ */
+```
+
+依然，快速傅立叶变换也需要有逆变换（IDFT [Inverse Fast Fourier Transform]），来帮我们进行数据还原：
+
+```C++
+/**
+ * 1D-IFFT [Inverse Fast Fourier Transform]
+ * [How to Use]
+ *   <case:>
+ *     Fo[T] = {};
+ *     Fn[T] = {...};
+ *     fft_1d(&Fo, &Fn, T);
+ * [logistic]
+ * {
+ *   result = []; // as byte array
+ *   // do Bit-Reversal
+ *   Fo_sorted = bit_reversal(Fn, Fn, T) / T; dont forget divide N(num equal T)  [<= key]
+ *   // do DIT:
+ *   for (int layer_at_ = 0; layer_at_ < max_layer; layer_at_++) {
+ *     layer_step_ = 2 ^ layer_at;
+ *     // do Inverse Butterfly (each layer):
+ *     for (int slice_idx_ = 0; slice_idx_ * 2 * step_ < size_; slice_idx_++) {
+ *       for (int inner_idx_ = 0; inner_idx_ < step_; inner_idx_++) {
+ *          Rotator Rn = complex_from_angle(-i * PI * inner_idx_ / layer_step_)  [<= key]
+ *          then Calculate Cross(Butterfly-2x2 Matrix):
+ *              slice_out_[inner_idx_] = {
+ *                  slice_data_[inner_idx_] + slice_data_[inner_idx_ + step_] * R_
+ *              };
+ *              slice_out_[inner_idx_ + step_] = {
+ *                  slice_data_[inner_idx_] - slice_data_[inner_idx_ + step_] * R_
+ *              };
+ *       }
+ *       layer_out_[slice_idx_] = slice_out_;
+ *     }
+ *   }
+ *   return result;
+ * }
+ * @param Fo Original Function input array
+ *           (already sampled by T as count-of-time-slice)
+ * @param Fn Fourier Basis
+ *           (already sampled by N as count-of-frequency-slice)
+ * @param T  Periodic of Fo, Number of Time Slice,
+ *           (also as Number of Frequency Slice for FFT)
+ */
+```
+
+到此，快速傅里叶变换的 **工程优势** 就体现出来了。从上面的工作流可以看出，FFT 和 IFFT 唯一的实现上的不同的地方，就在于两点：
+
+-	**分片计算均值** ，这个是傅里叶变换的通性；
+- **旋转因子互逆** ，转换三角函数时的对称性；
+
+这正是我们在之前推倒时，双模快速傅里叶变换（Radix-2 FFT）所利用的最为显著的特征。而其他部分的计算，则可以用相同的流水线进行统一。
+
+所以，**一维双模快速傅里叶变换（1D Radix-2 FFT）的工程化** ，并没有想象中的复杂：
+
+```C++
+#include "stdio.h"
+#include "math.h"
+
+#define PI 3.1415926f
+
+typedef struct Complex {
+    double re_;
+    double im_;
+
+    Complex operator+(const Complex &b_) const {
+        Complex result_;
+        result_.re_ = re_ + b_.re_;
+        result_.im_ = im_ + b_.im_;
+        return result_;
+    }
+
+    Complex operator-(const Complex &b_) const {
+        Complex result_;
+        result_.re_ = re_ - b_.re_;
+        result_.im_ = im_ - b_.im_;
+        return result_;
+    }
+
+    Complex operator*(const Complex &b_) const {
+        Complex result_;
+        result_.re_ = re_ * b_.re_ - im_ * b_.im_;
+        result_.im_ = re_ * b_.im_ + im_ * b_.re_;
+        return result_;
+    }
+
+} Rotator, FBasis;
+
+void digital_convert(double *digital_, Complex *complex_, size_t size_, bool inverse = false) {
+    if (!inverse) {
+        for (int i = 0; i < size_; i++) {
+            complex_[i] = {digital_[i], 0};
+        }
+    } else {
+        for (int i = 0; i < size_; i++) {
+            digital_[i] = complex_[i].re_ / size_;
+        }
+    }
+}
+
+void bit_reversal(Complex *input_, FBasis *result_, size_t size_, bool inverse = false) {
+    for (int i = 0; i < size_; i++) {
+        int k = i, j = 0;
+        double level_ = (log(size_) / log(2));
+        while ((level_--) > 0) {
+            j = j << 1;
+            j |= (k & 1);
+            k = k >> 1;
+        }
+        if (j > i) {
+            Complex temp = input_[i];
+            result_[i] = input_[j];
+            result_[j] = temp;
+        }
+    }
+}
+
+void butterfly(Complex *target_, int step_, int slice_idx_, bool inverse = false) {
+    int start_at_ = slice_idx_ * 2 * step_;
+    for (int inner_idx_ = 0; inner_idx_ < step_; inner_idx_++) {
+        Rotator R_ = {
+            cos(2 * PI * inner_idx_ / (2.0f * step_)),
+            (inverse ? -1 : +1) * sin(2 * PI * inner_idx_ / (2.0f * step_))
+        };
+        // printf("R_ at %i :: %f + i %f \n", inner_idx_, R_.re_, R_.im_);
+        Complex temp_t_ = target_[start_at_ + inner_idx_];
+        Complex temp_b_ = target_[start_at_ + inner_idx_ + step_] * R_;
+        target_[start_at_ + inner_idx_] = temp_t_ + temp_b_;
+        target_[start_at_ + inner_idx_ + step_] = temp_t_ - temp_b_;
+    }
+}
+
+void fft_1d(double *Fo, FBasis *Fn, size_t size_) {
+    digital_convert(Fo, Fn, size_);
+    bit_reversal(Fn, Fn, size_);
+    for (int layer_at_ = 0; layer_at_ < log(size_) / log(2); layer_at_++) {
+        int step_ = 1 << layer_at_;
+        for (int slice_idx_ = 0; slice_idx_ * 2 * step_ < size_; slice_idx_++) {
+            butterfly(Fn, step_, slice_idx_);
+        }
+    }
+}
+
+void ifft_1d(double *Fo, FBasis *Fn, size_t size_) {
+    bit_reversal(Fn, Fn, size_);
+    for (int layer_at_ = 0; layer_at_ < log(size_) / log(2); layer_at_++) {
+        int step_ = 1 << layer_at_;
+        for (int slice_idx_ = 0; slice_idx_ * 2 * step_ < size_; slice_idx_++) {
+            butterfly(Fn, step_, slice_idx_, true);
+        }
+    }
+    digital_convert(Fo, Fn, size_, true);
+}
+```
+
+写完后简单测试一下：
+
+```C++
+int main(void) {
+    FBasis Fn[8] = {};
+    double Fo[8] = {0, 1, 2, 3, 4, 5, 6, 7};
+    double iFo[8] = {};
+    size_t T = sizeof(Fo) / sizeof(double);
+    size_t N = sizeof(Fn) / sizeof(FBasis);
+    printf("\n Original_data: \n");
+    for (int t = 0; t < T; ++t) {
+        printf("%f  ", Fo[t]);
+    }
+
+    printf("\n FFT_result: \n");
+    fft_1d(Fo, Fn, T);
+    for (int n = 0; n < N; ++n) {
+        printf("%f + i %f \n", Fn[n].re_, Fn[n].im_);
+    }
+
+    printf("\n IFFT_result: \n");
+    ifft_1d(iFo, Fn, T);
+    for (int t = 0; t < T; ++t) {
+        printf("%f  ", iFo[t]);
+    }
+
+    return 0;
+}
+```
+
+得到结果和标准基本相同：
+
+```
+ Original_data: 
+0.000000  1.000000  2.000000  3.000000  4.000000  5.000000  6.000000  7.000000  
+
+ FFT_result: 
+28.000000 + i 0.000000 
+-4.000001 + i -9.656855 
+-4.000000 + i -4.000000 
+-4.000000 + i -1.656854 
+-4.000000 + i 0.000000 
+-4.000000 + i 1.656855 
+-4.000000 + i 4.000000 
+-3.999999 + i 9.656854 
+
+ IFFT_result: 
+0.000000  1.000000  2.000000  3.000000  4.000000  5.000000  6.000000  7.000000
+```
+
+运行结束。
+
+至此，快速傅立叶变换的简单工程化基本完毕。
+
 
 [ref]: References_1.md 
