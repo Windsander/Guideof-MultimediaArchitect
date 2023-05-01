@@ -22,3 +22,5 @@
 **[10]** James W. Cooley, John W. Tukey, (1965). "An algorithm for the machine calculation of complex Fourier series". Math. Comput. 19 (90): 297–301. doi:10.2307/2003354.
 
 **[11]** James W. Cooley, Peter A. W. Lewis, and Peter W. Welch, "Historical notes on the fast Fourier transform," Proc. IEEE, vol. 55 (no. 10), p. 1675–1677 (1967).
+
+**[12]**  Ghissoni, S. ,  Costa, E. ,  Lazzari, C. ,  Monteiro, J. , &  Reis, R. . (2011). Radix-2 Decimation in Time (DIT) FFT implementation based on a Matrix-Multiple Constant multiplication approach. IEEE International Conference on Electronics. IEEE.

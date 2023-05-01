@@ -710,7 +710,12 @@ int main(void) {
 
 运行结束。
 
-至此，快速傅立叶变换的简单工程化基本完毕。
+至此，快速傅立叶变换的简单工程化基本完毕。二维情况，可以类比二维离散傅里叶变换的拓展思想，来进行改造。
+
+当然，快速傅立叶变换 **并不只有** 时域抽取（DIT）、 双模（Radix-2）、四模（Radix-4）等这些处理手段。除这些外，通用的方法还包括 **频域抽取（FIT）、八模（Radix-8）、多模混合（Mixed-Radix）等** 。这些共同构成了当今快速傅立叶变换的高性能函数库，甚至 **配合硬件的特殊门电路设计，还能够进一步压缩过程中非理论因素的处理耗时** 。而在工作中，除特殊情况外，通常会在项目允许范畴内引入一些由研究机构校准的快速傅立叶变换函数库，这里按量级列举 **三个经典库** ，以供参考使用之便：
+- 小：[Ooura's Mathematical Software Packages.](https://www.kurims.kyoto-u.ac.jp/~ooura/fft.html)	 by Takuya Ooura.
+- 中：[FXT: a library of algorithms. ](https://www.jjj.de/fxt/) by Jörg Arndt.
+- 大：[FFTW: Fastest Fourier Transform in the West.](http://www.fftw.org/) by Matteo Frigo and Steven G. Johnson. at MIT.
 
 
 [ref]: References_1.md 
