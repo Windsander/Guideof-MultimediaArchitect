@@ -10,7 +10,7 @@
         * [1.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）](Chapter_1/Language/cn/Docs_1_1_1.md)
         * [1.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）](Chapter_1/Language/cn/Docs_1_1_2.md)
         * [1.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）](Chapter_1/Language/cn/Docs_1_1_3.md)
-		* [1.1.4 快速傅里叶矩阵化 - 多常数乘法矩阵逼近（Matrix-MCM Approch）](Chapter_1/Language/cn/Docs_1_1_4.md)
+		* [1.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）](Chapter_1/Language/cn/Docs_1_1_4.md)
     * [1.2 傅里叶变换的概念延伸-常用滤波算法]()
 	    * [1.2.1 高斯滤波（Gauss Filter）]()
         * [1.2.2 双边滤波（Bilateral Filter）]()

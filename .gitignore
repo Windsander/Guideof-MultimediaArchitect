@@ -6,3 +6,9 @@
 _book
 node_modules
 cmake-*
+
+*.aux
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.log
