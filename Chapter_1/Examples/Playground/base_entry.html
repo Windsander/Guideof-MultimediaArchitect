@@ -1,0 +1,134 @@
+<!--
+/*
+ * Copyright (c) 2023 Arikan.Li [Updated]
+ * Created by Arikan.Li on 2014/8/24.
+ * <last modified at> 2023/5/05 [commit:: prepare playground for Chapter_1 examples]
+ */
+-->
+
+<!DOCTYPE html>
+<html lang="en, ch">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="Chapter_1 Examples Viewer"
+          content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Chapter_1 WebGL Examples</title>
+    <style>
+        div.title {
+            font-weight: bold;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        #container_config {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+            color: gray;
+            font-family: sans-serif;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        #container_canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        canvas {
+            background-color: lightblue;
+        }
+    </style>
+
+    <script src="./jquery/jquery-2.2.4.js"></script>
+    <script src="./khronos/webgl-debug.js"></script>
+    <script src="./tdl/base.js"></script>
+    <script src="utils.js"></script>
+    <script src="testsources.js"></script>
+    <script src="testprocess.js"></script>
+    <script src="environment.js"></script>
+    <script>
+        //<!-- main_begin -->
+        let env_gl;
+        let env_effect_settings = [];
+
+        function trigger_button(button, id) {
+            env_gl.change_effect(id);
+            for (let i = 0; i < env_effect_settings.length; ++i) {
+                env_effect_settings[i].style.color = "gray"
+            }
+            button.style.color = "red"
+            tdl.log("effect change to ", id);
+        }
+
+        function init_buttons() {
+            tdl.log("effect buttons init::");
+            env_effect_settings = [];
+            let index = 0;
+            let button = document.getElementById("setSetting" + index);
+            while (button) {
+                tdl.log("effect buttons init ", index);
+                env_effect_settings.push(button);
+                button.onclick = function (button, index) {
+                    return function () {
+                        trigger_button(button, index);
+                    }
+                }(button, index);
+                button = document.getElementById("setSetting" + (++index));
+            }
+            tdl.log("effect buttons done!");
+            trigger_button(document.getElementById("setSetting0"), 0);
+        }
+
+        window.onload = function () {
+
+            function handleContextLost() {
+                tdl.log("context lost");
+                env_gl.do_destroy();
+            }
+
+            function handleContextRestored() {
+                tdl.log("context restored");
+                env_gl.do_initial();
+            }
+
+            const canvas = document.getElementById('canvas');
+            const driver = tdl.webgl.setupWebGL(canvas);
+            if (driver) {
+                tdl.webgl.registerContextLostHandler(canvas, handleContextLost);
+                tdl.webgl.registerContextRestoredHandler(canvas, handleContextRestored);
+                env_gl = new Environment(driver, canvas);
+                env_gl.do_initial();
+                init_buttons();
+            }
+        }
+        //<!-- main_finish -->
+    </script>
+</head>
+
+<body>
+<div id="container_config">
+    <div class="title">Post Processing</div>
+    <div id="setSetting0">None</div>
+    <div id="setSetting1">Filter-Gaussian</div>
+    <div id="setSetting2">Filter-Bilateral</div>
+    <div id="setSetting3">Filter-Sobel</div>
+    <div id="setSetting4">Filter-NMS</div>
+</div>
+<div id="container_canvas">
+    <canvas id="canvas" width="1024" height="512" style="width: 100%; height: 100%;"></canvas>
+</div>
+</body>
+
+</html>

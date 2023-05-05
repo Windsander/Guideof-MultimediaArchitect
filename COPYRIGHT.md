@@ -3,9 +3,10 @@
 **本书由 李述博©（Arikan.Li©）独立完成**
 
 <p align='left'>
-<a href="https://github.com/Windsander" target="_blank"><img src="https://img.shields.io/badge/作者-@Arikan.Li-000000.svg?style=flat&logo=GitHub"></a>
-<a href="https://www.zhihu.com/people/ArikanLi" target="_blank"><img src="https://img.shields.io/badge/小岛上的黑桃六-@Arikan.Li-000000.svg?style=flat&logo=zhihu"></a>
-<a href="https://arikan-lis-library.gitbook.io/av-tech-dev-toolbook/" target="_blank"><img alt="GitBook" src="https://img.shields.io/github/stars/Windsander/Project_M?label=Stars&style=flat&logo=GitBook"></a>
+<a href="https://github.com/Windsander" target="_blank"><img src="https://img.shields.io/badge/
+%E4%BD%9C%E8%80%85-%E6%9D%8E%E8%BF%B0%E5%8D%9A-000000.svg?style=flat&logo=GitHub"></a>
+<a href="https://www.zhihu.com/people/ArikanLi" target="_blank"><img src="https://img.shields.io/badge/%E5%B0%8F%E5%B2%9B%E4%B8%8A%E7%9A%84%E9%BB%91%E6%A1%83%E5%85%AD-Arikan.Li-000000.svg?style=flat&logo=zhihu"></a>
+<a href="https://github.com/Windsander/Guideof-MultimediaArchitect" target="_blank"><img alt="GitBook" src="https://img.shields.io/github/stars/Windsander/Guideof-MultimediaArchitect?label=Stars&style=flat&logo=GitBook"></a>
 </p>
 
 本人的所有作品，包括但不限于文字，图片等内容受《著作权》法的保护，凡未经权利人明确书面授权，转载上述内容，本人有权追究侵权行为。　　
