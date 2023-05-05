@@ -29,9 +29,23 @@
             overflow: hidden;
         }
 
+        #container_source {
+            position: absolute;
+            width: 150px;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+            color: gray;
+            font-family: sans-serif;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
         #container_config {
             position: absolute;
-            top: 10px;
+            width: 150px;
+            top: 100px;
             left: 10px;
             z-index: 2;
             color: gray;
@@ -61,19 +75,50 @@
     <script>
         //<!-- main_begin -->
         let env_gl;
+        let env_source_settings = [];
         let env_effect_settings = [];
 
-        function trigger_button(button, id) {
-            env_gl.change_effect(id);
-            for (let i = 0; i < env_effect_settings.length; ++i) {
-                env_effect_settings[i].style.color = "gray"
+        function init_buttons_source() {
+            tdl.log("source buttons init::");
+
+            function trigger_button(button, id) {
+                //env_gl.change_source(id);
+                for (let i = 0; i < env_source_settings.length; ++i) {
+                    env_source_settings[i].style.color = "gray"
+                }
+                button.style.color = "red"
+                tdl.log("source change to ", id);
             }
-            button.style.color = "red"
-            tdl.log("effect change to ", id);
+
+            env_source_settings = [];
+            let index = 0;
+            let button = document.getElementById("setSource" + index);
+            while (button) {
+                tdl.log("source buttons init ", index);
+                env_source_settings.push(button);
+                button.onclick = function (button, index) {
+                    return function () {
+                        trigger_button(button, index);
+                    }
+                }(button, index);
+                button = document.getElementById("setSource" + (++index));
+            }
+            tdl.log("source buttons done!");
+            trigger_button(document.getElementById("setSource0"), 0);
         }
 
-        function init_buttons() {
+        function init_buttons_effect() {
             tdl.log("effect buttons init::");
+
+            function trigger_button(button, id) {
+                env_gl.change_effect(id);
+                for (let i = 0; i < env_effect_settings.length; ++i) {
+                    env_effect_settings[i].style.color = "gray"
+                }
+                button.style.color = "red"
+                tdl.log("effect change to ", id);
+            }
+
             env_effect_settings = [];
             let index = 0;
             let button = document.getElementById("setSetting" + index);
@@ -110,7 +155,8 @@
                 tdl.webgl.registerContextRestoredHandler(canvas, handleContextRestored);
                 env_gl = new Environment(driver, canvas);
                 env_gl.do_initial();
-                init_buttons();
+                init_buttons_source();
+                init_buttons_effect();
             }
         }
         //<!-- main_finish -->
@@ -118,6 +164,11 @@
 </head>
 
 <body>
+<div id="container_source">
+    <div class="title">Source Control</div>
+    <div id="setSource0">Normal</div>
+    <div id="setSource1">Blooms</div>
+</div>
 <div id="container_config">
     <div class="title">Post Processing</div>
     <div id="setSetting0">None</div>

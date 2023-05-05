@@ -26,7 +26,7 @@ class TestSources {
         this.#textures = [];
 
         this.#program =  utils.addShaderProg(driver, 'source_vs', 'source_fs');
-        this.#arrays = tdl.primitives.createFlaredCube(0.01, 3.0, 1400);
+        this.#arrays = tdl.primitives.createFlaredCube(0.75, 3.0, 800);
         this.#model = new tdl.models.Model(this.#program, this.#arrays, this.#textures);
 
         this.#proj = new Float32Array(16);
@@ -53,12 +53,12 @@ class TestSources {
         driver.disable(driver.DEPTH_TEST);
         driver.enable(driver.BLEND);
         driver.blendFunc(driver.ONE, driver.ONE);
-        var uniformsConst = {
+        let uniformsConst = {
             u_time: time,
             u_color_major: TestSources.#hsv2rgb((time * 0.10100) % 1.0, 0.8, 0.1, 1),
             u_color_minor: TestSources.#hsv2rgb((time * 0.22124) % 1.0, 0.7, 0.1, 0),
         };
-        var uniformsPer = {
+        let uniformsPer = {
             u_wvp: this.#temp_wvp
         };
         this.#model.drawPrep(uniformsConst);
@@ -68,11 +68,11 @@ class TestSources {
 
     static #hsv2rgb(h, s, v, a) {
         h *= 6
-        var i = Math.floor(h);
-        var f = h - i;
+        let i = Math.floor(h);
+        let f = h - i;
         if (!(i & 1)) f = 1 - f; // reverse when even
-        var m = v * (1 - s);
-        var n = v * (1 - s * f);
+        let m = v * (1 - s);
+        let n = v * (1 - s * f);
         switch (i) {
             case 0:
                 return [v, n, m, a];
