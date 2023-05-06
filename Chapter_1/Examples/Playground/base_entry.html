@@ -55,6 +55,19 @@
             padding: 10px;
         }
 
+        #container_advance {
+            position: absolute;
+            width: 150px;
+            top: 295px;
+            left: 10px;
+            z-index: 2;
+            color: gray;
+            font-family: sans-serif;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
         #container_canvas {
             width: 100%;
             height: 100%;
@@ -77,6 +90,7 @@
         let env_gl;
         let env_source_settings = [];
         let env_effect_settings = [];
+        let env_advance_settings = [];
 
         function init_buttons_source() {
             tdl.log("source buttons init::");
@@ -136,6 +150,56 @@
             trigger_button(document.getElementById("setSetting0"), 0);
         }
 
+        function init_advance_control() {
+            tdl.log("advance control init::");
+
+            function auto_callback(source_last, effect_last, timer) {
+                let timer_s = Math.floor(timer * 100) % 10;
+                let timer_d = Math.floor(timer * 10) % 10;
+                let timer_t = Math.floor(timer) % 5;
+                if (timer_s === 0 && timer_d === 0 && timer_t === 0) {
+                    let auto_source_id = (source_last + 1) % env_source_settings.length;
+                    // let auto_effect_id = (effect_last + 1) % (env_effect_settings.length);
+                    document.getElementById("setSource" + auto_source_id).click();
+                    // document.getElementById("setSetting" + auto_effect_id).click();
+                    tdl.log("auto trigger once, at ", timer);
+                }
+            }
+
+            function trigger_button(button, id) {
+                switch (id) {
+                    case 0: {
+                        if (button.style.color === "gray") {
+                            button.style.color = "red";
+                            env_gl.switch_auto_test(true, auto_callback);
+                            tdl.log("advance option opened->", id);
+                        } else {
+                            button.style.color = "gray";
+                            env_gl.switch_auto_test(false);
+                            tdl.log("advance option closed->", id);
+                        }
+                        break;
+                    }
+                }
+            }
+
+            env_advance_settings = [];
+            let index = 0;
+            let button = document.getElementById("setAdvance" + index);
+            while (button) {
+                tdl.log("advance control init ", index);
+                env_advance_settings.push(button);
+                button.onclick = function (button, index) {
+                    return function () {
+                        trigger_button(button, index);
+                    }
+                }(button, index);
+                button = document.getElementById("setAdvance" + (++index));
+            }
+            tdl.log("advance control done!");
+            trigger_button(document.getElementById("setAdvance0"), 0);
+        }
+
         window.onload = function () {
 
             function handleContextLost() {
@@ -157,6 +221,7 @@
                 env_gl.do_initial();
                 init_buttons_source();
                 init_buttons_effect();
+                init_advance_control();
             }
         }
         //<!-- main_finish -->
@@ -177,6 +242,10 @@
     <div id="setSetting2">Filter-Bilateral</div>
     <div id="setSetting3">Filter-Sobel</div>
     <div id="setSetting4">Filter-NMS</div>
+</div>
+<div id="container_advance">
+    <div class="title">Advance Opts</div>
+    <div id="setAdvance0">Auto Test</div>
 </div>
 <div id="container_canvas">
     <canvas id="canvas" width="1024" height="512" style="width: 100%; height: 100%;"></canvas>

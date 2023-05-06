@@ -37,6 +37,10 @@ class Environment {
     #current_source_id = 0;
     #current_effect_id = 0;
     #current_looper_id = -1;
+    #running_auto_test = false;
+
+    // trigger
+    #auto_test_callback;
 
     constructor(driver, canvas) {
         this.name = "Environment";
@@ -52,12 +56,17 @@ class Environment {
         };
     }
 
+    switch_auto_test(need_open, auto_test_callback) {
+        this.#running_auto_test = need_open;
+        this.#auto_test_callback = need_open ? auto_test_callback : null;
+    }
+
     change_source(id) {
         this.#current_source_id = id;
     }
 
     change_effect(id) {
-        this.#effect.config( this.#effect_config);
+        this.#effect.config(this.#effect_config);
         this.#current_effect_id = id;
     }
 
@@ -71,6 +80,7 @@ class Environment {
         if (this.#current_effect_id !== 0) this.#effect.unbind();
         this.#canvas_buffer.bind();
         if (this.#current_effect_id !== 0) this.#effect.render(this.#current_effect_id);
+        if (this.#auto_test_callback) this.#auto_test_callback(this.#current_source_id, this.#current_effect_id, current);
     }
 
     do_render() {
