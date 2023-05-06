@@ -28,7 +28,8 @@
 		"splitter", 
 		"code", "katex",
 		"-sharing", "sharing-plus",
-		"alerts"
+		"alerts",
+		"url-embed"
     ],
     "pluginsConfig": {
 		"favicon": "/Cover/book_favicon.ico",
