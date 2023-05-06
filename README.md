@@ -1,8 +1,9 @@
 # 《音视频架构师手册》©
 
 <p align='left'>
-<a href="https://github.com/Windsander" target="_blank"><img src="https://img.shields.io/badge/作者-@Arikan.Li-000000.svg?style=flat&logo=GitHub"></a>
-<a href="https://www.zhihu.com/people/ArikanLi" target="_blank"><img src="https://img.shields.io/badge/小岛上的黑桃六-@Arikan.Li-000000.svg?style=flat&logo=zhihu"></a>
+<a href="https://github.com/Windsander" target="_blank"><img src="https://img.shields.io/badge/
+%E4%BD%9C%E8%80%85-%E6%9D%8E%E8%BF%B0%E5%8D%9A-000000.svg?style=flat&logo=GitHub"></a>
+<a href="https://www.zhihu.com/people/ArikanLi" target="_blank"><img src="https://img.shields.io/badge/%E5%B0%8F%E5%B2%9B%E4%B8%8A%E7%9A%84%E9%BB%91%E6%A1%83%E5%85%AD-Arikan.Li-000000.svg?style=flat&logo=zhihu"></a>
 <a href="https://github.com/Windsander/Guideof-MultimediaArchitect" target="_blank"><img alt="GitBook" src="https://img.shields.io/github/stars/Windsander/Guideof-MultimediaArchitect?label=Stars&style=flat&logo=GitBook"></a>
 </p>
 
@@ -60,28 +61,28 @@
 ### 多媒体工程基础 & 音视频分析
 
 * [一、音视频常用基础算法](Chapter_1/Language/cn/Apex_1_Introduce.md)
-    * [1.1 信号分析的核心算法-傅立叶变换](Chapter_1/Language/cn/Docs_1_1.md)
+    * [1.1 信号分析的核心算法 - 傅立叶变换](Chapter_1/Language/cn/Docs_1_1.md)
         * [1.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）](Chapter_1/Language/cn/Docs_1_1_1.md)
         * [1.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）](Chapter_1/Language/cn/Docs_1_1_2.md)
         * [1.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）](Chapter_1/Language/cn/Docs_1_1_3.md)
 		* [1.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）](Chapter_1/Language/cn/Docs_1_1_4.md)
-    * [1.2 傅里叶变换的概念延伸-常用滤波算法]()
-	    * [1.2.1 高斯滤波（Gauss Filter）]()
-        * [1.2.2 双边滤波（Bilateral Filter）]()
-	    * [1.2.3 索贝尔滤波（Sobel Filter）]()
-	    * [1.2.4 非极大值抑制（NMS [Non-Maximum Suppression]）]()
-    * [1.3 时间冗余控制-常用区域检测与运动矢量算法]()
+    * [1.2 频率信息提取 - 常用滤波算法](Chapter_1/Language/cn/Docs_1_2.md)
+	    * [1.2.1 高斯滤波（Gauss Filter）](Chapter_1/Language/cn/Docs_1_2_1.md)
+        * [1.2.2 双边滤波（Bilateral Filter）](Chapter_1/Language/cn/Docs_1_2_2.md)
+	    * [1.2.3 索贝尔滤波（Sobel Filter）](Chapter_1/Language/cn/Docs_1_2_3.md)
+	    * [1.2.4 非极大值抑制（NMS [Non-Maximum Suppression]）](Chapter_1/Language/cn/Docs_1_2_4.md)
+    * [1.3 时间冗余控制 - 常用区域检测与运动矢量算法]()
 	    * [1.3.1 IoU & GIoU]()
 	    * [1.3.2 方向梯度直方图（HOG [Histogram of Oriented Gradient]）]()
 	    * [1.3.3 动量预测（Momentum Prediction）& 动量算法（Momentum Algorithm）]()
 	    * [1.3.4 双向光流预测（BDOF [Bi-Directional Optical Flow]）]()
 	    * [1.3.5 光流仿射修正（OFAC [Optical Flow Affine Correction]）]()
-    * [1.4 空间冗余控制-常用图形变换算法]()
+    * [1.4 空间冗余控制 - 常用图形变换算法]()
 	    * [1.4.1 整数离散正余弦变换（DST/DCT）]()
 	    * [1.4.2 哈达玛变换（Hadamard Product）]()
 	    * [1.4.3 色度残差联合编码（JCCR [Joint Coding of Chroma Residuals]）]()
 	    * [1.4.4 高频凋零 & 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）]()
-    * [1.5 数据离散传输-常用量化算法]()
+    * [1.5 数据离散传输 - 常用量化算法]()
 	    * [1.5.1 标量量化（SQ [Scalar Quantization]）]()
 	    * [1.5.2 矢量量化（VQ [Vector Quantization]）]()
 	    * [1.5.3 率失真择优量化（RDOQ [Rate Distortion Optimized Quantization]）]()
