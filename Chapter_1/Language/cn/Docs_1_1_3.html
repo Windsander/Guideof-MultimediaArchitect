@@ -102,7 +102,7 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Docs_1_1_4.md" />
+    <link rel="next" href="Docs_1_1_4.html" />
     
     
     <link rel="prev" href="Docs_1_1_2.html" />
@@ -235,7 +235,7 @@
                 <a href="Docs_1_1.html">
             
                     
-                    1.1 信号分析的核心算法-傅立叶变换
+                    1.1 信号分析的核心算法 - 傅立叶变换
             
                 </a>
             
@@ -283,12 +283,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.4" data-path="Docs_1_1_4.md">
+        <li class="chapter " data-level="1.2.1.4" data-path="Docs_1_1_4.html">
             
-                <span>
+                <a href="Docs_1_1_4.html">
             
                     
-                    1.1.4 快速傅里叶矩阵化 - 多常数乘法矩阵逼近（Matrix-MCM Approch）
+                    1.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
             
                 </a>
             
@@ -301,67 +301,67 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" >
+        <li class="chapter " data-level="1.2.2" data-path="Docs_1_2.html">
             
-                <span>
+                <a href="Docs_1_2.html">
             
                     
-                    1.2 傅里叶变换的概念延伸-常用滤波算法
+                    1.2 频率信息提取 - 常用滤波算法
             
-                </span>
+                </a>
             
 
             
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" >
+        <li class="chapter " data-level="1.2.2.1" data-path="Docs_1_2_1.md">
             
                 <span>
             
                     
                     1.2.1 高斯滤波（Gauss Filter）
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.2" >
+        <li class="chapter " data-level="1.2.2.2" data-path="Docs_1_2_2.md">
             
                 <span>
             
                     
                     1.2.2 双边滤波（Bilateral Filter）
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.3" >
+        <li class="chapter " data-level="1.2.2.3" data-path="Docs_1_2_3.md">
             
                 <span>
             
                     
                     1.2.3 索贝尔滤波（Sobel Filter）
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" >
+        <li class="chapter " data-level="1.2.2.4" data-path="Docs_1_2_4.md">
             
                 <span>
             
                     
                     1.2.4 非极大值抑制（NMS [Non-Maximum Suppression]）
             
-                </span>
+                </a>
             
 
             
@@ -377,7 +377,7 @@
                 <span>
             
                     
-                    1.3 时间冗余控制-常用区域检测与运动矢量算法
+                    1.3 时间冗余控制 - 常用区域检测与运动矢量算法
             
                 </span>
             
@@ -461,7 +461,7 @@
                 <span>
             
                     
-                    1.4 空间冗余控制-常用图形变换算法
+                    1.4 空间冗余控制 - 常用图形变换算法
             
                 </span>
             
@@ -532,7 +532,7 @@
                 <span>
             
                     
-                    1.5 数据离散传输-常用量化算法
+                    1.5 数据离散传输 - 常用量化算法
             
                 </span>
             
@@ -1701,9 +1701,16 @@ Layer = \log_{K}(T) = \frac{l}{m}
  IFFT_result: 
 0.000000  1.000000  2.000000  3.000000  4.000000  5.000000  6.000000  7.000000
 </code></pre><p>&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x3002;</p>
-<p>&#x81F3;&#x6B64;&#xFF0C;&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;&#x7684;&#x7B80;&#x5355;&#x5DE5;&#x7A0B;&#x5316;&#x57FA;&#x672C;&#x5B8C;&#x6BD5;&#x3002;</p>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;&#x7684;&#x7B80;&#x5355;&#x5DE5;&#x7A0B;&#x5316;&#x57FA;&#x672C;&#x5B8C;&#x6BD5;&#x3002;&#x4E8C;&#x7EF4;&#x60C5;&#x51B5;&#xFF0C;&#x53EF;&#x4EE5;&#x7C7B;&#x6BD4;&#x4E8C;&#x7EF4;&#x79BB;&#x6563;&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;&#x7684;&#x62D3;&#x5C55;&#x601D;&#x60F3;&#xFF0C;&#x6765;&#x8FDB;&#x884C;&#x6539;&#x9020;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362; <strong>&#x5E76;&#x4E0D;&#x53EA;&#x6709;</strong> &#x65F6;&#x57DF;&#x62BD;&#x53D6;&#xFF08;DIT&#xFF09;&#x3001; &#x53CC;&#x6A21;&#xFF08;Radix-2&#xFF09;&#x3001;&#x56DB;&#x6A21;&#xFF08;Radix-4&#xFF09;&#x7B49;&#x8FD9;&#x4E9B;&#x5904;&#x7406;&#x624B;&#x6BB5;&#x3002;&#x901A;&#x7528;&#x7684;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#xFF0C;&#x5305;&#x62EC;&#x5E76;&#x4E0D;&#x9650;&#x4E8E; <strong>&#x9891;&#x57DF;&#x62BD;&#x53D6;&#xFF08;FIT&#xFF09;&#x3001;&#x516B;&#x6A21;&#xFF08;Radix-8&#xFF09;&#x3001;&#x591A;&#x6A21;&#x6DF7;&#x5408;&#xFF08;Mixed-Radix&#xFF09;&#x7B49;</strong> &#x3002;<strong>&#x4F46;&#x4EA6;&#x53EF;&#x89E6;&#x7C7B;&#x65C1;&#x901A;&#x3002;</strong> </p>
+<p>&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x5171;&#x540C;&#x6784;&#x6210;&#x4E86;&#x5F53;&#x4ECA;&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x51FD;&#x6570;&#x5E93;&#xFF0C;&#x751A;&#x81F3; <strong>&#x914D;&#x5408;&#x786C;&#x4EF6;&#x7684;&#x7279;&#x6B8A;&#x95E8;&#x7535;&#x8DEF;&#x8BBE;&#x8BA1;&#xFF0C;&#x8FD8;&#x80FD;&#x591F;&#x8FDB;&#x4E00;&#x6B65;&#x538B;&#x7F29;&#x8FC7;&#x7A0B;&#x4E2D;&#x975E;&#x7406;&#x8BBA;&#x56E0;&#x7D20;&#x7684;&#x5904;&#x7406;&#x8017;&#x65F6;</strong> &#x3002;&#x800C;&#x5728;&#x5DE5;&#x4F5C;&#x4E2D;&#xFF0C;&#x9664;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x5916;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x5728;&#x9879;&#x76EE;&#x5141;&#x8BB8;&#x8303;&#x7574;&#x5185;&#x5F15;&#x5165;&#x4E00;&#x4E9B;&#x7531;&#x7814;&#x7A76;&#x673A;&#x6784;&#x6821;&#x51C6;&#x7684;&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;&#x51FD;&#x6570;&#x5E93;&#xFF0C;&#x8FD9;&#x91CC;&#x6309;&#x91CF;&#x7EA7;&#x5217;&#x4E3E; <strong>&#x4E09;&#x4E2A;&#x7ECF;&#x5178;&#x5E93;</strong> &#xFF0C;&#x4EE5;&#x4F9B;&#x53C2;&#x8003;&#x4F7F;&#x7528;&#x4E4B;&#x4FBF;&#xFF1A;</p>
+<ul>
+<li>&#x5C0F;&#xFF1A;<a href="https://www.kurims.kyoto-u.ac.jp/~ooura/fft.html" target="_blank">Ooura&apos;s Mathematical Software Packages.</a>     by Takuya Ooura.</li>
+<li>&#x4E2D;&#xFF1A;<a href="https://www.jjj.de/fxt/" target="_blank">FXT: a library of algorithms. </a> by J&#xF6;rg Arndt.</li>
+<li>&#x5927;&#xFF1A;<a href="http://www.fftw.org/" target="_blank">FFTW: Fastest Fourier Transform in the West.</a> by Matteo Frigo and Steven G. Johnson. at MIT.</li>
+</ul>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2023-04-30 18:28:09
+2023-05-06 19:00:31
 </span></footer>
                                 
                                 </section>
@@ -1736,7 +1743,7 @@ Layer = \log_{K}(T) = \frac{l}{m}
                 </a>
                 
                 
-                <a href="Docs_1_1_4.md" class="navigation navigation-next " aria-label="Next page: 1.1.4 快速傅里叶矩阵化 - 多常数乘法矩阵逼近（Matrix-MCM Approch）">
+                <a href="Docs_1_1_4.html" class="navigation navigation-next " aria-label="Next page: 1.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1747,7 +1754,7 @@ Layer = \log_{K}(T) = \frac{l}{m}
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）","level":"1.2.1.3","depth":3,"next":{"title":"1.1.4 快速傅里叶矩阵化 - 多常数乘法矩阵逼近（Matrix-MCM Approch）","level":"1.2.1.4","depth":3,"path":"Chapter_1/Language/cn/Docs_1_1_4.md","ref":"Chapter_1/Language/cn/Docs_1_1_4.md","articles":[]},"previous":{"title":"1.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）","level":"1.2.1.2","depth":3,"path":"Chapter_1/Language/cn/Docs_1_1_2.md","ref":"Chapter_1/Language/cn/Docs_1_1_2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","local-video","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频架构师手册》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术手册》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_1/Language/cn/Docs_1_1_3.md","mtime":"2023-04-30T10:28:09.820Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-30T10:22:17.575Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）","level":"1.2.1.3","depth":3,"next":{"title":"1.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）","level":"1.2.1.4","depth":3,"path":"Chapter_1/Language/cn/Docs_1_1_4.md","ref":"Chapter_1/Language/cn/Docs_1_1_4.md","articles":[]},"previous":{"title":"1.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）","level":"1.2.1.2","depth":3,"path":"Chapter_1/Language/cn/Docs_1_1_2.md","ref":"Chapter_1/Language/cn/Docs_1_1_2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","local-video","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频架构师手册》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"local-video":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术手册》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_1/Language/cn/Docs_1_1_3.md","mtime":"2023-05-06T11:00:31.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-06T11:02:51.370Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

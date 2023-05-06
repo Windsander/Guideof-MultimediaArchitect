@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 30 Apr 2023 10:30:49 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 06 May 2023 11:03:41 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -53,7 +53,7 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[1.1 信号分析的核心算法-傅立叶变换]]></title>
+            <title><![CDATA[1.1 信号分析的核心算法 - 傅立叶变换]]></title>
             <description><![CDATA[傅立叶变换（FT [Fourier Transform]） [1] 可理解为：任意函数都存在由给定复指数函数空间（Complex Exponential Functions Space）的一组正交基（Orthogonal Bases），使得原函数可以被分解为该复指数函数空间下最大完备解的权重向量形式表示 [2] 。利用原函数与分量函数内积为该方向解分量且正交基内任意两个方向的方向函数内积为 0 的特点，来用解的人为限定有限维度子集逼近函数本身的数学方法 [3] 。这里，描述构成原函数的分量函数集与其所占权重分量（即求得的正交基），共同构成了该函数的傅里叶基（Fourier Basis）[4] [5]。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1.html</guid>
@@ -78,6 +78,20 @@
             <description><![CDATA[快速傅立叶是对离散傅立叶的数学逼近。其旨在通过有限点的分布拟合，快速逼近离散傅立叶变换结果。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）]]></title>
+            <description><![CDATA[2011 年， [12]。 【申请 IEEE 授权中】]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.2 频率信息提取 - 常用滤波算法]]></title>
+            <description><![CDATA[上一节中，我们就数字信号处理（DSP）的核心算法，傅里叶变换，进行了详细的说明。而在对二维傅里叶变换进行讲解的时候。细心的读者可能已经发现了 图像在空频分布上的一些特点。在分布的频率（波矢 $${\vec{k}}$$ 的频率 $$\vert {\vec{k}} \vert = \omega$$ ）的占比（强度系数 $$\hat{f}_{\omega}(u,v)$$ ）中，低频信号的占比高，而高频信号的占比低。 这一现象产生的原因在于：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
