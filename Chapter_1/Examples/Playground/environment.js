@@ -30,10 +30,12 @@ class Environment {
 
     // renderer-control
     #canvas_aspect;
-    #canvas_cacher;
+    #canvas_buffer;
+    #effect_config;
     #start_at;
     #end_when;
-    #current_processor = 0;
+    #current_source_id = 0;
+    #current_effect_id = 0;
     #current_looper_id = -1;
 
     constructor(driver, canvas) {
@@ -42,60 +44,52 @@ class Environment {
         this.#start_at = 0;
         this.#driver = driver;
         this.#canvas = canvas;
-        this.#source = new TestSources(driver);
-        // this.#effect = new TestProcessor(this.#canvas.width, this.#canvas.height)
+        this.#source = new TestSources(driver, this.#canvas.width, this.#canvas.height);
+        this.#effect = new TestProcess(driver, this.#canvas.width, this.#canvas.height);
+        this.#effect_config = {
+            gaussian_step: 1.0,
+            gaussian_delta: 3.0,
+        };
     }
 
-    #effect_starts() {
-        if (this.#current_processor !== 0) {
-            this.#effect.begin();
-        }
+    change_source(id) {
+        this.#current_source_id = id;
+    }
+
+    change_effect(id) {
+        this.#effect.config( this.#effect_config);
+        this.#current_effect_id = id;
     }
 
     #source_render() {
         var current = ((new Date()).getTime() - this.#start_at) * 0.001;
-        this.#source.render(this.#driver, this.#canvas_aspect, current);
         this.#canvas_aspect = this.#canvas.clientWidth / this.#canvas.clientHeight;
+        this.#canvas_buffer.bind();
+
+        if (this.#current_effect_id !== 0) this.#effect.bind();
+        this.#source.render(this.#canvas_aspect, this.#current_source_id, current);
+        if (this.#current_effect_id !== 0) this.#effect.unbind();
+        this.#canvas_buffer.bind();
+        if (this.#current_effect_id !== 0) this.#effect.render(this.#current_effect_id);
     }
 
-    #effect_finish() {
-        switch (postproc) {
-            case 1:
-                this.#effect.end(framebuffer, this.#effect.hypnoGlow, {x: 3, y: 3, sub: 0.2});
-                break;
-            case 2:
-                this.#effect.end(framebuffer, this.#effect.blur, {x: 2, y: 2});
-                break;
-            case 3:
-                this.#effect.end(framebuffer, this.#effect.radialBlur, {strength: 0.3, glow: 1.0});
-                break;
-        }
-    }
-
-    render_loop() {
-        function do_render() {
-            env_gl.render_loop();
+    do_render() {
+        function render_loop() {
+            env_gl.do_render();
         }
 
-        // this.#effect_starts();
         this.#source_render();
-        // this.#effect_finish();
-
-        this.#current_looper_id = requestAnimationFrame(do_render);
-    }
-
-    change_effect(id) {
-        this.#current_processor = id;
+        this.#current_looper_id = requestAnimationFrame(render_loop);
     }
 
     do_initial() {
         this.#start_at = (new Date()).getTime();
         this.#canvas_aspect = this.#canvas.clientWidth / this.#canvas.clientHeight
-        this.#canvas_cacher = tdl.framebuffers.getBackBuffer(this.#canvas)
+        this.#canvas_buffer = tdl.framebuffers.getBackBuffer(this.#canvas)
         this.#driver.disable(this.#driver.BLEND);
         this.#driver.depthFunc(this.#driver.LEQUAL);
         this.#driver.blendFunc(this.#driver.SRC_ALPHA, this.#driver.ONE_MINUS_SRC_ALPHA);
-        this.render_loop();
+        this.do_render();
         return true;
     }
 

@@ -1,6 +1,7 @@
-#include "common_header.glsl"
+precision mediump float;
 
-PixelInput();
+varying vec4 fs_position;
+varying vec2 fs_texcoord;
 
 uniform mat3 gaussian_matrix;
 uniform sampler2D target_texture;

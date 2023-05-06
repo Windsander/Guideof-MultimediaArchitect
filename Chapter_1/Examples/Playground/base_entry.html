@@ -45,7 +45,7 @@
         #container_config {
             position: absolute;
             width: 150px;
-            top: 100px;
+            top: 130px;
             left: 10px;
             z-index: 2;
             color: gray;
@@ -82,7 +82,7 @@
             tdl.log("source buttons init::");
 
             function trigger_button(button, id) {
-                //env_gl.change_source(id);
+                env_gl.change_source(id);
                 for (let i = 0; i < env_source_settings.length; ++i) {
                     env_source_settings[i].style.color = "gray"
                 }
@@ -168,6 +168,7 @@
     <div class="title">Source Control</div>
     <div id="setSource0">Normal</div>
     <div id="setSource1">Blooms</div>
+    <div id="setSource2">Shreds</div>
 </div>
 <div id="container_config">
     <div class="title">Post Processing</div>

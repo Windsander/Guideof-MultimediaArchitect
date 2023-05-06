@@ -2,6 +2,6 @@ precision mediump float;
 
 varying vec4 fs_texcolor;
 
-void main(void) {
+void main() {
     gl_FragColor = fs_texcolor;
 }

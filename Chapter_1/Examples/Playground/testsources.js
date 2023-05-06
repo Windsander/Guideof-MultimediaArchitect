@@ -7,6 +7,7 @@
  */
 
 class TestSources {
+    #driver
     #model;
     #arrays;
     #program;
@@ -22,11 +23,12 @@ class TestSources {
     #targets_upon;
     #orient_up;
 
-    constructor(driver) {
+    constructor(driver, w, h) {
+        this.#driver = driver;
         this.#textures = [];
-
-        this.#program =  utils.addShaderProg(driver, 'source_vs', 'source_fs');
+        this.#program = utils.addShaderProg(driver, 'source_vs', 'source_fs');
         this.#arrays = tdl.primitives.createFlaredCube(0.75, 3.0, 800);
+        this.#arrays.texcoord = this.#arrays.texCoord;
         this.#model = new tdl.models.Model(this.#program, this.#arrays, this.#textures);
 
         this.#proj = new Float32Array(16);
@@ -40,30 +42,31 @@ class TestSources {
         this.#orient_up = new Float32Array([0.0, +1.0, 0.0]);
     }
 
-    render(driver, aspect, time) {
+    render(aspect, type, time) {
         tdl.fast.matrix4.lookAt(this.#view, this.#observe_from, this.#targets_upon, this.#orient_up);
-        tdl.fast.matrix4.perspective(this.#proj, tdl.math.degToRad(60), aspect, 0.1, 500);
+        tdl.fast.matrix4.perspective(this.#proj, tdl.math.degToRad(60), aspect, 0.1, 100);
         tdl.fast.matrix4.rotationY(this.#world, time * 0.2);
         tdl.fast.matrix4.mul(this.#temp_vps, this.#view, this.#proj);
         tdl.fast.matrix4.mul(this.#temp_wvp, this.#world, this.#temp_vps);
-
-        driver.clearColor(0.1, 0.2, 0.3, 1);
-        driver.clear(driver.COLOR_BUFFER_BIT | driver.DEPTH_BUFFER_BIT);
-        driver.disable(driver.CULL_FACE);
-        driver.disable(driver.DEPTH_TEST);
-        driver.enable(driver.BLEND);
-        driver.blendFunc(driver.ONE, driver.ONE);
-        let uniformsConst = {
+        let cube_configs = {
+            u_type: type,
             u_time: time,
-            u_color_major: TestSources.#hsv2rgb((time * 0.10100) % 1.0, 0.8, 0.1, 1),
-            u_color_minor: TestSources.#hsv2rgb((time * 0.22124) % 1.0, 0.7, 0.1, 0),
+            u_color_major: TestSources.#hsv2rgb((time * 0.10100) % 1.0, 0.8, 0.1, 1.0),
+            u_color_minor: TestSources.#hsv2rgb((time * 0.22124) % 1.0, 0.7, 0.1, 0.0),
         };
-        let uniformsPer = {
+        let cube_posture = {
             u_wvp: this.#temp_wvp
         };
-        this.#model.drawPrep(uniformsConst);
-        this.#model.draw(uniformsPer);
-        driver.disable(driver.BLEND);
+
+        this.#driver.clearColor(0.1, 0.2, 0.3, 1);
+        this.#driver.clear(this.#driver.COLOR_BUFFER_BIT | this.#driver.DEPTH_BUFFER_BIT);
+        this.#driver.disable(this.#driver.DEPTH_TEST);
+        this.#driver.disable(this.#driver.CULL_FACE);
+        this.#driver.enable(this.#driver.BLEND);
+        this.#driver.blendFunc(this.#driver.ONE, this.#driver.ONE);
+        this.#model.drawPrep(cube_configs);
+        this.#model.draw(cube_posture);
+        this.#driver.disable(this.#driver.BLEND);
     }
 
     static #hsv2rgb(h, s, v, a) {

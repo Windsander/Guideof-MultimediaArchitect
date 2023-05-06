@@ -2,9 +2,10 @@ attribute vec3 position;
 attribute vec2 texcoord;
 
 uniform float u_time;
+uniform int u_type;
+uniform mat4 u_wvp;
 uniform vec4 u_color_major;
 uniform vec4 u_color_minor;
-uniform mat4 u_wvp;
 varying vec4 fs_texcolor;
 varying vec2 fs_texcoord;
 
@@ -26,20 +27,23 @@ vec3 rotateZ(vec3 v, float angle) {
     return vec3(c * v.x + s * v.y, -s * v.x + c * v.y, v.z);
 }
 
-vec3 auto_rotate(vec3 v,vec2 tc) {
+vec3 auto_rotate(vec3 v, float o) {
     return rotateZ(
         rotateX(
-            rotateY(v, -u_time + tc.x * 6.1),
-            -u_time * 0.6 + tc.x * 8.1
+            rotateY(v, -u_time + o * 9.35),
+            -u_time * 0.4 + o * 6.4
         ),
-        -u_time * 0.7 + tc.x * 7.12
+        -u_time * 0.6 + o * 8.26
     );
 }
 
-void main(void) {
+void main() {
     fs_texcoord = texcoord;
     fs_texcolor = mix(u_color_major, u_color_minor, texcoord.x);
     fs_texcolor *= fs_texcolor.w;
-    vec3 pos = auto_rotate(position, texcoord);
-    gl_Position = u_wvp * vec4(pos, 1.0);
+    float roatate_axis =
+    (u_type == 1) ? texcoord.x :
+    (u_type == 2) ? texcoord.y :
+    1.0;
+    gl_Position = u_wvp * vec4(auto_rotate(position, roatate_axis), 1.0);
 }
