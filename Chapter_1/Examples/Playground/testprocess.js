@@ -6,6 +6,12 @@
  * provide effects based on Chapter_1 examples
  */
 
+function pixel_bias(width, height) {
+    return new Float32Array([
+        1.0 / width, 1.0 / height
+    ]);
+}
+
 function calculate_gaussian_kernel(step, delta) {
     let n = step * 2 + 1;
     let kernel = new Float32Array(n * n);
@@ -15,7 +21,7 @@ function calculate_gaussian_kernel(step, delta) {
     let normalize_div = 0;
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n; j++) {
-            let diff = (i - step) ^ 2 + (j - step) ^ 2;
+            let diff = Math.pow(i - step, 2) + Math.pow(j - step, 2);
             kernel[j + n * i] = factor_1 * Math.exp(-diff * factor_2);
             normalize_div += kernel[i];
         }
@@ -33,9 +39,11 @@ class TestProcess {
 
     #attribute;
     #positions;
+    #pixel_bias;
     #gaussian_kernel;
 
-    #effect_gaussian;
+    #effect_gaussian_norm;
+    #effect_gaussian_fast;
     #effect_bilateral;
     #effect_sobel;
     #effect_NMS;
@@ -44,6 +52,9 @@ class TestProcess {
         this.#driver = driver;
         this.#source_buffer = tdl.framebuffers.createFramebuffer(w, h, true);
         this.#positions = driver.createBuffer();
+        this.#pixel_bias = new Float32Array([
+            1.0 / w, 1.0 / h
+        ]);
         this.#attribute = new Float32Array([
             -1.0, -1.0, 0.0, //0.0, 0.0,
             +1.0, -1.0, 0.0, //1.0, 0.0,
@@ -51,7 +62,8 @@ class TestProcess {
             +1.0, +1.0, 0.0, //1.0, 1.0
         ]);
 
-        this.#effect_gaussian = utils.addShaderProg(driver, 'filter_common_vs', 'filter_gaussian_ps');
+        this.#effect_gaussian_norm = utils.addShaderProg(driver, 'filter_common_vs', 'filter_gaussian_ps');
+        this.#effect_gaussian_fast = utils.addShaderProg(driver, 'filter_common_vs', 'filter_gaussian_fast_ps');
         // this.#effect_bilateral = utils.addShaderProg(driver, 'filter_common_vs', 'filter_bilateral_ps');
         // this.#effect_sobel = utils.addShaderProg(driver, 'filter_common_vs', 'filter_sobel_ps');
         // this.#effect_NMS = utils.addShaderProg(driver, 'filter_common_vs', 'filter_NMS_ps');
@@ -87,14 +99,19 @@ class TestProcess {
                 break;
             }
             case 1: {
-                this.#effect_gaussian.use();
-                this.#effect_gaussian.setUniform("target_texture", this.#source_buffer.texture)
-                this.#effect_gaussian.setUniform("gaussian_matrix", this.#gaussian_kernel)
-                this.#draw_effect(this.#effect_gaussian);
+                this.#effect_gaussian_norm.use();
+                this.#effect_gaussian_norm.setUniform("target_texture", this.#source_buffer.texture)
+                this.#effect_gaussian_norm.setUniform("gaussian_matrix", this.#gaussian_kernel)
+                this.#effect_gaussian_norm.setUniform("pixel_bias", this.#pixel_bias)
+                this.#draw_effect(this.#effect_gaussian_norm);
                 break;
             }
             case 2: {
-
+                this.#effect_gaussian_fast.use();
+                this.#effect_gaussian_fast.setUniform("target_texture", this.#source_buffer.texture)
+                this.#effect_gaussian_fast.setUniform("gaussian_matrix", this.#gaussian_kernel)
+                this.#effect_gaussian_fast.setUniform("pixel_bias", this.#pixel_bias)
+                this.#draw_effect(this.#effect_gaussian_fast);
                 break;
             }
             case 3: {
