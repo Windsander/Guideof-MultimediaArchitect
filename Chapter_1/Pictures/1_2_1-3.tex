@@ -1,0 +1,125 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix, positioning, backgrounds}
+
+%================================== Prepare ==================================
+\newcommand\numRowsK{3}
+\newcommand\numColsK{3}
+\newcommand{\K}[2]{
+    % #1: row, #2: col
+    \edef\Kcol##1##2##3{###2}%
+    \edef\Krow##1##2##3{\noexpand\Kcol###1}%
+    \Krow
+        {1 0 1}
+        {0 1 0}
+        {1 0 1}%
+}
+\newcommand{\convoutionpicture}[2]{
+    % #1: row to be highlighted, #2: colum to be highlighted
+    \begin{tikzpicture}
+    {
+        % ------- style -------
+        \tikzset{%
+            parenthesized/.style={%
+                left delimiter  = (,
+                right delimiter = ),
+            },
+            node distance = 10mu,
+        }
+
+        % ------- equation -------
+        \matrix[matrix of math nodes, parenthesized, ampersand replacement=\&] (I) {
+            0 \& 1 \& 1 \& 1 \& 0 \& 0 \& 0 \\
+            0 \& 0 \& 1 \& 1 \& 1 \& 0 \& 0 \\
+            0 \& 0 \& 0 \& 1 \& 1 \& 1 \& 0 \\
+            0 \& 0 \& 0 \& 1 \& 1 \& 0 \& 0 \\
+            0 \& 0 \& 1 \& 1 \& 0 \& 0 \& 0 \\
+            0 \& 1 \& 1 \& 0 \& 0 \& 0 \& 0 \\
+            1 \& 1 \& 0 \& 0 \& 0 \& 0 \& 0 \\
+        };
+
+        \node (*) [right = of I] {${}*{}$};
+
+        \def\Kmatrix{}
+        \foreach \row in {1, ..., 3} {
+            \gdef \sep {}
+            \foreach \col in {1, ..., 3} {%
+                \xdef \Kmatrix {\unexpanded\expandafter{\Kmatrix}\unexpanded\expandafter{\sep}\noexpand \K{\row}{\col}}
+                \gdef \sep { \& }
+            }
+            \xdef \Kmatrix {\unexpanded\expandafter{\Kmatrix}\noexpand\\}
+        }
+        \matrix[matrix of math nodes, parenthesized, ampersand replacement=\&] (K) [right = of *] {
+            \Kmatrix
+        };
+
+        \node (=) [right = of K] {${}={}$};
+
+        \matrix[matrix of math nodes, parenthesized, ampersand replacement=\&] (I*K) [right = of {=}] {
+            1 \& 4 \& 3 \& 4 \& 1 \\
+            1 \& 2 \& 4 \& 3 \& 3 \\
+            1 \& 2 \& 3 \& 4 \& 1 \\
+            1 \& 3 \& 3 \& 1 \& 1 \\
+            3 \& 3 \& 1 \& 1 \& 0 \\
+        };
+
+        % ------- highlighting -------
+        \def\rowResult{#1}
+        \def\colResult{#2}
+
+        \begin{scope}[on background layer]
+            \newcommand{\padding}{2pt}
+            \coordinate (Is-nw) at ([xshift=-\padding, yshift=+\padding] I-\rowResult-\colResult.north west);
+            \coordinate (Is-se) at ([xshift=+\padding, yshift=-\padding] I-\the\numexpr\rowResult+\numRowsK-1\relax-\the\numexpr\colResult+\numColsK-1\relax.south east);
+            \coordinate (Is-sw) at (Is-nw |- Is-se);
+            \coordinate (Is-ne) at (Is-se |- Is-nw);
+
+            \filldraw[red,   fill opacity=.1] (Is-nw) rectangle (Is-se);
+            \filldraw[green, fill opacity=.1] (I*K-\rowResult-\colResult.north west) rectangle (I*K-\rowResult-\colResult.south east);
+
+            \draw[blue, dotted] 
+                (Is-nw) -- (K.north west)
+                (Is-se) -- (K.south east)
+                (Is-sw) -- (K.south west)
+                (Is-ne) -- (K.north east)
+            ;
+            \draw[green, dotted] 
+                (I*K-\rowResult-\colResult.north west) -- (K.north west)
+                (I*K-\rowResult-\colResult.south east) -- (K.south east)
+                (I*K-\rowResult-\colResult.south west) -- (K.south west)
+                (I*K-\rowResult-\colResult.north east) -- (K.north east)
+            ;
+
+            \draw[blue,  fill=blue!10!white] (K.north west) rectangle (K.south east);
+
+            \foreach \row [evaluate=\row as \rowI using int(\row+\rowResult-1)] in {1, ..., \numRowsK} {%
+                \foreach \col [evaluate=\col as \colI using int(\col+\colResult-1)] in {1, ..., \numColsK} {%
+                        \node[text=blue] at (I-\rowI-\colI.south east) [xshift=-.3em] {\tiny$\times \K{\row}{\col}$};
+                    }
+            }
+        \end{scope}
+
+        % ------- labels -------
+        \tikzset{node distance=0em}
+        \node[below=of I] (I-label) {$Input$};
+        \node at (K |- I-label)     {$Kernal\ Sampling$};
+        \node at (I*K |- I-label)   {$I*K$};
+    }
+    \end{tikzpicture}%
+}
+
+\begin{document}
+\begin{tikzpicture}
+%=================================== Start ===================================
+{
+    \matrix[matrix of math nodes, ampersand replacement=\&] (Kernal) {
+        W_1 \& 4 \& 3 \& 4 \& 1 \\
+        1 \& 2 \& 4 \& 3 \& 3 \\
+        1 \& 2 \& 3 \& 4 \& 1 \\
+        1 \& 3 \& 3 \& 1 \& 1 \\
+        3 \& 3 \& 1 \& 1 \& 0 \\
+    };
+}
+%==================================== END ====================================
+\end{tikzpicture}
+\end{document}
