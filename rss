@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[《音视频架构师手册》©]]></title>
+        <title><![CDATA[《音视频开发技术：原理与实践》©]]></title>
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 06 May 2023 11:03:41 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 12 May 2023 09:25:16 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
         <webMaster><![CDATA[me@arikanli.com]]></webMaster>
         <category><![CDATA[gitbook]]></category>
         <item>
-            <title><![CDATA[《音视频架构师手册》©]]></title>
+            <title><![CDATA[《音视频开发技术：原理与实践》©]]></title>
             <description><![CDATA[<font color=oragan> =[>> 关于作者© <<]= </font>]]></description>
             <link>https://arikanli.cyberfederal.io/</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/</guid>
@@ -92,6 +92,20 @@
             <description><![CDATA[上一节中，我们就数字信号处理（DSP）的核心算法，傅里叶变换，进行了详细的说明。而在对二维傅里叶变换进行讲解的时候。细心的读者可能已经发现了 图像在空频分布上的一些特点。在分布的频率（波矢 $${\vec{k}}$$ 的频率 $$\vert {\vec{k}} \vert = \omega$$ ）的占比（强度系数 $$\hat{f}_{\omega}(u,v)$$ ）中，低频信号的占比高，而高频信号的占比低。 这一现象产生的原因在于：]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.2.1 高斯滤波（Gauss Filter）]]></title>
+            <description><![CDATA[高斯滤波是我们最常用的一种滤波器。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_2_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_2_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.2.2 双边滤波（Bilateral Filter）]]></title>
+            <description><![CDATA[双边滤波（Bilateral Filter） 是在高斯滤波基础上，基于 边缘保存（Edge Preserving） 滤波思想，通过一个 空间域（Spatial Domain/Domain）标准高斯滤波 和 灰度值（Gray Range/Range）朴素高斯分布 的共同作用，形成的 高斯滤波变体 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_2_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_2_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
