@@ -1,5 +1,5 @@
 {
-    "title": "《音视频开发技术手册》©",
+    "title": "《音视频开发技术：原理与实践》©",
 	"description": "音视频开发资料查询好帮手",
     "author": "李述博 (Arikan.Li)",
     "language": "zh-hans",
@@ -56,7 +56,7 @@
             "url": "https://github.com/Windsander"
         },
 		"rss": {
-			"title": "《音视频架构师手册》©",
+			"title": "《音视频开发技术：原理与实践》©",
 			"description": "音视频开发资料查询好帮手",
 			"author": "李述博 (Arikan.Li)",
 			"feed_url": "https://arikanli.cyberfederal.io/rss",

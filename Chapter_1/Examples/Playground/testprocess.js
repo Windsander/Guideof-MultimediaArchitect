@@ -88,6 +88,7 @@ class TestProcess {
     #effect_gaussian_norm;
     #effect_gaussian_fast;
     #effect_bilateral_norm;
+    #effect_bilateral_fast;
     #effect_sobel;
     #effect_NMS;
 
@@ -105,11 +106,12 @@ class TestProcess {
             +1.0, +1.0, 0.0, //1.0, 1.0
         ]);
 
-        this.#effect_gaussian_norm = utils.addShaderProg(driver, 'filter_common_vs', 'filter_gaussian_norm_ps');
-        this.#effect_gaussian_fast = utils.addShaderProg(driver, 'filter_common_vs', 'filter_gaussian_fast_ps');
-        this.#effect_bilateral_norm = utils.addShaderProg(driver, 'filter_common_vs', 'filter_bilateral_norm_ps');
-        // this.#effect_sobel = utils.addShaderProg(driver, 'filter_common_vs', 'filter_sobel_ps');
-        // this.#effect_NMS = utils.addShaderProg(driver, 'filter_common_vs', 'filter_NMS_ps');
+        this.#effect_gaussian_norm = utils.addShaderProg(driver, 'common_filter_vs', 'filter_gaussian_norm_ps');
+        this.#effect_gaussian_fast = utils.addShaderProg(driver, 'common_filter_vs', 'filter_gaussian_fast_ps');
+        this.#effect_bilateral_norm = utils.addShaderProg(driver, 'common_filter_vs', 'filter_bilateral_norm_ps');
+        this.#effect_bilateral_fast = utils.addShaderProg(driver, 'common_filter_vs', 'filter_bilateral_fast_ps');
+        // this.#effect_sobel = utils.addShaderProg(driver, 'common_filter_vs', 'filter_sobel_ps');
+        // this.#effect_NMS = utils.addShaderProg(driver, 'common_filter_vs', 'filter_NMS_ps');
     }
 
     #draw_effect(effect_program) {
@@ -168,6 +170,19 @@ class TestProcess {
                 break;
             }
             case 4: {
+                this.#effect_bilateral_fast.use();
+                this.#effect_bilateral_fast.setUniform("target_texture", this.#source_buffer.texture)
+                this.#effect_bilateral_fast.setUniform("gaussian_matrix", this.#gaussian_kernel)
+                this.#effect_bilateral_fast.setUniform("gaussian_range", this.#bilateral_range)
+                this.#effect_bilateral_fast.setUniform("pixel_bias", this.#pixel_bias)
+                this.#draw_effect(this.#effect_bilateral_fast);
+                break;
+            }
+            case 5: {
+
+                break;
+            }
+            case 6: {
 
                 break;
             }

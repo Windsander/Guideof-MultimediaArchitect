@@ -53,7 +53,7 @@ class Environment {
         this.#effect_config = {
             gaussian_step: 1.0,
             gaussian_delta: 19.7,
-            gaussian_range: 0.27,
+            gaussian_range: 0.7,
         };
     }
 

@@ -1,4 +1,4 @@
-# 《音视频架构师手册》©
+# 《音视频开发技术：原理与实践》©
 
 <p align='left'>
 <a href="https://github.com/Windsander" target="_blank"><img src="https://img.shields.io/badge/%E4%BD%9C%E8%80%85-%E6%9D%8E%E8%BF%B0%E5%8D%9A-000000.svg?style=flat&logo=GitHub"></a>
@@ -57,7 +57,7 @@
 
 ## **目录**
 
-### 多媒体工程基础 & 音视频分析
+### 音视频工程基础
 
 * [一、音视频常用基础算法](Chapter_1/Language/cn/Apex_1_Introduce.md)
     * [1.1 信号分析的核心算法 - 傅立叶变换](Chapter_1/Language/cn/Docs_1_1.md)

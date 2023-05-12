@@ -1,6 +1,6 @@
 # Table of contents
 
-* [《音视频架构师手册》©](README.md)
+* [《音视频开发技术：原理与实践》©](README.md)
 	* [<font color=oragan> =[>> 关于作者© <<]= </font>](AUTHOR.md)
 	* [<font color=red> =[>> 版权申明© <<]= </font>](COPYRIGHT.md)
 	* [<font color=red> =[>> 难度向导© <<]= </font>](GUIDER.md)
