@@ -1,6 +1,6 @@
 # Table of contents
 
-* [《音视频架构师手册》©](README.md)
+* [《音视频开发技术：原理与实践》©](README.md)
 	* [<font color=oragan> =[>> 关于作者© <<]= </font>](AUTHOR.md)
 	* [<font color=red> =[>> 版权申明© <<]= </font>](COPYRIGHT.md)
 	* [<font color=red> =[>> 难度向导© <<]= </font>](GUIDER.md)
@@ -56,8 +56,8 @@
 	    * [3.5.2 颜料三原色色彩空间（CMY / CMYK ）](Chapter_3/Language/cn/Docs_3_5_2.md)
 	    * [3.5.3 CIE RGB 色彩空间（CIE 1931 RGB Color Space）](Chapter_3/Language/cn/Docs_3_5_3.md)
 	    * [3.5.4 CIE XYZ 色彩空间（CIE 1931 XYZ Color Space）](Chapter_3/Language/cn/Docs_3_5_4.md)
-	    * [3.5.5 CIE LAB 色彩空间（CIE 1976 L*, a*, b* Color Space）](Chapter_3/Language/cn/Docs_3_5_5.md)
-	    * [3.5.6 CIE LUV 色彩空间（CIE 1976 L*, u*, v* Color Space）](Chapter_3/Language/cn/Docs_3_5_6.md)
+	    * [3.5.5 CIE LAB 色彩空间（CIE 1976 L\*, a\*, b\* Color Space）](Chapter_3/Language/cn/Docs_3_5_5.md)
+	    * [3.5.6 CIE LUV 色彩空间（CIE 1976 L\*, u\*, v\* Color Space）](Chapter_3/Language/cn/Docs_3_5_6.md)
 	    * [3.5.7 颜色三要素色彩空间（HSV / HSI / HSL）](Chapter_3/Language/cn/Docs_3_5_7.md)
     * [3.6 色彩的存储](Chapter_3/Language/cn/Docs_3_6.md)
 	    * [3.6.1 色彩格式（Color Format）与色彩存储](Chapter_3/Language/cn/Docs_3_6_1.md)

@@ -1,5 +1,5 @@
 
-# 3.5.6 CIE LUV 色彩空间（CIE 1976 L*, u*, v* color space）
+# 3.5.6 CIE LUV 色彩空间（CIE 1976 L\*, u\*, v\* color space）
 
 1976 年，在 CIE 采纳 CIE LAB 色彩空间的同年，CIE 以 **CIE 1960 UCS 和 CIE 1964 UVW**（这两个在前文色彩度量中介绍过，做为补充型色彩空间，用于量化色温和 CRI 到 CIE 标准体系内）**为基础** 进一步拓展，提出了 **CIE LUV 色彩空间**。
 

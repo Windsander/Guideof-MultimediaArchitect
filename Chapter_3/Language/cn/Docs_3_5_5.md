@@ -1,5 +1,5 @@
 
-# 3.5.5 CIE LAB 色彩空间（CIE 1976 L*, a*, b* color space）
+# 3.5.5 CIE LAB 色彩空间（CIE 1976 L\*, a\*, b\* color space）
 
 1952 年，色彩科学家 **里查德·塞瓦尔·亨特（Richard Sewall Hunter，1909–1991）** 创建了至今任然是业界最高端颜色解决方案供应商的 **亨特联合实验室（HunterLab [Hunter Associates Laboratory]）** ，并在之后提出了著名的 **Hunter L,a,b 色彩空间** 。 Hunter L,a,b 色彩空间结合 CIE XYZ 色彩空间，共同组成了 CIE 1976 LAB 色彩空间的前身。所以，CIE LAB 与 RGB 间需要通过 XYZ 来缔结转换关系。
 
