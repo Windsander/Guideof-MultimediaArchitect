@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 12 May 2023 09:25:16 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 18 May 2023 09:12:53 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -137,22 +137,22 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[3.2.1 光亮度（Luminance）]]></title>
-            <description><![CDATA[光亮度（Luminance） 也被称为辉度，是指固定光所照射单位平面面积光照区域的物理发光强度，单位是尼特（ $$Nit$$ ），代表烛光每立方米（ $$cd/m^2$$ ，candela per square metre）。光亮度属于光度学（Luminosity）概念。区别于亮度（Brightness）这种用来形容人生理光强直接感受的主观描述，光亮度是从可见光谱范围计量的物理量。]]></description>
+            <title><![CDATA[3.2.1 色调（Hue）]]></title>
+            <description><![CDATA[色调（Hue） 也被称为色相，指颜色实际种类。换一种角度来说。色调是对人眼可观察颜色的基础分类。通过色调，结合其他两个颜色的三要素，我们能够准确的描述自然界中能够形成的任意混合色。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[3.2.2 色调（Hue）]]></title>
-            <description><![CDATA[色调（Hue） 也被称为色相，指颜色实际种类。换一种角度来说。色调是对人眼可观察颜色的基础分类。通过色调，结合其他两个颜色的三要素，我们能够准确的描述自然界中能够形成的任意混合色。]]></description>
+            <title><![CDATA[3.2.2 饱和度（Saturation）]]></title>
+            <description><![CDATA[*饱和度 是指颜色的浓淡程度。以其对比标准的不同，被区分为 光学饱和度（Colorfulness） 和 感官饱和度（Saturation） [10]。光学饱和度多用于工程，感官饱和度则多用于艺术设计中。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[3.2.3 饱和度（Saturation）]]></title>
-            <description><![CDATA[*饱和度 是指颜色的浓淡程度。以其对比标准的不同，被区分为 光学饱和度（Colorfulness） 和 感官饱和度（Saturation） [10]。光学饱和度多用于工程，感官饱和度则多用于艺术设计中。]]></description>
+            <title><![CDATA[3.2.3 光亮度（Luminance）]]></title>
+            <description><![CDATA[光亮度（Luminance） 也被称为辉度，是指固定光所照射单位平面面积光照区域的物理发光强度，单位是尼特（ $$Nit$$ ），代表烛光每立方米（ $$cd/m^2$$ ，candela per square metre）。光亮度属于光度学（Luminosity）概念。区别于亮度（Brightness）这种用来形容人生理光强直接感受的主观描述，光亮度是从可见光谱范围计量的物理量。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
