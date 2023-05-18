@@ -7,12 +7,10 @@
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "500" height = "430"
+   <img width = "300" height = "260"
       src="../../Pictures/Grassmann_Circle.png" alt="">
    <figcaption>
-      <p>图 3.2.2-1 格拉斯曼的混合律颜色推算演示</p>
+      <p>图 3.2.1-1 格拉斯曼的混合律颜色推算演示</p>
    </figcaption>
 </figure>
 </center>
