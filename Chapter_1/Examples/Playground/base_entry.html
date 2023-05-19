@@ -172,11 +172,23 @@
                         if (button.style.color === "gray") {
                             button.style.color = "red";
                             env_gl.switch_auto_test(true, auto_callback);
-                            tdl.log("advance option opened->", id);
+                            tdl.log("advance option\<auto test\> opened->", id);
                         } else {
                             button.style.color = "gray";
                             env_gl.switch_auto_test(false);
-                            tdl.log("advance option closed->", id);
+                            tdl.log("advance option\<auto test\> closed->", id);
+                        }
+                        break;
+                    }
+                    case 1: {
+                        if (button.style.color === "gray") {
+                            button.style.color = "red";
+                            env_gl.switch_only_edge(true);
+                            tdl.log("advance option\<only edge\> opened->", id);
+                        } else {
+                            button.style.color = "gray";
+                            env_gl.switch_only_edge(false);
+                            tdl.log("advance option\<only edge\> closed->", id);
                         }
                         break;
                     }
@@ -198,6 +210,7 @@
             }
             tdl.log("advance control done!");
             trigger_button(document.getElementById("setAdvance0"), 0);
+            trigger_button(document.getElementById("setAdvance1"), 1);
         }
 
         window.onload = function () {
@@ -250,6 +263,7 @@
 <div id="container_advance">
     <div class="title">Advance Opts</div>
     <div id="setAdvance0">Auto Test</div>
+    <div id="setAdvance1">Only Edge</div>
 </div>
 <div id="container_canvas">
     <canvas id="canvas" width="1024" height="512" style="width: 100%; height: 100%;"></canvas>

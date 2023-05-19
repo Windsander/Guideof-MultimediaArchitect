@@ -60,9 +60,9 @@ function calculate_laplacian_kernel(step, way_count, str_factor) {
     let kernel = new Float32Array(n * n);
 
     for (let i = 0; i < n * n; i = i + way_step) {
-        kernel[i] = str_factor;
+        kernel[i] = -str_factor;
     }
-    kernel[step + n * step] = -cur_way * (n - 1) * str_factor;
+    kernel[step + n * step] = cur_way * (n - 1) * str_factor;
     return kernel;
 }
 
@@ -105,6 +105,7 @@ class TestProcess {
     #laplacian_4way_kernel;
     #sobel_kernel_x;
     #sobel_kernel_y;
+    #only_edge;
 
     #effect_gaussian_norm;
     #effect_gaussian_fast;
@@ -166,6 +167,7 @@ class TestProcess {
         );
         this.#sobel_kernel_x = calculate_sobel_kernel(true, effect_params.sobel_factor);
         this.#sobel_kernel_y = calculate_sobel_kernel(false, effect_params.sobel_factor);
+        this.#only_edge = effect_params.only_edge;
     }
 
     bind() {
@@ -220,6 +222,7 @@ class TestProcess {
                 this.#effect_laplacian_2way.setUniform("target_texture", this.#source_buffer.texture)
                 this.#effect_laplacian_2way.setUniform("laplacian_matrix", this.#laplacian_2way_kernel)
                 this.#effect_laplacian_2way.setUniform("pixel_bias", this.#pixel_bias)
+                this.#effect_laplacian_2way.setUniform("only_edge", this.#only_edge)
                 this.#draw_effect(this.#effect_laplacian_2way);
                 break;
             }
@@ -228,6 +231,7 @@ class TestProcess {
                 this.#effect_laplacian_4way.setUniform("target_texture", this.#source_buffer.texture)
                 this.#effect_laplacian_4way.setUniform("laplacian_matrix", this.#laplacian_4way_kernel)
                 this.#effect_laplacian_4way.setUniform("pixel_bias", this.#pixel_bias)
+                this.#effect_laplacian_4way.setUniform("only_edge", this.#only_edge)
                 this.#draw_effect(this.#effect_laplacian_4way);
                 break;
             }
@@ -237,6 +241,7 @@ class TestProcess {
                 this.#effect_sobel.setUniform("sobel_matrix_x", this.#sobel_kernel_x)
                 this.#effect_sobel.setUniform("sobel_matrix_y", this.#sobel_kernel_y)
                 this.#effect_sobel.setUniform("pixel_bias", this.#pixel_bias)
+                this.#effect_sobel.setUniform("only_edge", this.#only_edge)
                 this.#draw_effect(this.#effect_sobel);
                 break;
             }

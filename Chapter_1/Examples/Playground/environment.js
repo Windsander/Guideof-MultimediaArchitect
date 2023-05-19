@@ -38,6 +38,7 @@ class Environment {
     #current_effect_id = 0;
     #current_looper_id = -1;
     #running_auto_test = false;
+    #running_only_edge = false;
 
     // trigger
     #auto_test_callback;
@@ -55,14 +56,21 @@ class Environment {
             gaussian_delta: 19.7,
             gaussian_range: 0.7,
             laplacian_step: 1.0,
-            laplacian_factor: 16.0,
-            sobel_factor: 16.0,
+            laplacian_factor: 1.6,
+            sobel_factor: 1.6,
+            only_edge: false,
         };
     }
 
     switch_auto_test(need_open, auto_test_callback) {
         this.#running_auto_test = need_open;
         this.#auto_test_callback = need_open ? auto_test_callback : null;
+    }
+
+    switch_only_edge(need_open) {
+        this.#running_only_edge = need_open;
+        this.#effect_config.only_edge = need_open;
+        this.#effect.config(this.#effect_config);
     }
 
     change_source(id) {
