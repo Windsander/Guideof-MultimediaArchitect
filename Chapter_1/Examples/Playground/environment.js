@@ -54,6 +54,9 @@ class Environment {
             gaussian_step: 1.0,
             gaussian_delta: 19.7,
             gaussian_range: 0.7,
+            laplacian_step: 1.0,
+            laplacian_factor: 16.0,
+            sobel_factor: 16.0,
         };
     }
 
