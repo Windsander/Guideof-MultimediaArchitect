@@ -52,11 +52,11 @@ class Environment {
         this.#source = new TestSources(driver, this.#canvas.width, this.#canvas.height);
         this.#effect = new TestProcess(driver, this.#canvas.width, this.#canvas.height);
         this.#effect_config = {
-            gaussian_step: 1.0,
-            gaussian_delta: 19.7,
+            kernel_step: 1.0,
+            gaussian_delta: 16.7,
             gaussian_range: 0.7,
-            laplacian_step: 1.0,
             laplacian_factor: 1.6,
+            marr_factor: 1.0,
             sobel_factor: 1.6,
             only_edge: false,
         };

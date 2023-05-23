@@ -89,6 +89,33 @@ function calculate_sobel_kernel(use_horizontal, str_factor) {
     return kernel;
 }
 
+/**
+ * Calculate laplacian-marr kernel for wight matrix
+ *
+ * @param step Convolution Kernel step
+ * @param delta Gaussian Distribution Factor
+ * @param str_factor Marr Intensity Factor
+ */
+function calculate_marr_kernel(step, delta, str_factor) {
+    let n = step * 2 + 1;
+    let kernel = new Float32Array(n * n);
+    let factor_1 = 1.0 / (Math.PI * Math.pow(delta, 4)); // trick: normalized skip
+    let factor_2 = 1.0 / (2.0 * delta * delta);
+
+    let normalize_div = 0;
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            let diff = Math.pow(i - step, 2) + Math.pow(j - step, 2);
+            kernel[j + n * i] = /*factor_1 * (skip) */ (1 - str_factor * diff * factor_2) * Math.exp(-diff * factor_2);
+            normalize_div += kernel[i];
+        }
+    }
+    for (let i = 0; i < kernel.length; i++) {
+        kernel[i] /= normalize_div;
+    }
+    return kernel;
+}
+
 /*================================== Process ==================================*/
 
 class TestProcess {
@@ -105,6 +132,7 @@ class TestProcess {
     #laplacian_4way_kernel;
     #sobel_kernel_x;
     #sobel_kernel_y;
+    #marr_kernel;
     #only_edge;
 
     #effect_gaussian_norm;
@@ -113,6 +141,7 @@ class TestProcess {
     #effect_bilateral_fast;
     #effect_laplacian_2way;
     #effect_laplacian_4way;
+    #effect_laplacian_marr;
     #effect_sobel;
     #effect_NMS;
 
@@ -136,6 +165,7 @@ class TestProcess {
         this.#effect_bilateral_fast = utils.addShaderProg(driver, 'common_filter_vs', 'filter_bilateral_fast_ps');
         this.#effect_laplacian_2way = utils.addShaderProg(driver, 'common_filter_vs', 'filter_laplacian_2way_ps');
         this.#effect_laplacian_4way = utils.addShaderProg(driver, 'common_filter_vs', 'filter_laplacian_4way_ps');
+        this.#effect_laplacian_marr = utils.addShaderProg(driver, 'common_filter_vs', 'filter_laplacian_marr_ps');
         this.#effect_sobel = utils.addShaderProg(driver, 'common_filter_vs', 'filter_sobel_norm_ps');
         // this.#effect_NMS = utils.addShaderProg(driver, 'common_filter_vs', 'filter_NMS_ps');
     }
@@ -153,20 +183,13 @@ class TestProcess {
     }
 
     config(effect_params) {
-        this.#gaussian_kernel = calculate_gaussian_kernel(effect_params.gaussian_step, effect_params.gaussian_delta);
+        this.#gaussian_kernel = calculate_gaussian_kernel(effect_params.kernel_step, effect_params.gaussian_delta);
         this.#bilateral_range = effect_params.gaussian_range;
-        this.#laplacian_2way_kernel = calculate_laplacian_kernel(
-            effect_params.laplacian_step,
-            2,
-            effect_params.laplacian_factor
-        );
-        this.#laplacian_4way_kernel = calculate_laplacian_kernel(
-            effect_params.laplacian_step,
-            4,
-            effect_params.laplacian_factor
-        );
+        this.#laplacian_2way_kernel = calculate_laplacian_kernel(effect_params.kernel_step, 2, effect_params.laplacian_factor);
+        this.#laplacian_4way_kernel = calculate_laplacian_kernel(effect_params.kernel_step, 4, effect_params.laplacian_factor);
         this.#sobel_kernel_x = calculate_sobel_kernel(true, effect_params.sobel_factor);
         this.#sobel_kernel_y = calculate_sobel_kernel(false, effect_params.sobel_factor);
+        this.#marr_kernel = calculate_marr_kernel(effect_params.kernel_step, effect_params.gaussian_delta, effect_params.marr_factor);
         this.#only_edge = effect_params.only_edge;
     }
 
@@ -236,6 +259,15 @@ class TestProcess {
                 break;
             }
             case 7: {
+                this.#effect_laplacian_marr.use();
+                this.#effect_laplacian_marr.setUniform("target_texture", this.#source_buffer.texture)
+                this.#effect_laplacian_marr.setUniform("marr_matrix", this.#marr_kernel)
+                this.#effect_laplacian_marr.setUniform("pixel_bias", this.#pixel_bias)
+                this.#effect_laplacian_marr.setUniform("only_edge", this.#only_edge)
+                this.#draw_effect(this.#effect_laplacian_marr);
+                break;
+            }
+            case 8: {
                 this.#effect_sobel.use();
                 this.#effect_sobel.setUniform("target_texture", this.#source_buffer.texture)
                 this.#effect_sobel.setUniform("sobel_matrix_x", this.#sobel_kernel_x)
@@ -243,10 +275,6 @@ class TestProcess {
                 this.#effect_sobel.setUniform("pixel_bias", this.#pixel_bias)
                 this.#effect_sobel.setUniform("only_edge", this.#only_edge)
                 this.#draw_effect(this.#effect_sobel);
-                break;
-            }
-            case 8: {
-
                 break;
             }
             default: {
