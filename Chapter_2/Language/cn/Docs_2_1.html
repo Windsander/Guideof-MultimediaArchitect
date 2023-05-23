@@ -1,0 +1,1260 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.1 色彩基础 · 《音视频开发技术：原理与实践》©</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="李述博 (Arikan.Li)">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Docs_2_2.html" />
+    
+    
+    <link rel="prev" href="Apex_2_Introduce.html" />
+    
+
+    
+    <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../../../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../../../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <script src="../../../gitbook/gitbook-plugin-graph/d3.min.js"></script>
+    <script src="../../../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
+
+    <link href="https://arikanli.cyberfederal.io/rss" title="《音视频开发技术：原理与实践》©" rel="alternate" type="application/rss+xml" />
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    《音视频开发技术：原理与实践》©
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../../AUTHOR.html">
+            
+                <a href="../../../AUTHOR.html">
+            
+                    
+                     =[>> 关于作者© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../../COPYRIGHT.html">
+            
+                <a href="../../../COPYRIGHT.html">
+            
+                    
+                     =[>> 版权申明© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../../GUIDER.html">
+            
+                <a href="../../../GUIDER.html">
+            
+                    
+                     =[>> 难度向导© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../../DONATE.html">
+            
+                <a href="../../../DONATE.html">
+            
+                    
+                     =[>> 赞助本作© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Apex_2_Introduce.html">
+            
+                <a href="Apex_2_Introduce.html">
+            
+                    
+                    二、色彩的运用与存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="Docs_2_1.html">
+            
+                <a href="Docs_2_1.html">
+            
+                    
+                    2.1 色彩基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Docs_2_2.html">
+            
+                <a href="Docs_2_2.html">
+            
+                    
+                    2.2 颜色三要素（Three Elements of Color）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="Docs_2_2_1.html">
+            
+                <a href="Docs_2_2_1.html">
+            
+                    
+                    2.2.1 色调（Hue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="Docs_2_2_2.html">
+            
+                <a href="Docs_2_2_2.html">
+            
+                    
+                    2.2.2 饱和度（Saturation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="Docs_2_2_3.html">
+            
+                <a href="Docs_2_2_3.html">
+            
+                    
+                    2.2.3 光亮度（Luminance）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Docs_2_3.html">
+            
+                <a href="Docs_2_3.html">
+            
+                    
+                    2.3 色彩的衡量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="Docs_2_3_1.html">
+            
+                <a href="Docs_2_3_1.html">
+            
+                    
+                    2.3.1 辐射亮度（Radiance）& 色温（Color Temperature）& 颜色的量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="Docs_2_3_2.html">
+            
+                <a href="Docs_2_3_2.html">
+            
+                    
+                    2.3.2 配色函数（Color Matching Functions）& 色彩空间（Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="Docs_2_3_3.html">
+            
+                <a href="Docs_2_3_3.html">
+            
+                    
+                    2.3.3 经典三原色函数（Trichromatic Primaries Functions）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="Docs_2_3_4.html">
+            
+                <a href="Docs_2_3_4.html">
+            
+                    
+                    2.3.4 经典三刺激函数（Tristimulus Values Functions）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="Docs_2_3_5.html">
+            
+                <a href="Docs_2_3_5.html">
+            
+                    
+                    2.3.5 现代色彩体系（Modern Color System）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="Docs_2_4.html">
+            
+                <a href="Docs_2_4.html">
+            
+                    
+                    2.4 色彩的对比
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="Docs_2_4_1.html">
+            
+                <a href="Docs_2_4_1.html">
+            
+                    
+                    2.4.1 色域（Color Gamut ）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="Docs_2_4_2.html">
+            
+                <a href="Docs_2_4_2.html">
+            
+                    
+                    2.4.2 色度（Chroma）& 色度平面（Chroma Plane）& 色度图（Chroma Diagram）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="Docs_2_4_3.html">
+            
+                <a href="Docs_2_4_3.html">
+            
+                    
+                    2.4.3 色差（Chromatic Aberration）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="Docs_2_4_4.html">
+            
+                <a href="Docs_2_4_4.html">
+            
+                    
+                    2.4.4 色温（Color Temperature）& 相关色温（Correlated Color Temperature）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="Docs_2_4_5.html">
+            
+                <a href="Docs_2_4_5.html">
+            
+                    
+                    2.4.5 标准光源（Standard Illuminants）& 白点（White Point）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6" data-path="Docs_2_4_6.html">
+            
+                <a href="Docs_2_4_6.html">
+            
+                    
+                    2.4.6 显色指数（Color Rendering Index）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="Docs_2_5.html">
+            
+                <a href="Docs_2_5.html">
+            
+                    
+                    2.5 经典色彩空间（Classical Color Space）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="Docs_2_5_1.html">
+            
+                <a href="Docs_2_5_1.html">
+            
+                    
+                    2.5.1 光学三原色色彩空间（RGB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="Docs_2_5_2.html">
+            
+                <a href="Docs_2_5_2.html">
+            
+                    
+                    2.5.2 颜料三原色色彩空间（CMY / CMYK ）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="Docs_2_5_3.html">
+            
+                <a href="Docs_2_5_3.html">
+            
+                    
+                    2.5.3 CIE RGB 色彩空间（CIE 1931 RGB Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="Docs_2_5_4.html">
+            
+                <a href="Docs_2_5_4.html">
+            
+                    
+                    2.5.4 CIE XYZ 色彩空间（CIE 1931 XYZ Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="Docs_2_5_5.html">
+            
+                <a href="Docs_2_5_5.html">
+            
+                    
+                    2.5.5 CIE LAB 色彩空间（CIE 1976 L*, a*, b* Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.6" data-path="Docs_2_5_6.html">
+            
+                <a href="Docs_2_5_6.html">
+            
+                    
+                    2.5.6 CIE LUV 色彩空间（CIE 1976 L*, u*, v* Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.7" data-path="Docs_2_5_7.html">
+            
+                <a href="Docs_2_5_7.html">
+            
+                    
+                    2.5.7 颜色三要素色彩空间（HSV / HSI / HSL）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="Docs_2_6.html">
+            
+                <a href="Docs_2_6.html">
+            
+                    
+                    2.6 色彩的存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="Docs_2_6_1.html">
+            
+                <a href="Docs_2_6_1.html">
+            
+                    
+                    2.6.1 色彩格式（Color Format）与色彩存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="Docs_2_6_2.html">
+            
+                <a href="Docs_2_6_2.html">
+            
+                    
+                    2.6.2 RGB 体系色彩格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="Docs_2_6_3.html">
+            
+                <a href="Docs_2_6_3.html">
+            
+                    
+                    2.6.3 YUV 体系色彩格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="References_2.html">
+            
+                <a href="References_2.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../Chapter_3/Language/cn/Apex_3_Introduce.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Apex_3_Introduce.html">
+            
+                    
+                    三、音视频常用基础算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../Chapter_3/Language/cn/Docs_3_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1.html">
+            
+                    
+                    3.1 信号分析的核心算法 - 傅立叶变换
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../../Chapter_3/Language/cn/Docs_3_1_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_1.html">
+            
+                    
+                    3.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../../Chapter_3/Language/cn/Docs_3_1_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_2.html">
+            
+                    
+                    3.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
+            
+                    
+                    3.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
+            
+                    
+                    3.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../Chapter_3/Language/cn/Docs_3_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2.html">
+            
+                    
+                    3.2 频率信息提取 - 常用滤波算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../../Chapter_3/Language/cn/Docs_3_2_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_1.html">
+            
+                    
+                    3.2.1 高斯滤波（Gauss Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../../Chapter_3/Language/cn/Docs_3_2_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_2.html">
+            
+                    
+                    3.2.2 双边滤波（Bilateral Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../../Chapter_3/Language/cn/Docs_3_2_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_3.html">
+            
+                    
+                    3.2.3 拉普拉斯滤波（Laplacian Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../../Chapter_3/Language/cn/Docs_3_2_4.md">
+            
+                <span>
+            
+                    
+                    3.2.4 索贝尔滤波（Sobel Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../../../Chapter_3/Language/cn/Docs_3_2_5.md">
+            
+                <span>
+            
+                    
+                    3.2.5 非极大值抑制（NMS [Non-Maximum Suppression]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" >
+            
+                <span>
+            
+                    
+                    3.3 时间冗余控制 - 常用区域检测与运动矢量算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" >
+            
+                <span>
+            
+                    
+                    3.3.1 IoU & GIoU
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" >
+            
+                <span>
+            
+                    
+                    3.3.2 方向梯度直方图（HOG [Histogram of Oriented Gradient]）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" >
+            
+                <span>
+            
+                    
+                    3.3.3 动量预测（Momentum Prediction）& 动量算法（Momentum Algorithm）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" >
+            
+                <span>
+            
+                    
+                    3.3.4 双向光流预测（BDOF [Bi-Directional Optical Flow]）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" >
+            
+                <span>
+            
+                    
+                    3.3.5 光流仿射修正（OFAC [Optical Flow Affine Correction]）
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
+            
+                <span>
+            
+                    
+                    3.4 空间冗余控制 - 常用图形变换算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" >
+            
+                <span>
+            
+                    
+                    3.4.1 整数离散正余弦变换（DST/DCT）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" >
+            
+                <span>
+            
+                    
+                    3.4.2 哈达玛变换（Hadamard Product）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" >
+            
+                <span>
+            
+                    
+                    3.4.3 色度残差联合编码（JCCR [Joint Coding of Chroma Residuals]）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" >
+            
+                <span>
+            
+                    
+                    3.4.4 高频凋零 & 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" >
+            
+                <span>
+            
+                    
+                    3.5 数据离散传输 - 常用量化算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" >
+            
+                <span>
+            
+                    
+                    3.5.1 标量量化（SQ [Scalar Quantization]）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2" >
+            
+                <span>
+            
+                    
+                    3.5.2 矢量量化（VQ [Vector Quantization]）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.3" >
+            
+                <span>
+            
+                    
+                    3.5.3 率失真择优量化（RDOQ [Rate Distortion Optimized Quantization]）
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../../Chapter_3/Language/cn/References_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/References_3.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >2.1 色彩基础</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="21-&#x8272;&#x5F69;&#x57FA;&#x7840;">2.1 &#x8272;&#x5F69;&#x57FA;&#x7840;</h1>
+<p>1666&#x5E74;&#xFF0C;<strong>&#x827E;&#x8428;&#x514B;&#xB7;&#x725B;&#x987F;&#xFF08;Isaac Newton&#xFF0C;1642 - 1726&#xFF09;</strong> &#x901A;&#x8FC7;&#x5149;&#x7684;&#x8272;&#x6563;&#x5B9E;&#x9A8C;&#xFF0C;&#x53D1;&#x73B0;&#x4E86;&#x592A;&#x9633;&#x5149;&#x53EF;&#x4EE5;&#x5206;&#x89E3;&#x6210;&#x4F9D;&#x6B21;&#x4E3A;&#x7EA2;&#x3001;&#x6A59;&#x3001;&#x9EC4;&#x3001;&#x7EFF;&#x3001;&#x84DD;&#x3001;&#x975B;&#x3001;&#x7D2B;&#x7684;&#x5355;&#x8272;&#x5149;&#xFF0C;&#x5E76;&#x53EF;&#x4EE5;&#x7531;&#x5355;&#x8272;&#x5149;&#x590D;&#x5408;&#x800C;&#x6210;&#x767D;&#x5149; &#xFF0C;&#x7531;&#x6B64;&#x63D0;&#x51FA;&#x4E86; <strong>&#x725B;&#x987F;&#x989C;&#x8272;&#x539F;&#x7406;&#xFF08;Newton&apos;s theory of colour&#xFF09;</strong> &#x3002;&#x5E76;&#x4E8E; 1705 &#x5E74;&#x7ED3;&#x5408;&#x4ED6;&#x5728;&#x5149;&#x5B66;&#x9886;&#x57DF;&#x7684;&#x5176;&#x4ED6;&#x53D1;&#x73B0;&#x4E0E;&#x731C;&#x60F3;&#xFF0C;&#x7F16;&#x8457;&#x4E3A;&#x300A;&#x5149;&#x5B66;&#x300B;<a href="References_2.html">[1]</a>&#x3002;&#x5728;&#x6B64;&#x4E4B;&#x524D;&#xFF0C;&#x4E9A;&#x91CC;&#x58EB;&#x591A;&#x5FB7;&#x63D0;&#x51FA;&#x7684;&#x767D;&#x5149;&#x4E3A;&#x4E00;&#x79CD;&#x7EAF;&#x7CB9;&#x5149;&#x6E90;&#x624D;&#x662F;&#x5B66;&#x754C;&#x5171;&#x8BC6;&#x3002;&#x8272;&#x6563;&#x8BD5;&#x9A8C;&#x7684;&#x4F1F;&#x5927;&#xFF0C;&#x5728;&#x4E8E;&#x4E3A;&#x4EBA;&#x4EEC;&#x63ED;&#x793A;&#x4E86;&#x4EBA;&#x7C7B;&#x89C6;&#x89C9;&#x611F;&#x77E5;&#x8272;&#x5F69;&#x5F62;&#x5F0F;&#x7684;&#x5149;&#x5B66;&#x7269;&#x7406;&#x7279;&#x6027;&#x3002;&#x4EBA;&#x4EEC;&#x9996;&#x6B21;&#x63A5;&#x89E6;&#x5230;&#x4E86;&#x5149;&#x8C31;&#xFF08;Spectrum&#xFF09;&#x6982;&#x5FF5;&#x3002;&#x6B64;&#x540E;&#xFF0C;&#x4EBA;&#x4EEC;&#x5BF9;&#x5149;&#x8C31;&#x8FDB;&#x884C;&#x4E86;&#x5927;&#x91CF;&#x57FA;&#x4E8E;&#x989C;&#x8272;&#x89C2;&#x6D4B;&#x7684;&#x7814;&#x7A76;&#xFF0C;&#x5E76;&#x9010;&#x6B65;&#x5B8C;&#x6210;&#x4E86;&#x5960;&#x57FA;&#x8272;&#x5F69;&#x5B66;&#xFF08;Color Science&#xFF09;&#x7684;&#x7406;&#x8BBA;&#x5F52;&#x7EB3;&#x603B;&#x7ED3;&#x3002;</p>
+<p>&#x4EBA;&#x4EEC;&#x53D1;&#x73B0;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5C06;&#x7531;&#x7EA2;&#x5230;&#x7D2B;&#x7684; <strong>&#x53EF;&#x89C1;&#x5149;&#x8C31;&#xFF08;380nm - 780nm&#xFF09;</strong> &#x9996;&#x5C3E;&#x76F8;&#x8FDE;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x80FD;&#x591F;&#x5F97;&#x5230;&#x4E00;&#x4E2A; 360 &#x5EA6;&#x7684;&#x8FDE;&#x7EED;&#x53EF;&#x5206;&#x8272;&#x8868;&#x3002;&#x8FD9;&#x4E2A;&#x8868;&#x88AB;&#x79F0;&#x4E4B;&#x4E3A;<strong>&#x8272;&#x8F6E;&#xFF08;Color Wheel&#xFF09;</strong> <a href="References_2.html">[2]</a>&#x3002;&#x8272;&#x8F6E;&#x4E2D;&#xFF0C; 0 &#x5EA6;&#x8868;&#x793A;&#x7EA2;&#x8272;&#xFF0C;360 &#x5EA6;&#x8868;&#x793A;&#x7D2B;&#x8272;&#x3002;&#x73AF;&#x7684;&#x5706;&#x5FC3;&#xFF0C;&#x5373;&#x6B63;&#x4E2D;&#x592E;&#x5219;&#x4E3A;&#x7EAF;&#x767D;&#x3002;</p>
+<p>&#x5728;&#x6B64;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x8272;&#x5F69;&#x5B66;&#x5C31;&#x989C;&#x8272;&#x7684;&#x5408;&#x6210;&#xFF0C;&#x4EA7;&#x751F;&#x4E86;&#x4E09;&#x5927;&#x7406;&#x8BBA;&#xFF1A;&#x52A0;&#x6CD5;&#x6DF7;&#x5408;&#x8BBA;&#x3001;&#x51CF;&#x6CD5;&#x6DF7;&#x5408;&#x8BBA;&#x3001;&#x4E2D;&#x6027;&#x6DF7;&#x5408;&#x8BBA;&#x3002;&#x4ECE;&#x7269;&#x7406;&#x610F;&#x4E49;&#x4E0A;&#x8BB2;&#xFF0C;&#x52A0;&#x6CD5;&#x6DF7;&#x5408;&#x8BBA;&#x4EE3;&#x8868;&#x7740;&#x81EA;&#x7136;&#x754C;&#x4E2D;&#x81EA;&#x53D1;&#x5149;&#x7269;&#x4F53;&#x7684;&#x5149;&#x6E90;&#x8272;&#x5F69;&#x6DF7;&#x5408;&#xFF0C;&#x51CF;&#x6CD5;&#x6DF7;&#x5408;&#x8BBA;&#x4EE3;&#x8868;&#x7740;&#x53CD;&#x5149;&#x7269;&#x4F53;&#x53CD;&#x5C04;&#x5149;&#x8272;&#x5F69;&#x6DF7;&#x5408;&#x60C5;&#x51B5;&#xFF0C;&#x4E2D;&#x6027;&#x6DF7;&#x5408;&#x8BBA;&#x4F9D;&#x8D56;&#x4EBA;&#x7C7B;&#x751F;&#x7406;&#x7279;&#x5F81;&#x8FDB;&#x884C;&#x7684;&#x8272;&#x5F69;&#x8FD8;&#x539F;&#x5F62;&#x5F0F;&#x3002;&#x52A0;&#x6CD5;&#x6DF7;&#x5408;&#x8BBA;&#x548C;&#x51CF;&#x6CD5;&#x6DF7;&#x5408;&#x8BBA;&#x5206;&#x522B;&#x5728;&#x5149;&#x5B66;&#x9886;&#x57DF;&#x548C;&#x827A;&#x672F;&#x9886;&#x57DF;&#xFF0C;&#x5F97;&#x5230;&#x4E86;&#x5E7F;&#x6CDB;&#x7684;&#x5E94;&#x7528;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x52A0;&#x6CD5;&#x6DF7;&#x5408;&#x8BBA;&#x6240;&#x91C7;&#x7528;&#x7684;&#x7EA2;&#xFF08;Red&#xFF09;&#x3001;&#x7EFF;&#xFF08;Green&#xFF09;&#x3001;&#x84DD;&#xFF08;Blue&#xFF09;&#x4E09;&#x57FA;&#x8272;&#x88AB;&#x79F0;&#x4E3A;&#x5149;&#x5B66;&#x4E09;&#x539F;&#x8272;&#xFF08;RGB&#xFF09;&#xFF0C;&#x51CF;&#x6CD5;&#x6DF7;&#x5408;&#x8BBA;&#x6240;&#x91C7;&#x7528;&#x7684;&#x6DF1;&#x7EA2;&#xFF08;Cyan&#xFF09;&#x3001;&#x9752;&#xFF08;Magenta&#xFF09;&#x3001;&#x9EC4;&#xFF08;Yellow&#xFF09;&#x4E09;&#x57FA;&#x8272;&#x88AB;&#x79F0;&#x4E3A;&#x989C;&#x6599;&#x4E09;&#x539F;&#x8272;&#xFF08;CMY&#xFF09;&#x3002;</p>
+<center>
+<figure>
+   <img style="border-radius: 0.3125em;
+      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" width="300" height="400" src="../../Pictures/color wheel.jpg" alt="">
+   <figcaption>
+      <p>&#x56FE; 2.1-1 &#x8272;&#x8F6E;&#xFF08;Color Wheel&#xFF09;&#x4E0E;&#x989C;&#x8272;&#xFF08;Vienna&#xFF0C;1772&#xFF09;<a href="References_3.md">[2]</a></p>
+   </figcaption>
+</figure>
+</center>
+
+<p>1802&#x5E74;&#xFF0C;<strong>&#x6258;&#x9A6C;&#x65AF;&#xB7;&#x6768;&#xFF08;Thomas Young&#xFF0C;1773 - 1829&#xFF09;</strong> &#x5728;&#x5BF9;&#x53EF;&#x89C1;&#x5149;&#x8C31;&#x8303;&#x56F4;&#x5185;&#x5149;&#x7EBF;&#x6CE2;&#x957F;&#x6D4B;&#x91CF;&#x65F6;&#xFF0C;&#x53D1;&#x73B0;&#x4EBA;&#x773C;&#x5BF9;&#x7EA2;&#x7EFF;&#x84DD;&#x4E09;&#x8272;&#x5149;&#x6CE2;&#x6781;&#x4E3A;&#x654F;&#x611F;&#x3002;&#x6768;&#x786E;&#x5B9A;&#x4E86;&#x4EBA;&#x773C;&#x4E2D;&#x5B58;&#x5728; 3 &#x79CD;&#x80FD;&#x591F;&#x611F;&#x77E5;&#x4E0D;&#x540C;&#x6CE2;&#x957F;&#x7684;&#x5149;&#x611F;&#x795E;&#x7ECF;&#x7EA4;&#x7EF4;&#xFF0C;&#x4F50;&#x8BC1;&#x4E86;&#x5149;&#x5B66;&#x4E09;&#x539F;&#x8272;&#x7684;&#x751F;&#x7406;&#x57FA;&#x7840;&#xFF0C;&#x5E76;&#x7C97;&#x7565;&#x7684;&#x6D4B;&#x5B9A;&#x4E86;&#x4EBA;&#x7684;&#x4E09;&#x8272;&#x611F;&#x77E5;&#x8303;&#x56F4; <a href="References_2.html">[3]</a>&#x3002;</p>
+<p>1850&#x5E74;&#xFF0C;<strong>&#x8D6B;&#x5C14;&#x66FC;&#xB7;&#x51AF;&#xB7;&#x4EA5;&#x59C6;&#x970D;&#x5179;&#xFF08;Hermann von Helmholtz&#xFF0C;1821 - 1894&#xFF09;</strong> &#x5728;&#x6768;&#x7684;&#x7814;&#x7A76;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x7ECF;&#x5B9E;&#x9A8C;&#x786E;&#x5B9A;&#x4E86;&#x6768;&#x7406;&#x8BBA;&#xFF08;Young&apos;s theory&#xFF09;&#x4E2D;&#x6240;&#x63D0;&#x53CA;&#x4E09;&#x8272;&#x611F;&#x77E5;&#x7684;&#x5149;&#x611F;&#x795E;&#x7ECF;&#x7EA4;&#x7EF4;&#xFF0C;&#x5C31;&#x662F;&#x540E;&#x7EED;&#x88AB;&#x6211;&#x4EEC;&#x6240;&#x719F;&#x77E5;&#x7684;&#x89C6;&#x9525;&#x7EC6;&#x80DE;&#xFF08;cone cells&#xFF09;&#xFF0C;&#x5E76;&#x5BF9;&#x4E09;&#x7C7B;&#x89C6;&#x9525;&#x7EC6;&#x80DE;&#x654F;&#x611F;&#x7684;&#x7EA2;&#x3001;&#x7EFF;&#x3001;&#x84DD;&#x4E09;&#x8272;&#x6240;&#x5BF9;&#x5E94;&#x5149;&#x6CE2;&#x6CE2;&#x957F;&#x8FDB;&#x884C;&#x4E86;&#x91CD;&#x6D4B;&#x5B9A;&#x3002;&#x7531;&#x6B64;&#xFF0C;&#x8FDB;&#x4E00;&#x6B65;&#x63A8;&#x52A8;&#x4E86;&#x4E09;&#x8272;&#x7406;&#x8BBA;&#xFF08;trichromatic theory&#xFF09;&#x96CF;&#x5F62;&#x7684;&#x5F62;&#x6210; <a href="References_2.html">[4]</a> <a href="References_2.html">[5]</a>&#x3002;&#x4EBA;&#x4EEC;&#x4E3A;&#x4E86;&#x7EAA;&#x5FF5;&#x4E24;&#x4F4D;&#x7684;&#x8D21;&#x732E;&#xFF0C;&#x4E5F;&#x5C06;&#x4E09;&#x8272;&#x7406;&#x8BBA;&#x79F0;&#x4E3A; &#x6768;-&#x4EA5;&#x59C6;&#x970D;&#x5179;&#x7406;&#x8BBA;&#xFF08;Young&#x2013;Helmholtz theory&#xFF09;&#x3002;</p>
+<center>
+<figure>
+   <img style="border-radius: 0.3125em;
+      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" width="400" height="250" src="../../Pictures/YoungHelm.jpg" alt="">
+   <figcaption>
+      <p>&#x56FE; 2.1-2 &#x8D6B;&#x5C14;&#x66FC;&#xB7;&#x51AF;&#xB7;&#x4EA5;&#x59C6;&#x970D;&#x5179;&#x7684;&#x4E09;&#x8272;&#x7406;&#x8BBA;&#xFF0C;&#x5173;&#x4E8E;&#x89C6;&#x9525;&#x7EC6;&#x80DE;&#x611F;&#x77E5;&#x8303;&#x56F4;&#x7684;&#x624B;&#x7A3F;</p>
+   </figcaption>
+</figure>
+</center>
+
+<p>&#x53D7;&#x9650;&#x4E8E;&#x5F53;&#x65F6;&#x7684;&#x79D1;&#x7814;&#x5668;&#x6750;&#x6C34;&#x5E73;&#xFF0C;&#x4EA5;&#x59C6;&#x970D;&#x5179;&#x5F88;&#x9057;&#x61BE;&#x7684;&#x6CA1;&#x6709;&#x786E;&#x5207;&#x7684;&#x529E;&#x6CD5;&#xFF0C;&#x6D4B;&#x91CF;&#x5230;&#x4E09;&#x7C7B;&#x89C6;&#x9525;&#x7EC6;&#x80DE;&#x53EF;&#x611F;&#x77E5;&#x7684;&#x786E;&#x5207;&#x6CE2;&#x957F;&#x8303;&#x56F4;&#x3002;&#x4E0D;&#x8FC7;&#x73B0;&#x4EE3;&#x533B;&#x5B66;&#x9886;&#x57DF;&#x7684;&#x7814;&#x7A76;&#xFF0C;&#x5DF2;&#x76F8;&#x5BF9;&#x51C6;&#x786E;&#x7684;&#x5F97;&#x5230;&#x4E86;&#x7B54;&#x6848;&#x3002;&#x6211;&#x4EEC;&#x7684;&#x773C;&#x775B;&#x57FA;&#x4E8E;&#x6B64;&#x4E09;&#x79CD;&#x989C;&#x8272;&#x7684;&#x6CE2;&#x5F62;&#x53E0;&#x52A0;&#x7EC4;&#x5408;&#xFF0C;&#x5F62;&#x6210;&#x4E86;&#x80FD;&#x591F;&#x8986;&#x76D6;&#x4ECE;&#x7D2B;&#x5230;&#x7EA2;&#xFF08;360nm - 780nm&#xFF09;&#x7684; 312nm - 1050nm &#x53EF;&#x89C2;&#x6D4B;&#x6CE2;&#x957F;&#x8303;&#x56F4; <a href="References_2.html">[6]</a>&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
+2023-05-23 17:21:35
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Apex_2_Introduce.html" class="navigation navigation-prev " aria-label="Previous page: 二、色彩的运用与存储">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Docs_2_2.html" class="navigation navigation-next " aria-label="Next page: 2.2 颜色三要素（Three Elements of Color）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.1 色彩基础","level":"1.2.1","depth":2,"next":{"title":"2.2 颜色三要素（Three Elements of Color）","level":"1.2.2","depth":2,"path":"Chapter_2/Language/cn/Docs_2_2.md","ref":"Chapter_2/Language/cn/Docs_2_2.md","articles":[{"title":"2.2.1 色调（Hue）","level":"1.2.2.1","depth":3,"path":"Chapter_2/Language/cn/Docs_2_2_1.md","ref":"Chapter_2/Language/cn/Docs_2_2_1.md","articles":[]},{"title":"2.2.2 饱和度（Saturation）","level":"1.2.2.2","depth":3,"path":"Chapter_2/Language/cn/Docs_2_2_2.md","ref":"Chapter_2/Language/cn/Docs_2_2_2.md","articles":[]},{"title":"2.2.3 光亮度（Luminance）","level":"1.2.2.3","depth":3,"path":"Chapter_2/Language/cn/Docs_2_2_3.md","ref":"Chapter_2/Language/cn/Docs_2_2_3.md","articles":[]}]},"previous":{"title":"二、色彩的运用与存储","level":"1.2","depth":1,"path":"Chapter_2/Language/cn/Apex_2_Introduce.md","ref":"Chapter_2/Language/cn/Apex_2_Introduce.md","articles":[{"title":"2.1 色彩基础","level":"1.2.1","depth":2,"path":"Chapter_2/Language/cn/Docs_2_1.md","ref":"Chapter_2/Language/cn/Docs_2_1.md","articles":[]},{"title":"2.2 颜色三要素（Three Elements of Color）","level":"1.2.2","depth":2,"path":"Chapter_2/Language/cn/Docs_2_2.md","ref":"Chapter_2/Language/cn/Docs_2_2.md","articles":[{"title":"2.2.1 色调（Hue）","level":"1.2.2.1","depth":3,"path":"Chapter_2/Language/cn/Docs_2_2_1.md","ref":"Chapter_2/Language/cn/Docs_2_2_1.md","articles":[]},{"title":"2.2.2 饱和度（Saturation）","level":"1.2.2.2","depth":3,"path":"Chapter_2/Language/cn/Docs_2_2_2.md","ref":"Chapter_2/Language/cn/Docs_2_2_2.md","articles":[]},{"title":"2.2.3 光亮度（Luminance）","level":"1.2.2.3","depth":3,"path":"Chapter_2/Language/cn/Docs_2_2_3.md","ref":"Chapter_2/Language/cn/Docs_2_2_3.md","articles":[]}]},{"title":"2.3 色彩的衡量","level":"1.2.3","depth":2,"path":"Chapter_2/Language/cn/Docs_2_3.md","ref":"Chapter_2/Language/cn/Docs_2_3.md","articles":[{"title":"2.3.1 辐射亮度（Radiance）& 色温（Color Temperature）& 颜色的量化","level":"1.2.3.1","depth":3,"path":"Chapter_2/Language/cn/Docs_2_3_1.md","ref":"Chapter_2/Language/cn/Docs_2_3_1.md","articles":[]},{"title":"2.3.2 配色函数（Color Matching Functions）& 色彩空间（Color Space）","level":"1.2.3.2","depth":3,"path":"Chapter_2/Language/cn/Docs_2_3_2.md","ref":"Chapter_2/Language/cn/Docs_2_3_2.md","articles":[]},{"title":"2.3.3 经典三原色函数（Trichromatic Primaries Functions）","level":"1.2.3.3","depth":3,"path":"Chapter_2/Language/cn/Docs_2_3_3.md","ref":"Chapter_2/Language/cn/Docs_2_3_3.md","articles":[]},{"title":"2.3.4 经典三刺激函数（Tristimulus Values Functions）","level":"1.2.3.4","depth":3,"path":"Chapter_2/Language/cn/Docs_2_3_4.md","ref":"Chapter_2/Language/cn/Docs_2_3_4.md","articles":[]},{"title":"2.3.5 现代色彩体系（Modern Color System）","level":"1.2.3.5","depth":3,"path":"Chapter_2/Language/cn/Docs_2_3_5.md","ref":"Chapter_2/Language/cn/Docs_2_3_5.md","articles":[]}]},{"title":"2.4 色彩的对比","level":"1.2.4","depth":2,"path":"Chapter_2/Language/cn/Docs_2_4.md","ref":"Chapter_2/Language/cn/Docs_2_4.md","articles":[{"title":"2.4.1 色域（Color Gamut ）","level":"1.2.4.1","depth":3,"path":"Chapter_2/Language/cn/Docs_2_4_1.md","ref":"Chapter_2/Language/cn/Docs_2_4_1.md","articles":[]},{"title":"2.4.2 色度（Chroma）& 色度平面（Chroma Plane）& 色度图（Chroma Diagram）","level":"1.2.4.2","depth":3,"path":"Chapter_2/Language/cn/Docs_2_4_2.md","ref":"Chapter_2/Language/cn/Docs_2_4_2.md","articles":[]},{"title":"2.4.3 色差（Chromatic Aberration）","level":"1.2.4.3","depth":3,"path":"Chapter_2/Language/cn/Docs_2_4_3.md","ref":"Chapter_2/Language/cn/Docs_2_4_3.md","articles":[]},{"title":"2.4.4 色温（Color Temperature）& 相关色温（Correlated Color Temperature）","level":"1.2.4.4","depth":3,"path":"Chapter_2/Language/cn/Docs_2_4_4.md","ref":"Chapter_2/Language/cn/Docs_2_4_4.md","articles":[]},{"title":"2.4.5 标准光源（Standard Illuminants）& 白点（White Point）","level":"1.2.4.5","depth":3,"path":"Chapter_2/Language/cn/Docs_2_4_5.md","ref":"Chapter_2/Language/cn/Docs_2_4_5.md","articles":[]},{"title":"2.4.6 显色指数（Color Rendering Index）","level":"1.2.4.6","depth":3,"path":"Chapter_2/Language/cn/Docs_2_4_6.md","ref":"Chapter_2/Language/cn/Docs_2_4_6.md","articles":[]}]},{"title":"2.5 经典色彩空间（Classical Color Space）","level":"1.2.5","depth":2,"path":"Chapter_2/Language/cn/Docs_2_5.md","ref":"Chapter_2/Language/cn/Docs_2_5.md","articles":[{"title":"2.5.1 光学三原色色彩空间（RGB）","level":"1.2.5.1","depth":3,"path":"Chapter_2/Language/cn/Docs_2_5_1.md","ref":"Chapter_2/Language/cn/Docs_2_5_1.md","articles":[]},{"title":"2.5.2 颜料三原色色彩空间（CMY / CMYK ）","level":"1.2.5.2","depth":3,"path":"Chapter_2/Language/cn/Docs_2_5_2.md","ref":"Chapter_2/Language/cn/Docs_2_5_2.md","articles":[]},{"title":"2.5.3 CIE RGB 色彩空间（CIE 1931 RGB Color Space）","level":"1.2.5.3","depth":3,"path":"Chapter_2/Language/cn/Docs_2_5_3.md","ref":"Chapter_2/Language/cn/Docs_2_5_3.md","articles":[]},{"title":"2.5.4 CIE XYZ 色彩空间（CIE 1931 XYZ Color Space）","level":"1.2.5.4","depth":3,"path":"Chapter_2/Language/cn/Docs_2_5_4.md","ref":"Chapter_2/Language/cn/Docs_2_5_4.md","articles":[]},{"title":"2.5.5 CIE LAB 色彩空间（CIE 1976 L*, a*, b* Color Space）","level":"1.2.5.5","depth":3,"path":"Chapter_2/Language/cn/Docs_2_5_5.md","ref":"Chapter_2/Language/cn/Docs_2_5_5.md","articles":[]},{"title":"2.5.6 CIE LUV 色彩空间（CIE 1976 L*, u*, v* Color Space）","level":"1.2.5.6","depth":3,"path":"Chapter_2/Language/cn/Docs_2_5_6.md","ref":"Chapter_2/Language/cn/Docs_2_5_6.md","articles":[]},{"title":"2.5.7 颜色三要素色彩空间（HSV / HSI / HSL）","level":"1.2.5.7","depth":3,"path":"Chapter_2/Language/cn/Docs_2_5_7.md","ref":"Chapter_2/Language/cn/Docs_2_5_7.md","articles":[]}]},{"title":"2.6 色彩的存储","level":"1.2.6","depth":2,"path":"Chapter_2/Language/cn/Docs_2_6.md","ref":"Chapter_2/Language/cn/Docs_2_6.md","articles":[{"title":"2.6.1 色彩格式（Color Format）与色彩存储","level":"1.2.6.1","depth":3,"path":"Chapter_2/Language/cn/Docs_2_6_1.md","ref":"Chapter_2/Language/cn/Docs_2_6_1.md","articles":[]},{"title":"2.6.2 RGB 体系色彩格式","level":"1.2.6.2","depth":3,"path":"Chapter_2/Language/cn/Docs_2_6_2.md","ref":"Chapter_2/Language/cn/Docs_2_6_2.md","articles":[]},{"title":"2.6.3 YUV 体系色彩格式","level":"1.2.6.3","depth":3,"path":"Chapter_2/Language/cn/Docs_2_6_3.md","ref":"Chapter_2/Language/cn/Docs_2_6_3.md","articles":[]}]},{"title":"【参考文献】","level":"1.2.7","depth":2,"path":"Chapter_2/Language/cn/References_2.md","ref":"Chapter_2/Language/cn/References_2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","local-video","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"local-video":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_2/Language/cn/Docs_2_1.md","mtime":"2023-05-23T09:21:35.810Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-23T10:36:28.118Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-rss/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
