@@ -1,43 +1,41 @@
 
-# 三、色彩的运用与存储
+# 三、音视频常用基础算法
 
 ## **引言**
-自人类对世界有认知开始，从寄思于物的艺术创作，日常生活的打扮穿着，再到科学研究对物理规律的探索，色彩始终伴随左右。什么是色彩？色彩是如何被应用到视觉工程的？
+音视频中最为重要的组成部分，即是音频处理和视频处理。
 
-本章节主要整理说明了，部分关键光学与色彩学概念的应用和推导。通过对当代计算机图像有关颜色处理发展史的梳理，以期为工程上应用于单一图像处理、色彩权衡对比等工作，和理论上深入理解图像规格标准迭代及原理，提供必要知识图谱。
+音频处理应用到的基础理论，来源自：数字信号处理（Digital Signal Process）、数字合成音效（Digital Audio Effects）、语音识别（Voice Recognition）等领域。视频处理应用到的基础理论，来源自：数字信号处理（Digital Signal Process）、计算机图形学（Computer Graphics）、计算机视觉（Computer Vision）等领域。
 
-图像本身是颜色的载体，因此对图像的讨论，也就是对色彩（颜色）的讨论。
+这些学科在工程中或多或少的交叉使用，甚至本身大都为交叉学科，但最为核心的始终只有两个，即数字信号处理（DSP）和计算机图形学（CG）。所以，在正式开始学习音视频工程技术之前，首先需要回顾部分基础算法的工程特征。
 
->**关键字：色彩基础、色彩空间、色彩格式、配色函数、色度、色温**
+本章节主要对此简单梳理（非数理、非推倒），并结合伪码和 C/C++ 工程汇总说明。可以做为最小集合的背景算法知识字典，供开发过程中查阅回顾使用。
+
+>**关键字：傅立叶变换、滤波算法、区域检测、光流补正、冗余控制**
 
 ## **目录**
-* [3.1 色彩基础](Docs_3_1.md)
-* [3.2 颜色三要素（Three Elements of Color）](Docs_3_2.md)
-	* [3.2.1 色调（Hue）](Docs_3_2_1.md)
-	* [3.2.2 饱和度（Saturation）](Docs_3_2_2.md)
-	* [3.2.3 光亮度（Luminance）](Docs_3_2_3.md)
-* [3.3 色彩的衡量](Docs_3_3.md)
-	* [3.3.1 配色函数（Color Matching Functions ）](Docs_3_3_1.md)
-	* [3.3.2 色彩空间（Color Space ）](Docs_3_3_2.md)
-	* [3.3.3 经典三原色函数（Trichromatic Primaries Functions）](Docs_3_3_3.md)
-	* [3.3.4 经典三刺激函数（Tristimulus Values Functions）](Docs_3_3_4.md)
-	* [3.3.5 现代色彩体系（Modern Color System）](Docs_3_3_5.md)
-* [3.4 色彩的对比](Docs_3_4.md)
-	* [3.4.1 色域（Color Gamut ）](Docs_3_4_1.md)
-	* [3.4.2 色度（Chroma）& 色度平面（Chroma Plane）& 色度图（Chroma Diagram）](Docs_3_4_2.md)
-	* [3.4.3 色差（Chromatic Aberration）](Docs_3_4_3.md)
-	* [3.4.4 色温（Color Temperature）& 相关色温（Correlated Color Temperature）](Docs_3_4_4.md)
-	* [3.4.5 标准光源（Standard Illuminants）& 白点（White Point）](Docs_3_4_5.md)
-	* [3.4.6 显色指数（Color Rendering Index）](Docs_3_4_6.md)
-* [3.5 经典色彩空间（Classical Color Space）](Docs_3_5.md)
-	* [3.5.1 光学三原色色彩空间（RGB）](Docs_3_5_1.md)
-	* [3.5.2 颜料三原色色彩空间（CMY / CMYK ）](Docs_3_5_2.md)
-	* [3.5.3 CIE RGB 色彩空间（CIE 1931 RGB Color Space）](Docs_3_5_3.md)
-	* [3.5.4 CIE XYZ 色彩空间（CIE 1931 XYZ Color Space）](Docs_3_5_4.md)
-	* [3.5.5 CIE LAB 色彩空间（CIE 1976 L\*, a\*, b\* Color Space）](Docs_3_5_5.md)
-	* [3.5.6 CIE LUV 色彩空间（CIE 1976 L\*, u\*, v\* Color Space）](Docs_3_5_6.md)
-	* [3.5.7 颜色三要素色彩空间（HSV / HSI / HSL）](Docs_3_5_7.md)
-* [3.6 色彩的存储](Docs_3_6.md)
-	* [3.6.1 色彩格式（Color Format）与色彩存储](Docs_3_6_1.md)
-	* [3.6.2 RGB 体系色彩格式](Docs_3_6_2.md)
-	* [3.6.3 YUV 体系色彩格式](Docs_3_6_3.md)
+* [3.1 信号分析的核心算法 - 傅立叶变换](Docs_3_1.md)
+    * [3.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）](Docs_3_1_1.md)
+    * [3.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）](Docs_3_1_2.md)
+    * [3.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）](Docs_3_1_3.md)
+	* [3.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）](Docs_3_1_4.md)
+* [3.2 频率信息提取 - 常用滤波算法](Docs_3_2.md)
+    * [3.2.1 高斯滤波（Gauss Filter）](Docs_3_2_1.md)
+	* [3.2.2 双边滤波（Bilateral Filter）](Docs_3_2_2.md)
+	* [3.2.3 拉普拉斯滤波（Laplacian Filter）](Docs_3_2_3.md)
+	* [3.2.4 索贝尔滤波（Sobel Filter）](Docs_3_2_4.md)
+	* [3.2.5 非极大值抑制（NMS [Non-Maximum Suppression]）](Docs_3_2_5.md)
+* [3.3 时间冗余控制 - 常用区域检测与运动矢量算法]()
+	* [3.3.1 IoU & GIoU]()
+	* [3.3.2 方向梯度直方图（HOG [Histogram of Oriented Gradient]）]()
+	* [3.3.3 动量预测（Momentum Prediction）& 动量算法（Momentum Algorithm）]()
+	* [3.3.4 双向光流预测（BDOF [Bi-Directional Optical Flow]）]()
+	* [3.3.5 光流仿射修正（OFAC [Optical Flow Affine Correction]）]()
+* [3.4 空间冗余控制 - 常用图形变换算法]()
+	* [3.4.1 整数离散正余弦变换（DST/DCT）]()
+	* [3.4.2 哈达玛变换（Hadamard Product）]()
+	* [3.4.3 色度残差联合编码（JCCR [Joint Coding of Chroma Residuals]）]()
+	* [3.4.4 高频凋零 & 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）]()
+* [3.5 数据离散传输 - 常用量化算法]()
+	* [3.5.1 标量量化（SQ [Scalar Quantization]）]()
+	* [3.5.2 矢量量化（VQ [Vector Quantization]）]()
+	* [3.5.3 率失真择优量化（RDOQ [Rate Distortion Optimized Quantization]）]()
