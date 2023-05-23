@@ -80,6 +80,8 @@
 		* [1.5.3 无损压缩编码格式（Lossless Encode）]()
 		* [1.5.4 有损压缩编码格式（Uncompressed Encode）]()
 
+<br>
+
 * [二、色彩的运用与存储](Chapter_2/Language/cn/Apex_2_Introduce.md)
     * [2.1 色彩基础](Chapter_2/Language/cn/Docs_2_1.md)
     * [2.2 颜色三要素（Three Elements of Color）](Chapter_2/Language/cn/Docs_2_2.md)
@@ -113,6 +115,8 @@
 	    * [2.6.3 YUV 体系色彩格式](Chapter_2/Language/cn/Docs_2_6_3.md)
 	* [【参考文献】](Chapter_2/Language/cn/References_2.md)
 
+<br>
+
 * [三、音视频常用基础算法](Chapter_3/Language/cn/Apex_3_Introduce.md)
     * [3.1 信号分析的核心算法 - 傅立叶变换](Chapter_3/Language/cn/Docs_3_1.md)
         * [3.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）](Chapter_3/Language/cn/Docs_3_1_1.md)
@@ -141,6 +145,8 @@
 	    * [3.5.2 矢量量化（VQ [Vector Quantization]）]()
 	    * [3.5.3 率失真择优量化（RDOQ [Rate Distortion Optimized Quantization]）]()
     * [【参考文献】](Chapter_3/Language/cn/References_3.md)
+
+<br>
 
 * [四、音视频的单帧与帧分析]()
 	* [4.1 单帧的概念]()
