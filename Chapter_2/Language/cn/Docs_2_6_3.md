@@ -27,7 +27,7 @@ YUV 被设计的目的主要就是为了进行数据传输，而数据传输就�
       width = "500" height = "300"
       src="../../Pictures/YUV_Y_digital_level.jpeg" alt="">
    <figcaption>
-      <p>图 2.6.3-1 YUV Y通道信号电平分配图 <a href="References_3.md">[49]</a></p>
+      <p>图 2.6.3-1 YUV Y通道信号电平分配图 <a href="References_2.md">[49]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -39,7 +39,7 @@ YUV 被设计的目的主要就是为了进行数据传输，而数据传输就�
       width = "500" height = "300"
       src="../../Pictures/YUV_U_digital_level.jpeg" alt="">
    <figcaption>
-      <p>图 2.6.3-2 YUV U通道信号电平分配图 <a href="References_3.md">[49]</a></p>
+      <p>图 2.6.3-2 YUV U通道信号电平分配图 <a href="References_2.md">[49]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -51,7 +51,7 @@ YUV 被设计的目的主要就是为了进行数据传输，而数据传输就�
       width = "500" height = "300"
       src="../../Pictures/YUV_V_digital_level.jpeg" alt="">
    <figcaption>
-      <p>图 2.6.3-3 YUV V通道信号电平分配图 <a href="References_3.md">[49]</a></p>
+      <p>图 2.6.3-3 YUV V通道信号电平分配图 <a href="References_2.md">[49]</a></p>
    </figcaption>
 </figure>
 </center>

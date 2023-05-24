@@ -18,12 +18,15 @@
 $$
 {\displaystyle 
  \begin{aligned}
-   &{I _{\mathrm {e}}} = {\frac {\mathrm {d} \Phi _{\mathrm {e} }}{\mathrm {d} \Omega}} 
-                     \rightarrow  
-                   {\Phi _{\mathrm {e}}} = \int _{\Sigma } I_e \cdot  {d} \Omega  \\
-   &E_{\mathrm {e}} = {\frac {\mathrm {d} \Phi _{\mathrm {e} }}{\mathrm {d} A}} \quad
-    L_{\mathrm {e}} ={\frac {\mathrm {d} ^{2}\Phi _{\mathrm {e} }}{\mathrm {d} A\,\mathrm {d} \Omega \cos \theta }}
-                      ={\frac {\mathrm {d} E _{\mathrm {e} }}{d \Omega \cdot \cos \theta }}
+   &{I _{\mathrm {e}}} = {\frac {\mathrm {d} \Phi _{\mathrm {e} }}{\mathrm {d} \Omega}
+      \rightarrow  
+      \Phi _{\mathrm {e}}} = \int _{\Sigma } I_e \cdot  {d} \Omega  \\
+   &E_{\mathrm {e}} = {\frac {\mathrm {d} \Phi _{\mathrm {e} }}{\mathrm {d} A}}
+      \rightarrow   
+      \mathrm {d} ^{2}\Phi _{\mathrm {e} } = \mathrm {d} E_{\mathrm {e}} \cdot \mathrm {d} A \\ 
+   & L_{\mathrm {e}}
+      =\frac {\mathrm {d} ^{2}\Phi _{\mathrm {e} }}{\mathrm {d} A\,\mathrm {d} \Omega \cos \theta }
+      =\frac {\mathrm {d} E _{\mathrm {e} }}{d \Omega \cdot \cos \theta } \\
  \end{aligned}
 }
 $$
@@ -40,14 +43,22 @@ $$
 因此，记光辐转化率为 $$K$$ ，单位为 $$lm/W$$ ，则 $$K$$ 、 $$\Phi _{\mathrm {e}}$$ 与 $$\Phi _{\mathrm {v}}$$ 存在两者之间的转换关系：
 
 $$
-{\displaystyle \Phi_v = \Phi_e \cdot K}
+{\displaystyle \Phi_v = K \cdot \Phi_e \quad \quad K = 683 \ lm/W} 
 $$
 
-如此一来，我们就可以将辐射度学色温对应辐射强度，转换到光度学计量了。但这和颜色有什么关系呢？毕竟强度并不代表颜色，波长才决定颜色。我们还是没法得知具体色温对应的具体可见光成分。但是从直觉上说，**波长和能量强度应该是存在着关联性的**。
+带入光亮度 $$L_{\mathrm {v}}$$ 与辐射亮度 $$L_{\mathrm {e}}$$ 的公式，可得：
 
->事实也确实如此。这一关联性最终由黑体辐射定律揭示而出。
+$$
+{\displaystyle L_{\mathrm {v}} = K \cdot L_{\mathrm {e}} }
+$$
 
-## **色温与颜色的关联**
+如此就可以通过 $$K$$ 来完成，辐射度学和光度学间计量的转换了。
+
+我们知道光度学中的不同颜色，本质是波长的不同。而不同的波长在辐射度学中，则代表为不同的能量密度。**只要求得对应颜色光的能量密度，就能反向推算对应颜色光的波长了，进而可以将感知到的颜色用实际物理量标定。** 借此，以主观感受的客观测量值，人为映射量化建立联系。
+
+>至于能量密度的测定，则可以经由物理学体系的黑体辐射定律揭示而出。
+
+## **从色温到颜色 - 颜色的波长标定**
 
 1900年在德国物理学会上，著名的德国物理学大师 **马克思·普朗克（Max Karl Ernst Ludwig Planck，1858 - 1947）** ，公布了自己在电磁波能量问题上的假设，这就是在物理学界影响深远的《论正常光谱中的能量分布》报告。报告的细部由同年普朗克发表的两篇论文组成，分别是《关于维恩频谱方程的改进论》(On an Improvement of Wien's Equation for the Spectrum) [23] 和《关于正常光谱中的能量分布的理论》（On the Theory of the Energy Distribution Law of the Normal Spectrum）[24]。这两篇理论统一了之前由“紫外灾变”问题分割的，高频有效的维恩位移定律和低频有效的瑞利-金斯公式，并直接促成了量子理论的奠基和近代物理学革命。
 
