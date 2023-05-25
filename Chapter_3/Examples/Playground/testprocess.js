@@ -94,9 +94,8 @@ function calculate_sobel_kernel(use_horizontal, str_factor) {
  *
  * @param step Convolution Kernel step
  * @param delta Gaussian Distribution Factor
- * @param str_factor Marr Intensity Factor
  */
-function calculate_marr_kernel(step, delta, str_factor) {
+function calculate_marr_kernel(step, delta) {
     let n = step * 2 + 1;
     let kernel = new Float32Array(n * n);
     let factor_1 = 1.0 / (Math.PI * Math.pow(delta, 4)); // trick: normalized skip
@@ -106,7 +105,7 @@ function calculate_marr_kernel(step, delta, str_factor) {
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n; j++) {
             let diff = Math.pow(i - step, 2) + Math.pow(j - step, 2);
-            kernel[j + n * i] = /*factor_1 * (skip) */ (1 - str_factor * diff * factor_2) * Math.exp(-diff * factor_2);
+            kernel[j + n * i] = /*factor_1 * (skip) */ (1 - diff * factor_2) * Math.exp(-diff * factor_2);
             normalize_div += kernel[i];
         }
     }
@@ -133,6 +132,8 @@ class TestProcess {
     #sobel_kernel_x;
     #sobel_kernel_y;
     #marr_kernel;
+    #marr_factor;
+    #marr_blur;
     #only_edge;
 
     #effect_gaussian_norm;
@@ -189,7 +190,9 @@ class TestProcess {
         this.#laplacian_4way_kernel = calculate_laplacian_kernel(effect_params.kernel_step, 4, effect_params.laplacian_factor);
         this.#sobel_kernel_x = calculate_sobel_kernel(true, effect_params.sobel_factor);
         this.#sobel_kernel_y = calculate_sobel_kernel(false, effect_params.sobel_factor);
-        this.#marr_kernel = calculate_marr_kernel(effect_params.kernel_step, effect_params.gaussian_delta, effect_params.marr_factor);
+        this.#marr_kernel = calculate_marr_kernel(effect_params.kernel_step + 1, effect_params.marr_delta);
+        this.#marr_factor = effect_params.marr_factor;
+        this.#marr_blur = effect_params.marr_blur;
         this.#only_edge = effect_params.only_edge;
     }
 
@@ -261,8 +264,10 @@ class TestProcess {
             case 7: {
                 this.#effect_laplacian_marr.use();
                 this.#effect_laplacian_marr.setUniform("target_texture", this.#source_buffer.texture)
+                this.#effect_laplacian_marr.setUniform("gaussian_matrix", this.#gaussian_kernel)
                 this.#effect_laplacian_marr.setUniform("marr_matrix", this.#marr_kernel)
                 this.#effect_laplacian_marr.setUniform("pixel_bias", this.#pixel_bias)
+                this.#effect_laplacian_marr.setUniform("marr_blur", this.#marr_blur)
                 this.#effect_laplacian_marr.setUniform("only_edge", this.#only_edge)
                 this.#draw_effect(this.#effect_laplacian_marr);
                 break;
