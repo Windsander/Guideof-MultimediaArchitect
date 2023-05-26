@@ -7,8 +7,8 @@
 
 正如前文所提，色彩格式根据参考设备无关色彩空间的不同，被分为 RGB 色彩格式和 YUV 色彩格式。两者理论均衍生自 CIE 1976 UCS 的补充色彩空间方案，并在之后被分别设备相关化。
 
-- RGB 色彩格式属于 CIE RGB 色彩空间体系，也被称为 **原色格式（Primaries Format）**；
-- YUV 色彩格式，则根据 CIE LUV 特性被分属为 CIE XYZ 色彩空间体系，常用于传输，被称为 **传输格式（Transport Format）**。
+- RGB 色彩格式，即 **原色格式（Primaries Format）** ，属于 CIE RGB 色彩空间体系；
+- YUV 色彩格式，即 **传输格式（Transport Format）** ，根据 CIE LUV 特性被分属为 CIE XYZ 色彩空间体系。
 
 **RGB 与 YUV 共同组成了现代计算机色彩格式的两大分类。**
 
