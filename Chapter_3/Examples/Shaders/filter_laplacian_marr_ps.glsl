@@ -33,7 +33,6 @@ vec3 gauss_operation()
 vec3 edge_operation()
 {
     vec3 output_;
-    float marr_factor = 0.0;
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < m; j++) {
             vec2 bias = vec2(i-1, j-1) * pixel_bias;
