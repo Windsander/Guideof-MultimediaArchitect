@@ -50,7 +50,7 @@ float arrow_density(vec2 target_coord) {
     vec3 field_vector = sobel_edge_detection(tile_center * pixel_bias);
     float magnitude = field_vector.z;
     if (magnitude > 0.0) {
-        float distance = clamp(magnitude * ARROW_TILE_SIZE, 5.0, ARROW_TILE_SIZE / 2.0);
+        float distance = clamp(magnitude * ARROW_TILE_SIZE, 3.0, ARROW_TILE_SIZE / 2.0);
         vec2 normalizer = vec2(field_vector.x, field_vector.y) / magnitude;
         vec2 tile_offset = ori_pos - tile_center;
         vec2 tile_orient = normalizer * distance;
