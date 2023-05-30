@@ -74,9 +74,9 @@ function calculate_laplacian_kernel(step, way_count, str_factor) {
  */
 function calculate_sobel_kernel(use_horizontal, str_factor) {
     let kernel = new Float32Array(use_horizontal ? [
-        -1.0, 0.0, +1.0,
-        -2.0, 0.0, +2.0,
-        -1.0, 0.0, +1.0
+        +1.0, 0.0, -1.0,
+        +2.0, 0.0, -2.0,
+        +1.0, 0.0, -1.0
     ] : [
         +1.0, +2.0, +1.0,
         0.0, 0.0, 0.0,
@@ -144,6 +144,7 @@ class TestProcess {
     #effect_laplacian_4way;
     #effect_laplacian_marr;
     #effect_sobel;
+    #effect_sobel_hog;
     #effect_NMS;
 
     constructor(driver, w, h) {
@@ -168,6 +169,7 @@ class TestProcess {
         this.#effect_laplacian_4way = utils.addShaderProg(driver, 'common_filter_vs', 'filter_laplacian_4way_ps');
         this.#effect_laplacian_marr = utils.addShaderProg(driver, 'common_filter_vs', 'filter_laplacian_marr_ps');
         this.#effect_sobel = utils.addShaderProg(driver, 'common_filter_vs', 'filter_sobel_norm_ps');
+        this.#effect_sobel_hog = utils.addShaderProg(driver, 'common_filter_vs', 'filter_sobel_hog_ps');
         // this.#effect_NMS = utils.addShaderProg(driver, 'common_filter_vs', 'filter_NMS_ps');
     }
 
@@ -280,6 +282,16 @@ class TestProcess {
                 this.#effect_sobel.setUniform("pixel_bias", this.#pixel_bias)
                 this.#effect_sobel.setUniform("only_edge", this.#only_edge)
                 this.#draw_effect(this.#effect_sobel);
+                break;
+            }
+            case 9: {
+                this.#effect_sobel_hog.use();
+                this.#effect_sobel_hog.setUniform("target_texture", this.#source_buffer.texture)
+                this.#effect_sobel_hog.setUniform("sobel_matrix_x", this.#sobel_kernel_x)
+                this.#effect_sobel_hog.setUniform("sobel_matrix_y", this.#sobel_kernel_y)
+                this.#effect_sobel_hog.setUniform("pixel_bias", this.#pixel_bias)
+                this.#effect_sobel_hog.setUniform("only_edge", this.#only_edge)
+                this.#draw_effect(this.#effect_sobel_hog);
                 break;
             }
             default: {

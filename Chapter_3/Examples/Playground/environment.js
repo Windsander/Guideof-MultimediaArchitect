@@ -59,7 +59,7 @@ class Environment {
             marr_delta: 0.55,
             marr_factor: 1.0,
             marr_blur: true,
-            sobel_factor: 0.6,
+            sobel_factor: 1.0,
             only_edge: false,
         };
     }
