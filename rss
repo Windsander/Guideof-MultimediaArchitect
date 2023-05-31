@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 23 May 2023 10:43:08 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 31 May 2023 12:36:35 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -337,6 +337,27 @@
             <description><![CDATA[拉普拉斯滤波（Laplacian Filter） 是一种基于二阶微分方程的差异扩大化算子（Operator）。其不仅可以从灰度出发用于物体的 边缘锐化（Edge Sharpening） ，也可以应用于全通道的色彩变化增强，即 广义锐化（Sharpening）。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.2.4 马尔滤波（Marr Filter）]]></title>
+            <description><![CDATA[马尔滤波（Marr Filter） 是拉普拉斯滤波采用 先行降噪（NRF [Noise Reduction First]） 的改进算法。利用高斯滤波对频率波动性的处理能力，对图片的高频信息进行模糊过滤。再行使标准拉普拉斯边缘检测，筛选突变明显的剩余高频部分并增强，达到更好的效果 [14] 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.2.5 索贝尔滤波（Sobel Filter）]]></title>
+            <description><![CDATA[索贝尔滤波（Sobel Filter） 是由 斯坦福人工智能实验室（SAIL [Stanford Artificial Intelligence Laboratory]） 的 艾尔文·索贝尔（Irwin Sobel，1940 - present） 和 格雷·费尔德曼（Gary Feldman，1942 - present） 于 1968 年提出的一种用于 边缘检测（Edge Detection） 的 去中心化（Center Insensitive）一阶离散微分算子 [15] 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.2.6 各向异性扩散（Anisotropic Diffusion）]]></title>
+            <description><![CDATA[【待补充】]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_6.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
