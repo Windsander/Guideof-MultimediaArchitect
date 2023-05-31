@@ -19,6 +19,58 @@
             font-weight: bold;
         }
 
+        div.selector {
+            display: inline-block;
+            top: 5px;
+            left: -5px;
+            width: 100%;
+            height: 30px;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid #aaa;
+            appearance: none;
+            text-shadow: none;
+            border-radius: 10px;
+            transition: box-shadow 0.25s ease;
+            z-index: 2;
+        }
+
+        div.selector:hover {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        div.selector:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: gray;
+            top: 10px;
+            right: 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            z-index: -2;
+        }
+
+        div.selector select {
+            cursor: pointer;
+            padding: 8px;
+            color: grey;
+            width: 100%;
+            border: none;
+            background: transparent;
+            background-image: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        div.selector select:focus {
+            outline: none;
+            color: grey;
+        }
+
         html, body {
             width: 100%;
             height: 100%;
@@ -123,6 +175,13 @@
 
         function init_buttons_effect() {
             tdl.log("effect buttons init::");
+
+            let effect_selector = document.getElementById("setProcessor");
+            effect_selector.onchange = function (effect_selector) {
+                return function () {
+                    env_gl.change_effect(effect_selector.selectedIndex);
+                }
+            }(effect_selector);
 
             function trigger_button(button, id) {
                 env_gl.change_effect(id);
@@ -255,16 +314,23 @@
 </div>
 <div id="container_config">
     <div class="title">Post Processing</div>
-    <div id="setSetting0">None</div>
-    <div id="setSetting1">Filter-Gaussian</div>
-    <div id="setSetting2">Filter-Gaussian(Fast)</div>
-    <div id="setSetting3">Filter-Bilateral</div>
-    <div id="setSetting4">Filter-Bilateral(Fast)</div>
-    <div id="setSetting5">Filter-Laplacian_2way</div>
-    <div id="setSetting6">Filter-Laplacian_4way</div>
-    <div id="setSetting7">Filter-Marr</div>
-    <div id="setSetting8">Filter-Sobel</div>
-    <div id="setSetting9">Filter-NMS</div>
+    <div class="selector">
+        <label>
+            <select id="setProcessor" name="Post Processing">
+                <option id="setSetting0">None</option>
+                <option id="setSetting1">Filter-Gaussian</option>
+                <option id="setSetting2">Filter-Gaussian(Fast)</option>
+                <option id="setSetting3">Filter-Bilateral</option>
+                <option id="setSetting4">Filter-Bilateral(Fast)</option>
+                <option id="setSetting5">Filter-Laplacian_2way</option>
+                <option id="setSetting6">Filter-Laplacian_4way</option>
+                <option id="setSetting7">Filter-Marr</option>
+                <option id="setSetting8">Filter-Sobel</option>
+                <option id="setSetting9">Filter-Sobel-HOG</option>
+                <option id="setSetting10">Filter-NMS</option>
+            </select>
+        </label>
+    </div>
 </div>
 <div id="container_canvas">
     <canvas id="canvas" width="1024" height="512" style="width: 100%; height: 100%;"></canvas>

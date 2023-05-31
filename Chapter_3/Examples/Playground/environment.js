@@ -55,9 +55,11 @@ class Environment {
             kernel_step: 1.0,
             gaussian_delta: 16.7,
             gaussian_range: 0.7,
-            laplacian_factor: 1.6,
+            laplacian_factor: 0.6,
+            marr_delta: 0.55,
             marr_factor: 1.0,
-            sobel_factor: 1.6,
+            marr_blur: true,
+            sobel_factor: 1.0,
             only_edge: false,
         };
     }
