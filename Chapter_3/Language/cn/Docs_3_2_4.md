@@ -297,4 +297,5 @@ function calculate_marr_kernel(step, delta) {
 
 >看来更稳定的边缘检测，还是需要依赖去中心化的索贝尔滤波了。
 
+
 [ref]: References_3.md
