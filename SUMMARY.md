@@ -49,7 +49,7 @@
 	    * [3.2.3 拉普拉斯滤波（Laplacian Filter）](Chapter_3/Language/cn/Docs_3_2_3.md)
 	    * [3.2.4 马尔滤波（Marr Filter）](Chapter_3/Language/cn/Docs_3_2_4.md)
 	    * [3.2.5 索贝尔滤波（Sobel Filter）](Chapter_3/Language/cn/Docs_3_2_5.md)
-	    * [3.2.6 非极大值抑制（NMS [Non-Maximum Suppression]）](Chapter_3/Language/cn/Docs_3_2_6.md)
+	    * [3.2.6 各向异性扩散（Anisotropic Diffusion）](Chapter_3/Language/cn/Docs_3_2_6.md)
     * [3.3 时间冗余控制 - 常用区域检测与运动矢量算法]()
 	    * [3.3.1 IoU & GIoU]()
 	    * [3.3.2 方向梯度直方图（HOG [Histogram of Oriented Gradient]）]()
