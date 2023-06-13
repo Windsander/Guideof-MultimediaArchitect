@@ -129,6 +129,7 @@ class TestProcess {
     #bilateral_range;
     #laplacian_2way_kernel;
     #laplacian_4way_kernel;
+    #hog_magnitude_limit;
     #sobel_kernel_x;
     #sobel_kernel_y;
     #marr_kernel;
@@ -196,6 +197,7 @@ class TestProcess {
         this.#marr_factor = effect_params.marr_factor;
         this.#marr_blur = effect_params.marr_blur;
         this.#only_edge = effect_params.only_edge;
+        this.#hog_magnitude_limit = effect_params.hog_magnitude_limit;
     }
 
     bind() {
@@ -287,6 +289,7 @@ class TestProcess {
             case 9: {
                 this.#effect_sobel_hog.use();
                 this.#effect_sobel_hog.setUniform("target_texture", this.#source_buffer.texture)
+                this.#effect_sobel_hog.setUniform("hog_magnitude_limit", this.#hog_magnitude_limit)
                 this.#effect_sobel_hog.setUniform("sobel_matrix_x", this.#sobel_kernel_x)
                 this.#effect_sobel_hog.setUniform("sobel_matrix_y", this.#sobel_kernel_y)
                 this.#effect_sobel_hog.setUniform("pixel_bias", this.#pixel_bias)
