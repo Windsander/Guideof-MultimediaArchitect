@@ -8,7 +8,7 @@ const int SIZE_CV = (n + 1);
 const int SIZE_BV = /*N * N **/ SIZE_CV; // for orientation weight sum
 
 const float ANGLE_GAP = 20.0 * PI / 180.0;
-const vec3 ANGLE_0   = vec3(cos(ANGLE_GAP * 0.0), sin(ANGLE_GAP * 0.0), 100);
+const vec3 ANGLE_0   = vec3(cos(ANGLE_GAP * 0.0), sin(ANGLE_GAP * 0.0), 100); // x=cos y=sin z=cot
 const vec3 ANGLE_20  = vec3(cos(ANGLE_GAP * 1.0), sin(ANGLE_GAP * 1.0), 2.74747742);
 const vec3 ANGLE_40  = vec3(cos(ANGLE_GAP * 2.0), sin(ANGLE_GAP * 2.0), 1.19175359);
 const vec3 ANGLE_60  = vec3(cos(ANGLE_GAP * 3.0), sin(ANGLE_GAP * 3.0), 0.57735027);
@@ -19,7 +19,7 @@ const vec3 ANGLE_140 = vec3(cos(ANGLE_GAP * 7.0), sin(ANGLE_GAP * 7.0), -1.19175
 const vec3 ANGLE_160 = vec3(cos(ANGLE_GAP * 8.0), sin(ANGLE_GAP * 8.0), -2.74747742);
 const vec3 ANGLE_180 = vec3(cos(ANGLE_GAP * 9.0), sin(ANGLE_GAP * 9.0), -100);
 
-const float CELL_TILE_SIZE      = 8.0;  //pixels
+const float CELL_TILE_SIZE      = 8.0;   //pixels
 const float BLOCK_TILE_SIZE     = 2.0;   //cells
 
 const float HOG_TILE_SIZE       = 16.0;  //pixels(n*N)
