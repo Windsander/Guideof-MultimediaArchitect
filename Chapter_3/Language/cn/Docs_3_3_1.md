@@ -670,7 +670,7 @@ float hog_density(vec2 target_coord, vec3 field_vector) {
 
 准备完成后，就该正式流程的处理了。这里的封装思路，是以 **生成的最小结果单元为分割依据** 进行的。所以，将 HOG 步骤方法封为一下三个：
 
-1. sobel_edge_detection 针对 **像素点（Pixel）梯度矢量** 的索贝尔边界检测
+- sobel_edge_detection 针对 **像素点（Pixel）梯度矢量** 的 **索贝尔边界检测**
 
 ```glsl
 /* Calucate Sobel Field at target center */
@@ -693,7 +693,7 @@ vec3 sobel_edge_detection(vec2 target_coord) {
 }
 ```
 
-2. cell_feature_extraction 针对 **分组（Cell）特征提取** 为结果的矢量统计合并
+- cell_feature_extraction 针对 **分组（Cell）特征提取** 为结果的 **矢量统计合并**
 
 ```glsl
 /* Calucate Cell Feature at target center */
@@ -757,7 +757,7 @@ mat3 cell_feature_extraction(vec2 target_coord) {
 }
 ```
 
-3. block_feature_extraction 针对分块（Block）特征提取为结果的块归一化
+- block_feature_extraction 针对 **分块（Block）特征提取** 为结果的 **块归一化**
 
 ```glsl
 /* Calucate Block Feature at target center */
