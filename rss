@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 31 May 2023 12:36:35 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 13 Jun 2023 09:07:14 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -358,6 +358,20 @@
             <description><![CDATA[【待补充】]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_6.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.3 时间冗余控制 - 常用区域检测与运动矢量算法]]></title>
+            <description><![CDATA[在本节之前，本书已经讲解了如何分离的处理 一维动态音频 和 二维静态图片 信号。如果我们 将一系列图片以时间轴串联，就得到一组由二维静态信号按序构成的二维动态信号 。这种类型的信号，被称为 视频流（Visual Stream） 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.3.1 方向梯度直方图（HOG [Histogram of Oriented Gradient]）]]></title>
+            <description><![CDATA[在前文中，我们提到了索贝尔滤波（Sobel Filter）卷积核对中心点周边方向信息的提炼，可以被用来获取方向梯度直方图的梯度矢量计算中。那么什么是方向梯度直方图呢？]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
