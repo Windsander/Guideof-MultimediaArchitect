@@ -24,3 +24,9 @@
 **[11]** James W. Cooley, Peter A. W. Lewis, and Peter W. Welch, "Historical notes on the fast Fourier transform," Proc. IEEE, vol. 55 (no. 10), p. 1675–1677 (1967).
 
 **[12]**  Ghissoni, S. ,  Costa, E. ,  Lazzari, C. ,  Monteiro, J. , &  Reis, R. . (2011). Radix-2 Decimation in Time (DIT) FFT implementation based on a Matrix-Multiple Constant multiplication approach. IEEE International Conference on Electronics. IEEE.
+
+**[13]** C. Tomasi and R. Manduchi, "Bilateral filtering for gray and color images," Sixth International Conference on Computer Vision (IEEE Cat. No.98CH36271), Bombay, India, 1998, pp. 839-846, doi: 10.1109/ICCV.1998.710815.
+
+**[14]** R. Haralick and L. Shapiro Computer and Robot Vision, Vol. 1, Addison-Wesley Publishing Company, 1992, pp 346 - 351.
+
+**[15]** Irwin Sobel, 2014, History and Definition of the Sobel Operator

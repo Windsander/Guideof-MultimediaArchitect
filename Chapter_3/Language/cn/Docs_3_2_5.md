@@ -10,7 +10,7 @@
 $$
 {\displaystyle 
  \begin{aligned}
-    \mathcal{S}_p(\vec{x_c}) = K \cdot \sqrt{{G_x}^2  + {G_y}^2 } \\
+    \mathcal{S}_p(\vec{x_c}) =& K \cdot \sqrt{ {G_x}^{2} + {G_y}^{2} } \\
  \end{aligned}
 }
 $$
@@ -23,9 +23,9 @@ $$
     G_x(\vec{x_c}) =& K_x \cdot 
     {
       \begin{bmatrix} 
-        +1 ,&  \quad \ \ 0   ,&  \quad \ \ -1      \\
-        +2 ,&  \quad \ \ 0   ,&  \quad \ \ -2      \\
-        +1 ,&  \quad \ \ 0   ,&  \quad \ \ -1
+        +1 ,&  \ \ 0   ,&  \ \ -1      \\
+        +2 ,&  \ \ 0   ,&  \ \ -2      \\
+        +1 ,&  \ \ 0   ,&  \ \ -1
       \end{bmatrix}
     } \cdot \sum_{xy}^{\vec{x_c}}S_{xy} \in \mathbb{R}^{3 \times 3} \\
  \end{aligned}
@@ -40,9 +40,9 @@ $$
     G_y(\vec{x_c}) =& K_y \cdot 
     {
       \begin{bmatrix} 
-        +1 ,&  \quad \  +2   ,&  \quad \     +1      \\
-         0 ,&  \quad \ \ 0   ,&  \quad \quad  0      \\
-        -1 ,&  \quad \  -2   ,&  \quad \     -1
+        +1 ,&  \  +2   ,&  \     +1      \\
+         0 ,&  \ \ 0   ,&  \quad  0      \\
+        -1 ,&  \  -2   ,&  \     -1
       \end{bmatrix}
     } \cdot \sum_{xy}^{\vec{x_c}}S_{xy} \in \mathbb{R}^{3 \times 3} \\
  \end{aligned}
@@ -56,8 +56,8 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-    A =& \vert \mathcal{S}_p(\vec{x_c}) \vert = K \cdot \sqrt{{G_x}^2  + {G_y}^2 } \\
-    \Theta =& \angle \mathcal{S}_p(\vec{x_c})\ = atan2(G_y,\ G_x)\\
+    A =& \vert {\mathcal{S}_p(\vec{x_c})} \vert = K \cdot \sqrt{ {G_x}^{2} + {G_y}^{2} } \\
+    \Theta =& \angle \mathcal{S}_p(\vec{x_c})\ = {atan2}(G_y,\ G_x)\\
  \end{aligned}
 }
 $$
@@ -73,11 +73,11 @@ $$
 }
 $$
 
-因此，用索贝尔滤波也可以得到图像中心像素的 **运动漂移信息** ，可用于 **方向梯度直方图（HOG [Histogram of Oriented Gradient]）** 的获取。此部分我们在随后的章节中进行。
+因此，用索贝尔滤波也可以得到图像中心像素的 **运动漂移信息** ，可用于 **方向梯度直方图（HOG [Histogram of Oriented Gradient]）** 中获取像素点梯度矢量的计算方法。此部分我们在随后的章节中进行。
 
 那么，基于索贝尔滤波的边界检测该怎样实现呢？
 
-## **马尔滤波的 GLSL 渲染程序片**
+## **索贝尔滤波的 GLSL 渲染程序片**
 
 现在，我们可以依据理论来做 GPU 的动态管线程序片封装。
 
@@ -162,7 +162,7 @@ function calculate_sobel_kernel(use_horizontal, str_factor) {
 
 至此，简易索贝尔滤波器程序片就完成了。
 
-## **马尔滤波的局限性**
+## **索贝尔滤波的局限性**
 
 虽然索贝尔滤波通过去中心化检测目标像素点周边的运动情况，检测结果也 **相对准确** ，并摆脱了 **由卷积核中心权值造成像素富集而导致对干扰抗性较弱的问题** 。但也正因此 **进一步扩大了边缘扩散（Edge Spread）的风险** 。且当物体轮廓处的灰度（光亮度）变化过于发散时，算法会有一定程度的丢失，即 **对抗弱边缘（Weak Edge）的能力较差**。
 

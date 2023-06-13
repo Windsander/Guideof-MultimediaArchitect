@@ -23,13 +23,14 @@
 		"expandable-chapters", "chapter-fold", 
 		"back-to-top-button", "tbfed-pagefooter",
 		"simple-page-toc",
-		"graph", "chart", "local-video",
+		"graph", "chart", 
 		"advanced-emoji",
 		"splitter", 
 		"code", "katex",
 		"-sharing", "sharing-plus",
 		"alerts",
-		"url-embed"
+		"url-embed",
+		"local-video"
     ],
     "pluginsConfig": {
 		"favicon": "/Cover/book_favicon.ico",

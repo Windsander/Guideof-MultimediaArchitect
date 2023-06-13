@@ -60,6 +60,7 @@ class Environment {
             marr_factor: 1.0,
             marr_blur: true,
             sobel_factor: 1.0,
+            hog_magnitude_limit: 0.1,
             only_edge: false,
         };
     }
