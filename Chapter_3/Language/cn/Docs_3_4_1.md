@@ -35,9 +35,9 @@
 
 $$
 {\displaystyle 
- \begin{align*}
+ \begin{aligned}
     I(p,\ t) = I(p + \vec{v},\ t+1) \\
- \end{align*}
+ \end{aligned}
 }
 $$
 
@@ -45,16 +45,14 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
+ \begin{aligned}
    {
         \begin{cases}
           I(x,\ y,\ t) &= I (x + \Delta x,y + \Delta y,t + \Delta t) \\
-          \vec{v}(u,\ v) & = (\tfrac{\Delta x}{\Delta t}, \ \tfrac{\Delta y}{\Delta t}) \\
+          \vec{v}(u,\ v) & = (\tfrac{\Delta x}{\Delta t}, \ \tfrac{\Delta y}{\Delta t})
         \end{cases}
    }   \\
- \end{split}
- \end{align*}
+ \end{aligned}
 }
 $$
 
@@ -125,14 +123,12 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-  &\begin{split} 
-   {
+  &{
         \begin{cases}
           \nabla^2_p u &= \tfrac{ \partial^2 u}{\partial x^2} \ +\  \tfrac{ \partial^2 u}{\partial y^2}  \\
           \nabla^2_p v &= \tfrac{ \partial^2 v}{\partial x^2} \ +\  \tfrac{ \partial^2 v}{\partial y^2}
         \end{cases}
    }   \\
-   \end{split} \\
   &\nabla^2_p \vec{v} = \nabla^2_p u \ +\ \nabla^2_p v \rightarrow 0 \\
  \end{aligned}
 }
@@ -185,14 +181,12 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-  &\begin{split} 
    {
         \begin{cases}
           \varepsilon = \nabla_p I \cdot \vec{v} \ +\ \nabla_t I \rightarrow 0 \\
           \varepsilon_c^2  = (\bar{u} \ -\ u)^2 \ +\ (\bar{v} \ -\ v)^2 \rightarrow 0
         \end{cases}
    }   \\
-   \end{split} \\
  \end{aligned}
 }
 $$
@@ -214,14 +208,12 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-  &\begin{split} 
-   {
+  &{
         \begin{cases}
           \tfrac{ \partial E}{\partial u} = 2 \cdot (\nabla_p I \cdot \vec{v} \ +\ \nabla_t I) \cdot \nabla_xI \ -\ 2\alpha^2 (\bar{u} \ -\ u) = 0\\
           \tfrac{ \partial E}{\partial v} = 2 \cdot (\nabla_p I \cdot \vec{v} \ +\ \nabla_t I) \cdot \nabla_yI \ -\ 2\alpha^2 (\bar{v} \ -\ v) = 0
         \end{cases}
    }   \\
-   \end{split} \\
  \end{aligned}
 }
 $$
@@ -231,14 +223,12 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-  &\begin{split} 
-   {
+  &{
         \begin{cases}
           (\alpha^2 \ +\ \nabla_xI^2 \ +\ \nabla_yI^2) \cdot (\bar{u} \ -\ u) = \nabla_xI \cdot (\nabla_xI \cdot \bar{u} \ +\ \nabla_yI \cdot \bar{v} \ +\ \nabla_t I) \\
           (\alpha^2 \ +\ \nabla_xI^2 \ +\ \nabla_yI^2) \cdot (\bar{v} \ -\ v) = \nabla_xI \cdot (\nabla_xI \cdot \bar{u} \ +\ \nabla_yI \cdot \bar{v} \ +\ \nabla_t I)
         \end{cases}
    }   \\
-   \end{split} \\
  \end{aligned}
 }
 $$
@@ -248,14 +238,12 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-  &\begin{split} 
-   {
+  &{
         \begin{cases}
           (u \ -\ \bar{u}) = - \frac{\nabla_xI \cdot (\nabla_xI \cdot \bar{u} \ +\ \nabla_yI \cdot \bar{v} \ +\ \nabla_t I)}{\alpha^2 \ +\ \nabla_xI^2 \ +\ \nabla_yI^2} \\
           (v \ -\ \bar{v}) = - \frac{\nabla_xI \cdot (\nabla_xI \cdot \bar{u} \ +\ \nabla_yI \cdot \bar{v} \ +\ \nabla_t I)}{\alpha^2 \ +\ \nabla_xI^2 \ +\ \nabla_yI^2}
         \end{cases}
    }   \\
-   \end{split} \\
  \end{aligned}
 }
 $$
@@ -267,14 +255,12 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-  &\begin{split} 
-   {
+  &{
         \begin{cases}
           u_{n+1} = \bar{u}_n - \frac{\nabla_xI \cdot (\nabla_xI \cdot \bar{u}_n \ +\ \nabla_yI \cdot \bar{v}_n \ +\ \nabla_t I)}{\alpha^2 \ +\ \nabla_xI^2 \ +\ \nabla_yI^2} \\
           v_{n+1} = \bar{v}_n - \frac{\nabla_xI \cdot (\nabla_xI \cdot \bar{u}_n \ +\ \nabla_yI \cdot \bar{v}_n \ +\ \nabla_t I)}{\alpha^2 \ +\ \nabla_xI^2 \ +\ \nabla_yI^2} 
         \end{cases}
    }   \\
-   \end{split} \\
  \end{aligned}
 }
 $$
@@ -303,23 +289,21 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-  &\begin{split} 
-   {
+  &{
         \begin{cases}
           \nabla_c I_{11} \cdot \vec{v} \ +\ \nabla_t I_{11} = 0 \\
           \nabla_c I_{12} \cdot \vec{v} \ +\ \nabla_t I_{12} = 0 \\
-          \dots \\
+          \cdots \\
           \nabla_c I_{nn} \cdot \vec{v} \ +\ \nabla_t I_{nn} = 0
         \end{cases}  \quad
         \Rightarrow  \quad
         \begin{cases}
           \nabla_x I_1 \cdot u \ +\ \nabla_y I_1 \cdot v \ =\ -\nabla_t I_1 \\
           \nabla_x I_2 \cdot u \ +\ \nabla_y I_2 \cdot v \ =\ -\nabla_t I_2 \\
-          \dots \\
+          \cdots \\
           \nabla_x I_m \cdot u \ +\ \nabla_y I_m \cdot v \ =\ -\nabla_t I_m
         \end{cases}
    }   \\
-   \end{split} \\
  \end{aligned}
 }
 $$

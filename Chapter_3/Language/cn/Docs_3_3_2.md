@@ -86,14 +86,13 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- \begin{split} 
+ \begin{aligned}
    I_w &= min(x_l,\ \tilde{x}_l) + min(x_r,\ \tilde{x}_r) \\
    I_h &= min(x_t,\ \tilde{x}_t) + min(x_b,\ \tilde{x}_b) \\
    \nabla_xX &= {
         \begin{cases}
           \frac{\partial X}{\partial x_t( \mathbf{or}\ \partial x_b)} = x_l + x_r \\
-          \frac{\partial X}{\partial x_l( \mathbf{or}\ \partial x_r)} = x_t + x_b \\
+          \frac{\partial X}{\partial x_l( \mathbf{or}\ \partial x_r)} = x_t + x_b 
         \end{cases}
    }   \\
    \nabla_xI &= {
@@ -101,19 +100,18 @@ $$
           \frac{\partial I}{\partial x_t( \mathbf{or}\ \partial x_b)} = {
             \begin{cases}
               I_w &, \ if ( x_t < \tilde{x}_t\ \mathbf{or}\  x_b < \tilde{x}_b ) \\
-              0   &, otherwise \\
+              0   &, otherwise 
             \end{cases}
           }  \\
           \frac{\partial I}{\partial x_l( \mathbf{or}\ \partial x_r)} = {
             \begin{cases}
               I_h &, \ if ( x_l < \tilde{x}_l\ \mathbf{or}\  x_r < \tilde{x}_r ) \\
-              0   &, otherwise \\
+              0   &, otherwise 
             \end{cases}
-          }  \\
+          }  
         \end{cases}
    }   \\
- \end{split}
- \end{align*}
+ \end{aligned}
 }
 $$
 
@@ -149,14 +147,12 @@ typedef glm::mat4 Matrix_4x4f;
 #define XC_V4_M44_DOT(vl_, mr_) dot_v4_m4x4(vl_, mr_)
 
 Vector_4f
-dot_v4_m4x4(Vector_4f v4_, Matrix_4x4f m4x4_)
-{
+dot_v4_m4x4(Vector_4f v4_, Matrix_4x4f m4x4_) {
     return m4x4_[0] * v4_[0] + m4x4_[1] * v4_[1] + m4x4_[2] * v4_[2] + m4x4_[3] * v4_[3];
 }
 
 Matrix_4x4f
-dot_m4x4(Matrix_4x4f ml_, Matrix_4x4f mr_)
-{
+dot_m4x4(Matrix_4x4f ml_, Matrix_4x4f mr_) {
     Matrix_4x4f result_;
     result_[0] = mr_[0] * ml_[0][0] + mr_[1] * ml_[0][1] + mr_[2] * ml_[0][2] + mr_[3] * ml_[0][3];
     result_[1] = mr_[0] * ml_[1][0] + mr_[1] * ml_[1][1] + mr_[2] * ml_[1][2] + mr_[3] * ml_[1][3];
@@ -179,11 +175,7 @@ dot_m4x4(Matrix_4x4f ml_, Matrix_4x4f mr_)
 typedef glm::vec2 Vector_2f;
 typedef glm::vec4 Vector_4f;
 
-bool static IoU_simple(
-    Vector_4f anchor_box_,
-    Vector_4f ground_box_,
-    float threshold_ = 0.8f
-) {
+bool static IoU_simple(Vector_4f anchor_box_, Vector_4f ground_box_, float threshold_ = 0.8f) {
     float M_area_, T_area_, I_area_, U_area_;
     float IoU_mark_;
     {
@@ -313,11 +305,7 @@ $$
 typedef glm::vec2 Vector_2f;
 typedef glm::vec4 Vector_4f;
 
-bool static GIoU_simple(
-    Vector_4f anchor_box_,
-    Vector_4f ground_box_,
-    float threshold_ = 0.8f
-) {
+bool static GIoU_simple(Vector_4f anchor_box_, Vector_4f ground_box_, float threshold_ = 0.8f) {
     float M_area_, T_area_, I_area_, U_area_, C_area_;
     float IoU_mark_, GIoU_mark_;
     {
@@ -378,7 +366,7 @@ bool static GIoU_simple(
 </figure>
 </center>
 
-针对这种情形，后续的一些研究试图通过引入框中心点（DIoU [Distance-IoU]）[\[21\]][ref] ，结合长宽一致性（CIoU [Complete-IoU]）[\[21\]][ref] ，并在中心点基础上进一步优化损失函数的设计（EIoU [Efficient-IoU]）[\[22\]][ref] 来解决此问题。虽然取得了不错的效果，但算法复杂度也有较大变化，考虑到实际工程情况取舍可以酌情选用，本书不再展开讲解。
+针对这种情形，后续的一些研究试图通过引入 **框中心点（DIoU [Distance-IoU]）** [\[21\]][ref] ，结合 **长宽一致性（CIoU [Complete-IoU]）** [\[21\]][ref] ，并在中心点基础上 **进一步优化损失函数的设计（EIoU [Efficient-IoU]）** [\[22\]][ref] 来解决此问题。虽然取得了不错的效果，但算法复杂度也有较大变化，考虑到实际工程情况取舍可以酌情选用，本书不再展开讲解。
 
 几种算法的对比结果如下，仅供参考：
 
