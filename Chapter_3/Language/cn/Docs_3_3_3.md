@@ -36,17 +36,16 @@ $$
 
 $$
 {\displaystyle 
- \begin{align*}
- {WParams} =\begin{split} 
+ \begin{aligned}
+ {WParams} =
    {
         \begin{cases}
           Size &= (W,H) = ( \lfloor \tfrac{Img\_W}{2} \rfloor + 1,\ \lfloor \tfrac{Img\_H}{2} \rfloor + 1) \\
           Step &= (u,v) = ( \tfrac{Img\_W}{lv \cdot W},\ \tfrac{Img\_H}{lv \cdot H})     \\
-          Level &= (lv) ,\quad  lv  \in [1,\ 3 ] \\
+          Level &= (lv) ,\quad  lv  \in [1,\ 3 ] 
         \end{cases}
    }   \\
- \end{split}
- \end{align*}
+ \end{aligned}
 }
 $$
 

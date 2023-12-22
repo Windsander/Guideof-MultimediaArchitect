@@ -16,7 +16,7 @@
     },
     "plugins": [
 		"theme-default",
-        "-lunr", 
+        "-lunr", "-fontsettings",
         "-search", "search-pro",
 		"insert-logo", "custom-favicon",
 		"rss", "github",
@@ -29,8 +29,7 @@
 		"code", "katex",
 		"-sharing", "sharing-plus",
 		"alerts",
-		"url-embed",
-		"local-video"
+		"url-embed"
     ],
     "pluginsConfig": {
 		"favicon": "/Cover/book_favicon.ico",
@@ -48,6 +47,11 @@
             "maxDepth": 3,
             "skipFirstH1": true
         },
+		"fontsettings": {
+			"theme": "white",
+			"family": "sans",
+			"size": 2
+		},
 		"tbfed-pagefooter": {
             "copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved",
             "modify_label": "Last Updated:",
