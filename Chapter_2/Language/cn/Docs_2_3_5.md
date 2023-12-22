@@ -9,7 +9,7 @@
       width = "800" height = "1000"
       src="../../Pictures/Modern%20Color%20System.png" alt="">
    <figcaption>
-      <p>图 2.3.5-1 现代色彩体系（Modern Color System）关系图谱<a href="References_3.md">[20]</a></p>
+      <p>图 2.3.5-1 现代色彩体系（Modern Color System）关系图谱<a href="References_2.md">[20]</a></p>
    </figcaption>
 </figure>
 </center>

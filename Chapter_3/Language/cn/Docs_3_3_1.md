@@ -3,7 +3,7 @@
 
 在前文中，我们提到了索贝尔滤波（Sobel Filter）卷积核对中心点周边方向信息的提炼，可以被用来获取方向梯度直方图的梯度矢量计算中。那么什么是方向梯度直方图呢？
 
-方向梯度直方图最早的 **概念原型（Prototype）** 来自于 **罗伯特·麦康纳尔（Robert K. McConnell）** 在 1986 年申请的有关模式识别专利中，对 **视野（FoV [Field of View]）** 方向性输入产生输出结果差异的判断过程。并于 1994 年 **三菱电子研究实验室（Mitsubishi Electric Research Laboratories）** 在手势识别应用的区域检测过程中，首次总结为当前称谓 [\[16\]][ref]  。**最终经过 2005 年 CVPR 顶会参会论文验证，重新确认了 HOG 在动态检测上的高适配度，才开始被人熟知** [\[17\]][ref] 。
+方向梯度直方图最早的 **概念原型（Prototype）** 来自于 **罗伯特·麦康纳尔（Robert K. McConnell）** 在 1986 年申请的有关模式识别专利中，对 **视野（FoV [Field of View]）** 方向性输入产生输出结果差异的判断过程。并于 1994 年 **三菱电子研究实验室（Mitsubishi Electric Research Laboratories）** 在手势识别应用的区域检测过程中，首次总结为当前称谓 [\[16\]][ref] 。**最终经过 2005 年 CVPR 顶会参会论文验证，重新确认了 HOG 在动态检测上的高适配度，才开始被人熟知** [\[17\]][ref] 。
 
 **方向梯度直方图（HOG [Histogram of Oriented Gradient]）** 是对用于提炼并描述区域范围内像素漂移情况方法论的概念抽象。是对过程的抽象，而非对结果的抽象。由于本身最终运算能够表示为处理单元形式，因而属于 **特征描述算子（Feature Descriptor）** 的一种。整体思想则是在单元间隔均匀的卷积核内，使用重叠的局部梯度提炼算法并 **录表统计归一化（Normalization）** ，以取得中心点变化方向矢量。方法常结合 **阈值限定（Thresholding）** 筛选结果，提高运动预测的准确度。
 
@@ -670,7 +670,7 @@ float hog_density(vec2 target_coord, vec3 field_vector) {
 
 准备完成后，就该正式流程的处理了。这里的封装思路，是以 **生成的最小结果单元为分割依据** 进行的。所以，将 HOG 步骤方法封为一下三个：
 
-1. sobel_edge_detection 针对 **像素点（Pixel）梯度矢量** 的索贝尔边界检测
+- sobel_edge_detection 针对 **像素点（Pixel）梯度矢量** 的 **索贝尔边界检测**
 
 ```glsl
 /* Calucate Sobel Field at target center */
@@ -693,7 +693,7 @@ vec3 sobel_edge_detection(vec2 target_coord) {
 }
 ```
 
-2. cell_feature_extraction 针对 **分组（Cell）特征提取** 为结果的矢量统计合并
+- cell_feature_extraction 针对 **分组（Cell）特征提取** 为结果的 **矢量统计合并**
 
 ```glsl
 /* Calucate Cell Feature at target center */
@@ -757,7 +757,7 @@ mat3 cell_feature_extraction(vec2 target_coord) {
 }
 ```
 
-3. block_feature_extraction 针对分块（Block）特征提取为结果的块归一化
+- block_feature_extraction 针对 **分块（Block）特征提取** 为结果的 **块归一化**
 
 ```glsl
 /* Calucate Block Feature at target center */
@@ -833,7 +833,13 @@ void main()
 
 **到此为止，方向梯度直方图技术可以初步应用于音视频当中了。** 虽然在上文样例的渲染程序片实现过程中，但从普遍意义上来讲，HOG 仍然属于相对高消耗的算法， HOG 提供的方法论更多被应用在 **编解码规格制定的时域冗余处理** 上。其本身具有一定的 **硬件门槛**。
 
-所以，我们还需要类似作用的 **朴素算法** ，以满足 **低精度场景的要求** 。
+## **HOG 最终产物的用处**
+
+假设输入帧长宽为 $$W \times H = 256 \times 256$$ 。按照前文采用块大小 $$2 \times 2$$ ，分组大小 $$8 \times 8$$ 进行处理，则得到方向梯度直方图最终输出结果为包含 $$16 \times 16 = 256$$ 个块特征向量的数据集合。每一个块特征向量由 $$(2 \times 2) \cdot 9  = 36$$ 维（参数）构成。为了方便描述，我们将输出数据集称为 **HOG 数据帧** 。
+
+**HOG 数据帧（HOG Frame）更多被作为经过特征提取后的预处理输入数据，传入目标物体检测等人工智能计算机视觉方向的算法模型。** 通过模型获取的物体识别结果后，再利用训练好的目标跟踪模型，或传统目标跟踪算法（诸如：核卷积滤波（KCF [Kernelized Correlation Filter]）[18] 、MOSSE 算法等）等，来获取视频流中运动物体在时序上的关联性。
+
+那么，用于判断目标检测结果是否准确的方法，也就是目标检测模型的 **损失函数（Loss Function）** 是什么呢？
 
 
 [ref]: References_3.md
