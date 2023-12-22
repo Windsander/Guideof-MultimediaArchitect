@@ -12,3 +12,4 @@ cmake-*
 *.fdb_latexmk
 *.synctex.gz
 *.log
+*.idea
