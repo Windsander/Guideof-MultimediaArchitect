@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 13 Jun 2023 09:07:14 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 22 Dec 2023 12:03:53 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -361,7 +361,7 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[3.3 时间冗余控制 - 常用区域检测与运动矢量算法]]></title>
+            <title><![CDATA[3.3 时间冗余控制 - 常用特征提取与朴素阈值处理]]></title>
             <description><![CDATA[在本节之前，本书已经讲解了如何分离的处理 一维动态音频 和 二维静态图片 信号。如果我们 将一系列图片以时间轴串联，就得到一组由二维静态信号按序构成的二维动态信号 。这种类型的信号，被称为 视频流（Visual Stream） 。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3.html</guid>
@@ -372,6 +372,34 @@
             <description><![CDATA[在前文中，我们提到了索贝尔滤波（Sobel Filter）卷积核对中心点周边方向信息的提炼，可以被用来获取方向梯度直方图的梯度矢量计算中。那么什么是方向梯度直方图呢？]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.3.2 朴素目标检测结果度量 - IoU & GIoU]]></title>
+            <description><![CDATA[考虑到算法本身需要作为目标检测结果准确性的衡量标准，并用于模型的计算过程。所以不能采用较高复杂程度的算法。而 交并比（IoU [Intersection over Union]） 计算作为相对简单的区域检测算法，则是可被采用的不错方案。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.3.2 朴素目标检测物体锁定 - 分步滑动窗口（Simple Sliding Window）]]></title>
+            <description><![CDATA[分步滑动窗口（Simple Sliding Window） 是一种常用的辅助锁定检测目标的手段。其优势在于，简单易行且精度可控 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4 空域冗余控制 - 基础光流算法与色度压缩]]></title>
+            <description><![CDATA[介于上一节分析的时域冗余性质可以得知，时空本身就是紧密相联的。时域冗余的压缩，主要体现于从覆盖整个数据过程的更广视角，来处理宏观上的实际物理物体运动所产生的信息。所以这里的 时域（Time Domain）冗余 ，指的是 广时空域（Full Spatiotemporal Domain）物体冗余（Objects Redundancy） 。而我们 这里所指的空域（Spacial Domain）冗余 ，可以认为是 相较于时域（Time Domain）的整个数据过程的广度，在单一极短（如前后几帧）的范围内，更细节的像素运动情况的处理 ，即 狭时空域（Narrow Spatiotemporal Domain）像素冗余（Pixels Redundancy） 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4.1 传统光流法（Classic Optical Flow Methods）]]></title>
+            <description><![CDATA[在 计算机视觉（Computer Vision） 体系中，光流（Optical Flow） 指的是场景内像素点在观察者所观察场景空间视角下的瞬时相对运动速度。 光流法（Methods of Optical Flow） 即是利用场景序列间的像素时域运动与相邻像素相关性变化，构建前后场景间像素对应关系的数学模型，完成像素运动信息推算的方法。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
