@@ -16,7 +16,7 @@
     },
     "plugins": [
 		"theme-default",
-        "-lunr", "-fontsettings",
+        "-lunr", "-fontsettings", "-highlight",
         "-search", "search-pro",
 		"insert-logo", "custom-favicon",
 		"rss", "github",
