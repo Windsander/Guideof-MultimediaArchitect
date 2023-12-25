@@ -60,10 +60,6 @@
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-alerts/style.css">
                 
             
-                
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
         
 
     
@@ -927,9 +923,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4.2" data-path="Docs_3_4_2.md">
+        <li class="chapter " data-level="1.3.4.2" data-path="Docs_3_4_2.html">
             
-                <span>
+                <a href="Docs_3_4_2.html">
             
                     
                     3.4.2 双向光流预测（BDOF [Bi-Directional Optical Flow]）
@@ -940,9 +936,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4.3" data-path="Docs_3_4_3.md">
+        <li class="chapter " data-level="1.3.4.3" data-path="Docs_3_4_3.html">
             
-                <span>
+                <a href="Docs_3_4_3.html">
             
                     
                     3.4.3 光流仿射修正（PROF [Affine Prediction Refinement With Optical Flow]）
@@ -953,9 +949,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4.4" data-path="Docs_3_4_4.md">
+        <li class="chapter " data-level="1.3.4.4" data-path="Docs_3_4_4.html">
             
-                <span>
+                <a href="Docs_3_4_4.html">
             
                     
                     3.4.4 色度缩放亮度映射（LMCS [Luma Mapping with Chroma Scaling]）
@@ -971,9 +967,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="Docs_3_5.md">
+        <li class="chapter " data-level="1.3.5" data-path="Docs_3_5.html">
             
-                <span>
+                <a href="Docs_3_5.html">
             
                     
                     3.5 频域冗余控制 - 基础变换编码
@@ -985,9 +981,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.5.1" data-path="Docs_3_5_1.md">
+        <li class="chapter " data-level="1.3.5.1" data-path="Docs_3_5_1.html">
             
-                <span>
+                <a href="Docs_3_5_1.html">
             
                     
                     3.5.1 整数离散正余弦变换（DST/DCT）
@@ -998,9 +994,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5.2" data-path="Docs_3_5_2.md">
+        <li class="chapter " data-level="1.3.5.2" data-path="Docs_3_5_2.html">
             
-                <span>
+                <a href="Docs_3_5_2.html">
             
                     
                     3.5.2 哈达玛变换（WHT [Walsh-Hadamard Transform]）
@@ -1011,9 +1007,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5.3" data-path="Docs_3_5_3.md">
+        <li class="chapter " data-level="1.3.5.3" data-path="Docs_3_5_3.html">
             
-                <span>
+                <a href="Docs_3_5_3.html">
             
                     
                     3.5.3 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）
@@ -1166,109 +1162,109 @@
 <h2 id="&#x53CC;&#x8FB9;&#x6EE4;&#x6CE2;&#x7684;-glsl-&#x6E32;&#x67D3;&#x7A0B;&#x5E8F;&#x7247;"><strong>&#x53CC;&#x8FB9;&#x6EE4;&#x6CE2;&#x7684; GLSL &#x6E32;&#x67D3;&#x7A0B;&#x5E8F;&#x7247;</strong></h2>
 <p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F9D;&#x636E;&#x7406;&#x8BBA;&#x6765;&#x505A; GPU &#x7684;&#x52A8;&#x6001;&#x7BA1;&#x7EBF;&#x7A0B;&#x5E8F;&#x7247;&#x5C01;&#x88C5;&#x4E86;&#x3002;</p>
 <p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B9A;&#x4E49; <strong>&#x9876;&#x70B9;&#x7A0B;&#x5E8F;&#x7247;&#xFF08;Vertex Shader&#xFF09;</strong> &#x3002;&#x901A;&#x8FC7;&#x8BE5;&#x7A0B;&#x5E8F;&#x7247;&#x6307;&#x5B9A; GPU &#x7684;&#x7ED8;&#x5236;&#x533A;&#x57DF;&#xFF0C;&#x4EE5;&#x53CA;&#x7EB9;&#x7406;&#x4E0E;&#x7269;&#x4F53;&#x7684;&#x70B9;&#x4F4D;&#x6620;&#x5C04;&#x3002;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x662F;&#x5BF9;&#x6574;&#x4E2A;&#x89C6;&#x7A97;&#x754C;&#x9762;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x5BF9;&#x4F20;&#x5165;&#x7684;&#x9876;&#x70B9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5750;&#x6807;&#x53D8;&#x6362;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6765;&#x6C42;&#x5F97;&#x9876;&#x70B9;&#x6620;&#x5C04;&#x7684;&#x7EB9;&#x7406;&#x5750;&#x6807;&#xFF0C;&#x51CF;&#x5C11;&#x5C11;&#x91CF;&#x6570;&#x636E;&#x901A;&#x4FE1;&#xFF1A;</p>
-<pre><code class="lang-glsl">attribute <span class="hljs-type">vec3</span> position;
+<pre><code class="lang-glsl">attribute vec3 position;
 
-<span class="hljs-keyword">varying</span> <span class="hljs-type">vec4</span> fs_position;
-<span class="hljs-keyword">varying</span> <span class="hljs-type">vec2</span> fs_texcoord;
+varying vec4 fs_position;
+varying vec2 fs_texcoord;
 
-<span class="hljs-type">void</span> main()
+void main()
 {
-    fs_position = <span class="hljs-type">vec4</span>(position.x, position.y, position.z, <span class="hljs-number">1.0</span>);
-    fs_texcoord = (position.xy + <span class="hljs-type">vec2</span>(<span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>)) / <span class="hljs-number">2.0</span>;
-    <span class="hljs-built_in">gl_Position</span> = fs_position;
+    fs_position = vec4(position.x, position.y, position.z, 1.0);
+    fs_texcoord = (position.xy + vec2(1.0, 1.0)) / 2.0;
+    gl_Position = fs_position;
 }
 </code></pre>
 <p>&#x6CA1;&#x6709;&#x592A;&#x591A;&#x64CD;&#x4F5C;&#xFF0C;&#x56E0;&#x4E3A;&#x5173;&#x952E;&#x7684;&#x90E8;&#x5206;&#x5728; <strong>&#x50CF;&#x7D20;&#x7A0B;&#x5E8F;&#x7247;&#xFF08;Pixel Shader/Fragment Shader&#xFF09;</strong> &#x4E0A;&#xFF1A;</p>
-<pre><code class="lang-glsl"><span class="hljs-keyword">precision</span> <span class="hljs-keyword">mediump</span> <span class="hljs-type">float</span>;
+<pre><code class="lang-glsl">precision mediump float;
 
-<span class="hljs-keyword">varying</span> <span class="hljs-type">vec4</span> fs_position;
-<span class="hljs-keyword">varying</span> <span class="hljs-type">vec2</span> fs_texcoord;
+varying vec4 fs_position;
+varying vec2 fs_texcoord;
 
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">vec2</span> pixel_bias;
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">mat3</span> gaussian_matrix;
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">float</span> gaussian_range;
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">sampler2D</span> target_texture;
+uniform vec2 pixel_bias;
+uniform mat3 gaussian_matrix;
+uniform float gaussian_range;
+uniform sampler2D target_texture;
 
-<span class="hljs-type">float</span> variance(<span class="hljs-type">vec3</span> c1, <span class="hljs-type">vec3</span> c2){
-    <span class="hljs-type">vec3</span> temp = c2 - c1;
-    <span class="hljs-keyword">return</span> temp[<span class="hljs-number">0</span>] * temp[<span class="hljs-number">0</span>] + temp[<span class="hljs-number">1</span>] * temp[<span class="hljs-number">1</span>] + temp[<span class="hljs-number">2</span>] * temp[<span class="hljs-number">2</span>];
+float variance(vec3 c1, vec3 c2){
+    vec3 temp = c2 - c1;
+    return temp[0] * temp[0] + temp[1] * temp[1] + temp[2] * temp[2];
 }
 
-<span class="hljs-type">void</span> main()
+void main()
 {
-    <span class="hljs-type">vec3</span> output_;
-    <span class="hljs-type">vec4</span> color_center = <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy);
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++) {
-            <span class="hljs-type">vec2</span> bias = <span class="hljs-type">vec2</span>(i<span class="hljs-number">-1</span>, j<span class="hljs-number">-1</span>) * pixel_bias;
-            <span class="hljs-type">vec4</span> color_sample = <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy + bias);
-            <span class="hljs-type">float</span> grey_variance = variance(color_center.rgb, color_sample.rgb) / (<span class="hljs-number">2.0</span> * gaussian_range * gaussian_range);
-            <span class="hljs-type">float</span> range_weight = <span class="hljs-built_in">exp</span>(-grey_variance);
+    vec3 output_;
+    vec4 color_center = texture2D(target_texture, fs_texcoord.xy);
+    for (int i = 0; i &lt; 3; i++) {
+        for (int j = 0; j &lt; 3; j++) {
+            vec2 bias = vec2(i-1, j-1) * pixel_bias;
+            vec4 color_sample = texture2D(target_texture, fs_texcoord.xy + bias);
+            float grey_variance = variance(color_center.rgb, color_sample.rgb) / (2.0 * gaussian_range * gaussian_range);
+            float range_weight = exp(-grey_variance);
             output_ += color_sample.rgb * gaussian_matrix[i][j] * range_weight;
         }
     }
-    <span class="hljs-built_in">gl_FragColor</span> = <span class="hljs-type">vec4</span>(output_, <span class="hljs-number">1.0</span>);
+    gl_FragColor = vec4(output_, 1.0);
 }
 </code></pre>
 <p>&#x5B8C;&#x6210;&#x5BF9;&#x7B97;&#x6CD5;&#x6C42;&#x548C;&#x8FC7;&#x7A0B;&#x7684;&#x8FC1;&#x79FB;&#x3002;&#x4F20;&#x5165;&#x7684; <strong>&#x9AD8;&#x65AF;&#x7B97;&#x5B50; gaussian_matrix</strong> &#x548C; <strong>&#x76F8;&#x90BB;&#x50CF;&#x7D20;&#x5F52;&#x4E00;&#x5316;&#x7684;&#x504F;&#x79FB;&#x8DDD;&#x79BB; pixel_bias</strong> &#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x6267;&#x884C;&#x524D;&#x7531; CPU &#x8BA1;&#x7B97;&#x4E00;&#x6B21;&#x5373;&#x53EF;&#x3002;&#x800C; <strong>&#x7070;&#x5EA6;&#x9AD8;&#x65AF;&#x6743;&#x91CD; gaussian_range &#x6D89;&#x53CA;&#x5230;&#x5B9E;&#x9645;&#x91C7;&#x6837;&#xFF0C;&#x9700;&#x8981;&#x76F4;&#x63A5;&#x4F20;&#x5165;</strong>&#x3002;&#x7531;&#x4E8E;&#x91C7;&#x7528; Web &#x5C55;&#x793A;&#xFF0C;&#x6B64;&#x5904;&#x65B9;&#x6CD5;&#x4EE5; JavaScript &#x8BED;&#x6CD5;&#x5B9E;&#x73B0;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pixel_bias</span>(<span class="hljs-params">width, height</span>) </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Float32Array</span>([
-        <span class="hljs-number">1.0</span> / width, <span class="hljs-number">1.0</span> / height
+<pre><code class="lang-js">function pixel_bias(width, height) {
+    return new Float32Array([
+        1.0 / width, 1.0 / height
     ]);
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculate_gaussian_kernel</span>(<span class="hljs-params">step, delta</span>) </span>{
-    <span class="hljs-keyword">let</span> n = step * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">let</span> kernel = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Float32Array</span>(n * n);
-    <span class="hljs-keyword">let</span> factor_1 = <span class="hljs-number">1.0</span> / (<span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-number">2.0</span> * <span class="hljs-built_in">Math</span>.PI) * delta);
-    <span class="hljs-keyword">let</span> factor_2 = <span class="hljs-number">1.0</span> / (<span class="hljs-number">2.0</span> * delta * delta);
+function calculate_gaussian_kernel(step, delta) {
+    let n = step * 2 + 1;
+    let kernel = new Float32Array(n * n);
+    let factor_1 = 1.0 / (Math.sqrt(2.0 * Math.PI) * delta);
+    let factor_2 = 1.0 / (2.0 * delta * delta);
 
-    <span class="hljs-keyword">let</span> normalize_div = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {
-            <span class="hljs-keyword">let</span> diff = <span class="hljs-built_in">Math</span>.pow(i - step, <span class="hljs-number">2</span>) + <span class="hljs-built_in">Math</span>.pow(j - step, <span class="hljs-number">2</span>);
-            kernel[j + n * i] = factor_1 * <span class="hljs-built_in">Math</span>.exp(-diff * factor_2);
+    let normalize_div = 0;
+    for (let i = 0; i &lt; n; i++) {
+        for (let j = 0; j &lt; n; j++) {
+            let diff = Math.pow(i - step, 2) + Math.pow(j - step, 2);
+            kernel[j + n * i] = factor_1 * Math.exp(-diff * factor_2);
             normalize_div += kernel[i];
         }
     }
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; kernel.length; i++) {
+    for (let i = 0; i &lt; kernel.length; i++) {
         kernel[i] /= normalize_div;
     }
-    <span class="hljs-keyword">return</span> kernel;
+    return kernel;
 }
 </code></pre>
 <p>&#x5982;&#x4E0A;&#xFF0C;<strong>&#x53CC;&#x8FB9;&#x6EE4;&#x6CE2;&#x9700;&#x8981;&#x56FA;&#x5B9A;&#x8BA1;&#x7B97;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x548C;&#x6807;&#x51C6;&#x9AD8;&#x65AF;&#x6EE4;&#x6CE2;&#x5E76;&#x65E0;&#x4E0D;&#x540C;&#x3002;&#x5DE5;&#x7A0B;&#x4E2D;&#xFF0C;&#x4EC5;&#x5728;&#x50CF;&#x7D20;&#x7A0B;&#x5E8F;&#x7247;&#x7684;&#x5B9E;&#x73B0;&#x4E0A;&#x5B58;&#x5728;&#x5DEE;&#x5F02;&#x3002;</strong></p>
 <p>&#x540C;&#x7406;&#xFF0C;&#x53CC;&#x8FB9;&#x6EE4;&#x6CE2;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong>&#x7EBF;&#x6027;&#x63D2;&#x503C;&#xFF08;Linear Sampling&#xFF09;</strong> &#x4EE3;&#x66FF;&#x90E8;&#x5206;&#x91C7;&#x6837;&#xFF0C;&#x6765;&#x8FDB;&#x884C;&#x52A0;&#x901F;&#x3002;&#x548C;&#x6807;&#x51C6;&#x9AD8;&#x65AF;&#x6EE4;&#x6CE2;&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x7565;&#x5FAE;&#x8C03;&#x6574;&#x50CF;&#x7D20;&#x7A0B;&#x5E8F;&#x7247;&#xFF08;Pixel Shader/Fragment Shader&#xFF09;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;</p>
-<pre><code class="lang-glsl"><span class="hljs-keyword">precision</span> <span class="hljs-keyword">mediump</span> <span class="hljs-type">float</span>;
+<pre><code class="lang-glsl">precision mediump float;
 
-<span class="hljs-keyword">varying</span> <span class="hljs-type">vec4</span> fs_position;
-<span class="hljs-keyword">varying</span> <span class="hljs-type">vec2</span> fs_texcoord;
+varying vec4 fs_position;
+varying vec2 fs_texcoord;
 
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">vec2</span> pixel_bias;
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">mat3</span> gaussian_matrix;
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">float</span> gaussian_range;
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">sampler2D</span> target_texture;
+uniform vec2 pixel_bias;
+uniform mat3 gaussian_matrix;
+uniform float gaussian_range;
+uniform sampler2D target_texture;
 
-<span class="hljs-type">float</span> variance(<span class="hljs-type">vec3</span> c1, <span class="hljs-type">vec3</span> c2){
-    <span class="hljs-type">vec3</span> temp = c2 - c1;
-    <span class="hljs-keyword">return</span> temp[<span class="hljs-number">0</span>] * temp[<span class="hljs-number">0</span>] + temp[<span class="hljs-number">1</span>] * temp[<span class="hljs-number">1</span>] + temp[<span class="hljs-number">2</span>] * temp[<span class="hljs-number">2</span>];
+float variance(vec3 c1, vec3 c2){
+    vec3 temp = c2 - c1;
+    return temp[0] * temp[0] + temp[1] * temp[1] + temp[2] * temp[2];
 }
 
-<span class="hljs-type">void</span> main()
+void main()
 {
-    <span class="hljs-type">vec4</span> color_center = <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy);
-    <span class="hljs-type">float</span> gauss_factor = gaussian_matrix[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]+gaussian_matrix[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>];
-    <span class="hljs-type">vec3</span> output_ = <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy ).rgb * gaussian_matrix[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>];
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">2</span>; j++) {
-            <span class="hljs-type">vec2</span> bias = <span class="hljs-type">vec2</span>(<span class="hljs-number">1</span><span class="hljs-number">-2</span>*i, <span class="hljs-number">1</span><span class="hljs-number">-2</span>*j) * pixel_bias;
-            <span class="hljs-type">vec4</span> color_sample = <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy + bias);
-            <span class="hljs-type">float</span> grey_variance = variance(color_center.rgb, color_sample.rgb) / (<span class="hljs-number">2.0</span> * gaussian_range * gaussian_range);
-            <span class="hljs-type">float</span> range_weight = <span class="hljs-built_in">exp</span>(-grey_variance);
+    vec4 color_center = texture2D(target_texture, fs_texcoord.xy);
+    float gauss_factor = gaussian_matrix[0][0]+gaussian_matrix[0][1];
+    vec3 output_ = texture2D(target_texture, fs_texcoord.xy ).rgb * gaussian_matrix[1][1];
+    for (int i = 0; i &lt; 2; i++) {
+        for (int j = 0; j &lt; 2; j++) {
+            vec2 bias = vec2(1-2*i, 1-2*j) * pixel_bias;
+            vec4 color_sample = texture2D(target_texture, fs_texcoord.xy + bias);
+            float grey_variance = variance(color_center.rgb, color_sample.rgb) / (2.0 * gaussian_range * gaussian_range);
+            float range_weight = exp(-grey_variance);
             output_ += color_sample.rgb * gauss_factor * range_weight;
         }
     }
-    <span class="hljs-built_in">gl_FragColor</span> = <span class="hljs-type">vec4</span>(output_, <span class="hljs-number">1.0</span>);
+    gl_FragColor = vec4(output_, 1.0);
 }
 </code></pre>
 <p>&#x81F3;&#x6B64;&#xFF0C;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x53CC;&#x8FB9;&#x6EE4;&#x6CE2;&#x5668;&#xFF0C;&#x548C;&#x5B83;&#x7684;&#x7EBF;&#x6027;&#x91C7;&#x6837;&#x5FEB;&#x901F;&#x7248;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
@@ -1278,7 +1274,7 @@
 <p>&#x4E3A;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x76F8;&#x5BF9;&#x653E;&#x677E;&#x5BF9;&#x7B97;&#x529B;&#x7684;&#x9650;&#x5236;&#x3002;&#x4E00;&#x4E2A;&#x53EF;&#x884C;&#x7684;&#x65B9;&#x6848;&#x662F;&#x5728;&#x6807;&#x51C6;&#x9AD8;&#x65AF;&#x6EE4;&#x6CE2;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x65B9;&#x5411;&#x68AF;&#x5EA6;&#x5171;&#x540C;&#x4F5C;&#x7528;&#xFF0C;&#x91CD;&#x65B0;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x6EE1;&#x8DB3; <strong>&#x975E;&#x5404;&#x5411;&#x540C;&#x6027;&#xFF08;Not Isotropic&#xFF09;</strong> &#x6761;&#x4EF6;&#x7684;&#x6EE4;&#x6CE2;&#x5355;&#x5143; <strong>&#xFF08;&#x6BD5;&#x7ADF;&#x975E;&#x5168;&#x65B9;&#x4F4D;&#x7684;&#x68AF;&#x5EA6;&#x5DEE;&#x5F02;&#xFF0C;&#x8FD8;&#x65E0;&#x6CD5;&#x6EE1;&#x8DB3;&#x5404;&#x5411;&#x5F02;&#x6027;&#x6761;&#x4EF6;&#xFF09;</strong> &#xFF0C;&#x6765;&#x4FDD;&#x5B58;&#x548C;&#x5F15;&#x5165;&#x6838;&#x5185;&#x50CF;&#x7D20;&#x79FB;&#x52A8;&#x548C;&#x9891;&#x7387;&#x6CE2;&#x4F20;&#x5BFC;&#x5173;&#x7CFB;&#x3002;&#x4F7F;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x5BF9;&#x6838;&#x5185;&#x50CF;&#x7D20;&#x6240;&#x5360;&#x5747;&#x503C;&#x6BD4;&#x91CD;&#x8FDB;&#x884C;&#x66F4;&#x4E3A;&#x5408;&#x7406;&#x7684;&#x5206;&#x914D;&#xFF0C;&#x8D77;&#x5230;&#x7F13;&#x89E3;&#x6548;&#x679C;&#x3002;</p>
 <p>&#x8FD9;&#x79CD;&#x591A;&#x68AF;&#x5EA6;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4F1A;&#x589E;&#x5F3A;&#x7B97;&#x6CD5;&#x5BF9;&#x56FE;&#x50CF;&#x8FB9;&#x7F18;&#x7684;&#x5904;&#x7406;&#x80FD;&#x529B;&#xFF0C;&#x4FDD;&#x5B58;&#x8FB9;&#x7F18;&#x7684;&#x540C;&#x65F6;&#x589E;&#x5F3A;&#x7EC6;&#x8282;&#x3002;&#x56E0;&#x6B64;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A; <strong>&#x8FB9;&#x7F18;&#x9510;&#x5316;&#xFF08;Edge Sharpening&#xFF09;</strong> &#x3002;</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2023-12-22 19:52:13
+2023-12-25 10:58:04
 </span></footer>
                                 
                                 </section>
@@ -1322,7 +1318,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2.2 双边滤波（Bilateral Filter）","level":"1.3.2.2","depth":3,"next":{"title":"3.2.3 拉普拉斯滤波（Laplacian Filter）","level":"1.3.2.3","depth":3,"path":"Chapter_3/Language/cn/Docs_3_2_3.md","ref":"Chapter_3/Language/cn/Docs_3_2_3.md","articles":[]},"previous":{"title":"3.2.1 高斯滤波（Gauss Filter）","level":"1.3.2.1","depth":3,"path":"Chapter_3/Language/cn/Docs_3_2_1.md","ref":"Chapter_3/Language/cn/Docs_3_2_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_3/Language/cn/Docs_3_2_2.md","mtime":"2023-12-22T11:52:13.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-22T12:03:33.507Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.2.2 双边滤波（Bilateral Filter）","level":"1.3.2.2","depth":3,"next":{"title":"3.2.3 拉普拉斯滤波（Laplacian Filter）","level":"1.3.2.3","depth":3,"path":"Chapter_3/Language/cn/Docs_3_2_3.md","ref":"Chapter_3/Language/cn/Docs_3_2_3.md","articles":[]},"previous":{"title":"3.2.1 高斯滤波（Gauss Filter）","level":"1.3.2.1","depth":3,"path":"Chapter_3/Language/cn/Docs_3_2_1.md","ref":"Chapter_3/Language/cn/Docs_3_2_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-highlight","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_3/Language/cn/Docs_3_2_2.md","mtime":"2023-12-25T02:58:04.990Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-25T09:14:18.745Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

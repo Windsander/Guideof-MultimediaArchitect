@@ -60,10 +60,6 @@
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-alerts/style.css">
                 
             
-                
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
         
 
     
@@ -927,9 +923,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4.2" data-path="Docs_3_4_2.md">
+        <li class="chapter " data-level="1.3.4.2" data-path="Docs_3_4_2.html">
             
-                <span>
+                <a href="Docs_3_4_2.html">
             
                     
                     3.4.2 双向光流预测（BDOF [Bi-Directional Optical Flow]）
@@ -940,9 +936,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4.3" data-path="Docs_3_4_3.md">
+        <li class="chapter " data-level="1.3.4.3" data-path="Docs_3_4_3.html">
             
-                <span>
+                <a href="Docs_3_4_3.html">
             
                     
                     3.4.3 光流仿射修正（PROF [Affine Prediction Refinement With Optical Flow]）
@@ -953,9 +949,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4.4" data-path="Docs_3_4_4.md">
+        <li class="chapter " data-level="1.3.4.4" data-path="Docs_3_4_4.html">
             
-                <span>
+                <a href="Docs_3_4_4.html">
             
                     
                     3.4.4 色度缩放亮度映射（LMCS [Luma Mapping with Chroma Scaling]）
@@ -971,9 +967,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="Docs_3_5.md">
+        <li class="chapter " data-level="1.3.5" data-path="Docs_3_5.html">
             
-                <span>
+                <a href="Docs_3_5.html">
             
                     
                     3.5 频域冗余控制 - 基础变换编码
@@ -985,9 +981,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.5.1" data-path="Docs_3_5_1.md">
+        <li class="chapter " data-level="1.3.5.1" data-path="Docs_3_5_1.html">
             
-                <span>
+                <a href="Docs_3_5_1.html">
             
                     
                     3.5.1 整数离散正余弦变换（DST/DCT）
@@ -998,9 +994,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5.2" data-path="Docs_3_5_2.md">
+        <li class="chapter " data-level="1.3.5.2" data-path="Docs_3_5_2.html">
             
-                <span>
+                <a href="Docs_3_5_2.html">
             
                     
                     3.5.2 哈达玛变换（WHT [Walsh-Hadamard Transform]）
@@ -1011,9 +1007,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5.3" data-path="Docs_3_5_3.md">
+        <li class="chapter " data-level="1.3.5.3" data-path="Docs_3_5_3.html">
             
-                <span>
+                <a href="Docs_3_5_3.html">
             
                     
                     3.5.3 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）
@@ -1378,281 +1374,281 @@
 <h2 id="&#x4EE5;&#x7D22;&#x8D1D;&#x5C14;&#x68AF;&#x5EA6;&#x8BA1;&#x7B97;-hog-&#x7684;-glsl-&#x6E32;&#x67D3;&#x7A0B;&#x5E8F;&#x7247;"><strong>&#x4EE5;&#x7D22;&#x8D1D;&#x5C14;&#x68AF;&#x5EA6;&#x8BA1;&#x7B97; HOG &#x7684; GLSL &#x6E32;&#x67D3;&#x7A0B;&#x5E8F;&#x7247;</strong></h2>
 <p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F9D;&#x636E;&#x7406;&#x8BBA;&#x6765;&#x505A; GPU &#x7684;&#x52A8;&#x6001;&#x7BA1;&#x7EBF;&#x7A0B;&#x5E8F;&#x7247;&#x5C01;&#x88C5;&#x3002;</p>
 <p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B9A;&#x4E49; <strong>&#x9876;&#x70B9;&#x7A0B;&#x5E8F;&#x7247;&#xFF08;Vertex Shader&#xFF09;</strong> &#x3002;&#x901A;&#x8FC7;&#x8BE5;&#x7A0B;&#x5E8F;&#x7247;&#x6307;&#x5B9A; GPU &#x7684;&#x7ED8;&#x5236;&#x533A;&#x57DF;&#xFF0C;&#x4EE5;&#x53CA;&#x7EB9;&#x7406;&#x4E0E;&#x7269;&#x4F53;&#x7684;&#x70B9;&#x4F4D;&#x6620;&#x5C04;&#x3002;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x662F;&#x5BF9;&#x6574;&#x4E2A;&#x89C6;&#x7A97;&#x754C;&#x9762;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x5BF9;&#x4F20;&#x5165;&#x7684;&#x9876;&#x70B9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5750;&#x6807;&#x53D8;&#x6362;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6765;&#x6C42;&#x5F97;&#x9876;&#x70B9;&#x6620;&#x5C04;&#x7684;&#x7EB9;&#x7406;&#x5750;&#x6807;&#xFF0C;&#x51CF;&#x5C11;&#x5C11;&#x91CF;&#x6570;&#x636E;&#x901A;&#x4FE1;&#xFF1A;</p>
-<pre><code class="lang-glsl">attribute <span class="hljs-type">vec3</span> position;
+<pre><code class="lang-glsl">attribute vec3 position;
 
-<span class="hljs-keyword">varying</span> <span class="hljs-type">vec4</span> fs_position;
-<span class="hljs-keyword">varying</span> <span class="hljs-type">vec2</span> fs_texcoord;
+varying vec4 fs_position;
+varying vec2 fs_texcoord;
 
-<span class="hljs-type">void</span> main()
+void main()
 {
-    fs_position = <span class="hljs-type">vec4</span>(position.x, position.y, position.z, <span class="hljs-number">1.0</span>);
-    fs_texcoord = (position.xy + <span class="hljs-type">vec2</span>(<span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>)) / <span class="hljs-number">2.0</span>;
-    <span class="hljs-built_in">gl_Position</span> = fs_position;
+    fs_position = vec4(position.x, position.y, position.z, 1.0);
+    fs_texcoord = (position.xy + vec2(1.0, 1.0)) / 2.0;
+    gl_Position = fs_position;
 }
 </code></pre>
 <p>&#x7A0B;&#x5E8F;&#x5316; HOG &#x7684;&#x5173;&#x952E;&#x5904;&#x7406;&#x90E8;&#x5206;&#xFF0C;&#x4F9D;&#x65E7;&#x5728; <strong>&#x50CF;&#x7D20;&#x7A0B;&#x5E8F;&#x7247;&#xFF08;Pixel Shader/Fragment Shader&#xFF09;</strong> &#x4E0A;&#x3002;&#x76F8;&#x6BD4;&#x4E4B;&#x524D;&#x5BF9;&#x4E8E;&#x6EE4;&#x6CE2;&#x7B97;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x8FD9;&#x91CC; <strong>&#x663E;&#x7136;&#x590D;&#x6742;&#x5F97;&#x591A;</strong> &#xFF1A;</p>
-<pre><code class="lang-glsl"><span class="hljs-keyword">precision</span> <span class="hljs-keyword">mediump</span> <span class="hljs-type">float</span>;
+<pre><code class="lang-glsl">precision mediump float;
 
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> PI = <span class="hljs-number">3.1415927</span>;
+const float PI = 3.1415927;
 
-<span class="hljs-keyword">const</span> <span class="hljs-type">int</span> n = <span class="hljs-number">8</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">2</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-type">int</span> SIZE_CV = (n + <span class="hljs-number">1</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">int</span> SIZE_BV = <span class="hljs-comment">/*N * N **/</span> SIZE_CV; <span class="hljs-comment">// for orientation weight sum</span>
+const int n = 8;
+const int N = 2;
+const int SIZE_CV = (n + 1);
+const int SIZE_BV = /*N * N **/ SIZE_CV; // for orientation weight sum
 
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> ANGLE_GAP = <span class="hljs-number">20.0</span> * PI / <span class="hljs-number">180.0</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_0   = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">0.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">0.0</span>), <span class="hljs-number">100</span>); <span class="hljs-comment">// x=cos y=sin z=cot</span>
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_20  = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">1.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">1.0</span>), <span class="hljs-number">2.74747742</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_40  = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">2.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">2.0</span>), <span class="hljs-number">1.19175359</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_60  = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">3.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">3.0</span>), <span class="hljs-number">0.57735027</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_80  = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">4.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">4.0</span>), <span class="hljs-number">0.17632698</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_100 = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">5.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">5.0</span>), <span class="hljs-number">-0.17632698</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_120 = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">6.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">6.0</span>), <span class="hljs-number">-0.57735027</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_140 = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">7.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">7.0</span>), <span class="hljs-number">-1.19175359</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_160 = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">8.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">8.0</span>), <span class="hljs-number">-2.74747742</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_180 = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">9.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">9.0</span>), <span class="hljs-number">-100</span>);
+const float ANGLE_GAP = 20.0 * PI / 180.0;
+const vec3 ANGLE_0   = vec3(cos(ANGLE_GAP * 0.0), sin(ANGLE_GAP * 0.0), 100); // x=cos y=sin z=cot
+const vec3 ANGLE_20  = vec3(cos(ANGLE_GAP * 1.0), sin(ANGLE_GAP * 1.0), 2.74747742);
+const vec3 ANGLE_40  = vec3(cos(ANGLE_GAP * 2.0), sin(ANGLE_GAP * 2.0), 1.19175359);
+const vec3 ANGLE_60  = vec3(cos(ANGLE_GAP * 3.0), sin(ANGLE_GAP * 3.0), 0.57735027);
+const vec3 ANGLE_80  = vec3(cos(ANGLE_GAP * 4.0), sin(ANGLE_GAP * 4.0), 0.17632698);
+const vec3 ANGLE_100 = vec3(cos(ANGLE_GAP * 5.0), sin(ANGLE_GAP * 5.0), -0.17632698);
+const vec3 ANGLE_120 = vec3(cos(ANGLE_GAP * 6.0), sin(ANGLE_GAP * 6.0), -0.57735027);
+const vec3 ANGLE_140 = vec3(cos(ANGLE_GAP * 7.0), sin(ANGLE_GAP * 7.0), -1.19175359);
+const vec3 ANGLE_160 = vec3(cos(ANGLE_GAP * 8.0), sin(ANGLE_GAP * 8.0), -2.74747742);
+const vec3 ANGLE_180 = vec3(cos(ANGLE_GAP * 9.0), sin(ANGLE_GAP * 9.0), -100);
 
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> CELL_TILE_SIZE      = <span class="hljs-number">8.0</span>;   <span class="hljs-comment">//pixels</span>
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> BLOCK_TILE_SIZE     = <span class="hljs-number">2.0</span>;   <span class="hljs-comment">//cells</span>
+const float CELL_TILE_SIZE      = 8.0;   //pixels
+const float BLOCK_TILE_SIZE     = 2.0;   //cells
 
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> HOG_TILE_SIZE       = <span class="hljs-number">16.0</span>;  <span class="hljs-comment">//pixels(n*N)</span>
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> HOG_SHAFT_LENGTH    = <span class="hljs-number">14.0</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> HOG_SHAFT_THICKNESS = <span class="hljs-number">0.5</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> HOG_SHAFT_HEAD_RATE = <span class="hljs-number">64.0</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span>  HOG_COLOR           = <span class="hljs-type">vec3</span>(<span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> HOG_MIN_MAGNITUDE   = <span class="hljs-number">0.1</span>;
+const float HOG_TILE_SIZE       = 16.0;  //pixels(n*N)
+const float HOG_SHAFT_LENGTH    = 14.0;
+const float HOG_SHAFT_THICKNESS = 0.5;
+const float HOG_SHAFT_HEAD_RATE = 64.0;
+const vec3  HOG_COLOR           = vec3(1.0, 1.0, 0.0);
+const float HOG_MIN_MAGNITUDE   = 0.1;
 
-<span class="hljs-keyword">varying</span> <span class="hljs-type">vec4</span> fs_position;
-<span class="hljs-keyword">varying</span> <span class="hljs-type">vec2</span> fs_texcoord;
+varying vec4 fs_position;
+varying vec2 fs_texcoord;
 
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">bool</span> only_edge;
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">vec2</span> pixel_bias;
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">mat3</span> sobel_matrix_x;
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">mat3</span> sobel_matrix_y;
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">float</span> hog_magnitude_limit;
-<span class="hljs-keyword">uniform</span> <span class="hljs-type">sampler2D</span> target_texture;
+uniform bool only_edge;
+uniform vec2 pixel_bias;
+uniform mat3 sobel_matrix_x;
+uniform mat3 sobel_matrix_y;
+uniform float hog_magnitude_limit;
+uniform sampler2D target_texture;
 
-<span class="hljs-comment">/* Simple Grey */</span>
-<span class="hljs-type">float</span> grey(<span class="hljs-type">vec3</span> c)
+/* Simple Grey */
+float grey(vec3 c)
 {
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0.299</span> * c[<span class="hljs-number">0</span>] + <span class="hljs-number">0.587</span> * c[<span class="hljs-number">1</span>] + <span class="hljs-number">0.114</span> * c[<span class="hljs-number">2</span>];
+    return 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2];
 }
 
-<span class="hljs-comment">/* Calucate HOG Orient-hog Density (pixel by pixel) */</span>
-<span class="hljs-type">float</span> hog_density(<span class="hljs-type">vec2</span> target_coord, <span class="hljs-type">vec3</span> field_vector) {
-    <span class="hljs-type">vec2</span> ori_pos = target_coord.xy / pixel_bias;
-    <span class="hljs-type">vec2</span> tile_center = (<span class="hljs-built_in">floor</span>(ori_pos / HOG_TILE_SIZE) + <span class="hljs-number">0.5</span>) * HOG_TILE_SIZE;
-    <span class="hljs-type">float</span> magnitude = <span class="hljs-built_in">abs</span>(field_vector.z);
-    <span class="hljs-keyword">if</span> (magnitude &gt; <span class="hljs-built_in">max</span>(HOG_MIN_MAGNITUDE, hog_magnitude_limit)) {
-        <span class="hljs-type">float</span> <span class="hljs-built_in">distance</span> = <span class="hljs-built_in">clamp</span>(magnitude * HOG_SHAFT_LENGTH, <span class="hljs-number">0.1</span>, HOG_SHAFT_LENGTH);
-        <span class="hljs-type">vec2</span> normalizer = <span class="hljs-built_in">normalize</span>(field_vector.xy);
-        <span class="hljs-type">vec2</span> tile_offset = ori_pos - tile_center;
-        <span class="hljs-type">float</span> density = HOG_SHAFT_THICKNESS / HOG_SHAFT_HEAD_RATE - <span class="hljs-built_in">max</span>(
-        <span class="hljs-built_in">abs</span>(<span class="hljs-built_in">dot</span>(tile_offset, <span class="hljs-type">vec2</span>(+normalizer.y, -normalizer.x))),
-        <span class="hljs-built_in">abs</span>(<span class="hljs-built_in">dot</span>(tile_offset, <span class="hljs-type">vec2</span>(+normalizer.x, +normalizer.y))) - <span class="hljs-built_in">distance</span>
+/* Calucate HOG Orient-hog Density (pixel by pixel) */
+float hog_density(vec2 target_coord, vec3 field_vector) {
+    vec2 ori_pos = target_coord.xy / pixel_bias;
+    vec2 tile_center = (floor(ori_pos / HOG_TILE_SIZE) + 0.5) * HOG_TILE_SIZE;
+    float magnitude = abs(field_vector.z);
+    if (magnitude &gt; max(HOG_MIN_MAGNITUDE, hog_magnitude_limit)) {
+        float distance = clamp(magnitude * HOG_SHAFT_LENGTH, 0.1, HOG_SHAFT_LENGTH);
+        vec2 normalizer = normalize(field_vector.xy);
+        vec2 tile_offset = ori_pos - tile_center;
+        float density = HOG_SHAFT_THICKNESS / HOG_SHAFT_HEAD_RATE - max(
+        abs(dot(tile_offset, vec2(+normalizer.y, -normalizer.x))),
+        abs(dot(tile_offset, vec2(+normalizer.x, +normalizer.y))) - distance
         );
-        <span class="hljs-keyword">return</span> <span class="hljs-built_in">clamp</span>(<span class="hljs-number">1.0</span> + density, <span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>);
+        return clamp(1.0 + density, 0.0, 1.0);
     }
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0.0</span>;
+    return 0.0;
 }
 
-<span class="hljs-comment">/* Calucate Sobel Field at target center */</span>
-<span class="hljs-type">vec3</span> sobel_edge_detection(<span class="hljs-type">vec2</span> target_coord) {
-    <span class="hljs-type">float</span> gradient_center_x;
-    <span class="hljs-type">float</span> gradient_center_y;
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++) {
-            <span class="hljs-type">vec2</span> bias = <span class="hljs-type">vec2</span>(i<span class="hljs-number">-1</span>, j<span class="hljs-number">-1</span>) * pixel_bias;
-            <span class="hljs-type">vec4</span> color_sample = <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy + bias);
-            <span class="hljs-type">float</span> check_grey = grey(color_sample.rgb);
+/* Calucate Sobel Field at target center */
+vec3 sobel_edge_detection(vec2 target_coord) {
+    float gradient_center_x;
+    float gradient_center_y;
+    for (int i = 0; i &lt; 3; i++) {
+        for (int j = 0; j &lt; 3; j++) {
+            vec2 bias = vec2(i-1, j-1) * pixel_bias;
+            vec4 color_sample = texture2D(target_texture, fs_texcoord.xy + bias);
+            float check_grey = grey(color_sample.rgb);
             gradient_center_x += check_grey * sobel_matrix_x[i][j];
             gradient_center_y += check_grey * sobel_matrix_y[i][j];
         }
     }
-    <span class="hljs-comment">// float rectangle = (atan(gradient_center_y, gradient_center_x) + 2.0 * PI) / (PI);</span>
-    <span class="hljs-type">vec2</span>  orientate = <span class="hljs-type">vec2</span>(gradient_center_x, gradient_center_y);
-    <span class="hljs-type">float</span> magnitude = <span class="hljs-built_in">length</span>(orientate);
-    <span class="hljs-keyword">return</span> <span class="hljs-type">vec3</span>(orientate, magnitude);
+    // float rectangle = (atan(gradient_center_y, gradient_center_x) + 2.0 * PI) / (PI);
+    vec2  orientate = vec2(gradient_center_x, gradient_center_y);
+    float magnitude = length(orientate);
+    return vec3(orientate, magnitude);
 }
 
-<span class="hljs-comment">/* Calucate Cell Feature at target center */</span>
-<span class="hljs-type">mat3</span> cell_feature_extraction(<span class="hljs-type">vec2</span> target_coord) {
-    <span class="hljs-type">mat3</span>  result;
-    <span class="hljs-type">float</span> bias_unit = <span class="hljs-type">float</span>(n<span class="hljs-number">-1</span>)/<span class="hljs-number">2.0</span>;
-    <span class="hljs-type">vec2</span> ori_pos = target_coord.xy / pixel_bias;
-    <span class="hljs-type">vec2</span> cell_center = (<span class="hljs-built_in">floor</span>(ori_pos / CELL_TILE_SIZE) + <span class="hljs-number">0.5</span>) * CELL_TILE_SIZE;
+/* Calucate Cell Feature at target center */
+mat3 cell_feature_extraction(vec2 target_coord) {
+    mat3  result;
+    float bias_unit = float(n-1)/2.0;
+    vec2 ori_pos = target_coord.xy / pixel_bias;
+    vec2 cell_center = (floor(ori_pos / CELL_TILE_SIZE) + 0.5) * CELL_TILE_SIZE;
 
-    <span class="hljs-type">float</span> normalization_factor = <span class="hljs-number">0.0</span>;
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {
-            <span class="hljs-type">vec2</span> bias = <span class="hljs-type">vec2</span>(<span class="hljs-type">float</span>(i)-bias_unit, <span class="hljs-type">float</span>(j)-bias_unit) * pixel_bias;
-            <span class="hljs-type">vec3</span> field_vector = sobel_edge_detection(cell_center.xy + bias);
-            <span class="hljs-type">float</span> seek_to =  (field_vector.x+ <span class="hljs-number">0.0001</span>)  / (field_vector.y + <span class="hljs-number">0.0001</span>) ;
-            <span class="hljs-type">float</span> wight = <span class="hljs-number">0.0</span>;
-            <span class="hljs-type">float</span> wight_as = <span class="hljs-number">0.0</span>;
+    float normalization_factor = 0.0;
+    for (int i = 0; i &lt; n; i++) {
+        for (int j = 0; j &lt; n; j++) {
+            vec2 bias = vec2(float(i)-bias_unit, float(j)-bias_unit) * pixel_bias;
+            vec3 field_vector = sobel_edge_detection(cell_center.xy + bias);
+            float seek_to =  (field_vector.x+ 0.0001)  / (field_vector.y + 0.0001) ;
+            float wight = 0.0;
+            float wight_as = 0.0;
             {
-                wight = field_vector[<span class="hljs-number">2</span>] * wight_as;
-                <span class="hljs-keyword">if</span> (ANGLE_0.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_20.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_0.z)/(ANGLE_20.z - ANGLE_0.z));
-                    result[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] += field_vector[<span class="hljs-number">2</span>] *wight_as;
-                    result[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_20.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_40.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_20.z)/(ANGLE_40.z - ANGLE_20.z));
-                    result[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_40.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_60.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_40.z)/(ANGLE_60.z - ANGLE_40.z));
-                    result[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_60.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_80.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_60.z)/(ANGLE_80.z - ANGLE_60.z));
-                    result[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_80.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_100.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_80.z)/(ANGLE_100.z - ANGLE_80.z));
-                    result[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_100.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_120.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_100.z)/(ANGLE_120.z - ANGLE_100.z));
-                    result[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_120.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_140.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_120.z)/(ANGLE_140.z - ANGLE_120.z));
-                    result[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_140.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_160.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_140.z)/(ANGLE_160.z - ANGLE_140.z));
-                    result[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_160.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_180.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_160.z)/(ANGLE_180.z - ANGLE_160.z));
-                    result[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
+                wight = field_vector[2] * wight_as;
+                if (ANGLE_0.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_20.z){
+                    wight_as = abs((seek_to - ANGLE_0.z)/(ANGLE_20.z - ANGLE_0.z));
+                    result[0][0] += field_vector[2] *wight_as;
+                    result[0][1] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_20.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_40.z){
+                    wight_as = abs((seek_to - ANGLE_20.z)/(ANGLE_40.z - ANGLE_20.z));
+                    result[0][1] += field_vector[2] * wight_as;
+                    result[0][2] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_40.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_60.z){
+                    wight_as = abs((seek_to - ANGLE_40.z)/(ANGLE_60.z - ANGLE_40.z));
+                    result[0][2] += field_vector[2] * wight_as;
+                    result[1][0] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_60.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_80.z){
+                    wight_as = abs((seek_to - ANGLE_60.z)/(ANGLE_80.z - ANGLE_60.z));
+                    result[1][0] += field_vector[2] * wight_as;
+                    result[1][1] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_80.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_100.z){
+                    wight_as = abs((seek_to - ANGLE_80.z)/(ANGLE_100.z - ANGLE_80.z));
+                    result[1][1] += field_vector[2] * wight_as;
+                    result[1][2] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_100.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_120.z){
+                    wight_as = abs((seek_to - ANGLE_100.z)/(ANGLE_120.z - ANGLE_100.z));
+                    result[1][2] += field_vector[2] * wight_as;
+                    result[2][0] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_120.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_140.z){
+                    wight_as = abs((seek_to - ANGLE_120.z)/(ANGLE_140.z - ANGLE_120.z));
+                    result[2][0] += field_vector[2] * wight_as;
+                    result[2][1] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_140.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_160.z){
+                    wight_as = abs((seek_to - ANGLE_140.z)/(ANGLE_160.z - ANGLE_140.z));
+                    result[2][1] += field_vector[2] * wight_as;
+                    result[2][2] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_160.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_180.z){
+                    wight_as = abs((seek_to - ANGLE_160.z)/(ANGLE_180.z - ANGLE_160.z));
+                    result[2][2] += field_vector[2] * wight_as;
+                    result[0][0] += field_vector[2] * (1.0 - wight_as);
                 }
             }
         }
     }
-    <span class="hljs-keyword">return</span> result;
+    return result;
 }
 
-<span class="hljs-comment">/* Calucate Block Feature at target center */</span>
-<span class="hljs-type">float</span> block_feature_extraction(<span class="hljs-type">vec2</span> target_coord) {
-    <span class="hljs-type">float</span> orient_hog_density = <span class="hljs-number">0.0</span>;
-    <span class="hljs-type">float</span> block_feature_vector[SIZE_BV];
+/* Calucate Block Feature at target center */
+float block_feature_extraction(vec2 target_coord) {
+    float orient_hog_density = 0.0;
+    float block_feature_vector[SIZE_BV];
 
-    <span class="hljs-type">vec2</span> cell_bias = <span class="hljs-type">vec2</span>(n, n) * pixel_bias;
-    <span class="hljs-type">mat3</span> cell_lt = cell_feature_extraction(target_coord);
-    <span class="hljs-type">mat3</span> cell_rt = cell_feature_extraction(target_coord + <span class="hljs-type">vec2</span>(cell_bias.x, <span class="hljs-number">0.0</span>));
-    <span class="hljs-type">mat3</span> cell_lb = cell_feature_extraction(target_coord + <span class="hljs-type">vec2</span>(<span class="hljs-number">0.0</span>, cell_bias.y));
-    <span class="hljs-type">mat3</span> cell_rb = cell_feature_extraction(target_coord + cell_bias);
+    vec2 cell_bias = vec2(n, n) * pixel_bias;
+    mat3 cell_lt = cell_feature_extraction(target_coord);
+    mat3 cell_rt = cell_feature_extraction(target_coord + vec2(cell_bias.x, 0.0));
+    mat3 cell_lb = cell_feature_extraction(target_coord + vec2(0.0, cell_bias.y));
+    mat3 cell_rb = cell_feature_extraction(target_coord + cell_bias);
 
-    <span class="hljs-type">float</span> normalization_factor = <span class="hljs-number">0.0</span>;
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++) {
+    float normalization_factor = 0.0;
+    for (int i = 0; i &lt; 3; i++) {
+        for (int j = 0; j &lt; 3; j++) {
             normalization_factor += cell_lt[i][j] + cell_rt[i][j] + cell_lb[i][j] + cell_rb[i][j];
-            block_feature_vector[i*<span class="hljs-number">3</span>+j] = cell_lt[i][j] + cell_rt[i][j] + cell_lb[i][j] + cell_rb[i][j];
-            <span class="hljs-comment">// block_feature_vector[i*3+j+SIZE_CV*0] = cell_lt[i][j];</span>
-            <span class="hljs-comment">// block_feature_vector[i*3+j+SIZE_CV*1] = cell_rt[i][j];</span>
-            <span class="hljs-comment">// block_feature_vector[i*3+j+SIZE_CV*2] = cell_lb[i][j];</span>
-            <span class="hljs-comment">// block_feature_vector[i*3+j+SIZE_CV*3] = cell_rb[i][j];</span>
+            block_feature_vector[i*3+j] = cell_lt[i][j] + cell_rt[i][j] + cell_lb[i][j] + cell_rb[i][j];
+            // block_feature_vector[i*3+j+SIZE_CV*0] = cell_lt[i][j];
+            // block_feature_vector[i*3+j+SIZE_CV*1] = cell_rt[i][j];
+            // block_feature_vector[i*3+j+SIZE_CV*2] = cell_lb[i][j];
+            // block_feature_vector[i*3+j+SIZE_CV*3] = cell_rb[i][j];
         }
     }
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; SIZE_BV; i++) {
-        <span class="hljs-comment">// block_feature_vector[i] = block_feature_vector[i] / normalization_factor;</span>
-        <span class="hljs-type">vec3</span> field_vector;
-        <span class="hljs-type">int</span> at = <span class="hljs-type">int</span>(<span class="hljs-built_in">mod</span>(<span class="hljs-type">float</span>(i) , <span class="hljs-number">9.0</span>));
-        <span class="hljs-type">float</span> weight = block_feature_vector[i] / normalization_factor;
-        <span class="hljs-keyword">if</span> (at == <span class="hljs-number">0</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_0.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">1</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_20.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">2</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_40.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">3</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_60.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">4</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_80.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">5</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_100.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">6</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_120.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">7</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_140.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">8</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_160.xy, weight);
+    for (int i = 0; i &lt; SIZE_BV; i++) {
+        // block_feature_vector[i] = block_feature_vector[i] / normalization_factor;
+        vec3 field_vector;
+        int at = int(mod(float(i) , 9.0));
+        float weight = block_feature_vector[i] / normalization_factor;
+        if (at == 0){
+            field_vector = vec3(ANGLE_0.xy, weight);
+        } else if (at == 1){
+            field_vector = vec3(ANGLE_20.xy, weight);
+        } else if (at == 2){
+            field_vector = vec3(ANGLE_40.xy, weight);
+        } else if (at == 3){
+            field_vector = vec3(ANGLE_60.xy, weight);
+        } else if (at == 4){
+            field_vector = vec3(ANGLE_80.xy, weight);
+        } else if (at == 5){
+            field_vector = vec3(ANGLE_100.xy, weight);
+        } else if (at == 6){
+            field_vector = vec3(ANGLE_120.xy, weight);
+        } else if (at == 7){
+            field_vector = vec3(ANGLE_140.xy, weight);
+        } else if (at == 8){
+            field_vector = vec3(ANGLE_160.xy, weight);
         }
         orient_hog_density += hog_density(target_coord, field_vector);
     }
-    <span class="hljs-keyword">return</span> orient_hog_density;
+    return orient_hog_density;
 }
 
-<span class="hljs-type">void</span> main()
+void main()
 {
-    <span class="hljs-type">vec3</span> output_ = only_edge? <span class="hljs-type">vec3</span>(<span class="hljs-number">0</span>) : <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy).rgb;
-    <span class="hljs-type">float</span> orient_hog_density = block_feature_extraction(fs_texcoord.xy);
-    <span class="hljs-type">vec3</span> hogs_ = orient_hog_density * HOG_COLOR;
-    <span class="hljs-built_in">gl_FragColor</span> = <span class="hljs-type">vec4</span>(output_ + hogs_, <span class="hljs-number">1.0</span>);
+    vec3 output_ = only_edge? vec3(0) : texture2D(target_texture, fs_texcoord.xy).rgb;
+    float orient_hog_density = block_feature_extraction(fs_texcoord.xy);
+    vec3 hogs_ = orient_hog_density * HOG_COLOR;
+    gl_FragColor = vec4(output_ + hogs_, 1.0);
 }
 </code></pre>
 <p>&#x6837;&#x4F8B;&#x91C7;&#x7528; <strong>&#x5355;&#x4E00;&#x6D41;&#x6C34;&#x7EBF;&#x8FC7;&#x7A0B;</strong> &#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x51E0;&#x4E2A;&#x5173;&#x952E;&#x6D41;&#x7A0B;&#x8282;&#x70B9;&#x5C01;&#x88C5;&#x4E3A;&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86; HOG &#x7684;&#x5904;&#x7406;&#x3002;&#x76F8;&#x5BF9;&#x4E8E;&#x9876;&#x70B9;&#x7A0B;&#x5E8F;&#x7247;&#xFF0C;&#x50CF;&#x7D20;&#x7A0B;&#x5E8F;&#x7247;&#x4E0D;&#x592A;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#xFF0C;&#x8FD8;&#x9700;&#x5206;&#x6B65;&#x62C6;&#x5F00;&#x89E3;&#x8BFB;&#x3002;</p>
 <h2 id="hog-&#x7247;&#x5143;&#x7740;&#x8272;&#x5668;&#xFF08;fragment-shader&#xFF09;&#x7684;&#x7EC6;&#x8282;&#x62C6;&#x89E3;"><strong>HOG &#x7247;&#x5143;&#x7740;&#x8272;&#x5668;&#xFF08;Fragment Shader&#xFF09;&#x7684;&#x7EC6;&#x8282;&#x62C6;&#x89E3;</strong></h2>
 <p>&#x9996;&#x5148;&#x9700;&#x8981;&#x5728;&#x5904;&#x7406;&#x524D;&#xFF0C;&#x8FDB;&#x884C;&#x4E00;&#x90E8;&#x5206;&#x65B9;&#x6CD5;&#x548C;&#x5E38;&#x91CF;&#x51C6;&#x5907;&#x3002;&#x8FD9;&#x4E9B; <strong>&#x524D;&#x7F6E;&#x5DE5;&#x4F5C;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x90E8;&#x5206;</strong> &#x3002;</p>
 <p><strong>&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x7531;&#x7EAF;&#x5E38;&#x91CF;&#x6784;&#x6210;&#x3002;&#x7528;&#x4E8E;&#x8F85;&#x52A9;&#x5B9E;&#x73B0; &#x65B9;&#x5411;&#x68AF;&#x5EA6;&#x76F4;&#x65B9;&#x56FE;&#xFF08;HOG&#xFF09;&#x7B97;&#x6CD5; &#x4E2D;&#xFF0C;&#x5404;&#x4E2A;&#x6B65;&#x9AA4;&#x6240;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x5173;&#x952E;&#x6052;&#x5B9A;&#x53C2;&#x6570;&#xFF0C;&#x6709;&#xFF1A;</strong></p>
-<pre><code class="lang-glsl"><span class="hljs-keyword">const</span> <span class="hljs-type">float</span> PI = <span class="hljs-number">3.1415927</span>;
+<pre><code class="lang-glsl">const float PI = 3.1415927;
 
-<span class="hljs-keyword">const</span> <span class="hljs-type">int</span> n = <span class="hljs-number">8</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">2</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-type">int</span> SIZE_CV = (n + <span class="hljs-number">1</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">int</span> SIZE_BV = <span class="hljs-comment">/*N * N **/</span> SIZE_CV; <span class="hljs-comment">// for orientation weight sum</span>
+const int n = 8;
+const int N = 2;
+const int SIZE_CV = (n + 1);
+const int SIZE_BV = /*N * N **/ SIZE_CV; // for orientation weight sum
 
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> ANGLE_GAP = <span class="hljs-number">20.0</span> * PI / <span class="hljs-number">180.0</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_0   = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">0.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">0.0</span>), <span class="hljs-number">100</span>);  <span class="hljs-comment">// x=cos y=sin z=cot</span>
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_20  = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">1.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">1.0</span>), <span class="hljs-number">2.74747742</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_40  = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">2.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">2.0</span>), <span class="hljs-number">1.19175359</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_60  = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">3.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">3.0</span>), <span class="hljs-number">0.57735027</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_80  = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">4.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">4.0</span>), <span class="hljs-number">0.17632698</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_100 = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">5.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">5.0</span>), <span class="hljs-number">-0.17632698</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_120 = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">6.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">6.0</span>), <span class="hljs-number">-0.57735027</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_140 = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">7.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">7.0</span>), <span class="hljs-number">-1.19175359</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_160 = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">8.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">8.0</span>), <span class="hljs-number">-2.74747742</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span> ANGLE_180 = <span class="hljs-type">vec3</span>(<span class="hljs-built_in">cos</span>(ANGLE_GAP * <span class="hljs-number">9.0</span>), <span class="hljs-built_in">sin</span>(ANGLE_GAP * <span class="hljs-number">9.0</span>), <span class="hljs-number">-100</span>);
+const float ANGLE_GAP = 20.0 * PI / 180.0;
+const vec3 ANGLE_0   = vec3(cos(ANGLE_GAP * 0.0), sin(ANGLE_GAP * 0.0), 100);  // x=cos y=sin z=cot
+const vec3 ANGLE_20  = vec3(cos(ANGLE_GAP * 1.0), sin(ANGLE_GAP * 1.0), 2.74747742);
+const vec3 ANGLE_40  = vec3(cos(ANGLE_GAP * 2.0), sin(ANGLE_GAP * 2.0), 1.19175359);
+const vec3 ANGLE_60  = vec3(cos(ANGLE_GAP * 3.0), sin(ANGLE_GAP * 3.0), 0.57735027);
+const vec3 ANGLE_80  = vec3(cos(ANGLE_GAP * 4.0), sin(ANGLE_GAP * 4.0), 0.17632698);
+const vec3 ANGLE_100 = vec3(cos(ANGLE_GAP * 5.0), sin(ANGLE_GAP * 5.0), -0.17632698);
+const vec3 ANGLE_120 = vec3(cos(ANGLE_GAP * 6.0), sin(ANGLE_GAP * 6.0), -0.57735027);
+const vec3 ANGLE_140 = vec3(cos(ANGLE_GAP * 7.0), sin(ANGLE_GAP * 7.0), -1.19175359);
+const vec3 ANGLE_160 = vec3(cos(ANGLE_GAP * 8.0), sin(ANGLE_GAP * 8.0), -2.74747742);
+const vec3 ANGLE_180 = vec3(cos(ANGLE_GAP * 9.0), sin(ANGLE_GAP * 9.0), -100);
 
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> CELL_TILE_SIZE      = <span class="hljs-number">8.0</span>;   <span class="hljs-comment">//pixels</span>
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> BLOCK_TILE_SIZE     = <span class="hljs-number">2.0</span>;   <span class="hljs-comment">//cells</span>
+const float CELL_TILE_SIZE      = 8.0;   //pixels
+const float BLOCK_TILE_SIZE     = 2.0;   //cells
 </code></pre>
 <p><strong>&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x5219;&#x5305;&#x542B;&#x5E38;&#x91CF;&#x548C;&#x8F85;&#x52A9;&#x65B9;&#x6CD5;&#x3002;&#x7528;&#x4E8E;&#x8F85;&#x52A9; HOG &#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x7684;&#x56FE;&#x50CF;&#x5316;&#x663E;&#x793A;&#xFF0C;&#x6709;&#xFF1A;</strong></p>
-<pre><code class="lang-glsl"><span class="hljs-keyword">const</span> <span class="hljs-type">float</span> CELL_TILE_SIZE      = <span class="hljs-number">8.0</span>;   <span class="hljs-comment">//pixels</span>
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> BLOCK_TILE_SIZE     = <span class="hljs-number">2.0</span>;   <span class="hljs-comment">//cells</span>
+<pre><code class="lang-glsl">const float CELL_TILE_SIZE      = 8.0;   //pixels
+const float BLOCK_TILE_SIZE     = 2.0;   //cells
 
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> HOG_TILE_SIZE       = <span class="hljs-number">16.0</span>;  <span class="hljs-comment">//pixels(n*N)</span>
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> HOG_SHAFT_LENGTH    = <span class="hljs-number">14.0</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> HOG_SHAFT_THICKNESS = <span class="hljs-number">0.5</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> HOG_SHAFT_HEAD_RATE = <span class="hljs-number">64.0</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-type">vec3</span>  HOG_COLOR           = <span class="hljs-type">vec3</span>(<span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-type">float</span> HOG_MIN_MAGNITUDE   = <span class="hljs-number">0.1</span>;
+const float HOG_TILE_SIZE       = 16.0;  //pixels(n*N)
+const float HOG_SHAFT_LENGTH    = 14.0;
+const float HOG_SHAFT_THICKNESS = 0.5;
+const float HOG_SHAFT_HEAD_RATE = 64.0;
+const vec3  HOG_COLOR           = vec3(1.0, 1.0, 0.0);
+const float HOG_MIN_MAGNITUDE   = 0.1;
 
-<span class="hljs-comment">/* Simple Grey */</span>
-<span class="hljs-type">float</span> grey(<span class="hljs-type">vec3</span> c)
+/* Simple Grey */
+float grey(vec3 c)
 {
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0.299</span> * c[<span class="hljs-number">0</span>] + <span class="hljs-number">0.587</span> * c[<span class="hljs-number">1</span>] + <span class="hljs-number">0.114</span> * c[<span class="hljs-number">2</span>];
+    return 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2];
 }
 
-<span class="hljs-comment">/* Calucate HOG Orient-hog Density (pixel by pixel) */</span>
-<span class="hljs-type">float</span> hog_density(<span class="hljs-type">vec2</span> target_coord, <span class="hljs-type">vec3</span> field_vector) {
-    <span class="hljs-type">vec2</span> ori_pos = target_coord.xy / pixel_bias;
-    <span class="hljs-type">vec2</span> tile_center = (<span class="hljs-built_in">floor</span>(ori_pos / HOG_TILE_SIZE) + <span class="hljs-number">0.5</span>) * HOG_TILE_SIZE;
-    <span class="hljs-type">float</span> magnitude = <span class="hljs-built_in">abs</span>(field_vector.z);
-    <span class="hljs-keyword">if</span> (magnitude &gt; <span class="hljs-built_in">max</span>(HOG_MIN_MAGNITUDE, hog_magnitude_limit)) {
-        <span class="hljs-type">float</span> <span class="hljs-built_in">distance</span> = <span class="hljs-built_in">clamp</span>(magnitude * HOG_SHAFT_LENGTH, <span class="hljs-number">0.1</span>, HOG_SHAFT_LENGTH);
-        <span class="hljs-type">vec2</span> normalizer = <span class="hljs-built_in">normalize</span>(field_vector.xy);
-        <span class="hljs-type">vec2</span> tile_offset = ori_pos - tile_center;
-        <span class="hljs-type">float</span> density = HOG_SHAFT_THICKNESS / HOG_SHAFT_HEAD_RATE - <span class="hljs-built_in">max</span>(
-        <span class="hljs-built_in">abs</span>(<span class="hljs-built_in">dot</span>(tile_offset, <span class="hljs-type">vec2</span>(+normalizer.y, -normalizer.x))),
-        <span class="hljs-built_in">abs</span>(<span class="hljs-built_in">dot</span>(tile_offset, <span class="hljs-type">vec2</span>(+normalizer.x, +normalizer.y))) - <span class="hljs-built_in">distance</span>
+/* Calucate HOG Orient-hog Density (pixel by pixel) */
+float hog_density(vec2 target_coord, vec3 field_vector) {
+    vec2 ori_pos = target_coord.xy / pixel_bias;
+    vec2 tile_center = (floor(ori_pos / HOG_TILE_SIZE) + 0.5) * HOG_TILE_SIZE;
+    float magnitude = abs(field_vector.z);
+    if (magnitude &gt; max(HOG_MIN_MAGNITUDE, hog_magnitude_limit)) {
+        float distance = clamp(magnitude * HOG_SHAFT_LENGTH, 0.1, HOG_SHAFT_LENGTH);
+        vec2 normalizer = normalize(field_vector.xy);
+        vec2 tile_offset = ori_pos - tile_center;
+        float density = HOG_SHAFT_THICKNESS / HOG_SHAFT_HEAD_RATE - max(
+        abs(dot(tile_offset, vec2(+normalizer.y, -normalizer.x))),
+        abs(dot(tile_offset, vec2(+normalizer.x, +normalizer.y))) - distance
         );
-        <span class="hljs-keyword">return</span> <span class="hljs-built_in">clamp</span>(<span class="hljs-number">1.0</span> + density, <span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>);
+        return clamp(1.0 + density, 0.0, 1.0);
     }
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0.0</span>;
+    return 0.0;
 }
 </code></pre>
 <p>&#x7070;&#x5EA6;&#xFF08;&#x5149;&#x4EAE;&#x5EA6;&#xFF09;&#x503C;&#x91C7;&#x7528; <strong>BT.601 &#x7684;&#x72ED;&#x9698;&#x533A;&#x95F4;&#xFF08;Narrow Range&#xFF09;</strong> &#x6807;&#x51C6;&#x5FEB;&#x901F;&#x8BA1;&#x7B97;&#xFF0C;&#x8FD0;&#x7528;&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#x4E3A;&#x5747;&#x503C;&#xFF08;&#x90E8;&#x5206;&#x573A;&#x666F;&#xFF09;&#x6216;&#x6839;&#x636E;&#x60C5;&#x51B5;&#x66F4;&#x6362;&#x5176;&#x4ED6;&#x6807;&#x51C6;&#xFF08; <strong>&#x5982; RGB&#x6570;&#x636E; &#x975E;&#x91C7;&#x6837;&#x5F97;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7684;&#x6807;&#x51C6;&#x539F;&#x8272;&#x683C;&#x5F0F;&#x800C;&#x6765;&#xFF0C;&#x5219;&#x56E0;&#x6839;&#x636E;&#x8F6C;&#x6362;&#x524D;&#x7684;&#x4F20;&#x8F93;&#x683C;&#x5F0F;&#x6765;&#x9009;&#x62E9;&#x914D;&#x5957;&#x7684;&#x89C4;&#x683C;</strong> &#xFF0C;&#x89C1;&#x4E0A;&#x4E00;&#x7AE0;&#xFF09;&#x3002;</p>
@@ -1661,151 +1657,151 @@
 <ul>
 <li>sobel_edge_detection &#x9488;&#x5BF9; <strong>&#x50CF;&#x7D20;&#x70B9;&#xFF08;Pixel&#xFF09;&#x68AF;&#x5EA6;&#x77E2;&#x91CF;</strong> &#x7684; <strong>&#x7D22;&#x8D1D;&#x5C14;&#x8FB9;&#x754C;&#x68C0;&#x6D4B;</strong></li>
 </ul>
-<pre><code class="lang-glsl"><span class="hljs-comment">/* Calucate Sobel Field at target center */</span>
-<span class="hljs-type">vec3</span> sobel_edge_detection(<span class="hljs-type">vec2</span> target_coord) {
-    <span class="hljs-type">float</span> gradient_center_x;
-    <span class="hljs-type">float</span> gradient_center_y;
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++) {
-            <span class="hljs-type">vec2</span> bias = <span class="hljs-type">vec2</span>(i<span class="hljs-number">-1</span>, j<span class="hljs-number">-1</span>) * pixel_bias;
-            <span class="hljs-type">vec4</span> color_sample = <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy + bias);
-            <span class="hljs-type">float</span> check_grey = grey(color_sample.rgb);
+<pre><code class="lang-glsl">/* Calucate Sobel Field at target center */
+vec3 sobel_edge_detection(vec2 target_coord) {
+    float gradient_center_x;
+    float gradient_center_y;
+    for (int i = 0; i &lt; 3; i++) {
+        for (int j = 0; j &lt; 3; j++) {
+            vec2 bias = vec2(i-1, j-1) * pixel_bias;
+            vec4 color_sample = texture2D(target_texture, fs_texcoord.xy + bias);
+            float check_grey = grey(color_sample.rgb);
             gradient_center_x += check_grey * sobel_matrix_x[i][j];
             gradient_center_y += check_grey * sobel_matrix_y[i][j];
         }
     }
-    <span class="hljs-comment">// float rectangle = (atan(gradient_center_y, gradient_center_x) + 2.0 * PI) / (PI);</span>
-    <span class="hljs-type">vec2</span>  orientate = <span class="hljs-type">vec2</span>(gradient_center_x, gradient_center_y);
-    <span class="hljs-type">float</span> magnitude = <span class="hljs-built_in">length</span>(orientate);
-    <span class="hljs-keyword">return</span> <span class="hljs-type">vec3</span>(orientate, magnitude);
+    // float rectangle = (atan(gradient_center_y, gradient_center_x) + 2.0 * PI) / (PI);
+    vec2  orientate = vec2(gradient_center_x, gradient_center_y);
+    float magnitude = length(orientate);
+    return vec3(orientate, magnitude);
 }
 </code></pre>
 <ul>
 <li>cell_feature_extraction &#x9488;&#x5BF9; <strong>&#x5206;&#x7EC4;&#xFF08;Cell&#xFF09;&#x7279;&#x5F81;&#x63D0;&#x53D6;</strong> &#x4E3A;&#x7ED3;&#x679C;&#x7684; <strong>&#x77E2;&#x91CF;&#x7EDF;&#x8BA1;&#x5408;&#x5E76;</strong></li>
 </ul>
-<pre><code class="lang-glsl"><span class="hljs-comment">/* Calucate Cell Feature at target center */</span>
-<span class="hljs-type">mat3</span> cell_feature_extraction(<span class="hljs-type">vec2</span> target_coord) {
-    <span class="hljs-type">mat3</span>  result;
-    <span class="hljs-type">float</span> bias_unit = <span class="hljs-type">float</span>(n<span class="hljs-number">-1</span>)/<span class="hljs-number">2.0</span>;
-    <span class="hljs-type">vec2</span> ori_pos = target_coord.xy / pixel_bias;
-    <span class="hljs-type">vec2</span> cell_center = (<span class="hljs-built_in">floor</span>(ori_pos / CELL_TILE_SIZE) + <span class="hljs-number">0.5</span>) * CELL_TILE_SIZE;
+<pre><code class="lang-glsl">/* Calucate Cell Feature at target center */
+mat3 cell_feature_extraction(vec2 target_coord) {
+    mat3  result;
+    float bias_unit = float(n-1)/2.0;
+    vec2 ori_pos = target_coord.xy / pixel_bias;
+    vec2 cell_center = (floor(ori_pos / CELL_TILE_SIZE) + 0.5) * CELL_TILE_SIZE;
 
-    <span class="hljs-type">float</span> normalization_factor = <span class="hljs-number">0.0</span>;
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {
-            <span class="hljs-type">vec2</span> bias = <span class="hljs-type">vec2</span>(<span class="hljs-type">float</span>(i)-bias_unit, <span class="hljs-type">float</span>(j)-bias_unit) * pixel_bias;
-            <span class="hljs-type">vec3</span> field_vector = sobel_edge_detection(cell_center.xy + bias);
-            <span class="hljs-type">float</span> seek_to =  (field_vector.x+ <span class="hljs-number">0.0001</span>)  / (field_vector.y + <span class="hljs-number">0.0001</span>) ;
-            <span class="hljs-type">float</span> wight = <span class="hljs-number">0.0</span>;
-            <span class="hljs-type">float</span> wight_as = <span class="hljs-number">0.0</span>;
+    float normalization_factor = 0.0;
+    for (int i = 0; i &lt; n; i++) {
+        for (int j = 0; j &lt; n; j++) {
+            vec2 bias = vec2(float(i)-bias_unit, float(j)-bias_unit) * pixel_bias;
+            vec3 field_vector = sobel_edge_detection(cell_center.xy + bias);
+            float seek_to =  (field_vector.x+ 0.0001)  / (field_vector.y + 0.0001) ;
+            float wight = 0.0;
+            float wight_as = 0.0;
             {
-                wight = field_vector[<span class="hljs-number">2</span>] * wight_as;
-                <span class="hljs-keyword">if</span> (ANGLE_0.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_20.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_0.z)/(ANGLE_20.z - ANGLE_0.z));
-                    result[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] += field_vector[<span class="hljs-number">2</span>] *wight_as;
-                    result[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_20.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_40.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_20.z)/(ANGLE_40.z - ANGLE_20.z));
-                    result[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_40.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_60.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_40.z)/(ANGLE_60.z - ANGLE_40.z));
-                    result[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_60.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_80.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_60.z)/(ANGLE_80.z - ANGLE_60.z));
-                    result[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_80.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_100.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_80.z)/(ANGLE_100.z - ANGLE_80.z));
-                    result[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_100.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_120.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_100.z)/(ANGLE_120.z - ANGLE_100.z));
-                    result[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_120.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_140.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_120.z)/(ANGLE_140.z - ANGLE_120.z));
-                    result[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_140.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_160.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_140.z)/(ANGLE_160.z - ANGLE_140.z));
-                    result[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ANGLE_160.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_180.z){
-                    wight_as = <span class="hljs-built_in">abs</span>((seek_to - ANGLE_160.z)/(ANGLE_180.z - ANGLE_160.z));
-                    result[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>] += field_vector[<span class="hljs-number">2</span>] * wight_as;
-                    result[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] += field_vector[<span class="hljs-number">2</span>] * (<span class="hljs-number">1.0</span> - wight_as);
+                wight = field_vector[2] * wight_as;
+                if (ANGLE_0.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_20.z){
+                    wight_as = abs((seek_to - ANGLE_0.z)/(ANGLE_20.z - ANGLE_0.z));
+                    result[0][0] += field_vector[2] *wight_as;
+                    result[0][1] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_20.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_40.z){
+                    wight_as = abs((seek_to - ANGLE_20.z)/(ANGLE_40.z - ANGLE_20.z));
+                    result[0][1] += field_vector[2] * wight_as;
+                    result[0][2] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_40.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_60.z){
+                    wight_as = abs((seek_to - ANGLE_40.z)/(ANGLE_60.z - ANGLE_40.z));
+                    result[0][2] += field_vector[2] * wight_as;
+                    result[1][0] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_60.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_80.z){
+                    wight_as = abs((seek_to - ANGLE_60.z)/(ANGLE_80.z - ANGLE_60.z));
+                    result[1][0] += field_vector[2] * wight_as;
+                    result[1][1] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_80.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_100.z){
+                    wight_as = abs((seek_to - ANGLE_80.z)/(ANGLE_100.z - ANGLE_80.z));
+                    result[1][1] += field_vector[2] * wight_as;
+                    result[1][2] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_100.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_120.z){
+                    wight_as = abs((seek_to - ANGLE_100.z)/(ANGLE_120.z - ANGLE_100.z));
+                    result[1][2] += field_vector[2] * wight_as;
+                    result[2][0] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_120.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_140.z){
+                    wight_as = abs((seek_to - ANGLE_120.z)/(ANGLE_140.z - ANGLE_120.z));
+                    result[2][0] += field_vector[2] * wight_as;
+                    result[2][1] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_140.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_160.z){
+                    wight_as = abs((seek_to - ANGLE_140.z)/(ANGLE_160.z - ANGLE_140.z));
+                    result[2][1] += field_vector[2] * wight_as;
+                    result[2][2] += field_vector[2] * (1.0 - wight_as);
+                } else if (ANGLE_160.z&gt;= seek_to &amp;&amp; seek_to &gt;= ANGLE_180.z){
+                    wight_as = abs((seek_to - ANGLE_160.z)/(ANGLE_180.z - ANGLE_160.z));
+                    result[2][2] += field_vector[2] * wight_as;
+                    result[0][0] += field_vector[2] * (1.0 - wight_as);
                 }
             }
         }
     }
-    <span class="hljs-keyword">return</span> result;
+    return result;
 }
 </code></pre>
 <ul>
 <li>block_feature_extraction &#x9488;&#x5BF9; <strong>&#x5206;&#x5757;&#xFF08;Block&#xFF09;&#x7279;&#x5F81;&#x63D0;&#x53D6;</strong> &#x4E3A;&#x7ED3;&#x679C;&#x7684; <strong>&#x5757;&#x5F52;&#x4E00;&#x5316;</strong></li>
 </ul>
-<pre><code class="lang-glsl"><span class="hljs-comment">/* Calucate Block Feature at target center */</span>
-<span class="hljs-type">float</span> block_feature_extraction(<span class="hljs-type">vec2</span> target_coord) {
-    <span class="hljs-type">float</span> orient_hog_density = <span class="hljs-number">0.0</span>;
-    <span class="hljs-type">float</span> block_feature_vector[SIZE_BV];
+<pre><code class="lang-glsl">/* Calucate Block Feature at target center */
+float block_feature_extraction(vec2 target_coord) {
+    float orient_hog_density = 0.0;
+    float block_feature_vector[SIZE_BV];
 
-    <span class="hljs-type">vec2</span> cell_bias = <span class="hljs-type">vec2</span>(n, n) * pixel_bias;
-    <span class="hljs-type">mat3</span> cell_lt = cell_feature_extraction(target_coord);
-    <span class="hljs-type">mat3</span> cell_rt = cell_feature_extraction(target_coord + <span class="hljs-type">vec2</span>(cell_bias.x, <span class="hljs-number">0.0</span>));
-    <span class="hljs-type">mat3</span> cell_lb = cell_feature_extraction(target_coord + <span class="hljs-type">vec2</span>(<span class="hljs-number">0.0</span>, cell_bias.y));
-    <span class="hljs-type">mat3</span> cell_rb = cell_feature_extraction(target_coord + cell_bias);
+    vec2 cell_bias = vec2(n, n) * pixel_bias;
+    mat3 cell_lt = cell_feature_extraction(target_coord);
+    mat3 cell_rt = cell_feature_extraction(target_coord + vec2(cell_bias.x, 0.0));
+    mat3 cell_lb = cell_feature_extraction(target_coord + vec2(0.0, cell_bias.y));
+    mat3 cell_rb = cell_feature_extraction(target_coord + cell_bias);
 
-    <span class="hljs-type">float</span> normalization_factor = <span class="hljs-number">0.0</span>;
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++) {
+    float normalization_factor = 0.0;
+    for (int i = 0; i &lt; 3; i++) {
+        for (int j = 0; j &lt; 3; j++) {
             normalization_factor += cell_lt[i][j] + cell_rt[i][j] + cell_lb[i][j] + cell_rb[i][j];
-            block_feature_vector[i*<span class="hljs-number">3</span>+j] = cell_lt[i][j] + cell_rt[i][j] + cell_lb[i][j] + cell_rb[i][j];
-            <span class="hljs-comment">// block_feature_vector[i*3+j+SIZE_CV*0] = cell_lt[i][j];</span>
-            <span class="hljs-comment">// block_feature_vector[i*3+j+SIZE_CV*1] = cell_rt[i][j];</span>
-            <span class="hljs-comment">// block_feature_vector[i*3+j+SIZE_CV*2] = cell_lb[i][j];</span>
-            <span class="hljs-comment">// block_feature_vector[i*3+j+SIZE_CV*3] = cell_rb[i][j];</span>
+            block_feature_vector[i*3+j] = cell_lt[i][j] + cell_rt[i][j] + cell_lb[i][j] + cell_rb[i][j];
+            // block_feature_vector[i*3+j+SIZE_CV*0] = cell_lt[i][j];
+            // block_feature_vector[i*3+j+SIZE_CV*1] = cell_rt[i][j];
+            // block_feature_vector[i*3+j+SIZE_CV*2] = cell_lb[i][j];
+            // block_feature_vector[i*3+j+SIZE_CV*3] = cell_rb[i][j];
         }
     }
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; SIZE_BV; i++) {
-        <span class="hljs-comment">// block_feature_vector[i] = block_feature_vector[i] / normalization_factor;</span>
-        <span class="hljs-type">vec3</span> field_vector;
-        <span class="hljs-type">int</span> at = <span class="hljs-type">int</span>(<span class="hljs-built_in">mod</span>(<span class="hljs-type">float</span>(i) , <span class="hljs-number">9.0</span>));
-        <span class="hljs-type">float</span> weight = block_feature_vector[i] / normalization_factor;
-        <span class="hljs-keyword">if</span> (at == <span class="hljs-number">0</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_0.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">1</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_20.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">2</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_40.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">3</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_60.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">4</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_80.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">5</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_100.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">6</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_120.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">7</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_140.xy, weight);
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (at == <span class="hljs-number">8</span>){
-            field_vector = <span class="hljs-type">vec3</span>(ANGLE_160.xy, weight);
+    for (int i = 0; i &lt; SIZE_BV; i++) {
+        // block_feature_vector[i] = block_feature_vector[i] / normalization_factor;
+        vec3 field_vector;
+        int at = int(mod(float(i) , 9.0));
+        float weight = block_feature_vector[i] / normalization_factor;
+        if (at == 0){
+            field_vector = vec3(ANGLE_0.xy, weight);
+        } else if (at == 1){
+            field_vector = vec3(ANGLE_20.xy, weight);
+        } else if (at == 2){
+            field_vector = vec3(ANGLE_40.xy, weight);
+        } else if (at == 3){
+            field_vector = vec3(ANGLE_60.xy, weight);
+        } else if (at == 4){
+            field_vector = vec3(ANGLE_80.xy, weight);
+        } else if (at == 5){
+            field_vector = vec3(ANGLE_100.xy, weight);
+        } else if (at == 6){
+            field_vector = vec3(ANGLE_120.xy, weight);
+        } else if (at == 7){
+            field_vector = vec3(ANGLE_140.xy, weight);
+        } else if (at == 8){
+            field_vector = vec3(ANGLE_160.xy, weight);
         }
         orient_hog_density += hog_density(target_coord, field_vector);
     }
-    <span class="hljs-keyword">return</span> orient_hog_density;
+    return orient_hog_density;
 }
 </code></pre>
 <p>&#x8003;&#x8651;&#x5230;&#x601D;&#x8DEF;&#x8FDE;&#x8D2F;&#x6027;&#xFF0C;&#x6837;&#x4F8B;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#x5C06;&#x6240;&#x6709;&#x6B65;&#x9AA4;&#x653E;&#x5728;&#x4E00;&#x5F20;&#x7EB9;&#x7406;&#x8FC7;&#x7A0B;&#x4E2D;&#x5904;&#x7406;&#xFF0C;&#x4E14;&#x6CA1;&#x6709;&#x5BF9;&#x6838;&#x8BA1;&#x7B97;&#x505A;&#x4F18;&#x5316;&#x3002;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x6BCF;&#x4E2A;&#x50CF;&#x7D20;&#x90FD;&#x5B58;&#x5728;&#x4E00;&#x6B21; <strong>HOG &#x8BA1;&#x7B97;&#x91D1;&#x5B57;&#x5854;</strong>&#xFF0C;&#x800C;&#x6309;&#x7406;&#x6765;&#x8BF4; <strong>&#x4E00;&#x4E2A;&#x5757;&#x5185;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x590D;&#x8BA1;&#x7B97;</strong> &#x3002;&#x6837;&#x4F8B;&#x4E2D;&#x76F8;&#x5F53;&#x4E8E;&#x5C06;&#x5757;&#x5185;&#x8FD0;&#x7B97;&#x91CD;&#x590D;&#x4E86; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mn>6</mn><mo>&#xD7;</mo><mn>1</mn><mn>6</mn></mrow><annotation encoding="application/x-tex">16 \times 16</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mord mathrm">6</span><span class="mbin">&#xD7;</span><span class="mord mathrm">1</span><span class="mord mathrm">6</span></span></span></span> &#x6B21;&#xFF0C;&#x6781;&#x5927;&#x7684;&#x589E;&#x52A0;&#x4E86;&#x6D88;&#x8017;&#x3002;</p>
 <p>&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x4E0A;&#x6587;&#x7684;&#x5B9E;&#x73B0;&#x8FDB;&#x884C;&#x6539;&#x9020;&#x3002; <strong>&#x628A;&#x6587;&#x4E2D;&#x7A0B;&#x5E8F;&#x7247;&#x5185;&#x7684;&#x5404;&#x4E2A;&#x6B65;&#x9AA4;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5206;&#x914D;&#x5230;&#x4E0D;&#x540C;&#x9636;&#x7684;&#x7A0B;&#x5E8F;&#x7247;&#x4E2D;&#xFF0C;&#x5E76;&#x4F18;&#x5316;&#x7EB9;&#x7406;&#x8FC7;&#x7A0B;&#x3002;</strong> &#x4E4B;&#x540E;&#x624D;&#x80FD;&#x88AB;&#x66F4;&#x4E3A;&#x9AD8;&#x6548;&#x7684;&#x4E88;&#x4EE5;&#x8FD0;&#x7528;&#x3002;&#x4ECB;&#x4E8E;&#x9AA8;&#x5E72;&#x5E76;&#x65E0;&#x4E0D;&#x540C;&#xFF0C;&#x6B64;&#x5904;&#x5C31;&#x4E0D;&#x518D;&#x5C55;&#x5F00;&#x8D58;&#x8FF0;&#x3002;</p>
 <p>&#x7ECF;&#x8FC7;&#x5904;&#x7406;&#x540E;&#x7684;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#xFF0C;&#x4EE5;&#x80FD;&#x91CF;&#x5BC6;&#x5EA6;&#x7684;&#x5F62;&#x5F0F;&#x9644;&#x52A0;&#x5230;&#x5F53;&#x524D;&#x50CF;&#x7D20;&#x70B9;&#x7684;&#x8272;&#x5F69;&#x503C;&#x4E0A;&#xFF0C;&#x5B9E;&#x73B0;&#x6700;&#x7EC8;&#x7684;&#x56FE;&#x5F62;&#x5316;&#x5C55;&#x793A;&#xFF1A;</p>
-<pre><code class="lang-glsl"><span class="hljs-type">void</span> main()
+<pre><code class="lang-glsl">void main()
 {
-    <span class="hljs-type">vec3</span> output_ = only_edge? <span class="hljs-type">vec3</span>(<span class="hljs-number">0</span>) : <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy).rgb;
-    <span class="hljs-type">float</span> orient_hog_density = block_feature_extraction(fs_texcoord.xy);
-    <span class="hljs-type">vec3</span> hogs_ = orient_hog_density * HOG_COLOR;
-    <span class="hljs-built_in">gl_FragColor</span> = <span class="hljs-type">vec4</span>(output_ + hogs_, <span class="hljs-number">1.0</span>);
+    vec3 output_ = only_edge? vec3(0) : texture2D(target_texture, fs_texcoord.xy).rgb;
+    float orient_hog_density = block_feature_extraction(fs_texcoord.xy);
+    vec3 hogs_ = orient_hog_density * HOG_COLOR;
+    gl_FragColor = vec4(output_ + hogs_, 1.0);
 }
 </code></pre>
 <p>&#x73B0;&#x5728;&#xFF0C;&#x6574;&#x4E2A; HOG &#x7684;&#x7B80;&#x6613;&#x7A0B;&#x5E8F;&#x7247;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
@@ -1815,7 +1811,7 @@
 <p><strong>HOG &#x6570;&#x636E;&#x5E27;&#xFF08;HOG Frame&#xFF09;&#x66F4;&#x591A;&#x88AB;&#x4F5C;&#x4E3A;&#x7ECF;&#x8FC7;&#x7279;&#x5F81;&#x63D0;&#x53D6;&#x540E;&#x7684;&#x9884;&#x5904;&#x7406;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x4F20;&#x5165;&#x76EE;&#x6807;&#x7269;&#x4F53;&#x68C0;&#x6D4B;&#x7B49;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x65B9;&#x5411;&#x7684;&#x7B97;&#x6CD5;&#x6A21;&#x578B;&#x3002;</strong> &#x901A;&#x8FC7;&#x6A21;&#x578B;&#x83B7;&#x53D6;&#x7684;&#x7269;&#x4F53;&#x8BC6;&#x522B;&#x7ED3;&#x679C;&#x540E;&#xFF0C;&#x518D;&#x5229;&#x7528;&#x8BAD;&#x7EC3;&#x597D;&#x7684;&#x76EE;&#x6807;&#x8DDF;&#x8E2A;&#x6A21;&#x578B;&#xFF0C;&#x6216;&#x4F20;&#x7EDF;&#x76EE;&#x6807;&#x8DDF;&#x8E2A;&#x7B97;&#x6CD5;&#xFF08;&#x8BF8;&#x5982;&#xFF1A;&#x6838;&#x5377;&#x79EF;&#x6EE4;&#x6CE2;&#xFF08;KCF [Kernelized Correlation Filter]&#xFF09;[18] &#x3001;MOSSE &#x7B97;&#x6CD5;&#x7B49;&#xFF09;&#x7B49;&#xFF0C;&#x6765;&#x83B7;&#x53D6;&#x89C6;&#x9891;&#x6D41;&#x4E2D;&#x8FD0;&#x52A8;&#x7269;&#x4F53;&#x5728;&#x65F6;&#x5E8F;&#x4E0A;&#x7684;&#x5173;&#x8054;&#x6027;&#x3002;</p>
 <p>&#x90A3;&#x4E48;&#xFF0C;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x76EE;&#x6807;&#x68C0;&#x6D4B;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x51C6;&#x786E;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x76EE;&#x6807;&#x68C0;&#x6D4B;&#x6A21;&#x578B;&#x7684; <strong>&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF08;Loss Function&#xFF09;</strong> &#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2023-12-22 19:52:13
+2023-12-25 10:58:06
 </span></footer>
                                 
                                 </section>
@@ -1859,7 +1855,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.3.1 方向梯度直方图（HOG [Histogram of Oriented Gradient]）","level":"1.3.3.1","depth":3,"next":{"title":"3.3.2 朴素目标检测结果度量 - IoU & GIoU","level":"1.3.3.2","depth":3,"path":"Chapter_3/Language/cn/Docs_3_3_2.md","ref":"Chapter_3/Language/cn/Docs_3_3_2.md","articles":[]},"previous":{"title":"3.3 时间冗余控制 - 常用特征提取与朴素阈值处理","level":"1.3.3","depth":2,"path":"Chapter_3/Language/cn/Docs_3_3.md","ref":"Chapter_3/Language/cn/Docs_3_3.md","articles":[{"title":"3.3.1 方向梯度直方图（HOG [Histogram of Oriented Gradient]）","level":"1.3.3.1","depth":3,"path":"Chapter_3/Language/cn/Docs_3_3_1.md","ref":"Chapter_3/Language/cn/Docs_3_3_1.md","articles":[]},{"title":"3.3.2 朴素目标检测结果度量 - IoU & GIoU","level":"1.3.3.2","depth":3,"path":"Chapter_3/Language/cn/Docs_3_3_2.md","ref":"Chapter_3/Language/cn/Docs_3_3_2.md","articles":[]},{"title":"3.3.3 朴素目标检测物体锁定 - 分步滑动窗口（Simple Sliding Window）","level":"1.3.3.3","depth":3,"path":"Chapter_3/Language/cn/Docs_3_3_3.md","ref":"Chapter_3/Language/cn/Docs_3_3_3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_3/Language/cn/Docs_3_3_1.md","mtime":"2023-12-22T11:52:13.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-22T12:03:33.507Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.3.1 方向梯度直方图（HOG [Histogram of Oriented Gradient]）","level":"1.3.3.1","depth":3,"next":{"title":"3.3.2 朴素目标检测结果度量 - IoU & GIoU","level":"1.3.3.2","depth":3,"path":"Chapter_3/Language/cn/Docs_3_3_2.md","ref":"Chapter_3/Language/cn/Docs_3_3_2.md","articles":[]},"previous":{"title":"3.3 时间冗余控制 - 常用特征提取与朴素阈值处理","level":"1.3.3","depth":2,"path":"Chapter_3/Language/cn/Docs_3_3.md","ref":"Chapter_3/Language/cn/Docs_3_3.md","articles":[{"title":"3.3.1 方向梯度直方图（HOG [Histogram of Oriented Gradient]）","level":"1.3.3.1","depth":3,"path":"Chapter_3/Language/cn/Docs_3_3_1.md","ref":"Chapter_3/Language/cn/Docs_3_3_1.md","articles":[]},{"title":"3.3.2 朴素目标检测结果度量 - IoU & GIoU","level":"1.3.3.2","depth":3,"path":"Chapter_3/Language/cn/Docs_3_3_2.md","ref":"Chapter_3/Language/cn/Docs_3_3_2.md","articles":[]},{"title":"3.3.3 朴素目标检测物体锁定 - 分步滑动窗口（Simple Sliding Window）","level":"1.3.3.3","depth":3,"path":"Chapter_3/Language/cn/Docs_3_3_3.md","ref":"Chapter_3/Language/cn/Docs_3_3_3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-highlight","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_3/Language/cn/Docs_3_3_1.md","mtime":"2023-12-25T02:58:06.440Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-25T09:14:18.745Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

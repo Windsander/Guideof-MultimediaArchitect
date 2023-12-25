@@ -60,10 +60,6 @@
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-alerts/style.css">
                 
             
-                
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
         
 
     
@@ -927,9 +923,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4.2" data-path="Docs_3_4_2.md">
+        <li class="chapter " data-level="1.3.4.2" data-path="Docs_3_4_2.html">
             
-                <span>
+                <a href="Docs_3_4_2.html">
             
                     
                     3.4.2 双向光流预测（BDOF [Bi-Directional Optical Flow]）
@@ -940,9 +936,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4.3" data-path="Docs_3_4_3.md">
+        <li class="chapter " data-level="1.3.4.3" data-path="Docs_3_4_3.html">
             
-                <span>
+                <a href="Docs_3_4_3.html">
             
                     
                     3.4.3 光流仿射修正（PROF [Affine Prediction Refinement With Optical Flow]）
@@ -953,9 +949,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4.4" data-path="Docs_3_4_4.md">
+        <li class="chapter " data-level="1.3.4.4" data-path="Docs_3_4_4.html">
             
-                <span>
+                <a href="Docs_3_4_4.html">
             
                     
                     3.4.4 色度缩放亮度映射（LMCS [Luma Mapping with Chroma Scaling]）
@@ -971,9 +967,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="Docs_3_5.md">
+        <li class="chapter " data-level="1.3.5" data-path="Docs_3_5.html">
             
-                <span>
+                <a href="Docs_3_5.html">
             
                     
                     3.5 频域冗余控制 - 基础变换编码
@@ -985,9 +981,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.5.1" data-path="Docs_3_5_1.md">
+        <li class="chapter " data-level="1.3.5.1" data-path="Docs_3_5_1.html">
             
-                <span>
+                <a href="Docs_3_5_1.html">
             
                     
                     3.5.1 整数离散正余弦变换（DST/DCT）
@@ -998,9 +994,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5.2" data-path="Docs_3_5_2.md">
+        <li class="chapter " data-level="1.3.5.2" data-path="Docs_3_5_2.html">
             
-                <span>
+                <a href="Docs_3_5_2.html">
             
                     
                     3.5.2 哈达玛变换（WHT [Walsh-Hadamard Transform]）
@@ -1011,9 +1007,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5.3" data-path="Docs_3_5_3.md">
+        <li class="chapter " data-level="1.3.5.3" data-path="Docs_3_5_3.html">
             
-                <span>
+                <a href="Docs_3_5_3.html">
             
                     
                     3.5.3 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）
@@ -1198,7 +1194,7 @@
 <p>&#x5229;&#x7528;&#x4E0A;&#x5F0F;&#xFF0C;&#x65E2;&#x53EF;&#x505A;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;&#x3002;</p>
 <h2 id="&#x4E8C;&#x7EF4;&#x79BB;&#x6563;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;&#xFF08;1d-dft&#xFF09;&#x7684;-c-&#x8BED;&#x8A00;&#x5B9E;&#x73B0;"><strong>&#x4E8C;&#x7EF4;&#x79BB;&#x6563;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;&#xFF08;1D-DFT&#xFF09;&#x7684; C &#x8BED;&#x8A00;&#x5B9E;&#x73B0;</strong></h2>
 <p>&#x7B2C;&#x4E00;&#x6B65;&#x8FD8;&#x662F;&#x5C06;&#x4E8C;&#x7EF4;&#x79BB;&#x6563;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x5316;&#x7684;&#x8FC7;&#x7A0B;&#x62BD;&#x8C61;&#x5316;&#x3002;&#x8FD9;&#x91CC;&#x4F9D;&#x65E7;&#x91C7;&#x7528;&#x4F2A;&#x7801;&#x8868;&#x793A;&#xFF1A;</p>
-<pre><code class="lang-C++"><span class="hljs-comment">/**
+<pre><code class="lang-C++">/**
  * 2D-DFT [Discrete Fourier Transform]
  * [How to Use]
  *   &lt;case:&gt;
@@ -1226,10 +1222,10 @@
  * @param original_ Original Function input 2D-array
  *           (image include width &amp; height)
  * @param analyzed_ Fourier Basis info in 2D
- */</span>
+ */
 </code></pre>
 <p>&#x540C;&#x65F6;&#xFF0C;&#x4E8C;&#x7EF4;&#x60C5;&#x51B5;&#x4E5F;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x79BB;&#x6563;&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;&#x7684;&#x9006;&#x53D8;&#x6362;&#xFF08;IDFT [Inverse Discrete Fourier Transform]&#xFF09;&#x6765;&#x4F7F;&#x5F97;&#x7535;&#x8111;&#x80FD;&#x591F;&#x8FD8;&#x539F;&#x4FE1;&#x606F;&#xFF1A;</p>
-<pre><code class="lang-C++"><span class="hljs-comment">/**
+<pre><code class="lang-C++">/**
  * 2D-IDFT [Inverse Discrete Fourier Transform]
  * [How to Use]
  *   &lt;case:&gt;
@@ -1257,7 +1253,7 @@
  * @param original_ Original Function input 2D-array
  *           (image include width &amp; height)
  * @param analyzed_ Fourier Basis analyzed info in 2D
- */</span>
+ */
 </code></pre>
 <p>&#x63A5;&#x4E0B;&#x6765;&#x53EA;&#x9700;&#x8981;&#x6839;&#x636E;&#x601D;&#x8DEF;&#x505A;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x5373;&#x53EF;&#xFF1A;</p>
 <pre><code class="lang-C++">#include &quot;stdio.h&quot;
@@ -1319,61 +1315,61 @@ void idft_2d(Signal2DOriginal *original_, Signal2DAnalyzed *analyzed_) {
 }
 </code></pre>
 <p>&#x5199;&#x5B8C;&#x540E;&#x8FD8;&#x662F;&#x9700;&#x8981;&#x7B80;&#x5355;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-C++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
-    <span class="hljs-keyword">double</span> input_data_[<span class="hljs-number">36</span>] = {
-        <span class="hljs-number">1.0f</span>, <span class="hljs-number">2.0f</span>, <span class="hljs-number">3.0f</span>, <span class="hljs-number">4.0f</span>, <span class="hljs-number">5.0f</span>, <span class="hljs-number">6.0f</span>,
-        <span class="hljs-number">2.0f</span>, <span class="hljs-number">3.0f</span>, <span class="hljs-number">4.0f</span>, <span class="hljs-number">5.0f</span>, <span class="hljs-number">6.0f</span>, <span class="hljs-number">1.0f</span>,
-        <span class="hljs-number">3.0f</span>, <span class="hljs-number">4.0f</span>, <span class="hljs-number">5.0f</span>, <span class="hljs-number">6.0f</span>, <span class="hljs-number">1.0f</span>, <span class="hljs-number">2.0f</span>,
-        <span class="hljs-number">4.0f</span>, <span class="hljs-number">5.0f</span>, <span class="hljs-number">6.0f</span>, <span class="hljs-number">1.0f</span>, <span class="hljs-number">2.0f</span>, <span class="hljs-number">3.0f</span>,
-        <span class="hljs-number">5.0f</span>, <span class="hljs-number">6.0f</span>, <span class="hljs-number">1.0f</span>, <span class="hljs-number">2.0f</span>, <span class="hljs-number">3.0f</span>, <span class="hljs-number">4.0f</span>,
-        <span class="hljs-number">6.0f</span>, <span class="hljs-number">1.0f</span>, <span class="hljs-number">2.0f</span>, <span class="hljs-number">3.0f</span>, <span class="hljs-number">4.0f</span>, <span class="hljs-number">5.0f</span>
+<pre><code class="lang-C++">int main(void) {
+    double input_data_[36] = {
+        1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f,
+        2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 1.0f,
+        3.0f, 4.0f, 5.0f, 6.0f, 1.0f, 2.0f,
+        4.0f, 5.0f, 6.0f, 1.0f, 2.0f, 3.0f,
+        5.0f, 6.0f, 1.0f, 2.0f, 3.0f, 4.0f,
+        6.0f, 1.0f, 2.0f, 3.0f, 4.0f, 5.0f
     };
-    FBasis output_data_[<span class="hljs-number">36</span>] = {};
-    <span class="hljs-keyword">double</span> versed_data_[<span class="hljs-number">36</span>] = {};
+    FBasis output_data_[36] = {};
+    double versed_data_[36] = {};
 
     Signal2DOriginal Fo = {
-        <span class="hljs-number">6</span>, <span class="hljs-number">6</span>,
+        6, 6,
         input_data_
     };
     Signal2DAnalyzed Fn = {
-        <span class="hljs-number">6</span>, <span class="hljs-number">6</span>,
+        6, 6,
         output_data_
     };
     Signal2DOriginal iFo = {
-        <span class="hljs-number">6</span>, <span class="hljs-number">6</span>,
+        6, 6,
         versed_data_
     };
 
-    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n Original_data: \n&quot;</span>);
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> y = <span class="hljs-number">0</span>; y &lt; Fo.GH_; ++y) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>; x &lt; Fo.GW_; ++x) {
-            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%f  &quot;</span>, Fo.Fo_[x + y * Fo.GW_]);
+    printf(&quot;\n Original_data: \n&quot;);
+    for (int y = 0; y &lt; Fo.GH_; ++y) {
+        for (int x = 0; x &lt; Fo.GW_; ++x) {
+            printf(&quot;%f  &quot;, Fo.Fo_[x + y * Fo.GW_]);
         }
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);
+        printf(&quot;\n&quot;);
     }
 
-    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n DFT_result: \n&quot;</span>);
+    printf(&quot;\n DFT_result: \n&quot;);
     dft_2d(&amp;Fo, &amp;Fn);
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v = <span class="hljs-number">0</span>; v &lt; Fn.NV_; ++v) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> u = <span class="hljs-number">0</span>; u &lt; Fn.NU_; ++u) {
-            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.3f + i %.3f   &quot;</span>, 
+    for (int v = 0; v &lt; Fn.NV_; ++v) {
+        for (int u = 0; u &lt; Fn.NU_; ++u) {
+            printf(&quot;%.3f + i %.3f   &quot;, 
                     Fn.Fn_[u + v * Fn.NU_].re_, 
                     Fn.Fn_[u + v * Fn.NU_].im_
             );
         }
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);
+        printf(&quot;\n&quot;);
     }
 
-    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n IDFT_result: \n&quot;</span>);
+    printf(&quot;\n IDFT_result: \n&quot;);
     idft_2d(&amp;iFo, &amp;Fn);
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> y = <span class="hljs-number">0</span>; y &lt; iFo.GH_; ++y) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>; x &lt; iFo.GW_; ++x) {
-            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%f  &quot;</span>, iFo.Fo_[x + y * Fo.GW_]);
+    for (int y = 0; y &lt; iFo.GH_; ++y) {
+        for (int x = 0; x &lt; iFo.GW_; ++x) {
+            printf(&quot;%f  &quot;, iFo.Fo_[x + y * Fo.GW_]);
         }
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);
+        printf(&quot;\n&quot;);
     }
 
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    return 0;
 }
 </code></pre>
 <p>&#x5F97;&#x5230;&#x7ED3;&#x679C;&#x548C;&#x6807;&#x51C6;&#x51E0;&#x8FD1;&#x76F8;&#x540C;&#xFF1A;</p>
@@ -1406,7 +1402,7 @@ void idft_2d(Signal2DOriginal *original_, Signal2DAnalyzed *analyzed_) {
 <p>&#x8FD9;&#x5C31;&#x662F;&#x4FC3;&#x6210;&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x8774;&#x8776;&#x6CD5;&#x5DE5;&#x7A0B;&#x5316;&#x7684;&#x8981;&#x7D20;&#x3002;</p>
 </blockquote>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2023-12-22 19:52:12
+2023-12-25 10:58:03
 </span></footer>
                                 
                                 </section>
@@ -1450,7 +1446,7 @@ void idft_2d(Signal2DOriginal *original_, Signal2DAnalyzed *analyzed_) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）","level":"1.3.1.2","depth":3,"next":{"title":"3.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）","level":"1.3.1.3","depth":3,"path":"Chapter_3/Language/cn/Docs_3_1_3.md","ref":"Chapter_3/Language/cn/Docs_3_1_3.md","articles":[]},"previous":{"title":"3.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）","level":"1.3.1.1","depth":3,"path":"Chapter_3/Language/cn/Docs_3_1_1.md","ref":"Chapter_3/Language/cn/Docs_3_1_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_3/Language/cn/Docs_3_1_2.md","mtime":"2023-12-22T11:52:12.620Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-22T12:03:33.507Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）","level":"1.3.1.2","depth":3,"next":{"title":"3.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）","level":"1.3.1.3","depth":3,"path":"Chapter_3/Language/cn/Docs_3_1_3.md","ref":"Chapter_3/Language/cn/Docs_3_1_3.md","articles":[]},"previous":{"title":"3.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）","level":"1.3.1.1","depth":3,"path":"Chapter_3/Language/cn/Docs_3_1_1.md","ref":"Chapter_3/Language/cn/Docs_3_1_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-highlight","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_3/Language/cn/Docs_3_1_2.md","mtime":"2023-12-25T02:58:03.720Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-25T09:14:18.745Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

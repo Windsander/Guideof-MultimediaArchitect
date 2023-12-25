@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 22 Dec 2023 12:03:53 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 25 Dec 2023 09:14:47 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -400,6 +400,55 @@
             <description><![CDATA[在 计算机视觉（Computer Vision） 体系中，光流（Optical Flow） 指的是场景内像素点在观察者所观察场景空间视角下的瞬时相对运动速度。 光流法（Methods of Optical Flow） 即是利用场景序列间的像素时域运动与相邻像素相关性变化，构建前后场景间像素对应关系的数学模型，完成像素运动信息推算的方法。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4.2 双向光流预测（BDOF [Bi-Directional Optical Flow]）]]></title>
+            <description><![CDATA[双向光流预测值修正 ，简称 双向光流预测（BDOF [Bi-Directional Optical Flow]） ，最早在 H.265 的二版规格，由三星工程师以编码压缩补充手段的方式提出 [29] 。在 VVC 的初版制定过程中，贡献者们通过对算法层面的优化，提升了 BDOF 处理单元的性能。随 VVC 被采纳为 H.266 规格一起，作为标准的一部分被收录其中。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4.3 光流仿射修正（PROF [Affine Prediction Refinement With Optical Flow]）]]></title>
+            <description><![CDATA[BDOF 技术的引入，让音视频编解码工程能够进一步提高传输过程的数据压缩比。但由于仍然依托于分块和分块内小块（也是前文的梯度卷积核），当出现块的偏移、扭转、错切等情况时，像素位置的微小变动则会被此类变化成倍的放大误差。所以，还需要 适当的修正 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4.4 色度缩放亮度映射（LMCS [Luma Mapping with Chroma Scaling]）]]></title>
+            <description><![CDATA[色度缩放亮度映射（LMCS [Luma Mapping with Chroma Scaling]） 技术，是一类纯粹的空域数据处理技术，即本身不涉及时域相关性，直接针对像素原值的冗余分离手段。传统音视频编解码中，包括大部分帧内预测工具、帧内编码条带分块、色度重建等，严格来说都属于这种类型。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.4 空域冗余控制 - 基础光流算法与色度压缩]]></title>
+            <description><![CDATA[频域冗余目前仍然采用的是一些传统方式，近些年还没有太大的突破。而工程中对频域冗余的控制，确切的来说，是指从频域角度，对 残差信号（Residual Singnal） 进行频域分离后再 压缩所得数据 ，以富集变换信息，减小存储空间由于波动数据的不集中分布，而产生存储冗余的过程。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.5.1 整数离散正余弦变换（IDST/IDCT）]]></title>
+            <description><![CDATA[整数离散正余弦变换（IDST/IDCT） ，顾名思义，就是将原本作用于浮点域的离散正余弦变换（DST/DCT），通过适当放缩量化到整数域进行 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.5.2 哈达玛变换（WHT [Walsh-Hadamard Transform]）]]></title>
+            <description><![CDATA[除了整数离散正余弦变换（IDST/IDCT）外，在早期的规格中（如 H.264）还会使用一种，被称为 沃尔什-哈达玛变换（WHT [Walsh-Hadamard Transform]） 的离散傅立叶的变换变体算法，来代为进一步的富集频域信息。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[3.5.3 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）]]></title>
+            <description><![CDATA[低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]） 是高频凋零技术的代表，通过一个 经过离线训练 所得的不可分变换矩阵，来进一步压缩指定范围内的前一次变换结果 [32] 。我们通常将首次变换称为 一次变换（First Transform） 或 主要变换（Primary Transform） 。将以一次变换为输入的第二次变换，称为 二次变换（Secondary Transform） 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
