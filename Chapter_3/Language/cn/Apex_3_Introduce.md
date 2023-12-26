@@ -38,3 +38,5 @@
 	* [3.5.1 整数离散正余弦变换（DST/DCT）](Docs_3_5_1.md)
 	* [3.5.2 哈达玛变换（WHT [Walsh-Hadamard Transform]）](Docs_3_5_2.md)
 	* [3.5.3 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）](Docs_3_5_3.md)
+* [【在线展示】](Playground_3.md)
+* [【参考文献】](References_3.md)

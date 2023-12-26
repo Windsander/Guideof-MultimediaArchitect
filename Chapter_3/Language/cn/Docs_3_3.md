@@ -9,5 +9,6 @@
 
 为此，需要对 **运动区域进行检测，并提取运动矢量信息** 。
 
+* [在线演示](Playground_3.md)
 
 [ref]: References_3.md
