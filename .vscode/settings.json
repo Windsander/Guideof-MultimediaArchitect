@@ -84,4 +84,8 @@
         "*.log",
         "*.fdb_latexmk"
     ],
+    "files.associations": {
+        "__locale": "c",
+        "random": "c"
+    },
 }
