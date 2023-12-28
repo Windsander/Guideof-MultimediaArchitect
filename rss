@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 25 Dec 2023 09:14:47 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 28 Dec 2023 06:17:19 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -452,10 +452,173 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[{% urlembed %}
+../../Examples/Playground/base_entry.html
+{% endurlembed %}]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Playground_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Playground_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
             <title><![CDATA[三、【参考文献】]]></title>
             <description><![CDATA[[1] Fourier, J.B. Joseph (1878) [1822], The Analytical Theory of Heat, translated by Alexander Freeman, The University Press (translated from French).]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/References_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/References_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[四、音视频机器学习基础]]></title>
+            <description><![CDATA[在前一章中，我们对基础音视频的关键技术工具，进行了详细介绍。其中，不少地方需要用到机器学习相关的处理手段。可见结合机器学习尤其是深度学习模型的优秀能力，来强化现有音视频工程的各方面，已逐步成为主流趋势。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Apex_4_Introduce.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Apex_4_Introduce.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.1 发展概览]]></title>
+            <description><![CDATA[机器学习（ML） 传统意义上的方法，可以大致分为两类：有监督学习（Supervised Learning） 和 无监督学习（Unsupervised learning）。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.2 模型结构速览]]></title>
+            <description><![CDATA[在深度学习（DL）中，我们通过计算损失函数（Loss Function），来衡量当次迭代结果对应各个关键参数权重，在实际描述问题上的有效程度。通过损失函数的变化方向，来获取对应关键参数权重，更趋近于实际结果的梯度方向。从而被我们使用来更新当前参数权重配置，以降低损失函数值，逼近最优解。这一过程被称为一次迭代（Iteration）过程。而通过多次迭代来获取最优解的过程，被称为一次训练（Training）。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.2.1 算子（Operator）& 层（Layer）]]></title>
+            <description><![CDATA[算子（Operator） 和 层（Layer） 是当前各种通用神经网络模型中，最基础的组成元件。一般来说，算子用于表示模型中的数学运算，而层用于组织模型中的算子。我们通常将单一的数学函数，抽象为一个算子。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.3 经典激活函数（Classic Activation Function）]]></title>
+            <description><![CDATA[激活函数（Activation Function） 是一种被设计用来，在模型训练的每个单元数据输入位置，为输入引入非对称性特征 的特殊辅助函数。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.3.1 Sigmoid]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.3.2 Tanh]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.3.3 Softplus]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.3.4 ReLU 族]]></title>
+            <description><![CDATA[矫正线性单元（ReLU [Rectified Linear Unit]） 是整个经典激活函数中，被使用最广泛的经典中的经典。经过多年探索，已经形成了一系列以 ReLU 为基础的多种变体，用于各种突出场景。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.3.5 ELU & SELU]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.3.6 Mish]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.3.7 Swish]]></title>
+            <description><![CDATA[在本节开始时，我们曾提到过可以用 Swish 来代替 Sigmoid 在模型中的作用，以获取平滑非线性特征。那么 Swish 具体是什么样的呢？]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_7.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_3_7.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.4 连接函数/衰减函数（Connection/Attenuation Function）]]></title>
+            <description><![CDATA[连接函数（Connection Function） 是一种被设计用来，在模型训练的每个单元数据输入位置，为输入进行筛选收减的特殊辅助函数。常被用在诸如：全链接层（Full Connected Layer） 、 自注意力层（Self-Attention Layer） 等层（Layer）单元设计中。用来对经过激活（或纯输入）的当前层输入进行 特征提炼（Feature Extraction） 。由于在当下占据主流的 Transformer 模型中，以自注意力层的注意力衰减机制存在，因而也被称为 衰减函数（Attenuation Function） 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.4.1 Dropout]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_4_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_4_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.4.2 Maxout]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_4_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_4_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.4.3 Softmax]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_4_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_4_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.5 损失函数（Loss Function）]]></title>
+            <description><![CDATA[损失函数（Loss Function） 是用来，评估当前通过模型得到的预测值和实际样本真实值之间差异的大小。通过损失函数的导数，可以得到当前迭代预测值趋近实际值的变化情况，即梯度。因此常被我们用来作为下一次迭代的依据。损失函数的计算涉及所有引入的参数，计算的尺度是从整个模型层面进行的。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.5.1 回归项-平均绝对误差（MAE [Mean Absolute Error]）]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.5.2 回归项-均方误差（MSE [Mean Squared Error]）]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.5.3 回归项-休伯损失（Huber Loss）]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.5.4 回归项-分位数损失（Quantile Loss）]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[四、【参考文献】]]></title>
+            <description><![CDATA[[1] Hinton, G. E.; Salakhutdinov, R. R. (2006). "Reducing the Dimensionality of Data with Neural Networks.Science". 313 (5786): 504–507.]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/References_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/References_4.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
     </channel>

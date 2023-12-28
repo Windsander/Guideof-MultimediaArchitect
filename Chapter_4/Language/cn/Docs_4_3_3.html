@@ -1,0 +1,1804 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.3.3 Softplus · 《音视频开发技术：原理与实践》©</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="李述博 (Arikan.Li)">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Docs_4_3_4.html" />
+    
+    
+    <link rel="prev" href="Docs_4_3_2.html" />
+    
+
+    
+    <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../../../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../../../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <script src="../../../gitbook/gitbook-plugin-graph/d3.min.js"></script>
+    <script src="../../../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
+
+    <link href="https://arikanli.cyberfederal.io/rss" title="《音视频开发技术：原理与实践》©" rel="alternate" type="application/rss+xml" />
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    《音视频开发技术：原理与实践》©
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../../AUTHOR.html">
+            
+                <a href="../../../AUTHOR.html">
+            
+                    
+                     =[>> 关于作者© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../../COPYRIGHT.html">
+            
+                <a href="../../../COPYRIGHT.html">
+            
+                    
+                     =[>> 版权申明© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../../GUIDER.html">
+            
+                <a href="../../../GUIDER.html">
+            
+                    
+                     =[>> 难度向导© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../../DONATE.html">
+            
+                <a href="../../../DONATE.html">
+            
+                    
+                     =[>> 赞助本作© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../Chapter_2/Language/cn/Apex_2_Introduce.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Apex_2_Introduce.html">
+            
+                    
+                    二、色彩的运用与存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../Chapter_2/Language/cn/Docs_2_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_1.html">
+            
+                    
+                    2.1 色彩基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../Chapter_2/Language/cn/Docs_2_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2.html">
+            
+                    
+                    2.2 颜色三要素（Three Elements of Color）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../../Chapter_2/Language/cn/Docs_2_2_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2_1.html">
+            
+                    
+                    2.2.1 色调（Hue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../../Chapter_2/Language/cn/Docs_2_2_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2_2.html">
+            
+                    
+                    2.2.2 饱和度（Saturation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../../Chapter_2/Language/cn/Docs_2_2_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2_3.html">
+            
+                    
+                    2.2.3 光亮度（Luminance）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../Chapter_2/Language/cn/Docs_2_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3.html">
+            
+                    
+                    2.3 色彩的衡量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../../Chapter_2/Language/cn/Docs_2_3_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_1.html">
+            
+                    
+                    2.3.1 辐射亮度（Radiance）& 色温（Color Temperature）& 颜色的量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../../Chapter_2/Language/cn/Docs_2_3_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_2.html">
+            
+                    
+                    2.3.2 配色函数（Color Matching Functions）& 色彩空间（Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../../../Chapter_2/Language/cn/Docs_2_3_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_3.html">
+            
+                    
+                    2.3.3 经典三原色函数（Trichromatic Primaries Functions）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../../../Chapter_2/Language/cn/Docs_2_3_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_4.html">
+            
+                    
+                    2.3.4 经典三刺激函数（Tristimulus Values Functions）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="../../../Chapter_2/Language/cn/Docs_2_3_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_5.html">
+            
+                    
+                    2.3.5 现代色彩体系（Modern Color System）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../Chapter_2/Language/cn/Docs_2_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4.html">
+            
+                    
+                    2.4 色彩的对比
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../../Chapter_2/Language/cn/Docs_2_4_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_1.html">
+            
+                    
+                    2.4.1 色域（Color Gamut ）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../../Chapter_2/Language/cn/Docs_2_4_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_2.html">
+            
+                    
+                    2.4.2 色度（Chroma）& 色度平面（Chroma Plane）& 色度图（Chroma Diagram）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../../Chapter_2/Language/cn/Docs_2_4_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_3.html">
+            
+                    
+                    2.4.3 色差（Chromatic Aberration）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../../../Chapter_2/Language/cn/Docs_2_4_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_4.html">
+            
+                    
+                    2.4.4 色温（Color Temperature）& 相关色温（Correlated Color Temperature）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="../../../Chapter_2/Language/cn/Docs_2_4_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_5.html">
+            
+                    
+                    2.4.5 标准光源（Standard Illuminants）& 白点（White Point）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6" data-path="../../../Chapter_2/Language/cn/Docs_2_4_6.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_6.html">
+            
+                    
+                    2.4.6 显色指数（Color Rendering Index）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../../Chapter_2/Language/cn/Docs_2_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5.html">
+            
+                    
+                    2.5 经典色彩空间（Classical Color Space）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../../Chapter_2/Language/cn/Docs_2_5_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_1.html">
+            
+                    
+                    2.5.1 光学三原色色彩空间（RGB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../../../Chapter_2/Language/cn/Docs_2_5_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_2.html">
+            
+                    
+                    2.5.2 颜料三原色色彩空间（CMY / CMYK ）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../../../Chapter_2/Language/cn/Docs_2_5_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_3.html">
+            
+                    
+                    2.5.3 CIE RGB 色彩空间（CIE 1931 RGB Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../../../Chapter_2/Language/cn/Docs_2_5_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_4.html">
+            
+                    
+                    2.5.4 CIE XYZ 色彩空间（CIE 1931 XYZ Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="../../../Chapter_2/Language/cn/Docs_2_5_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_5.html">
+            
+                    
+                    2.5.5 CIE LAB 色彩空间（CIE 1976 L*, a*, b* Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.6" data-path="../../../Chapter_2/Language/cn/Docs_2_5_6.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_6.html">
+            
+                    
+                    2.5.6 CIE LUV 色彩空间（CIE 1976 L*, u*, v* Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.7" data-path="../../../Chapter_2/Language/cn/Docs_2_5_7.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_7.html">
+            
+                    
+                    2.5.7 颜色三要素色彩空间（HSV / HSI / HSL）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../../Chapter_2/Language/cn/Docs_2_6.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6.html">
+            
+                    
+                    2.6 色彩的存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../../../Chapter_2/Language/cn/Docs_2_6_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6_1.html">
+            
+                    
+                    2.6.1 色彩格式（Color Format）与色彩存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../../../Chapter_2/Language/cn/Docs_2_6_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6_2.html">
+            
+                    
+                    2.6.2 RGB 体系色彩格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../../../Chapter_2/Language/cn/Docs_2_6_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6_3.html">
+            
+                    
+                    2.6.3 YUV 体系色彩格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../../Chapter_2/Language/cn/References_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/References_2.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../Chapter_3/Language/cn/Apex_3_Introduce.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Apex_3_Introduce.html">
+            
+                    
+                    三、音视频常用基础算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../Chapter_3/Language/cn/Docs_3_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1.html">
+            
+                    
+                    3.1 信号分析的核心算法 - 傅立叶变换
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../../Chapter_3/Language/cn/Docs_3_1_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_1.html">
+            
+                    
+                    3.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../../Chapter_3/Language/cn/Docs_3_1_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_2.html">
+            
+                    
+                    3.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
+            
+                    
+                    3.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
+            
+                    
+                    3.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../Chapter_3/Language/cn/Docs_3_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2.html">
+            
+                    
+                    3.2 频率信息提取 - 常用滤波算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../../Chapter_3/Language/cn/Docs_3_2_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_1.html">
+            
+                    
+                    3.2.1 高斯滤波（Gauss Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../../Chapter_3/Language/cn/Docs_3_2_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_2.html">
+            
+                    
+                    3.2.2 双边滤波（Bilateral Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../../Chapter_3/Language/cn/Docs_3_2_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_3.html">
+            
+                    
+                    3.2.3 拉普拉斯滤波（Laplacian Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../../Chapter_3/Language/cn/Docs_3_2_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_4.html">
+            
+                    
+                    3.2.4 马尔滤波（Marr Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../../../Chapter_3/Language/cn/Docs_3_2_5.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_5.html">
+            
+                    
+                    3.2.5 索贝尔滤波（Sobel Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../../../Chapter_3/Language/cn/Docs_3_2_6.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_6.html">
+            
+                    
+                    3.2.6 各向异性扩散（Anisotropic Diffusion）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../../Chapter_3/Language/cn/Docs_3_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3.html">
+            
+                    
+                    3.3 时间冗余控制 - 常用特征提取与朴素阈值处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../../Chapter_3/Language/cn/Docs_3_3_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3_1.html">
+            
+                    
+                    3.3.1 方向梯度直方图（HOG [Histogram of Oriented Gradient]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../../Chapter_3/Language/cn/Docs_3_3_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3_2.html">
+            
+                    
+                    3.3.2 朴素目标检测结果度量 - IoU & GIoU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../../Chapter_3/Language/cn/Docs_3_3_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3_3.html">
+            
+                    
+                    3.3.3 朴素目标检测物体锁定 - 分步滑动窗口（Simple Sliding Window）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../../Chapter_3/Language/cn/Docs_3_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4.html">
+            
+                    
+                    3.4 空域冗余控制 - 基础光流算法与色度压缩
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../../Chapter_3/Language/cn/Docs_3_4_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_1.html">
+            
+                    
+                    3.4.1 传统光流法（Classic Optical Flow Methods）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../../Chapter_3/Language/cn/Docs_3_4_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_2.html">
+            
+                    
+                    3.4.2 双向光流预测（BDOF [Bi-Directional Optical Flow]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../../Chapter_3/Language/cn/Docs_3_4_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_3.html">
+            
+                    
+                    3.4.3 光流仿射修正（PROF [Affine Prediction Refinement With Optical Flow]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../../../Chapter_3/Language/cn/Docs_3_4_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_4.html">
+            
+                    
+                    3.4.4 色度缩放亮度映射（LMCS [Luma Mapping with Chroma Scaling]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../../Chapter_3/Language/cn/Docs_3_5.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5.html">
+            
+                    
+                    3.5 频域冗余控制 - 基础变换编码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="../../../Chapter_3/Language/cn/Docs_3_5_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5_1.html">
+            
+                    
+                    3.5.1 整数离散正余弦变换（DST/DCT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2" data-path="../../../Chapter_3/Language/cn/Docs_3_5_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5_2.html">
+            
+                    
+                    3.5.2 哈达玛变换（WHT [Walsh-Hadamard Transform]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.3" data-path="../../../Chapter_3/Language/cn/Docs_3_5_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5_3.html">
+            
+                    
+                    3.5.3 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../../Chapter_3/Language/cn/Playground_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Playground_3.html">
+            
+                    
+                    【在线展示】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../../Chapter_3/Language/cn/References_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/References_3.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Apex_4_Introduce.html">
+            
+                <a href="Apex_4_Introduce.html">
+            
+                    
+                    四、音视频机器学习基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="Docs_4_1.html">
+            
+                <a href="Docs_4_1.html">
+            
+                    
+                    4.1 发展概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="Docs_4_2.html">
+            
+                <a href="Docs_4_2.html">
+            
+                    
+                    4.2 模型结构速览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="Docs_4_2_1.html">
+            
+                <a href="Docs_4_2_1.html">
+            
+                    
+                    4.2.1 算子（Operator）& 层（Layer）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="Docs_4_2_2.md">
+            
+                <span>
+            
+                    
+                    4.2.2 经典模型：CNN & RNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="Docs_4_2_3.md">
+            
+                <span>
+            
+                    
+                    4.2.3 经典模型：GAN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="Docs_4_2_4.md">
+            
+                <span>
+            
+                    
+                    4.2.4 经典模型：Transformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="Docs_4_3.html">
+            
+                <a href="Docs_4_3.html">
+            
+                    
+                    4.3 经典激活函数（Classic Activation Function）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="Docs_4_3_1.html">
+            
+                <a href="Docs_4_3_1.html">
+            
+                    
+                    4.3.1 Sigmoid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="Docs_4_3_2.html">
+            
+                <a href="Docs_4_3_2.html">
+            
+                    
+                    4.3.2 Tanh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3.3" data-path="Docs_4_3_3.html">
+            
+                <a href="Docs_4_3_3.html">
+            
+                    
+                    4.3.3 Softplus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.4" data-path="Docs_4_3_4.html">
+            
+                <a href="Docs_4_3_4.html">
+            
+                    
+                    4.3.4 ReLU 族 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.5" data-path="Docs_4_3_5.html">
+            
+                <a href="Docs_4_3_5.html">
+            
+                    
+                    4.3.5 ELU & SELU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.6" data-path="Docs_4_3_6.html">
+            
+                <a href="Docs_4_3_6.html">
+            
+                    
+                    4.3.6 Mish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.7" data-path="Docs_4_3_7.html">
+            
+                <a href="Docs_4_3_7.html">
+            
+                    
+                    4.3.7 Swish 族 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Docs_4_4.html">
+            
+                <a href="Docs_4_4.html">
+            
+                    
+                    4.4 连接函数/衰减函数（Connection/Attenuation Function）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="Docs_4_4_1.html">
+            
+                <a href="Docs_4_4_1.html">
+            
+                    
+                    4.4.1 Dropout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="Docs_4_4_2.html">
+            
+                <a href="Docs_4_4_2.html">
+            
+                    
+                    4.4.2 Maxout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="Docs_4_4_3.html">
+            
+                <a href="Docs_4_4_3.html">
+            
+                    
+                    4.4.3 SoftMax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="Docs_4_5.html">
+            
+                <a href="Docs_4_5.html">
+            
+                    
+                    4.5 损失函数（Loss Function）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="Docs_4_5_1.html">
+            
+                <a href="Docs_4_5_1.html">
+            
+                    
+                    4.5.1 回归项-平均绝对误差（MAE [Mean Absolute Error]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="Docs_4_5_2.html">
+            
+                <a href="Docs_4_5_2.html">
+            
+                    
+                    4.5.2 回归项-均方误差（MSE [Mean Squared Error]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="Docs_4_5_3.html">
+            
+                <a href="Docs_4_5_3.html">
+            
+                    
+                    4.5.3 回归项-休伯损失（Huber Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="Docs_4_5_4.html">
+            
+                <a href="Docs_4_5_4.html">
+            
+                    
+                    4.5.4 回归项-分位数损失（Quantile Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="Docs_4_5_5.md">
+            
+                <span>
+            
+                    
+                    4.5.5 分类项-对数损失（Log Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.6" data-path="Docs_4_5_6.md">
+            
+                <span>
+            
+                    
+                    4.5.6 分类项-交叉熵损失（Cross Entropy Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.7" data-path="Docs_4_5_7.md">
+            
+                <span>
+            
+                    
+                    4.5.7 分类项-合页损失（Hinge Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.8" data-path="Docs_4_5_8.md">
+            
+                <span>
+            
+                    
+                    4.5.8 分类项-对比损失（Contrastive Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.9" data-path="Docs_4_5_9.md">
+            
+                <span>
+            
+                    
+                    4.5.9 分类项-三元损失（Triplet Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.10" data-path="Docs_4_5_10.md">
+            
+                <span>
+            
+                    
+                    4.5.10 分类项-对组排异损失（N-Pair Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.11" data-path="Docs_4_5_11.md">
+            
+                <span>
+            
+                    
+                    4.5.11 正则项-L1 惩罚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.12" data-path="Docs_4_5_12.md">
+            
+                <span>
+            
+                    
+                    4.5.12 正则项-L2 惩罚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.13" data-path="Docs_4_5_13.md">
+            
+                <span>
+            
+                    
+                    4.5.13 正则项-Dropout
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="Docs_4_6.md">
+            
+                <span>
+            
+                    
+                    4.6 常用最优化算法（Optimizer Operator）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="Docs_4_6_1.md">
+            
+                <span>
+            
+                    
+                    4.6.1 基础优化算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="Docs_4_6_2.md">
+            
+                <span>
+            
+                    
+                    4.6.2 优化算法的优化-应对震荡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="Docs_4_6_3.md">
+            
+                <span>
+            
+                    
+                    4.6.3 优化算法的优化-应对重点强（弱）化更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.4" data-path="Docs_4_6_4.md">
+            
+                <span>
+            
+                    
+                    4.6.4 自适应实时评估算法（Adam [Adaptive Moment Estimation]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="References_4.html">
+            
+                <a href="References_4.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >4.3.3 Softplus</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="433-softplus">4.3.3 Softplus</h1>
+<p><strong>&#x8FED;&#x4EE3;&#x516C;&#x5F0F;&#xFF1A;</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mstyle scriptlevel="0" displaystyle="true"><mtable><mtr><mtd><mrow><mi>&#x3B4;</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>l</mi><mi>o</mi><mi>g</mi><mo>(</mo><mn>1</mn><mo>+</mo><msup><mi>e</mi><mi>x</mi></msup><mo>)</mo></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd></mtr></mtable></mstyle></mrow></mrow><annotation encoding="application/x-tex">
+{\displaystyle 
+ \begin{aligned}
+   \delta(x) = log(1+e^x) \\
+ \end{aligned}
+}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.45em;"></span><span class="strut bottom" style="height:2.4000000000000004em;vertical-align:-0.9500000000000004em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mtable"><span class="col-align-r"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.03785em;">&#x3B4;</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mbin">+</span><span class="mord"><span class="mord mathit">e</span><span class="msupsub"><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight">x</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></span></span></p>
+<p><strong>&#x56FE;&#x50CF;&#xFF1A;</strong></p>
+<center>
+<figure>
+   <img width="400" height="300" src="../../Pictures/Softplus.png" alt="">
+    <figcaption>
+      <p>&#x56FE; 4.3.3-1 Softplus &#x51FD;&#x6570;&#x56FE;</p>
+   </figcaption>
+</figure>
+</center>
+
+<p><strong>&#x7279;&#x6027;&#xFF1A;</strong></p>
+<ol>
+<li>&#x975E; 0 &#x4E3A;&#x4E2D;&#x5FC3;&#xFF08;non-zero-centered&#xFF09;</li>
+<li>&#x8F93;&#x51FA;&#x8303;&#x56F4;&#x5728; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>0</mn><mo separator="true">,</mo><mtext>&#xA0;</mtext><mo>+</mo><mi mathvariant="normal">&#x221E;</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">[0,\ +\infty)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">[</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord"><span class="mspace">&#xA0;</span><span class="mbin">+</span></span><span class="mord mathrm">&#x221E;</span><span class="mclose">)</span></span></span></span> &#x4E4B;&#x95F4;&#xFF0C;&#x5BFC;&#x6570;&#x6B63;&#x597D;&#x4E3A; Sigmoid </li>
+<li>&#x8F93;&#x51FA; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#x2265;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\ge 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="base textstyle uncramped"><span class="mrel">&#x2265;</span><span class="mord mathrm">0</span></span></span></span> &#xFF0C;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#xFF08;BP&#xFF09;&#x6743;&#x503C;&#x6B63;&#x5411;&#x5806;&#x79EF;&#xFF08;&#x68AF;&#x5EA6;&#x59CB;&#x7EC8; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#x2265;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\ge 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="base textstyle uncramped"><span class="mrel">&#x2265;</span><span class="mord mathrm">0</span></span></span></span> &#xFF09;</li>
+<li>&#x5F53;&#x8F93;&#x5165;&#x5728; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mo>+</mo><mn>5</mn><mo separator="true">,</mo><mtext>&#xA0;</mtext><mo>+</mo><mi mathvariant="normal">&#x221E;</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">[+5,\ +\infty)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">[</span><span class="mord">+</span><span class="mord mathrm">5</span><span class="mpunct">,</span><span class="mord"><span class="mspace">&#xA0;</span><span class="mbin">+</span></span><span class="mord mathrm">&#x221E;</span><span class="mclose">)</span></span></span></span> &#x65F6;&#xFF0C;&#x68AF;&#x5EA6;&#x8D8B;&#x8FD1;&#x5E38;&#x91CF; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span> &#xFF0C;&#x6781;&#x5927;&#x907F;&#x514D;&#x68AF;&#x5EA6;&#x6D88;&#x5931;&#x95EE;&#x9898; &#x53CA; &#x68AF;&#x5EA6;&#x7206;&#x70B8;&#x95EE;&#x9898;</li>
+<li>&#x5F53;&#x8F93;&#x5165;&#x5728; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mo>&#x2212;</mo><mi mathvariant="normal">&#x221E;</mi><mo separator="true">,</mo><mtext>&#xA0;</mtext><mo>&#x2212;</mo><mn>5</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">(-\infty,\ -5]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord">&#x2212;</span><span class="mord mathrm">&#x221E;</span><span class="mpunct">,</span><span class="mord"><span class="mspace">&#xA0;</span><span class="mbin">&#x2212;</span></span><span class="mord mathrm">5</span><span class="mclose">]</span></span></span></span> &#x65F6;&#xFF0C;&#x8F93;&#x51FA;&#x8FD1;&#x4E4E;&#x65E0;&#x53D8;&#x5316;&#xFF0C;&#x9010;&#x5C42;&#x68AF;&#x5EA6;&#x8D8B; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span></span></span></span> &#xFF0C;&#x66F4;&#x6613;&#x5BFC;&#x81F4;&#x68AF;&#x5EA6;&#x6D88;&#x5931;</li>
+<li>&#x6307;&#x6570;&#x8BA1;&#x7B97;&#xFF0C;&#x8F83;&#x4E3A;&#x6D88;&#x8017;&#x8D44;&#x6E90;</li>
+</ol>
+<p>Softplus &#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F; ReLU &#x7684;&#x5E73;&#x6ED1;&#x7248;&#xFF0C;&#x5373;&#x65E0;&#x7A77;&#x9636;&#x8FDE;&#x7EED;&#x53EF;&#x5BFC;&#x3002;&#x4F46;&#x662F;&#x56E0;&#x4E3A;&#x91C7;&#x7528;&#x4E86;&#x6307;&#x6570;&#x8FD0;&#x7B97;&#xFF0C;&#x4E14;&#x7279;&#x6027;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x5904;&#x7406;&#x53EF;&#x8FD1;&#x4F3C;&#x76F8;&#x540C;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5E38;&#x5E38;&#x4F7F;&#x7528; ReLU &#x800C;&#x4E0D;&#x662F; Softplus&#x3002;&#x5E76;&#x4E14;&#x5B9E;&#x9A8C;&#x9A8C;&#x8BC1;&#xFF0C;Softplus &#x4E5F;&#x5E76;&#x4E0D;&#x4F18;&#x4E8E; ReLU&#x3002;</p>
+<h2 id="softplus-&#x7B97;&#x5B50;&#x5316;"><strong>Softplus &#x7B97;&#x5B50;&#x5316;</strong></h2>
+<p>&#x5229;&#x7528; C &#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x5BF9;&#x7B97;&#x5B50;&#x7684;&#x5C01;&#x88C5;&#xFF0C;&#x6709;&#xFF1A;</p>
+<pre><code class="lang-C">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+double softplus(double x) {
+  return log(1 + exp(x));
+}
+
+int main() {
+  double x = 0.5;
+  double y = softplus(x);
+  printf(&quot;The softplus of %f is %f\n&quot;, x, y);
+  return 0;
+}
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x9A8C;&#x8BC1;&#x53EF;&#x5F97;&#x5230;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-C">The softplus of 0.500000 is 0.648721
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
+2023-12-28 14:11:06
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Docs_4_3_2.html" class="navigation navigation-prev " aria-label="Previous page: 4.3.2 Tanh">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Docs_4_3_4.html" class="navigation navigation-next " aria-label="Next page: 4.3.4 ReLU 族 ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.3.3 Softplus","level":"1.4.3.3","depth":3,"next":{"title":"4.3.4 ReLU 族 ","level":"1.4.3.4","depth":3,"path":"Chapter_4/Language/cn/Docs_4_3_4.md","ref":"Chapter_4/Language/cn/Docs_4_3_4.md","articles":[]},"previous":{"title":"4.3.2 Tanh","level":"1.4.3.2","depth":3,"path":"Chapter_4/Language/cn/Docs_4_3_2.md","ref":"Chapter_4/Language/cn/Docs_4_3_2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-highlight","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_4/Language/cn/Docs_4_3_3.md","mtime":"2023-12-28T06:11:06.020Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-28T06:16:24.914Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-rss/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+
