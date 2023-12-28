@@ -41,3 +41,4 @@
 	* [2.6.1 色彩格式（Color Format）与色彩存储](Docs_2_6_1.md)
 	* [2.6.2 RGB 体系色彩格式](Docs_2_6_2.md)
 	* [2.6.3 YUV 体系色彩格式](Docs_2_6_3.md)
+* [【参考文献】](References_2.md)
