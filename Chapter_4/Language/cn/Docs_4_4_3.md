@@ -23,7 +23,7 @@ $$
    \Sigma(\vec{x}) =\sum h_j(x) \in 
     \begin{cases}
        z_j &= {W_{ij}}^T \cdot x+b_{ij} \\
-       h_j(x) &= log(\frac{e^{z_j}}{\sum{e^{z_j}}})=z_j-log(\sum_{j=1}^k{e^{z_j}})   \\
+       h_j(x) &= log(\frac{e^{z_j}}{\sum{e^{z_j}}})=z_j-log(\sum_{j=1}^k{e^{z_j}})   
     \end{cases} \\
  \end{aligned}
 }
@@ -38,7 +38,7 @@ $$
     \begin{cases}
        z_j &= {W_{ij}}^T \cdot x+b_{ij} \\
        D &= log(C)=-max(z_1, z_2,...,z_k) \\
-       h_j(x) &= \frac{C\cdot e^{z_j}}{C\cdot \sum{e^{z_j}}} = \frac{e^{z_j+log(C)}}{\sum {e^{z_j+log(C)}}}=\frac{e^{z_j+D}}{\sum {e^{z_j+D}}} \\
+       h_j(x) &= \frac{C\cdot e^{z_j}}{C\cdot \sum{e^{z_j}}} = \frac{e^{z_j+log(C)}}{\sum {e^{z_j+log(C)}}}=\frac{e^{z_j+D}}{\sum {e^{z_j+D}}} 
     \end{cases} \\
  \end{aligned}
 }
@@ -53,7 +53,7 @@ $$
     \begin{cases}
        z_j &= {W_{ij}}^T \cdot x+b_{ij} \\
        D &= log(C)=-max(z_1, z_2,...,z_k) \\
-       h_j(x) &= log(\frac{C\cdot e^{z_j}}{C\cdot \sum{e^{z_j}}}) = (z_j-D)-log(\sum_{j=1}^k{e^{(z_j-D)}})   \\
+       h_j(x) &= log(\frac{C\cdot e^{z_j}}{C\cdot \sum{e^{z_j}}}) = (z_j-D)-log(\sum_{j=1}^k{e^{(z_j-D)}})  
     \end{cases} \\
  \end{aligned}
 }

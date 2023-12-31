@@ -1,7 +1,18 @@
 
 # 4.4 连接函数/衰减函数（Connection/Attenuation Function）
 
-**连接函数（Connection Function）** 是一种被设计用来，在模型训练的每个单元数据输入位置，为输入进行筛选收减的特殊辅助函数。常被用在诸如：**全链接层（Full Connected Layer）** 、 **自注意力层（Self-Attention Layer）** 等层（Layer）单元设计中。用来对经过激活（或纯输入）的当前层输入进行 **特征提炼（Feature Extraction）** 。由于在当下占据主流的 Transformer 模型中，以自注意力层的注意力衰减机制存在，因而也被称为 **衰减函数（Attenuation Function）** 。
+**连接函数（Connection Function）** 是一种被设计用来，在模型训练的每个单元数据输入位置，为输入进行筛选收减的特殊辅助函数。常被用在诸如：**全链接层（Full Connected Layer）** 、 **自注意力层（Self-Attention Layer）** 等 **输出层（Output Layer）** 或 **部分特殊隐藏层（Hidden Layer）** 单元设计中。用来对经过激活（或纯输入）的当前层输入进行 **特征提炼（Feature Extraction）** 。由于在当下占据主流的 Transformer 模型中，以自注意力层的注意力衰减机制存在，因而也被称为 **衰减函数（Attenuation Function）** 。
+
+<center>
+<figure>
+   <img  
+      width = "500" height = "340"
+      src="../../Pictures/Neuron_3.png" alt="">
+    <figcaption>
+      <p>图 4.4-1连接函数作用阶段（图中蓝色线条）示意图</p>
+   </figcaption>
+</figure>
+</center>
 
 连接函数，基本满足：单一输入输出、多层参数处理、可参与训练参数 > 1，的特点。其中，较为经典的主要有 3 个，分别是 Dropout 、Maxout 、Softmax 。
 
