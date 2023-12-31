@@ -179,7 +179,6 @@
 		* [4.5.10 分类项-对组排异损失（N-Pair Loss）](Chapter_4/Language/cn/Docs_4_5_10.md)
 		* [4.5.11 正则项-L1 惩罚](Chapter_4/Language/cn/Docs_4_5_11.md)
 		* [4.5.12 正则项-L2 惩罚](Chapter_4/Language/cn/Docs_4_5_12.md)
-		* [4.5.13 正则项-Dropout](Chapter_4/Language/cn/Docs_4_5_13.md)
 	* [4.6 常用最优化算法（Optimizer Operator）](Chapter_4/Language/cn/Docs_4_6.md)
 		* [4.6.1 基础优化算法](Chapter_4/Language/cn/Docs_4_6_1.md)
 		* [4.6.2 优化算法的优化-应对震荡](Chapter_4/Language/cn/Docs_4_6_2.md)
