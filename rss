@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 28 Dec 2023 06:17:19 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 31 Dec 2023 11:04:45 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -482,7 +482,7 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[4.2 模型结构速览]]></title>
+            <title><![CDATA[4.2 模型工程基础]]></title>
             <description><![CDATA[在深度学习（DL）中，我们通过计算损失函数（Loss Function），来衡量当次迭代结果对应各个关键参数权重，在实际描述问题上的有效程度。通过损失函数的变化方向，来获取对应关键参数权重，更趋近于实际结果的梯度方向。从而被我们使用来更新当前参数权重配置，以降低损失函数值，逼近最优解。这一过程被称为一次迭代（Iteration）过程。而通过多次迭代来获取最优解的过程，被称为一次训练（Training）。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2.html</guid>
@@ -493,6 +493,20 @@
             <description><![CDATA[算子（Operator） 和 层（Layer） 是当前各种通用神经网络模型中，最基础的组成元件。一般来说，算子用于表示模型中的数学运算，而层用于组织模型中的算子。我们通常将单一的数学函数，抽象为一个算子。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.2.2 神经元（Neuron）]]></title>
+            <description><![CDATA[神经元（Neuron） 是对神经网络中的 节点（Node） 的一种，来自于仿生学的概念。上一节中我们提到的 输入/特征/输出节点集合 中的节点，都可以被称为神经元。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.2.3 神经网络（NN [Neural Network]）]]></title>
+            <description><![CDATA[本书中的 神经网络（NN [Neural Network]） 主要是对深度神经网络（DNN，这是个大类别，见第一节）中，采用 反向传播（Back Propagation） 技术的一类深度神经网络的统称。也被称为 反向传播神经网络（Back Propagation Neural Network） ，是个广义分类。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
@@ -553,7 +567,7 @@
         </item>
         <item>
             <title><![CDATA[4.4 连接函数/衰减函数（Connection/Attenuation Function）]]></title>
-            <description><![CDATA[连接函数（Connection Function） 是一种被设计用来，在模型训练的每个单元数据输入位置，为输入进行筛选收减的特殊辅助函数。常被用在诸如：全链接层（Full Connected Layer） 、 自注意力层（Self-Attention Layer） 等层（Layer）单元设计中。用来对经过激活（或纯输入）的当前层输入进行 特征提炼（Feature Extraction） 。由于在当下占据主流的 Transformer 模型中，以自注意力层的注意力衰减机制存在，因而也被称为 衰减函数（Attenuation Function） 。]]></description>
+            <description><![CDATA[连接函数（Connection Function） 是一种被设计用来，在模型训练的每个单元数据输入位置，为输入进行筛选收减的特殊辅助函数。常被用在诸如：全链接层（Full Connected Layer） 、 自注意力层（Self-Attention Layer） 等 输出层（Output Layer） 或 部分特殊隐藏层（Hidden Layer） 单元设计中。用来对经过激活（或纯输入）的当前层输入进行 特征提炼（Feature Extraction） 。由于在当下占据主流的 Transformer 模型中，以自注意力层的注意力衰减机制存在，因而也被称为 衰减函数（Attenuation Function） 。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_4.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -612,6 +626,34 @@
             <description><![CDATA[迭代公式：]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.5.5 分类项-对数损失（Log Loss）]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.5.6 分类项-交叉熵损失（Cross Entropy Loss）]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.5.7 分类项-合页损失（Hinge Loss）]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_7.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_7.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.5.8 分类项-对比损失（Contrastive Loss）]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_8.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_8.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
