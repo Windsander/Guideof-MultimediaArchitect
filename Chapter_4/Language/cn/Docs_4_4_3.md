@@ -65,7 +65,7 @@ $$
 <figure>
    <img  
       width = "400" height = "280"
-      src="../../Pictures/Softmax.png" alt="">
+      src="../../Pictures/SoftMax.png" alt="">
     <figcaption>
       <p>图 4.4.3-1 Softmax 输入输出作用示意图</p>
    </figcaption>
