@@ -21,7 +21,7 @@ $$
       width = "400" height = "110"
       src="../../Pictures/Triplet_loss.png" alt="">
     <figcaption>
-      <p>图 4.5.8-1 Contrastive Loss 函数图</p>
+      <p>图 4.5.9-1 Triplet Loss 函数图<a href="References_4.md">[15]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -91,6 +91,7 @@ $$
 #include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #define BATCH_SIZE 10     // Batch_size = Samples_of_Person x Data/Person
 #define VECTOR_SIZE 128   // Extract output layer Feature vector's dimissions
@@ -131,9 +132,9 @@ void get_triplet_mask(int labels[BATCH_SIZE],
     for (int j = 0; j < BATCH_SIZE; j++) {
       for (int k = 0; k < BATCH_SIZE; k++) {
         // indices_equal
-        bool i_not_j = (i == j);
-        bool i_not_k = (i == k);
-        bool j_not_k = (j == k);
+        bool i_not_j = (i != j);
+        bool i_not_k = (i != k);
+        bool j_not_k = (j != k);
         bool distinct_indices = (i_not_j && i_not_k && j_not_k);
 
         // label_equal
@@ -187,20 +188,21 @@ double triplet_loss(int labels[BATCH_SIZE],
         }
       }
     }
-    // Calculate fraction of positive triplets
-    *fraction_positives = (double)num_positive / ((double)num_validate + DEVIDE_SAFE);
-    return triplet_cost / (double)(num_positive + DEVIDE_SAFE);
   }
+  // Calculate fraction of positive triplets
+  *fraction_positives = (double)num_positive / ((double)num_validate + DEVIDE_SAFE);
+  return triplet_cost / (double)(num_positive + DEVIDE_SAFE);
 }
 
 int main() {
   // Example input (fulfill to BATCH_SIZE x VECTOR_SIZE)
   // Use Random labels and embeddings for testing
   // Use three classes as different type, to generate labels
+  int type = 3;
   int labels[BATCH_SIZE];
   double embeddings[BATCH_SIZE][VECTOR_SIZE];
   for (int i = 0; i < BATCH_SIZE; i++) {
-    labels[i] = rand() % 3;
+    labels[i] = rand() % type;
     for (int j = 0; j < VECTOR_SIZE; j++) {
       embeddings[i][j] = (double)rand() / (double)RAND_MAX;
     }
@@ -217,7 +219,7 @@ int main() {
 运行验证可得到结果：
 
 ```C
-The triplet loss is 0.266667 with positives 0.300000
+The triplet loss is 0.270146 with positives 0.668605 
 ```
 
 虽然看上去比较复杂，然而在实际执行过程中， **一个时代（Epoch）只会执行一次三元组损失的计算** ，而空间复杂度上，仅额外增加了距离矩阵和遮罩的共 $$O({batch\_size}^2 + {batch\_size}^3)$$ 的空间大小。是完全可以接受的。
