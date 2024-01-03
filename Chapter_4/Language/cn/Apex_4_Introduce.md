@@ -20,6 +20,7 @@
 	* [4.2.1 算子（Operator）& 层（Layer）](Docs_4_2_1.md)
 	* [4.2.2 神经元（Neuron）](Docs_4_2_2.md)
 	* [4.2.3 神经网络（NN [Neural Network]）](Docs_4_2_3.md)
+	* [4.2.4 特征选择（Feature Selection）](Docs_4_2_4.md)
 * [4.3 经典激活函数（Classic Activation Function）](Docs_4_3.md)
 	* [4.3.1 Sigmoid](Docs_4_3_1.md)
 	* [4.3.2 Tanh](Docs_4_3_2.md)

@@ -28,9 +28,5 @@
 除此之外，当下包括 **大模型（Large Model）** 在内的多种模型融合技术，简称 **多模态（Multi Model）** ，皆开始采用多模型混合的实现。
 例如，由 **杨立昆（Yann LeCun）** 提出的，基于 **短期预测（Short Term Prediction）** 和 **长期预测交叉融合（Joint Embedding）** 实现完整连续时效预测，的 **自监督大模型（Self-Supervised Large Model）** 理论中，通过将传统深度学习（指带单一功能深度学习模型）的各个功能层或层组合，拆分为包含：损失模型（Cost Module，类似于一个复杂的，非单一点生效的损失函数替代模型）、感知模型（Perception Module）、规则模型（Policy Module）、动作模型（Action Model）、世界模型（World Model）在内的多种特定任务模型（Specific Model），组合为复杂的连续网络，以期实现模型自学习处理体系。
 
-这些前沿科学探索非常的引人入胜，但本书就不展开讨论了。感兴趣可以自行了解。
-
-现在，我们基本掌握了深度学习的入门概念。让我们分步来看，一个神经网络的具体细节。
-
 
 [ref]: References_4.md

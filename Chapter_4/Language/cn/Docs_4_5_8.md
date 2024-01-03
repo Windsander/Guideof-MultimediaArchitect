@@ -20,7 +20,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/Contrastive_loss.png" alt="">
     <figcaption>
-      <p>图 4.5.8-1 Contrastive Loss 函数图</p>
+      <p>图 4.5.8-1 Contrastive Loss 函数图<a href="References_4.md">[14]</a></p>
    </figcaption>
 </figure>
 </center>
