@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>四、音视频机器学习基础 · 《音视频开发技术：原理与实践》©</title>
+        <title>4.2.4 特征选择（Feature Selection） · 《音视频开发技术：原理与实践》©</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -90,10 +90,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Docs_4_1.html" />
+    <link rel="next" href="Docs_4_3.html" />
     
     
-    <link rel="prev" href="../../../Chapter_3/Language/cn/References_3.html" />
+    <link rel="prev" href="Docs_4_2_3.html" />
     
 
     
@@ -1056,7 +1056,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="Apex_4_Introduce.html">
+        <li class="chapter " data-level="1.4" data-path="Apex_4_Introduce.html">
             
                 <a href="Apex_4_Introduce.html">
             
@@ -1136,7 +1136,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2.4" data-path="Docs_4_2_4.html">
+        <li class="chapter active" data-level="1.4.2.4" data-path="Docs_4_2_4.html">
             
                 <a href="Docs_4_2_4.html">
             
@@ -1674,7 +1674,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >四、音视频机器学习基础</a>
+        <a href="../../.." >4.2.4 特征选择（Feature Selection）</a>
     </h1>
 </div>
 
@@ -1689,74 +1689,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x56DB;&#x3001;&#x97F3;&#x89C6;&#x9891;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x57FA;&#x7840;">&#x56DB;&#x3001;&#x97F3;&#x89C6;&#x9891;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x57FA;&#x7840;</h1>
-<h2 id="&#x5F15;&#x8A00;"><strong>&#x5F15;&#x8A00;</strong></h2>
-<p>&#x5728;&#x524D;&#x4E00;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x57FA;&#x7840;&#x97F3;&#x89C6;&#x9891;&#x7684;&#x5173;&#x952E;&#x6280;&#x672F;&#x5DE5;&#x5177;&#xFF0C;&#x8FDB;&#x884C;&#x4E86;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x4E0D;&#x5C11;&#x5730;&#x65B9;&#x9700;&#x8981;&#x7528;&#x5230;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x76F8;&#x5173;&#x7684;&#x5904;&#x7406;&#x624B;&#x6BB5;&#x3002;&#x53EF;&#x89C1;&#x7ED3;&#x5408;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5C24;&#x5176;&#x662F;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6A21;&#x578B;&#x7684;&#x4F18;&#x79C0;&#x80FD;&#x529B;&#xFF0C;&#x6765;&#x5F3A;&#x5316;&#x73B0;&#x6709;&#x97F3;&#x89C6;&#x9891;&#x5DE5;&#x7A0B;&#x7684;&#x5404;&#x65B9;&#x9762;&#xFF0C;&#x5DF2;&#x9010;&#x6B65;&#x6210;&#x4E3A;&#x4E3B;&#x6D41;&#x8D8B;&#x52BF;&#x3002;</p>
-<p>&#x56E0;&#x6B64;&#xFF0C;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x5BF9;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x8FD9;&#x4E2A;&#x5927;&#x7C7B;&#x6280;&#x672F;&#x65CF;&#xFF0C;&#x6709;&#x521D;&#x6B65;&#x7684;&#x8BA4;&#x77E5;&#x3002;</p>
-<p>&#x6574;&#x4E2A;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF08;ML&#xFF09;&#x7684;&#x53D1;&#x5C55;&#x5386;&#x7A0B;&#x4E2D;&#xFF0C;&#x603B;&#x6709;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x60F3;&#x6CD5;&#x548C;&#x66F4;&#x5148;&#x8FDB;&#xFF08;&#x6216;&#x7279;&#x8272;&#xFF09;&#x7684;&#x65B9;&#x6CD5;&#x8BBA;&#x88AB;&#x5404;&#x8DEF;&#x63A2;&#x7D22;&#x8005;&#x4EEC;&#x63D0;&#x51FA;&#x6765;&#x3002;&#x800C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#xFF08;DL [Deep Learning]&#xFF09;&#x4F5C;&#x4E3A;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF08;ML [Machine Learning]&#xFF09;&#x7684;&#x5B9E;&#x73B0;&#x624B;&#x6BB5;&#x4E4B;&#x4E00;&#xFF0C;&#x6700;&#x521D;&#x7684;&#x6982;&#x5FF5;&#x65E9;&#x5728;&#x4E0A;&#x4E2A;&#x4E16;&#x7EAA;&#x5C31;&#x5DF2;&#x7ECF;&#x88AB; Hinton&#x3001;Bengio&#x3001;LeCun &#x7B49;&#x5B66;&#x8005;&#x63D0;&#x51FA;&#x3002;&#x53D7;&#x5230;&#x8FD1;&#x5E74;&#x6765;&#x5FEB;&#x901F;&#x589E;&#x957F;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x7B97;&#x529B;&#x548C;&#x5927;&#x6570;&#x636E;&#x4E91;&#x5EFA;&#x8BBE;&#xFF0C;&#x800C;&#x5F97;&#x4EE5;&#x771F;&#x6B63;&#x843D;&#x5730;&#x3002;</p>
-<p>&#x5982;&#x679C;&#x56DE;&#x987E;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7684;&#x53D1;&#x5C55;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x8FC7;&#x7A0B;&#x4E2D;&#x901A;&#x5E38;&#x662F;&#x591A;&#x6761;&#x8DEF;&#x7EBF;&#x65B9;&#x6CD5;&#x8BBA;&#x5E76;&#x884C;&#x7684;&#x3002;&#x5728;&#x5386;&#x53F2;&#x4E0A;&#xFF08;&#x73B0;&#x8BA4;&#x4E3A; 2019 &#x81F3;&#x4ECA;&#x5C5E;&#x4E8E;&#x7B2C;&#x4E09;&#x6B21;&#x9AD8;&#x5CF0;&#xFF09;&#xFF0C;&#x524D;&#x4E24;&#x6B21;&#x5C0F;&#x9AD8;&#x5CF0;&#x90FD;&#x662F;&#x4F34;&#x968F;&#x7740;&#x8BA1;&#x7B97;&#x673A;&#x786C;&#x4EF6;&#x6280;&#x672F;&#x7684;&#x7A81;&#x7834;&#xFF0C;&#x800C;&#x5E26;&#x6765;&#x7684;&#x98DE;&#x8DC3;&#x6027;&#x53D8;&#x9769;&#x3002;&#x4ECE;&#x5355;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x6A21;&#x578B;&#xFF08;Single-Perception&#xFF09;&#x5230;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x6A21;&#x578B;&#xFF08;Multi-Perception&#xFF09;&#x518D;&#x5230;&#x6DF1;&#x5EA6;&#x4FE1;&#x5FF5;&#x7F51;&#x7EDC;&#xFF08;Deep Belief Network&#xFF09;&#xFF0C;&#x76F4;&#x81F3;&#x4ECA;&#x5929;&#x767E;&#x82B1;&#x9F50;&#x653E;&#x7684; DL&#x3002;&#x6574;&#x4E2A;&#x5386;&#x53F2;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#xFF0C;&#x66F4;&#x50CF;&#x662F;&#x591A;&#x6B21;&#x591A;&#x7EF4;&#x5EA6;&#x7684;&#x6280;&#x672F;&#x79EF;&#x7D2F;&#x51C6;&#x5907;&#x9F50;&#x5168;&#x540E;&#xFF0C;&#x624D;&#x5E94;&#x8FD0;&#x800C;&#x751F;&#x7684;&#x3002;</p>
-<p>&#x672C;&#x7AE0;&#x8282;&#x4E3B;&#x8981;&#x6574;&#x7406;&#x8BF4;&#x660E;&#x4E86;&#xFF0C;&#x5F53;&#x4E0B;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x81F3; 2019 &#x5E74;&#x524D;&#x7684;&#x53D1;&#x5C55;&#x7B80;&#x53F2;&#xFF0C;&#x5E76;&#x9610;&#x660E;&#x4E86;&#x90E8;&#x5206;&#x7B97;&#x6CD5;&#x7684;&#x5FC5;&#x8981;&#x57FA;&#x7840;&#x6982;&#x5FF5;&#x3002;&#x53EA;&#x7ED9;&#x51FA;&#x6838;&#x5FC3;&#x539F;&#x7406;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x7406;&#x8BBA;&#x8BC1;&#x660E;&#x548C;&#x63A8;&#x5BFC;&#x8FC7;&#x7A0B;&#x3002;</p>
-<blockquote>
-<p><strong>&#x5173;&#x952E;&#x5B57;&#xFF1A;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5206;&#x7C7B;&#x3001;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x3001;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x3001;&#x635F;&#x5931;&#x51FD;&#x6570;&#x3001;&#x6700;&#x4F18;&#x5316;&#x7B97;&#x6CD5;</strong></p>
-</blockquote>
-<h2 id="&#x76EE;&#x5F55;"><strong>&#x76EE;&#x5F55;</strong></h2>
+                                <h1 id="424-&#x7279;&#x5F81;&#x9009;&#x62E9;&#xFF08;feature-selection&#xFF09;">4.2.4 &#x7279;&#x5F81;&#x9009;&#x62E9;&#xFF08;Feature Selection&#xFF09;</h1>
+<p><strong>&#x7279;&#x5F81;&#x9009;&#x62E9;&#xFF08;Feature Selection&#xFF09;</strong> &#x662F;&#x6BCF;&#x4E2A;&#x6A21;&#x578B;&#x542F;&#x52A8;&#x524D;&#x6700;&#x4E3A;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x73AF;&#xFF0C;&#x4E5F;&#x662F; <strong>&#x7279;&#x5F81;&#x5DE5;&#x7A0B;&#xFF08;Feature Engineering&#xFF09;</strong> &#x65B9;&#x6CD5;&#x8BBA;&#x6240;&#x9776;&#x5411;&#x7684;&#x5173;&#x952E;&#x95EE;&#x9898;&#x4E4B;&#x4E00;&#x3002;</p>
+<p>&#x5728;&#x4F20;&#x7EDF;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF08;ML&#xFF09;&#x4E2D;&#xFF0C;&#x7279;&#x5F81;&#x9009;&#x62E9;&#x662F;&#x5BF9;&#x5F71;&#x54CD;&#x7ED3;&#x679C;&#x8F83;&#x4E0D;&#x660E;&#x663E;&#x7684; <strong>&#x56E0;&#x53D8;&#x91CF;&#xFF08;Independent Variables&#xFF09;</strong> &#xFF0C;&#x4EE5;&#x4E00;&#x7CFB;&#x5217;&#x5904;&#x7406;&#x624B;&#x6BB5;&#xFF0C;&#x8F6C;&#x6362;&#x4E3A;&#x8F83;&#x4E3A;&#x660E;&#x663E;&#x7684; <strong>&#x5173;&#x7CFB;&#x53C2;&#x6570;&#xFF08;Related Parameters&#xFF09;</strong>&#x8868;&#x793A;&#xFF0C;&#x4ECE;&#x800C;&#x53D1;&#x6398;&#x51FA;&#x6F5C;&#x85CF;&#x5F71;&#x54CD;&#x56E0;&#x7D20;&#x3002;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#x6240;&#x4EA7;&#x751F;&#x7684;&#x5355;&#x6B21;&#x5F71;&#x54CD;&#x56E0;&#x5B50;&#x53C2;&#x6570;&#xFF0C;&#x6784;&#x6210;&#x7684;&#x4E00;&#x7EC4;&#x6807;&#x91CF;&#x6570;&#x7EC4;&#xFF0C;&#x5C31;&#x662F; <strong>&#x7279;&#x5F81;&#x5411;&#x91CF;&#xFF08;Feature Vector&#xFF09;</strong> &#x3002;&#x800C;&#x5BF9;&#x5168;&#x4F53;&#x6837;&#x672C;&#x8FDB;&#x884C;&#x76F8;&#x540C;&#x6D41;&#x7A0B;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x96C6;&#x5408;&#xFF0C;&#x5373;&#x662F; <strong>&#x8BAD;&#x7EC3;&#x7279;&#x5F81;&#x96C6;&#xFF08;Training Feature Set&#xFF09;</strong>&#x3002;</p>
+<p>&#x5DE5;&#x7A0B;&#x4E0A;&#xFF0C;&#x8BAD;&#x7EC3;&#x7279;&#x5F81;&#x96C6; &#x901A;&#x5E38;&#x4EE5; <strong>&#x4E00;&#x6279;&#x6B21;&#xFF08;1 Batch&#xFF09;</strong> &#x6837;&#x672C;&#x8BA1;&#x7B97;&#x540E;&#xFF0C;&#x7531;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x8F93;&#x51FA;&#x7684;&#x5F53;&#x524D;&#x6743;&#x91CD;&#x4E0B;&#xFF0C;&#x8F93;&#x5165;&#x6837;&#x672C;&#x7684;&#x62BD;&#x8C61;&#x975E;&#x96F6;&#x89E3;&#x96C6;&#x6784;&#x6210;&#x3002;&#x8FD9;&#x4E2A;&#x8F93;&#x51FA;&#x7684;&#x62BD;&#x8C61;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x624D;&#x662F;&#x6B63;&#x771F;&#x88AB;&#x6211;&#x4EEC;&#x7528;&#x6765;&#x8861;&#x91CF;&#x5F53;&#x524D;&#x8FED;&#x4EE3;&#x7ED3;&#x679C;&#x60C5;&#x51B5;&#x7684;&#x51B3;&#x5B9A;&#x6570;&#x636E;&#x3002;&#x5373;&#xFF0C;<strong>&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF08;Loss Function&#xFF09;&#x4F5C;&#x7528;&#x7684;&#x90E8;&#x5206;</strong> &#x3002;</p>
+<p>&#x800C;&#x7279;&#x5F81;&#x9009;&#x62E9;&#xFF0C;&#x6B63;&#x662F;&#x5BF9;&#x5982;&#x4F55;&#x83B7;&#x53D6;&#x6EE1;&#x8DB3;&#x6A21;&#x578B;&#x76EE;&#x6807;&#x7684;&#x7279;&#x5F81;&#x548C;&#x8BAD;&#x7EC3;&#x7279;&#x5F81;&#x96C6;&#x7684;&#x65B9;&#x6CD5;&#x8BBA;&#x3002;</p>
+<p>&#x5E38;&#x7528;&#x7684;&#x7279;&#x5F81;&#x9009;&#x62E9;&#x65B9;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E09;&#x5927;&#x7C7B;&#x522B;&#xFF1A;</p>
 <ul>
-<li><a href="Docs_4_1.html">4.1 &#x53D1;&#x5C55;&#x6982;&#x89C8;</a></li>
-<li><a href="Docs_4_2.html">4.2 &#x6A21;&#x578B;&#x5DE5;&#x7A0B;&#x57FA;&#x7840;</a><ul>
-<li><a href="Docs_4_2_1.html">4.2.1 &#x7B97;&#x5B50;&#xFF08;Operator&#xFF09;&amp; &#x5C42;&#xFF08;Layer&#xFF09;</a></li>
-<li><a href="Docs_4_2_2.html">4.2.2 &#x795E;&#x7ECF;&#x5143;&#xFF08;Neuron&#xFF09;</a></li>
-<li><a href="Docs_4_2_3.html">4.2.3 &#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF08;NN [Neural Network]&#xFF09;</a></li>
-<li><a href="Docs_4_2_4.html">4.2.4 &#x7279;&#x5F81;&#x9009;&#x62E9;&#xFF08;Feature Selection&#xFF09;</a></li>
+<li><strong>&#x8FC7;&#x6EE4;&#x6CD5;&#xFF08;Filtered&#xFF09;</strong> &#xFF0C;&#x4EE5;&#x76F8;&#x5173;&#x6027;&#x548C;&#x6269;&#x6563;&#x6027;&#x5BF9;&#x7279;&#x5F81;&#x8BC4;&#x5206;&#xFF0C;&#x91C7;&#x7528;&#x9608;&#x9650;&#x6CD5;&#x6216;&#x7B56;&#x7565;&#x6765;&#x7B5B;&#x9009;&#xFF1B;</li>
+<li><strong>&#x5305;&#x88F9;&#x6CD5;&#xFF08;Wrapped&#xFF09;</strong> &#xFF0C;&#x4EE5;&#x8BC4;&#x5206;&#x51FD;&#x6570;&#x6216;&#x9884;&#x6D4B;&#x6548;&#x679C;&#x6821;&#x9A8C;&#x8BC4;&#x5206;&#xFF0C;&#x7B5B;&#x9009;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7279;&#x5F81;&#xFF1B;</li>
+<li><strong>&#x5D4C;&#x5165;&#x6CD5;&#xFF08;Embedded&#xFF09;</strong> &#xFF0C;&#x4EE5;&#x5F71;&#x54CD;&#x6743;&#x91CD;&#x52A0;&#x5F3A;/&#x8870;&#x51CF;&#x5F71;&#x54CD;&#x8FC7;&#x7A0B;&#xFF0C;&#x7528;&#x6743;&#x91CD;&#x53D8;&#x6362;&#x51B3;&#x5B9A;&#x7279;&#x5F81;&#xFF1B;</li>
 </ul>
-</li>
-<li><a href="Docs_4_3.html">4.3 &#x7ECF;&#x5178;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#xFF08;Classic Activation Function&#xFF09;</a><ul>
-<li><a href="Docs_4_3_1.html">4.3.1 Sigmoid</a></li>
-<li><a href="Docs_4_3_2.html">4.3.2 Tanh</a></li>
-<li><a href="Docs_4_3_3.html">4.3.3 Softplus</a></li>
-<li><a href="Docs_4_3_4.html">4.3.4 ReLU &#x65CF; </a></li>
-<li><a href="Docs_4_3_5.html">4.3.5 ELU &amp; SELU</a></li>
-<li><a href="Docs_4_3_6.html">4.3.6 Mish</a></li>
-<li><a href="Docs_4_3_7.html">4.3.7 Swish &#x65CF; </a></li>
-</ul>
-</li>
-<li><a href="Docs_4_4.html">4.4 &#x8FDE;&#x63A5;&#x51FD;&#x6570;/&#x8870;&#x51CF;&#x51FD;&#x6570;&#xFF08;Connection/Attenuation Function&#xFF09;</a><ul>
-<li><a href="Docs_4_4_1.html">4.4.1 Dropout</a></li>
-<li><a href="Docs_4_4_2.html">4.4.2 Maxout</a></li>
-<li><a href="Docs_4_4_3.html">4.4.3 SoftMax</a></li>
-</ul>
-</li>
-<li><a href="Docs_4_5.html">4.5 &#x635F;&#x5931;&#x51FD;&#x6570;&#xFF08;Loss Function&#xFF09;</a><ul>
-<li><a href="Docs_4_5_1.html">4.5.1 &#x56DE;&#x5F52;&#x9879;-&#x5E73;&#x5747;&#x7EDD;&#x5BF9;&#x8BEF;&#x5DEE;&#xFF08;MAE [Mean Absolute Error]&#xFF09;</a></li>
-<li><a href="Docs_4_5_2.html">4.5.2 &#x56DE;&#x5F52;&#x9879;-&#x5747;&#x65B9;&#x8BEF;&#x5DEE;&#xFF08;MSE [Mean Squared Error]&#xFF09;</a></li>
-<li><a href="Docs_4_5_3.html">4.5.3 &#x56DE;&#x5F52;&#x9879;-&#x4F11;&#x4F2F;&#x635F;&#x5931;&#xFF08;Huber Loss&#xFF09;</a></li>
-<li><a href="Docs_4_5_4.html">4.5.4 &#x56DE;&#x5F52;&#x9879;-&#x5206;&#x4F4D;&#x6570;&#x635F;&#x5931;&#xFF08;Quantile Loss&#xFF09;</a></li>
-<li><a href="Docs_4_5_5.html">4.5.5 &#x5206;&#x7C7B;&#x9879;-&#x5BF9;&#x6570;&#x635F;&#x5931;&#xFF08;Log Loss&#xFF09;</a></li>
-<li><a href="Docs_4_5_6.html">4.5.6 &#x5206;&#x7C7B;&#x9879;-&#x4EA4;&#x53C9;&#x71B5;&#x635F;&#x5931;&#xFF08;Cross Entropy Loss&#xFF09;</a></li>
-<li><a href="Docs_4_5_7.html">4.5.7 &#x5206;&#x7C7B;&#x9879;-&#x5408;&#x9875;&#x635F;&#x5931;&#xFF08;Hinge Loss&#xFF09;</a></li>
-<li><a href="Docs_4_5_8.html">4.5.8 &#x5206;&#x7C7B;&#x9879;-&#x5BF9;&#x6BD4;&#x635F;&#x5931;&#xFF08;Contrastive Loss&#xFF09;</a></li>
-<li><a href="Docs_4_5_9.html">4.5.9 &#x5206;&#x7C7B;&#x9879;-&#x4E09;&#x5143;&#x635F;&#x5931;&#xFF08;Triplet Loss&#xFF09;</a></li>
-<li><a href="Docs_4_5_10.md">4.5.10 &#x5206;&#x7C7B;&#x9879;-&#x5BF9;&#x7EC4;&#x6392;&#x5F02;&#x635F;&#x5931;&#xFF08;N-Pair Loss&#xFF09;</a></li>
-<li><a href="Docs_4_5_11.md">4.5.11 &#x6B63;&#x5219;&#x9879;-L1 &#x60E9;&#x7F5A;</a></li>
-<li><a href="Docs_4_5_12.md">4.5.12 &#x6B63;&#x5219;&#x9879;-L2 &#x60E9;&#x7F5A;</a></li>
-</ul>
-</li>
-<li><a href="Docs_4_6.html">4.6 &#x5E38;&#x7528;&#x6700;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#xFF08;Optimizer Operator&#xFF09;</a><ul>
-<li><a href="Docs_4_6_1.md">4.6.1 &#x57FA;&#x7840;&#x4F18;&#x5316;&#x7B97;&#x6CD5;</a></li>
-<li><a href="Docs_4_6_2.md">4.6.2 &#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x7684;&#x4F18;&#x5316;-&#x5E94;&#x5BF9;&#x9707;&#x8361;</a></li>
-<li><a href="Docs_4_6_3.md">4.6.3 &#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x7684;&#x4F18;&#x5316;-&#x5E94;&#x5BF9;&#x91CD;&#x70B9;&#x5F3A;&#xFF08;&#x5F31;&#xFF09;&#x5316;&#x66F4;&#x65B0;</a></li>
-<li><a href="Docs_4_6_4.md">4.6.4 &#x81EA;&#x9002;&#x5E94;&#x5B9E;&#x65F6;&#x8BC4;&#x4F30;&#x7B97;&#x6CD5;&#xFF08;Adam [Adaptive Moment Estimation]&#xFF09;</a></li>
-</ul>
-</li>
-<li><a href="Docs_4_7.html">4.7 &#x6A21;&#x578B;&#x7ED3;&#x6784;&#x901F;&#x89C8;</a><ul>
-<li><a href="Docs_4_7_1.md">4.7.1 &#x7ECF;&#x5178;&#x6A21;&#x578B;&#xFF1A;CNN &amp; RNN</a></li>
-<li><a href="Docs_4_7_2.md">4.7.2 &#x7ECF;&#x5178;&#x6A21;&#x578B;&#xFF1A;GAN</a></li>
-<li><a href="Docs_4_7_3.md">4.7.3 &#x7ECF;&#x5178;&#x6A21;&#x578B;&#xFF1A;Transformer</a></li>
-</ul>
-</li>
-<li><a href="References_4.html">&#x3010;&#x53C2;&#x8003;&#x6587;&#x732E;&#x3011;</a></li>
-</ul>
+<p>&#x91C7;&#x7528;&#x4E0D;&#x540C;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x7684;&#x8BAD;&#x7EC3;&#x96C6;&#xFF0C;&#x4E5F;&#x6839;&#x636E;&#x65B9;&#x6CD5;&#x7684;&#x9009;&#x62E9;&#x60C5;&#x51B5;&#xFF0C;&#x88AB;&#x5206;&#x522B;&#x79F0;&#x4E3A; <strong>&#x8FC7;&#x6EE4;&#x96C6;&#xFF08;Filterings&#xFF09;</strong> &#x3001; <strong>&#x5305;&#x88F9;&#x96C6;&#xFF08;Wrappings&#xFF09;</strong> &#x3001; <strong>&#x5D4C;&#x5165;&#x96C6;&#xFF08;Embeddings&#xFF09;</strong> &#x3002;</p>
+<p>&#x663E;&#x7136;&#xFF0C;&#x5728;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x4E2D;&#xFF0C;&#x88AB;&#x6279;&#x91CF;&#x4F7F;&#x7528;&#x7684;&#x7279;&#x5F81;&#x9009;&#x62E9;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x5D4C;&#x5165;&#x6CD5;&#x3002;</p>
+<h2 id="&#x5D4C;&#x5165;&#x96C6;&#xFF08;embeddings&#xFF09;"><strong>&#x5D4C;&#x5165;&#x96C6;&#xFF08;Embeddings&#xFF09;</strong></h2>
+<p>&#x7ECF;&#x7531;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x62BD;&#x8C61;&#x9AD8;&#x7EF4;&#x7279;&#x5F81;&#x7684;&#x8F93;&#x51FA;&#x5411;&#x91CF;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x88AB;&#x6211;&#x4EEC;&#x79F0;&#x4E3A;&#x5D4C;&#x5165;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x7EC4;&#xFF08;Embeddings of Low-Dimesional Features&#xFF09;&#xFF0C;&#x7B80;&#x79F0;&#x5D4C;&#x5165;&#x96C6;&#xFF08;Embeddings&#xFF09;&#x3002;&#x4E0E;&#x7279;&#x5F81;&#x5DE5;&#x7A0B;&#x7684;&#x76F8;&#x5173;&#x79F0;&#x8C13;&#x540C;&#x540D;&#xFF0C;&#x5E76;&#x4E0D;&#x77DB;&#x76FE;&#x3002;
+&#x5B83;&#x65E2;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x7EC4;&#x7531; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>&#xD7;</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n \times m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.58333em;"></span><span class="strut bottom" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mbin">&#xD7;</span><span class="mord mathit">m</span></span></span></span> &#x7684;&#x5411;&#x91CF;&#x6784;&#x6210;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x5982;&#x4E0B; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>&#xD7;</mo><mi>m</mi><mo>=</mo><mn>8</mn><mo>&#xD7;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n \times m = 8 \times 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mbin">&#xD7;</span><span class="mord mathit">m</span><span class="mrel">=</span><span class="mord mathrm">8</span><span class="mbin">&#xD7;</span><span class="mord mathrm">1</span></span></span></span> &#x6709;&#xFF1A;</p>
+<pre><code class="lang-C">double embeddings[BATCH_SIZE][VECTOR_SIZE] = {
+    {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0},
+    {4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0}, /* ... */
+};
+</code></pre>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5355;&#x7EAF;&#x7684;&#x8BC4;&#x4F30;&#x6570;&#x636E;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>&#xD7;</mo><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n \times m = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mbin">&#xD7;</span><span class="mord mathit">m</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span> &#x7684;&#x5411;&#x91CF;&#x7EC4;&#x6210;&#xFF1A;</p>
+<pre><code class="lang-C">double predictions[BATCH_SIZE] = {
+    0.1, 0.8, 0.2, 0.3, 0.5, 0.7, 1.0, 0.9, /* ... */
+};
+</code></pre>
+<p>&#x5373;&#xFF0C;&#x7EC4;&#x6210;&#x5D4C;&#x5165;&#x96C6;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x5F62;&#x5F0F;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x7279;&#x6B8A;&#x7684;&#x8981;&#x6C42;&#x3002;&#x4F46;&#x5F80;&#x5F80;&#x9700;&#x8981;&#x6839;&#x636E;&#x91C7;&#x7528;&#x7684;&#x635F;&#x5931;&#x51FD;&#x6570;&#x6765;&#x51B3;&#x5B9A;&#x6700;&#x7EC8;&#x7684;&#x683C;&#x5F0F;&#x3002;&#x8FD9;&#x4E00;&#x70B9;&#x5728;&#x5B9E;&#x8DF5;&#x4E2D;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;&#x7531;&#x4E8E;&#x8BC4;&#x4F30;&#x6570;&#x636E;&#x5E38;&#x7528;&#x4E8E;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#xFF0C;&#x533A;&#x522B;&#x8D77;&#x89C1;&#x88AB;&#x79F0;&#x4E3A; <strong>&#x9884;&#x6D4B;&#x96C6;&#xFF08;Predictions&#xFF09;</strong>&#x3002;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x57FA;&#x672C;&#x638C;&#x63E1;&#x4E86;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7684;&#x5165;&#x95E8;&#x6982;&#x5FF5;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x5206;&#x6B65;&#x6765;&#x770B;&#xFF0C;&#x4E00;&#x4E2A;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x5177;&#x4F53;&#x7EC6;&#x8282;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2024-01-03 11:34:03
+2024-01-03 11:33:25
 </span></footer>
                                 
                                 </section>
@@ -1784,12 +1746,12 @@
 
             
                 
-                <a href="../../../Chapter_3/Language/cn/References_3.html" class="navigation navigation-prev " aria-label="Previous page: 【参考文献】">
+                <a href="Docs_4_2_3.html" class="navigation navigation-prev " aria-label="Previous page: 4.2.3 神经网络（NN [Neural Network]）">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Docs_4_1.html" class="navigation navigation-next " aria-label="Next page: 4.1 发展概览">
+                <a href="Docs_4_3.html" class="navigation navigation-next " aria-label="Next page: 4.3 经典激活函数（Classic Activation Function）">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1800,7 +1762,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"四、音视频机器学习基础","level":"1.4","depth":1,"next":{"title":"4.1 发展概览","level":"1.4.1","depth":2,"path":"Chapter_4/Language/cn/Docs_4_1.md","ref":"Chapter_4/Language/cn/Docs_4_1.md","articles":[]},"previous":{"title":"【参考文献】","level":"1.3.7","depth":2,"path":"Chapter_3/Language/cn/References_3.md","ref":"Chapter_3/Language/cn/References_3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-highlight","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_4/Language/cn/Apex_4_Introduce.md","mtime":"2024-01-03T03:34:03.780Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-03T04:13:58.015Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.2.4 特征选择（Feature Selection）","level":"1.4.2.4","depth":3,"next":{"title":"4.3 经典激活函数（Classic Activation Function）","level":"1.4.3","depth":2,"path":"Chapter_4/Language/cn/Docs_4_3.md","ref":"Chapter_4/Language/cn/Docs_4_3.md","articles":[{"title":"4.3.1 Sigmoid","level":"1.4.3.1","depth":3,"path":"Chapter_4/Language/cn/Docs_4_3_1.md","ref":"Chapter_4/Language/cn/Docs_4_3_1.md","articles":[]},{"title":"4.3.2 Tanh","level":"1.4.3.2","depth":3,"path":"Chapter_4/Language/cn/Docs_4_3_2.md","ref":"Chapter_4/Language/cn/Docs_4_3_2.md","articles":[]},{"title":"4.3.3 Softplus","level":"1.4.3.3","depth":3,"path":"Chapter_4/Language/cn/Docs_4_3_3.md","ref":"Chapter_4/Language/cn/Docs_4_3_3.md","articles":[]},{"title":"4.3.4 ReLU 族 ","level":"1.4.3.4","depth":3,"path":"Chapter_4/Language/cn/Docs_4_3_4.md","ref":"Chapter_4/Language/cn/Docs_4_3_4.md","articles":[]},{"title":"4.3.5 ELU & SELU","level":"1.4.3.5","depth":3,"path":"Chapter_4/Language/cn/Docs_4_3_5.md","ref":"Chapter_4/Language/cn/Docs_4_3_5.md","articles":[]},{"title":"4.3.6 Mish","level":"1.4.3.6","depth":3,"path":"Chapter_4/Language/cn/Docs_4_3_6.md","ref":"Chapter_4/Language/cn/Docs_4_3_6.md","articles":[]},{"title":"4.3.7 Swish 族 ","level":"1.4.3.7","depth":3,"path":"Chapter_4/Language/cn/Docs_4_3_7.md","ref":"Chapter_4/Language/cn/Docs_4_3_7.md","articles":[]}]},"previous":{"title":"4.2.3 神经网络（NN [Neural Network]）","level":"1.4.2.3","depth":3,"path":"Chapter_4/Language/cn/Docs_4_2_3.md","ref":"Chapter_4/Language/cn/Docs_4_2_3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-highlight","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_4/Language/cn/Docs_4_2_4.md","mtime":"2024-01-03T03:33:25.400Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-03T04:13:58.015Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
