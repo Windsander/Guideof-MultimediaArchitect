@@ -88,4 +88,5 @@
         "__locale": "c",
         "random": "c"
     },
+    "C_Cpp.errorSquiggles": "disabled",
 }

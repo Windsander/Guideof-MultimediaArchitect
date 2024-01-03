@@ -149,11 +149,11 @@
 
 * [四、音视频机器学习基础](Chapter_4/Language/cn/Apex_4_Introduce.md)
 	* [4.1 发展概览](Chapter_4/Language/cn/Docs_4_1.md)
-	* [4.2 模型结构速览](Chapter_4/Language/cn/Docs_4_2.md)
+	* [4.2 模型工程基础](Chapter_4/Language/cn/Docs_4_2.md)
 		* [4.2.1 算子（Operator）& 层（Layer）](Chapter_4/Language/cn/Docs_4_2_1.md)
-		* [4.2.2 经典模型：CNN & RNN](Chapter_4/Language/cn/Docs_4_2_2.md)
-		* [4.2.3 经典模型：GAN](Chapter_4/Language/cn/Docs_4_2_3.md)
-		* [4.2.4 经典模型：Transformer](Chapter_4/Language/cn/Docs_4_2_4.md)
+		* [4.2.2 神经元（Neuron）](Chapter_4/Language/cn/Docs_4_2_2.md)
+		* [4.2.3 神经网络（NN [Neural Network]）](Chapter_4/Language/cn/Docs_4_2_3.md)
+		* [4.2.4 特征选择（Feature Selection）](Chapter_4/Language/cn/Docs_4_2_4.md)
 	* [4.3 经典激活函数（Classic Activation Function）](Chapter_4/Language/cn/Docs_4_3.md)
 		* [4.3.1 Sigmoid](Chapter_4/Language/cn/Docs_4_3_1.md)
 		* [4.3.2 Tanh](Chapter_4/Language/cn/Docs_4_3_2.md)
@@ -184,6 +184,10 @@
 		* [4.6.2 优化算法的优化-应对震荡](Chapter_4/Language/cn/Docs_4_6_2.md)
 		* [4.6.3 优化算法的优化-应对重点强（弱）化更新](Chapter_4/Language/cn/Docs_4_6_3.md)
 		* [4.6.4 自适应实时评估算法（Adam [Adaptive Moment Estimation]）](Chapter_4/Language/cn/Docs_4_6_4.md)
+	* [4.7 模型结构速览](Chapter_4/Language/cn/Docs_4_7.md)
+		* [4.7.1 经典模型：CNN & RNN](Chapter_4/Language/cn/Docs_4_7_1.md)
+		* [4.7.2 经典模型：GAN](Chapter_4/Language/cn/Docs_4_7_2.md)
+		* [4.7.3 经典模型：Transformer](Chapter_4/Language/cn/Docs_4_7_3.md)
     * [【参考文献】](Chapter_4/Language/cn/References_4.md)
 
 <br>
