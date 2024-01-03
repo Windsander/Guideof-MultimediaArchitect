@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 03 Jan 2024 04:16:03 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 03 Jan 2024 11:29:17 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -668,6 +668,27 @@
             <description><![CDATA[迭代公式：]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_9.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_9.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.5.10 分类项-对组排异损失（N-Pair Loss）]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_10.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_10.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.5.11 正则项-L1 惩罚]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_11.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_11.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.5.12 正则项-L2 惩罚]]></title>
+            <description><![CDATA[迭代公式：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_12.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_5_12.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>

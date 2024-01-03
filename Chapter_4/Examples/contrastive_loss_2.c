@@ -1,6 +1,7 @@
 #include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #define BATCH_SIZE 10     // Batch_size = Samples_of_Person x Data/Person
 #define VECTOR_SIZE 128   // Extract output layer Feature vector's dimissions
