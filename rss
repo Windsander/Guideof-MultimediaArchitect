@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 03 Jan 2024 11:29:17 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 04 Jan 2024 08:42:33 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -692,10 +692,45 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[4.6 常用最优化算法（Optimizer Operator）]]></title>
-            <description><![CDATA[WIP]]></description>
+            <title><![CDATA[4.6 优化算法/优化器（Optimizer）]]></title>
+            <description><![CDATA[优化算法（Optimize Function） 是一种更快实现权重更新的处理办法。常用优化算法能够根据梯度方向和一些其他的关键信息，对当前权重作出更有效率的更新，降低训练所需要的迭代次数，同时提高模型鲁棒性。根据其相对固定的作用位置，在工程中，部署优化算法的 关键单一组件 ，被称为 优化器（Optimizer） 。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.6.1 经典优化算法（Classic Optimize Function）]]></title>
+            <description><![CDATA[常用的经典优化算法，主要有三种，分别是：随即梯度下降法（SGD）、批量梯度下降法（BGD）、小批梯度下降法（MBGD）。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.6.2 优化算法的优化-应对震荡]]></title>
+            <description><![CDATA[常用的减震算法，比较容易想到的就是利用 阻尼运动特性 和 加速度 ，即 动量（Momentum） ，来减小离散瞬时值的影响。因此，先贤们首先想到的就是梯度迭代动量化。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.6.3 优化算法的优化-应对重点强（弱）化更新]]></title>
+            <description><![CDATA[另一个问题，就是针对性处理对结果影响更大/更小的权重，让重要的迭代的迭代更谨慎，而不重要的获得更快衰减。以保证优势权重，剔除不必要影响。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.6.4 自适应实时评估算法（Adam [Adaptive Moment Estimation]）]]></title>
+            <description><![CDATA[自适应实时评估算法（Adam [Adaptive Moment Estimation]），相当于RMSprop 和 Momentum 结合的一种算法，标准Adam 可以认为是 一阶AdaDelta 的动量改进版。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.6.5 优化算法对比与使用建议]]></title>
+            <description><![CDATA[这里引用一下特斯拉人工智能主管 安德烈·卡尔帕蒂（Andrej Karpathy） 的 在线 Demo（使用的是 pytouch） ，来做一下演示。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6_5.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>

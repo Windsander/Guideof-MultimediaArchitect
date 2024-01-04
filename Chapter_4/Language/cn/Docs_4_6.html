@@ -90,7 +90,7 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Docs_4_6_1.md" />
+    <link rel="next" href="Docs_4_6_1.html" />
     
     
     <link rel="prev" href="Docs_4_5_12.html" />
@@ -1511,9 +1511,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.6.1" data-path="Docs_4_6_1.md">
+        <li class="chapter " data-level="1.4.6.1" data-path="Docs_4_6_1.html">
             
-                <span>
+                <a href="Docs_4_6_1.html">
             
                     
                     4.6.1 基础优化算法
@@ -1524,9 +1524,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6.2" data-path="Docs_4_6_2.md">
+        <li class="chapter " data-level="1.4.6.2" data-path="Docs_4_6_2.html">
             
-                <span>
+                <a href="Docs_4_6_2.html">
             
                     
                     4.6.2 优化算法的优化-应对震荡
@@ -1537,9 +1537,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6.3" data-path="Docs_4_6_3.md">
+        <li class="chapter " data-level="1.4.6.3" data-path="Docs_4_6_3.html">
             
-                <span>
+                <a href="Docs_4_6_3.html">
             
                     
                     4.6.3 优化算法的优化-应对重点强（弱）化更新
@@ -1550,12 +1550,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6.4" data-path="Docs_4_6_4.md">
+        <li class="chapter " data-level="1.4.6.4" data-path="Docs_4_6_4.html">
             
-                <span>
+                <a href="Docs_4_6_4.html">
             
                     
                     4.6.4 自适应实时评估算法（Adam [Adaptive Moment Estimation]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.5" data-path="Docs_4_6_5.html">
+            
+                <a href="Docs_4_6_5.html">
+            
+                    
+                    4.6.5 优化算法对比与使用建议
             
                 </a>
             
@@ -1689,20 +1702,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="46-&#x5E38;&#x7528;&#x6700;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#xFF08;optimizer-operator&#xFF09;">4.6 &#x5E38;&#x7528;&#x6700;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#xFF08;Optimizer Operator&#xFF09;</h1>
-<p><strong>WIP</strong> </p>
+                                <h1 id="46-&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x4F18;&#x5316;&#x5668;&#xFF08;optimizer&#xFF09;">4.6 &#x4F18;&#x5316;&#x7B97;&#x6CD5;/&#x4F18;&#x5316;&#x5668;&#xFF08;Optimizer&#xFF09;</h1>
+<p><strong>&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#xFF08;Optimize Function&#xFF09;</strong> &#x662F;&#x4E00;&#x79CD;&#x66F4;&#x5FEB;&#x5B9E;&#x73B0;&#x6743;&#x91CD;&#x66F4;&#x65B0;&#x7684;&#x5904;&#x7406;&#x529E;&#x6CD5;&#x3002;&#x5E38;&#x7528;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x80FD;&#x591F;&#x6839;&#x636E;&#x68AF;&#x5EA6;&#x65B9;&#x5411;&#x548C;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7684;&#x5173;&#x952E;&#x4FE1;&#x606F;&#xFF0C;&#x5BF9;&#x5F53;&#x524D;&#x6743;&#x91CD;&#x4F5C;&#x51FA;&#x66F4;&#x6709;&#x6548;&#x7387;&#x7684;&#x66F4;&#x65B0;&#xFF0C;&#x964D;&#x4F4E;&#x8BAD;&#x7EC3;&#x6240;&#x9700;&#x8981;&#x7684;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#xFF0C;&#x540C;&#x65F6;&#x63D0;&#x9AD8;&#x6A21;&#x578B;&#x9C81;&#x68D2;&#x6027;&#x3002;&#x6839;&#x636E;&#x5176;&#x76F8;&#x5BF9;&#x56FA;&#x5B9A;&#x7684;&#x4F5C;&#x7528;&#x4F4D;&#x7F6E;&#xFF0C;&#x5728;&#x5DE5;&#x7A0B;&#x4E2D;&#xFF0C;&#x90E8;&#x7F72;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x7684; <strong>&#x5173;&#x952E;&#x5355;&#x4E00;&#x7EC4;&#x4EF6;</strong> &#xFF0C;&#x88AB;&#x79F0;&#x4E3A; <strong>&#x4F18;&#x5316;&#x5668;&#xFF08;Optimizer&#xFF09;</strong> &#x3002;</p>
 <center>
 <figure>
-   <img width="600" height="450" src="../../Pictures/Neuron_5.png" alt="">
+   <img width="600" height="420" src="../../Pictures/Neuron_5.png" alt="">
     <figcaption>
-      <p>&#x56FE; 4.5-1 &#x635F;&#x5931;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x9636;&#x6BB5;&#xFF08;&#x56FE;&#x4E2D;&#x84DD;&#x8272;&#x7EBF;&#x6761;&#xFF09;&#x793A;&#x610F;&#x56FE;</p>
+      <p>&#x56FE; 4.6-1 &#x4F18;&#x5316;&#x5668;&#x4F5C;&#x7528;&#x9636;&#x6BB5;&#xFF08;&#x56FE;&#x4E2D;&#x84DD;&#x8272;&#x7EBF;&#x6761;&#xFF09;&#x793A;&#x610F;&#x56FE;</p>
    </figcaption>
 </figure>
 </center>
 
-<p><strong>WIP</strong> </p>
+<p>&#x4F18;&#x5316;&#x5668;&#x8D77;&#x4F5C;&#x7528;&#x4E8E; <strong>&#x9690;&#x85CF;&#x5C42;&#xFF08;Hidden Layer&#xFF09;</strong> &#x7684;&#x8BAD;&#x7EC3;&#x4E2D;&#x7279;&#x5F81;&#x6743;&#x91CD;&#x7684;&#x52A0;&#x901F;&#x8FED;&#x4EE3;&#xFF0C;&#x6240;&#x4EE5;&#x751F;&#x6548;&#x9636;&#x6BB5;&#x5728;&#x6BCF;&#x4E00; <strong>&#x65F6;&#x4EE3;&#xFF08;Epoch&#xFF09;</strong> &#x540E;&#xFF0C;&#x5B8C;&#x6210; <strong>&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF08;Cost&#xFF09;</strong> &#x8BA1;&#x7B97;&#x7684; <strong>&#x7ED3;&#x7B97;&#x4F4D;&#x7F6E;</strong> &#x3002;</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2024-01-03 13:21:18
+2024-01-04 13:21:15
 </span></footer>
                                 
                                 </section>
@@ -1735,7 +1748,7 @@
                 </a>
                 
                 
-                <a href="Docs_4_6_1.md" class="navigation navigation-next " aria-label="Next page: 4.6.1 基础优化算法">
+                <a href="Docs_4_6_1.html" class="navigation navigation-next " aria-label="Next page: 4.6.1 基础优化算法">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1746,7 +1759,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.6 常用最优化算法（Optimizer Operator）","level":"1.4.6","depth":2,"next":{"title":"4.6.1 基础优化算法","level":"1.4.6.1","depth":3,"path":"Chapter_4/Language/cn/Docs_4_6_1.md","ref":"Chapter_4/Language/cn/Docs_4_6_1.md","articles":[]},"previous":{"title":"4.5.12 正则项-L2 惩罚","level":"1.4.5.12","depth":3,"path":"Chapter_4/Language/cn/Docs_4_5_12.md","ref":"Chapter_4/Language/cn/Docs_4_5_12.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-highlight","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_4/Language/cn/Docs_4_6.md","mtime":"2024-01-03T05:21:18.750Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-03T11:28:22.450Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.6 常用最优化算法（Optimizer Operator）","level":"1.4.6","depth":2,"next":{"title":"4.6.1 基础优化算法","level":"1.4.6.1","depth":3,"path":"Chapter_4/Language/cn/Docs_4_6_1.md","ref":"Chapter_4/Language/cn/Docs_4_6_1.md","articles":[]},"previous":{"title":"4.5.12 正则项-L2 惩罚","level":"1.4.5.12","depth":3,"path":"Chapter_4/Language/cn/Docs_4_5_12.md","ref":"Chapter_4/Language/cn/Docs_4_5_12.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-highlight","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_4/Language/cn/Docs_4_6.md","mtime":"2024-01-04T05:21:15.200Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-04T08:42:12.020Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
