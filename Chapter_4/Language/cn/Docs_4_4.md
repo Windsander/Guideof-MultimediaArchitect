@@ -9,7 +9,7 @@
       width = "500" height = "340"
       src="../../Pictures/Neuron_3.png" alt="">
     <figcaption>
-      <p>图 4.4-1连接函数作用阶段（图中蓝色线条）示意图</p>
+      <p>图 4.4-1 连接函数作用阶段（图中蓝色线条）示意图</p>
    </figcaption>
 </figure>
 </center>
