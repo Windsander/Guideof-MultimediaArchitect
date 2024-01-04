@@ -1,7 +1,7 @@
 
-# 4.6.5 优化算法的优化-应对重点强（弱）化更新
+# 4.6.5 优化算法对比与使用建议
 
-这里引用一下特斯拉人工智能主管 **安德烈·卡尔帕蒂（Andrej Karpathy ）** 的 在线 Demo（使用的是 pytouch） ，来做一下演示。
+这里引用一下特斯拉人工智能主管 **[安德烈·卡尔帕蒂（Andrej Karpathy）](https://github.com/karpathy)** 的 在线 Demo（使用的是 pytouch） ，来做一下演示。
 
 我们需要将脚本改成如下（增加 Adam）：
 
@@ -40,6 +40,8 @@ legend = ['sgd', 'sgd+momentum', 'Nesterov', 'AdaGrad', 'AdaDelta', 'Adam'];
 </figure>
 </center>
 
+<br>
+
 感兴趣的读者，可以自行前往地址：
 
 https://cs.stanford.edu/people/karpathy/convnetjs/demo/trainers.html
@@ -50,7 +52,7 @@ https://cs.stanford.edu/people/karpathy/convnetjs/demo/trainers.html
 
 **但 Adam 综合表现始终良好，证明了其优秀的可用性。**
 
-至此，我们可以大致得出结论：
+至此，我们可以得出大致结论：
 
 - **如果数据稠密** ，实际上简单的算法就能得到鲁棒性很好的结果，这时候我感觉应该使用 SGD+Momentum 或 MBGD+Momentum 就能很好的处理得到结果，加动量既可以保证相对快的训练速度，也可以一定程度避免局部最小值。
 

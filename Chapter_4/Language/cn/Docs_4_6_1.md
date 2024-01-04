@@ -52,10 +52,10 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-  \text{粒度：}        &\text{小}   \   &SGD < MBGD < BGD   \quad   &\text{大} \\
-  \text{速度：}        &\text{慢}   \   &BGD < MBGD < SGD   \quad   &\text{快} \\
-  \text{收敛：}        &\text{低}   \   &SGD < MBGD < BGD   \quad   &\text{高} \\
-  \text{过拟合：}      &\text{低}   \   &SGD < MBGD < BGD   \quad   &\text{高} \\
+  \text{粒度:}        &\text{小}   \   &SGD < MBGD < BGD   \quad   &\text{大} \\
+  \text{速度:}        &\text{慢}   \   &BGD < MBGD < SGD   \quad   &\text{快} \\
+  \text{收敛:}        &\text{低}   \   &SGD < MBGD < BGD   \quad   &\text{高} \\
+  \text{过拟合:}      &\text{低}   \   &SGD < MBGD < BGD   \quad   &\text{高} \\
  \end{aligned}
 }
 $$
