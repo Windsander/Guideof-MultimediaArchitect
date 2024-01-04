@@ -294,7 +294,7 @@ $$
         \begin{aligned}
           T &= [\ T_{4 \times 4}\prime,\ T_{8 \times 8}\prime \ ]  \\
           \hat{X}_k\prime &= (T_{8 \times 8}\prime  + T_{4 \times 4}\prime )\cdot X_k  &,   min(M ,\ N) = 8 \\
-          \hat{X}_k\prime &= T_{4 \times 4}\prime \cdot X_k                            &,   min(M ,\ N) = 4 \\
+          \hat{X}_k\prime &= T_{4 \times 4}\prime \cdot X_k                            &,   min(M ,\ N) = 4 
         \end{aligned}
    }
    \end{cases} \\
@@ -328,7 +328,7 @@ $$
         \begin{aligned}
           T &= [\ T_{4 \times 4}\prime,\ T_{8 \times 8}\prime \ ]  \\
           \hat{X}_k\prime &= T_{8 \times 8}\prime \cdot X_k\prime|_{48 \times 1}  &,   min(M ,\ N) = 8 \\
-          \hat{X}_k\prime &= T_{4 \times 4}\prime \cdot X_k                       &,   min(M ,\ N) = 4 \\
+          \hat{X}_k\prime &= T_{4 \times 4}\prime \cdot X_k                       &,   min(M ,\ N) = 4 
         \end{aligned}
    }
    \end{cases} \\
