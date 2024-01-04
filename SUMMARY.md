@@ -102,6 +102,7 @@
 		* [4.6.2 优化算法的优化-应对震荡](Chapter_4/Language/cn/Docs_4_6_2.md)
 		* [4.6.3 优化算法的优化-应对重点强（弱）化更新](Chapter_4/Language/cn/Docs_4_6_3.md)
 		* [4.6.4 自适应实时评估算法（Adam [Adaptive Moment Estimation]）](Chapter_4/Language/cn/Docs_4_6_4.md)
+		* [4.6.5 优化算法对比与使用建议](Chapter_4/Language/cn/Docs_4_6_5.md)
 	* [4.7 模型结构速览](Chapter_4/Language/cn/Docs_4_7.md)
 		* [4.7.1 经典模型：CNN & RNN](Chapter_4/Language/cn/Docs_4_7_1.md)
 		* [4.7.2 经典模型：GAN](Chapter_4/Language/cn/Docs_4_7_2.md)
