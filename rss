@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 04 Jan 2024 08:42:33 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 06 Jan 2024 10:17:26 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -735,9 +735,16 @@
         </item>
         <item>
             <title><![CDATA[4.7 模型结构速览]]></title>
-            <description><![CDATA[WIP]]></description>
+            <description><![CDATA[现在，基本了解了神经网络的主要工程元件后，即能设计简单模型结构，做一些训练了。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）]]></title>
+            <description><![CDATA[卷积神经网络（CNN [Convolutional Neural Network]） ，是对采用 卷积核（Convolutional Kernel），配合 层叠网格结构 构成的流水线，来进行特征提取的一类神经网络的统称。该类型最为擅长抽象图片或超二维（指时空性）信息类型的高维特征。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
