@@ -186,8 +186,8 @@
 		* [4.6.4 自适应实时评估算法（Adam [Adaptive Moment Estimation]）](Chapter_4/Language/cn/Docs_4_6_4.md)
 		* [4.6.5 优化算法对比与使用建议](Chapter_4/Language/cn/Docs_4_6_5.md)
 	* [4.7 模型结构速览](Chapter_4/Language/cn/Docs_4_7.md)
-		* [4.7.1 经典模型：CNN & RNN](Chapter_4/Language/cn/Docs_4_7_1.md)
-		* [4.7.2 经典模型：GAN](Chapter_4/Language/cn/Docs_4_7_2.md)
+		* [4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）](Chapter_4/Language/cn/Docs_4_7_1.md)
+		* [4.7.2 循环神经网络（RNN [Recurrent Neural Network]）](Chapter_4/Language/cn/Docs_4_7_2.md)
 		* [4.7.3 经典模型：Transformer](Chapter_4/Language/cn/Docs_4_7_3.md)
     * [【参考文献】](Chapter_4/Language/cn/References_4.md)
 

@@ -34,3 +34,11 @@
 **[16]** Sohn K. Improved deep metric learning with multi-class n-pair loss objective[J]. Advances in neural information processing systems, 2016, 29.
 
 **[17]** Hinton G, Srivastava N, Swersky K. Neural networks for machine learning lecture 6a overview of mini-batch gradient descent[J]. Cited on, 2012, 14(8): 2.
+
+**[18]** Teo Y S, Shin S, Jeong H, et al. Benchmarking quantum tomography completeness and fidelity with machine learning[J]. New Journal of Physics, 2021, 23(10): 103021.
+
+**[19]** Gao M, Wang Q, Lin Z, et al. Tuning Pre-trained Model via Moment Probing[C]//Proceedings of the IEEE/CVF International Conference on Computer Vision. 2023: 11803-11813.
+
+**[20]** Hochreiter, Sepp & Schmidhuber, Jürgen. (1997). Long Short-term Memory. Neural computation. 9. 1735-80. 10.1162/neco.1997.9.8.1735. 
+
+**[21]** Lee, Daeil & Koo, Seoryong & Jang, Inseok & Kim, Jonghyun. (2022). Comparison of Deep Reinforcement Learning and PID Controllers for Automatic Cold Shutdown Operation. Energies. 15. 2834. 10.3390/en15082834. 
