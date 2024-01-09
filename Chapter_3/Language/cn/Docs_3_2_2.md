@@ -13,7 +13,7 @@
       width = "330" height = "240"
       src="../../Pictures/bilateral_step_kernel.png" alt="">
     <figcaption>
-      <p>图 3.2.2-1 双边滤波经过灰度裁剪后，在轮廓边缘处的卷积核示意图 <a href="References_1.md">[13]</a></p>
+      <p>图 3.2.2-1 双边滤波经过灰度裁剪后，在轮廓边缘处的卷积核示意图 <a href="References_3.md">[13]</a></p>
    </figcaption>
 </figure>
 </center>

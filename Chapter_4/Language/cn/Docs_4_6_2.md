@@ -31,20 +31,6 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   \theta_t = \theta_{t-1} - \eta \dot{} \nabla_\theta J(\theta) \\
- \end{aligned}
-}
-$$
-
-每次迭代需要计算当前批次整个数据集 损失函数（Loss） ，更新梯度。所以每次计算的耗时比较高。对于大批量数据来说，比较难以处理，更新不实时。简单的说，就是粒度太大。
-
-## **小批梯度下降法（MBGD [Mini-Batch Gradient Descent]）**
-
-**迭代公式：**
-
-$$
-{\displaystyle 
- \begin{aligned}
    v_t &= \gamma v_{t-1} + \eta \nabla_\theta J(\theta-\gamma v_{t-1}) \\
    \theta_t &= \theta_{t-1} - v_t \\
  \end{aligned}
