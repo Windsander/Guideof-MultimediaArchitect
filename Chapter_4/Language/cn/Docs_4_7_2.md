@@ -173,7 +173,9 @@ $$
 - 音视频生成，如：音乐生成、视频生成、合成编辑、自动裁剪等；
 - 时序预测，如：股票分析、气象预测、医疗诊断等；
 
-不过随着 Transformer 的兴起，RNN 的地位目前（指 2023）面临着极大挑战。以 NLP 方向举例，2023 年中的 Google Bard（RNN） 大战 OpenAI ChatGPT（Transformer） ，以 Bard 的糟糕（相对）表现失败告终。最终促成了 Google 不得不加速推进了以 Transformer 为主体的  Gemini 大语言模型（LLM）发布，才扳回颜面。
+不过随着 Transformer 的兴起，RNN 在 NLP 领域的地位早已面临着极大挑战（自 2018 年 BERT 达成 SOTA 以来）。2023 年中的 Google Bard（BERT，GPT-3，Transformer） 大战 OpenAI ChatGPT-4（ChatGPT-4，Transformer） ，以 Bard 的糟糕（相对）表现失败告终。最终又进一步促成了 Google 加速推进了另一个用 Transformer 做为主体的  Gemini 大语言模型（LLM）发布，来扳回颜面。
+
+而这精彩纷呈的大语言模型大战中，采用 RNN 作为骨架的 OpenAI Jukebox（12B 参数）和 EleutherAI GPT-NeoX（20B 参数），甚至没有激起水花。可见一斑。
 
 如果 RNN 在短期内没有进一步突破，可见 Transformer 会逐步取而代之。但这，并不意味着 RNN 会退出历史舞台。技术永远都是博弈的过程，在人工智能的终极命题被解决前，无人能够断言。
 
