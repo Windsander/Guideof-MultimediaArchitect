@@ -1,7 +1,7 @@
 
 # 4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）
 
-**卷积神经网络（CNN [Convolutional Neural Network]）** ，是对采用 **卷积核（Convolutional Kernel）**，配合 **层叠网格结构** 构成的流水线，来进行特征提取的一类神经网络的统称。该类型最为擅长抽象图片或超二维（指时空性）信息类型的高维特征。
+**卷积神经网络（CNN [Convolutional Neural Network]）** ，是对采用 **卷积核（Convolutional Kernel）**，配合 **层叠网格结构** 构成的流水线，来进行特征提取的一类神经网络的统称。该类型最为擅长抽象图片或更复杂信息的高维特征。
 
 仍以 AlexNet 为例，原工程示意图之前已有展示：
 
