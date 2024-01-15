@@ -42,3 +42,7 @@
 **[20]** Hochreiter, Sepp & Schmidhuber, Jürgen. (1997). Long Short-term Memory. Neural computation. 9. 1735-80. 10.1162/neco.1997.9.8.1735. 
 
 **[21]** Lee, Daeil & Koo, Seoryong & Jang, Inseok & Kim, Jonghyun. (2022). Comparison of Deep Reinforcement Learning and PID Controllers for Automatic Cold Shutdown Operation. Energies. 15. 2834. 10.3390/en15082834. 
+
+**[22]** Bahdanau D, Cho K, Bengio Y. Neural machine translation by jointly learning to align and translate[J]. arXiv preprint arXiv:1409.0473, 2014.
+
+**[23]** Vaswani A, Shazeer N, Parmar N, et al. Attention is all you need[J]. Advances in neural information processing systems, 2017, 30.
