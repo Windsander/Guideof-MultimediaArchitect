@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 09 Jan 2024 11:46:52 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 20 Jan 2024 10:27:14 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -742,7 +742,7 @@
         </item>
         <item>
             <title><![CDATA[4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）]]></title>
-            <description><![CDATA[卷积神经网络（CNN [Convolutional Neural Network]） ，是对采用 卷积核（Convolutional Kernel），配合 层叠网格结构 构成的流水线，来进行特征提取的一类神经网络的统称。该类型最为擅长抽象图片或超二维（指时空性）信息类型的高维特征。]]></description>
+            <description><![CDATA[卷积神经网络（CNN [Convolutional Neural Network]） ，是对采用 卷积核（Convolutional Kernel），配合 层叠网格结构 构成的流水线，来进行特征提取的一类神经网络的统称。该类型最为擅长抽象图片或更复杂信息的高维特征。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -752,6 +752,13 @@
             <description><![CDATA[循环神经网络（RNN [Recurrent Neural Network]） ，是指为了应对序列数据类型而专门设计的一种，具有一定程度 长期记忆（Long Term Memory） 和 短期记忆（Short Term Memory） 能力的神经网络模型类型。即然被称为“循环”神经网络，则循环在整个 RNN 流水线过程中，起到了至关重要的作用。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[4.7.3 自注意力网络（Transformer）]]></title>
+            <description><![CDATA[自注意力网络（Transformer） 是一种基于自注意力机制（Self-Attention）的深度神经网络结构分类。最初的设计原型来自于 2015 年由 约书亚·本吉奥（Yoshua Bengio，1964～Present） 有关神经网络翻译模型优化而提出的设想 [22] 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
