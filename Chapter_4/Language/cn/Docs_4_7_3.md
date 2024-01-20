@@ -125,5 +125,131 @@ $$
 
 如图，红框部分便是 SDPA 的评分函数，而蓝框部分则为 SDPA 的输出函数。
 
+我们记一个输入序列，其序列长度为 $$T$$ 而查询维度为 $$d$$ 。这里需要解释一下，什么是序列长度和查询维度。我们举个例子，如果有一条查询为 $$\vec{Q} = [[0.12,\ 3.57],\ [0.71,\ 1.14],\ [0.95,\ 0.63]]$$ ，那么我们就称 **单条查询的维度** 为 $$d=2$$ ，而 **总共有长度** 为 $$T=3$$ 条查询。即 **查询维度就是一条查询所包含的参数数目** ，而 **序列长度就是单次输入样本包含查询的数目** 。
+
+当 $$d$$ 确定，对于长度 $$T$$ 的输入数据序列，就有 查询 $$Q \in \mathbb{R}^{T \times d}$$ 、 键值 $$K \in \mathbb{R}^{T \times d}$$ 、 取值 $$V \in \mathbb{R}^{T \times d}$$  ，即三者都是 $$T \times d$$ 大小的矩阵。则 SDPA 的 **评分函数（Score Function）** 有如下表示：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   f_{score}(K,\ Q) = softmax \left( \frac{Q \cdot K^T}{\sqrt{d}} \right) \\
+ \end{aligned}
+}
+$$
+
+而输出时采用的 **输出函数（Output Function）** ，就是一个取值与评分结果的矩阵点积（Dot-Product），这也是 SDPA 名称的原因。即：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   f_{out} &(f_{score},\ V) = f_{score} \cdot V \\
+   Output &= softmax \left( \frac{Q \cdot K^T}{\sqrt{d}} \right) \cdot V \\
+ \end{aligned}
+}
+$$
+
+过程中 $$\tfrac{1}{\sqrt{d}}$$ 即 **缩放因子（Scale Factor）** 。而 Mask 操作是可选的，一般过程中作用于 $$f_{score}$$ 的 SoftMax 操作之前，已经完成点积和缩放的 $$\left( \tfrac{Q \cdot K^T}{\sqrt{d}} \right)$$ 这个 $$T \times T$$ 大小的矩阵。以 Dropout、归一化或其它操作，来进一步加工交给 Softmax 的输入。在说明中选择简化不采用，所以没有体现。
+
+实际操作时，可以引入 Mask 层来做部分参数优化，加速训练。一般，用 Mask 来做零值处理。即，将 $$\left( \tfrac{Q \cdot K^T}{\sqrt{d}} \right)$$ 结果中的 0 ，标记为极小值（如 1e-12 ），避免权重消失。
+
+在经过一系列运算后，根据矩阵点乘的特性，最终输出为具有 $$Output \in \mathbb{R}^{T \times d}$$ 的大小的 **单次注意力张量（Tensor）** 。
+
+不过，我们想要的是有多个关注点的高维特征，单个注意力无法满足要求。
+这就需要 MHA 了。
+
+## **多头注意力（MHA [Multi-Head Attention]）**
+
+**多头注意力（MHA [Multi-Head Attention]）** 是对多个单头注意力，即放缩点积注意力（SDPA），**处理的加权复合** 。
+
+千万需要小心的是，正是在 MHA 中，我们引入了真正用于 **持久训练** 的迭代用权重参数，构成参数矩阵参与模型训练。
+
+<center>
+<figure>
+   <img  
+      width = "600" height = "300"
+      src="../../Pictures/TF_MHA_SDPA.png" alt="">
+    <figcaption>
+      <p>图 4.7.3-3 Transformer 的 MHA 单元与 SDPA 单元的关系</p>
+   </figcaption>
+</figure>
+</center>
+
+如图，蓝色气泡内便是 SDPA 单元。在图例中，由 $$h$$ 个 SDPA 单元，经过链接层（Concat 为简写），和线性归一化（目的是为了保证输入输出等大），构成了最终 MHA 的输出。
+
+所以，从另一个角度来看，链接层函数就相当于 MHA 的评分函数，线性归一化则是输出函数。而 MHA 真正意义上的输入，即每个 SDPA 输入的集合。有：
+
+<center>
+<figure>
+   <img  
+      width = "400" height = "520"
+      src="../../Pictures/TF_MHA_2.png" alt="">
+    <figcaption>
+      <p>图 4.7.3-3 Transformer 的 MHA 单元 <a href="References_4.md">[23]</a></p>
+   </figcaption>
+</figure>
+</center>
+
+上方即为 MHA 在 Transformer 中的基本算子表示。红框部分便是 MHA 的评分函数，而蓝框部分则为 MHA 的输出函数。可见，评分函数和输出函数的概念，也是相对于被选择作为参考的单元本身而言的。
+
+我们仍然取一个输入序列（MHA 和 SDPA 都是对同一序列的操作，仅目标输出不同），其序列长度为 $$T$$ 而查询维度为 $$d$$ 。
+
+记当前一个 MHA 总共有 $$h$$ 个 SDPA 单元，每个单元按照顺序，由角标 $$[_i]$$ 表示序号。则，对于顺序 $$i$$ 的 SDPA 单元输入，有查询 $$Q_i \in \mathbb{R}^{T \times d}$$ 、 键值 $$K_i \in \mathbb{R}^{T \times d}$$ 、 取值 $$V_i \in \mathbb{R}^{T \times d}$$ ，即三者都是 $$T \times d$$ 大小的矩阵。并有经过 SDPA 处理后的输出 $$Output_i \in \mathbb{R}^{T \times d}$$ ，简记为 $$O_i \in \mathbb{R}^{T \times d}$$ 交付链接。
+
+由于采用了多组 SDPA 组合，我们不再能以固定形式，确定每个 SDPA 输入的重要程度。因此，需要对每个构成 MHA 的 SDPA 算子的输入 $$[Q_i,\ K_i,\ V_i]$$ 进行确权，来通过训练得到实际 MHA 的输入的初始关注点。
+
+介于这一点，我们对每一组顺序  的 SDPA 单元输入进行加权。引入 **输入权重（Input Wights）** ，根据加权对象，分为 $$i$$ 组查询权重 $$W^Q_i \in \mathbb{R}^{d \times T}$$ 、 $$i$$ 组键值权重 $$W^K_i \in \mathbb{R}^{d \times T}$$ 、 $$i$$ 组取值权重 $$W^V_i \in \mathbb{R}^{d \times T}$$ 。 注意，**加权需要用和加权对象维度转置（Transpose）的矩阵** 。
+
+加权后，顺序 $$i$$ 的 SDPA 算子的输入就变为了 $$[Q_i \cdot W^Q_i,\ K_i \cdot W^K_i,\ V_i \cdot W^V_i]$$ 。同时，这也是为什么 MHA 中，Q、K、V 需要经过一次线性归一化。即目的是为了保证每一组的输入在样本值上的价值等同。
+
+调整后，**MHA 的 SDPA 计算公式** 化为：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   O_i &= softmax \left( \frac{Q_iW^Q_i \cdot (K_iW^K_i)^T}{\sqrt{d}} \right) \cdot V_iW^V_i \\
+       &= SDPA(Q_i W^Q_i,\ K_i W^K_i,\ V_i W^V_i) \\
+ \end{aligned}
+}
+$$
+
+使得 MHA 的评分函数（Score Function）有如下表示：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   f_{score}(K,\ Q, \ V) = Concat \left( O_1,\ O_2,\ \cdots \ ,\ O_i \right) \\
+ \end{aligned}
+}
+$$
+
+其中，**连接函数（Concat [Connection Function]）是简单全链接** 。即，将每一个 SDPA 的输出 $$O_i$$ 顺序拼接，构成 $$(FC =\sum O_i )\in \mathbb{R}^{T \times dh}$$ 的输出。 
+
+而输出时采用的输出函数（Output Function），存在迭代的 **目的权重（Target Wight）** 矩阵 $$W^O \in \mathbb{R}^{hd \times T}$$ ，以权重代表注意力积分并参与训练（即动态的积分）。有：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   f_{out} &(f_{score},\ W^O) = linear(f_{score} \cdot W^O) \\
+   Output &= linear(Concat \left( O_1,\ O_2,\ \cdots \ ,\ O_i \right) \cdot W^O) \\
+ \end{aligned}
+}
+$$
+
+其中，**线性归一化算子（Linear）** 其实同 MHA 的 SDPA 输入线性归一化一样，目的在于归一化 MHA 的输出以取得我们想要的多关注点高维特征，并同时让输出保持与输入相同的维度大小。即，通过 $$linear(f_{score} \cdot W^O)$$ ，让原本 $$(f_{score} \cdot W^O) \in \mathbb{R}^{T \times dh}$$ 大小的数据，通过以 $$T \times d$$ 大小分块，分为 $$h$$ 块叠加求均值，来使最终输出的 $$Output \in \mathbb{R}^{T \times d}$$ 大小。
+
+所以，MHA 的完整处理公式为：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   f_{out} &(f_{score},\ W^O) = linear(f_{score} \cdot W^O) \\
+   linear &(f_{score} \cdot W^O) = \sum^h \frac{(f_{score} \cdot W^O)_i}{\sum (f_{score} \cdot W^O)_i} \\
+   Output &= linear(Concat \left( O_1,\ O_2,\ \cdots \ ,\ O_i \right) \cdot W^O) \\
+ \end{aligned}
+}
+$$
+
+至此，特征提取完毕。
+
 
 [ref]: References_4.md
