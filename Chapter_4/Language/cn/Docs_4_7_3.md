@@ -8,7 +8,7 @@
 基于该研究，Google AI 实验室终于在 2017 年以 《Attention Is All You Need》[\[23\]][ref] 一文，确定了基本的网络结构设计。
 从此，开启了 Transformer 类型网络的快速发展之路。
 
-## **Transformer 网络结构 & 核心机制**
+## **Transformer 核心成分 & 核心机制**
 
 **自注意力机制（Self-Attention）** 是 Transformer 的 **核心机制** 。而 **Transformer 网络结构** ，则是与自注意力机制提取特征 **配套** ，用于达成转译目的（不一定非要是语言）的整个编解码器 **系统作业流水线** 。
 
@@ -148,9 +148,9 @@ $$
 }
 $$
 
-过程中 $$\tfrac{1}{\sqrt{d}}$$ 即 **缩放因子（Scale Factor）** 。而 Mask 操作是可选的，一般过程中作用于 $$f_{score}$$ 的 SoftMax 操作之前，已经完成点积和缩放的 $$\left( \tfrac{Q \cdot K^T}{\sqrt{d}} \right)$$ 这个 $$T \times T$$ 大小的矩阵。以 Dropout、归一化或其它操作，来进一步加工交给 Softmax 的输入。在说明中选择简化不采用，所以没有体现。
+过程中 $$\tfrac{1}{\sqrt{d}}$$ 即 **缩放因子（Scale Factor）** 。而 Mask 操作是可选的，一般过程中作用于 $$f_{score}$$ 的 SoftMax 操作之前，已经完成点积和缩放的 $$\left( \tfrac{Q \cdot K^T}{\sqrt{d}} \right)$$ 这个 $$T \times T$$ 大小的矩阵。通过屏蔽部分数据或进行简单过滤，来进一步加工交给 Softmax 的输入。
 
-实际操作时，可以引入 Mask 层来做部分参数优化，加速训练。一般，用 Mask 来做零值处理。即，将 $$\left( \tfrac{Q \cdot K^T}{\sqrt{d}} \right)$$ 结果中的 0 ，标记为极小值（如 1e-12 ），避免权重消失。
+实际操作时，可以在 **编码器（Encoder）** 阶段引入 Mask 层来做 **部分参数优化** ，加速训练。而 **解码器（Decoder）** 需要用 Mask 来做 **零值处理** 。即，将 $$\left( \tfrac{Q \cdot K^T}{\sqrt{d}} \right)$$ 结果中的部分数据标记为 0 或极小值（如 1e-12 ，避免权重消失），**组成不完整数据** 。
 
 在经过一系列运算后，根据矩阵点乘的特性，最终输出为具有 $$Output \in \mathbb{R}^{T \times d}$$ 的大小的 **单次注意力张量（Tensor）** 。
 
@@ -250,6 +250,174 @@ $$
 $$
 
 至此，特征提取完毕。
+
+**由 MHA 的输出 $$Output \in \mathbb{R}^{T \times d}$$ 和权重矩阵 $$[W^O,\ \sum [W^Q_i,\ W^K_i,\ W^V_i] ]$$ ，参与到 Transformer 训练的内部过程。**
+
+## **Transformer 的辅助处理单元**
+
+在正式开始 Transformer 的网络结构讲解前。我们还需要了解一下，自注意力网络（Transformer）中的 **其它辅助机制** 。
+
+在经典结构中，Transformer 除了使用自注意力来完成特征提取外，还使用了由 ResNet 提出在当时已经相对成熟的 **残差连接（Residual Connection）** 技术，并使用简单 **前馈控制（Feed Forward）** 来修正 MHA 特征，提供非线性和引入深层次的 **隐藏权重（Hidden Wight）** 参与训练。
+
+<center>
+<figure>
+   <img  
+      width = "450" height = "620"
+      src="../../Pictures/TF_others.png" alt="">
+    <figcaption>
+      <p>图 4.7.3-4 Transformer 辅助机制作用位置</p>
+   </figcaption>
+</figure>
+</center>
+
+图中红框的部分，即为这两个机制起作用的位置。一般，在 Transformer 中，将其分别称为 **前馈控制单元（FFU [Feed Forward Unit]）** 和 **加和标准化单元（ANU [Add & Norm Unit]）** 。
+
+记两者的输入为 $$X$$ ，输出为 $$\hat{X}$$ 。
+
+大部分情况下前馈控制单元的输入 $$X$$ 都为 MHA 的输出，即 $$X = MHA_{Output} \in \mathbb{R}^{T \times d}$$ 但也有例外。加和标准化单元则需要两个输入。不过，在这两个单元的处理中，我们为了保证输入前后特征张量（Tensor）的一致性，要求不论 FFU 还是 ANU，都必须实现输入输出大小相等。
+
+所以，在整个 Transformer 中，FFU 和 ANU 都有 $$X,\hat{X} \in \mathbb{R}^{T \times d}$$ 。
+
+而两者的 **驱动公式（Core Formula）**，则为：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   FFU:
+   &\begin{cases}
+     Input  &: \ X \\
+     Output &: \ \hat{X} = ReLU(X \cdot W_1 + B_1) \cdot W_2 + B_2  
+   \end{cases} \\
+   ANU:
+   &\begin{cases}
+     Input  &: \ X_1,\ X_2 \\
+     Output &: \ \hat{X} = Norm(X_1 + X_2) 
+   \end{cases} \\
+ \end{aligned}
+}
+$$
+
+每一个 FFU 都能为我们引入一套权重 $$W = [{W_1}^{T \times d},\ {W_2}^{T \times d}]$$ 和偏移 $$B= [{B_1}^{T \times d},\ {B_2}^{T \times d}]$$ 参与训练。而 ANU 则负责通过 **归一化（Normalization）** 将样本数据映射到一定范围区间内，保证前级输出的统一尺度衡量，加速模型收敛。
+
+所有原件准备就绪，Transformer 网络结构就非常容易理解了。
+
+## **Transformer 网络结构**
+
+在本节开始时提到，自注意力网络（Transformer）从结构角度分为编码器（Encoder）和 解码器（Decoder）。两者在整体上分别对同一个序列（Sequence）进行不同处理。
+
+
+<center>
+<figure>
+   <img  
+      width = "450" height = "620"
+      src="../../Pictures/TF_Encoder_Decoder.png" alt="">
+    <figcaption>
+      <p>图 4.7.3-5 Transformer 编解码器示意图</p>
+   </figcaption>
+</figure>
+</center>
+
+如图，蓝框内部分即编码器（Encoder）的构成，红框内部分则是解码器（Decoder）。
+
+**编码器（Encoder）** 接收正常顺序的序列，如：“I am eating an apple” 经过 **位子编码（Positional Encoding）** ，再以特征工程提炼出的 $$[Q,\ K,\ V]$$ 。
+
+之后，交由 MHA 提取高级特征，并将提取的高级特征经过一次 ANU 归一化。最终，归一化的高级特征通过 FFU 加隐藏的核心权重和偏移，再次经由一次 ANU 归一化，完成当前时代的编码部分处理。记编码器的输出为 $$O_{enc}$$ ，显然 $$O_{enc}$$ 有 $$T \times d$$ 大小。
+
+<br>
+
+**解码器（Decoder）** 接收被标记过的序列，如：“I am eating an apple” 经过标记（Shifted Right）变为 “\</s\> I am eating an apple” ，再由特征工程提炼出的 $$[Q,\ K,\ V]$$ 输入。
+
+**标记（Shifted Right）** 的作用是为了区分每一个序列的起点，例子里我们采用的是 “\</s\>” ，当然也可以用其他标志。
+之后，交由 **加遮罩（Mask）的 MHA** 提取高级特征，并 ANU 归一化。这里的 **遮罩** ，就是前文中提到的 SDPA 的可选 Mask 操作，即解码器对 $$\left( \tfrac{Q \cdot K^T}{\sqrt{d}} \right)$$ 的零值处理。简单的 Mask 有：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+  &Mask =   
+  \begin{bmatrix} 
+    & 0 \   ,   & 1 \ ,   & 1 \ , \cdots,\   & 1 \\
+    & 0 \   ,   & 0 \ ,   & 1 \ , \cdots,\   & 1 \\
+    & 0 \   ,   & 0 \ ,   & 0 \ , \cdots,\   & 1 \\
+    & \vdots,   & \vdots \ ,   & \vdots \ , \cdots,\   & \vdots \\
+    & 0 \   ,   & 0 \ ,   & 0 \ , \cdots,\   & 0 \\
+  \end{bmatrix}_{T \times d} \\ 
+ \end{aligned}
+}
+$$
+
+即 $$mask \left( \tfrac{Q \cdot K^T}{\sqrt{d}} \right)$$ 只保留右上角数据，完成解码器对输入的第一次注意力操作。
+
+接下来，解码器会接受编码器的同序列输出 $$O_{enc}$$ ，作为一组键值 $$[K = O_{enc},\ V = O_{enc}]$$ 组合，并用前一级 MHA 的 ANU 归一化结果作为查询 $$Q$$ ，合并为一组 $$[Q,\ K = O_{enc},\ V = O_{enc}]$$ 作为第二个 MHA 的输入。
+
+第二个 MHA 进行常规的 **无 Mask** 注意力过程。将第二个 MHA 的输出交由 FFU 加隐藏的核心权重和偏移。在 ANU 归一化后，作为解码器的最终输出。
+记解码器的输出为 $$O_{dec}$$ ，同样有 $$T \times d$$ 大小。
+
+<br>
+
+或许有心的读者已经注意到，在图例中，编解码器的核心流水线旁边都有一个数量标记 $$N$$ 。这意味着每个编解码都是由 $$N$$ 个这样的流水线构成的。目的是为了将 **长序列（Long Sequence）** ，拆分为顺序的单个 **单词（Word）** ，即 **短序列（Short Sequence）** ，顺序的输入处理。我们将编解码各自的一条完整流水线，称为 **编码层（Encoding Layer）** 和 **解码层（Decoding Layer）** 。
+
+那么，以解码器输入 “\</s\> I am eating an apple” 为例。经过分割后，就变成了：
+
+```
+0 - "</s>"
+1 - "I"
+2 - "am"
+3 - "eating"
+4 - "an"
+5 - "apple"
+```
+
+总共 6 个短句。分别交由 6 个解码层处理。最终的输出也按照解码层的顺序，进行顺序拼接。相当于每一个解码层的 $$T=1$$ 。而拼接后的结果仍然是 $$T \times d$$ 。
+
+这样既保证了模型本身的一定范围实时感知，也解放了模型本身的训练处理机能。在 2017 经典 Transformer 中，建议取 $$N=6$$ ，平衡效率。
+
+## **Transformer 的输出 & 训练迭代**
+
+其实，经过之上的一系列工作，最终编码器的输出 $$O_{dec}$$ ，还需要经过一次 **线性归一化（Linear Normalization）** ，再通过 SoftMax 输出概率预测结果 $$P$$ 。预测 $$P$$ 的大小为 $$T \times 1$$ 是一组概率数组。
+
+这个输出，才是最终参与模型迭代，用于损失函数的结果。
+
+那么，Transformer 采用的损失函数是什么呢？
+
+即然最终操作的对象是概率值，那么不难想到本质仍然属于分类（Classification）。
+因此，Transformer 通常采用 **交叉熵损失（Cross Entropy Loss）** 。即我们在损失函数一节中，提到过的：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   Loss = \frac{1}{N} \sum_{i=1}^N [\sum_{j=1}^k -y_j \cdot log(prediction_j)]_i \\
+ \end{aligned}
+}
+$$
+
+同理，也可以考虑改用其他的分类项损失。
+
+随后的过程就是深度学习网络（DNN）的通用过程了，用优化算法加速权重迭代。并持续训练，直到模型达成收敛指标。
+
+而部署后，预测结果 $$P$$ 所关联的词汇，就是最终输出。
+
+## **Transformer 的常见场景**
+
+自注意力网络（Transformer）在诞生之后，大部分都被运用在 NLP 由其是 LLM 领域。
+
+目前上，工业界对 Transformer 的运用已经涵盖了：
+
+- 自然语言处理（NLP），如：文本分析（智能输入法）、机器翻译、语音助手等；
+- 音视频生成，如：音乐生成、视频生成、合成编辑、自动裁剪等；
+
+而配合其他网络结构，如 CNN 的原样本特征提取能力，Transformer 在图形处理上也被大量运用，涵盖了：
+
+- 图像分类，如：手势识别、动作识别、人脸识别等；
+- 图像分割，如：背景分离、智能抠图、轮廓融合等；
+- 语义分割，如：物体分类、车辆检测等；
+- 语音识别，如：文本转译、同声传录、情感分析等；
+- 时序预测，如：股票分析、气象预测、医疗诊断等；
+
+可以说，Transformer 几乎体现在各种方面。
+
+至此，随着经典模型结构 自注意力网络（Transformer）介绍完毕，基本理论知识也完成了初步的梳理。
+
+从下一章开始，我们将正式步入音视频处理的实践工程领域。
 
 
 [ref]: References_4.md

@@ -106,5 +106,5 @@
 	* [4.7 模型结构速览](Chapter_4/Language/cn/Docs_4_7.md)
 		* [4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）](Chapter_4/Language/cn/Docs_4_7_1.md)
 		* [4.7.2 循环神经网络（RNN [Recurrent Neural Network]）](Chapter_4/Language/cn/Docs_4_7_2.md)
-		* [4.7.3 经典模型：Transformer](Chapter_4/Language/cn/Docs_4_7_3.md)
+		* [4.7.3 自注意力网络（Transformer）](Chapter_4/Language/cn/Docs_4_7_3.md)
     * [【参考文献】](Chapter_4/Language/cn/References_4.md)
