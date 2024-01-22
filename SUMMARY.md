@@ -5,7 +5,7 @@
 	* [<font color=red> =[>> 版权申明© <<]= </font>](COPYRIGHT.md)
 	* [<font color=red> =[>> 难度向导© <<]= </font>](GUIDER.md)
 	* [<font color=oragan> =[>> 赞助本作© <<]= </font>](DONATE.md)
-* [一、数字音频的保存与还原](Chapter_1/Language/cn/Apex_1_Introduce.md)
+* [一、音频的保存与还原](Chapter_1/Language/cn/Apex_1_Introduce.md)
     * [1.1 音频基础](Chapter_1/Language/cn/Docs_1_1.md)
 	* [1.2 音频三要素（Three Elements of Audio）]()
 		* [1.2.1 幅度 & 响度（Volume）]()
