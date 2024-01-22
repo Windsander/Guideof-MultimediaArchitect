@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 20 Jan 2024 10:27:14 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Jan 2024 03:52:44 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -43,6 +43,20 @@
             <description><![CDATA[如果您愿意为本书爆肝的作者买一些精神食粮，来让他当一名 24H 狼灭的话...]]></description>
             <link>https://arikanli.cyberfederal.io/DONATE.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/DONATE.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[一、音频的保存与还原]]></title>
+            <description><![CDATA[声音是音视频的重要组成部分。当代计算机体系中对声音的一系列处理，被统称为数字音频技术（Digital Audio Tech）。什么是音频？音频是如何被数字化表示和重现的？]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Apex_1_Introduce.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Apex_1_Introduce.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.1 音频基础]]></title>
+            <description><![CDATA[数字音频技术（DAT [Digital Audio Tech]） 是当代计算机音像学的基础综合科学。其代指一系列，以 电-力-声类比（Electrical-Mechanical-Acoustic Analogy） 、 心理声学模型（Psychoacoustics Model） 等数学工具对声音进行记录、转换、存储、编解为可由挂载数字音频设备处理、播放、操作的数据，的方法论。它是一门包含了 心理声学（Psychoacoustics） 、 电声学（Electroacoustics） 、 数字信号处理（DSP [Digital Signal Processing]） 等领域知识的复合学科。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
