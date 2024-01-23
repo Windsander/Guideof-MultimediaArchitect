@@ -12,7 +12,7 @@
 
 ## **目录**
 * [1.1 音频基础](Docs_1_1.md)
-* [1.2 音频三要素（Three Elements of Audio）]()
+* [1.2 音频三要素（Three Elements of Audio）](Docs_1_2.md)
 	* [1.2.1 幅度 & 响度（Volume）]()
 	* [1.2.2 频率 & 音调（Pitch）]()
 	* [1.2.3 波形 & 音色（Timbre）]()
