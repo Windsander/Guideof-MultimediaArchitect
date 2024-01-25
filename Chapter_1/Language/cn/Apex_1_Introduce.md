@@ -12,11 +12,12 @@
 
 ## **目录**
 * [1.1 音频基础](Docs_1_1.md)
-* [1.2 音频三要素（Three Elements of Audio）](Docs_1_2.md)
-	* [1.2.1 幅度 & 响度（Volume）]()
-	* [1.2.2 频率 & 音调（Pitch）]()
-	* [1.2.3 波形 & 音色（Timbre）]()
-* [1.3 音频的解构]()
+* [1.2 声波三要素（Three Elements of Acoustics）](Docs_1_2.md)
+* [1.3 音频三要素（Three Elements of Audio）](Docs_1_3.md)
+	* [1.3.1 频率（Frequency）](Docs_1_3_1.md)
+	* [1.3.2 响度（Loudness）](Docs_1_3_2.md)
+	* [1.3.3 音色（Timbre）](Docs_1_3_3.md)
+* [1.4 声音的解构]()
 	* [1.3.1 时域图（Time Domain Graph） & 频域图（Frequency Domain Graph）]()
 	* [1.3.2 频谱图（Spectrogram）]()
 	* [1.3.3 主观调性（Tone）& 调性网络（Tonnetz）]()
