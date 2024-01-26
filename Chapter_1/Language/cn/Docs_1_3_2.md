@@ -51,7 +51,7 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   N_{\sum} &= 10 \cdot \log_{10} \left( \frac{{p_0}^2 + {p_1}^2 + \cdots +{p_n}^2}{ {p_{ref}}^2 } \right)  \\
+   N_{\sum} &= 10 \cdot \log_{10} \left( \frac{ {p_0}^2 + {p_1}^2 + \cdots +{p_n}^2 }{ {p_{ref}}^2 } \right)  \\
      &= 10 \cdot \log_{10} \left( \sum^n \left( \frac{p_i}{ p_{ref}} \right)^2 \right)  \\
  \end{aligned}
 }
@@ -87,8 +87,8 @@ $$
 $$
 
 其中，
-以 $$p$$ 代表当前目标声音，对应声波的 **声压（Acoustic Pressure）** ；
-以 $$\vec{v}$$ 代表机械波的做功方向，是个 **速度量** ，**每个维度分量单位都为 米每秒（m/s）** ；
+- 以 $$p$$ 代表当前目标声音，对应声波的 **声压（Acoustic Pressure）** ；
+- 以 $$\vec{v}$$ 代表机械波的做功方向，是个 **速度量** ，**每个维度分量单位都为 米每秒（m/s）** ；
 
 由于一般我们用声强来计算，理想状态的当前声波能量值。为了简化计算，通常会选择均匀介质情况的理想单点声源，作为背景条件。这种情况下，做工方向 $$\vec{v}$$ 就可以被认为是 **球面坐标中，单位平方点的向外法向量了** 。
 
@@ -102,7 +102,7 @@ $$
 }
 $$
 
-因为一般都是在空气介质中进行衡量，所以有 $$$\rho \approx 1.293 \ kg/m^3$$ ，而 $$c \approx 343 \ m/s$$ 。 所以，根据声压快速获取对应声音在空气中的声强公式为：
+因为一般都是在空气介质中进行衡量，所以有 $$\rho \approx 1.293 \ kg/m^3$$ ，而 $$c \approx 343 \ m/s$$ 。 所以，根据声压快速获取对应声音在空气中的声强公式为：
 
 $$
 {\displaystyle 
@@ -124,8 +124,8 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   \frac{I}{I_{ref}} = \frac{p^2}{{p_{ref}}^2} &= \left( \frac{p}{p_{ref}} \right)^2 \\
-   N = 20 \cdot \log_{10} \left( \frac{p}{p_{ref}} \right) &= 10 \cdot \log_{10} \left( \frac{I}{I_{ref}} \right) \\
+   \frac{I}{ I_{ref} } = \frac{p^2}{ {p_{ref}}^2 } &= \left( \frac{p}{ p_{ref} } \right)^2 \\
+   N = 20 \cdot \log_{10} \left( \frac{p}{ p_{ref} } \right) &= 10 \cdot \log_{10} \left( \frac{I}{ I_{ref} } \right) \\
  \end{aligned}
 }
 $$
@@ -135,7 +135,7 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   N_{\sum} &= 10 \cdot \log_{10} \left( \sum^n \left( \frac{p_i}{ p_{ref}} \right)^2 \right) = 10 \cdot \log_{10} \left( \sum^n \left( \frac{I_i}{I_{ref}} \right) \right)  \\
+   N_{\sum} &= 10 \cdot \log_{10} \left( \sum^n \left( \frac{p_i}{ p_{ref} } \right)^2 \right) = 10 \cdot \log_{10} \left( \sum^n \left( \frac{I_i}{I_{ref}} \right) \right)  \\
      &= 10 \cdot \log_{10} \left( 10^{\frac{L_0}{10\ dB}} + 10^{\frac{L_1}{10\ dB}} + \cdots + 10^{\frac{L_n}{10\ dB}}  \right)  \\
  \end{aligned}
 }
