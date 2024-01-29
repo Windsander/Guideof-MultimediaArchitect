@@ -1,5 +1,66 @@
 
-# 1.3.1 频率（Frequency）
+# 1.3.1 音高（Pitch）
+
+**音高（Pitch）** 是代表声音振动频率高低的 **主观感知量（Subjective Perceptions）** ，是映射自对应声波频率纯客观物理量的心里声学概念。有时，我们会用 音调/声调（Tone）代指音高的工程名称。但发生这种情况时，**不能** 将代指音高的音调，与乐理中的音调/音阶（Octave）等同。两者存在换算但并不是一个概念。
+	
+音高的单位是 **美（Mel [Melodies]）** ，这是一个主观标定的单位。以 美（Mel）单位来衡量音高的系统，被称为 **美体系（Mel Scale）** 。该体系来自于美国心理学家 **史丹利·史密斯·史蒂文斯（Stanley Smith Stevens，1906-1973）** 于 1963 年进行的有关心理声学定量的研究 [\[4\]][ref] 。所以， **不属于** 当前 **国际通用的计量体系单位（SI Unit [International System of Units]）** 。
+
+不过，凭借 **美体系（Mel Scale）** 在人耳感知上相对生理准确的量化，和本身在出发点设定上存在和频率（Frequency）之间的 **直接函数映射** 。所以，美（Mel）常被选定为统一单位，在声学工程上作基础标的。记美体系音高为 $$P_m$$ ，频率为 $$F$$ ，有 1963 的早期换算（现已废弃）：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   P_m &= 2595 \cdot \log_{10} \left(F \right) \\
+ \end{aligned}
+}
+$$
+
+这是以 1000 Hz 响度为 40 dB（声压级）的纯音（即只包含一个频率）为 1000 Mel ，来测算拟合得到的经验公式。受限于检测设备，会存在一定的误差。
+
+因此，在随后的 1968、1976、1990 年，分别经历了三次较大程度的重测。而现在我们采用的主要有两套转换标准。
+
+一个是由 **道格拉斯·奥肖内西（Douglas O'Shaughnessy）** 在 1976 年修订的 1000Hz 基准（1000 mel）按 700Hz 分割转换标准 [\[5\]][ref] ，被称为 **奥肖内西美体系（O'Shaughnessy's Mel Scale）** ：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   P_m &= 2595 \cdot \log_{10} \left(1 + \frac{F}{700} \right) \\
+ \end{aligned}
+}
+$$
+
+另一个则是 1999 年由 MATLAB 主导的修订结果 [\[6\]][ref] ，被称为 **斯莱尼美体系（Slaney's Mel Scale）** 。这也是 librosa 库采用的算法，有：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   P_m
+   &= \begin{cases}
+     \frac{3F}{200} &, \ F < 1000 \ Hz \\
+     15 + 27 \cdot \log_{6.4} \left( \frac{F}{1000} \right) &, \ F \ge 1000 \ Hz 
+   \end{cases} \\
+ \end{aligned}
+}
+$$
+
+两者差异，如下图：
+
+<center>
+<figure>
+   <img  
+      width = "600" height = "450"
+      src="../../Pictures/pitch_compare_Slaney_Osha.png" alt="">
+    <figcaption>
+      <p>图 1.3.1-1 两种美体系（Mel Scale）差异对比（0-8000 Hz）示意图</p>
+   </figcaption>
+</figure>
+</center>
+
+相对来说，在不存在体系换算的条件下，会优先选择 奥肖内西 转换公式。而当存在系统换算，尤其是涉及 librosa 库时，建议优先以统一体系为要求，采用相同体系的转换公式。
+
+需要注意的是，美体系都是对单一频率纯声的转换。而什么是频率呢？
+
+## **频率（Frequency）**
 
 **频率（Frequency）** 是指声音对应机械波属性的源振动频率。是声音三要素中唯一的纯客观物理量。当然，一般我们所称的声音的频率，都是指可被感知的声音频率，即前文提到的 **狭义声波（Narrow Acoustic Wave）** 范围的 **可听频率（AF [Audible Frequency]）** 。
 
