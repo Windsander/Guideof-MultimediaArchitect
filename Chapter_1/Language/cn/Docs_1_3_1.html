@@ -1,0 +1,2194 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.3.1 音高（Pitch） · 《音视频开发技术：原理与实践》©</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="李述博 (Arikan.Li)">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Docs_1_3_2.html" />
+    
+    
+    <link rel="prev" href="Docs_1_3.html" />
+    
+
+    
+    <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../../../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../../../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <script src="../../../gitbook/gitbook-plugin-graph/d3.min.js"></script>
+    <script src="../../../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
+
+    <link href="https://arikanli.cyberfederal.io/rss" title="《音视频开发技术：原理与实践》©" rel="alternate" type="application/rss+xml" />
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    《音视频开发技术：原理与实践》©
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../../AUTHOR.html">
+            
+                <a href="../../../AUTHOR.html">
+            
+                    
+                     =[>> 关于作者© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../../COPYRIGHT.html">
+            
+                <a href="../../../COPYRIGHT.html">
+            
+                    
+                     =[>> 版权申明© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../../GUIDER.html">
+            
+                <a href="../../../GUIDER.html">
+            
+                    
+                     =[>> 难度向导© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../../DONATE.html">
+            
+                <a href="../../../DONATE.html">
+            
+                    
+                     =[>> 赞助本作© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Apex_1_Introduce.html">
+            
+                <a href="Apex_1_Introduce.html">
+            
+                    
+                    一、音频的保存与还原
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Docs_1_1.html">
+            
+                <a href="Docs_1_1.html">
+            
+                    
+                    1.1 音频基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Docs_1_2.html">
+            
+                <a href="Docs_1_2.html">
+            
+                    
+                    1.2 声波三要素（Three Elements of Acoustics）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Docs_1_3.html">
+            
+                <a href="Docs_1_3.html">
+            
+                    
+                    1.3 声音三要素（Three Elements of Audio）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.3.1" data-path="Docs_1_3_1.html">
+            
+                <a href="Docs_1_3_1.html">
+            
+                    
+                    1.3.1 音高（Pitch）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="Docs_1_3_2.html">
+            
+                <a href="Docs_1_3_2.html">
+            
+                    
+                    1.3.2 响度（Loudness）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="Docs_1_3_3.md">
+            
+                <span>
+            
+                    
+                    1.3.3 音色（Timbre）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    1.3 音频的解构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" >
+            
+                <span>
+            
+                    
+                    1.3.1 时域图（Time Domain Graph） & 频域图（Frequency Domain Graph）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" >
+            
+                <span>
+            
+                    
+                    1.3.2 频谱图（Spectrogram）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" >
+            
+                <span>
+            
+                    
+                    1.3.3 主观调性（Tone）& 调性网络（Tonnetz）
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    1.4 音频的采样与调制
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" >
+            
+                <span>
+            
+                    
+                    1.4.1 数字信号（Digital Signal）& 模拟信号（Analog Signal）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" >
+            
+                <span>
+            
+                    
+                    1.4.3 采样率（Sample Rate） & 采样位深（Bit Depth） & 采样声道（Channel）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" >
+            
+                <span>
+            
+                    
+                    1.4.2 脉冲编码调制（PCM [Pulse-Code Modulation]）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" >
+            
+                <span>
+            
+                    
+                    1.4.3 脉冲密度调制（PDM [Pulse-Density Modulation]）
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" >
+            
+                <span>
+            
+                    
+                    1.5 音频的存储
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" >
+            
+                <span>
+            
+                    
+                    1.5.1 音频格式（Audio Format）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" >
+            
+                <span>
+            
+                    
+                    1.5.2 无压缩编码格式（Uncompressed Encode）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" >
+            
+                <span>
+            
+                    
+                    1.5.3 无损压缩编码格式（Lossless Encode）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" >
+            
+                <span>
+            
+                    
+                    1.5.4 有损压缩编码格式（Uncompressed Encode）
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../Chapter_2/Language/cn/Apex_2_Introduce.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Apex_2_Introduce.html">
+            
+                    
+                    二、色彩的运用与存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../Chapter_2/Language/cn/Docs_2_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_1.html">
+            
+                    
+                    2.1 色彩基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../Chapter_2/Language/cn/Docs_2_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2.html">
+            
+                    
+                    2.2 颜色三要素（Three Elements of Color）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../../Chapter_2/Language/cn/Docs_2_2_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2_1.html">
+            
+                    
+                    2.2.1 色调（Hue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../../Chapter_2/Language/cn/Docs_2_2_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2_2.html">
+            
+                    
+                    2.2.2 饱和度（Saturation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../../Chapter_2/Language/cn/Docs_2_2_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2_3.html">
+            
+                    
+                    2.2.3 光亮度（Luminance）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../../Chapter_2/Language/cn/Docs_2_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3.html">
+            
+                    
+                    2.3 色彩的衡量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../../Chapter_2/Language/cn/Docs_2_3_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_1.html">
+            
+                    
+                    2.3.1 辐射亮度（Radiance）& 色温（Color Temperature）& 颜色的量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../../Chapter_2/Language/cn/Docs_2_3_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_2.html">
+            
+                    
+                    2.3.2 配色函数（Color Matching Functions）& 色彩空间（Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../../Chapter_2/Language/cn/Docs_2_3_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_3.html">
+            
+                    
+                    2.3.3 经典三原色函数（Trichromatic Primaries Functions）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../../Chapter_2/Language/cn/Docs_2_3_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_4.html">
+            
+                    
+                    2.3.4 经典三刺激函数（Tristimulus Values Functions）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../../../Chapter_2/Language/cn/Docs_2_3_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_5.html">
+            
+                    
+                    2.3.5 现代色彩体系（Modern Color System）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../../Chapter_2/Language/cn/Docs_2_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4.html">
+            
+                    
+                    2.4 色彩的对比
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../../Chapter_2/Language/cn/Docs_2_4_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_1.html">
+            
+                    
+                    2.4.1 色域（Color Gamut ）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../../Chapter_2/Language/cn/Docs_2_4_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_2.html">
+            
+                    
+                    2.4.2 色度（Chroma）& 色度平面（Chroma Plane）& 色度图（Chroma Diagram）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../../Chapter_2/Language/cn/Docs_2_4_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_3.html">
+            
+                    
+                    2.4.3 色差（Chromatic Aberration）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../../../Chapter_2/Language/cn/Docs_2_4_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_4.html">
+            
+                    
+                    2.4.4 色温（Color Temperature）& 相关色温（Correlated Color Temperature）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../../../Chapter_2/Language/cn/Docs_2_4_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_5.html">
+            
+                    
+                    2.4.5 标准光源（Standard Illuminants）& 白点（White Point）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.6" data-path="../../../Chapter_2/Language/cn/Docs_2_4_6.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_6.html">
+            
+                    
+                    2.4.6 显色指数（Color Rendering Index）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../../Chapter_2/Language/cn/Docs_2_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5.html">
+            
+                    
+                    2.5 经典色彩空间（Classical Color Space）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="../../../Chapter_2/Language/cn/Docs_2_5_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_1.html">
+            
+                    
+                    2.5.1 光学三原色色彩空间（RGB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2" data-path="../../../Chapter_2/Language/cn/Docs_2_5_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_2.html">
+            
+                    
+                    2.5.2 颜料三原色色彩空间（CMY / CMYK ）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.3" data-path="../../../Chapter_2/Language/cn/Docs_2_5_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_3.html">
+            
+                    
+                    2.5.3 CIE RGB 色彩空间（CIE 1931 RGB Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.4" data-path="../../../Chapter_2/Language/cn/Docs_2_5_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_4.html">
+            
+                    
+                    2.5.4 CIE XYZ 色彩空间（CIE 1931 XYZ Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.5" data-path="../../../Chapter_2/Language/cn/Docs_2_5_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_5.html">
+            
+                    
+                    2.5.5 CIE LAB 色彩空间（CIE 1976 L*, a*, b* Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.6" data-path="../../../Chapter_2/Language/cn/Docs_2_5_6.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_6.html">
+            
+                    
+                    2.5.6 CIE LUV 色彩空间（CIE 1976 L*, u*, v* Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.7" data-path="../../../Chapter_2/Language/cn/Docs_2_5_7.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_7.html">
+            
+                    
+                    2.5.7 颜色三要素色彩空间（HSV / HSI / HSL）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../../Chapter_2/Language/cn/Docs_2_6.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6.html">
+            
+                    
+                    2.6 色彩的存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="../../../Chapter_2/Language/cn/Docs_2_6_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6_1.html">
+            
+                    
+                    2.6.1 色彩格式（Color Format）与色彩存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2" data-path="../../../Chapter_2/Language/cn/Docs_2_6_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6_2.html">
+            
+                    
+                    2.6.2 RGB 体系色彩格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.3" data-path="../../../Chapter_2/Language/cn/Docs_2_6_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6_3.html">
+            
+                    
+                    2.6.3 YUV 体系色彩格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../../Chapter_2/Language/cn/References_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/References_2.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../Chapter_3/Language/cn/Apex_3_Introduce.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Apex_3_Introduce.html">
+            
+                    
+                    三、音视频常用基础算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../Chapter_3/Language/cn/Docs_3_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1.html">
+            
+                    
+                    3.1 信号分析的核心算法 - 傅立叶变换
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../../../Chapter_3/Language/cn/Docs_3_1_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_1.html">
+            
+                    
+                    3.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../../../Chapter_3/Language/cn/Docs_3_1_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_2.html">
+            
+                    
+                    3.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
+            
+                    
+                    3.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
+            
+                    
+                    3.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../Chapter_3/Language/cn/Docs_3_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2.html">
+            
+                    
+                    3.2 频率信息提取 - 常用滤波算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../../Chapter_3/Language/cn/Docs_3_2_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_1.html">
+            
+                    
+                    3.2.1 高斯滤波（Gauss Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../../../Chapter_3/Language/cn/Docs_3_2_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_2.html">
+            
+                    
+                    3.2.2 双边滤波（Bilateral Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../../../Chapter_3/Language/cn/Docs_3_2_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_3.html">
+            
+                    
+                    3.2.3 拉普拉斯滤波（Laplacian Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../../../Chapter_3/Language/cn/Docs_3_2_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_4.html">
+            
+                    
+                    3.2.4 马尔滤波（Marr Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../../../Chapter_3/Language/cn/Docs_3_2_5.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_5.html">
+            
+                    
+                    3.2.5 索贝尔滤波（Sobel Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="../../../Chapter_3/Language/cn/Docs_3_2_6.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_6.html">
+            
+                    
+                    3.2.6 各向异性扩散（Anisotropic Diffusion）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../Chapter_3/Language/cn/Docs_3_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3.html">
+            
+                    
+                    3.3 时间冗余控制 - 常用特征提取与朴素阈值处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../../../Chapter_3/Language/cn/Docs_3_3_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3_1.html">
+            
+                    
+                    3.3.1 方向梯度直方图（HOG [Histogram of Oriented Gradient]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../../../Chapter_3/Language/cn/Docs_3_3_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3_2.html">
+            
+                    
+                    3.3.2 朴素目标检测结果度量 - IoU & GIoU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="../../../Chapter_3/Language/cn/Docs_3_3_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3_3.html">
+            
+                    
+                    3.3.3 朴素目标检测物体锁定 - 分步滑动窗口（Simple Sliding Window）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../../Chapter_3/Language/cn/Docs_3_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4.html">
+            
+                    
+                    3.4 空域冗余控制 - 基础光流算法与色度压缩
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../../../Chapter_3/Language/cn/Docs_3_4_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_1.html">
+            
+                    
+                    3.4.1 传统光流法（Classic Optical Flow Methods）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../../../Chapter_3/Language/cn/Docs_3_4_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_2.html">
+            
+                    
+                    3.4.2 双向光流预测（BDOF [Bi-Directional Optical Flow]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../../../Chapter_3/Language/cn/Docs_3_4_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_3.html">
+            
+                    
+                    3.4.3 光流仿射修正（PROF [Affine Prediction Refinement With Optical Flow]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="../../../Chapter_3/Language/cn/Docs_3_4_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_4.html">
+            
+                    
+                    3.4.4 色度缩放亮度映射（LMCS [Luma Mapping with Chroma Scaling]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../../Chapter_3/Language/cn/Docs_3_5.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5.html">
+            
+                    
+                    3.5 频域冗余控制 - 基础变换编码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../../../Chapter_3/Language/cn/Docs_3_5_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5_1.html">
+            
+                    
+                    3.5.1 整数离散正余弦变换（DST/DCT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../../../Chapter_3/Language/cn/Docs_3_5_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5_2.html">
+            
+                    
+                    3.5.2 哈达玛变换（WHT [Walsh-Hadamard Transform]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../../../Chapter_3/Language/cn/Docs_3_5_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5_3.html">
+            
+                    
+                    3.5.3 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../../Chapter_3/Language/cn/Playground_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Playground_3.html">
+            
+                    
+                    【在线展示】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../../Chapter_3/Language/cn/References_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/References_3.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../Chapter_4/Language/cn/Apex_4_Introduce.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Apex_4_Introduce.html">
+            
+                    
+                    四、音视频机器学习基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../Chapter_4/Language/cn/Docs_4_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_1.html">
+            
+                    
+                    4.1 发展概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../Chapter_4/Language/cn/Docs_4_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2.html">
+            
+                    
+                    4.2 模型工程基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../../Chapter_4/Language/cn/Docs_4_2_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2_1.html">
+            
+                    
+                    4.2.1 算子（Operator）& 层（Layer）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../../Chapter_4/Language/cn/Docs_4_2_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2_2.html">
+            
+                    
+                    4.2.2 神经元（Neuron）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../../../Chapter_4/Language/cn/Docs_4_2_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2_3.html">
+            
+                    
+                    4.2.3 神经网络（NN [Neural Network]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../../../Chapter_4/Language/cn/Docs_4_2_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2_4.html">
+            
+                    
+                    4.2.4 特征选择（Feature Selection）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../Chapter_4/Language/cn/Docs_4_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3.html">
+            
+                    
+                    4.3 经典激活函数（Classic Activation Function）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../../Chapter_4/Language/cn/Docs_4_3_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_1.html">
+            
+                    
+                    4.3.1 Sigmoid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../../../Chapter_4/Language/cn/Docs_4_3_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_2.html">
+            
+                    
+                    4.3.2 Tanh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../../../Chapter_4/Language/cn/Docs_4_3_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_3.html">
+            
+                    
+                    4.3.3 Softplus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="../../../Chapter_4/Language/cn/Docs_4_3_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_4.html">
+            
+                    
+                    4.3.4 ReLU 族 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.5" data-path="../../../Chapter_4/Language/cn/Docs_4_3_5.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_5.html">
+            
+                    
+                    4.3.5 ELU & SELU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.6" data-path="../../../Chapter_4/Language/cn/Docs_4_3_6.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_6.html">
+            
+                    
+                    4.3.6 Mish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.7" data-path="../../../Chapter_4/Language/cn/Docs_4_3_7.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_7.html">
+            
+                    
+                    4.3.7 Swish 族 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../Chapter_4/Language/cn/Docs_4_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_4.html">
+            
+                    
+                    4.4 连接函数/衰减函数（Connection/Attenuation Function）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../../Chapter_4/Language/cn/Docs_4_4_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_4_1.html">
+            
+                    
+                    4.4.1 Dropout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../../../Chapter_4/Language/cn/Docs_4_4_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_4_2.html">
+            
+                    
+                    4.4.2 Maxout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../../../Chapter_4/Language/cn/Docs_4_4_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_4_3.html">
+            
+                    
+                    4.4.3 SoftMax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../../Chapter_4/Language/cn/Docs_4_5.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5.html">
+            
+                    
+                    4.5 损失函数（Loss Function）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../../../Chapter_4/Language/cn/Docs_4_5_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_1.html">
+            
+                    
+                    4.5.1 回归项-平均绝对误差（MAE [Mean Absolute Error]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="../../../Chapter_4/Language/cn/Docs_4_5_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_2.html">
+            
+                    
+                    4.5.2 回归项-均方误差（MSE [Mean Squared Error]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="../../../Chapter_4/Language/cn/Docs_4_5_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_3.html">
+            
+                    
+                    4.5.3 回归项-休伯损失（Huber Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.4" data-path="../../../Chapter_4/Language/cn/Docs_4_5_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_4.html">
+            
+                    
+                    4.5.4 回归项-分位数损失（Quantile Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.5" data-path="../../../Chapter_4/Language/cn/Docs_4_5_5.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_5.html">
+            
+                    
+                    4.5.5 分类项-对数损失（Log Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.6" data-path="../../../Chapter_4/Language/cn/Docs_4_5_6.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_6.html">
+            
+                    
+                    4.5.6 分类项-交叉熵损失（Cross Entropy Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.7" data-path="../../../Chapter_4/Language/cn/Docs_4_5_7.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_7.html">
+            
+                    
+                    4.5.7 分类项-合页损失（Hinge Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.8" data-path="../../../Chapter_4/Language/cn/Docs_4_5_8.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_8.html">
+            
+                    
+                    4.5.8 分类项-对比损失（Contrastive Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.9" data-path="../../../Chapter_4/Language/cn/Docs_4_5_9.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_9.html">
+            
+                    
+                    4.5.9 分类项-三元损失（Triplet Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.10" data-path="../../../Chapter_4/Language/cn/Docs_4_5_10.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_10.html">
+            
+                    
+                    4.5.10 分类项-对组排异损失（N-Pair Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.11" data-path="../../../Chapter_4/Language/cn/Docs_4_5_11.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_11.html">
+            
+                    
+                    4.5.11 正则项-L1 惩罚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.12" data-path="../../../Chapter_4/Language/cn/Docs_4_5_12.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_12.html">
+            
+                    
+                    4.5.12 正则项-L2 惩罚
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../../Chapter_4/Language/cn/Docs_4_6.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6.html">
+            
+                    
+                    4.6 常用最优化算法（Optimizer Operator）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="../../../Chapter_4/Language/cn/Docs_4_6_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_1.html">
+            
+                    
+                    4.6.1 基础优化算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.2" data-path="../../../Chapter_4/Language/cn/Docs_4_6_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_2.html">
+            
+                    
+                    4.6.2 优化算法的优化-应对震荡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.3" data-path="../../../Chapter_4/Language/cn/Docs_4_6_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_3.html">
+            
+                    
+                    4.6.3 优化算法的优化-应对重点强（弱）化更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.4" data-path="../../../Chapter_4/Language/cn/Docs_4_6_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_4.html">
+            
+                    
+                    4.6.4 自适应实时评估算法（Adam [Adaptive Moment Estimation]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.5" data-path="../../../Chapter_4/Language/cn/Docs_4_6_5.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_5.html">
+            
+                    
+                    4.6.5 优化算法对比与使用建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../../Chapter_4/Language/cn/Docs_4_7.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_7.html">
+            
+                    
+                    4.7 模型结构速览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.7.1" data-path="../../../Chapter_4/Language/cn/Docs_4_7_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_7_1.html">
+            
+                    
+                    4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.2" data-path="../../../Chapter_4/Language/cn/Docs_4_7_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_7_2.html">
+            
+                    
+                    4.7.2 循环神经网络（RNN [Recurrent Neural Network]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.3" data-path="../../../Chapter_4/Language/cn/Docs_4_7_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_7_3.html">
+            
+                    
+                    4.7.3 自注意力网络（Transformer）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../../Chapter_4/Language/cn/References_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/References_4.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >1.3.1 音高（Pitch）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="131-&#x97F3;&#x9AD8;&#xFF08;pitch&#xFF09;">1.3.1 &#x97F3;&#x9AD8;&#xFF08;Pitch&#xFF09;</h1>
+<p><strong>&#x97F3;&#x9AD8;&#xFF08;Pitch&#xFF09;</strong> &#x662F;&#x4EE3;&#x8868;&#x58F0;&#x97F3;&#x632F;&#x52A8;&#x9891;&#x7387;&#x9AD8;&#x4F4E;&#x7684; <strong>&#x4E3B;&#x89C2;&#x611F;&#x77E5;&#x91CF;&#xFF08;Subjective Perceptions&#xFF09;</strong> &#xFF0C;&#x662F;&#x6620;&#x5C04;&#x81EA;&#x5BF9;&#x5E94;&#x58F0;&#x6CE2;&#x9891;&#x7387;&#x7EAF;&#x5BA2;&#x89C2;&#x7269;&#x7406;&#x91CF;&#x7684;&#x5FC3;&#x91CC;&#x58F0;&#x5B66;&#x6982;&#x5FF5;&#x3002;&#x6709;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x7528; &#x97F3;&#x8C03;/&#x58F0;&#x8C03;&#xFF08;Tone&#xFF09;&#x4EE3;&#x6307;&#x97F3;&#x9AD8;&#x7684;&#x5DE5;&#x7A0B;&#x540D;&#x79F0;&#xFF0C;&#x8FD9;&#x5176;&#x5B9E;&#x4E0D;&#x591F;&#x51C6;&#x786E;&#x3002;&#x82E5;&#x53D1;&#x751F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x5C31; <strong>&#x4E0D;&#x80FD;</strong> &#x5C06;&#x4EE3;&#x6307;&#x97F3;&#x9AD8;&#x7684;&#x97F3;&#x8C03;&#xFF0C;&#x4E0E;&#x4E50;&#x7406;&#x4E2D;&#x5173;&#x8054;&#x97F3;&#x9636;&#xFF08;Octave&#xFF09;&#x7684;&#x97F3;&#x8C03;&#xFF08;Tone&#xFF09;&#x7B49;&#x540C;&#x3002;&#x4E24;&#x8005;&#x5B58;&#x5728;&#x6362;&#x7B97;&#x4F46;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x6982;&#x5FF5;&#x3002;</p>
+<p>&#x5373;&#xFF0C;<strong>&#x97F3;&#x9AD8;&#xFF08;Pitch&#xFF09;&#x4E0D;&#x662F;&#x97F3;&#x8C03;/&#x58F0;&#x8C03;&#xFF08;Tone&#xFF09;&#xFF0C;&#x66F4;&#x4E0D;&#x662F;&#x97F3;&#x9636;&#xFF08;Octave&#xFF09;</strong> &#x3002;</p>
+<p>&#x97F3;&#x9AD8;&#x7684;&#x5355;&#x4F4D;&#x662F; <strong>&#x7F8E;&#xFF08;Mel [Melodies]&#xFF09;</strong> &#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x4E3B;&#x89C2;&#x6807;&#x5B9A;&#x7684;&#x5355;&#x4F4D;&#x3002;&#x4EE5; &#x7F8E;&#xFF08;Mel&#xFF09;&#x5355;&#x4F4D;&#x6765;&#x8861;&#x91CF;&#x97F3;&#x9AD8;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x88AB;&#x79F0;&#x4E3A; <strong>&#x7F8E;&#x4F53;&#x7CFB;&#xFF08;Mel Scale&#xFF09;</strong> &#x3002;&#x8BE5;&#x4F53;&#x7CFB;&#x6765;&#x81EA;&#x4E8E;&#x7F8E;&#x56FD;&#x5FC3;&#x7406;&#x5B66;&#x5BB6; <strong>&#x53F2;&#x4E39;&#x5229;&#xB7;&#x53F2;&#x5BC6;&#x65AF;&#xB7;&#x53F2;&#x8482;&#x6587;&#x65AF;&#xFF08;Stanley Smith Stevens&#xFF0C;1906-1973&#xFF09;</strong> &#x4E8E; 1963 &#x5E74;&#x8FDB;&#x884C;&#x7684;&#x6709;&#x5173;&#x5FC3;&#x7406;&#x58F0;&#x5B66;&#x5B9A;&#x91CF;&#x7684;&#x7814;&#x7A76; <a href="References_1.md">[4]</a> &#x3002;&#x6240;&#x4EE5;&#xFF0C; <strong>&#x4E0D;&#x5C5E;&#x4E8E;</strong> &#x5F53;&#x524D; <strong>&#x56FD;&#x9645;&#x901A;&#x7528;&#x7684;&#x8BA1;&#x91CF;&#x4F53;&#x7CFB;&#x5355;&#x4F4D;&#xFF08;SI Unit [International System of Units]&#xFF09;</strong> &#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x51ED;&#x501F; <strong>&#x7F8E;&#x4F53;&#x7CFB;&#xFF08;Mel Scale&#xFF09;</strong> &#x5728;&#x4EBA;&#x8033;&#x611F;&#x77E5;&#x4E0A;&#x76F8;&#x5BF9;&#x751F;&#x7406;&#x51C6;&#x786E;&#x7684;&#x91CF;&#x5316;&#xFF0C;&#x548C;&#x672C;&#x8EAB;&#x5728;&#x51FA;&#x53D1;&#x70B9;&#x8BBE;&#x5B9A;&#x4E0A;&#x5B58;&#x5728;&#x548C;&#x9891;&#x7387;&#xFF08;Frequency&#xFF09;&#x4E4B;&#x95F4;&#x7684; <strong>&#x76F4;&#x63A5;&#x51FD;&#x6570;&#x6620;&#x5C04;</strong> &#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x7F8E;&#xFF08;Mel&#xFF09;&#x5E38;&#x88AB;&#x9009;&#x5B9A;&#x4E3A;&#x7EDF;&#x4E00;&#x5355;&#x4F4D;&#xFF0C;&#x5728;&#x58F0;&#x5B66;&#x5DE5;&#x7A0B;&#x4E0A;&#x4F5C;&#x57FA;&#x7840;&#x6807;&#x7684;&#x3002;&#x8BB0;&#x7F8E;&#x4F53;&#x7CFB;&#x97F3;&#x9AD8;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">P_m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">m</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span> &#xFF0C;&#x9891;&#x7387;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">F</span></span></span></span> &#xFF0C;&#x6709; 1963 &#x7684;&#x65E9;&#x671F;&#x6362;&#x7B97;&#xFF08;&#x73B0;&#x5DF2;&#x5E9F;&#x5F03;&#xFF09;&#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mstyle scriptlevel="0" displaystyle="true"><mtable><mtr><mtd><mrow><msub><mi>P</mi><mi>m</mi></msub></mrow></mtd><mtd><mrow><mrow></mrow><mo>=</mo><mn>2</mn><mn>5</mn><mn>9</mn><mn>5</mn><mo>&#x22C5;</mo><msub><mi>log</mi><mrow><mn>1</mn><mn>0</mn></mrow></msub><mrow><mo fence="true">(</mo><mi>F</mi><mo fence="true">)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd></mtr></mtable></mstyle></mrow></mrow><annotation encoding="application/x-tex">
+{\displaystyle 
+ \begin{aligned}
+   P_m &amp;= 2595 \cdot \log_{10} \left(F \right) \\
+ \end{aligned}
+}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.45em;"></span><span class="strut bottom" style="height:2.4000000000000004em;vertical-align:-0.9500000000000004em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mtable"><span class="col-align-r"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">m</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="col-align-l"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"></span><span class="mrel">=</span><span class="mord mathrm">2</span><span class="mord mathrm">5</span><span class="mord mathrm">9</span><span class="mord mathrm">5</span><span class="mbin">&#x22C5;</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist"><span style="top:0.24444em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathrm mtight">1</span><span class="mord mathrm mtight">0</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;">(</span><span class="mord mathit" style="margin-right:0.13889em;">F</span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;">)</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></span></span></p>
+<p>&#x8FD9;&#x662F;&#x4EE5; 1000 Hz &#x54CD;&#x5EA6;&#x4E3A; 40 dB&#xFF08;&#x58F0;&#x538B;&#x7EA7;&#xFF09;&#x7684;&#x7EAF;&#x97F3;&#xFF08;&#x5373;&#x53EA;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x9891;&#x7387;&#xFF09;&#x4E3A; 1000 Mel &#xFF0C;&#x6765;&#x6D4B;&#x7B97;&#x62DF;&#x5408;&#x5F97;&#x5230;&#x7684;&#x7ECF;&#x9A8C;&#x516C;&#x5F0F;&#x3002;&#x53D7;&#x9650;&#x4E8E;&#x68C0;&#x6D4B;&#x8BBE;&#x5907;&#xFF0C;&#x4F1A;&#x5B58;&#x5728;&#x4E00;&#x5B9A;&#x7684;&#x8BEF;&#x5DEE;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x8BE5;&#x516C;&#x5F0F;&#x5BF9;&#x5E94;&#x62DF;&#x5408;&#x65B9;&#x5F0F;&#xFF0C;&#x5728;&#x968F;&#x540E;&#x7684; 1968&#x3001;1976&#x3001;1990 &#x5E74;&#xFF0C;&#x5206;&#x522B;&#x7ECF;&#x5386;&#x4E86;&#x4E09;&#x6B21;&#x8F83;&#x5927;&#x7A0B;&#x5EA6;&#x7684;&#x91CD;&#x6D4B;&#x3002;&#x800C;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x91C7;&#x7528;&#x7684;&#x4E3B;&#x8981;&#x6709; <strong>&#x4E24;&#x5957;&#x8F6C;&#x6362;&#x6807;&#x51C6;</strong> &#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x662F;&#x7531; <strong>&#x9053;&#x683C;&#x62C9;&#x65AF;&#xB7;&#x5965;&#x8096;&#x5185;&#x897F;&#xFF08;Douglas O&apos;Shaughnessy&#xFF09;</strong> &#x5728; 1976 &#x5E74;&#x4FEE;&#x8BA2;&#x7684; 1000Hz &#x57FA;&#x51C6;&#xFF08;1000 mel&#xFF09;&#x6309; 700Hz &#x5206;&#x5272;&#x8F6C;&#x6362;&#x6807;&#x51C6; <a href="References_1.md">[5]</a> &#xFF0C;&#x88AB;&#x79F0;&#x4E3A; <strong>&#x5965;&#x8096;&#x5185;&#x897F;&#x7F8E;&#x4F53;&#x7CFB;&#xFF08;O&apos;Shaughnessy&apos;s Mel Scale&#xFF09;</strong> &#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mstyle scriptlevel="0" displaystyle="true"><mtable><mtr><mtd><mrow><msub><mi>P</mi><mi>m</mi></msub></mrow></mtd><mtd><mrow><mrow></mrow><mo>=</mo><mn>2</mn><mn>5</mn><mn>9</mn><mn>5</mn><mo>&#x22C5;</mo><msub><mi>log</mi><mrow><mn>1</mn><mn>0</mn></mrow></msub><mrow><mo fence="true">(</mo><mn>1</mn><mo>+</mo><mfrac><mrow><mi>F</mi></mrow><mrow><mn>7</mn><mn>0</mn><mn>0</mn></mrow></mfrac><mo fence="true">)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd></mtr></mtable></mstyle></mrow></mrow><annotation encoding="application/x-tex">
+{\displaystyle 
+ \begin{aligned}
+   P_m &amp;= 2595 \cdot \log_{10} \left(1 + \frac{F}{700} \right) \\
+ \end{aligned}
+}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:2.050015em;"></span><span class="strut bottom" style="height:3.6000300000000003em;vertical-align:-1.5500150000000001em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mtable"><span class="col-align-r"><span class="vlist"><span style="top:-0.6000150000000002em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">m</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span><span style="top:1.190015em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="col-align-l"><span class="vlist"><span style="top:-0.6000150000000002em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"></span><span class="mrel">=</span><span class="mord mathrm">2</span><span class="mord mathrm">5</span><span class="mord mathrm">9</span><span class="mord mathrm">5</span><span class="mbin">&#x22C5;</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist"><span style="top:0.24444em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathrm mtight">1</span><span class="mord mathrm mtight">0</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord mathrm">1</span><span class="mbin">+</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm">7</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">F</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">)</span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></span></span></p>
+<p>&#x53E6;&#x4E00;&#x4E2A;&#x5219;&#x662F; 1999 &#x5E74;&#x7531; MATLAB &#x4E3B;&#x5BFC;&#x7684;&#x4FEE;&#x8BA2;&#x7ED3;&#x679C; <a href="References_1.md">[6]</a> &#xFF0C;&#x88AB;&#x79F0;&#x4E3A; <strong>&#x65AF;&#x83B1;&#x5C3C;&#x7F8E;&#x4F53;&#x7CFB;&#xFF08;Slaney&apos;s Mel Scale&#xFF09;</strong> &#x3002;&#x8FD9;&#x4E5F;&#x662F; librosa &#x5E93;&#x91C7;&#x7528;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x6709;&#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mstyle scriptlevel="0" displaystyle="true"><mtable><mtr><mtd><mrow><msub><mi>P</mi><mi>m</mi></msub></mrow></mtd><mtd><mrow><mrow></mrow><mo>=</mo><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mrow><mfrac><mrow><mn>3</mn><mi>F</mi></mrow><mrow><mn>2</mn><mn>0</mn><mn>0</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mo separator="true">,</mo><mtext>&#xA0;</mtext><mi>F</mi><mo>&lt;</mo><mn>1</mn><mn>0</mn><mn>0</mn><mn>0</mn><mtext>&#xA0;</mtext><mi>H</mi><mi>z</mi></mrow></mtd></mtr><mtr><mtd><mrow><mn>1</mn><mn>5</mn><mo>+</mo><mn>2</mn><mn>7</mn><mo>&#x22C5;</mo><msub><mi>log</mi><mrow><mn>6</mn><mi mathvariant="normal">.</mi><mn>4</mn></mrow></msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi>F</mi></mrow><mrow><mn>1</mn><mn>0</mn><mn>0</mn><mn>0</mn></mrow></mfrac><mo fence="true">)</mo></mrow></mrow></mtd><mtd><mrow><mo separator="true">,</mo><mtext>&#xA0;</mtext><mi>F</mi><mo>&#x2265;</mo><mn>1</mn><mn>0</mn><mn>0</mn><mn>0</mn><mtext>&#xA0;</mtext><mi>H</mi><mi>z</mi></mrow></mtd></mtr></mtable></mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd></mtr></mtable></mstyle></mrow></mrow><annotation encoding="application/x-tex">
+{\displaystyle 
+ \begin{aligned}
+   P_m
+   &amp;= \begin{cases}
+     \frac{3F}{200} &amp;, \ F &lt; 1000 \ Hz \\
+     15 + 27 \cdot \log_{6.4} \left( \frac{F}{1000} \right) &amp;, \ F \ge 1000 \ Hz 
+   \end{cases} \\
+ \end{aligned}
+}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:3.0731800000000002em;"></span><span class="strut bottom" style="height:5.6463600000000005em;vertical-align:-2.5731800000000002em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mtable"><span class="col-align-r"><span class="vlist"><span style="top:-0.6000000000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">m</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span><span style="top:2.2131800000000004em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="col-align-l"><span class="vlist"><span style="top:-0.6000000000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"></span><span class="mrel">=</span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped"><span class="delimsizing mult"><span class="vlist"><span style="top:0.9500099999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23A9;</span></span></span><span style="top:0.9500099999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:-0.000010000000000287557em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23A8;</span></span></span><span style="top:-1.1500100000000002em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:-1.4500200000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23A7;</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist"><span style="top:-1.1128500000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm">2</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">3</span><span class="mord mathit" style="margin-right:0.13889em;">F</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span><span style="top:1.0231500000000002em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathrm">1</span><span class="mord mathrm">5</span><span class="mbin">+</span><span class="mord mathrm">2</span><span class="mord mathrm">7</span><span class="mbin">&#x22C5;</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist"><span style="top:0.24444em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathrm mtight">6</span><span class="mord mathrm mtight">.</span><span class="mord mathrm mtight">4</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">F</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">)</span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist"><span style="top:-1.1128500000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mpunct">,</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.13889em;">F</span></span><span class="mrel">&lt;</span><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.08125em;">H</span></span><span class="mord mathit" style="margin-right:0.04398em;">z</span></span></span><span style="top:1.0231500000000002em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mpunct">,</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.13889em;">F</span></span><span class="mrel">&#x2265;</span><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.08125em;">H</span></span><span class="mord mathit" style="margin-right:0.04398em;">z</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></span></span></p>
+<p>&#x4E24;&#x8005;&#x5DEE;&#x5F02;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
+<center>
+<figure>
+   <img width="600" height="450" src="../../Pictures/pitch_compare_Slaney_Osha.png" alt="">
+    <figcaption>
+      <p>&#x56FE; 1.3.1-1 &#x4E24;&#x79CD;&#x7F8E;&#x4F53;&#x7CFB;&#xFF08;Mel Scale&#xFF09;&#x5DEE;&#x5F02;&#x5BF9;&#x6BD4;&#xFF08;0-8000 Hz&#xFF09;&#x793A;&#x610F;&#x56FE;</p>
+   </figcaption>
+</figure>
+</center>
+
+<p>&#x76F8;&#x5BF9;&#x6765;&#x8BF4;&#xFF0C;&#x5728;&#x4E0D;&#x5B58;&#x5728;&#x4F53;&#x7CFB;&#x6362;&#x7B97;&#x7684;&#x6761;&#x4EF6;&#x4E0B;&#xFF0C;&#x4F1A;&#x4F18;&#x5148;&#x9009;&#x62E9; &#x5965;&#x8096;&#x5185;&#x897F; &#x8F6C;&#x6362;&#x516C;&#x5F0F;&#x3002;&#x800C;&#x5F53;&#x5B58;&#x5728;&#x7CFB;&#x7EDF;&#x6362;&#x7B97;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x6D89;&#x53CA; librosa &#x5E93;&#x65F6;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F18;&#x5148;&#x4EE5;&#x7EDF;&#x4E00;&#x4F53;&#x7CFB;&#x4E3A;&#x8981;&#x6C42;&#xFF0C;&#x91C7;&#x7528;&#x76F8;&#x540C;&#x4F53;&#x7CFB;&#x7684;&#x8F6C;&#x6362;&#x516C;&#x5F0F;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x7F8E;&#x4F53;&#x7CFB;&#x90FD;&#x662F;&#x5BF9;&#x5355;&#x4E00;&#x9891;&#x7387;&#x7EAF;&#x58F0;&#x7684;&#x8F6C;&#x6362;&#x3002;&#x800C;&#x4EC0;&#x4E48;&#x662F;&#x9891;&#x7387;&#x5462;&#xFF1F;</p>
+<h2 id="&#x9891;&#x7387;&#xFF08;frequency&#xFF09;"><strong>&#x9891;&#x7387;&#xFF08;Frequency&#xFF09;</strong></h2>
+<p><strong>&#x9891;&#x7387;&#xFF08;Frequency&#xFF09;</strong> &#x662F;&#x6307;&#x58F0;&#x97F3;&#x5BF9;&#x5E94;&#x673A;&#x68B0;&#x6CE2;&#x5C5E;&#x6027;&#x7684;&#x6E90;&#x632F;&#x52A8;&#x9891;&#x7387;&#x3002;&#x662F;&#x58F0;&#x97F3;&#x4E09;&#x8981;&#x7D20;&#x4E2D;&#x552F;&#x4E00;&#x7684;&#x7EAF;&#x5BA2;&#x89C2;&#x7269;&#x7406;&#x91CF;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x6240;&#x79F0;&#x7684;&#x58F0;&#x97F3;&#x7684;&#x9891;&#x7387;&#xFF0C;&#x90FD;&#x662F;&#x6307;&#x53EF;&#x88AB;&#x611F;&#x77E5;&#x7684;&#x58F0;&#x97F3;&#x9891;&#x7387;&#xFF0C;&#x5373;&#x524D;&#x6587;&#x63D0;&#x5230;&#x7684; <strong>&#x72ED;&#x4E49;&#x58F0;&#x6CE2;&#xFF08;Narrow Acoustic Wave&#xFF09;</strong> &#x8303;&#x56F4;&#x7684; <strong>&#x53EF;&#x542C;&#x9891;&#x7387;&#xFF08;AF [Audible Frequency]&#xFF09;</strong> &#x3002;</p>
+<p>&#x9891;&#x7387;&#x7684;&#x5355;&#x4F4D;&#x662F; <strong>&#x8D6B;&#x5179;&#xFF08;Hz [Hertz]&#xFF09;</strong> &#xFF0C;&#x8868;&#x793A;&#x5355;&#x4F4D;&#x65F6;&#x95F4;&#x4E00;&#x79D2;&#x5185;&#xFF0C;&#x632F;&#x6E90;&#x53D1;&#x751F;&#x5B8C;&#x6574;&#x5468;&#x671F;&#x6027;&#x5F80;&#x590D;&#x8FD0;&#x52A8;&#x7684;&#x6B21;&#x6570;&#xFF0C;&#x5373; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mn>0</mn><mi>H</mi><mi>z</mi><mo>=</mo><mn>1</mn><mn>0</mn><mi mathvariant="normal">/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">10 Hz = 10/s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mord mathrm">/</span><span class="mord mathit">s</span></span></span></span> &#x3002;&#x5047;&#x8BBE;&#x5B58;&#x5728;&#x6CE2;&#x957F;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>&#x3BB;</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">&#x3BB;</span></span></span></span> &#xFF0C;&#x6CE2;&#x901F;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">c</span></span></span></span> &#x7684;&#x6CE2;&#xFF0C;&#x6709;&#x76F8;&#x5E94;&#x5468;&#x671F;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span> &#xFF0C;&#x9891;&#x7387;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">F</span></span></span></span> &#xFF0C;&#x5219;&#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mstyle scriptlevel="0" displaystyle="true"><mtable><mtr><mtd><mrow><mi>F</mi></mrow></mtd><mtd><mrow><mrow></mrow><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>T</mi></mrow></mfrac><mspace width="1em"></mspace><mo separator="true">,</mo><mspace width="1em"></mspace><mi>c</mi><mo>=</mo><mi>&#x3BB;</mi><mi>F</mi></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd></mtr></mtable></mstyle></mrow></mrow><annotation encoding="application/x-tex">
+{\displaystyle 
+ \begin{aligned}
+   F &amp;= \frac{1}{T} \quad ,\quad c = \lambda F \\
+ \end{aligned}
+}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.8537199999999998em;"></span><span class="strut bottom" style="height:3.20744em;vertical-align:-1.35372em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mtable"><span class="col-align-r"><span class="vlist"><span style="top:-0.5322799999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">F</span></span></span><span style="top:0.9937199999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="col-align-l"><span class="vlist"><span style="top:-0.5322799999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"></span><span class="mrel">=</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mpunct"><span class="mspace quad"></span><span class="mpunct">,</span></span><span class="mord mathit"><span class="mspace quad"></span><span class="mord mathit">c</span></span><span class="mrel">=</span><span class="mord mathit">&#x3BB;</span><span class="mord mathit" style="margin-right:0.13889em;">F</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></span></span></p>
+<p>&#x5728;&#x6807;&#x51C6;&#x5927;&#x6C14;&#x538B;&#x7684;&#x7406;&#x60F3;&#x7A7A;&#x6C14;&#x4ECB;&#x8D28;&#x4E2D;&#xFF0C;&#x4EBA;&#x7C7B;&#x80FD;&#x591F;&#x542C;&#x89C1;&#x5E76;&#x8BC6;&#x522B;&#x5927;&#x7EA6; 20Hz&#xFF5E;20000Hz &#x9891;&#x7387;&#x8303;&#x56F4;&#x7684;&#x58F0;&#x6CE2;&#x3002;<strong>&#x6709; AF &#x5C5E;&#x4E8E; 20Hz&#xFF5E;20000Hz&#x3002;</strong></p>
+<p>&#x4EE5;&#x6B64;&#x4E3A;&#x57FA;&#x51C6;&#xFF0C; <strong>&#x9891;&#x7387;&#x5C0F;&#x4E8E; 20Hz</strong> &#x8303;&#x56F4;&#x7684;&#x58F0;&#x6CE2;&#xFF0C;&#x88AB;&#x6211;&#x4EEC;&#x79F0;&#x4E3A; <strong>&#x6B21;&#x58F0;&#x6CE2;&#xFF08;Infrasound&#xFF09;</strong> &#x3002;&#x800C; <strong>&#x9891;&#x7387;&#x5927;&#x4E8E; 20000Hz</strong> &#x8303;&#x56F4;&#x7684;&#x58F0;&#x6CE2;&#xFF0C;&#x88AB;&#x6211;&#x4EEC;&#x79F0;&#x4E3A; <strong>&#x8D85;&#x58F0;&#x6CE2;&#xFF08;Ultrasound&#xFF09;</strong> &#x3002;&#x6B21;&#x58F0;&#x6CE2;&#x548C;&#x8D85;&#x58F0;&#x6CE2;&#x90FD;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x4EBA;&#x800C;&#x8A00;&#x7684; <strong>&#x5355;&#x9608;&#x8303;&#x56F4;&#x57DF;</strong> &#x3002;</p>
+<center>
+<figure>
+   <img width="600" height="140" src="../../Pictures/Ultrasound_range_diagram.png" alt="">
+    <figcaption>
+      <p>&#x56FE; 1.3.1-1 &#x4E09;&#x7C7B;&#x58F0;&#x6CE2;&#x8303;&#x56F4;&#x793A;&#x610F;&#x56FE;&#xFF08;&#x84DD;&#x8272;&#x6307;&#x72ED;&#x4E49;&#x58F0;&#x6CE2;&#xFF09; <a href="References_1.md">[2]</a></p>
+   </figcaption>
+</figure>
+</center>
+
+<p>&#x5373;&#x7136;&#x88AB;&#x5F52;&#x4E3A;&#x58F0;&#x97F3;&#x4E09;&#x8981;&#x7D20;&#xFF0C;&#x5C31;&#x8868;&#x793A;&#x4EBA;&#x5BF9;&#x4E0D;&#x540C;&#x9891;&#x7387;&#x58F0;&#x97F3;&#x7684;&#x542C;&#x611F;&#x6709;&#x4E0D;&#x5C11;&#x5DEE;&#x5F02;&#x3002;&#x5728;&#x5047;&#x8BBE;&#x5176;&#x5B83;&#x5F71;&#x54CD;&#x91CF;&#x4E0D;&#x53D8;&#x7684;&#x7406;&#x60F3;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x672C;&#x4E66;&#x67E5;&#x9605;&#x4E86;&#x4E00;&#x4E9B;&#x57FA;&#x4E8E;&#x65E5;&#x5E38;&#x5173;&#x8054;&#x5FC3;&#x7406;&#x58F0;&#x5B66;&#x6D4B;&#x91CF;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x6C47;&#x603B;&#x5982;&#x4E0B;&#x8868;&#x4EE5;&#x4F9B;&#x53C2;&#x8003;&#xFF1A;</p>
+<center>
+<figure>
+   <img width="620" height="400" src="../../Pictures/sound_frequency_table_cn.png" alt="">
+</figure>
+</center>
+
+<p>&#x4ECE;&#x4E0A;&#x8868;&#x53EF;&#x77E5;&#xFF0C;&#x4EE5;&#x542C;&#x611F;&#x89D2;&#x5EA6;&#x8003;&#x8651;&#x4F1A;&#x5341;&#x5206;&#x7684;&#x4E3B;&#x89C2;&#x3002;&#x4F46;&#x8BF7;&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;&#xFF0C;&#x9891;&#x7387;&#x672C;&#x8EAB;&#x662F;&#x5BA2;&#x89C2;&#x7684;&#x3002;&#x4E0A;&#x8FF0;&#x7EDF;&#x8BA1;&#x4E2D;&#x91C7;&#x7528;&#x7684;&#xFF0C;&#x662F;&#x7531;&#x9009;&#x5B9A;&#x6837;&#x672C;&#x58F0;&#x97F3;&#x4E2D;&#xFF0C;&#x6240;&#x5305;&#x542B;&#x7684;&#x6240;&#x6709;&#x9891;&#x7387;&#x58F0;&#x6CE2;&#x7684; <strong>&#x590D;&#x5408;&#x9891;&#x7387;&#x4E2D;&#x503C;&#xFF08;Median&#xFF09;</strong> &#x3002;&#x81EA;&#x7136;&#x754C;&#x4E2D;&#x5927;&#x90E8;&#x5206;&#x58F0;&#x97F3; <strong>&#x5E76;&#x975E;</strong> &#x7531; <strong>&#x5355;&#x4E00;</strong> &#x9891;&#x7387;&#x6CE2;&#x6784;&#x6210;&#x3002;&#x8FD9;&#x4E5F;&#x662F;&#x4EA7;&#x751F;&#x4E0D;&#x540C;&#x97F3;&#x8272;&#xFF08;Timbre&#xFF09;&#x7684;&#x539F;&#x56E0;&#x4E4B;&#x4E00;&#x3002;</p>
+<p>&#x89C2;&#x5BDF;&#x4F8B;&#x4E3E;&#x7684;&#x7EDF;&#x8BA1;&#x7ED3;&#x679C;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x76F4;&#x89C9;&#x4E0A;&#x975E;&#x5E38;&#x5435;&#x95F9;&#x7684;&#x58F0;&#x97F3;&#xFF0C;&#x5982;&#x98DE;&#x673A;&#x53D1;&#x52A8;&#x673A;&#x7684;&#x58F0;&#x97F3;&#xFF0C;&#x5176;&#x9891;&#x7387;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x9AD8;&#x3002;&#x800C;&#x4E00;&#x4E9B;&#x6211;&#x4EEC;&#x751F;&#x6D3B;&#x4E2D;&#x611F;&#x89C9;&#x96BE;&#x4EE5;&#x5BDF;&#x89C9;&#x7684;&#x58F0;&#x97F3;&#xFF0C;&#x5982;&#x868A;&#x5B50;&#x98DE;&#x884C;&#x58F0;&#xFF0C;&#x5374;&#x4E0D;&#x4E00;&#x5B9A;&#x4F4E;&#x9891;&#x3002;</p>
+<p>&#x663E;&#x7136;&#xFF0C;<strong>&#x9891;&#x7387;&#x5E76;&#x4E0D;&#x80FD;&#x4EE3;&#x8868;&#x58F0;&#x97F3;&#x7684;&#x9AD8;&#x4F4E;</strong> &#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x5176;&#x5B83;&#x53C2;&#x6570;&#x8868;&#x793A;&#xFF0C;&#x90A3;&#x5C31;&#x662F; <strong>&#x54CD;&#x5EA6;&#xFF08;Loudness&#xFF09;</strong> &#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
+2024-01-30 15:03:14
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Docs_1_3.html" class="navigation navigation-prev " aria-label="Previous page: 1.3 声音三要素（Three Elements of Audio）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Docs_1_3_2.html" class="navigation navigation-next " aria-label="Next page: 1.3.2 响度（Loudness）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.3.1 音高（Pitch）","level":"1.2.3.1","depth":3,"next":{"title":"1.3.2 响度（Loudness）","level":"1.2.3.2","depth":3,"path":"Chapter_1/Language/cn/Docs_1_3_2.md","ref":"Chapter_1/Language/cn/Docs_1_3_2.md","articles":[]},"previous":{"title":"1.3 声音三要素（Three Elements of Audio）","level":"1.2.3","depth":2,"path":"Chapter_1/Language/cn/Docs_1_3.md","ref":"Chapter_1/Language/cn/Docs_1_3.md","articles":[{"title":"1.3.1 音高（Pitch）","level":"1.2.3.1","depth":3,"path":"Chapter_1/Language/cn/Docs_1_3_1.md","ref":"Chapter_1/Language/cn/Docs_1_3_1.md","articles":[]},{"title":"1.3.2 响度（Loudness）","level":"1.2.3.2","depth":3,"path":"Chapter_1/Language/cn/Docs_1_3_2.md","ref":"Chapter_1/Language/cn/Docs_1_3_2.md","articles":[]},{"title":"1.3.3 音色（Timbre）","level":"1.2.3.3","depth":3,"path":"Chapter_1/Language/cn/Docs_1_3_3.md","ref":"Chapter_1/Language/cn/Docs_1_3_3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-highlight","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_1/Language/cn/Docs_1_3_1.md","mtime":"2024-01-30T07:03:14.160Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-31T06:15:31.662Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-rss/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

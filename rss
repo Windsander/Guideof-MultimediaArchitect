@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 22 Jan 2024 03:52:44 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 31 Jan 2024 06:16:04 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -57,6 +57,34 @@
             <description><![CDATA[数字音频技术（DAT [Digital Audio Tech]） 是当代计算机音像学的基础综合科学。其代指一系列，以 电-力-声类比（Electrical-Mechanical-Acoustic Analogy） 、 心理声学模型（Psychoacoustics Model） 等数学工具对声音进行记录、转换、存储、编解为可由挂载数字音频设备处理、播放、操作的数据，的方法论。它是一门包含了 心理声学（Psychoacoustics） 、 电声学（Electroacoustics） 、 数字信号处理（DSP [Digital Signal Processing]） 等领域知识的复合学科。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.2 声波三要素（Three Elements of Acoustics）]]></title>
+            <description><![CDATA[声音（Sounds） 是对所有由振动产生，可以被人感知并理解的，由固体、液体、气体等介质而传播的一类 声波（Acoustic Wave） 的统称 [1] 。只有被人能够听到的声波，才属于声音。所以，声音也可以被称为狭义声波（Narrow Acoustic Wave）。由于其本质仍是声波。客观对声波的测定量，也是同作用于声音的。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.3 声音三要素（Three Elements of Sounds）]]></title>
+            <description><![CDATA[声音三要素（Three Elements of Sounds） 是人们从 心理声学（Psychoacoustics） 角度，对最能影响人对声音本身感官感受的，三个最重要关键参数的归纳。分别是：音高（Pitch） 、 响度（Loudness） 、 音色（Timbre） 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.3.1 音高（Pitch）]]></title>
+            <description><![CDATA[音高（Pitch） 是代表声音振动频率高低的 主观感知量（Subjective Perceptions） ，是映射自对应声波频率纯客观物理量的心里声学概念。有时，我们会用 音调/声调（Tone）代指音高的工程名称，这其实不够准确。若发生这种情况，我们就 不能 将代指音高的音调，与乐理中关联音阶（Octave）的音调（Tone）等同。两者存在换算但并不是一个概念。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.3.2 响度（Loudness）]]></title>
+            <description><![CDATA[响度（Loudness） ，有时虽不准确但也会被称为 音量（Volume） ，是指人对声音大小的 主观感知量（Subjective Perceptions） ，是对声波的 声压（Acoustic Pressure） 物理量的感观描述。响度是根据人对不同声压反应，而测定出的一种 非客观（Non-Objective） 的量化值。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
