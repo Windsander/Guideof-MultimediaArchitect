@@ -59,12 +59,13 @@
 
 ### 音视频工程基础
 
-* [一、数字音频的保存与还原](Chapter_1/Language/cn/Apex_1_Introduce.md)
+* [一、音频的保存与还原](Chapter_1/Language/cn/Apex_1_Introduce.md)
     * [1.1 音频基础](Chapter_1/Language/cn/Docs_1_1.md)
-	* [1.2 音频三要素（Three Elements of Audio）]()
-		* [1.2.1 幅度 & 响度（Volume）]()
-		* [1.2.2 频率 & 音调（Pitch）]()
-		* [1.2.3 波形 & 音色（Timbre）]()
+	* [1.2 声波三要素（Three Elements of Acoustics）](Chapter_1/Language/cn/Docs_1_2.md)
+	* [1.3 声音三要素（Three Elements of Audio）](Chapter_1/Language/cn/Docs_1_3.md)
+		* [1.3.1 音高（Pitch）](Chapter_1/Language/cn/Docs_1_3_1.md)
+		* [1.3.2 响度（Loudness）](Chapter_1/Language/cn/Docs_1_3_2.md)
+		* [1.3.3 音色（Timbre）](Chapter_1/Language/cn/Docs_1_3_3.md)
 	* [1.3 音频的解构]()
 		* [1.3.1 时域图（Time Domain Graph） & 频域图（Frequency Domain Graph）]()
 		* [1.3.2 频谱图（Spectrogram）]()
@@ -188,7 +189,7 @@
 	* [4.7 模型结构速览](Chapter_4/Language/cn/Docs_4_7.md)
 		* [4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）](Chapter_4/Language/cn/Docs_4_7_1.md)
 		* [4.7.2 循环神经网络（RNN [Recurrent Neural Network]）](Chapter_4/Language/cn/Docs_4_7_2.md)
-		* [4.7.3 经典模型：Transformer](Chapter_4/Language/cn/Docs_4_7_3.md)
+		* [4.7.3 自注意力网络（Transformer）](Chapter_4/Language/cn/Docs_4_7_3.md)
     * [【参考文献】](Chapter_4/Language/cn/References_4.md)
 
 <br>

@@ -390,7 +390,7 @@ $$
 </figure>
 </center>
 
-凭借这样的处理，使得原本大于 $$67 \times 2 \times 3$$ 个 MTS 矩阵，缩减到了 $$4 \times 2 \times 2$$ 共计 8 个（详见【附表一】）的可接受范围。
+凭借这样的处理，使得原本大于 $$67 \times 2 \times 3$$ 个 MTS 矩阵，缩减到了 $$4 \times 2 \times 2$$ 共计 8 个（详见[【附表一】](https://vcgit.hhi.fraunhofer.de/jvet/VVCSoftware_VTM/-/blob/master/source/Lib/CommonLib/RomLFNST.cpp)）的可接受范围。
 
 至此，根据输入尺寸大小、预测模式所处归类、输入率失真优化指数（RDO）这 3 个参数，就能够选定具体的算子进行相关处理了。完成 RST 的工程化。
 
