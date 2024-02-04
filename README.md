@@ -80,6 +80,7 @@
 		* [1.5.2 无压缩编码格式（Uncompressed Encode）]()
 		* [1.5.3 无损压缩编码格式（Lossless Encode）]()
 		* [1.5.4 有损压缩编码格式（Uncompressed Encode）]()
+	* [【参考文献】](Chapter_1/Language/cn/References_1.md)
 
 <br>
 

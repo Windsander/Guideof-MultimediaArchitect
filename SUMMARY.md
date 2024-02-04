@@ -26,6 +26,7 @@
 		* [1.5.2 无压缩编码格式（Uncompressed Encode）]()
 		* [1.5.3 无损压缩编码格式（Lossless Encode）]()
 		* [1.5.4 有损压缩编码格式（Uncompressed Encode）]()
+	* [【参考文献】](Chapter_1/Language/cn/References_1.md)
 * [二、色彩的运用与存储](Chapter_2/Language/cn/Apex_2_Introduce.md)
     * [2.1 色彩基础](Chapter_2/Language/cn/Docs_2_1.md)
     * [2.2 颜色三要素（Three Elements of Color）](Chapter_2/Language/cn/Docs_2_2.md)
