@@ -16,3 +16,9 @@
 **[7]** Terminology A. American national standard[J]. ANSI S1, 2006: 1-1994.
 
 **[8]** Azamian, Mohammadali & Kabir, Ehsanollah. (2019). Synthesizing the note-specific atoms based on their fundamental frequency, used for single-channel musical source separation. Multimedia Tools and Applications. 78. 10.1007/s11042-018-7060-8. 
+
+**[9]** Grove G, Sadie S, Tyrrell J, et al. The new Grove dictionary of music and musicians[J]. (No Title), 1980.
+
+**[10]** Capecchi D. Leonhard Euler between mathematics and natural philosophy: An introduction to natural science Anleitung zur Naturlehre[J]. Handbook of the History and Philosophy of Mathematical Practice, 2020: 1-53.
+
+**[11]** Cohn R. Introduction to neo-riemannian theory: a survey and a historical perspective[J]. Journal of Music Theory, 1998: 167-180.
