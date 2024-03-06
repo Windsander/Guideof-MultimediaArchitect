@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 04 Feb 2024 09:28:41 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 06 Mar 2024 07:53:04 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -92,6 +92,20 @@
             <description><![CDATA[音色（Timbre） ，是指声音的主观成色。本身更偏向于乐理而非工程。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.4 声音的解构]]></title>
+            <description><![CDATA[声音，大多为复合声，从前文的介绍中我们可以发现，至少能够从三个角度去构建参考系。即，乐理角度（艺术） 、 心理声学（感观） 、 声乐工程（声音三要素） 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.4.1 乐理：音调（Notes）& 五度圈（Circle of Fifths）]]></title>
+            <description><![CDATA[在声音三要素开始的部分，我们已经简单介绍了一些乐理基础概念。而乐理对声音的描述，都是基于 音调（Note） 为出发点的。通过音调指向基音，建立主观参考系下的客观不变量，从而构造统一的联系。结合 系统的 记录方式，完成对一定时间段下，音乐的保存。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
