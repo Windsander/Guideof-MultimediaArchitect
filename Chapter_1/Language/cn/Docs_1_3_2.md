@@ -1,22 +1,17 @@
 
 # 1.3.2 响度（Loudness）
 
-**响度（Loudness）** ，有时虽不准确但也会被称为 **音量（Volume）** ，是指人对声音大小的 **主观感知量（Subjective Perceptions）** ，是对声波的 **声压（Acoustic Pressure）** 物理量的感观描述。响度是根据人对不同声压反应，而测定出的一种 **非客观（Non-Objective）** 的量化值。
+**响度（Loudness）** ，有时虽不准确但也会被称为 **音量（Volume）** ，是指人对声音大小的 **主观感知量（Subjective Perceptions）** ，是对声波的 **声压（Acoustic Pressure）** 物理量的感观描述。响度是根据人对不同声压反应，而人为测量出的一种 **非客观（Non-Objective）** 的量化值。
 
-响度的早期单位是 **宋（Sone）** ，这是一个 **主观标定的单位** 。同 [音高](Docs_1_3_1.md) 一样，来自于 **史丹利·史密斯·史蒂文斯（S. S. Stevens）** 于 1963 年的测定结果 [\[4\]][ref] 。除 **宋（Sone）** 以外，另一个常见的体系是 **方（Phon）** 。两者存在简单的 **线性直等关系** ：
+响度的早期单位是 **宋（Sone）** ，这是一个 **主观标定的单位** 。同 [音高](Docs_1_3_1.md) 一样，来自于 **史丹利·史密斯·史蒂文斯（S. S. Stevens）** 于 1963 年的实验结果 [\[4\]][ref] 。
 
-$$
-{\displaystyle 
- \begin{aligned}
-   1 \ Phon &= 2 \ Sone \\
- \end{aligned}
-}
-$$
-
-为了便于说明，我们仍采用粒度更细一些的 宋（Sone）来进行阐述。
 由于主观成分因素，宋 同样不属于当前 **国际通用的计量体系单位（SI Unit [International System of Units]）** ，而且因相对粗粒度而不太经常被采用。工程通用对响度进行衡量的单位，是声压级。
 
-**声压级（SPL [Sound Pressure Level]）** 是由 **美国国家标准学会（ANSI [American National Standards Institute]）** 测定，同样为 **主观标定的** 响度单位。但由于相对精确的度量水平，在通常非实验误差情况下，可以作为稳定的工程单位使用。声压级单位为 **分贝（dB）** ，常用 $$N$$ 表示代指。我们有当前最新一次实验室精确测量的 **ANSI/ASA S1.1-2013** 规格为基准 [\[7\]][ref] ，规定：
+## **声压级（SPL [Sound Pressure Level]）**
+
+**声压级（SPL [Sound Pressure Level]）** 是由 **美国国家标准学会（ANSI [American National Standards Institute]）** 测定，同样为 **主观标定的** 响度单位。但由于相对精确的度量水平，在通常非实验误差情况下，可以作为稳定的工程单位使用。声压级单位为 **分贝（dB）** ，常用 $$N$$ 表示代指。
+
+我们有当前最新一次实验室精确测量的 **ANSI/ASA S1.1-2013** 规格为基准 [\[7\]][ref] 。修正锚定 **以 1000Hz 纯音，在人耳能听见的最小阈限压强 $$p_{ref} = 20 \mu Pa$$ 为 $$1 \ dB$$ 值** ，由此推导得声压级公式：
 
 $$
 {\displaystyle 
@@ -36,7 +31,7 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   L_N &= 40 + \log_2 \left( N \right) \\
+   L_N &= 2^{\tfrac{N - 40}{10}}  \\
  \end{aligned}
 }
 $$
@@ -46,10 +41,24 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   N &= 2^{\tfrac{L_N - 40}{10}}  \\
+   N &= 40 + \log_2 \left( L_N \right) \\
  \end{aligned}
 }
 $$
+
+除 **宋（Sone）** 以外，另一个常见的体系是 **方（Phon）** 。在该修订里，规定：
+
+$$
+{\displaystyle 
+ \begin{aligned}
+   40 \ dB = 40 \ Phon = 1 \ Sone \\
+ \end{aligned}
+}
+$$
+
+**一般情况下，宋（Sone）和方（Phon）用于常量标记，而 SPL分贝（dB）用于响度值。**
+
+<br>
 
 但是，从前文我们得知，自然界中的大部分声音，其本身就是复合的。这种情况下怎么评估它的响度呢？
 
