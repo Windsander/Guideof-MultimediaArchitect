@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 11 Mar 2024 08:40:33 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 Mar 2024 08:44:46 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -113,6 +113,20 @@
             <description><![CDATA[我们对乐理音调到感观转换已有基本认知。但当我们遇到一些频率不在表中，且也不属于表中任意一个独立音调频率倍数（即其它音级），却又悦耳到想要记录的，非隶属单一琴键的声音时。或者想要合理的创造一种不存在于自然中的合成音时。音调频率比关系的平滑听感，就成为了指引。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.4.3 感观：等响曲线（ELLC [Equal Loudness-Level Contour]）]]></title>
+            <description><![CDATA[等响曲线（ELLC [Equal Loudness-Level Contour]） 是反映在面对指定常量响度的稳定纯音时，人耳对各纯音基波频率下的响度感知最小临界点情况 [12] 。作为心理测量值，最终的结果是基于多组样本测量结果所得的 平均值 。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.4.4 感观：频响曲线（FRC [Frequency Response Contour]）]]></title>
+            <description><![CDATA[频率响应（Frequency Response） 用来指代某系统（既可以是设备，也可以是人，泛指针对频率的感知器）在 接收频率（Frequency）输入时的输出响度（Loudness）（或最佳接收响度） 的特点 [16] 。是描述设备频段内，频率响度尺度 的客观测定结果。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_4.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
