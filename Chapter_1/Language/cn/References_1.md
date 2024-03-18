@@ -22,3 +22,15 @@
 **[10]** Capecchi D. Leonhard Euler between mathematics and natural philosophy: An introduction to natural science Anleitung zur Naturlehre[J]. Handbook of the History and Philosophy of Mathematical Practice, 2020: 1-53.
 
 **[11]** Cohn R. Introduction to neo-riemannian theory: a survey and a historical perspective[J]. Journal of Music Theory, 1998: 167-180.
+
+**[12]** Suzuki Y, Takeshima H. Equal-loudness-level contours for pure tones[J]. The Journal of the Acoustical Society of America, 2004, 116(2): 918-933.
+
+**[13]** Fletcher H, Munson W A. Loudness, its definition, measurement and calculation[J]. Bell System Technical Journal, 1933, 12(4): 377-430.
+
+**[14]** International Organization for Standardization. Acoustics: Normal Equal-loudness-level Contours[M]. ISO, 2023.
+
+**[15]** Suzuki Y, Takeshima H, Kurakata K. Revision of ISO 226" Normal Equal-Loudness-Level Contours" from 2003 to 2023 edition: The background and results[J]. Acoustical Science and Technology, 2024, 45(1): 1-8.
+
+**[16]** Smith, Steven W. (1997). The Scientist and Engineer's Guide to Digital Signal Processing. California Technical Pub. pp. 177–180. ISBN 978-0966017632.
+
+**[17]** Toole F. The measurement and calibration of sound reproducing systems[J]. Journal of the Audio Engineering Society, 2015, 63(7/8): 512-541.
