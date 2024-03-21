@@ -1,7 +1,7 @@
 
 # 2.6.2 RGB 体系色彩格式
 
-**原色格式（Primaries Format）**，或 RGB 体系色彩格式最大的特点就是在于，其对颜色表示的富集程度和存储空间大小密切相关。可以说 **RGB 色彩格式中，每个通道能够占用的存储空间越大，则能够表示的颜色越多** 。非常的简单粗暴。统一的，RGB 色彩格式的格式空间，即为 **归一化的 CIE RGB 色彩空间** 。
+**原色格式（Primaries Format）**，或 RGB 体系色彩格式最大的特点就是在于，其对颜色表示的富集程度和存储空间大小密切相关。可以说 **RGB 色彩格式中，每个通道能够占用的存储空间越大，则能够表示的颜色越多**。非常的简单粗暴。统一的，RGB 色彩格式的格式空间，即为 **归一化的 CIE RGB 色彩空间**。
 
 ## **3-bit RGB**
 
@@ -65,7 +65,7 @@
 </figure>
 </center>
 
-此格式 **只有 IBM 5153 在使用** 。
+此格式 **只有 IBM 5153 在使用**。
 
 ## **6-bit RGB**
 
@@ -97,7 +97,7 @@
 </figure>
 </center>
 
-此格式在 **IBM 的增强图形适配器（EGA [Enhanced Graphics Adapter]）上被首次运用** 。并在之后伴随了多个 IBM 主机版本。
+此格式在 **IBM 的增强图形适配器（EGA [Enhanced Graphics Adapter]）上被首次运用**。并在之后伴随了多个 IBM 主机版本。
 
 ## **9-bit RGB**
 
@@ -257,7 +257,7 @@
 </figure>
 </center>
 
-此格式被运用在 **IBM 8514** ，以及 **IBM 携带视频图像阵列（VGA [Video Graphics Array]）** 或 **多色图像阵列（MCGA [Multi-Color Graphics Array]）显卡** 的设备上。
+此格式被运用在 **IBM 8514**，以及 **IBM 携带视频图像阵列（VGA [Video Graphics Array]）** 或 **多色图像阵列（MCGA [Multi-Color Graphics Array]）显卡** 的设备上。
 
 ## **24-bit RGB & 32-bit RGBA8888**
 

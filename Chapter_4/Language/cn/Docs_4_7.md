@@ -5,7 +5,7 @@
 
 不过，在起步阶段，我们还需要决定具体使用哪一种模型类型，来构建面向目标的神经网络。可供选择的类型，其实在本章的开篇就已介绍，即深度神经网络（DNN [Deep Neural Network]）的分类（**[见 4.1](Docs_4_1.md)**）。
 
-这里我们主要对 **当下主流的 CNN、RNN、GAN、Transformer 类别** ，进行说明。
+这里我们主要对 **当下主流的 CNN、RNN、GAN、Transformer 类别**，进行说明。
 
 
 [ref]: References_4.md
