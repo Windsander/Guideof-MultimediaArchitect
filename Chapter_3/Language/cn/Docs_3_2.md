@@ -13,7 +13,7 @@
 
 **欲期望达成此要求，被抽象的有限参数单元必然不能太复杂。**
 
-为了便于演示说明，本节采用 **OpenGL 的 GLSL 程序片脚本语言** ，并使用 **WebGL 环境预览** ，来进行算法的演示工作。其他驱动，如 DirectX 的 HLSL 或 Metal 的 MLSL，皆可参照 GLSL 逻辑达到相同效果。
+为了便于演示说明，本节采用 **OpenGL 的 GLSL 程序片脚本语言**，并使用 **WebGL 环境预览**，来进行算法的演示工作。其他驱动，如 DirectX 的 HLSL 或 Metal 的 MLSL，皆可参照 GLSL 逻辑达到相同效果。
 
 * [在线演示](Playground_3.md)
 

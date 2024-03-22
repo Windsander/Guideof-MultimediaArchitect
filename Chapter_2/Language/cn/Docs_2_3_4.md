@@ -1,7 +1,7 @@
 
 # 2.3.4 经典三刺激函数（Tristimulus Values Functions）
 
-CIE 在 1931 年同年提出 CIE XYZ 色彩空间，尝试通过人为设计的色感函数 [\[12\]][ref] [\[13\]][ref]，来避 RGB 的 **负色匹配** 问题。为了区别于 CIE RGB 中，通过实验测定拟合而得的三原色色感函数。我们将新的函数称为 **CIE 三刺激函数（Tristimulus Values Functions）** ，用来代替原有 $${\overline {r}}(\lambda )$$ 、 $${\overline {g}}(\lambda )$$ 、 $${\overline {b}}(\lambda )$$ ，记为 $${\overline {x}}(\lambda )$$ 、 $${\overline {y}}(\lambda )$$ 、 $${\overline {z}}(\lambda )$$ 。三个刺激函数对应的刺激曲线如下图：
+CIE 在 1931 年同年提出 CIE XYZ 色彩空间，尝试通过人为设计的色感函数 [\[12\]][ref] [\[13\]][ref]，来避 RGB 的 **负色匹配** 问题。为了区别于 CIE RGB 中，通过实验测定拟合而得的三原色色感函数。我们将新的函数称为 **CIE 三刺激函数（Tristimulus Values Functions）**，用来代替原有 $${\overline {r}}(\lambda )$$ 、 $${\overline {g}}(\lambda )$$ 、 $${\overline {b}}(\lambda )$$ ，记为 $${\overline {x}}(\lambda )$$ 、 $${\overline {y}}(\lambda )$$ 、 $${\overline {z}}(\lambda )$$ 。三个刺激函数对应的刺激曲线如下图：
 
 <center>
 <figure>
@@ -72,7 +72,7 @@ $$
 
 不过，CIE 1931 RGB & CIE 1931 XYZ 中对于光学三原色标准波长的测量/设置，在现代光学体系中被认为有所偏颇的。在选取基准波长时，1931 RGB 蓝绿取用气态水银（Hg）放电获谱线产生的峰值波长  435.8nm（蓝）和 546.1nm（绿），而红色却因为人眼在对 700nm 波长附近的颜色感知几乎无变化的情况下，人为介入设定为还原配色实验理想值 700nm。这一历史局限性导致的情况，也被基于 RGB 测定而考量的 XYZ 继承了。以致于为两者的 “均色问题” 埋下了伏笔。
 
-即便如此，经典三原色函数和三刺激函数，仍然为现代色彩体系奠定了基础公式。使我们能够 **以数理形式转换对应目标波长的目标光波，到相应的度量衡系统** 。
+即便如此，经典三原色函数和三刺激函数，仍然为现代色彩体系奠定了基础公式。使我们能够 **以数理形式转换对应目标波长的目标光波，到相应的度量衡系统**。
 
 
 [ref]: References_2.md
