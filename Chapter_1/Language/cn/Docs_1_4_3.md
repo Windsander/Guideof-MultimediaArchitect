@@ -44,7 +44,7 @@
       width = "400" height = "275"
       src="../../Pictures/FLC_instruments_A4_5_100.png" alt="">
     <figcaption>
-      <p>图 1.4.3-1 某低音（Bass）的频律响度特征（FLF）示意连峰图</p>
+      <p>图 1.4.3-2 多乐器演奏音调 A4 时在 5s 处取 100ms 所得频率响度特征</p>
    </figcaption>
 </figure>
 </center>

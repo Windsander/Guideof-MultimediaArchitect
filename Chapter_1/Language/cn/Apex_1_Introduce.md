@@ -22,7 +22,7 @@
 	* [1.4.2 乐理：和声（Harmony） & 和弦（Chord）& 调性网络（Tonnetz）](Docs_1_4_2.md)
 	* [1.4.3 感观：等响曲线（ELLC [Equal Loudness-Level Contour]）](Docs_1_4_3.md)
 	* [1.4.4 感观：频响曲线（FRC [Frequency Response Contour]）](Docs_1_4_4.md)
-	* [1.4.5 工程：频谱图（Spectrogram）](Docs_1_4_5.md)
+	* [1.4.5 工程：频谱图（Spectrum）](Docs_1_4_5.md)
 * [1.4 音频的采样与调制]()
 	* [1.4.1 数字信号（Digital Signal）& 模拟信号（Analog Signal）]()
 	* [1.4.3 采样率（Sample Rate） & 采样位深（Bit Depth） & 采样声道（Channel）]()
