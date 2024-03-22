@@ -335,10 +335,13 @@ $$
 
 至于具体是否能先觉的量化每个人的听觉体验呢？或许肖恩博士的另一句话，会有更大的参考价值，那就是 [\[19\]][ref]：
 
-    “It makes perfect sense, at least to me. Only then will listeners hear the truth -- music reproduced as the artist intended.”（“至少对我来说是这样的。（不过也正是）只有这样，听众才能听到真相——音乐按照艺术家的意图复制。”）
+<br>
+
+*“It makes perfect sense, at least to me. Only then will listeners hear the truth -- music reproduced as the artist intended.”（“至少对我来说是这样的。（不过也正是）只有这样，听众才能听到真相——音乐按照艺术家的意图复制。”）*
 
 <br>
 
 **这就是感官感受和工程测量的不同了。**
+
 
 [ref]: References_1.md
