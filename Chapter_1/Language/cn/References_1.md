@@ -34,3 +34,7 @@
 **[16]** Smith, Steven W. (1997). The Scientist and Engineer's Guide to Digital Signal Processing. California Technical Pub. pp. 177–180. ISBN 978-0966017632.
 
 **[17]** Toole F. The measurement and calibration of sound reproducing systems[J]. Journal of the Audio Engineering Society, 2015, 63(7/8): 512-541.
+
+**[18]** Olive S, Welti T. The relationship between perception and measurement of headphone sound quality[C]//Audio Engineering Society Convention 133. Audio Engineering Society, 2012.
+
+**[19]** Olive S, Welti T. The relationship between perception and measurement of headphone sound quality, from his blog, https://seanolive.blogspot.com/2013/04/the-relationship-between-perception-and.html, Monday, April 22, 2013.
