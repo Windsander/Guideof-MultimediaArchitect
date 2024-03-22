@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 18 Mar 2024 08:44:46 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 22 Mar 2024 05:02:52 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -68,35 +68,35 @@
         </item>
         <item>
             <title><![CDATA[1.3 声音三要素（Three Elements of Sounds）]]></title>
-            <description><![CDATA[声音三要素（Three Elements of Sounds） 是人们从 心理声学（Psychoacoustics） 角度，对最能影响人对声音本身感官感受的，三个最重要关键参数的归纳。分别是：音高（Pitch） 、 响度（Loudness） 、 音色（Timbre） 。]]></description>
+            <description><![CDATA[声音三要素（Three Elements of Sounds） 是人们从 心理声学（Psychoacoustics） 角度，对最能影响人对声音本身感官感受的，三个最重要关键参数的归纳。分别是：音高（Pitch） 、 响度（Loudness） 、 音色（Timbre）。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[1.3.1 音高（Pitch）]]></title>
-            <description><![CDATA[音高（Pitch） 是代表声音振动频率高低的 主观感知量（Subjective Perceptions） ，是映射自对应声波频率纯客观物理量的心里声学概念。有时，我们会用 音调/声调（Tone）代指音高的工程名称，这其实不够准确。若发生这种情况，我们就 不能 将代指音高的音调，与乐理中关联音阶（Octave）的音调（Tone）等同。两者存在换算但并不是一个概念。]]></description>
+            <description><![CDATA[音高（Pitch） 是代表声音振动频率高低的 主观感知量（Subjective Perceptions），是映射自对应声波频率纯客观物理量的心里声学概念。有时，我们会用 音调/声调（Tone）代指音高的工程名称，这其实不够准确。若发生这种情况，我们就 不能 将代指音高的音调，与乐理中关联音阶（Octave）的音调（Tone）等同。两者存在换算但并不是一个概念。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[1.3.2 响度（Loudness）]]></title>
-            <description><![CDATA[响度（Loudness） ，有时虽不准确但也会被称为 音量（Volume） ，是指人对声音大小的 主观感知量（Subjective Perceptions） ，是对声波的 声压（Acoustic Pressure） 物理量的感观描述。响度是根据人对不同声压反应，而人为测量出的一种 非客观（Non-Objective） 的量化值。]]></description>
+            <description><![CDATA[响度（Loudness），有时虽不准确但也会被称为 音量（Volume），是指人对声音大小的 主观感知量（Subjective Perceptions），是对声波的 声压（Acoustic Pressure） 物理量的感观描述。响度是根据人对不同声压反应，而人为测量出的一种 非客观（Non-Objective） 的量化值。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[1.3.3 音色（Timbre）]]></title>
-            <description><![CDATA[音色（Timbre） ，是指声音的主观成色。本身更偏向于乐理而非工程。]]></description>
+            <description><![CDATA[音色（Timbre），是指声音的主观成色。本身更偏向于乐理而非工程。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_3_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[1.4 声音的解构]]></title>
-            <description><![CDATA[声音，大多为复合声，从前文的介绍中我们可以发现，至少能够从三个角度去构建参考系。即，乐理角度（艺术） 、 心理声学（感观） 、 声乐工程（声音三要素） 。]]></description>
+            <description><![CDATA[声音，大多为复合声，从前文的介绍中我们可以发现，至少能够从三个角度去构建参考系。即，乐理角度（艺术） 、 心理声学（感观） 、 声乐工程（声音三要素）。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -117,7 +117,7 @@
         </item>
         <item>
             <title><![CDATA[1.4.3 感观：等响曲线（ELLC [Equal Loudness-Level Contour]）]]></title>
-            <description><![CDATA[等响曲线（ELLC [Equal Loudness-Level Contour]） 是反映在面对指定常量响度的稳定纯音时，人耳对各纯音基波频率下的响度感知最小临界点情况 [12] 。作为心理测量值，最终的结果是基于多组样本测量结果所得的 平均值 。]]></description>
+            <description><![CDATA[等响曲线（ELLC [Equal Loudness-Level Contour]） 是反映在面对指定常量响度的稳定纯音时，人耳对各纯音基波频率下的响度感知最小临界点情况 [12] 。作为心理测量值，最终的结果是基于多组样本测量结果所得的 平均值。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -145,14 +145,14 @@
         </item>
         <item>
             <title><![CDATA[2.1 色彩基础]]></title>
-            <description><![CDATA[1666年，艾萨克·牛顿（Isaac Newton，1642 - 1726） 通过光的色散实验，发现了太阳光可以分解成依次为红、橙、黄、绿、蓝、靛、紫的单色光，并可以由单色光复合而成白光 ，由此提出了 牛顿颜色原理（Newton's theory of colour） 。并于 1705 年结合他在光学领域的其他发现与猜想，编著为《光学》[1]。在此之前，亚里士多德提出的白光为一种纯粹光源才是学界共识。色散试验的伟大，在于为人们揭示了人类视觉感知色彩形式的光学物理特性。人们首次接触到了光谱（Spectrum）概念。此后，人们对光谱进行了大量基于颜色观测的研究，并逐步完成了奠基色彩学（Color Science）的理论归纳总结。]]></description>
+            <description><![CDATA[1666年，艾萨克·牛顿（Isaac Newton，1642 - 1726） 通过光的色散实验，发现了太阳光可以分解成依次为红、橙、黄、绿、蓝、靛、紫的单色光，并可以由单色光复合而成白光 ，由此提出了 牛顿颜色原理（Newton's theory of colour）。并于 1705 年结合他在光学领域的其他发现与猜想，编著为《光学》[1]。在此之前，亚里士多德提出的白光为一种纯粹光源才是学界共识。色散试验的伟大，在于为人们揭示了人类视觉感知色彩形式的光学物理特性。人们首次接触到了光谱（Spectrum）概念。此后，人们对光谱进行了大量基于颜色观测的研究，并逐步完成了奠基色彩学（Color Science）的理论归纳总结。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[2.2 颜色三要素（Three Elements of Color）]]></title>
-            <description><![CDATA[1853 年，赫尔曼·格拉斯曼（Hermann Günter Grassmann，1809 - 1877） 基于三色理论，取一组红绿蓝三色光源，尝试还原其他类型视觉单色（monochromat）的实验。这就是著名的光谱的 色度特性实验 （The Colorimetric Properties of the Spectrum） [7]。实验过程经过对红绿蓝三色灯源的水平位置调整，来间接的调整了三色最终组合情况。对比则选用了契合目标结果的参考光源。根据实验结果，格拉斯曼发现，确实可以用一个变权三元一次等式来对所有可见单色光源进行基于光学三原色（RGB）的合成。但是这样的合成是有条件的，对于部分特殊的颜色，例如橄榄绿（Vibrantgreen），就需要将红色光源摆放到隔板左边靠近对比光源的位置，才能使目标色在目标采样区域合成出来。他将这种现象称为 负色匹配（'negative' colors matching） 。而在此次试验中，格拉斯曼得到大量需要使用 1 个或 2 个 负色才能匹配的单色。这种现象的出现，在于当时的物理实验设备并不能很好的找到，合适作为人眼感知波峰基准值的光学三原色（RGB）波长，导致需要通过较多负拟合的方式，来人为的处理三相波叠加的还原它色问题。不过这并不影响实验有奠基理论产出。]]></description>
+            <description><![CDATA[1853 年，赫尔曼·格拉斯曼（Hermann Günter Grassmann，1809 - 1877） 基于三色理论，取一组红绿蓝三色光源，尝试还原其他类型视觉单色（monochromat）的实验。这就是著名的光谱的 色度特性实验 （The Colorimetric Properties of the Spectrum） [7]。实验过程经过对红绿蓝三色灯源的水平位置调整，来间接的调整了三色最终组合情况。对比则选用了契合目标结果的参考光源。根据实验结果，格拉斯曼发现，确实可以用一个变权三元一次等式来对所有可见单色光源进行基于光学三原色（RGB）的合成。但是这样的合成是有条件的，对于部分特殊的颜色，例如橄榄绿（Vibrantgreen），就需要将红色光源摆放到隔板左边靠近对比光源的位置，才能使目标色在目标采样区域合成出来。他将这种现象称为 负色匹配（'negative' colors matching）。而在此次试验中，格拉斯曼得到大量需要使用 1 个或 2 个 负色才能匹配的单色。这种现象的出现，在于当时的物理实验设备并不能很好的找到，合适作为人眼感知波峰基准值的光学三原色（RGB）波长，导致需要通过较多负拟合的方式，来人为的处理三相波叠加的还原它色问题。不过这并不影响实验有奠基理论产出。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -180,7 +180,7 @@
         </item>
         <item>
             <title><![CDATA[2.3 色彩的衡量]]></title>
-            <description><![CDATA[光学三要素的出现，让人们在对颜色的客观描述上，能够凭借传统色彩学体系内的参数，进行有限程度的量化。但这并不足以适用于除科学计算和测定外的批量工程作业。毕竟在算力限定的条件下，我们不可能对每一寸光的每一个物理量都进行独立的计算。同时，大量繁琐且模糊的设定也 无法便于简化 ，而我们也需要获得 能够将感官上的体验和客观上的物理值联系起来的方法论 。]]></description>
+            <description><![CDATA[光学三要素的出现，让人们在对颜色的客观描述上，能够凭借传统色彩学体系内的参数，进行有限程度的量化。但这并不足以适用于除科学计算和测定外的批量工程作业。毕竟在算力限定的条件下，我们不可能对每一寸光的每一个物理量都进行独立的计算。同时，大量繁琐且模糊的设定也 无法便于简化，而我们也需要获得 能够将感官上的体验和客观上的物理值联系起来的方法论。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -194,7 +194,7 @@
         </item>
         <item>
             <title><![CDATA[2.3.2 配色函数（Color Matching Functions）& 色彩空间（Color Space）]]></title>
-            <description><![CDATA[配色函数（Color Matching Functions） ，又被称为 色匹配函数 ，狭义上是用来完成从物理计量到色彩学计量的转换函数的代称。广义上，我们将用来描述一个人为设定的色彩系统里，用于量化颜色的函数称为配色函数。]]></description>
+            <description><![CDATA[配色函数（Color Matching Functions），又被称为 色匹配函数，狭义上是用来完成从物理计量到色彩学计量的转换函数的代称。广义上，我们将用来描述一个人为设定的色彩系统里，用于量化颜色的函数称为配色函数。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_3_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_3_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -208,28 +208,28 @@
         </item>
         <item>
             <title><![CDATA[2.3.4 经典三刺激函数（Tristimulus Values Functions）]]></title>
-            <description><![CDATA[CIE 在 1931 年同年提出 CIE XYZ 色彩空间，尝试通过人为设计的色感函数 [12] [13]，来避 RGB 的 负色匹配 问题。为了区别于 CIE RGB 中，通过实验测定拟合而得的三原色色感函数。我们将新的函数称为 CIE 三刺激函数（Tristimulus Values Functions） ，用来代替原有 $${\overline {r}}(\lambda )$$ 、 $${\overline {g}}(\lambda )$$ 、 $${\overline {b}}(\lambda )$$ ，记为 $${\overline {x}}(\lambda )$$ 、 $${\overline {y}}(\lambda )$$ 、 $${\overline {z}}(\lambda )$$ 。三个刺激函数对应的刺激曲线如下图：]]></description>
+            <description><![CDATA[CIE 在 1931 年同年提出 CIE XYZ 色彩空间，尝试通过人为设计的色感函数 [12] [13]，来避 RGB 的 负色匹配 问题。为了区别于 CIE RGB 中，通过实验测定拟合而得的三原色色感函数。我们将新的函数称为 CIE 三刺激函数（Tristimulus Values Functions），用来代替原有 $${\overline {r}}(\lambda )$$ 、 $${\overline {g}}(\lambda )$$ 、 $${\overline {b}}(\lambda )$$ ，记为 $${\overline {x}}(\lambda )$$ 、 $${\overline {y}}(\lambda )$$ 、 $${\overline {z}}(\lambda )$$ 。三个刺激函数对应的刺激曲线如下图：]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_3_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_3_4.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[2.3.5 现代色彩体系（Modern Color System）]]></title>
-            <description><![CDATA[现代色彩体系（Modern Color System） 的基石，即为 1931 年由前身为国际光度委员会（1900, IPC [International Photometric Commission]）的国际照明委员会（CIE [International Commission on Illumination]) 提出的 CIE RGB & CIE YUV 色彩空间 。]]></description>
+            <description><![CDATA[现代色彩体系（Modern Color System） 的基石，即为 1931 年由前身为国际光度委员会（1900, IPC [International Photometric Commission]）的国际照明委员会（CIE [International Commission on Illumination]) 提出的 CIE RGB & CIE YUV 色彩空间。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_3_5.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_3_5.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[2.4 色彩的对比]]></title>
-            <description><![CDATA[自 1931 年 CIE RGB & CIE XYZ 色彩空间 [12] 被提出后，色彩在工程中的对比标准就被统一在了 CIE 逐步采纳、整理和定义的 一系列规格之下 。而 CIE XYZ 色彩空间具有直观客观和正向全可见光色域的特点，使得它更适合被用来作为工业应用的基准体系。所以，我们往往都会将需要处理的颜色数据， 转换到 CIE XYZ 之下进行权衡 。]]></description>
+            <description><![CDATA[自 1931 年 CIE RGB & CIE XYZ 色彩空间 [12] 被提出后，色彩在工程中的对比标准就被统一在了 CIE 逐步采纳、整理和定义的 一系列规格之下。而 CIE XYZ 色彩空间具有直观客观和正向全可见光色域的特点，使得它更适合被用来作为工业应用的基准体系。所以，我们往往都会将需要处理的颜色数据， 转换到 CIE XYZ 之下进行权衡。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_4.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[2.4.1 色域（Color Gamut）]]></title>
-            <description><![CDATA[色域（Color Gamut） 是一个泛指的广义概念，代表对应色彩空间可被表达的所有颜色构成的区域。不同色彩空间的色域可能是不一样的，所以必须有一个统一的度量衡系统来进行比对。被选中作为度量衡的系统必须能客观的表示颜色的物理信息，并且不受其他主观因素影响。因此，只有设备无关色彩空间可以满足要求。当前最常用的度量衡系统，就是 CIE XYZ 色彩空间。CIE XYZ 色彩空间的色域，涵盖了人眼能够观察到的整个可见光谱范围，被 CIE 称为 CIE 标准观察者色域（CIE Standard Observer Gamut） 。简称 标准色域 。]]></description>
+            <description><![CDATA[色域（Color Gamut） 是一个泛指的广义概念，代表对应色彩空间可被表达的所有颜色构成的区域。不同色彩空间的色域可能是不一样的，所以必须有一个统一的度量衡系统来进行比对。被选中作为度量衡的系统必须能客观的表示颜色的物理信息，并且不受其他主观因素影响。因此，只有设备无关色彩空间可以满足要求。当前最常用的度量衡系统，就是 CIE XYZ 色彩空间。CIE XYZ 色彩空间的色域，涵盖了人眼能够观察到的整个可见光谱范围，被 CIE 称为 CIE 标准观察者色域（CIE Standard Observer Gamut）。简称 标准色域。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_4_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_4_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -278,21 +278,21 @@
         </item>
         <item>
             <title><![CDATA[2.5.1 光学三原色色彩空间（RGB Color Space）]]></title>
-            <description><![CDATA[光学三原色色彩空间（RGB Color Space） 又被称为 光三原色空间 或 RGB 色彩空间 。光学三原色色彩空间，是对颜色的加法混合论的有效应用。以光学三原色（RGB）的叠波权重作为三维坐标单位轴，来表示大部分可见光颜色的一种色彩模型。从亥姆霍兹的三色理论之后，光学三原色被广泛的用来表示颜色特性，但并没有形成工程化的系统。]]></description>
+            <description><![CDATA[光学三原色色彩空间（RGB Color Space） 又被称为 光三原色空间 或 RGB 色彩空间。光学三原色色彩空间，是对颜色的加法混合论的有效应用。以光学三原色（RGB）的叠波权重作为三维坐标单位轴，来表示大部分可见光颜色的一种色彩模型。从亥姆霍兹的三色理论之后，光学三原色被广泛的用来表示颜色特性，但并没有形成工程化的系统。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_5_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_5_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[2.5.2 颜料三原色色彩空间（CMY / CMYK Color Space）]]></title>
-            <description><![CDATA[颜料三原色色彩空间 ，根据其是否包含对黑色（Black）的描述，被分为 印刷三分色模型（CMY Color Space） 即 CMY 色彩空间 ，和 印刷四分色模型（CMYK Color Space） 即 CMYK 色彩空间 。其中，CMY 即指代颜料三原色，K 则为 Black 取尾字母，以和纯蓝色（Blue）作为区分。 颜料三原色色彩空间，是对颜色的减法混合论的直接应用。]]></description>
+            <description><![CDATA[颜料三原色色彩空间，根据其是否包含对黑色（Black）的描述，被分为 印刷三分色模型（CMY Color Space） 即 CMY 色彩空间，和 印刷四分色模型（CMYK Color Space） 即 CMYK 色彩空间。其中，CMY 即指代颜料三原色，K 则为 Black 取尾字母，以和纯蓝色（Blue）作为区分。 颜料三原色色彩空间，是对颜色的减法混合论的直接应用。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_5_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_5_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[2.5.3 CIE RGB 色彩空间（CIE 1931 RGB Color Space）]]></title>
-            <description><![CDATA[在经过大量对理论的实践探索后，人们发现三维坐标系统无疑是从空间和原理上，最为合适构建色彩模型的描述载体。但传统的 RGB 色彩空间由于没有系统，且存在 基准波长校准问题 ，并不适用于现代工业。]]></description>
+            <description><![CDATA[在经过大量对理论的实践探索后，人们发现三维坐标系统无疑是从空间和原理上，最为合适构建色彩模型的描述载体。但传统的 RGB 色彩空间由于没有系统，且存在 基准波长校准问题，并不适用于现代工业。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_5_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_5_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -306,7 +306,7 @@
         </item>
         <item>
             <title><![CDATA[2.5.5 CIE LAB 色彩空间（CIE 1976 L*, a*, b* color space）]]></title>
-            <description><![CDATA[1952 年，色彩科学家 里查德·塞瓦尔·亨特（Richard Sewall Hunter，1909–1991） 创建了至今任然是业界最高端颜色解决方案供应商的 亨特联合实验室（HunterLab [Hunter Associates Laboratory]） ，并在之后提出了著名的 Hunter L,a,b 色彩空间 。 Hunter L,a,b 色彩空间结合 CIE XYZ 色彩空间，共同组成了 CIE 1976 LAB 色彩空间的前身。所以，CIE LAB 与 RGB 间需要通过 XYZ 来缔结转换关系。]]></description>
+            <description><![CDATA[1952 年，色彩科学家 里查德·塞瓦尔·亨特（Richard Sewall Hunter，1909–1991） 创建了至今任然是业界最高端颜色解决方案供应商的 亨特联合实验室（HunterLab [Hunter Associates Laboratory]），并在之后提出了著名的 Hunter L,a,b 色彩空间。 Hunter L,a,b 色彩空间结合 CIE XYZ 色彩空间，共同组成了 CIE 1976 LAB 色彩空间的前身。所以，CIE LAB 与 RGB 间需要通过 XYZ 来缔结转换关系。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_5_5.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_5_5.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -320,14 +320,14 @@
         </item>
         <item>
             <title><![CDATA[2.5.7 颜色三要素色彩空间（HSL [HSV / HSI / HSL（Lightness）]）]]></title>
-            <description><![CDATA[HSL（Hue，Saturation，Luminance） 色彩空间 又被称为 颜色三要素色彩空间 ，是对 HSV（Hue，Saturation，Value）色彩空间、 HSI（Hue，Saturation，Intensity）色彩空间、HSL（Hue，Saturation，Lightness）色彩空间的统称 ，简称 三要素色彩空间 。这里的 V（Value）、I（Intensity）、L（Lightness）其实代指的，基本等同于前文中提及的光亮度（Luminance）的简化概念 。HSI 色彩空间，在设计理念上趋同于 HSV 色彩空间。HSL(Lightness) 在 HSV 、 HSI上进行了改进整合。因此，通常所称的 HSL 色彩空间，即为 HSL（Lightness）色彩空间。]]></description>
+            <description><![CDATA[HSL（Hue，Saturation，Luminance） 色彩空间 又被称为 颜色三要素色彩空间，是对 HSV（Hue，Saturation，Value）色彩空间、 HSI（Hue，Saturation，Intensity）色彩空间、HSL（Hue，Saturation，Lightness）色彩空间的统称，简称 三要素色彩空间。这里的 V（Value）、I（Intensity）、L（Lightness）其实代指的，基本等同于前文中提及的光亮度（Luminance）的简化概念。HSI 色彩空间，在设计理念上趋同于 HSV 色彩空间。HSL(Lightness) 在 HSV 、 HSI上进行了改进整合。因此，通常所称的 HSL 色彩空间，即为 HSL（Lightness）色彩空间。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_5_7.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_5_7.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[2.6 色彩的存储]]></title>
-            <description><![CDATA[1960年，来自 贝尔实验室（Bell Laboratories） 的 穆罕默德·阿塔拉（Mohamed M. Atalla，1924 - 2009） 和 姜大元（Dawon Kahng，1931 - 1992） ，发现 金属氧化物半导体（MOS [Metal Oxide Semiconductor]） 可以借由场效应进行信息存储的现象，成功开发了 金属氧化物半导体场效应晶体管（MOSFET [Metal Oxide Semiconductor Field Effect Transistor]） 。随后，贝尔实验室（Bell Laboratories）联合喷气推进实验室（Jet Propulsion Laboratory）与其他研究机构，就 “提高图像在计算机处理过程中的效果增强” ，提出了一系列用于数字图像处理（Digital Image Processing）的方法。其中 “关于如何利用有限的物理存储空间来保存图片像素点” 的部分，为图片灰度单色存储的提供了可行方案 [44]。]]></description>
+            <description><![CDATA[1960年，来自 贝尔实验室（Bell Laboratories） 的 穆罕默德·阿塔拉（Mohamed M. Atalla，1924 - 2009） 和 姜大元（Dawon Kahng，1931 - 1992），发现 金属氧化物半导体（MOS [Metal Oxide Semiconductor]） 可以借由场效应进行信息存储的现象，成功开发了 金属氧化物半导体场效应晶体管（MOSFET [Metal Oxide Semiconductor Field Effect Transistor]）。随后，贝尔实验室（Bell Laboratories）联合喷气推进实验室（Jet Propulsion Laboratory）与其他研究机构，就 **“提高图像在计算机处理过程中的效果增强”**，提出了一系列用于数字图像处理（Digital Image Processing）的方法。其中 “关于如何利用有限的物理存储空间来保存图片像素点” 的部分，为图片灰度单色存储的提供了可行方案 [44]。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_6.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_6.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -341,14 +341,14 @@
         </item>
         <item>
             <title><![CDATA[2.6.2 RGB 体系色彩格式]]></title>
-            <description><![CDATA[原色格式（Primaries Format），或 RGB 体系色彩格式最大的特点就是在于，其对颜色表示的富集程度和存储空间大小密切相关。可以说 RGB 色彩格式中，每个通道能够占用的存储空间越大，则能够表示的颜色越多 。非常的简单粗暴。统一的，RGB 色彩格式的格式空间，即为 归一化的 CIE RGB 色彩空间 。]]></description>
+            <description><![CDATA[原色格式（Primaries Format），或 RGB 体系色彩格式最大的特点就是在于，其对颜色表示的富集程度和存储空间大小密切相关。可以说 RGB 色彩格式中，每个通道能够占用的存储空间越大，则能够表示的颜色越多。非常的简单粗暴。统一的，RGB 色彩格式的格式空间，即为 归一化的 CIE RGB 色彩空间。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_6_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_6_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[2.6.3 YUV 体系色彩格式]]></title>
-            <description><![CDATA[传输格式（Transport Format） ，即当下我们常用的 YUV 色彩格式也被称为 YCbCr、YPbPr、Y′UV 色彩格式 。其中，Y/Y′ 指代光亮度分量，U/Cb/Pb 指代蓝色色度分量，V/Cr/Pr 指代红色色度分量 。YUV 色彩格式受启发自，CIE LUV 中用与 xyY 色度图有线性转换关系的 uv 分量表示平面色彩信息的思想，最初被 国际电信联盟无线电通信部门（ITU-R [International Telecommunication Union Radiocommunication Sector]） 做为 彩色图像编解码流水线（Color Image Pipeline） 的一部分提出，用来 对图片进行压缩传输 。]]></description>
+            <description><![CDATA[传输格式（Transport Format），即当下我们常用的 YUV 色彩格式也被称为 YCbCr、YPbPr、Y′UV 色彩格式。其中，Y/Y′ 指代光亮度分量，U/Cb/Pb 指代蓝色色度分量，V/Cr/Pr 指代红色色度分量。YUV 色彩格式受启发自，CIE LUV 中用与 xyY 色度图有线性转换关系的 uv 分量表示平面色彩信息的思想，最初被 国际电信联盟无线电通信部门（ITU-R [International Telecommunication Union Radiocommunication Sector]） 做为 彩色图像编解码流水线（Color Image Pipeline） 的一部分提出，用来 对图片进行压缩传输。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_6_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_2/Language/cn/Docs_2_6_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -418,14 +418,14 @@
         </item>
         <item>
             <title><![CDATA[3.2.2 双边滤波（Bilateral Filter）]]></title>
-            <description><![CDATA[双边滤波（Bilateral Filter） 是在高斯滤波基础上，基于 边缘保存（Edge Preserving） 滤波思想，通过一个 空间域（Spatial Domain/Domain）标准高斯滤波 和 灰度值（Gray Range/Range）朴素高斯分布 的共同作用，形成的 高斯滤波变体 。]]></description>
+            <description><![CDATA[双边滤波（Bilateral Filter） 是在高斯滤波基础上，基于 边缘保存（Edge Preserving） 滤波思想，通过一个 空间域（Spatial Domain/Domain）标准高斯滤波 和 灰度值（Gray Range/Range）朴素高斯分布 的共同作用，形成的 高斯滤波变体。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[3.2.3 拉普拉斯滤波（Laplacian Filter）]]></title>
-            <description><![CDATA[拉普拉斯滤波（Laplacian Filter） 是一种基于二阶微分方程的差异扩大化算子（Operator）。其不仅可以从灰度出发用于物体的 边缘锐化（Edge Sharpening） ，也可以应用于全通道的色彩变化增强，即 广义锐化（Sharpening）。]]></description>
+            <description><![CDATA[拉普拉斯滤波（Laplacian Filter） 是一种基于二阶微分方程的差异扩大化算子（Operator）。其不仅可以从灰度出发用于物体的 边缘锐化（Edge Sharpening），也可以应用于全通道的色彩变化增强，即 广义锐化（Sharpening）。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_2_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -453,7 +453,7 @@
         </item>
         <item>
             <title><![CDATA[3.3 时间冗余控制 - 常用特征提取与朴素阈值处理]]></title>
-            <description><![CDATA[在本节之前，本书已经讲解了如何分离的处理 一维动态音频 和 二维静态图片 信号。如果我们 将一系列图片以时间轴串联，就得到一组由二维静态信号按序构成的二维动态信号 。这种类型的信号，被称为 视频流（Visual Stream） 。]]></description>
+            <description><![CDATA[在本节之前，本书已经讲解了如何分离的处理 一维动态音频 和 二维静态图片 信号。如果我们 将一系列图片以时间轴串联，就得到一组由二维静态信号按序构成的二维动态信号。这种类型的信号，被称为 视频流（Visual Stream）。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -474,14 +474,14 @@
         </item>
         <item>
             <title><![CDATA[3.3.2 朴素目标检测物体锁定 - 分步滑动窗口（Simple Sliding Window）]]></title>
-            <description><![CDATA[分步滑动窗口（Simple Sliding Window） 是一种常用的辅助锁定检测目标的手段。其优势在于，简单易行且精度可控 。]]></description>
+            <description><![CDATA[分步滑动窗口（Simple Sliding Window） 是一种常用的辅助锁定检测目标的手段。其优势在于，简单易行且精度可控。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_3_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[3.4 空域冗余控制 - 基础光流算法与色度压缩]]></title>
-            <description><![CDATA[介于上一节分析的时域冗余性质可以得知，时空本身就是紧密相联的。时域冗余的压缩，主要体现于从覆盖整个数据过程的更广视角，来处理宏观上的实际物理物体运动所产生的信息。所以这里的 时域（Time Domain）冗余 ，指的是 广时空域（Full Spatiotemporal Domain）物体冗余（Objects Redundancy） 。而我们 这里所指的空域（Spacial Domain）冗余 ，可以认为是 相较于时域（Time Domain）的整个数据过程的广度，在单一极短（如前后几帧）的范围内，更细节的像素运动情况的处理 ，即 狭时空域（Narrow Spatiotemporal Domain）像素冗余（Pixels Redundancy） 。]]></description>
+            <description><![CDATA[介于上一节分析的时域冗余性质可以得知，时空本身就是紧密相联的。时域冗余的压缩，主要体现于从覆盖整个数据过程的更广视角，来处理宏观上的实际物理物体运动所产生的信息。所以这里的 时域（Time Domain）冗余，指的是 广时空域（Full Spatiotemporal Domain）物体冗余（Objects Redundancy）。而我们 这里所指的空域（Spacial Domain）冗余，可以认为是 相较于时域（Time Domain）的整个数据过程的广度，在单一极短（如前后几帧）的范围内，更细节的像素运动情况的处理，即 狭时空域（Narrow Spatiotemporal Domain）像素冗余（Pixels Redundancy）。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -495,14 +495,14 @@
         </item>
         <item>
             <title><![CDATA[3.4.2 双向光流预测（BDOF [Bi-Directional Optical Flow]）]]></title>
-            <description><![CDATA[双向光流预测值修正 ，简称 双向光流预测（BDOF [Bi-Directional Optical Flow]） ，最早在 H.265 的二版规格，由三星工程师以编码压缩补充手段的方式提出 [29] 。在 VVC 的初版制定过程中，贡献者们通过对算法层面的优化，提升了 BDOF 处理单元的性能。随 VVC 被采纳为 H.266 规格一起，作为标准的一部分被收录其中。]]></description>
+            <description><![CDATA[双向光流预测值修正，简称 双向光流预测（BDOF [Bi-Directional Optical Flow]），最早在 H.265 的二版规格，由三星工程师以编码压缩补充手段的方式提出 [29] 。在 VVC 的初版制定过程中，贡献者们通过对算法层面的优化，提升了 BDOF 处理单元的性能。随 VVC 被采纳为 H.266 规格一起，作为标准的一部分被收录其中。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[3.4.3 光流仿射修正（PROF [Affine Prediction Refinement With Optical Flow]）]]></title>
-            <description><![CDATA[BDOF 技术的引入，让音视频编解码工程能够进一步提高传输过程的数据压缩比。但由于仍然依托于分块和分块内小块（也是前文的梯度卷积核），当出现块的偏移、扭转、错切等情况时，像素位置的微小变动则会被此类变化成倍的放大误差。所以，还需要 适当的修正 。]]></description>
+            <description><![CDATA[BDOF 技术的引入，让音视频编解码工程能够进一步提高传输过程的数据压缩比。但由于仍然依托于分块和分块内小块（也是前文的梯度卷积核），当出现块的偏移、扭转、错切等情况时，像素位置的微小变动则会被此类变化成倍的放大误差。所以，还需要 适当的修正。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_4_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -516,14 +516,14 @@
         </item>
         <item>
             <title><![CDATA[3.4 空域冗余控制 - 基础光流算法与色度压缩]]></title>
-            <description><![CDATA[频域冗余目前仍然采用的是一些传统方式，近些年还没有太大的突破。而工程中对频域冗余的控制，确切的来说，是指从频域角度，对 残差信号（Residual Singnal） 进行频域分离后再 压缩所得数据 ，以富集变换信息，减小存储空间由于波动数据的不集中分布，而产生存储冗余的过程。]]></description>
+            <description><![CDATA[频域冗余目前仍然采用的是一些传统方式，近些年还没有太大的突破。而工程中对频域冗余的控制，确切的来说，是指从频域角度，对 残差信号（Residual Singnal） 进行频域分离后再 压缩所得数据，以富集变换信息，减小存储空间由于波动数据的不集中分布，而产生存储冗余的过程。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[3.5.1 整数离散正余弦变换（IDST/IDCT）]]></title>
-            <description><![CDATA[整数离散正余弦变换（IDST/IDCT） ，顾名思义，就是将原本作用于浮点域的离散正余弦变换（DST/DCT），通过适当放缩量化到整数域进行 。]]></description>
+            <description><![CDATA[整数离散正余弦变换（IDST/IDCT），顾名思义，就是将原本作用于浮点域的离散正余弦变换（DST/DCT），通过适当放缩量化到整数域进行。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -537,7 +537,7 @@
         </item>
         <item>
             <title><![CDATA[3.5.3 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）]]></title>
-            <description><![CDATA[低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]） 是高频凋零技术的代表，通过一个 经过离线训练 所得的不可分变换矩阵，来进一步压缩指定范围内的前一次变换结果 [32] 。我们通常将首次变换称为 一次变换（First Transform） 或 主要变换（Primary Transform） 。将以一次变换为输入的第二次变换，称为 二次变换（Secondary Transform） 。]]></description>
+            <description><![CDATA[低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]） 是高频凋零技术的代表，通过一个 经过离线训练 所得的不可分变换矩阵，来进一步压缩指定范围内的前一次变换结果 [32] 。我们通常将首次变换称为 一次变换（First Transform） 或 主要变换（Primary Transform）。将以一次变换为输入的第二次变换，称为 二次变换（Secondary Transform）。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_3/Language/cn/Docs_3_5_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -595,7 +595,7 @@
         </item>
         <item>
             <title><![CDATA[4.2.3 神经网络（NN [Neural Network]）]]></title>
-            <description><![CDATA[本书中的 神经网络（NN [Neural Network]） 主要是对深度神经网络（DNN，这是个大类别，见第一节）中，采用 反向传播（Back Propagation） 技术的一类深度神经网络的统称。也被称为 反向传播神经网络（Back Propagation Neural Network） ，是个广义分类。]]></description>
+            <description><![CDATA[本书中的 神经网络（NN [Neural Network]） 主要是对深度神经网络（DNN，这是个大类别，见第一节）中，采用 反向传播（Back Propagation） 技术的一类深度神经网络的统称。也被称为 反向传播神经网络（Back Propagation Neural Network），是个广义分类。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_2_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -665,7 +665,7 @@
         </item>
         <item>
             <title><![CDATA[4.4 连接函数/衰减函数（Connection/Attenuation Function）]]></title>
-            <description><![CDATA[连接函数（Connection Function） 是一种被设计用来，在模型训练的每个单元数据输入位置，为输入进行筛选收减的特殊辅助函数。常被用在诸如：全链接层（Full Connected Layer） 、 自注意力层（Self-Attention Layer） 等 输出层（Output Layer） 或 部分特殊隐藏层（Hidden Layer） 单元设计中。用来对经过激活（或纯输入）的当前层输入进行 特征提炼（Feature Extraction） 。由于在当下占据主流的 Transformer 模型中，以自注意力层的注意力衰减机制存在，因而也被称为 衰减函数（Attenuation Function） 。]]></description>
+            <description><![CDATA[连接函数（Connection Function） 是一种被设计用来，在模型训练的每个单元数据输入位置，为输入进行筛选收减的特殊辅助函数。常被用在诸如：全链接层（Full Connected Layer） 、 自注意力层（Self-Attention Layer） 等 输出层（Output Layer） 或 部分特殊隐藏层（Hidden Layer） 单元设计中。用来对经过激活（或纯输入）的当前层输入进行 特征提炼（Feature Extraction）。由于在当下占据主流的 Transformer 模型中，以自注意力层的注意力衰减机制存在，因而也被称为 衰减函数（Attenuation Function）。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_4.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -784,7 +784,7 @@
         </item>
         <item>
             <title><![CDATA[4.6 优化算法/优化器（Optimizer）]]></title>
-            <description><![CDATA[优化算法（Optimize Function） 是一种更快实现权重更新的处理办法。常用优化算法能够根据梯度方向和一些其他的关键信息，对当前权重作出更有效率的更新，降低训练所需要的迭代次数，同时提高模型鲁棒性。根据其相对固定的作用位置，在工程中，部署优化算法的 关键单一组件 ，被称为 优化器（Optimizer） 。]]></description>
+            <description><![CDATA[优化算法（Optimize Function） 是一种更快实现权重更新的处理办法。常用优化算法能够根据梯度方向和一些其他的关键信息，对当前权重作出更有效率的更新，降低训练所需要的迭代次数，同时提高模型鲁棒性。根据其相对固定的作用位置，在工程中，部署优化算法的 关键单一组件，被称为 优化器（Optimizer）。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -798,7 +798,7 @@
         </item>
         <item>
             <title><![CDATA[4.6.2 优化算法的优化-应对震荡]]></title>
-            <description><![CDATA[常用的减震算法，比较容易想到的就是利用 阻尼运动特性 和 加速度 ，即 动量（Momentum） ，来减小离散瞬时值的影响。因此，先贤们首先想到的就是梯度迭代动量化。]]></description>
+            <description><![CDATA[常用的减震算法，比较容易想到的就是利用 阻尼运动特性 和 加速度，即 动量（Momentum），来减小离散瞬时值的影响。因此，先贤们首先想到的就是梯度迭代动量化。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_6_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -833,14 +833,14 @@
         </item>
         <item>
             <title><![CDATA[4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）]]></title>
-            <description><![CDATA[卷积神经网络（CNN [Convolutional Neural Network]） ，是对采用 卷积核（Convolutional Kernel），配合 层叠网格结构 构成的流水线，来进行特征提取的一类神经网络的统称。该类型最为擅长抽象图片或更复杂信息的高维特征。]]></description>
+            <description><![CDATA[卷积神经网络（CNN [Convolutional Neural Network]），是对采用 卷积核（Convolutional Kernel），配合 层叠网格结构 构成的流水线，来进行特征提取的一类神经网络的统称。该类型最为擅长抽象图片或更复杂信息的高维特征。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[4.7.2 循环神经网络（RNN [Recurrent Neural Network]）]]></title>
-            <description><![CDATA[循环神经网络（RNN [Recurrent Neural Network]） ，是指为了应对序列数据类型而专门设计的一种，具有一定程度 长期记忆（Long Term Memory） 和 短期记忆（Short Term Memory） 能力的神经网络模型类型。即然被称为“循环”神经网络，则循环在整个 RNN 流水线过程中，起到了至关重要的作用。]]></description>
+            <description><![CDATA[循环神经网络（RNN [Recurrent Neural Network]），是指为了应对序列数据类型而专门设计的一种，具有一定程度 长期记忆（Long Term Memory） 和 短期记忆（Short Term Memory） 能力的神经网络模型类型。即然被称为“循环”神经网络，则循环在整个 RNN 流水线过程中，起到了至关重要的作用。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/Docs_4_7_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
