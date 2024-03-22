@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 22 Mar 2024 05:02:52 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 22 Mar 2024 09:54:47 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -127,6 +127,13 @@
             <description><![CDATA[频率响应（Frequency Response） 用来指代某系统（既可以是设备，也可以是人，泛指针对频率的感知器）在 接收频率（Frequency）输入时的输出响度（Loudness）（或最佳接收响度） 的特点 [16] 。是描述设备频段内，频率响度尺度 的客观测定结果。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.4.5 工程：频谱图（Spectrum）]]></title>
+            <description><![CDATA[如果说之前我们介绍的几种对声音的解构方式，或多或少都显得有些唯心的话，那 频谱图（Spectrum）则是一种纯客观的声音度量与观测法了。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_5.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
