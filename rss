@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 22 Mar 2024 09:54:47 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 26 Apr 2024 04:26:04 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -134,6 +134,41 @@
             <description><![CDATA[如果说之前我们介绍的几种对声音的解构方式，或多或少都显得有些唯心的话，那 频谱图（Spectrum）则是一种纯客观的声音度量与观测法了。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_5.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_4_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.5 声音数字化]]></title>
+            <description><![CDATA[在本章伊始，我们提到了当下 音频录制（Audio Recording） 技术所处的时代，为 数字处理时代（The Digital era）。在数字时代最为显著的特征，就是从传统的纯物理记录方式，演变成了调制解调配合格式压缩存储的处理过程。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.5.1 数字信号（Digital Signal）& 模拟信号（Analog Signal）& 真实波源（Original Source）]]></title>
+            <description><![CDATA[由于从数字处理时代开始，信号间的差异已逐步变大。为了 更好地区分 通过传感器采集的电流数据格式和数模模数转换后的格式，我们将其分为 模拟信号（Analog Signal） 和 数字信号（Digital Signal） 两种：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_5_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_5_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.5.2 模数转换（A/D [Analog-to-Digital]）]]></title>
+            <description><![CDATA[模数转换（A/D） 完成对采集到真实物理信息（如温度、气压、举例等）所得的 模拟信号，到 数字信号的映射。这么做的目的，是为了利用数字信号 可度量、可改动、可计算 的特性，来实现对信息的 操作、保存、传递。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_5_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_5_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.5.3 数模转换（D/A [Digital-to-Analog]）]]></title>
+            <description><![CDATA[数模转换（D/A） 是对模数转换（A/D）的逆向过程，完成 从数字信号还原至模拟信号 的工作。注意，还原的是模拟信号（Analog Signal），而并非真实波源（Original Source）。对音频来说，转换所得的模拟信号，再经过放音设备播放（如音响、扬声器单元等），成为真实波源。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_5_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_5_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.5.4 脉冲编码调制（PCM）& 脉冲密度调制（PDM）]]></title>
+            <description><![CDATA[实际上，为了避免理解中的混淆，我们在上文中介绍的 模数转换（A/D）和 数模转换（D/A）方式，都是基于 脉冲编码调制（PCM [Pulse-Code Modulation]） 进行的。能够完成数模模数转换的方法，除了 PCM 法外，还有 脉冲密度调制（PDM [Pulse-Density Modulation]），以及一系列不同出发点的调制模式，比如 脉冲带宽调制（PDM [Pulse-Width Modulation]） 等。由于在本领域内相对非主流，或是已经属于相对落后技术，亦不再讨论。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_5_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_5_4.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
