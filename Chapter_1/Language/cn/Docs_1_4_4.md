@@ -143,7 +143,7 @@ $$
 <center>
 <figure>
    <img  
-      width = "700" height = "210"
+      width = "900" height = "270"
       src="../../Pictures/SFR_preception_chain_1_cn.png" alt="">
     <figcaption>
       <p>图 1.4.4-4 录音棚采样场景的理想传播感知链模拟</p>
@@ -165,7 +165,7 @@ $$
 <center>
 <figure>
    <img  
-      width = "550" height = "230"
+      width = "700" height = "300"
       src="../../Pictures/SFR_preception_chain_2_cn.png" alt="">
     <figcaption>
       <p>图 1.4.4-5 录音棚内听众（假设）场景的理想传播感知链模拟</p>
@@ -232,7 +232,7 @@ $$
 <center>
 <figure>
    <img  
-      width = "400" height = "350"
+      width = "500" height = "440"
       src="../../Pictures/ELC_ISO226_2023_50.png" alt="">
     <figcaption>
       <p>图 1.4.4-8 ISO 226:2023 标准等响曲线截取 50 方（Phon）线</p>
@@ -249,7 +249,7 @@ $$
 <center>
 <figure>
    <img  
-      width = "400" height = "350"
+      width = "500" height = "440"
       src="../../Pictures/ELC_ISO226_2023_50_2.png" alt="">
     <figcaption>
       <p>图 1.4.4-9 基于 ISO 226:2023 的 50 方（Phon）线设计的入耳耳机 SFR</p>

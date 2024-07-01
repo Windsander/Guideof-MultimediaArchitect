@@ -202,9 +202,9 @@ L变换，让我们能够快速完成 **相邻调间 大/小三和弦** 的转�
 <figure>
    <img  
       width = "800" height = "400"
-      src="../../Pictures/Neo-Riemannian_tonnetz.png" alt="">
+      src="../../Pictures/Neo-Riemannian_Tonnetz.png" alt="">
     <figcaption>
-      <p>图 1.4.2-4 新里曼理论（Neo-Riemannian Theory）的三主要变换</p>
+      <p>图 1.4.2-5 以新里曼理论（Neo-Riemannian Theory）绘制的调性网络</p>
    </figcaption>
 </figure>
 </center>

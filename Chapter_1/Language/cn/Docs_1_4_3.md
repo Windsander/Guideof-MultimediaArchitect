@@ -26,7 +26,7 @@
 <center>
 <figure>
    <img  
-      width = "300" height = "245"
+      width = "400" height = "330"
       src="../../Pictures/SFR_preception_chain_0.png" alt="">
     <figcaption>
       <p>图 1.4.3-1 某低音（Bass）的频律响度特征（FLF）示意连峰图</p>
@@ -41,7 +41,7 @@
 <center>
 <figure>
    <img  
-      width = "400" height = "275"
+      width = "500" height = "345"
       src="../../Pictures/FLC_instruments_A4_5_100.png" alt="">
     <figcaption>
       <p>图 1.4.3-2 多乐器演奏音调 A4 时在 5s 处取 100ms 所得频率响度特征</p>
@@ -66,7 +66,7 @@
 <center>
 <figure>
    <img  
-      width = "800" height = "700"
+      width = "500" height = "440"
       src="../../Pictures/ELC_ISO226_2023.png" alt="">
     <figcaption>
       <p>图 1.4.3-3 ISO 226:2023 标准等响曲线 <a href="References_1.md">[15]</a></p>
