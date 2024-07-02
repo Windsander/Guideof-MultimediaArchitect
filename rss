@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 26 Apr 2024 04:26:04 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 02 Jul 2024 08:56:09 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -169,6 +169,41 @@
             <description><![CDATA[实际上，为了避免理解中的混淆，我们在上文中介绍的 模数转换（A/D）和 数模转换（D/A）方式，都是基于 脉冲编码调制（PCM [Pulse-Code Modulation]） 进行的。能够完成数模模数转换的方法，除了 PCM 法外，还有 脉冲密度调制（PDM [Pulse-Density Modulation]），以及一系列不同出发点的调制模式，比如 脉冲带宽调制（PDM [Pulse-Width Modulation]） 等。由于在本领域内相对非主流，或是已经属于相对落后技术，亦不再讨论。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_5_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_5_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.6 音频的存储]]></title>
+            <description><![CDATA[经过上一小节，我们已经能够将大多数声音的模拟信号，转为 PCM 数字信号的音频数据。而接下来，在现代计算机系统内，这些数据具体该怎么进行 储存保存 呢？考虑到其本身 已经为数字码（Digital Codes） 格式，一种直接使然的思路，就是什么都不再进行变动，采用直接写入到磁盘中的方式，保存原始数字信号。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.6.1 音频格式（Audio Format）]]></title>
+            <description><![CDATA[音频格式（Audio Format），也被称为 音频文件格式（Audio File Format）。其被用来指代，对当前目标 音频数字信号（Digital Signal） 数据，进行保存至数字存储设备中的 处理方式和最终数据结果。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_6_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_6_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.6.2 未压缩音频格式（Uncompressed Audio Format）]]></title>
+            <description><![CDATA[未压缩音频格式（Uncompressed [Uncompressed Audio Format]） 即 没有经过任何压缩算法处理，而直接将数字信号的数字码，作为存储格式保存的音频格式。因此，未压缩音频格式的存储格式（Data Format） 与 原数字信号 在音频数据内容部分，具有 完全一致的数字码值。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_6_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_6_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.6.3 无损压缩编码格式（Lossless Compression Audio Format）]]></title>
+            <description><![CDATA[无损压缩编码格式（Lossless [Lossless Compression Audio Format]） 是采用 无损压缩算法（Lossless Compression Method）对 PCM 数字信号数据，进行封装保存的音频格式（Audio Format）。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_6_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_6_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1.6.4 有损压缩编码格式（Lossy Compression Audio Format）]]></title>
+            <description><![CDATA[有损压缩编码格式（Lossy [Lossy Compression Audio Format]） 是一种 通过舍弃部分音频数据来减少文件大小的音频压缩技术。其采用 有损压缩算法（Lossy Compression Method）对 PCM 数字信号数据，进行封装保存的音频格式（Audio Format）。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_6_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_1/Language/cn/Docs_1_6_4.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>

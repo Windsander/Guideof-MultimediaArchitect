@@ -1,0 +1,2692 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.6.4 有损压缩编码格式（Uncompressed Encode） · 《音视频开发技术：原理与实践》©</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="李述博 (Arikan.Li)">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="References_1.html" />
+    
+    
+    <link rel="prev" href="Docs_1_6_3.html" />
+    
+
+    
+    <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../../../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../../../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <script src="../../../gitbook/gitbook-plugin-graph/d3.min.js"></script>
+    <script src="../../../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
+
+    <link href="https://arikanli.cyberfederal.io/rss" title="《音视频开发技术：原理与实践》©" rel="alternate" type="application/rss+xml" />
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    《音视频开发技术：原理与实践》©
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../../AUTHOR.html">
+            
+                <a href="../../../AUTHOR.html">
+            
+                    
+                     =[>> 关于作者© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../../COPYRIGHT.html">
+            
+                <a href="../../../COPYRIGHT.html">
+            
+                    
+                     =[>> 版权申明© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../../GUIDER.html">
+            
+                <a href="../../../GUIDER.html">
+            
+                    
+                     =[>> 难度向导© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../../DONATE.html">
+            
+                <a href="../../../DONATE.html">
+            
+                    
+                     =[>> 赞助本作© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Apex_1_Introduce.html">
+            
+                <a href="Apex_1_Introduce.html">
+            
+                    
+                    一、音频的保存与还原
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Docs_1_1.html">
+            
+                <a href="Docs_1_1.html">
+            
+                    
+                    1.1 音频基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Docs_1_2.html">
+            
+                <a href="Docs_1_2.html">
+            
+                    
+                    1.2 声波三要素（Three Elements of Acoustics）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Docs_1_3.html">
+            
+                <a href="Docs_1_3.html">
+            
+                    
+                    1.3 声音三要素（Three Elements of Sounds）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="Docs_1_3_1.html">
+            
+                <a href="Docs_1_3_1.html">
+            
+                    
+                    1.3.1 音高（Pitch）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="Docs_1_3_2.html">
+            
+                <a href="Docs_1_3_2.html">
+            
+                    
+                    1.3.2 响度（Loudness）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="Docs_1_3_3.html">
+            
+                <a href="Docs_1_3_3.html">
+            
+                    
+                    1.3.3 音色（Timbre）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="Docs_1_4.html">
+            
+                <a href="Docs_1_4.html">
+            
+                    
+                    1.4 声音的解构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="Docs_1_4_1.html">
+            
+                <a href="Docs_1_4_1.html">
+            
+                    
+                    1.4.1 乐理：音调（Notes） & 五度圈（Circle of Fifths）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="Docs_1_4_2.html">
+            
+                <a href="Docs_1_4_2.html">
+            
+                    
+                    1.4.2 乐理：和声（Harmony） & 和弦（Chord）& 调性网络（Tonnetz）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="Docs_1_4_3.html">
+            
+                <a href="Docs_1_4_3.html">
+            
+                    
+                    1.4.3 感观：等响曲线（ELLC [Equal Loudness-Level Contour]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="Docs_1_4_4.html">
+            
+                <a href="Docs_1_4_4.html">
+            
+                    
+                    1.4.4 感观：频响曲线（FRC [Frequency Response Contour]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="Docs_1_4_5.html">
+            
+                <a href="Docs_1_4_5.html">
+            
+                    
+                    1.4.5 工程：频谱图（Spectrum）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="Docs_1_5.html">
+            
+                <a href="Docs_1_5.html">
+            
+                    
+                    1.5 声音数字化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="Docs_1_5_1.html">
+            
+                <a href="Docs_1_5_1.html">
+            
+                    
+                    1.5.1 数字信号（Digital Signal）& 模拟信号（Analog Signal）& 真实波源（Original Source）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="Docs_1_5_2.html">
+            
+                <a href="Docs_1_5_2.html">
+            
+                    
+                    1.5.2 模数转换（A/D [Analog-to-Digital]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="Docs_1_5_3.html">
+            
+                <a href="Docs_1_5_3.html">
+            
+                    
+                    1.5.3 数模转换（D/A [Digital-to-Analog]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="Docs_1_5_4.html">
+            
+                <a href="Docs_1_5_4.html">
+            
+                    
+                    1.5.4 脉冲编码调制（PCM）& 脉冲密度调制（PDM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="Docs_1_6.html">
+            
+                <a href="Docs_1_6.html">
+            
+                    
+                    1.6 音频的存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="Docs_1_6_1.html">
+            
+                <a href="Docs_1_6_1.html">
+            
+                    
+                    1.6.1 音频格式（Audio Format）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="Docs_1_6_2.html">
+            
+                <a href="Docs_1_6_2.html">
+            
+                    
+                    1.6.2 无压缩编码格式（Uncompressed Encode）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="Docs_1_6_3.html">
+            
+                <a href="Docs_1_6_3.html">
+            
+                    
+                    1.6.3 无损压缩编码格式（Lossless Encode）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.6.4" data-path="Docs_1_6_4.html">
+            
+                <a href="Docs_1_6_4.html">
+            
+                    
+                    1.6.4 有损压缩编码格式（Uncompressed Encode）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="References_1.html">
+            
+                <a href="References_1.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../Chapter_2/Language/cn/Apex_2_Introduce.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Apex_2_Introduce.html">
+            
+                    
+                    二、色彩的运用与存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../Chapter_2/Language/cn/Docs_2_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_1.html">
+            
+                    
+                    2.1 色彩基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../Chapter_2/Language/cn/Docs_2_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2.html">
+            
+                    
+                    2.2 颜色三要素（Three Elements of Color）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../../Chapter_2/Language/cn/Docs_2_2_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2_1.html">
+            
+                    
+                    2.2.1 色调（Hue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../../Chapter_2/Language/cn/Docs_2_2_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2_2.html">
+            
+                    
+                    2.2.2 饱和度（Saturation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../../Chapter_2/Language/cn/Docs_2_2_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2_3.html">
+            
+                    
+                    2.2.3 光亮度（Luminance）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../../Chapter_2/Language/cn/Docs_2_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3.html">
+            
+                    
+                    2.3 色彩的衡量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../../Chapter_2/Language/cn/Docs_2_3_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_1.html">
+            
+                    
+                    2.3.1 辐射亮度（Radiance）& 色温（Color Temperature）& 颜色的量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../../Chapter_2/Language/cn/Docs_2_3_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_2.html">
+            
+                    
+                    2.3.2 配色函数（Color Matching Functions）& 色彩空间（Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../../Chapter_2/Language/cn/Docs_2_3_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_3.html">
+            
+                    
+                    2.3.3 经典三原色函数（Trichromatic Primaries Functions）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../../Chapter_2/Language/cn/Docs_2_3_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_4.html">
+            
+                    
+                    2.3.4 经典三刺激函数（Tristimulus Values Functions）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../../../Chapter_2/Language/cn/Docs_2_3_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_5.html">
+            
+                    
+                    2.3.5 现代色彩体系（Modern Color System）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../../Chapter_2/Language/cn/Docs_2_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4.html">
+            
+                    
+                    2.4 色彩的对比
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../../Chapter_2/Language/cn/Docs_2_4_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_1.html">
+            
+                    
+                    2.4.1 色域（Color Gamut ）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../../Chapter_2/Language/cn/Docs_2_4_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_2.html">
+            
+                    
+                    2.4.2 色度（Chroma）& 色度平面（Chroma Plane）& 色度图（Chroma Diagram）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../../Chapter_2/Language/cn/Docs_2_4_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_3.html">
+            
+                    
+                    2.4.3 色差（Chromatic Aberration）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../../../Chapter_2/Language/cn/Docs_2_4_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_4.html">
+            
+                    
+                    2.4.4 色温（Color Temperature）& 相关色温（Correlated Color Temperature）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../../../Chapter_2/Language/cn/Docs_2_4_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_5.html">
+            
+                    
+                    2.4.5 标准光源（Standard Illuminants）& 白点（White Point）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.6" data-path="../../../Chapter_2/Language/cn/Docs_2_4_6.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_6.html">
+            
+                    
+                    2.4.6 显色指数（Color Rendering Index）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../../Chapter_2/Language/cn/Docs_2_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5.html">
+            
+                    
+                    2.5 经典色彩空间（Classical Color Space）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="../../../Chapter_2/Language/cn/Docs_2_5_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_1.html">
+            
+                    
+                    2.5.1 光学三原色色彩空间（RGB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2" data-path="../../../Chapter_2/Language/cn/Docs_2_5_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_2.html">
+            
+                    
+                    2.5.2 颜料三原色色彩空间（CMY / CMYK ）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.3" data-path="../../../Chapter_2/Language/cn/Docs_2_5_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_3.html">
+            
+                    
+                    2.5.3 CIE RGB 色彩空间（CIE 1931 RGB Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.4" data-path="../../../Chapter_2/Language/cn/Docs_2_5_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_4.html">
+            
+                    
+                    2.5.4 CIE XYZ 色彩空间（CIE 1931 XYZ Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.5" data-path="../../../Chapter_2/Language/cn/Docs_2_5_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_5.html">
+            
+                    
+                    2.5.5 CIE LAB 色彩空间（CIE 1976 L*, a*, b* Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.6" data-path="../../../Chapter_2/Language/cn/Docs_2_5_6.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_6.html">
+            
+                    
+                    2.5.6 CIE LUV 色彩空间（CIE 1976 L*, u*, v* Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.7" data-path="../../../Chapter_2/Language/cn/Docs_2_5_7.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_7.html">
+            
+                    
+                    2.5.7 颜色三要素色彩空间（HSV / HSI / HSL）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../../Chapter_2/Language/cn/Docs_2_6.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6.html">
+            
+                    
+                    2.6 色彩的存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="../../../Chapter_2/Language/cn/Docs_2_6_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6_1.html">
+            
+                    
+                    2.6.1 色彩格式（Color Format）与色彩存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2" data-path="../../../Chapter_2/Language/cn/Docs_2_6_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6_2.html">
+            
+                    
+                    2.6.2 RGB 体系色彩格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.3" data-path="../../../Chapter_2/Language/cn/Docs_2_6_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6_3.html">
+            
+                    
+                    2.6.3 YUV 体系色彩格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../../Chapter_2/Language/cn/References_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/References_2.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../Chapter_3/Language/cn/Apex_3_Introduce.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Apex_3_Introduce.html">
+            
+                    
+                    三、音视频常用基础算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../Chapter_3/Language/cn/Docs_3_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1.html">
+            
+                    
+                    3.1 信号分析的核心算法 - 傅立叶变换
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../../../Chapter_3/Language/cn/Docs_3_1_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_1.html">
+            
+                    
+                    3.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../../../Chapter_3/Language/cn/Docs_3_1_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_2.html">
+            
+                    
+                    3.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
+            
+                    
+                    3.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
+            
+                    
+                    3.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../Chapter_3/Language/cn/Docs_3_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2.html">
+            
+                    
+                    3.2 频率信息提取 - 常用滤波算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../../Chapter_3/Language/cn/Docs_3_2_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_1.html">
+            
+                    
+                    3.2.1 高斯滤波（Gauss Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../../../Chapter_3/Language/cn/Docs_3_2_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_2.html">
+            
+                    
+                    3.2.2 双边滤波（Bilateral Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../../../Chapter_3/Language/cn/Docs_3_2_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_3.html">
+            
+                    
+                    3.2.3 拉普拉斯滤波（Laplacian Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../../../Chapter_3/Language/cn/Docs_3_2_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_4.html">
+            
+                    
+                    3.2.4 马尔滤波（Marr Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../../../Chapter_3/Language/cn/Docs_3_2_5.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_5.html">
+            
+                    
+                    3.2.5 索贝尔滤波（Sobel Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="../../../Chapter_3/Language/cn/Docs_3_2_6.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_6.html">
+            
+                    
+                    3.2.6 各向异性扩散（Anisotropic Diffusion）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../Chapter_3/Language/cn/Docs_3_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3.html">
+            
+                    
+                    3.3 时间冗余控制 - 常用特征提取与朴素阈值处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../../../Chapter_3/Language/cn/Docs_3_3_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3_1.html">
+            
+                    
+                    3.3.1 方向梯度直方图（HOG [Histogram of Oriented Gradient]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../../../Chapter_3/Language/cn/Docs_3_3_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3_2.html">
+            
+                    
+                    3.3.2 朴素目标检测结果度量 - IoU & GIoU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="../../../Chapter_3/Language/cn/Docs_3_3_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3_3.html">
+            
+                    
+                    3.3.3 朴素目标检测物体锁定 - 分步滑动窗口（Simple Sliding Window）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../../Chapter_3/Language/cn/Docs_3_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4.html">
+            
+                    
+                    3.4 空域冗余控制 - 基础光流算法与色度压缩
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../../../Chapter_3/Language/cn/Docs_3_4_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_1.html">
+            
+                    
+                    3.4.1 传统光流法（Classic Optical Flow Methods）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../../../Chapter_3/Language/cn/Docs_3_4_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_2.html">
+            
+                    
+                    3.4.2 双向光流预测（BDOF [Bi-Directional Optical Flow]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../../../Chapter_3/Language/cn/Docs_3_4_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_3.html">
+            
+                    
+                    3.4.3 光流仿射修正（PROF [Affine Prediction Refinement With Optical Flow]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="../../../Chapter_3/Language/cn/Docs_3_4_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_4.html">
+            
+                    
+                    3.4.4 色度缩放亮度映射（LMCS [Luma Mapping with Chroma Scaling]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../../Chapter_3/Language/cn/Docs_3_5.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5.html">
+            
+                    
+                    3.5 频域冗余控制 - 基础变换编码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../../../Chapter_3/Language/cn/Docs_3_5_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5_1.html">
+            
+                    
+                    3.5.1 整数离散正余弦变换（DST/DCT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../../../Chapter_3/Language/cn/Docs_3_5_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5_2.html">
+            
+                    
+                    3.5.2 哈达玛变换（WHT [Walsh-Hadamard Transform]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../../../Chapter_3/Language/cn/Docs_3_5_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5_3.html">
+            
+                    
+                    3.5.3 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../../Chapter_3/Language/cn/Playground_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Playground_3.html">
+            
+                    
+                    【在线展示】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../../Chapter_3/Language/cn/References_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/References_3.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../Chapter_4/Language/cn/Apex_4_Introduce.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Apex_4_Introduce.html">
+            
+                    
+                    四、音视频机器学习基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../Chapter_4/Language/cn/Docs_4_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_1.html">
+            
+                    
+                    4.1 发展概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../Chapter_4/Language/cn/Docs_4_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2.html">
+            
+                    
+                    4.2 模型工程基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../../Chapter_4/Language/cn/Docs_4_2_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2_1.html">
+            
+                    
+                    4.2.1 算子（Operator）& 层（Layer）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../../Chapter_4/Language/cn/Docs_4_2_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2_2.html">
+            
+                    
+                    4.2.2 神经元（Neuron）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../../../Chapter_4/Language/cn/Docs_4_2_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2_3.html">
+            
+                    
+                    4.2.3 神经网络（NN [Neural Network]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../../../Chapter_4/Language/cn/Docs_4_2_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2_4.html">
+            
+                    
+                    4.2.4 特征选择（Feature Selection）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../Chapter_4/Language/cn/Docs_4_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3.html">
+            
+                    
+                    4.3 经典激活函数（Classic Activation Function）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../../Chapter_4/Language/cn/Docs_4_3_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_1.html">
+            
+                    
+                    4.3.1 Sigmoid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../../../Chapter_4/Language/cn/Docs_4_3_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_2.html">
+            
+                    
+                    4.3.2 Tanh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../../../Chapter_4/Language/cn/Docs_4_3_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_3.html">
+            
+                    
+                    4.3.3 Softplus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="../../../Chapter_4/Language/cn/Docs_4_3_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_4.html">
+            
+                    
+                    4.3.4 ReLU 族 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.5" data-path="../../../Chapter_4/Language/cn/Docs_4_3_5.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_5.html">
+            
+                    
+                    4.3.5 ELU & SELU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.6" data-path="../../../Chapter_4/Language/cn/Docs_4_3_6.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_6.html">
+            
+                    
+                    4.3.6 Mish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.7" data-path="../../../Chapter_4/Language/cn/Docs_4_3_7.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_7.html">
+            
+                    
+                    4.3.7 Swish 族 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../Chapter_4/Language/cn/Docs_4_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_4.html">
+            
+                    
+                    4.4 连接函数/衰减函数（Connection/Attenuation Function）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../../Chapter_4/Language/cn/Docs_4_4_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_4_1.html">
+            
+                    
+                    4.4.1 Dropout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../../../Chapter_4/Language/cn/Docs_4_4_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_4_2.html">
+            
+                    
+                    4.4.2 Maxout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../../../Chapter_4/Language/cn/Docs_4_4_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_4_3.html">
+            
+                    
+                    4.4.3 SoftMax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../../Chapter_4/Language/cn/Docs_4_5.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5.html">
+            
+                    
+                    4.5 损失函数（Loss Function）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../../../Chapter_4/Language/cn/Docs_4_5_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_1.html">
+            
+                    
+                    4.5.1 回归项-平均绝对误差（MAE [Mean Absolute Error]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="../../../Chapter_4/Language/cn/Docs_4_5_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_2.html">
+            
+                    
+                    4.5.2 回归项-均方误差（MSE [Mean Squared Error]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="../../../Chapter_4/Language/cn/Docs_4_5_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_3.html">
+            
+                    
+                    4.5.3 回归项-休伯损失（Huber Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.4" data-path="../../../Chapter_4/Language/cn/Docs_4_5_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_4.html">
+            
+                    
+                    4.5.4 回归项-分位数损失（Quantile Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.5" data-path="../../../Chapter_4/Language/cn/Docs_4_5_5.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_5.html">
+            
+                    
+                    4.5.5 分类项-对数损失（Log Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.6" data-path="../../../Chapter_4/Language/cn/Docs_4_5_6.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_6.html">
+            
+                    
+                    4.5.6 分类项-交叉熵损失（Cross Entropy Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.7" data-path="../../../Chapter_4/Language/cn/Docs_4_5_7.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_7.html">
+            
+                    
+                    4.5.7 分类项-合页损失（Hinge Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.8" data-path="../../../Chapter_4/Language/cn/Docs_4_5_8.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_8.html">
+            
+                    
+                    4.5.8 分类项-对比损失（Contrastive Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.9" data-path="../../../Chapter_4/Language/cn/Docs_4_5_9.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_9.html">
+            
+                    
+                    4.5.9 分类项-三元损失（Triplet Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.10" data-path="../../../Chapter_4/Language/cn/Docs_4_5_10.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_10.html">
+            
+                    
+                    4.5.10 分类项-对组排异损失（N-Pair Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.11" data-path="../../../Chapter_4/Language/cn/Docs_4_5_11.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_11.html">
+            
+                    
+                    4.5.11 正则项-L1 惩罚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.12" data-path="../../../Chapter_4/Language/cn/Docs_4_5_12.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_12.html">
+            
+                    
+                    4.5.12 正则项-L2 惩罚
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../../Chapter_4/Language/cn/Docs_4_6.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6.html">
+            
+                    
+                    4.6 常用最优化算法（Optimizer Operator）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="../../../Chapter_4/Language/cn/Docs_4_6_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_1.html">
+            
+                    
+                    4.6.1 基础优化算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.2" data-path="../../../Chapter_4/Language/cn/Docs_4_6_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_2.html">
+            
+                    
+                    4.6.2 优化算法的优化-应对震荡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.3" data-path="../../../Chapter_4/Language/cn/Docs_4_6_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_3.html">
+            
+                    
+                    4.6.3 优化算法的优化-应对重点强（弱）化更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.4" data-path="../../../Chapter_4/Language/cn/Docs_4_6_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_4.html">
+            
+                    
+                    4.6.4 自适应实时评估算法（Adam [Adaptive Moment Estimation]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.5" data-path="../../../Chapter_4/Language/cn/Docs_4_6_5.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_5.html">
+            
+                    
+                    4.6.5 优化算法对比与使用建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../../Chapter_4/Language/cn/Docs_4_7.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_7.html">
+            
+                    
+                    4.7 模型结构速览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.7.1" data-path="../../../Chapter_4/Language/cn/Docs_4_7_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_7_1.html">
+            
+                    
+                    4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.2" data-path="../../../Chapter_4/Language/cn/Docs_4_7_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_7_2.html">
+            
+                    
+                    4.7.2 循环神经网络（RNN [Recurrent Neural Network]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.3" data-path="../../../Chapter_4/Language/cn/Docs_4_7_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_7_3.html">
+            
+                    
+                    4.7.3 自注意力网络（Transformer）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../../Chapter_4/Language/cn/References_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/References_4.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >1.6.4 有损压缩编码格式（Uncompressed Encode）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex Data Display</title>
+    <style>
+        .hex-container {
+            text-align: center;
+        }
+        .hex-data {
+            display: inline-block;
+            text-align: left;
+            font-weight: bold;
+            font-family: monospace;
+            white-space: pre;
+        }
+    </style>
+</head>
+
+<h1 id="164-&#x6709;&#x635F;&#x538B;&#x7F29;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF08;lossy-compression-audio-format&#xFF09;">1.6.4 &#x6709;&#x635F;&#x538B;&#x7F29;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF08;Lossy Compression Audio Format&#xFF09;</h1>
+<p><strong>&#x6709;&#x635F;&#x538B;&#x7F29;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF08;Lossy [Lossy Compression Audio Format]&#xFF09;</strong> &#x662F;&#x4E00;&#x79CD; <strong>&#x901A;&#x8FC7;&#x820D;&#x5F03;&#x90E8;&#x5206;&#x97F3;&#x9891;&#x6570;&#x636E;&#x6765;&#x51CF;&#x5C11;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x7684;&#x97F3;&#x9891;&#x538B;&#x7F29;&#x6280;&#x672F;</strong>&#x3002;&#x5176;&#x91C7;&#x7528; <strong>&#x6709;&#x635F;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#xFF08;Lossy Compression Method&#xFF09;&#x5BF9; PCM &#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x6570;&#x636E;&#xFF0C;&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#x4FDD;&#x5B58;&#x7684;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#xFF08;Audio Format&#xFF09;</strong>&#x3002;</p>
+<h2 id="&#x6709;&#x635F;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#xFF08;lossy-compression-method&#xFF09;"><strong>&#x6709;&#x635F;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#xFF08;Lossy Compression Method&#xFF09;</strong></h2>
+<p><strong>&#x6709;&#x635F;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#xFF08;Lossy Compression Method&#xFF09;</strong> &#x662F;&#x5BF9;&#x539F;&#x59CB;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x7ECF;&#x8FC7;&#x7B97;&#x6CD5;&#x538B;&#x7F29;&#x540E;&#xFF0C;&#x4ECD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7B97;&#x6CD5;&#x672C;&#x8EAB;&#x7684;&#x9006;&#x8FD0;&#x7B97;&#xFF0C;<strong>&#x76F8;&#x5BF9;&#x8FD1;&#x4F3C;&#x7684;&#x8FD8;&#x539F;&#x56DE;&#x539F;&#x59CB;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x7684;&#x7B97;&#x6CD5;</strong>&#x3002;&#x56E0;&#x4E3A;&#x7B97;&#x6CD5;&#x4F1A;&#x4E22;&#x5931;&#x90E8;&#x5206;&#x6570;&#x636E;&#x5BFC;&#x81F4;&#x97F3;&#x8D28;&#x4E0B;&#x964D;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;<strong>&#x6709;&#x635F;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#x5C5E;&#x4E8E;&#x4E0D;&#x53EF;&#x9006;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#xFF08;Irreversible Compression Method&#xFF09;</strong>&#x3002;&#x800C;&#x6309;&#x5904;&#x7406;&#x6D41;&#x5206;&#x7C7B;&#x6765;&#x770B;&#xFF0C;&#x88AB;&#x4F7F;&#x7528;&#x5728;&#x538B;&#x7F29;/&#x89E3;&#x538B;&#x5904;&#x7406;&#x4E0A;&#x7684;&#x6709;&#x635F;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#xFF0C;<strong>&#x53EA;&#x6709;&#x590D;&#x5408;&#x7B97;&#x6CD5;&#xFF08;Hybrid&#xFF09;&#x7C7B;&#x578B;</strong>&#x3002;</p>
+<p><br></p>
+<p>&#x5BF9;&#x4E8E;&#x4E0D;&#x53EF;&#x9006;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#x800C;&#x8A00;&#xFF0C;&#x5176;&#x5BF9; <strong>&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x7684;&#x7F16;&#x7801;&#xFF08;Encoding&#xFF09;&#x5173;&#x952E;&#x6B65;&#x9AA4;</strong>&#xFF0C;&#x5927;&#x90FD;&#x4E3A; <strong>&#x91C7;&#x7528;&#x6570;&#x5B66;&#x903C;&#x8FD1;&#x7B97;&#x6CD5;&#xFF0C;&#x53BB;&#x5BFB;&#x627E;&#x590D;&#x6742;&#x66F2;&#x7EBF;&#x7684;&#x89E3;&#x96C6;</strong>&#xFF0C;&#x7528; <strong>&#x8BB0;&#x5F55;&#x89E3;&#x96C6;&#x672C;&#x8EAB;</strong> &#x6765;&#x66FF;&#x4EE3;&#x539F;&#x6709;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x7684;&#x6570;&#x5B57;&#x7801;&#x4FE1;&#x606F; <strong>&#x8FDB;&#x884C;&#x4FDD;&#x5B58;</strong>&#x3002;&#x8FD9;&#x4E2A;&#x6C42;&#x89E3;&#x8FC7;&#x7A0B;&#x5C31;&#x53EF;&#x80FD; <strong>&#x5F15;&#x5165;&#x4E00;&#x5B9A;&#x7684;&#x635F;&#x5931;</strong>&#x3002;&#x5176; <strong>&#x89E3;&#x7801;&#xFF08;Decoding&#xFF09;&#x5904;&#x7406;</strong>&#xFF0C;&#x5219;&#x662F;&#x6839;&#x636E;&#x89E3;&#x96C6;&#xFF0C;<strong>&#x7ED3;&#x5408;&#x91C7;&#x7528;&#x7B97;&#x6CD5;&#x91CD;&#x65B0;&#x5408;&#x6210;&#x81F3;&#x539F;&#x6709;&#x6570;&#x636E;</strong>&#x3002;</p>
+<p>&#x6B64;&#x65F6;&#xFF0C;&#x8FD8;&#x539F;&#x51FA;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x662F; <strong>&#x7B97;&#x6CD5;&#x62DF;&#x5408;&#x7684;&#x7ED3;&#x679C;&#x800C;&#x975E;&#x539F;&#x59CB;&#x6837;&#x672C;</strong>&#xFF0C;&#x5373;&#x975E;&#x539F;&#x6709;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p><br></p>
+<p>&#x4ECE;&#x6570;&#x5B66;&#x89D2;&#x5EA6;&#x6765;&#x770B;&#xFF0C;&#x6B64;&#x7C7B;&#x7B97;&#x6CD5;&#x5927;&#x90FD;&#x9009;&#x62E9;&#x4EE5; <strong>&#x79BB;&#x6563;&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;&#xFF08;DFT&#xFF09;</strong>&#x3001;<strong>&#x5C0F;&#x6CE2;&#x53D8;&#x6362;&#xFF08;Wavelet Transform&#xFF09;</strong> &#x7B49;&#x6280;&#x672F;&#x7684; <strong>&#x964D;&#x4F4E;&#x7B97;&#x529B;&#x6D88;&#x8017;&#x8FD1;&#x4F3C;&#x89E3;&#x65B9;&#x6848;</strong>&#xFF0C;&#x4F5C;&#x4E3A;&#x7B97;&#x6CD5;&#x6838;&#x5FC3;&#x3002;&#x4EE5;&#x5085;&#x7ACB;&#x53F6;&#x65CF;&#x4E3E;&#x4F8B;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x5F53;&#x9009;&#x5B9A;&#x89E3;&#x7A7A;&#x95F4;&#x7684; <strong><a href="../../../Chapter_3/Language/cn/Docs_3_1.html">&#x5085;&#x7ACB;&#x53F6;&#x57FA;&#x5E95;&#x51FD;&#x6570;&#x65CF;</a></strong> &#x5E76;&#x4E0D;&#x662F;&#x65E0;&#x7A77;&#x65F6;&#xFF0C;<strong>&#x79BB;&#x6563;&#x5085;&#x7ACB;&#x53F6;&#x57FA;&#x6240;&#x8868;&#x793A;&#x7684;&#x539F;&#x503C;</strong>&#xFF0C;&#x672C;&#x5C31; <strong>&#x4F1A;&#x6709;&#x4E00;&#x5B9A;&#x635F;&#x5931;</strong>&#xFF08;&#x89C1;&#x672C;&#x4E66;<a href="../../../Chapter_3/Language/cn/Docs_3_1.html">&#x7B2C;&#x4E09;&#x7AE0;</a>&#x8BE6;&#x89E3;&#xFF09;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x6765;&#x81EA;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x7684; <strong>&#x6709;&#x635F;&#x91C7;&#x6837;&#xFF08;Lossy Sampling&#xFF09;</strong> &#x8FC7;&#x7A0B;&#x7684; <strong>&#x91C7;&#x6837;&#x635F;&#x5931;&#xFF08;Sampling Loss&#xFF09;</strong>&#xFF0C;&#x4F9D;&#x65E7;&#x4F1A;&#x5B58;&#x5728;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;<strong>&#x4E0D;&#x53EF;&#x9006;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#x662F;&#x4F1A;&#x6709;&#x4E00;&#x5B9A;&#x8BEF;&#x5DEE;&#x7684;&#x3002;&#x800C;&#x8BEF;&#x5DEE;&#x7684;&#x5F15;&#x5165;&#x5219;&#x6765;&#x81EA;&#x4E8E;&#x7B97;&#x6CD5;&#x81EA;&#x8EAB;&#xFF0C;&#x4E00;&#x7ECF;&#x5904;&#x7406;&#x540E;&#x65E0;&#x6CD5;&#x6D88;&#x9664;</strong>&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;<strong>&#x7B97;&#x6CD5;&#x5E26;&#x6765;&#x7684; &#x538B;&#x7F29;&#x4F18;&#x52BF;&#x6781;&#x4E3A;&#x5DE8;&#x5927;</strong>&#x3002;&#x5927;&#x90E8;&#x5206;&#x91C7;&#x7528;&#x6709;&#x635F;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#x7684;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#xFF0C;&#x90FD; <strong>&#x81F3;&#x5C11;&#x80FD;&#x8FBE;&#x5230; 10 : 1 &#x7684;&#x538B;&#x7F29;&#x6BD4;&#xFF08;CR [Compression Ratio]&#xFF09;&#x5373;&#x51CF;&#x5C11;&#x7EA6; 90%</strong> &#xFF0C;&#x751A;&#x81F3;&#x66F4;&#x5C0F;&#x3002;&#x800C;&#x6781;&#x81F4;&#x538B;&#x7F29;&#x6BD4;&#x4E0B;&#xFF0C;&#x7B97;&#x6CD5;&#x5BF9;&#x97F3;&#x9891;&#x97F3;&#x8D28;&#x5E26;&#x6765;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x5BF9;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x548C;&#x4F7F;&#x7528;&#x8005;&#x6765;&#x8BF4;&#xFF0C;&#x5374;&#x53EF;&#x5FFD;&#x7565;&#x4E0D;&#x8BA1;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x91C7;&#x7528;&#x6709;&#x635F;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#x7684;&#x6709;&#x635F;&#x538B;&#x7F29;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF0C;&#x5728;&#x8FDB;&#x5165;&#x97F3;&#x9891;&#x6570;&#x5B57;&#x5316;&#x65F6;&#x4EE3;&#x540E;&#xFF0C;&#x88AB;&#x5927;&#x91CF;&#x4E14;&#x5E7F;&#x6CDB;&#x7684;&#x5E94;&#x7528;&#x4E8E;&#x5546;&#x4E1A;&#x97F3;&#x9891;&#x4EA7;&#x54C1;&#x4E2D;&#x3002;&#x5176;&#x4E2D;&#xFF0C;<strong>&#x666E;&#x53CA;&#x7A0B;&#x5EA6;&#x6700;&#x5E7F;&#x5E76;&#x5177;&#x6709;&#x6700;&#x9AD8;&#x786C;&#x4EF6;&#x517C;&#x5BB9;&#x6027;&#x7684; MP3 &#x683C;&#x5F0F;&#xFF0C;&#x5C31;&#x662F;&#x6700;&#x5177;&#x4EE3;&#x8868;&#x7684;&#x8BE5;&#x7C7B;&#x7C7B;&#x578B;</strong>&#x3002;</p>
+<h2 id="mp3-&#x97F3;&#x9891;&#x683C;&#x5F0F;"><strong>MP3 &#x97F3;&#x9891;&#x683C;&#x5F0F;</strong></h2>
+<p><strong>MP3&#xFF08;MPEG-1 Audio Layer III&#xFF09;</strong>&#xFF0C;&#x5373; <strong>MP3 &#x97F3;&#x9891;&#x683C;&#x5F0F;&#xFF08;.mp3&#xFF09;</strong>&#x3002;&#x662F;&#x4E8E; 1987 &#x5E74;&#xFF0C;&#x7531;&#x5FB7;&#x56FD; <strong>&#x5F17;&#x52B3;&#x6069;&#x970D;&#x592B;&#x5E94;&#x7528;&#x7814;&#x7A76;&#x4FC3;&#x8FDB;&#x534F;&#x4F1A;&#xFF08;Fraunhofer [Fraunhofer Society for the Advancement of Applied Research]&#xFF09;</strong> &#x7814;&#x7A76;&#x6240;&#x4E3B;&#x5BFC;&#x5B8C;&#x6210;&#x7684; <strong>&#x97F3;&#x9891;&#x6709;&#x635F;&#x538B;&#x7F29;&#x683C;&#x5F0F;</strong>&#x3002;&#x5E76;&#x4E8E; 1993 &#x5E74;&#x7B2C;&#x4E00;&#x4EE3; MPEG-1 &#x6807;&#x51C6;&#x5236;&#x5B9A;&#x4E2D;&#xFF0C;&#x83B7;&#x5F97;&#x59D4;&#x5458;&#x4F1A;&#x8BA4;&#x540C;&#xFF0C;&#x786E;&#x7ACB;&#x4E3A; <strong>&#x901A;&#x7528; MPEG-1 &#x548C; MPEG-2 &#x6807;&#x51C6;&#x7684;&#x97F3;&#x9891;&#x89C4;&#x683C;&#x90E8;&#x5206;</strong>&#x3002;</p>
+<center>
+<figure>
+   <img width="400" height="70" src="../../Pictures/Fraunhofer-logo.png" alt="">
+    <figcaption>
+      <p>&#x56FE; 1.6.4-1 &#x5F17;&#x52B3;&#x6069;&#x970D;&#x592B;&#x5E94;&#x7528;&#x7814;&#x7A76;&#x4FC3;&#x8FDB;&#x534F;&#x4F1A;&#x7684; logo</p>
+   </figcaption>
+</figure>
+</center>
+
+<p><code>PS&#xFF1A;&#x5F17;&#x52B3;&#x6069;&#x970D;&#x592B;&#x534F;&#x4F1A;&#x662F;&#x4E1A;&#x5185;&#x6807;&#x6746;&#x7684;&#x591A;&#x673A;&#x6784;&#x8054;&#x5408;&#x4F53;&#xFF0C;&#x4E3A;&#x97F3;&#x89C6;&#x9891;&#x6280;&#x672F;&#x7684;&#x53D1;&#x5C55;&#x505A;&#x51FA;&#x4E86;&#x5DE8;&#x5927;&#x8D21;&#x732E;&#x3002;</code></p>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x968F;&#x7740; 2017 &#x5E74; MP3 &#x4E13;&#x5229;&#x5230;&#x671F;&#xFF08;&#x5728;&#x6B64;&#x4E4B;&#x95F4; MP3 &#x7531;&#x591A;&#x4E2A;&#x590D;&#x6742;&#x7684;&#x4E13;&#x5229;&#x4F53;&#x7CFB;&#x6784;&#x7B51;&#x4E13;&#x5229;&#x7F51;&#x8FDB;&#x884C;&#x4E86;&#x7248;&#x6743;&#x4FDD;&#x62A4;&#xFF09;&#xFF0C;<strong>&#x8BE5;&#x683C;&#x5F0F;&#x5F7B;&#x5E95;&#x6210;&#x4E3A;&#x4E86;&#x5F00;&#x6E90;&#x5F00;&#x653E;&#x4E14;&#x517C;&#x5177;&#x6807;&#x51C6;&#x548C;&#x5E7F;&#x6CDB;&#x9002;&#x7528;&#x6027;&#x7684;&#x97F3;&#x9891;&#x683C;&#x5F0F;</strong>&#x3002;</p>
+<p>MP3 &#x7684;&#x5904;&#x7406;&#x6D41;&#x6C34;&#x7EBF;&#x5982;&#x4E0B;&#xFF08;&#x7EA2;&#x7EBF;&#x7F16;&#x7801;&#xFF0C;&#x7EFF;&#x7EBF;&#x89E3;&#x7801;&#xFF0C;&#x89E3;&#x7801;&#x9006;&#x8FD0;&#x7B97;&#xFF09;&#xFF1A;</p>
+<center>
+<figure>
+   <img width="600" height="650" src="../../Pictures/AF_MP3_Working_Flow_cn.png" alt="">
+    <figcaption>
+      <p>&#x56FE; 1.6.3-2 MP3 &#x97F3;&#x9891;&#x683C;&#x5F0F;&#x7F16;&#x89E3;&#x7801;&#x6267;&#x884C;&#x4F5C;&#x4E1A;&#x6D41;&#x6C34;&#x7EBF;&#xFF08;&#x7B80;&#xFF09;</p>
+   </figcaption>
+</figure>
+</center>
+
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x4F9D;&#x636E;&#x7F16;&#x7801;&#x7684;&#x6D41;&#x7A0B;&#x987A;&#x5E8F;&#xFF0C;&#x5BF9;&#x51E0;&#x4E2A;&#x73AF;&#x8282;&#xFF08;&#x5305;&#x62EC;&#x89E3;&#x7801;&#x7684;&#x73AF;&#x8282;&#xFF09;&#x8FDB;&#x884C;&#x68B3;&#x7406;&#x3002;</p>
+<p><br></p>
+<p><strong>&#x5206;&#x7EC4;&#xFF08;Blocking&#xFF09;</strong> &#x548C; <strong>&#x91CD;&#x7EC4;&#xFF08;Reassemble&#xFF09;</strong> &#x662F;&#x4E92;&#x9006;&#x7684;&#x4E24;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;<strong>&#x5206;&#x7EC4;&#x662F;&#x5C06;&#x8F93;&#x5165;&#x7684; PCM &#x97F3;&#x9891;&#x4FE1;&#x53F7;&#x5206;&#x89E3;&#x6210;&#x591A;&#x4E2A;&#x8FDE;&#x7EED;&#x7684;&#x7247;&#x6BB5;&#x7684;&#x6B65;&#x9AA4;</strong>&#x3002;&#x6BCF;&#x7247;&#x6BB5;&#x901A;&#x5E38;&#x5305;&#x542B; <strong>1152 &#x4E2A;&#x91C7;&#x6837;&#x70B9;</strong>&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x5C06;&#x97F3;&#x9891;&#x4FE1;&#x53F7; <strong>&#x5206;&#x5272;&#x6210;&#x9002;&#x5408;&#x540E;&#x7EED;&#x5904;&#x7406;&#x7684;&#x5C0F;&#x5757;</strong>&#xFF0C;&#x7EE7;&#x800C; <strong>&#x63D0;&#x9AD8;&#x538B;&#x7F29;&#x6548;&#x7387;&#x548C;&#x97F3;&#x8D28;</strong>&#x3002;&#x5B83;&#x7684;&#x9006;&#x5411;&#x8FC7;&#x7A0B;&#x5373;&#x4E3A;&#x91CD;&#x7EC4;&#x3002;<strong>&#x91CD;&#x7EC4;&#x662F;&#x5C06;&#x591A;&#x4E2A;&#x7247;&#x6BB5;&#x7684;&#x65F6;&#x57DF;&#x4FE1;&#x53F7;&#x62FC;&#x63A5;&#x7684;&#x6B65;&#x9AA4;</strong>&#x3002;&#x89E3;&#x7801;&#x5668;&#x9010;&#x7247;&#x6BB5;&#x63D0;&#x53D6;&#x548C;&#x5904;&#x7406;&#x538B;&#x7F29;&#x6570;&#x636E;&#xFF0C;&#x9010;&#x6B65;&#x91CD;&#x5EFA;&#x539F;&#x59CB;&#x97F3;&#x9891;&#x4FE1;&#x53F7;&#xFF0C;&#x76F4;&#x81F3;&#x6062;&#x590D;&#x5B8C;&#x6574;&#x7684;&#x97F3;&#x9891;&#x4FE1;&#x53F7;&#xFF08;&#x6CE8;&#x610F;&#xFF0C;&#x88AB;&#x8FD8;&#x539F;&#x5F97;&#x5230;&#x7684; PCM &#x5DF2; <strong>&#x4E0D;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x4E8E;</strong> &#x539F;&#x8F93;&#x5165; PCM&#xFF09;&#x3002;</p>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x662F; 1152 &#x4E2A;&#x91C7;&#x6837;&#x70B9;&#x5462;&#xFF1F;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5728; MPEG-1 &#x9488;&#x5BF9;&#x97F3;&#x9891; DCT &#x5904;&#x7406;&#x7684;&#x5B9E;&#x9A8C;&#x4E0A;&#xFF0C;&#x53D1;&#x73B0; <strong>1152 &#x4E2A;&#x91C7;&#x6837;&#x70B9;&#x80FD;&#x591F;&#x5728;&#x7F16;&#x7801;&#x6548;&#x7387;&#x548C;&#x8D28;&#x91CF;&#x4E0A;&#xFF0C;&#x8FBE;&#x5230;&#x6700;&#x4F73;&#x5E73;&#x8861;&#x70B9;</strong>&#x3002;&#x4E14;&#x80FD;&#x591F;&#x5728;&#x4FDD;&#x8BC1;&#x97F3;&#x8D28;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#x51CF;&#x5C11;&#x8BA1;&#x7B97;&#x590D;&#x6742;&#x5EA6;&#x3002;<strong>&#x76F4;&#x5230; MPEG-4 &#x5C06;&#x97F3;&#x9891;&#x66F4;&#x6539;&#x4E3A; AAC &#x97F3;&#x9891;&#x683C;&#x5F0F;&#xFF0C;&#x5E76;&#x53D6;&#x7528;&#x4E86;&#x66F4;&#x4E3A;&#x5408;&#x7406;&#x7684; 1024 &#x4E2A;&#x91C7;&#x6837;&#x70B9;&#x8BBE;&#x5B9A;</strong>&#x3002;</p>
+<p><br></p>
+<p><strong>&#x5206;&#x7A97;&#xFF08;Windowing&#xFF09;</strong> &#x548C; <strong>&#x53BB;&#x7A97;&#x53E3;&#x5316;&#xFF08;De-windowing/Inverse Windowing&#xFF09;</strong> &#x4E92;&#x9006;&#x3002;</p>
+<p><strong>&#x5206;&#x7A97;&#x662F;&#x5BF9;&#x6BCF;&#x4E2A;&#x5206;&#x5757;&#x7247;&#x6BB5;&#xFF0C;&#x5E94;&#x7528;&#x52A0;&#x6743;&#x5904;&#x7406;&#x7684;&#x6B65;&#x9AA4;</strong>&#x3002;&#x5E38;&#x7528;&#x7684; <strong>&#x7A97;&#x53E3;&#x51FD;&#x6570;</strong> &#x5305;&#x62EC; <strong>&#x6C49;&#x5B81;&#x7A97;&#xFF08;Hanning Window&#xFF09;</strong>&#x3001; <strong>&#x6C49;&#x660E;&#x7A97;&#xFF08;Hamming Window&#xFF09;</strong> &#x548C; <strong>&#x9ED1;&#x66FC;&#x7A97;&#xFF08;Blackman Window&#xFF09;</strong>&#x3002;&#x51E0;&#x4E2A;&#x7B97;&#x6CD5;&#x90FD;&#x662F;&#x5BF9;&#x5206;&#x7EC4;&#x540E;&#x6837;&#x672C;&#x7247;&#x6BB5;&#x7684;&#x7F29;&#x653E;&#x5904;&#x7406;&#xFF0C;&#x76EE;&#x7684;&#x662F; <strong>&#x51CF;&#x5C11;&#x9891;&#x8C31;&#x6CC4;&#x6F0F;&#xFF0C;&#x63D0;&#x9AD8;&#x9891;&#x8C31;&#x5206;&#x6790;&#x7684;&#x7CBE;&#x5EA6;</strong>&#x3002;&#x8BB0;&#x5206;&#x7EC4;&#x603B;&#x6837;&#x672C;&#x6570;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span> &#xFF0C;&#x800C;&#x5F53;&#x524D;&#x5206;&#x5757;&#x7684;&#x67D0;&#x4E2A;&#x91C7;&#x6837;&#x70B9;&#x503C;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> &#xFF0C;&#x5219;&#x5BF9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> &#x5206;&#x7A97;&#x5904;&#x7406;&#x7684;&#x7ED3;&#x679C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">w(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span> &#x6709;&#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mstyle scriptlevel="0" displaystyle="true"><mtable><mtr><mtd><mrow><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mrow><mi>H</mi><mi>a</mi><mi>n</mi><mi>n</mi><mi>i</mi><mi>n</mi><mi>g</mi></mrow></mtd><mtd><mrow><mo>:</mo><mtext>&#xA0;</mtext><mi>w</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>5</mn><mo>&#x22C5;</mo><mrow><mo fence="true">(</mo><mn>1</mn><mo>&#x2212;</mo><mi>c</mi><mi>o</mi><mi>s</mi><mrow><mo fence="true">(</mo><mfrac><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>n</mi></mrow><mrow><mi>N</mi><mo>&#x2212;</mo><mn>1</mn></mrow></mfrac><mo fence="true">)</mo></mrow><mo fence="true">)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mi>H</mi><mi>a</mi><mi>m</mi><mi>m</mi><mi>i</mi><mi>n</mi><mi>g</mi></mrow></mtd><mtd><mrow><mo>:</mo><mtext>&#xA0;</mtext><mi>w</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>5</mn><mn>4</mn><mo>&#x2212;</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>4</mn><mn>6</mn><mo>&#x22C5;</mo><mi>c</mi><mi>o</mi><mi>s</mi><mrow><mo fence="true">(</mo><mfrac><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>n</mi></mrow><mrow><mi>N</mi><mo>&#x2212;</mo><mn>1</mn></mrow></mfrac><mo fence="true">)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mi>B</mi><mi>l</mi><mi>a</mi><mi>c</mi><mi>k</mi><mi>m</mi><mi>a</mi><mi>n</mi></mrow></mtd><mtd><mrow><mo>:</mo><mtext>&#xA0;</mtext><mi>w</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>4</mn><mn>2</mn><mo>&#x2212;</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>5</mn><mo>&#x22C5;</mo><mi>c</mi><mi>o</mi><mi>s</mi><mrow><mo fence="true">(</mo><mfrac><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>n</mi></mrow><mrow><mi>N</mi><mo>&#x2212;</mo><mn>1</mn></mrow></mfrac><mo fence="true">)</mo></mrow><mo>+</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>8</mn><mo>&#x22C5;</mo><mi>c</mi><mi>o</mi><mi>s</mi><mrow><mo fence="true">(</mo><mfrac><mrow><mn>4</mn><mi>&#x3C0;</mi><mi>n</mi></mrow><mrow><mi>N</mi><mo>&#x2212;</mo><mn>1</mn></mrow></mfrac><mo fence="true">)</mo></mrow></mrow></mtd></mtr></mtable></mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd></mtr></mtable></mstyle></mrow></mrow><annotation encoding="application/x-tex">
+{\displaystyle 
+ \begin{aligned}
+   \begin{cases}
+     Hanning  &amp;: \ w(n) = 0.5 \cdot \left( 1 - cos \left( \frac{2\pi n}{N - 1}\right) \right) \\
+     Hamming  &amp;: \ w(n) = 0.54 - 0.46 \cdot cos \left( \frac{2\pi n}{N - 1}\right) \\
+     Blackman &amp;: \ w(n) = 0.42 - 0.5  \cdot cos \left( \frac{2\pi n}{N - 1}\right) + 0.08 \cdot cos \left( \frac{4\pi n}{N - 1}\right)
+   \end{cases} \\
+ \end{aligned}
+}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:4.450045em;"></span><span class="strut bottom" style="height:8.40009em;vertical-align:-3.9500450000000003em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mtable"><span class="col-align-r"><span class="vlist"><span style="top:-0.5999999999999996em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped"><span class="delimsizing mult"><span class="vlist"><span style="top:2.45001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23A9;</span></span></span><span style="top:2.45001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:2.15001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:1.85001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:1.5500099999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:1.2500099999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:0.9500099999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:-0.000010000000000287557em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23A8;</span></span></span><span style="top:-1.1500100000000002em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:-1.4500100000000002em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:-1.7500100000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:-2.0500100000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:-2.35001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:-2.65001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23AA;</span></span></span><span style="top:-2.95002em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23A7;</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist"><span style="top:-2.4000450000000004em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mord mathit">n</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit" style="margin-right:0.03588em;">g</span></span></span><span style="top:-0.000015000000000431335em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mord mathit">a</span><span class="mord mathit">m</span><span class="mord mathit">m</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit" style="margin-right:0.03588em;">g</span></span></span><span style="top:2.400015em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.05017em;">B</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">a</span><span class="mord mathit">c</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist"><span style="top:-2.4000450000000004em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mrel">:</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.02691em;">w</span></span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">5</span><span class="mbin">&#x22C5;</span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord mathrm">1</span><span class="mbin">&#x2212;</span><span class="mord mathit">c</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">2</span><span class="mord mathit" style="margin-right:0.03588em;">&#x3C0;</span><span class="mord mathit">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">)</span></span></span></span></span><span style="top:-0.000015000000000431335em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mrel">:</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.02691em;">w</span></span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">5</span><span class="mord mathrm">4</span><span class="mbin">&#x2212;</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">4</span><span class="mord mathrm">6</span><span class="mbin">&#x22C5;</span><span class="mord mathit">c</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">2</span><span class="mord mathit" style="margin-right:0.03588em;">&#x3C0;</span><span class="mord mathit">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">)</span></span></span></span></span><span style="top:2.400015em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mrel">:</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.02691em;">w</span></span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">4</span><span class="mord mathrm">2</span><span class="mbin">&#x2212;</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">5</span><span class="mbin">&#x22C5;</span><span class="mord mathit">c</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">2</span><span class="mord mathit" style="margin-right:0.03588em;">&#x3C0;</span><span class="mord mathit">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mbin">+</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">0</span><span class="mord mathrm">8</span><span class="mbin">&#x22C5;</span><span class="mord mathit">c</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">4</span><span class="mord mathit" style="margin-right:0.03588em;">&#x3C0;</span><span class="mord mathit">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">)</span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span><span style="top:3.5900450000000004em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></span></span></p>
+<p>&#x901A;&#x8FC7; <strong>&#x5BF9;&#x5E27;&#x7684;&#x4E24;&#x7AEF;&#x8FDB;&#x884C;&#x5E73;&#x6ED1;&#x8FC7;&#x6E21;&#xFF0C;&#x51CF;&#x5C11;&#x8FB9;&#x754C;&#x6548;&#x5E94;</strong>&#x3002;&#x5F53;&#x5904;&#x4E8E;&#x89E3;&#x7801;&#x6D41;&#x7A0B;&#x65F6;&#xFF0C;<strong>&#x53BB;&#x7A97;&#x53E3;&#x5316;&#x76F4;&#x63A5;&#x5BF9;&#x7F16;&#x7801;&#x8FC7;&#x7A0B;&#x7684;&#x5206;&#x7A97; &#x7A97;&#x53E3;&#x51FD;&#x6570;&#xFF08;Windowing Method&#xFF09;&#x505A;&#x9006;&#x8FD0;&#x7B97;&#x5373;&#x53EF;</strong>&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x7A97;&#x53E3;&#x51FD;&#x6570;&#x5E76;&#x4E0D;&#x53EA;&#x4E0A;&#x9762;&#x7684;&#x4E09;&#x79CD;&#xFF0C;&#x4E0A;&#x8FF0;&#x5217;&#x51FA;&#x7684;&#x4EC5;&#x4E3A;&#x8F83;&#x5E38;&#x7528;&#x7684;&#x7B97;&#x6CD5;&#x3002;</p>
+<p><br></p>
+<p>&#x5728;&#x4E0B;&#x4E00;&#x6B65;&#x4E2D;&#x7684; <strong><a href="../../../Chapter_3/Language/cn/Docs_3_5_1.html">&#x79BB;&#x6563;&#x4F59;&#x5F26;&#x53D8;&#x6362;&#xFF08;DCT&#xFF09;</a>&#x548C;&#x5176;&#x9006;&#x53D8;&#x6362;</strong>&#xFF0C;&#x662F;&#x6574;&#x5957; MP3 &#x4F53;&#x7CFB;&#x7684;&#x6838;&#x5FC3;&#x4E4B;&#x4E00;&#x3002;DCT &#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x662F; <strong>&#x5C06;&#x65F6;&#x57DF;&#x4FE1;&#x53F7;&#x8F6C;&#x6362;&#x4E3A;&#x9891;&#x57DF;&#x4FE1;&#x53F7;&#x5E76;&#x63D0;&#x53D6;&#x9891;&#x7387;&#x6210;&#x5206;</strong>&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E; <strong>&#x968F;&#x540E;&#x7684;&#x5B50;&#x4EE3;&#x5206;&#x6790; &#x4E0E; &#x5FC3;&#x7406;&#x58F0;&#x5B66;&#x6A21;&#x578B;&#x5904;&#x7406;&#x540E;&#x7684;&#x6570;&#x636E;&#x91CF;&#x5316;&#x4F7F;&#x7528;</strong>&#x3002;&#x539F;&#x7406;&#x4E0D;&#x5728;&#x672C;&#x7AE0;&#x8282;&#x5C55;&#x5F00;&#xFF08;&#x89C1;<a href="../../../Chapter_3/Language/cn/Docs_3_5_1.html">&#x7B2C;&#x4E09;&#x7AE0;</a>&#xFF09;&#x3002;</p>
+<p><br></p>
+<p>&#x7ECF;&#x8FC7; DCT &#x6240;&#x5F97;&#x7684;&#x9891;&#x57DF;&#x6570;&#x636E;&#xFF0C;&#x88AB;&#x7528;&#x4F5C; <strong>&#x5B50;&#x5E26;&#x6EE4;&#x6CE2;&#xFF08;Subband Filtering&#xFF09;</strong> &#x7684;&#x8F93;&#x5165;&#x3002;&#x5B50;&#x5E26;&#x6EE4;&#x6CE2;&#x662F;&#x4E00;&#x79CD;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x6280;&#x672F;&#xFF0C;&#x7528;&#x4E8E; <strong>&#x5C06;&#x8F93;&#x5165;&#x4FE1;&#x53F7;&#x5206;&#x89E3;&#x6210;&#x591A;&#x4E2A;&#x9891;&#x7387;&#x5B50;&#x5E26;&#xFF08;Subband&#xFF09;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B50;&#x5E26;&#x5305;&#x542B;&#x7279;&#x5B9A;&#x9891;&#x7387;&#x8303;&#x56F4;&#x5185;&#x7684;&#x4FE1;&#x53F7;&#x6210;&#x5206;</strong>&#x3002;&#x800C;&#x7ED3;&#x5408;&#x6211;&#x4EEC;&#x5728;&#x6A21;&#x6570;&#x8F6C;&#x6362;&#xFF08;A/D&#xFF09;&#x63D0;&#x5230;&#x7684; <strong>&#x9999;&#x519C;&#x91C7;&#x6837;&#x5B9A;&#x5F8B;&#xFF08;Nyquist&#x2013;Shannon Sampling Theorem&#xFF09;</strong> &#x53EF;&#x77E5;&#xFF0C;&#x6709;&#x6765;&#x81EA;&#x4E8E; A/D &#x91C7;&#x6837;&#x7387;&#xFF08;Samplerate/Sample Rate&#xFF09;&#x4E0D;&#x53D8;&#x7684;&#x6761;&#x4EF6;&#x4E0B;&#xFF0C; DCT &#x8FC7;&#x7A0B;&#x4E2D;&#x7684; <strong>&#x57FA;&#x5E95;&#x51FD;&#x6570;&#x65CF;&#x51FD;&#x6570;</strong>&#xFF0C;&#x51FD;&#x6570;&#x53EF;&#x53D6;&#x7528;&#x7684; <strong>&#x6700;&#x5927;&#x9891;&#x7387;&#x503C;&#x4E3A;&#x8BE5;&#x91C7;&#x6837;&#x7387;&#x503C;&#x7684;&#x4E00;&#x534A;</strong>&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5B50;&#x5E26;&#x5212;&#x5206;&#x4F9D;&#x636E;&#x91C7;&#x6837;&#x7387;&#x7684;&#x534A;&#x503C;&#xFF0C;<strong>&#x4EE5;&#x56FA;&#x5B9A;&#x6B65;&#x957F;&#x6765;&#x5207;&#x5272;&#x51FA;&#x5404;&#x4E2A;&#x5B50;&#x5E26;&#x8303;&#x56F4;</strong>&#x3002;</p>
+<p>&#x8BB0;&#x5B50;&#x5E26;&#x8BA1;&#x5212;&#x5206;&#x7EC4;&#x6570;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">M</span></span></span></span> &#xFF0C;&#x6BCF;&#x4E2A;&#x5B50;&#x5E26;&#x7684;&#x9891;&#x7387;&#x8303;&#x56F4;&#x957F;&#x5EA6;&#x4E3A;&#x56FA;&#x5B9A;&#x503C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span></span></span></span> &#xFF0C;&#x5219;&#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mstyle scriptlevel="0" displaystyle="true"><mtable><mtr><mtd><mrow><mi>S</mi><mo>=</mo><mfrac><mrow><mi>S</mi><mi>a</mi><mi>m</mi><mi>p</mi><mi>l</mi><mi>e</mi><mi>R</mi><mi>a</mi><mi>t</mi><mi>e</mi></mrow><mrow><mn>2</mn><mi>M</mi></mrow></mfrac></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd></mtr></mtable></mstyle></mrow></mrow><annotation encoding="application/x-tex">
+{\displaystyle 
+ \begin{aligned}
+   S = \frac{SampleRate}{2M} \\
+ \end{aligned}
+}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.8787200000000002em;"></span><span class="strut bottom" style="height:3.257440000000001em;vertical-align:-1.3787200000000004em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mtable"><span class="col-align-r"><span class="vlist"><span style="top:-0.5072800000000002em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mrel">=</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm">2</span><span class="mord mathit" style="margin-right:0.10903em;">M</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit">a</span><span class="mord mathit">m</span><span class="mord mathit">p</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="mord mathit">a</span><span class="mord mathit">t</span><span class="mord mathit">e</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span><span style="top:1.0187200000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></span></span></p>
+<p>&#x6211;&#x4EEC;&#x4EE5;&#x6700;&#x5E38;&#x7528;&#x7684; <strong>44.1 kHZ &#x91C7;&#x6837;&#x7387;</strong> &#x4E3A;&#x4F8B;&#xFF0C;&#x5176;&#x5B50;&#x5E26;&#x6EE4;&#x6CE2;&#x540E;&#x7684;&#x5B50;&#x5E26;&#x5212;&#x5206;&#xFF0C;&#x5728; MP3 &#x683C;&#x5F0F;&#x91CC;&#xFF0C;&#x8BE5;&#x91C7;&#x6837;&#x7387;&#x4E0B;&#x9700;&#x8981;&#x5206;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mo>=</mo><mn>3</mn><mn>2</mn></mrow><annotation encoding="application/x-tex">M = 32</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="mrel">=</span><span class="mord mathrm">3</span><span class="mord mathrm">2</span></span></span></span> &#x7EC4; <a href="References_1.html">[27]</a> &#xFF0C;&#x5373;&#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mstyle scriptlevel="0" displaystyle="true"><mtable><mtr><mtd><mrow><mi>S</mi><mo>=</mo><mfrac><mrow><mi>S</mi><mi>a</mi><mi>m</mi><mi>p</mi><mi>l</mi><mi>e</mi><mi>R</mi><mi>a</mi><mi>t</mi><mi>e</mi></mrow><mrow><mn>2</mn><mi>M</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>4</mn><mn>4</mn><mi mathvariant="normal">.</mi><mn>1</mn><mtext>&#xA0;</mtext><mi>k</mi><mi>H</mi><mi>z</mi></mrow><mrow><mn>2</mn><mo>&#xD7;</mo><mn>3</mn><mn>2</mn></mrow></mfrac><mo>&#x2248;</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>6</mn><mn>8</mn><mn>9</mn><mtext>&#xA0;</mtext><mi>k</mi><mi>H</mi><mi>z</mi></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd></mtr></mtable></mstyle></mrow></mrow><annotation encoding="application/x-tex">
+{\displaystyle 
+ \begin{aligned}
+   S = \frac{SampleRate}{2M} = \frac{44.1\ kHz}{2 \times 32} \approx 0.689\ kHz \\
+ \end{aligned}
+}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.9203849999999998em;"></span><span class="strut bottom" style="height:3.34077em;vertical-align:-1.420385em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mtable"><span class="col-align-r"><span class="vlist"><span style="top:-0.5489449999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mrel">=</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm">2</span><span class="mord mathit" style="margin-right:0.10903em;">M</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit">a</span><span class="mord mathit">m</span><span class="mord mathit">p</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="mord mathit">a</span><span class="mord mathit">t</span><span class="mord mathit">e</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mrel">=</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm">2</span><span class="mbin">&#xD7;</span><span class="mord mathrm">3</span><span class="mord mathrm">2</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">4</span><span class="mord mathrm">4</span><span class="mord mathrm">.</span><span class="mord mathrm">1</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.03148em;">k</span></span><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mord mathit" style="margin-right:0.04398em;">z</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mrel">&#x2248;</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">6</span><span class="mord mathrm">8</span><span class="mord mathrm">9</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.03148em;">k</span></span><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mord mathit" style="margin-right:0.04398em;">z</span></span></span><span style="top:1.060385em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></span></span></p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x901A;&#x8FC7;&#x5B50;&#x5E26;&#x6EE4;&#x6CE2;&#x540E;&#x7684;&#x5B50;&#x5E26;&#x5212;&#x5206;&#x60C5;&#x51B5;&#x4E3A; <strong>&#x5747;&#x5300;&#x7684; 32 &#x7EC4;</strong>&#xFF1A;</p>
+<center>
+<figure>
+   <img width="600" height="400" src="../../Pictures/AF_MP3_subband_no_psych.png" alt="">
+    <figcaption>
+      <p>&#x56FE; 1.6.3-3 MP3 &#x97F3;&#x9891;&#x683C;&#x5F0F;&#x7ECF;&#x8FC7;&#x5B50;&#x5E26;&#x6EE4;&#x6CE2;&#x540E;&#x7684;&#x5B50;&#x5E26;&#x5206;&#x7EC4;&#x60C5;&#x51B5;</p>
+   </figcaption>
+</figure>
+</center>
+
+<p>&#x4F46;&#x6B63;&#x5982;&#x672C;&#x4E66;&#x5728; <strong><a href="Docs_1_4_3.html">&#x7B49;&#x54CD;&#x66F2;&#x7EBF;&#xFF08;ELLC&#xFF09;</a></strong> &#x548C; <strong><a href="Docs_1_4_4.html">&#x6536;&#x97F3;&#x9891;&#x54CD;&#x66F2;&#x7EBF;&#xFF08;HFR&#xFF09;</a></strong> &#x7AE0;&#x8282;&#x6240;&#x63D0;&#xFF0C;<strong>&#x4EBA;&#x8033;&#x5BF9;&#x58F0;&#x97F3;&#x7684;&#x611F;&#x77E5;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x52A8;&#x6001;&#x7684;</strong>&#x3002;&#x58F0;&#x97F3;&#x7684; <strong>&#x77AC;&#x65F6;&#x7279;&#x5F81;</strong>&#x3001;<strong>&#x7531;&#x7A81;&#x53D1;&#x5F3A;&#x4FE1;&#x53F7;&#x5BF9;&#x5F31;&#x4FE1;&#x53F7;&#x7684;&#x5FC3;&#x7406;&#x6027;&#x63A9;&#x76D6;&#xFF08;&#x5373;&#x63A9;&#x853D;&#x6548;&#x5E94;&#xFF09;</strong>&#x3001;<strong>&#x8D85;&#x9608;&#x503C;&#x566A;&#x97F3;&#xFF08;&#x5373;&#x75DB;&#x89C9;&#x9608;&#xFF09;&#x6240;&#x4EA7;&#x751F;&#x7684;&#x566A;&#x97F3;&#x906E;&#x853D;</strong> &#x7B49;&#xFF0C;&#x90FD;&#x4F1A;&#x4F7F;&#x4EBA;&#x5BF9;&#x4E0A;&#x8FF0; <strong>&#x4E0D;&#x540C;&#x5B50;&#x5E26;&#x5206;&#x6BB5;&#x4EE3;&#x8868;&#x9891;&#x7387;&#x7684;&#x611F;&#x77E5;&#x80FD;&#x529B;&#x53D1;&#x751F;&#x53D8;&#x5316;</strong>&#x3002;&#x4EE5;&#x7B49;&#x957F;&#x5212;&#x5206;&#x7684;&#x5B50;&#x5E26;&#xFF0C;&#x663E;&#x7136; <strong>&#x4E0D;&#x80FD;&#x5145;&#x5206;&#x7684;</strong> &#x8868;&#x793A;&#x8BE5;&#x53D8;&#x5316;&#x6240;&#x5E26;&#x6765;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x8FDB;&#x800C; <strong>&#x65E0;&#x6CD5;&#x505A;&#x5230;&#xFF0C;&#x5728;&#x7B5B;&#x9009;&#x6389;&#x4E00;&#x4E9B;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x9891;&#x6BB5;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x589E;&#x5F3A;&#x6709;&#x6548;&#x9891;&#x6BB5;</strong>&#x3002;</p>
+<p><br></p>
+<p><strong>&#x5FC3;&#x7406;&#x58F0;&#x5B66;&#x6A21;&#x578B;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x5728;&#x6B64;&#x5F97;&#x5230;&#x4E86;&#x4F53;&#x73B0;&#x3002;</strong></p>
+<p>&#x901A;&#x8FC7;&#x5728;&#x7F16;&#x7801;&#x9636;&#x6BB5;&#x5F15;&#x5165; <strong>&#x5FC3;&#x7406;&#x58F0;&#x5B66;&#x6A21;&#x578B;&#xFF08;Psychoacoustic Model&#xFF09;</strong> &#x6765; <strong>&#x52A8;&#x6001;&#x7684;&#x8C03;&#x6574;&#x5B50;&#x5E26;&#x6EE4;&#x6CE2;&#x9636;&#x6BB5;&#x7684;&#x5212;&#x5206;&#x7ED3;&#x679C;</strong>&#x3002;&#x6211;&#x4EEC;&#x5C31;&#x80FD;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x538B;&#x7F29;&#x6709;&#x6548;&#x6570;&#x636E;&#x3002;&#x5728; MPEG &#x7684;&#x8BBE;&#x5B9A;&#x4E2D;&#xFF0C;<strong>&#x5C42;&#xFF08;Layer&#xFF09;&#x7684;&#x6982;&#x5FF5;&#x662F;&#x5BF9;&#x4E00;&#x5957;&#x4E0D;&#x540C;&#x7F16;&#x7801;&#x590D;&#x6742;&#x5EA6;&#x548C;&#x538B;&#x7F29;&#x6548;&#x7387;&#x7EA7;&#x522B;&#x7684;&#x65B9;&#x6848;&#x7684;&#x4EE3;&#x79F0;</strong>&#x3002;MP3 &#x6765;&#x81EA;&#x4E8E; MPEG-1 &#x7684;&#x97F3;&#x9891;&#x5C42;&#x7EA7;3&#xFF08;Audio Layer III&#xFF09;&#x3002;&#x4EE5;&#x5206;&#x7A97;&#x540E;&#x7684;&#x6570;&#x636E;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x5728; Layer III &#x7684;&#x89C4;&#x683C;&#x4E0B;&#xFF0C;&#x97F3;&#x9891;&#x9700;&#x8981;&#x7ECF;&#x8FC7;&#x4E00;&#x4E2A; <strong>&#x76F8;&#x5BF9;&#x72EC;&#x7ACB;&#x7684;&#x590D;&#x6742;&#x6D41;&#x6C34;&#x7EBF;&#x5904;&#x7406;&#x8FC7;&#x7A0B;</strong>&#xFF1A;</p>
+<center>
+<figure>
+   <img width="800" height="500" src="../../Pictures/AF_MP3_subband_psych_flow.png" alt="">
+    <figcaption>
+      <p>&#x56FE; 1.6.3-4 MP3 &#x97F3;&#x9891;&#x683C;&#x5F0F;&#x5728; MPEG-1 &#x4E2D;&#x7684;&#x5B50;&#x5E26;&#x53CA;&#x5FC3;&#x7406;&#x58F0;&#x5B66;&#x6A21;&#x578B;&#x5DE5;&#x4F5C;&#x6D41;&#xFF08;&#x7ACB;&#x4F53;&#x58F0;&#xFF09;<a href="References_1.html">[27]</a></p>
+   </figcaption>
+</figure>
+</center>
+
+<p>&#x90A3;&#x4E48;&#xFF0C;<strong>&#x5047;&#x8BBE;&#x7ECF;&#x8FC7;&#x8BE5;&#x6D41;&#x6C34;&#x7EBF;&#x540E;</strong>&#xFF0C;&#x65B0;&#x7684;&#x5B50;&#x5E26;&#x96C6;&#xFF1A;&#x53D6;&#x4F4E;&#x9891;&#x90E8;&#x5206;&#xFF0C;&#x53BB;&#x9664; &#x5B50;&#x5E26;1&#x3001;&#x5B50;&#x5E26;2 &#x548C; &#x5B50;&#x5E26;3&#x3002;&#x4E2D;&#x9891;&#x90E8;&#x5206;&#xFF0C;&#x7565;&#x5FAE;&#x8C03;&#x6574;&#x5B50; &#x5E26;10 &#x5230; &#x5B50;&#x5E26;20 &#x7684;&#x9891;&#x7387;&#x8303;&#x56F4;&#x3002;&#x9AD8;&#x9891;&#x90E8;&#x5206;&#xFF0C;&#x53BB;&#x9664;&#x5B50; &#x5E26;30&#x3001;&#x5B50;&#x5E26;31 &#x548C; &#x5B50;&#x5E26;32&#xFF0C;&#x8C03;&#x6574; &#x5B50;&#x5E26;29 &#x7684;&#x9891;&#x7387;&#x8303;&#x56F4;&#x3002;&#x5C31;&#x6709;&#xFF1A;</p>
+<center>
+<figure>
+   <img width="600" height="400" src="../../Pictures/AF_MP3_subband_by_psych.png" alt="">
+    <figcaption>
+      <p>&#x56FE; 1.6.3-5 MP3 &#x97F3;&#x9891;&#x683C;&#x5F0F;&#x7ECF;&#x8FC7;&#x5FC3;&#x7406;&#x58F0;&#x5B66;&#x6A21;&#x578B;&#x52A8;&#x6001;&#x5904;&#x7406;&#x540E;&#x7684;&#x5B50;&#x5E26;&#x5206;&#x7EC4;&#x60C5;&#x51B5;&#xFF08;&#x6A21;&#x62DF;&#xFF09;</p>
+   </figcaption>
+</figure>
+</center>
+
+<p>&#x81F3;&#x4E8E; <strong>&#x6BCF;&#x4E2A;&#x5B50;&#x5E26;&#x5185;&#x6240;&#x542B;&#x7684;&#x5BF9;&#x5E94;&#x9891;&#x7387;&#x6570;&#x636E;</strong>&#xFF0C;&#x518D;&#x8F85;&#x52A9;&#x4EE5; <strong>&#x91CF;&#x5316;&#x5904;&#x7406;</strong> &#x4E0E; <strong>&#x54C8;&#x592B;&#x66FC;&#x7F16;&#x7801;&#xFF08;Huffman Coding&#xFF09;&#x7684;&#x71B5;&#x7F16;&#x7801;&#xFF08;Entropy Coding&#xFF09;&#x5904;&#x7406;</strong>&#xFF0C;&#x5B8C;&#x6210;&#x6D41;&#x7A0B;&#x672B;&#x5C3E;&#x7684;&#x6570;&#x636E;&#x538B;&#x7F29;&#x540E;&#x3002;&#x6309;&#x7167;&#x5982;&#x4E0B;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5C01;&#x88C5;&#x540E;&#xFF0C;&#x5373;&#x53EF;&#x5F97;&#x5230;&#x6700;&#x7EC8;&#x7684; <strong>MP3 &#x97F3;&#x9891;&#x6570;&#x636E;&#x5E27;&#xFF08;Audio Frame&#xFF09;</strong> &#x4E86;&#xFF1A;</p>
+<center>
+<figure>
+   <img width="600" height="500" src="../../Pictures/AF_MP3_frame_structure.png" alt="">
+    <figcaption>
+      <p>&#x56FE; 1.6.3-6 MP3 &#x97F3;&#x9891;&#x683C;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x7EC4;&#x5E27;&#x540E;&#x7684;&#x5355;&#x5E27;&#x793A;&#x4F8B;</p>
+   </figcaption>
+</figure>
+</center>
+
+<p><strong>&#x91CF;&#x5316;&#x548C;&#x54C8;&#x592B;&#x66FC;&#x7F16;&#x7801;</strong>&#xFF0C;&#x76F8;&#x4FE1;&#x8BFB;&#x5230;&#x6B64;&#x5904;&#x7684;&#x670B;&#x53CB;&#x90FD;&#x8F83;&#x4E3A;&#x719F;&#x6089;&#xFF0C;&#x65E0;&#x9700;&#x8D58;&#x8A00;&#x3002;&#x5176;&#x7ED3;&#x679C;&#x6570;&#x636E;&#xFF0C;<strong>&#x88AB;&#x7528;&#x4E8E;&#x88C5;&#x586B;&#x5F53;&#x524D;&#x5E27;&#x7684;&#x5E27;&#x6570;&#x636E;&#xFF08;Frame Data&#xFF09;&#x90E8;&#x5206;</strong>&#x3002;&#x76F8;&#x5173;&#x7684; <strong>&#x5B8C;&#x6574;&#x5E27;&#x957F;&#x5EA6;&#xFF08;&#x5305;&#x542B;&#x5934;&#x90E8;&#x7684;&#x5B8C;&#x6574;&#x5E27;&#x957F;&#x5EA6;&#xFF09;</strong>&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x516C;&#x5F0F;&#x8BA1;&#x7B97;&#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mstyle scriptlevel="0" displaystyle="true"><mtable><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mrow></mrow><mi>i</mi><mi>f</mi><mtext>&#xA0;</mtext><mi>u</mi><mi>s</mi><mi>e</mi><mtext>&#xA0;</mtext><mo>[</mo><mi>L</mi><mi>a</mi><mi>y</mi><mi>e</mi><mi>r</mi><mtext>&#xA0;</mtext><mi>I</mi><mo>]</mo><mo>:</mo></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mrow></mrow><mspace width="1em"></mspace><mspace width="1em"></mspace><mi>F</mi><mi>r</mi><mi>a</mi><mi>m</mi><mi>e</mi><mtext>&#xA0;</mtext><mi>L</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>=</mo><mrow><mo fence="true">(</mo><mfrac><mrow><mn>1</mn><mn>2</mn><mo>&#xD7;</mo><mi>B</mi><mi>i</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>t</mi><mi>e</mi></mrow><mrow><mi>S</mi><mi>a</mi><mi>m</mi><mi>p</mi><mi>l</mi><mi>i</mi><mi>n</mi><mi>g</mi><mtext>&#xA0;</mtext><mi>R</mi><mi>a</mi><mi>t</mi><mi>e</mi></mrow></mfrac><mo>+</mo><mi>P</mi><mi>a</mi><mi>d</mi><mi>d</mi><mi>i</mi><mi>n</mi><mi>g</mi><mtext>&#xA0;</mtext><mi>B</mi><mi>y</mi><mi>t</mi><mi>e</mi><mo fence="true">)</mo></mrow><mo>&#xD7;</mo><mn>4</mn></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mrow></mrow><mspace width="1em"></mspace><mi mathvariant="normal">.</mi></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mrow></mrow><mi>i</mi><mi>f</mi><mtext>&#xA0;</mtext><mi>u</mi><mi>s</mi><mi>e</mi><mtext>&#xA0;</mtext><mo>[</mo><mi>L</mi><mi>a</mi><mi>y</mi><mi>e</mi><mi>r</mi><mtext>&#xA0;</mtext><mi>I</mi><mi>I</mi><mo>]</mo><mtext>&#xA0;</mtext><mi>o</mi><mi>r</mi><mtext>&#xA0;</mtext><mo>[</mo><mi>L</mi><mi>a</mi><mi>y</mi><mi>e</mi><mi>r</mi><mtext>&#xA0;</mtext><mi>I</mi><mi>I</mi><mi>I</mi><mo>]</mo><mo>:</mo></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mrow></mrow><mspace width="1em"></mspace><mspace width="1em"></mspace><mi>F</mi><mi>r</mi><mi>a</mi><mi>m</mi><mi>e</mi><mtext>&#xA0;</mtext><mi>L</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>=</mo><mrow><mo fence="true">(</mo><mfrac><mrow><mn>1</mn><mn>4</mn><mn>4</mn><mo>&#xD7;</mo><mi>B</mi><mi>i</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>t</mi><mi>e</mi></mrow><mrow><mi>S</mi><mi>a</mi><mi>m</mi><mi>p</mi><mi>l</mi><mi>i</mi><mi>n</mi><mi>g</mi><mtext>&#xA0;</mtext><mi>R</mi><mi>a</mi><mi>t</mi><mi>e</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mo>+</mo><mi>P</mi><mi>a</mi><mi>d</mi><mi>d</mi><mi>i</mi><mi>n</mi><mi>g</mi><mtext>&#xA0;</mtext><mi>B</mi><mi>y</mi><mi>t</mi><mi>e</mi></mrow></mtd></mtr></mtable></mstyle></mrow></mrow><annotation encoding="application/x-tex">
+{\displaystyle 
+ \begin{aligned}
+   &amp;if\ use \ [Layer\ I] :\\
+   &amp;\quad \quad Frame\ Length =  \left( \frac{12 \times Bitrate}{Sampling\ Rate} + Padding\ Byte  \right) \times 4 \\
+   &amp;\quad .\\
+   &amp;if\ use \ [Layer\ II]\ or\ [Layer\ III] :\\
+   &amp;\quad \quad Frame\ Length = \left( \frac{144 \times Bitrate}{Sampling\ Rate} \right) + Padding\ Byte 
+ \end{aligned}
+}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:4.450030000000001em;"></span><span class="strut bottom" style="height:8.40006em;vertical-align:-3.95003em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mtable"><span class="col-align-r"><span class="vlist"><span style="top:-3.610030000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span style="top:-1.800030000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span style="top:-0.010000000000000842em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span style="top:1.1899999999999993em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span style="top:3em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="col-align-l"><span class="vlist"><span style="top:-3.610030000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"></span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit">u</span></span><span class="mord mathit">s</span><span class="mord mathit">e</span><span class="mopen"><span class="mspace">&#xA0;</span><span class="mopen">[</span></span><span class="mord mathit">L</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.07847em;">I</span></span><span class="mclose">]</span><span class="mrel">:</span></span></span><span style="top:-1.800030000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"></span><span class="mord mathit"><span class="mspace quad"></span><span class="mspace quad"></span><span class="mord mathit" style="margin-right:0.13889em;">F</span></span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">a</span><span class="mord mathit">m</span><span class="mord mathit">e</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit">L</span></span><span class="mord mathit">e</span><span class="mord mathit">n</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">t</span><span class="mord mathit">h</span><span class="mrel">=</span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.6860000000000002em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit">a</span><span class="mord mathit">m</span><span class="mord mathit">p</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.00773em;">R</span></span><span class="mord mathit">a</span><span class="mord mathit">t</span><span class="mord mathit">e</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">1</span><span class="mord mathrm">2</span><span class="mbin">&#xD7;</span><span class="mord mathit" style="margin-right:0.05017em;">B</span><span class="mord mathit">i</span><span class="mord mathit">t</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">a</span><span class="mord mathit">t</span><span class="mord mathit">e</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mbin">+</span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mord mathit">a</span><span class="mord mathit">d</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.05017em;">B</span></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathit">t</span><span class="mord mathit">e</span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mbin">&#xD7;</span><span class="mord mathrm">4</span></span></span><span style="top:-0.010000000000000842em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"></span><span class="mord mathrm"><span class="mspace quad"></span><span class="mord mathrm">.</span></span></span></span><span style="top:1.1899999999999993em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"></span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit">u</span></span><span class="mord mathit">s</span><span class="mord mathit">e</span><span class="mopen"><span class="mspace">&#xA0;</span><span class="mopen">[</span></span><span class="mord mathit">L</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.07847em;">I</span></span><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mclose">]</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit">o</span></span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mopen"><span class="mspace">&#xA0;</span><span class="mopen">[</span></span><span class="mord mathit">L</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.07847em;">I</span></span><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mclose">]</span><span class="mrel">:</span></span></span><span style="top:3em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"></span><span class="mord mathit"><span class="mspace quad"></span><span class="mspace quad"></span><span class="mord mathit" style="margin-right:0.13889em;">F</span></span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">a</span><span class="mord mathit">m</span><span class="mord mathit">e</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit">L</span></span><span class="mord mathit">e</span><span class="mord mathit">n</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">t</span><span class="mord mathit">h</span><span class="mrel">=</span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.6860000000000002em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit">a</span><span class="mord mathit">m</span><span class="mord mathit">p</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.00773em;">R</span></span><span class="mord mathit">a</span><span class="mord mathit">t</span><span class="mord mathit">e</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">1</span><span class="mord mathrm">4</span><span class="mord mathrm">4</span><span class="mbin">&#xD7;</span><span class="mord mathit" style="margin-right:0.05017em;">B</span><span class="mord mathit">i</span><span class="mord mathit">t</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">a</span><span class="mord mathit">t</span><span class="mord mathit">e</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mbin">+</span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mord mathit">a</span><span class="mord mathit">d</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit"><span class="mspace">&#xA0;</span><span class="mord mathit" style="margin-right:0.05017em;">B</span></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathit">t</span><span class="mord mathit">e</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></span></span></p>
+<p>&#x800C; <strong>&#x7EC4;&#x5E27;&#xFF08;Framing&#xFF09;</strong>&#xFF0C;&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x5C31;&#x662F; <strong>&#x6309;&#x683C;&#x5F0F;&#x5BF9;&#x6570;&#x636E;&#x5C01;&#x88C5;&#x7684;&#x8FC7;&#x7A0B;</strong>&#xFF0C;&#x6CE8;&#x610F; <strong>&#x53EA;&#x5360; 4 &#x5B57;&#x8282;&#x7684; &#x5E27;&#x5934;&#xFF08;Frame Header&#xFF09;&#x9AD8;&#x5BC6;&#x5EA6;&#x97F3;&#x9891;&#x8F85;&#x52A9;&#x4FE1;&#x606F;</strong>&#x3002;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;&#xFF08;&#x7D22;&#x5F15;&#x5BF9;&#x5E94;&#x5355;&#x4F4D;&#x4E3A; <strong>bit</strong> &#xFF09;&#xFF1A;</p>
+<table style="width:100%; border-collapse: collapse;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; width: 150px;">Params</th>
+    <th style="border: 1px solid #ddd; padding: 10px; width: 120px;">Range(bits)</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">Details</th>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Sync Word</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0~11 (12)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x56FA;&#x5B9A;&#x5934;&#x90E8;&#x3010;&#x540C;&#x6B65;&#x5B57;&#x3011;&#x6807;&#x7B7E;&#xFF0C;&#x8868;&#x793A;&#x5F53;&#x524D;&#x97F3;&#x9891;&#x5E27;&#x7684;&#x5F00;&#x59CB;&#xFF0C;&#x56FA;&#x5B9A;&#x4E3A; 0xFFF</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Version</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">12~13 (2)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">MPEG &#x7248;&#x672C;&#xFF0C;00 &#x4E3A; MPEG-2.5&#xFF0C;10 &#x4E3A; MPEG-2&#xFF0C;11 &#x4E3A; MPEG-1&#xFF0C;01 &#x4FDD;&#x7559;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Layer</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">14~15 (2)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">MPEG &#x5C42;&#x7EA7;&#xFF0C;01 &#x4E3A; Layer III&#xFF0C;10 &#x4E3A; Layer II&#xFF0C;11 &#x4E3A; Layer I&#xFF0C;00&#x4FDD;&#x7559;</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Protection Bit</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">16 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">CRC &#x4EA4;&#x9A8C;&#x72B6;&#x6001;&#x6807;&#x5FD7;&#xFF0C;0 &#x6307;&#x542F;&#x7528; CRC &#x6821;&#x9A8C;&#xFF0C;1 &#x6307;&#x5173;&#x95ED; CRC &#x6821;&#x9A8C;&#xFF0C;CRC &#x6821;&#x9A8C;&#x7528;&#x4E8E;&#x68C0;&#x6D4B;&#x5E27;&#x6570;&#x636E;&#x7684;&#x4F20;&#x8F93;&#x9519;&#x8BEF;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Bitrate Index</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">17~20 (4)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x8868;&#x793A;&#x97F3;&#x9891;&#x6570;&#x636E; &#x6BD4;&#x7279;&#x7387; &#x7684;&#x76F8;&#x5173;&#x67E5;&#x8868;&#x7D22;&#x5F15;&#xFF0C;&#x6BD4;&#x7279;&#x7387;&#x7D22;&#x5F15;&#x7684;&#x503C;&#x8303;&#x56F4;&#x4ECE; 0001 &#x5230; 1110&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x6BD4;&#x7279;&#x7387;&#x4ECE;32 kbps&#x5230;320 kbps&#x3002;0000&#x8868;&#x793A;&#x514D;&#x8D39;&#x6A21;&#x5F0F;&#xFF0C;1111&#x4FDD;&#x7559;</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Sample Rate Index</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">21~22 (2)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x8868;&#x793A;&#x97F3;&#x9891;&#x6570;&#x636E; &#x91C7;&#x6837;&#x7387; &#x7684;&#x76F8;&#x5173;&#x67E5;&#x8868;&#x7D22;&#x5F15;&#xFF0C;00 &#x4E3A; 44.1 kHz&#xFF0C;01 &#x4E3A; 48 kHz&#xFF0C;02 &#x4E3A; 32 kHz&#xFF0C;11&#x4FDD;&#x7559;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Padding Bit</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">23 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x586B;&#x5145;&#x5B57;&#x8282;&#x542F;&#x7528;&#x6807;&#x5FD7;&#xFF0C;0 &#x8868;&#x793A;&#x4E0D;&#x4F7F;&#x7528;&#x586B;&#x5145;&#xFF0C;1 &#x8868;&#x793A;&#x4F7F;&#x7528;&#x586B;&#x5145;&#xFF0C;&#x586B;&#x5145;&#x4F4D;&#x7528;&#x4E8E;&#x786E;&#x4FDD;&#x5E27;&#x7684;&#x957F;&#x5EA6;&#x4E00;&#x81F4;</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Private Bit</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">24 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x9884;&#x7559;&#x79C1;&#x6709;&#x6807;&#x5FD7;&#x4F4D;&#xFF0C;&#x79C1;&#x6709;&#x4F4D;&#x7531;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x81EA;&#x884C;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x97F3;&#x9891;&#x6570;&#x636E;&#x7684;&#x89E3;&#x7801;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Channel Mode</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">25~26 (2)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6307;&#x793A;&#x97F3;&#x9891;&#x6570;&#x636E;&#x7684;&#x58F0;&#x9053;&#x6A21;&#x5F0F;&#xFF0C;00 &#x4E3A;&#x7ACB;&#x4F53;&#x58F0;&#xFF08;Stereo&#xFF09;&#xFF0C;01 &#x4E3A;&#x8054;&#x5408;&#x7ACB;&#x4F53;&#x58F0;&#xFF08;IS&#xFF09;&#xFF0C;10 &#x4E3A;&#x53CC;&#x58F0;&#x9053;&#xFF08;Dual&#xFF09;&#xFF0C;11 &#x4E3A;&#x5355;&#x58F0;&#x9053;&#xFF08;Mono&#xFF09;</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Mode Extension</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">27~28 (2)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x8F85;&#x52A9;&#x8868;&#x793A;&#x8054;&#x5408;&#x7ACB;&#x4F53;&#x58F0;&#x7684;&#x7C7B;&#x578B;&#xFF0C;00 &#x4E3A;&#x7981;&#x7528;&#xFF0C;01 &#x4E3A;&#x5F3A;&#x5236;&#x7ACB;&#x4F53;&#x58F0;&#xFF0C;10 &#x548C; 11 &#x4FDD;&#x7559;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Copyright</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">29 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x7248;&#x6743;&#x72B6;&#x6001;&#x6807;&#x5FD7;&#x4F4D;&#xFF0C;&#x53D6; 0 &#x5219;&#x97F3;&#x9891;&#x6570;&#x636E;&#x4E0D;&#x53D7;&#x7248;&#x6743;&#x4FDD;&#x62A4;&#xFF0C;&#x53D6; 1 &#x5219;&#x97F3;&#x9891;&#x6570;&#x636E;&#x53D7;&#x7248;&#x6743;&#x4FDD;&#x62A4;</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Original</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">30 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x539F;&#x59CB;&#x5A92;&#x4F53;&#x6807;&#x5FD7;&#x4F4D;&#xFF0C;&#x53D6; 0 &#x5219;&#x97F3;&#x9891;&#x6570;&#x636E;&#x662F;&#x590D;&#x5236;&#x54C1;&#xFF0C;&#x53D6; 1 &#x5219;&#x97F3;&#x9891;&#x6570;&#x636E;&#x662F;&#x539F;&#x59CB;&#x5F55;&#x97F3;&#x6216;&#x539F;&#x59CB;&#x5A92;&#x4F53;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Emphasis</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">31~32 (2)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x9884;&#x5F3A;&#x8C03;&#xFF08;Pre-emphasis&#xFF09;&#x5904;&#x7406;&#x7C7B;&#x578B; &#x7684;&#x76F8;&#x5173;&#x67E5;&#x8868;&#x7D22;&#x5F15;&#xFF0C;00 &#x4E3A; &#x65E0;&#x5F3A;&#x8C03;&#xFF0C;01 &#x4E3A; 50/15 &#x5FAE;&#x79D2;&#xFF08;50/15 &#xB5;s&#xFF09;&#x6EE4;&#x6CE2;&#xFF0C;10 &#x4E3A; &#x4FDD;&#x7559;&#x5B57;&#x6BB5;&#xFF0C;11 &#x5219;&#x91C7;&#x7528; ITU-CCITT J.17 &#x6807;&#x51C6;</td>
+  </tr>
+</table>
+
+<p><br></p>
+<p>&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x591A; <strong>&#x4EE5;&#x67E5;&#x8868;&#x6CD5;</strong> &#x4EE3;&#x66FF;&#x4E86;&#x5728;&#x672A;&#x538B;&#x7F29;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#x548C;&#x65E0;&#x635F;&#x538B;&#x7F29;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#x4E2D;&#xFF0C;<strong>&#x5BF9;&#x97F3;&#x9891;&#x57FA;&#x7840;&#x4FE1;&#x606F;&#x7684;&#x6570;&#x503C;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;</strong>&#x3002;&#x4F7F;&#x6BCF;&#x7EC4; MP3 &#x5E27;&#x6570;&#x636E;&#xFF0C;&#x90FD;&#x80FD;&#x643A;&#x5E26;&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x4FE1;&#x606F;&#xFF0C;&#x65B9;&#x4FBF;&#x4E86;&#x97F3;&#x9891;&#x4EE5;&#x6D41;&#x7684;&#x5F62;&#x5F0F;&#x4F20;&#x8F93;&#x3002;</p>
+<p>&#x90A3;&#x4E48; MP3 &#x97F3;&#x9891;&#x683C;&#x5F0F;&#xFF0C;&#x662F;&#x5426;&#x5355;&#x7EAF;&#x7684;&#x53EA;&#x6709; MP3 &#x6570;&#x636E;&#x5E27;&#x6784;&#x6210;&#x5462;&#xFF1F;&#x663E;&#x7136;&#x4E0D;&#x662F;&#x3002; </p>
+<p><br></p>
+<p>MP3 &#x7684;&#x6587;&#x4EF6;&#x7ED3;&#x6784;&#xFF0C;&#x4F9D;&#x65E7;&#x4E3A; <strong>&#x4E24;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF08;&#x7B80;&#x5355;&#x793A;&#x610F;&#xFF09;</strong>&#xFF1A;</p>
+<center>
+<b>
+&#x3010;MP3 ID3 &#x6807;&#x7B7E;&#xFF08;MP3 ID3 Tags&#xFF09;&#x3011;+&#x3010;MP3 &#x5E27;&#x6570;&#x636E;&#xFF08;MP3 Audio Frames&#xFF09;&#x3011;
+</b>
+</center>
+
+<p><br></p>
+<p>&#x5176;&#x4E2D;&#xFF0C;<strong>MP3 ID3 &#x6807;&#x7B7E;</strong>&#xFF0C;&#x88AB;&#x7528;&#x4E8E;&#x505A;&#x5305;&#x62EC; <strong>&#x6B4C;&#x66F2;&#x6807;&#x9898;&#x3001;&#x827A;&#x672F;&#x5BB6;&#x3001;&#x4E13;&#x8F91;&#x3001;&#x5E74;&#x4EFD;&#x3001;&#x6D41;&#x6D3E;&#x3001;&#x8BC4;&#x8BBA;</strong> &#x7B49;&#x4FE1;&#x606F;&#x7684;&#x8BB0;&#x5F55;&#x3002;&#x6839;&#x636E;&#x4F7F;&#x7528;&#x4F4D;&#x7F6E;&#x548C;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x5206;&#x7C7B;&#x4E24;&#x79CD;&#xFF1A;</p>
+<ul>
+<li><strong>ID3v1 &#x7528;&#x4E8E; MP3 &#x6587;&#x4EF6;&#x672B;&#x5C3E;</strong>&#xFF0C;&#x56FA;&#x5B9A; 128 &#x5B57;&#x8282;&#xFF08;Bytes&#xFF09;&#xFF0C;<strong>&#x6700;&#x591A;&#x53EA;&#x80FD;&#x5305;&#x542B;&#x4E00;&#x4E2A;</strong>&#xFF1B;</li>
+<li><strong>ID3v2 &#x7528;&#x4E8E; MP3 &#x6587;&#x4EF6;&#x5F00;&#x5934;</strong>&#xFF0C;&#x957F;&#x5EA6;&#x53EF;&#x53D8;&#x4E0D;&#x56FA;&#x5B9A;&#xFF0C;&#x8BB0;&#x5F55;&#x590D;&#x6742;&#x6570;&#x636E;&#x5E76;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7248;&#x672C;&#xFF1B;</li>
+</ul>
+<p>&#x53EF;&#x89C1;&#xFF0C;ID3 &#x6807;&#x7B7E;&#x5BF9; MP3 &#x7684;&#x610F;&#x4E49;&#xFF0C;&#x51E0;&#x4E4E;&#x7B49;&#x540C;&#x4E8E; FLAC &#x7684;&#x5143;&#x6570;&#x636E;&#x5757; &#x6216; &#x672A;&#x538B;&#x7F29;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#x4E2D;&#x7684;&#x4FE1;&#x606F;&#x5757;&#xFF0C;&#x5BF9;&#x672C;&#x8EAB;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#x7684;&#x4F5C;&#x7528;&#x548C;&#x5730;&#x4F4D;&#x3002;<strong>&#x53EA;&#x662F;&#x5E76;&#x4E0D;&#x4FDD;&#x6709;&#x97F3;&#x9891;&#x57FA;&#x7840;&#x4FE1;&#x606F;&#x800C;&#x5DF2;&#x3002;</strong></p>
+<p><br></p>
+<p><strong>ID3v1 &#x662F;&#x7B2C;&#x4E00;&#x7248;&#x7684; ID3 &#x6807;&#x7B7E;&#x89C4;&#x8303;&#xFF0C;&#x4E5F;&#x662F;&#x901A;&#x7528;&#x6027;&#x6700;&#x597D;&#x4E14;&#x6700;&#x7B80;&#x7684; ID3 &#x6807;&#x7B7E;</strong>&#xFF0C;&#x56FA;&#x5B9A;&#x6709; 7 &#x4E2A;&#x5B57;&#x6BB5;&#xFF1A;</p>
+<table style="width:100%; border-collapse: collapse;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; width: 150px;">Params</th>
+    <th style="border: 1px solid #ddd; padding: 10px; width: 120px;">Range(bytes)</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">Details</th>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Identifier</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x02 (3)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E; ID&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;TAG&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x544147</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Title</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x03~0x1e (30)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x97F3;&#x9891;&#x6807;&#x9898;&#xFF0C;&#x8BB0;&#x5F55;&#x8BE5;&#x97F3;&#x9891;&#x6807;&#x9898;&#x63CF;&#x8FF0;&#xFF0C;&#x56FA;&#x5B9A; 30 &#x5B57;&#x8282;&#x957F;&#x5EA6;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Artist</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x1f~0x3e (30)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x97F3;&#x9891;&#x827A;&#x672F;&#x5BB6;&#x540D;&#x79F0;&#xFF0C;&#x8BB0;&#x5F55;&#x521B;&#x4F5C;&#x8BE5;&#x97F3;&#x9891;&#x7684;&#x827A;&#x672F;&#x5BB6;&#x540D;&#x79F0;&#xFF0C;&#x56FA;&#x5B9A; 30 &#x5B57;&#x8282;&#x957F;&#x5EA6;</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Album</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x3f~0x5e (30)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x97F3;&#x9891;&#x4E13;&#x8F91;&#x540D;&#xFF0C;&#x8BB0;&#x5F55;&#x8BE5;&#x97F3;&#x9891;&#x6240;&#x5728;&#x4E13;&#x8F91;&#x540D;&#x79F0;&#xFF0C;&#x56FA;&#x5B9A; 30 &#x5B57;&#x8282;&#x957F;&#x5EA6;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Year</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x5f~0x62 (4)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x97F3;&#x9891;&#x53D1;&#x884C;&#x5E74;&#x4EFD;&#xFF0C;&#x8BB0;&#x5F55;&#x8BE5;&#x97F3;&#x9891;&#x53D1;&#x884C;&#x65F6;&#x95F4;&#x70B9;</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Comment</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x63~0x7e (30)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x97F3;&#x9891;&#x77ED;&#x8BC4;&#x6216;&#x9644;&#x5C5E;&#x6587;&#x5B57;&#x4FE1;&#x606F;&#xFF0C;&#x8BB0;&#x5F55;&#x8BE5;&#x97F3;&#x9891;&#x7684;&#x4E00;&#x4E9B;&#x7B80;&#x77ED;&#x7684;&#x989D;&#x5916;&#x6587;&#x5B57;&#x4FE1;&#x606F;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Genre</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x7f (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x97F3;&#x9891;&#x6D41;&#x6D3E; &#x7684;&#x672C;&#x5730;&#x76F8;&#x5173;&#x67E5;&#x8868;&#x7D22;&#x5F15;&#xFF0C;&#x5373;&#x97F3;&#x9891;&#x6D41;&#x6D3E;&#x5F52;&#x7C7B;&#xFF0C;&#x91C7;&#x7528;&#x672C;&#x5730;&#x6D41;&#x6D3E;&#x5217;&#x8868;&#xFF0C;&#x8BB0;&#x5F55;&#x7D22;&#x5F15;&#x503C;</td>
+  </tr>
+</table>
+
+<p><br></p>
+<p><strong>ID3v2 &#x5219;&#x662F;&#x5BF9; ID3v1 &#x6807;&#x7B7E;&#x7684;&#x6269;&#x5C55;</strong>&#xFF0C;&#x73B0;&#x5DF2;&#x8FED;&#x4EE3;&#x4E86; <strong>ID3v2.2</strong>&#x3001; <strong>ID3v2.3</strong> &#x548C; <strong>ID3v2.4</strong> &#x4E09;&#x4E2A;&#x4E3B;&#x8981;&#x7248;&#x672C;&#x3002;&#x4ECE; ID3v2.2 &#x5F00;&#x59CB;&#xFF08;&#x5373;&#x9996;&#x4E2A; ID3v2 &#x6807;&#x51C6;&#x6807;&#x7B7E;&#xFF09;&#xFF0C;ID3v2 &#x7C7B;&#x6807;&#x7B7E;&#x5C31;&#x91C7;&#x7528;&#x4E86;&#x7C7B;&#x4F3C;&#x4E8E; MP3 &#x97F3;&#x9891;&#x5E27; &#x7684;&#x5C01;&#x88C5;&#x7ED3;&#x6784;&#xFF0C;&#x5C06;&#x81EA;&#x8EAB;&#x5206;&#x4E3A; <strong>&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#x7EC4;&#x6210;</strong>&#xFF0C;&#x4EE5;&#x4FBF;&#x7EDF;&#x4E00;&#x4E8E;&#x97F3;&#x9891;&#x7684;&#x6570;&#x636E;&#x5C01;&#x88C5;&#x4E60;&#x60EF;&#xFF1A;</p>
+<center>
+<b>
+&#x3010;ID3 &#x6807;&#x7B7E;&#x5934;&#xFF08;ID3 Tag Header&#xFF09;&#x3011;+&#x3010;ID3 &#x6807;&#x7B7E;&#x5E27;&#xFF08;ID3 Tag Frame&#xFF09;&#x3011;
+</b>
+</center>
+
+<p><br></p>
+<p><strong>&#x4E09;&#x4E2A;&#x7248;&#x672C; ID3v2 &#x6807;&#x7B7E;&#x5934;&#xFF08;Tag Header&#xFF09;&#x7684;&#x53C2;&#x6570;&#x57FA;&#x672C;&#x4E00;&#x81F4;</strong>&#xFF0C;&#x53EF;&#x7528;&#x53D6;&#x503C;&#x4E0A;&#x7565;&#x6709;&#x5DEE;&#x5F02;&#xFF1A;</p>
+<table style="width:100%; border-collapse: collapse;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; width: 150px;">Params</th>
+    <th style="border: 1px solid #ddd; padding: 10px; width: 120px;">Range(bytes)</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">Details</th>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Identifier</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x02 (3)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E; ID&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;ID3&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x494433</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Version</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x03 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x7B7E;&#x4E3B;&#x7248;&#x672C;&#x53F7;&#xFF0C;<br>v2.2 &#x56FA;&#x5B9A;&#x53D6; 2&#xFF0C;&#x5373; 0000 0010 <br>v2.3 &#x56FA;&#x5B9A;&#x53D6; 3&#xFF0C;&#x5373; 0000 0011 <br>v2.4 &#x56FA;&#x5B9A;&#x53D6; 4&#xFF0C;&#x5373; 0000 0100</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Revision</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x04 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x7B7E;&#x526F;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x56FA;&#x5B9A;&#x53D6; 0&#xFF0C;&#x5373; 0000 0000</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">Flag</th>
+    <td style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">0x05 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x7B7E;&#x6807;&#x5FD7;&#x4F4D;&#xFF0C;&#x8BB0;&#x5F55;&#x91C7;&#x7528;&#x7684;&#x6807;&#x7B7E;&#x7279;&#x6027;&#x72B6;&#x6001;&#xFF0C;<br><br>v2.2 v2.3 v2.4&#xFF1A;<br>&#x53BB;&#x540C;&#x6B65;&#xFF0C;&#x89E3;&#x51B3;&#x64AD;&#x653E;&#x5668;&#x89E3;&#x8BFB; 0xFF &#x503C;&#x95EE;&#x9898;&#xFF0C;1000 0000<br>&#x6709;&#x538B;&#x7F29;&#xFF08;&#x4EC5; v2.2&#xFF09;&#xFF0C;&#x6807;&#x7B7E;&#x662F;&#x5426;&#x538B;&#x7F29;&#xFF0C;0100 0000<br>v2.3 v2.4&#xFF1A;<br>&#x6269;&#x5C55;&#x5934;&#xFF0C;&#x6807;&#x7B7E;&#x662F;&#x5426;&#x5305;&#x542B;&#x6269;&#x5C55;&#x5934;&#x4FE1;&#x606F;&#xFF0C;0100 0000<br>&#x5B9E;&#x9A8C;&#x4F4D;&#xFF0C;&#x6807;&#x7B7E;&#x662F;&#x5426;&#x4E3A;&#x5B9E;&#x9A8C;&#x6027;&#x8D28;&#x6807;&#x7B7E;&#xFF0C;0010 0000<br>v2.4&#xFF1A;<br>&#x5C3E;&#x90E8;&#x4F4D;&#xFF0C;&#x6807;&#x7B7E;&#x662F;&#x5426;&#x5305;&#x542B;&#x6807;&#x7B7E;&#x5C3E;&#x4FE1;&#x606F;&#xFF0C;0001 0000<br>&#x6807;&#x7B7E;&#x5C3E;&#xFF08;Footer&#xFF09;&#x4E3A; Identifier &#x53D6; &quot;3DI&quot; &#xFF0C;<br>&#x800C;&#x5176;&#x4F59;&#x540C;&#x6807;&#x7B7E;&#x5934;&#x7684;&#x76F8;&#x540C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4FE1;&#x606F;&#xFF0C;&#x4FBF;&#x4E8E;&#x6807;&#x5FD7; ID3 &#x7ED3;&#x5C3E;<br><br>&#x5176;&#x4ED6;&#x4F4D;&#x4E3A;&#x540E;&#x7EED;&#x62D3;&#x5C55;&#x4FDD;&#x7559;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Size</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x06~0x09 (4)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x5F53;&#x524D; ID3 &#x6807;&#x7B7E;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;&#x957F;&#x5EA6;&#xFF0C;&#x5373;&#x4E0D;&#x5305;&#x542B;&#x6807;&#x7B7E;&#x5934;&#xFF08;Header&#xFF09;&#x548C; &#x6807;&#x7B7E;&#x5C3E;&#xFF08;Footer&#xFF09;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x6570;&#x636E;&#x957F;&#x5EA6;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&#x6269;&#x5C55;&#x5934; (20) + &#x5E27;1 (30)+ &#x5E27;2 (40) = 90 Bytes</td>
+  </tr>
+</table>
+
+<p><br></p>
+<p>&#x5728;&#x6807;&#x7B7E;&#x5934;&#x7684;&#x6807;&#x5FD7;&#x4F4D;&#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E; v2.3 &#x548C; v2.4 &#x6709;&#x4E00;&#x4E2A; <strong>&#x4E13;&#x7528;&#x4E8E;&#x6269;&#x5C55;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;</strong>&#xFF0C;&#x5373; <strong>&#x6269;&#x5C55;&#x5934;&#xFF08;Extended Header&#xFF09;</strong> &#x6570;&#x636E;&#x3002;&#x8FD9;&#x4E00;&#x7ED3;&#x6784;&#x4F53;&#x5E38;&#x88AB;&#x7528;&#x6765;&#x5B58;&#x653E;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x4FE1;&#x606F;&#xFF08;&#x4E00;&#x822C;&#x4E3A;&#x4E00;&#x4E9B;&#x72B6;&#x6001;&#x6807;&#x5FD7;&#xFF0C;&#x505A;&#x529F;&#x80FD;&#x542F;&#x505C;&#x548C;&#x8BB0;&#x5F55;&#xFF09;&#xFF0C;<strong>&#x653E;&#x7F6E;&#x4E8E; ID3 &#x5E27;&#x6570;&#x636E;&#x961F;&#x5217;&#x7684;&#x9996;&#x4F4D;</strong>&#x3002;</p>
+<p>&#x4ECE;&#x53C2;&#x6570;&#x6784;&#x6210;&#x4E0A;&#x770B;&#xFF0C;<strong>ID3v2.3 &#x7684;&#x53EF;&#x5B9A;&#x5236;&#x63A7;&#x4EF6;&#x8F83;&#x4E3A;&#x7EA6;&#x675F;</strong>&#xFF1A;</p>
+<table style="width:100%; border-collapse: collapse;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; width: 150px;">Params</th>
+    <th style="border: 1px solid #ddd; padding: 10px; width: 120px;">Range(bytes)</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">Details</th>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Size</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6269;&#x5C55;&#x5934;&#x5360;&#x7528;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x53C2;&#x6570;&#x81EA;&#x8EAB;&#x7684; 4 Bytes</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Extended Flags</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x04~0x05 (2)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6269;&#x5C55;&#x5934;&#x6807;&#x5FD7;&#x4F4D;&#xFF0C;&#x8868;&#x793A;&#x5F53;&#x524D;&#x6269;&#x5C55;&#x5934;&#x7279;&#x6027;&#xFF0C;&#x6B64;&#x5904;&#x4E0D;&#x5C55;&#x5F00;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Padding Size</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x06~0x07 (2)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x5BF9;&#x9F50;&#x6807;&#x5FD7;&#x4F4D;&#xFF0C;&#x7528;&#x4E8E;&#x586B;&#x5145; 0 &#x6765;&#x5BF9;&#x9F50;&#x6570;&#x636E;&#x4F4D;&#x6570;</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">CRC Data</th>
+    <td style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">0x08~+X (X)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">CRC &#x4EA4;&#x9A8C;&#x4FE1;&#x606F;&#xFF0C;&#x4E00;&#x822C;&#x4E3A; 2 Bytes &#x7684; CRC &#x4EA4;&#x9A8C;&#x503C;</td>
+  </tr>
+</table>
+
+<p><br></p>
+<p>&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;<strong>ID3v2.4 &#x7684;&#x7075;&#x6D3B;&#x5EA6;&#x5C31;&#x8981;&#x66F4;&#x9AD8;&#x4E00;&#x4E9B;</strong>&#xFF1A;</p>
+<table style="width:100%; border-collapse: collapse;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; width: 150px;">Params</th>
+    <th style="border: 1px solid #ddd; padding: 10px; width: 120px;">Range(bytes)</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">Details</th>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Size</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6269;&#x5C55;&#x5934;&#x5360;&#x7528;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x53C2;&#x6570;&#x81EA;&#x8EAB;&#x7684; 4 Bytes</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Num of Flag Bytes</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x04 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6269;&#x5C55;&#x5934;&#x6807;&#x5FD7;&#x4F4D;&#x603B;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x8BB0;&#x4E3A; X &#xFF0C;&#x8F85;&#x52A9;&#x6269;&#x5C55;&#x5934;&#x6807;&#x5FD7;&#x4F4D;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">Extended Flags</th>
+    <td style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">(X)</td>
+    <td style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">&#x6269;&#x5C55;&#x5934;&#x6807;&#x5FD7;&#x4F4D;&#xFF0C;&#x8868;&#x793A;&#x5F53;&#x524D;&#x6269;&#x5C55;&#x5934;&#x7279;&#x6027;&#xFF0C;&#x6B64;&#x5904;&#x4E0D;&#x5C55;&#x5F00;</td>
+  </tr>
+</table>
+
+<p><br></p>
+<p>&#x540C;&#x6837;&#x7684;&#xFF0C;<strong>ID3v2 &#x6807;&#x7B7E;&#x5E27;&#xFF08;Tag Frame&#xFF09;</strong> &#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5728;&#x51E0;&#x4E2A;&#x7248;&#x672C;&#x95F4;&#x4E5F;&#x6709;&#x4E00;&#x5B9A;&#x5DEE;&#x5F02;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E; <strong>ID3v2.2</strong> &#x6709; <strong>&#xFF08;&#x6CE8;&#x610F;&#x7248;&#x672C;&#xFF09;</strong>&#xFF1A;</p>
+<table style="width:100%; border-collapse: collapse;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; width: 150px;">Params</th>
+    <th style="border: 1px solid #ddd; padding: 10px; width: 120px;">Range(bytes)</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">Details</th>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Tag Frame <br> Identifier</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x02 (3)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27; ID&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &#x5BF9;&#x5E94;&#x7C7B;&#x578B;&#x7684; ASCII &#x7801;&#xFF0C;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x89C1;&#x540E;&#x7EED;&#x8868;</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Tag Frame <br> Size</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x03~0x04 (2)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x5F53;&#x524D; ID3 &#x6807;&#x7B7E;&#x5E27; &#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;&#x957F;&#x5EA6;&#xFF0C;&#x8BB0;&#x4E3A; X Bytes &#x4E0D;&#x5305;&#x62EC;&#x5E27;&#x5934;&#x90E8;&#x4FE1;&#x606F;&#x7684;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x5373; &#x5934;&#x90E8; 6 Bytes <br>&#x4F8B;&#x5982;&#xFF1A;&#x5E27;1 (30) Size = 30-6 = 24 Bytes = X</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Tag Frame <br> Flags</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x05 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x7B7E;&#x5E27;&#x6807;&#x5FD7;&#x4F4D;&#xFF08;&#x4F4D;&#x6807;&#x8BB0;&#xFF09;&#xFF0C;&#x6709;&#xFF1A;<br>&#x6709;&#x538B;&#x7F29;&#xFF0C;&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27;&#x6570;&#x636E;&#x662F;&#x5426;&#x538B;&#x7F29;&#xFF0C;1000 0000 <br>&#x6709;&#x52A0;&#x5BC6;&#xFF0C;&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27;&#x6570;&#x636E;&#x662F;&#x5426;&#x52A0;&#x5BC6;&#xFF0C;0100 0000 <br>&#x6709;&#x5206;&#x7EC4;&#xFF0C;&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27;&#x5C5E;&#x4E8E;&#x4E00;&#x7EC4;&#x5206;&#x7EC4;&#xFF0C;0010 0000</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Tag Frame <br> Grouping ID</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x06 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x7B7E;&#x5E27;&#x5206;&#x7EC4;&#x6807;&#x8BB0;&#xFF0C;&#x52A8;&#x6001;&#xFF08;&#x53EF;&#x6709;&#x53EF;&#x65E0;&#xFF09;&#x6839;&#x636E; Flags [&#x6709;&#x5206;&#x7EC4;] &#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x6709;&#x5206;&#x7EC4;&#xFF0C;&#x5219;&#x8BB0;&#x5F55;&#x5206;&#x7EC4; ID <br>&#x5206;&#x7EC4; ID &#x76F8;&#x540C;&#x7684; &#x6807;&#x7B7E;&#x5E27;&#xFF0C;&#x5C5E;&#x4E8E;&#x4E00;&#x7EC4;&#x6570;&#x636E;</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">Tag Frame <br>Contents</th>
+    <td style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">0x05~+X (X) or 0x06~+X (X)</td>
+    <td style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">
+      &#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27;&#x7684;&#x5B9E;&#x9645;&#x6570;&#x636E;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&quot;A Lovely Song&quot;
+    </td>
+  </tr>
+</table>
+
+<p><br></p>
+<p>&#x5BF9;&#x4E8E; <strong>ID3v2.3</strong> &#x548C; <strong>ID3v2.4</strong> &#x6709; <strong>&#xFF08;&#x6CE8;&#x610F;&#x7248;&#x672C;&#xFF09;</strong>&#xFF1A;</p>
+<table style="width:100%; border-collapse: collapse;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; width: 150px;">Params</th>
+    <th style="border: 1px solid #ddd; padding: 10px; width: 120px;">Range(bytes)</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">Details</th>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Frame Identifier</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27; ID&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &#x5BF9;&#x5E94;&#x7C7B;&#x578B;&#x7684; ASCII &#x7801;&#xFF0C;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x89C1;&#x540E;&#x7EED;&#x8868;</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Frame Size</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x04~0x07 (4)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x5F53;&#x524D; ID3 &#x6807;&#x7B7E;&#x5E27; &#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;&#x957F;&#x5EA6;&#xFF0C;&#x8BB0;&#x4E3A; X Bytes &#x4E0D;&#x5305;&#x62EC;&#x5E27;&#x5934;&#x90E8;&#x4FE1;&#x606F;&#x7684;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x5373; &#x5934;&#x90E8; 10 Bytes <br>&#x4F8B;&#x5982;&#xFF1A;&#x5E27;1 (30) Size = 30-10 = 20 Bytes = X</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Tag Frame Status Flags</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x08 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x7B7E;&#x5E27;&#x72B6;&#x6001;&#x6807;&#x5FD7;&#x4F4D;&#xFF08;&#x4F4D;&#x6807;&#x8BB0;&#xFF09;&#xFF0C;&#x6709;&#xFF1A; <br>&#x6807;&#x7B7E;&#x4FDD;&#x7559;&#xFF0C;&#x5982;&#x4FEE;&#x6539;&#x6807;&#x7B7E;&#x65F6;&#x662F;&#x5426;&#x4FDD;&#x7559;&#x6B64;&#x5E27;&#xFF0C;1000 0000 <br>&#x6587;&#x4EF6;&#x4FDD;&#x7559;&#xFF0C;&#x5982;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x65F6;&#x662F;&#x5426;&#x4FDD;&#x7559;&#x6B64;&#x5E27;&#xFF0C;0100 0000 <br>&#x53EA;&#x8BFB;&#x5E27;&#xFF0C;&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27;&#x662F;&#x5426;&#x53EA;&#x80FD;&#x8BFB;&#x53D6;&#xFF0C;0010 0000</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Tag Frame Format Flags</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x09 (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x7B7E;&#x5E27;&#x683C;&#x5F0F;&#x6807;&#x5FD7;&#x4F4D;&#xFF08;&#x4F4D;&#x6807;&#x8BB0;&#xFF09;&#xFF0C;&#x8FD9;&#x91CC;&#x6709;&#x533A;&#x5206;&#xFF0C;<br> <br>v2.3&#xFF1A; <br>&#x6709;&#x538B;&#x7F29;&#xFF0C;&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27;&#x6570;&#x636E;&#x662F;&#x5426;&#x538B;&#x7F29;&#xFF0C;1000 0000 <br>&#x6709;&#x52A0;&#x5BC6;&#xFF0C;&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27;&#x6570;&#x636E;&#x662F;&#x5426;&#x52A0;&#x5BC6;&#xFF0C;0100 0000 <br>&#x6709;&#x5206;&#x7EC4;&#xFF0C;&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27;&#x5C5E;&#x4E8E;&#x4E00;&#x7EC4;&#x5206;&#x7EC4;&#xFF0C;0010 0000 <br><br>v2.4&#xFF1A; <br>&#x6709;&#x5206;&#x7EC4;&#xFF0C;&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27;&#x5C5E;&#x4E8E;&#x4E00;&#x7EC4;&#x5206;&#x7EC4;&#xFF0C;1000 0000 <br>&#x6709;&#x538B;&#x7F29;&#xFF0C;&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27;&#x6570;&#x636E;&#x662F;&#x5426;&#x538B;&#x7F29;&#xFF0C;0100 0000 <br>&#x6709;&#x52A0;&#x5BC6;&#xFF0C;&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27;&#x6570;&#x636E;&#x662F;&#x5426;&#x52A0;&#x5BC6;&#xFF0C;0010 0000 <br>&#x53BB;&#x540C;&#x6B65;&#xFF0C;&#x89E3;&#x51B3;&#x64AD;&#x653E;&#x5668;&#x89E3;&#x8BFB; 0xFF &#x503C;&#x95EE;&#x9898;&#xFF0C;0001 0000 <br>&#x539F;&#x957F;&#x5EA6;&#xFF0C;&#x6807;&#x8BB0;&#x8BE5;&#x5E27;&#x662F;&#x5426;&#x542B;&#x6709;&#x539F;&#x6570;&#x636E;&#x957F;&#x5EA6;&#xFF0C;0000 1000</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Tag Frame <br>Grouping ID</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x0a (1)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x7B7E;&#x5E27;&#x5206;&#x7EC4;&#x6807;&#x8BB0;&#xFF0C;&#x52A8;&#x6001;&#xFF08;&#x53EF;&#x6709;&#x53EF;&#x65E0;&#xFF09; &#x6839;&#x636E; Flags [&#x6709;&#x5206;&#x7EC4;] &#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x6709;&#x5206;&#x7EC4;&#xFF0C;&#x5219;&#x8BB0;&#x5F55;&#x5206;&#x7EC4; ID <br>&#x5206;&#x7EC4; ID &#x76F8;&#x540C;&#x7684; &#x6807;&#x7B7E;&#x5E27;&#xFF0C;&#x5C5E;&#x4E8E;&#x4E00;&#x7EC4;&#x6570;&#x636E;</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Tag Frame <br>Data Length Indicator</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x0b~0x0d (4) or 0x0b~0x0e (4)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x7B7E;&#x5E27;&#x539F;&#x6570;&#x636E;&#x957F;&#x5EA6;&#xFF0C;&#x52A8;&#x6001;&#xFF08;&#x53EF;&#x6709;&#x53EF;&#x65E0;&#xFF09; &#x6839;&#x636E; Flags [&#x539F;&#x957F;&#x5EA6;] &#x60C5;&#x51B5;&#xFF0C;&#x72B6;&#x6001;&#x5F00;&#x542F;&#x5219;&#x8BB0;&#x5F55;&#x6570;&#x636E;&#x539F;&#x957F; &#x8FD9;&#x4E00;&#x5C5E;&#x6027;&#x4E00;&#x822C;&#x914D;&#x5408;&#x538B;&#x7F29;&#x4F7F;&#x7528;&#xFF0C;<br>&#x4E0D;&#x5305;&#x542B;&#x81EA;&#x8EAB; 4 Bytes <br>&#x4F8B;&#x5982;&#xFF1A;&#x538B;&#x7F29;&#x524D; 20 Bytes&#xFF0C;&#x5219;&#x8BE5;&#x503C;&#x8BB0;&#x5F55; 20 Bytes</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Tag Frame <br>Contents</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x0a~+X (X) or 0x0b~+X (X) or 0x0e~+X (X)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5E27;&#x7684;&#x5B9E;&#x9645;&#x6570;&#x636E;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&quot;A Lovely Song&quot;</td>
+  </tr>
+</table>
+
+<p><br></p>
+<p>&#x90A3;&#x4E48;&#x6807;&#x7B7E;&#x5E27;&#x6709;&#x54EA;&#x4E9B;&#x7C7B;&#x578B;&#x5462;&#xFF0C;&#x6216;&#x8005;&#x8BF4; <strong>ID3v2 &#x7684;&#x6807;&#x7B7E;&#x5E27;&#xFF08;Tag Frame&#xFF09;</strong>&#xFF0C;&#x5176;&#x6570;&#x636E;&#x9996;&#x4F4D; <strong>&#x5E27; ID &#x6807;&#x7B7E;</strong> &#x90FD;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;</p>
+<p>&#x6211;&#x4EEC;&#x6709;&#x4E0B;&#x8868;&#xFF1A;</p>
+<table style="width:100%; border-collapse: collapse;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; width: 150px;">Tag Frame Type</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">Details</th>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Title</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x9898;&#x6807;&#x7B7E;&#xFF0C;&#x6B64;&#x7C7B;&#x7684;&#x5185;&#x5BB9;&#x8BB0;&#x5F55;&#x6807;&#x9898;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &quot;TIT2&quot; &#x5BF9;&#x5E94;&#x7684; ASCII &#x7801; 0x54495432</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Artist</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x827A;&#x672F;&#x5BB6;&#x6807;&#x7B7E;&#xFF0C;&#x6B64;&#x7C7B;&#x7684;&#x5185;&#x5BB9;&#x8BB0;&#x5F55;&#x827A;&#x672F;&#x5BB6;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &quot;TPE1&quot; &#x5BF9;&#x5E94;&#x7684; ASCII &#x7801; 0x54504531</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Album</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x4E13;&#x8F91;&#x6807;&#x7B7E;&#xFF0C;&#x6B64;&#x7C7B;&#x7684;&#x5185;&#x5BB9;&#x8BB0;&#x5F55;&#x4E13;&#x8F91;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &quot;TALB&quot; &#x5BF9;&#x5E94;&#x7684; ASCII &#x7801; 0x54414c42</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Year</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x5E74;&#x4EFD;&#x6807;&#x7B7E;&#xFF0C;&#x6B64;&#x7C7B;&#x7684;&#x5185;&#x5BB9;&#x8BB0;&#x5F55;&#x53D1;&#x884C;&#x5E74;&#x4EFD;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &quot;YEAR&quot; &#x5BF9;&#x5E94;&#x7684; ASCII &#x7801; 0x59454152</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Comment</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x8BC4;&#x8BBA;&#x6807;&#x7B7E;&#xFF0C;&#x6B64;&#x7C7B;&#x7684;&#x5185;&#x5BB9;&#x8BB0;&#x5F55;&#x8BC4;&#x8BBA;&#x6216;&#x989D;&#x5916;&#x4FE1;&#x606F;&#x952E;&#x503C;&#x5BF9;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &quot;COMM&quot; &#x5BF9;&#x5E94;&#x7684; ASCII &#x7801; 0x434f4d4d</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Genre</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6D41;&#x6D3E;&#x6807;&#x7B7E;&#xFF0C;&#x6B64;&#x7C7B;&#x7684;&#x5185;&#x5BB9;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x97F3;&#x9891;&#x6D41;&#x6D3E;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &quot;TCON&quot; &#x5BF9;&#x5E94;&#x7684; ASCII &#x7801; 0x54434f4e</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px;">Track Number</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x97F3;&#x8F68;&#x6807;&#x7B7E;&#xFF0C;&#x6B64;&#x7C7B;&#x7684;&#x5185;&#x5BB9;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x97F3;&#x8F68;&#x6570;&#xFF08;&#x5373;&#x5927;&#x591A;&#x4E3A;&#x66F2;&#x76EE;&#x6570;&#xFF09;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &quot;TRCK&quot; &#x5BF9;&#x5E94;&#x7684; ASCII &#x7801; 0x5452434b</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px;">Attached Picture</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x5173;&#x8054;&#x56FE;&#x7247;&#x6807;&#x7B7E;&#xFF0C;&#x6B64;&#x7C7B;&#x7684;&#x5185;&#x5BB9;&#x8BB0;&#x5F55;&#x5C01;&#x9762;&#x56FE;&#x6570;&#x636E;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &quot;APIC&quot; &#x5BF9;&#x5E94;&#x7684; ASCII &#x7801; 0x41504943</td>
+  </tr>
+</table>
+
+<p><br></p>
+<p>&#x4F9D;&#x5177;&#x4E0A;&#x8FF0;&#x56FA;&#x5B9A;&#x503C;&#xFF0C;&#x68C0;&#x6D4B;&#x4E0D;&#x540C;&#x6807;&#x7B7E;&#x5E27;&#x79CD;&#x7C7B;&#x7684;&#x5185;&#x5BB9;&#x4FE1;&#x606F;&#xFF0C;&#x5373;&#x53EF;&#x53C2;&#x8003; FLAC &#x7684;&#x7C7B;&#x4F3C;&#x5143;&#x6570;&#x636E;&#x5757;&#x7C7B;&#x578B;&#x4E3E;&#x4E00;&#x53CD;&#x4E09;&#xFF0C;&#x8BFB;&#x53D6;&#x6807;&#x7B7E;&#x5E27;&#x5185;&#x5BB9;&#x4FE1;&#x606F;&#xFF08;Tag Frame Contents&#xFF09;&#x3002;&#x5BF9; MP3 &#x683C;&#x5F0F;&#x6765;&#x8BF4;&#xFF0C;<strong>&#x6807;&#x7B7E;&#x5E27;&#x5185;&#x5BB9;&#x591A;&#x4E3A;&#x7F16;&#x89E3;&#x7801;&#x81EA;&#x8BBE;&#x5B9A;</strong>&#xFF0C;&#x6216;&#x7740; <strong>&#x8F83;&#x4E3A;&#x5B58;&#x7CB9;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;&#xFF08;&#x5373;&#x975E;&#x591A;&#x7EA7;&#x7ED3;&#x6784;&#x7684;&#x7EAF;&#x6570;&#x636E;&#x503C;&#xFF09;</strong>&#x3002;&#x4E0D;&#x518D;&#x5355;&#x72EC;&#x4E3E;&#x4F8B;&#x3002;</p>
+<p><br></p>
+<p>&#x4E8E;&#x662F;&#xFF0C;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684; MP3 &#x6587;&#x4EF6;&#x6784;&#x6210;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#x56FE;&#x6570;&#x636E;&#xFF1A;</p>
+<center>
+<figure>
+   <img width="600" height="550" src="../../Pictures/AF_MP3_file_structure.png" alt="">
+    <figcaption>
+      <p>&#x56FE; 1.6.3-7 &#x5B8C;&#x6574; MP3 &#x97F3;&#x9891;&#x683C;&#x5F0F;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x7ED3;&#x6784;&#x4E3E;&#x4F8B;</p>
+   </figcaption>
+</figure>
+</center>
+
+<p>&#x663E;&#x7136;&#xFF0C;MP3 &#x6587;&#x4EF6;&#x7ED3;&#x6784;&#x5E76;&#x4E0D;&#x50CF;&#x672C;&#x4E66;&#x4E4B;&#x524D;&#x4ECB;&#x7ECD;&#x7684;&#x79CD;&#x7C7B;&#x4E2D;&#xFF0C;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5934;&#x90E8; 4 Bytes &#x7684;&#x56FA;&#x5B9A;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x6807;&#x8BB0;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#xFF0C;<strong>MP3 &#x6807;&#x7B7E;&#x7684;&#x6807;&#x7B7E;&#x5934;&#xFF08;Tag Header&#xFF09;&#x548C; MP3 &#x6570;&#x636E;&#x5E27;&#x7684;&#x5E27;&#x5934;&#xFF08;Frame Header&#xFF09;&#x540C;&#x6B65;&#x5B57;&#xFF08;Sync Word&#xFF09;&#xFF0C;&#x90FD;&#x8DB3;&#x4EE5;&#x8868;&#x660E;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x4E3A; MP3 &#x683C;&#x5F0F;</strong>&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;<strong>MP3 &#x6587;&#x4EF6;&#x7ED3;&#x6784;&#xFF0C;&#x4ECE;&#x6570;&#x636E;&#x62BD;&#x8C61;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x770B;&#x66F4;&#x4E3A;&#x7CBE;&#x70BC;</strong>&#x3002;</p>
+<p><br></p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x968F;&#x7740; <strong>&#x5148;&#x8FDB;&#x97F3;&#x9891;&#x7F16;&#x7801;&#xFF08;AAC [Advanced Audio Coding]&#xFF09;</strong> &#x683C;&#x5F0F;&#x7684;&#x51FA;&#x73B0;&#xFF0C;&#x73B0;&#x5728;&#x4E3B;&#x6D41;&#x7684;&#x97F3;&#x9891;&#x6D41;&#x5A92;&#x4F53;&#x4F20;&#x8F93;&#xFF0C;&#x5982;&#x5BF9;&#x97F3;&#x9891;&#x538B;&#x7F29;&#x6709;&#x9700;&#x8981;&#x7684;&#x5DE5;&#x7A0B;&#x4E2D;&#xFF0C;&#x591A;&#x6570;&#x9009;&#x62E9;&#x4EE5; AAC &#x8FDB;&#x884C;&#x76F8;&#x5173;&#x97F3;&#x9891;&#x7684;&#x786C;&#x4EF6;&#x62BD;&#x8C61;&#x5C42;&#xFF08;HAL&#xFF09;&#x5C01;&#x88C5;&#x3002;&#x8F83;&#x5C11;&#x5728;&#x6D41;&#x4F20;&#x8F93;&#x4E2D;&#x91C7;&#x7528; MP3&#xFF0C;<strong>&#x867D;&#x7136; AAC &#x53EA;&#x662F;&#x534A;&#x5F00;&#x6E90;</strong>&#x3002;</p>
+<p><br></p>
+<p><br></p>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x5728;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x4E86;MP3&#x683C;&#x5F0F;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x57FA;&#x672C;&#x4E86;&#x89E3;&#x4E86;&#x97F3;&#x9891;&#x4FDD;&#x5B58;&#x4E0E;&#x8FD8;&#x539F;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x5386;&#x7ECF;&#x97F3;&#x9891;&#x7684;&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x5230;&#x58F0;&#x6CE2;&#x548C;&#x58F0;&#x97F3;&#x7684;&#x4E09;&#x8981;&#x7D20;&#xFF0C;&#x518D;&#x5230;&#x58F0;&#x97F3;&#x7684;&#x89E3;&#x6784;&#x548C;&#x6570;&#x5B57;&#x5316;&#x5904;&#x7406;&#xFF0C;&#x4EE5;&#x53CA;&#x97F3;&#x9891;&#x7684;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#x3002;&#x6211;&#x4EEC;&#x7EC8;&#x4E8E;&#x5BF9;&#x97F3;&#x9891;&#x7684;&#x5404;&#x4E2A;&#x65B9;&#x9762;&#x90FD;&#x6709;&#x4E86;&#x76F8;&#x5BF9;&#x6DF1;&#x5165;&#x7684;&#x8BA4;&#x8BC6;&#x3002;&#x800C;&#x97F3;&#x9891;&#x76F8;&#x5173;&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x548C;&#x683C;&#x5F0F;&#x5C5E;&#x6027;&#xFF0C;&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x5DF2;&#x7ECF;&#x5728;&#x672C;&#x4E66;&#x4E2D;&#x5B8C;&#x6210;&#x4E86;&#x7CFB;&#x7EDF;&#x6027;&#x68B3;&#x7406;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x5E2E;&#x52A9;&#x5F00;&#x53D1;&#x8005;&#x4EEC;&#x5728;&#x540E;&#x7EED;&#x5B9E;&#x8DF5;&#x4E2D;&#x66F4;&#x597D;&#x5730;&#x5E94;&#x7528;&#x8FD9;&#x4E9B;&#x77E5;&#x8BC6;&#xFF0C;&#x7AE0;&#x8282;&#x672B;&#x5C3E;&#xFF0C;&#x4F5C;&#x8005;&#x5217;&#x51FA;&#x4E86; <strong>&#x5E38;&#x7528;&#x7684;&#x97F3;&#x9891;&#x76F8;&#x5173;&#x5F00;&#x6E90;&#x5E93;</strong> &#x4F5C;&#x4E3A;&#x672C;&#x7AE0;&#x7684;&#x53E5;&#x53F7;&#xFF0C;&#x4F9B;&#x5927;&#x5BB6;&#x53C2;&#x8003;&#x548C;&#x4F7F;&#x7528;&#xFF1A;</p>
+<ul>
+<li>FLAC C/C++ Library. by Xiph.Org Foundation. <a href="https://xiph.org/flac/api/index.html" target="_blank">https://xiph.org/flac/api/index.html</a></li>
+<li>LAME (LAME Ain&apos;t an MP3 Encoder). C/C++.  <a href="http://lame.sourceforge.net/" target="_blank">http://lame.sourceforge.net/</a> </li>
+<li>MAD (MPEG Audio Decoder). C/C++. <a href="https://www.underbit.com/products/mad/" target="_blank">https://www.underbit.com/products/mad/</a></li>
+<li>BASS (Basic Audio Stream System). C/C++. <a href="http://www.un4seen.com/" target="_blank">http://www.un4seen.com/</a></li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
+2024-07-02 16:55:27
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Docs_1_6_3.html" class="navigation navigation-prev " aria-label="Previous page: 1.6.3 无损压缩编码格式（Lossless Encode）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="References_1.html" class="navigation navigation-next " aria-label="Next page: 【参考文献】">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.6.4 有损压缩编码格式（Uncompressed Encode）","level":"1.2.6.4","depth":3,"next":{"title":"【参考文献】","level":"1.2.7","depth":2,"path":"Chapter_1/Language/cn/References_1.md","ref":"Chapter_1/Language/cn/References_1.md","articles":[]},"previous":{"title":"1.6.3 无损压缩编码格式（Lossless Encode）","level":"1.2.6.3","depth":3,"path":"Chapter_1/Language/cn/Docs_1_6_3.md","ref":"Chapter_1/Language/cn/Docs_1_6_3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-highlight","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_1/Language/cn/Docs_1_6_4.md","mtime":"2024-07-02T08:55:27.130Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-02T03:01:38.796Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-rss/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+
