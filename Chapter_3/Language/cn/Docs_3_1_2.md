@@ -79,10 +79,12 @@ $$
  \begin{aligned}
    {\mathcal {F}}_{\omega}(x,y) &= {\mathcal {F}}_{\omega} (\vec{P})
                               = A_{\omega} \cdot sin(\vec{k} \cdot \vec{P}^T -\angle\phi_{\omega}) = A_{\omega} \cdot cos(\vec{k} \cdot \vec{P}^T +\angle\phi_{\omega}) \\
-                              &= {\Vert \hat{f}(x,y) \Vert _2} \cdot sin(\omega \cdot \vec{v}^T -\angle{\vert \hat{f}(x,y) \vert}) 
-                               = {\Vert \hat{f}(x,y) \Vert _2} \cdot cos(\omega \cdot \vec{v}^T +\angle{\vert \hat{f}(x,y) \vert}) \\
-   \hat{f}(u,v) &= \int_{0}^{H} \int_{0}^{W} f(x,y) \cdot e^{-i (ux+vy)}\ dx \ dy \ \ \ \ \ \Leftrightarrow \ \ \ \ \ 
-   f(x,y) = \frac{1}{U\cdot V} \int_{-\tfrac{V}{2}}^{+\tfrac{V}{2}} \int_{-\tfrac{U}{2}}^{+\tfrac{U}{2}} \hat{f}(u,v) \cdot {\mathcal {F}}_{\omega}(x, y) \ du \ dv \\
+                              &= {\Vert \hat{f}(x,y) \Vert _2} \cdot sin(\omega \cdot \vec{v}^T -\angle{\vert \hat{f}(x,y) \vert}) \\
+                              &= {\Vert \hat{f}(x,y) \Vert _2} \cdot cos(\omega \cdot \vec{v}^T +\angle{\vert \hat{f}(x,y) \vert}) \\
+                              \\
+   \hat{f}(u,v) &= \int_{0}^{H} \int_{0}^{W} f(x,y) \cdot e^{-i (ux+vy)}\ dx \ dy \\
+   &\Leftrightarrow \\
+   f(x,y) &= \frac{1}{U\cdot V} \int_{-\tfrac{V}{2}}^{+\tfrac{V}{2}} \int_{-\tfrac{U}{2}}^{+\tfrac{U}{2}} \hat{f}(u,v) \cdot {\mathcal {F}}_{\omega}(x, y) \ du \ dv \\
  \end{aligned}
 }
 $$
@@ -129,9 +131,10 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   {\mathcal {F}}_{\omega} = [{\mathcal {F}}_{\vec{k_0}},&{\mathcal {F}}_{\vec{k_1}},\ ...\ ,{\mathcal {F}}_{\vec{k_n}}]  \\
-   \hat{f}(u,v) = \sum_{x = 0}^{W} \sum_{y = 0}^{H}  f(x,y) \cdot e^{-i (ux+vy)}  \ \ \ \ \ \Leftrightarrow & \ \ \ \ \ 
-   f(x,y) = \frac{1}{U\cdot V} \sum_{u=-U/2}^{+U/2} \sum_{v= -V/2}^{+V/2} \hat{f}(u,v) \cdot {\mathcal {F}}_{\omega}(x, y) \\
+   {\mathcal {F}}_{\omega} &= [{\mathcal {F}}_{\vec{k_0}}, {\mathcal {F}}_{\vec{k_1}},\ ...\ ,{\mathcal {F}}_{\vec{k_n}}]  \\
+   \hat{f}(u,v) &= \sum_{x = 0}^{W} \sum_{y = 0}^{H}  f(x,y) \cdot e^{-i (ux+vy)}  \\ 
+   &\Leftrightarrow  \\
+   f(x,y) &= \frac{1}{U\cdot V} \sum_{u=-U/2}^{+U/2} \sum_{v= -V/2}^{+V/2} \hat{f}(u,v) \cdot {\mathcal {F}}_{\omega}(x, y) \\
  \end{aligned}
 }
 $$

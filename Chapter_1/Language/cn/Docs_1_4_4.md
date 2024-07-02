@@ -143,7 +143,7 @@ $$
 <center>
 <figure>
    <img  
-      width = "700" height = "210"
+      width = "800" height = "250"
       src="../../Pictures/SFR_preception_chain_1_cn.png" alt="">
     <figcaption>
       <p>图 1.4.4-4 录音棚采样场景的理想传播感知链模拟</p>
@@ -165,7 +165,7 @@ $$
 <center>
 <figure>
    <img  
-      width = "550" height = "230"
+      width = "700" height = "300"
       src="../../Pictures/SFR_preception_chain_2_cn.png" alt="">
     <figcaption>
       <p>图 1.4.4-5 录音棚内听众（假设）场景的理想传播感知链模拟</p>
@@ -232,7 +232,7 @@ $$
 <center>
 <figure>
    <img  
-      width = "400" height = "350"
+      width = "500" height = "440"
       src="../../Pictures/ELC_ISO226_2023_50.png" alt="">
     <figcaption>
       <p>图 1.4.4-8 ISO 226:2023 标准等响曲线截取 50 方（Phon）线</p>
@@ -249,7 +249,7 @@ $$
 <center>
 <figure>
    <img  
-      width = "400" height = "350"
+      width = "500" height = "440"
       src="../../Pictures/ELC_ISO226_2023_50_2.png" alt="">
     <figcaption>
       <p>图 1.4.4-9 基于 ISO 226:2023 的 50 方（Phon）线设计的入耳耳机 SFR</p>
@@ -265,7 +265,7 @@ $$
 
 所以，**我们需要一定的标准，来方便生产活动的统一产品质量衡量**。 **哈曼曲线（Harman Target Curve）** 就是这类标准之一。
 
-为什么是之一呢？因为人耳的特殊性和厂商各自的特色，不同厂商或研究机构，基于不同的样本集，指定了多种适用于一定范围人群或自身产品特色的 SFR 标准。而哈曼曲线则属于其中被接受程度最广的标准之一。
+为什么是之一呢？因为人耳的特殊性和厂商各自的特色，不同厂商或研究机构，基于不同的样本集，指定了多种适用于一定范围人群或自身产品特色的 SFR 标准。而 **哈曼曲线则属于其中被接受程度最广的标准之一**。
 
 搞清楚哈曼曲线，对于其他类似的标准，即可举一反三触类旁通。
 
@@ -335,10 +335,13 @@ $$
 
 至于具体是否能先觉的量化每个人的听觉体验呢？或许肖恩博士的另一句话，会有更大的参考价值，那就是 [\[19\]][ref]：
 
-    “It makes perfect sense, at least to me. Only then will listeners hear the truth -- music reproduced as the artist intended.”（“至少对我来说是这样的。（不过也正是）只有这样，听众才能听到真相——音乐按照艺术家的意图复制。”）
+<br>
+
+*“It makes perfect sense, at least to me. Only then will listeners hear the truth -- music reproduced as the artist intended.”（“至少对我来说是这样的。（不过也正是）只有这样，听众才能听到真相——音乐按照艺术家的意图复制。”）*
 
 <br>
 
 **这就是感官感受和工程测量的不同了。**
+
 
 [ref]: References_1.md
