@@ -143,7 +143,7 @@ $$
 <center>
 <figure>
    <img  
-      width = "900" height = "270"
+      width = "800" height = "250"
       src="../../Pictures/SFR_preception_chain_1_cn.png" alt="">
     <figcaption>
       <p>图 1.4.4-4 录音棚采样场景的理想传播感知链模拟</p>

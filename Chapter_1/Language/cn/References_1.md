@@ -38,3 +38,19 @@
 **[18]** Olive S, Welti T. The relationship between perception and measurement of headphone sound quality[C]//Audio Engineering Society Convention 133. Audio Engineering Society, 2012.
 
 **[19]** Olive S, Welti T. The relationship between perception and measurement of headphone sound quality, from his blog, https://seanolive.blogspot.com/2013/04/the-relationship-between-perception-and.html, Monday, April 22, 2013.
+
+**[20]** AES11-2009 (r2019): AES recommended practice for digital audio engineering - Synchronization of digital audio equipment in studio operations, Audio Engineering Society, https://www.aes.org/tmpFiles/aessc/20240506/aes03-set-2009-r2019-i.pdf, 2009
+
+**[21]** HUFFMAN, D. A. 1952. A method for the construction of minimum-redundancy codes. In Proceedings of the Institute of Electrical and Radio Engineers 40, 9 (Sept.), pp. 1098-1101.
+
+**[22]** Connell J B. A huffman-shannon-fano code[J]. Proceedings of the IEEE, 1973, 61(7): 1046-1047.
+
+**[23]** Rissanen J, Langdon G G. Arithmetic coding[J]. IBM Journal of research and development, 1979, 23(2): 149-162.
+
+**[24]** O'Shaughnessy D. Linear predictive coding[J]. IEEE potentials, 1988, 7(1): 29-32.
+
+**[25]** Ramamoorthy V, Jayant N S. Enhancement of ADPCM speech by adaptive postfiltering[J]. AT&T Bell Laboratories technical journal, 1984, 63(8): 1465-1475.
+
+**[26]** Roberts Family. FLAC Metadata Structure [EB/OL]. [2023-10-23]. https://www.the-roberts-family.net/metadata/flac.html.
+
+**[27]** Theile, Günther; Stolle, Gerhard; 1992; MUSICAM-Surround: A Universal Multichannel Coding System Compatible with ISO 11172-3 [PDF](https://aes2.org/publications/elibrary-page/?id=6731); Institut fur Rundfunktechnik, Munich, Germany; Paper 3403;  Available from: https://aes2.org/publications/elibrary-page/?id=6731
