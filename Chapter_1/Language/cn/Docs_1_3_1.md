@@ -55,7 +55,7 @@ $$
       width = "600" height = "450"
       src="../../Pictures/pitch_compare_Slaney_Osha.png" alt="">
     <figcaption>
-      <p>图 1.3.1-1 两种美体系（Mel Scale）差异对比（0-8000 Hz）示意图</p>
+      <p>图 1-7 两种美体系（Mel Scale）差异对比（0-8000 Hz）示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -88,7 +88,7 @@ $$
       width = "600" height = "140"
       src="../../Pictures/Ultrasound_range_diagram.png" alt="">
     <figcaption>
-      <p>图 1.3.1-1 三类声波范围示意图（蓝色指狭义声波） <a href="References_1.md">[2]</a></p>
+      <p>图 1-8 三类声波范围示意图（蓝色指狭义声波） <a href="References_1.md">[2]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -96,12 +96,76 @@ $$
 即然被归为声音三要素，就表示人对不同频率声音的听感有不少差异。在假设其它影响量不变的理想情况下，本书查阅了一些基于日常关联心理声学测量的结果，汇总如下表以供参考：
 
 <center>
-<figure>
-   <img  
-      width = "620" height = "400"
-      src="../../Pictures/sound_frequency_table_cn.png" alt="">
-</figure>
+<table style="width:90%; border-collapse: collapse;">
+  <tr style="background-color: #d5d5d5;">
+    <th style="border: 1px solid #ddd; padding: 10px; width: 200px;">Frequency（Median）</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">Object</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">Feelings Description（Subjective）</th>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px; background-color: #d5d5d5;">20Hz</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">发动机 &lt;飞机引擎、高速引擎&gt;</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">汽车呼啸而过的轰鸣声</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; background-color: #d5d5d5;">25Hz</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">大提琴的最低音调</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">类似低音炮发出的震撼</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px; background-color: #d5d5d5;">50Hz</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">洗衣机的运转时</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">洗衣机正常工作时的声响</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; background-color: #d5d5d5;">100Hz</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">柜式冰箱运转时</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">柜式冰箱压缩机工作的声响</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px; background-color: #d5d5d5;">200Hz</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">剧院环境男低音</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">低沉浑厚的歌声</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; background-color: #d5d5d5;">500Hz</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">轮播式电话铃声</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">是种清脆响亮的声音</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px; background-color: #d5d5d5;">1000Hz</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">钢琴中音C大调</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">更为清脆明亮的声音</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; background-color: #d5d5d5;">2000Hz</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">剧院环境女高音</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">高亢嘹亮的歌声</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px; background-color: #d5d5d5;">4000Hz</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">蚊子飞行时</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">嗡嗡且恼人的脆鸣声</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; background-color: #d5d5d5;">8000Hz</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">发光二极管示波器</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">实验室示波器工作的声响</td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 10px; background-color: #d5d5d5;">12000Hz</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">成熟家犬</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">狗吠叫警示时的吼声</td>
+  </tr>
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid #ddd; padding: 10px; background-color: #d5d5d5;">18000Hz</th>
+    <td style="border: 1px solid #ddd; padding: 10px;">超声波清洗器</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">清洗器工作时的吱吱声</td>
+  </tr>
+</table>
 </center>
+
+<br>
 
 从上表可知，以听感角度考虑会十分的主观。但请不要忘记，频率本身是客观的。上述统计中采用的，是由选定样本声音中，所包含的所有频率声波的 **复合频率中值（Median）**。自然界中大部分声音 **并非** 由 **单一** 频率波构成。这也是产生不同音色（Timbre）的原因之一。
 

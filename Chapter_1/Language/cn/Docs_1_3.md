@@ -1,3 +1,20 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex Data Display</title>
+    <style>
+        .hex-container {
+            text-align: center;
+        }
+        .hex-data {
+            display: inline-block;
+            text-align: left;
+            font-weight: bold;
+            font-family: monospace;
+            white-space: pre;
+        }
+    </style>
+</head>
 
 # 1.3 声音三要素（Three Elements of Sounds）
 
@@ -28,7 +45,7 @@
       width = "800" height = "100"
       src="../../Pictures/Octave_piano_keybord.png" alt="">
     <figcaption>
-      <p>图 1.3-1 八度音钢琴键盘示意图</p>
+      <p>图 1-6 八度音钢琴键盘示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -38,12 +55,167 @@
 A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属于 **ISO 16 标准**。根据标准，有音阶频率表如下：
 
 <center>
-<figure>
-   <img  
-      width = "600" height = "600"
-      src="../../Pictures/Octave_steps_names_Hz_table.png" alt="">
-</figure>
+<table style="width:90%; border-collapse: collapse;">
+  <tr style="background-color: #d5d5d5; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; text-align: center; vertical-align: middle;">Steps<br>Names</th>
+    <th style="border: 1px solid #ddd; padding: 5px;">0</th>
+    <th style="border: 1px solid #ddd; padding: 5px;">1</th>
+    <th style="border: 1px solid #ddd; padding: 5px;">2</th>
+    <th style="border: 1px solid #ddd; padding: 5px;">3</th>
+    <th style="border: 1px solid #ddd; padding: 5px;">4</th>
+    <th style="border: 1px solid #ddd; padding: 5px;">5</th>
+    <th style="border: 1px solid #ddd; padding: 5px;">6</th>
+    <th style="border: 1px solid #ddd; padding: 5px;">7</th>
+    <th style="border: 1px solid #ddd; padding: 5px;">8</th>
+  </tr>
+  <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">C</th>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">16.352<br>(−48)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">32.703<br>(−36)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">65.406<br>(−24)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">130.81<br>(−12)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">261.63<br>(0)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">523.25<br>(+12)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">1046.5<br>(+24)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">2093.0<br>(+36)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">4186.0<br>(+48)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">C♯/D♭</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">17.324<br>(−47)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">34.648<br>(−35)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">69.296<br>(−23)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">138.59<br>(−11)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">277.18<br>(+1)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">554.37<br>(+13)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">1108.7<br>(+25)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">2217.5<br>(+37)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">4434.9<br>(+49)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">D</th>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">18.354<br>(−46)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">36.708<br>(−34)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">73.416<br>(−22)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">146.83<br>(−10)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">293.66<br>(+2)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">587.33<br>(+14)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">1174.7<br>(+26)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">2349.3<br>(+38)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">4698.6<br>(+50)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">D♯/E♭</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">19.445<br>(−45)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">38.891<br>(−33)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">77.782<br>(−21)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">155.56<br>(−9)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">311.13<br>(+3)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">622.25<br>(+15)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">1244.5<br>(+27)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">2489.0<br>(+39)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">4978.0<br>(+51)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">E</th>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">20.602<br>(−44)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">41.203<br>(−32)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">82.407<br>(−20)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">164.81<br>(−8)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">329.63<br>(+4)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">659.26<br>(+16)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">1318.5<br>(+28)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">2637.0<br>(+40)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">5274.0<br>(+52)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">F</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">21.827<br>(−43)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">43.654<br>(−31)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">87.307<br>(−19)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">174.61<br>(−7)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">349.23<br>(+5)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">698.46<br>(+17)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">1396.9<br>(+29)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">2793.8<br>(+41)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">5587.7<br>(+53)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">F♯/G♭</th>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">23.125<br>(−42)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">46.249<br>(−30)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">92.499<br>(−18)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">185.00<br>(−6)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">369.99<br>(+6)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">739.99<br>(+18)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">1480.0<br>(+30)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">2960.0<br>(+42)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">5919.9<br>(+54)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">G</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">24.500<br>(−41)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">48.999<br>(−29)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">97.999<br>(−17)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">196.00<br>(−5)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">392.00<br>(+7)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">783.99<br>(+19)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">1568.0<br>(+31)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">3136.0<br>(+43)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">6271.9<br>(+55)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">G♯/A♭</th>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">25.957<br>(−40)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">51.913<br>(−28)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">103.83<br>(−16)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">207.65<br>(−4)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">415.30<br>(+8)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">830.61<br>(+20)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">1661.2<br>(+32)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">3322.4<br>(+44)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">6644.9<br>(+56)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">A</th>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">27.500<br>(−39)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">55.000<br>(−27)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">110.00<br>(−15)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">220.00<br>(−3)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">440.00<br>(+9)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">880.00<br>(+21)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">1760.0<br>(+33)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">3520.0<br>(+45)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">7040.0<br>(+57)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">A♯/B♭</th>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">29.135<br>(−38)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">58.270<br>(−26)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">116.54<br>(−14)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">233.08<br>(−2)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">466.16<br>(+10)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">932.33<br>(+22)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">1864.7<br>(+34)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">3729.3<br>(+46)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">7458.6<br>(+58)</td>
+  </tr>
+  <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">B</th>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">30.868<br>(−37)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">61.735<br>(−25)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">123.47<br>(−13)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">246.94<br>(−1)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">493.88<br>(+11)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">987.77<br>(+23)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">1975.5<br>(+35)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">3951.1<br>(+47)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">7902.1<br>(+59)</td>
+  </tr>
+</table>
 </center>
+
+<br>
 
 表格横向为音级，纵向为音名（包含半音）。橙色为标准钢琴，所包含的八度音阶。表中数值格式为：
 

@@ -22,7 +22,7 @@
       width = "500" height = "380"
       src="../../Pictures/the_first_sound_rec.png" alt="">
     <figcaption>
-      <p>图 1.1.1-1 声波记振仪记录的首个音频振幅信号</p>
+      <p>图 1-1 声波记振仪记录的首个音频振幅信号</p>
    </figcaption>
 </figure>
 </center>
@@ -45,7 +45,7 @@
       width = "500" height = "490"
       src="../../Pictures/the_first_Gramophone.png" alt="">
     <figcaption>
-      <p>图 1.1.1-2 首个手摇式圆盘唱片机（Gramophone）</p>
+      <p>图 1-2 首个手摇式圆盘唱片机（Gramophone）</p>
    </figcaption>
 </figure>
 </center>
@@ -58,7 +58,7 @@
       width = "300" height = "300"
       src="../../Pictures/example_vinyl_record.png" alt="">
     <figcaption>
-      <p>图 1.1.1-3 早期黑胶唱片（Gramophone/Vinyl Record）示意图</p>
+      <p>图 1-3 早期黑胶唱片（Gramophone/Vinyl Record）示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -77,7 +77,7 @@
       width = "500" height = "360"
       src="../../Pictures/the_first_Tape_Drive.png" alt="">
     <figcaption>
-      <p>图 1.1.1-4 早期磁带机（Tape Drive）示意图（糟糕的大小）</p>
+      <p>图 1-4 早期磁带机（Tape Drive）示意图（糟糕的大小）</p>
    </figcaption>
 </figure>
 </center>
@@ -90,7 +90,7 @@
       width = "500" height = "220"
       src="../../Pictures/example_magnetic_tape.png" alt="">
     <figcaption>
-      <p>图 1.1.1-5 卡式磁带（Cassette Type）示意图</p>
+      <p>图 1-5 卡式磁带（Cassette Type）示意图</p>
    </figcaption>
 </figure>
 </center>
