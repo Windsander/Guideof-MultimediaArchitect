@@ -12,12 +12,41 @@
 这个我们已经介绍过。 **八度音阶（Octave）** 以钢琴音级为 4 时为准，包括音名、半音在内，共有 12 个，即 C、C♯/D♭、D、D♯/E♭、E、F、F♯/G♭、G、G♯/A♭、A、A♯/B♭、B 。为方便说明，我们补充下一级的 C5 到表中，有：
 
 <center>
-<figure>
-   <img  
-      width = "600" height = "80"
-      src="../../Pictures/Octave_notes_table_1.png" alt="">
-</figure>
+<table style="width:90%; border-collapse: collapse;">
+  <tr style="background-color: #d5d5d5; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">C</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">C♯<br>D♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">D</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">D♯<br>E♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">E</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">F</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">F♯<br>G♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">G</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">G♯<br>A♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">A</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">A♯<br>B♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">B</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">C5</th>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <td style="border: 1px solid #ddd; padding: 5px;">261.63<br>(0)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">277.18<br>(+1)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">293.66<br>(+2)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">311.13<br>(+3)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">329.63<br>(+4)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">349.23<br>(+5)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">369.99<br>(+6)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">392.00<br>(+7)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">415.30<br>(+8)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">440.00<br>(+9)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">466.16<br>(+10)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">493.88<br>(+11)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">523.25<br>(+12)</td>
+  </tr>
+</table>
 </center>
+
+<br>
 
 明明是 八度音，却有包扩 C5 在内的 13 个音调。尺度不一太尴尬了，怎么办呢？
 
@@ -26,12 +55,95 @@
 在 C4 所在第 4 音级取 ISN。所有音调与 C4 相比音程为：
 
 <center>
-<figure>
-   <img  
-      width = "600" height = "400"
-      src="../../Pictures/Octave_notes_table_2.png" alt="">
-</figure>
+<table style="width:90%; border-collapse: collapse;">
+  <tr style="background-color: #d5d5d5; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; border-bottom: 1px solid #000; padding: 5px; width: 120px">Notes</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">Frequency（Sequence）</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">Interval Scale Name</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">Interval as Notes</th>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">C4</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">261.63 (0)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #f1711f;">纯一度（P1 [Perfect Unison]）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">0</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">C♯/D♭</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">277.18 (+1)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">小二度（m2 [Minor Second]）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">0.5</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">D</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">293.66 (+2)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">大二度（M2 [Major Second]）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">1</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">D♯/E♭</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">311.13 (+3)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">小三度（m3 [Minor Third]）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">1.5</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">E</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">329.63 (+4)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">大三度（M3 [Major Third]）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">2</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">F</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">349.23 (+5)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #f1711f;">纯四度（P4 [Perfect Fourth]）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">2.5</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">F♯/G♭</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">369.99 (+6)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #fd96c8;">增四度（A4）/减五度（d5）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">3</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">G</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">392.00 (+7)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #f1711f;">纯五度（P5 [Perfect Fifth]）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">3.5</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">G♯/A♭</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">415.30 (+8)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">小六度（m6 [Minor Sixth]）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">4</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">A</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">440.00 (+9)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">大六度（M6 [Major Sixth]）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">4.5</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">A♯/B♭</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">466.16 (+10)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">小七度（m7 [Minor Seventh]）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">5</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">B</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">493.88 (+11)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">大七度（M7 [Major Seventh]）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">5.5</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">C5</th>
+    <td style="border: 1px solid #ddd; padding: 5px;">523.25 (+12)</td>
+    <td style="border: 1px solid #ddd; padding: 5px; background-color: #f1711f;">纯八度（P8 [Perfect Octave]）</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">6</td>
+  </tr>
+</table>
 </center>
+
+<br>
 
 表内抽象的音程名中，出现了一些 **非精确量词（Inaccurate Quantifiers）** 被使用其中。确切的来说，基础量词有五种，由小到大分别是（注意简写时的 **大小写区分** ）：
 
@@ -130,7 +242,7 @@ $$
       width = "600" height = "600"
       src="../../Pictures/Circle_of_fifths.png" alt="">
     <figcaption>
-      <p>图 1.4.1-1 五度圈音调表示意图 <a href="References_1.md">[9]</a></p>
+      <p>图 1-11 五度圈音调表示意图 <a href="References_1.md">[9]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -158,7 +270,7 @@ $$
       width = "600" height = "350"
       src="../../Pictures/Circle_of_fifths_3D.png" alt="">
     <figcaption>
-      <p>图 1.4.1-2 三层五度圈（升调方向）音调表示意图</p>
+      <p>图 1-12 三层五度圈（升调方向）音调表示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -182,12 +294,41 @@ $$
 五度图中一圈（不升降），就是音级为 4 时 ISO 16 标准的 A440 八度音阶 C4 子表。
 
 <center>
-<figure>
-   <img  
-      width = "600" height = "80"
-      src="../../Pictures/Octave_notes_table_1.png" alt="">
-</figure>
+<table style="width:90%; border-collapse: collapse;">
+  <tr style="background-color: #d5d5d5; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">C</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">C♯<br>D♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">D</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">D♯<br>E♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">E</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">F</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">F♯<br>G♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">G</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">G♯<br>A♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">A</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">A♯<br>B♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">B</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">C5</th>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <td style="border: 1px solid #ddd; padding: 5px;">261.63<br>(0)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">277.18<br>(+1)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">293.66<br>(+2)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">311.13<br>(+3)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">329.63<br>(+4)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">349.23<br>(+5)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">369.99<br>(+6)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">392.00<br>(+7)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">415.30<br>(+8)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">440.00<br>(+9)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">466.16<br>(+10)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">493.88<br>(+11)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">523.25<br>(+12)</td>
+  </tr>
+</table>
 </center>
+
+<br>
 
 而当发生升降时，对于在表中没有对应的额外 $$\Delta n$$ 个 $$\sharp/\flat$$ 标志，提升或降低 $$\Delta n / 2$$ 个音级再次查对应 $$4 \pm \tfrac{\Delta n}{2}$$ 音级，对应的 **音阶频率子表**。
 
@@ -215,12 +356,71 @@ ISN 本身在乐理（艺术）上，是人为认为的尺度平均的。不过�
 仍然采用该音级 4 的例子。有 12 个音调间，距离 C4 基础音调的音程（Interval）和 大致频率比（C4: 当前音调，精确小数点后一位）如下：
 
 <center>
-<figure>
-   <img  
-      width = "600" height = "150"
-      src="../../Pictures/Octave_notes_table_3.png" alt="">
-</figure>
+<table style="width:90%; border-collapse: collapse;">
+  <tr style="background-color: #d5d5d5; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">C4</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">C♯<br>D♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">D</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">D♯<br>E♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">E</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">F</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">F♯<br>G♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">G</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">G♯<br>A♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">A</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">A♯<br>B♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">B</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">C5</th>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <td style="border: 1px solid #ddd; padding: 5px; height: 40px">261.63<br>(0)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">277.18<br>(+1)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">293.66<br>(+2)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">311.13<br>(+3)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">329.63<br>(+4)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">349.23<br>(+5)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">369.99<br>(+6)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">392.00<br>(+7)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">415.30<br>(+8)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">440.00<br>(+9)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">466.16<br>(+10)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">493.88<br>(+11)</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">523.25<br>(+12)</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <td style="border: 1px solid #ddd; padding: 5px; height: 40px">0</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">0.5</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">1</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">1.5</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">2</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">2.5</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">3</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">3.5</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">4</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">4.5</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">5</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">5.5</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">6</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <td style="border: 1px solid #ddd; padding: 5px; height: 40px">1:1</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">16:15</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">9:8</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">6:5</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">5:4</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">4:3</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">45:32</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">3:2</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">8:5</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">5:3</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">16:9</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">15:8</td>
+    <td style="border: 1px solid #ddd; padding: 5px;">2:1</td>
+  </tr>
+</table>
 </center>
+
+<br>
 
 那么，这一发现有什么作用呢？
 

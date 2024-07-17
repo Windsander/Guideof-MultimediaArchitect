@@ -57,19 +57,19 @@ A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属
 <center>
 <table style="width:90%; border-collapse: collapse;">
   <tr style="background-color: #d5d5d5; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; text-align: center; vertical-align: middle;">Steps<br>Names</th>
-    <th style="border: 1px solid #ddd; padding: 5px;">0</th>
-    <th style="border: 1px solid #ddd; padding: 5px;">1</th>
-    <th style="border: 1px solid #ddd; padding: 5px;">2</th>
-    <th style="border: 1px solid #ddd; padding: 5px;">3</th>
-    <th style="border: 1px solid #ddd; padding: 5px;">4</th>
-    <th style="border: 1px solid #ddd; padding: 5px;">5</th>
-    <th style="border: 1px solid #ddd; padding: 5px;">6</th>
-    <th style="border: 1px solid #ddd; padding: 5px;">7</th>
-    <th style="border: 1px solid #ddd; padding: 5px;">8</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">Steps<br>Names</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px;">0</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px;">1</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px;">2</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px;">3</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px;">4</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px;">5</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px;">6</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px;">7</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px;">8</th>
   </tr>
   <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">C</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">C</th>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">16.352<br>(−48)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">32.703<br>(−36)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">65.406<br>(−24)</td>
@@ -81,7 +81,7 @@ A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">4186.0<br>(+48)</td>
   </tr>
   <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">C♯/D♭</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">C♯/D♭</th>
     <td style="border: 1px solid #ddd; padding: 5px;">17.324<br>(−47)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">34.648<br>(−35)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">69.296<br>(−23)</td>
@@ -93,7 +93,7 @@ A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属
     <td style="border: 1px solid #ddd; padding: 5px;">4434.9<br>(+49)</td>
   </tr>
   <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">D</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">D</th>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">18.354<br>(−46)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">36.708<br>(−34)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">73.416<br>(−22)</td>
@@ -105,7 +105,7 @@ A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">4698.6<br>(+50)</td>
   </tr>
   <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">D♯/E♭</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">D♯/E♭</th>
     <td style="border: 1px solid #ddd; padding: 5px;">19.445<br>(−45)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">38.891<br>(−33)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">77.782<br>(−21)</td>
@@ -117,7 +117,7 @@ A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属
     <td style="border: 1px solid #ddd; padding: 5px;">4978.0<br>(+51)</td>
   </tr>
   <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">E</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">E</th>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">20.602<br>(−44)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">41.203<br>(−32)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">82.407<br>(−20)</td>
@@ -129,7 +129,7 @@ A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">5274.0<br>(+52)</td>
   </tr>
   <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">F</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">F</th>
     <td style="border: 1px solid #ddd; padding: 5px;">21.827<br>(−43)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">43.654<br>(−31)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">87.307<br>(−19)</td>
@@ -141,7 +141,7 @@ A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属
     <td style="border: 1px solid #ddd; padding: 5px;">5587.7<br>(+53)</td>
   </tr>
   <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">F♯/G♭</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">F♯/G♭</th>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">23.125<br>(−42)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">46.249<br>(−30)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">92.499<br>(−18)</td>
@@ -153,7 +153,7 @@ A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">5919.9<br>(+54)</td>
   </tr>
   <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">G</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">G</th>
     <td style="border: 1px solid #ddd; padding: 5px;">24.500<br>(−41)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">48.999<br>(−29)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">97.999<br>(−17)</td>
@@ -165,7 +165,7 @@ A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属
     <td style="border: 1px solid #ddd; padding: 5px;">6271.9<br>(+55)</td>
   </tr>
   <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">G♯/A♭</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">G♯/A♭</th>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">25.957<br>(−40)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">51.913<br>(−28)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">103.83<br>(−16)</td>
@@ -177,7 +177,7 @@ A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">6644.9<br>(+56)</td>
   </tr>
   <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">A</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">A</th>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">27.500<br>(−39)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">55.000<br>(−27)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">110.00<br>(−15)</td>
@@ -189,7 +189,7 @@ A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属
     <td style="border: 1px solid #ddd; padding: 5px;">7040.0<br>(+57)</td>
   </tr>
   <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">A♯/B♭</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">A♯/B♭</th>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">29.135<br>(−38)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">58.270<br>(−26)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">116.54<br>(−14)</td>
@@ -201,7 +201,7 @@ A440 八度音阶又被称为 **斯图加特音阶（Stuttgart Octave）**，属
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffffff;">7458.6<br>(+58)</td>
   </tr>
   <tr style="background-color: #f2f2f2; text-align: center; vertical-align: middle;">
-    <th style="border: 1px solid #ddd; padding: 5px; background-color: #d5d5d5;">B</th>
+    <th style="border: 1px solid #ddd; border-right: 1px solid #000; padding: 5px; background-color: #d5d5d5;">B</th>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">30.868<br>(−37)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">61.735<br>(−25)</td>
     <td style="border: 1px solid #ddd; padding: 5px; background-color: #ffd84b;">123.47<br>(−13)</td>

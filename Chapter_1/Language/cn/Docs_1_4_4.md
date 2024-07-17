@@ -67,7 +67,7 @@ $$
       width = "600" height = "230"
       src="../../Pictures/HFR_AKG_C414XLS_bidirectional_frequency_response_large.png" alt="">
     <figcaption>
-      <p>图 1.4.4-1 AKG C414XLS 麦克风的 HFR</p>
+      <p>图 1-21 AKG C414XLS 麦克风的 HFR</p>
    </figcaption>
 </figure>
 </center>
@@ -98,7 +98,7 @@ $$
       width = "600" height = "420"
       src="../../Pictures/SFR_of_judgement_example.png" alt="">
     <figcaption>
-      <p>图 1.4.4-2 一条在 110～18000Hz 下（±3dB）平直的 SFR 样例</p>
+      <p>图 1-22 一条在 110～18000Hz 下（±3dB）平直的 SFR 样例</p>
    </figcaption>
 </figure>
 </center>
@@ -123,7 +123,7 @@ $$
       width = "600" height = "440"
       src="../../Pictures/SFR_5FG44_FRC.png" alt="">
     <figcaption>
-      <p>图 1.4.4-3 B&C 的 5FG44 喇叭单元官方 SFR</p>
+      <p>图 1-23 B&C 的 5FG44 喇叭单元官方 SFR</p>
    </figcaption>
 </figure>
 </center>
@@ -146,7 +146,7 @@ $$
       width = "800" height = "250"
       src="../../Pictures/SFR_preception_chain_1_cn.png" alt="">
     <figcaption>
-      <p>图 1.4.4-4 录音棚采样场景的理想传播感知链模拟</p>
+      <p>图 1-24 录音棚采样场景的理想传播感知链模拟</p>
    </figcaption>
 </figure>
 </center>
@@ -168,7 +168,7 @@ $$
       width = "700" height = "300"
       src="../../Pictures/SFR_preception_chain_2_cn.png" alt="">
     <figcaption>
-      <p>图 1.4.4-5 录音棚内听众（假设）场景的理想传播感知链模拟</p>
+      <p>图 1-25 录音棚内听众（假设）场景的理想传播感知链模拟</p>
    </figcaption>
 </figure>
 </center>
@@ -197,7 +197,7 @@ $$
       width = "600" height = "700"
       src="../../Pictures/HFR_of_Cinema_scenes_example.png" alt="">
     <figcaption>
-      <p>图 1.4.4-6 不同大小影院的座位平均听感 HFR 统计数据 <a href="References_1.md">[17]</a></p>
+      <p>图 1-26 不同大小影院的座位平均听感 HFR 统计数据 <a href="References_1.md">[17]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -212,7 +212,7 @@ $$
       width = "590" height = "470"
       src="../../Pictures/HFR_of_Cinema_scenes_example_2.png" alt="">
     <figcaption>
-      <p>图 1.4.4-7 影院环境根据座位平均听感 HFR 对音响调节结果 SFR 示意图 <a href="References_1.md">[17]</a></p>
+      <p>图 1-27 影院环境根据座位平均听感 HFR 对音响调节结果 SFR 示意图 <a href="References_1.md">[17]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -235,7 +235,7 @@ $$
       width = "500" height = "440"
       src="../../Pictures/ELC_ISO226_2023_50.png" alt="">
     <figcaption>
-      <p>图 1.4.4-8 ISO 226:2023 标准等响曲线截取 50 方（Phon）线</p>
+      <p>图 1-28 ISO 226:2023 标准等响曲线截取 50 方（Phon）线</p>
    </figcaption>
 </figure>
 </center>
@@ -252,7 +252,7 @@ $$
       width = "500" height = "440"
       src="../../Pictures/ELC_ISO226_2023_50_2.png" alt="">
     <figcaption>
-      <p>图 1.4.4-9 基于 ISO 226:2023 的 50 方（Phon）线设计的入耳耳机 SFR</p>
+      <p>图 1-29 基于 ISO 226:2023 的 50 方（Phon）线设计的入耳耳机 SFR</p>
    </figcaption>
 </figure>
 </center>
@@ -281,7 +281,7 @@ $$
       width = "600" height = "340"
       src="../../Pictures/HTC_2013_headphone_choose.png" alt="">
     <figcaption>
-      <p>图 1.4.4-10 哈曼曲线 2013 标准实验采用的测试听力设备 <a href="References_1.md">[18]</a></p>
+      <p>图 1-30 哈曼曲线 2013 标准实验采用的测试听力设备 <a href="References_1.md">[18]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -294,7 +294,7 @@ $$
       width = "600" height = "300"
       src="../../Pictures/HTC_2013_headphone_result.png" alt="">
     <figcaption>
-      <p>图 1.4.4-11 哈曼曲线 2013 测试听力设备听众评分与设备 HFR 结果 <a href="References_1.md">[18]</a></p>
+      <p>图 1-31 哈曼曲线 2013 测试听力设备听众评分与设备 HFR 结果 <a href="References_1.md">[18]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -307,7 +307,7 @@ $$
       width = "600" height = "300"
       src="../../Pictures/HTC_Standard_2013_2015.png" alt="">
     <figcaption>
-      <p>图 1.4.4-12 哈曼曲线 2013 和 2015 标准</p>
+      <p>图 1-32 哈曼曲线 2013 和 2015 标准</p>
    </figcaption>
 </figure>
 </center>
@@ -324,7 +324,7 @@ $$
       width = "600" height = "300"
       src="../../Pictures/HTC_Standard_2013_2017.png" alt="">
     <figcaption>
-      <p>图 1.4.4-13 哈曼曲线 2013 和 2015 标准</p>
+      <p>图 1-33 哈曼曲线 2013 和 2015 标准</p>
    </figcaption>
 </figure>
 </center>

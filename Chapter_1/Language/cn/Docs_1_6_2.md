@@ -194,7 +194,7 @@ RIFF 规定，WAV 数据格式包含了三部分数据，分别是：
       width = "600" height = "480"
       src="../../Pictures/AF_wav_sound_format.png" alt="">
     <figcaption>
-      <p>图 1.6.2-1 WAV 音频格式的完整结构成分</p>
+      <p>图 1-44 WAV 音频格式的完整结构成分</p>
    </figcaption>
 </figure>
 </center>
@@ -223,7 +223,7 @@ RIFF 规定，WAV 数据格式包含了三部分数据，分别是：
       width = "600" height = "400"
       src="../../Pictures/AF_wave_bytes_example.png" alt="">
     <figcaption>
-      <p>图 1.6.2-2 演示用 72 bytes 的 WAV 音频文件解析</p>
+      <p>图 1-45 演示用 72 bytes 的 WAV 音频文件解析</p>
    </figcaption>
 </figure>
 </center>
@@ -378,7 +378,7 @@ RIFF 规定，WAV 数据格式包含了三部分数据，分别是：
       width = "300" height = "400"
       src="../../Pictures/AF_next_sound_format.png" alt="">
     <figcaption>
-      <p>图 1.6.2-3 SND/AU 音频格式的完整结构成分</p>
+      <p>图 1-46 SND/AU 音频格式的完整结构成分</p>
    </figcaption>
 </figure>
 </center>
@@ -408,7 +408,7 @@ AIFF 音频格式，从整体角度包含量种成分：
       width = "250" height = "300"
       src="../../Pictures/AF_aiff_file_structure.png" alt="">
     <figcaption>
-      <p>图 1.6.2-4 AIFF 音频格式的完整结构成分（文件结构）简图</p>
+      <p>图 1-47 AIFF 音频格式的完整结构成分（文件结构）简图</p>
    </figcaption>
 </figure>
 </center>
@@ -785,7 +785,7 @@ AIFF 音频格式，从整体角度包含量种成分：
       width = "600" height = "370"
       src="../../Pictures/AF_aiff_looper.png" alt="">
     <figcaption>
-      <p>图 1.6.2-5 AIFF 乐器信息块 循环模式示意图</p>
+      <p>图 1-48 AIFF 乐器信息块 循环模式示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -993,7 +993,7 @@ AIFF 音频格式，从整体角度包含量种成分：
       width = "350" height = "400"
       src="../../Pictures/AF_aiff_chunk_sort.png" alt="">
     <figcaption>
-      <p>图 1.6.2-6 AIFF 乐器信息块 信息优先级排序</p>
+      <p>图 1-49 AIFF 乐器信息块 信息优先级排序</p>
    </figcaption>
 </figure>
 </center>
@@ -1008,7 +1008,7 @@ AIFF 音频格式，从整体角度包含量种成分：
       width = "600" height = "700"
       src="../../Pictures/AF_aiff_structure.png" alt="">
     <figcaption>
-      <p>图 1.6.2-7 完整 AIFF 音频格式文件的文件结构示意图</p>
+      <p>图 1-50 完整 AIFF 音频格式文件的文件结构示意图</p>
    </figcaption>
 </figure>
 </center>
