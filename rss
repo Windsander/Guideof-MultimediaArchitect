@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 02 Jul 2024 08:56:09 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 17 Jul 2024 02:28:57 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -33,7 +33,7 @@
         </item>
         <item>
             <title><![CDATA[难度向导]]></title>
-            <description><![CDATA[入门的四章也是概念与基础理论最多的章节了。这几张的工程实践较少，但非常重要的原理、规格、定义及多。是后续更为复杂的工程实践中，被音视频工程师们做为根基般的存在。因此非常重要。]]></description>
+            <description><![CDATA[入门的五章也是概念与基础理论最多的章节了。这几张的工程实践较少，但非常重要的原理、规格、定义及多。是后续更为复杂的工程实践中，被音视频工程师们做为根基般的存在。因此非常重要。]]></description>
             <link>https://arikanli.cyberfederal.io/GUIDER.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/GUIDER.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
