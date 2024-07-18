@@ -91,7 +91,7 @@ $$
    <img width = "800" height = "450"
       src="../../Pictures/blackbody%20color.png" alt="">
    <figcaption>
-      <p>图 2.3.1-1 黑体辐射强度与波长分布曲线示意图</p>
+      <p>图 2-7 黑体辐射强度与波长分布曲线示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -103,7 +103,7 @@ $$
    <img width = "800" height = "450"
       src="../../Pictures/blackbody%20color%20vs.png" alt="">
    <figcaption>
-      <p>图 2.3.1-2 可见光谱范围内黑体辐射与波长分布曲线示意图</p>
+      <p>图 2-8 可见光谱范围内黑体辐射与波长分布曲线示意图</p>
    </figcaption>
 </figure>
 </center>

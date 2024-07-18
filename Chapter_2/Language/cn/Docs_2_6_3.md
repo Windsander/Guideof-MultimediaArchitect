@@ -22,36 +22,33 @@ YUV 被设计的目的主要就是为了进行数据传输，而数据传输就�
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "500" height = "300"
+   <img 
+      width = "600" height = "300"
       src="../../Pictures/YUV_Y_digital_level.jpeg" alt="">
    <figcaption>
-      <p>图 2.6.3-1 YUV Y通道信号电平分配图 <a href="References_2.md">[49]</a></p>
+      <p>图 2-47 YUV Y通道信号电平分配图 <a href="References_2.md">[49]</a></p>
    </figcaption>
 </figure>
 </center>
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "500" height = "300"
+   <img 
+      width = "600" height = "300"
       src="../../Pictures/YUV_U_digital_level.jpeg" alt="">
    <figcaption>
-      <p>图 2.6.3-2 YUV U通道信号电平分配图 <a href="References_2.md">[49]</a></p>
+      <p>图 2-48 YUV U通道信号电平分配图 <a href="References_2.md">[49]</a></p>
    </figcaption>
 </figure>
 </center>
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "500" height = "300"
+   <img 
+      width = "600" height = "300"
       src="../../Pictures/YUV_V_digital_level.jpeg" alt="">
    <figcaption>
-      <p>图 2.6.3-3 YUV V通道信号电平分配图 <a href="References_2.md">[49]</a></p>
+      <p>图 2-49 YUV V通道信号电平分配图 <a href="References_2.md">[49]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -77,12 +74,12 @@ RGB 三原色代表点的选取，完全依赖于设备本身对三原色的设�
    <img width = "300" height = "260"
       src="../../Pictures/YUV_barycentric_coordinates.png" alt="">
    <figcaption>
-      <p>图 2.6.3-4 YUV 格式空间在 xyY 色度图上的色域裁剪说明</p>
+      <p>图 2-50 YUV 格式空间在 xyY 色度图上的色域裁剪说明</p>
    </figcaption>
 </figure>
 </center>
 
-根据图示可知，落于 RGB 围成三角形范围内的任意点 $$C$$ ，与三角形顶点存在关系：
+根据图示可知，**落于 RGB 围成三角形范围内的任意点 $$C$$ ，与三角形顶点存在关系**：
 
 $$
 {\displaystyle 
@@ -94,7 +91,7 @@ $$
 }
 $$
 
-取质心 $$W$$ 为轴心。指定 YUV 色彩空间下 $$Y + U + V = 1$$ ，选择 $$U = C_b \cdot (B - W)$$ 、 $$V = C_r \cdot (R - W)$$ 为坐标轴， $$C_b$$ 、 $$C_r$$ 为归一化因子。有 $$Y$$ 有效区间为 $$[0,\ 1]$$ ， $$U$$ 有效区间为 $$[-U_{max},\ U_{max}]$$ ， $$V$$ 有效区间为 $$[-V_{max},\ V_{max}]$$ 。
+取质心 $$W$$ 为 **轴心**。指定 YUV 色彩空间下 $$Y + U + V = 1$$ ，选择 $$U = C_b \cdot (B - W)$$ 、 $$V = C_r \cdot (R - W)$$ 为坐标轴， $$C_b$$ 、 $$C_r$$ 为归一化因子。有 $$Y$$ 有效区间为 $$[0,\ 1]$$ ， $$U$$ 有效区间为 $$[-U_{max},\ U_{max}]$$ ， $$V$$ 有效区间为 $$[-V_{max},\ V_{max}]$$ 。
 
 这里以 YUV 对应规格选定的 RGB 三色电信号，经过 **电位差伽马预矫正（Gamma pre-corrected）** 得到的归一化电平测量值 $$(W_R \ , W_G \ , W_B )$$ 为依据 [\[46\]][ref] [\[47\]][ref] [\[48\]][ref] ，取 YUV 光亮度参数有线性公式 $$Y = W_R \cdot R + W_G \cdot G + W_B \cdot B$$ 。则由点 $$C$$ 与质心 $$W$$ 的向量差 $$C - W = (C -G)-(W-G)$$ 推得：
 
@@ -169,11 +166,8 @@ $$
 
 <center>
 <figure>
-   <img width = "900" height = "500"
+   <img width = "800" height = "460"
       src="../../Pictures/YUV_convert_matrix.png" alt="">
-   <figcaption>
-      <p>图 2.6.3-5 YUV 常用规格转换矩阵表</p>
-   </figcaption>
 </figure>
 </center>
 
@@ -197,32 +191,31 @@ $$
 
 <center>
 <figure>
-   <img width = "800" height = "1850"
+   <img width = "800" height = "1750"
       src="../../Pictures/YUV_digital_data_format（V）.png" alt="">
    <figcaption>
-      <p>图 2.6.3-5 YUV 存储格式（Data Format）谱系图</p>
+      <p>图 2-51 YUV 存储格式（Data Format）谱系图</p>
    </figcaption>
 </figure>
 </center>
 
-这些 YUV 存储格式最大的特点在于数据组成上。我们用相同颜色表示位于同一组的 YUV 数据。 **假设存在一张包含 36 个像素点的 6x6 的图片（为了避免颜色重复，YUV444 用 12个像素点的 6x2 图片）。** 以 Y、U、V 分别代表对应通道的有效数据，所有存储格式数据排布如下：
+这些 YUV 存储格式最大的特点在于数据组成上。我们用相同颜色表示位于同一组的 YUV 数据。 **假设存在一张包含 36 个像素点的 6x6 的图片（为了避免颜色重复，YUV444 用 12个像素点的 6x2 图片）。** 以 Y、U、V 分别代表对应通道的有效数据，所有存储格式数据排布 **《YUV 存储格式（Data Format）对比说明表》** 如下：
 
 <center>
 <figure>
-   <img width = "800" height = "1850"
+   <img width = "800" height = "1750"
       src="../../Pictures/YUV_digital_data_format_table.png" alt="">
-   <figcaption>
-      <p>图 2.6.3-6 YUV 存储格式（Data Format）对比说明</p>
-   </figcaption>
 </figure>
 </center>
 
-显然，从数据的压缩程度上来说，YUV420 族明显具有较高的压缩比。但由于YUV 格式并不是完全无损的，与之相对的问题就是高压缩比导致的图片细节损失。不过图片的细部信息大都存在于灰度图上，而这部分信息主要由 Y 通道保存，因此人眼难以察觉丢失的颜色细节。相比较高压缩比带来的优势，这部分损失可以忽略不计。所以，在音视频数据传输及图像存储中，工程上常常采用 YUV420 族下的色彩格式进行保存。
+<br>
+
+显然，从数据的压缩程度上来说，**YUV420 族明显具有较高的压缩比**。但由于YUV 格式并不是完全无损的，与之相对的问题就是高压缩比导致的图片细节损失。不过图片的细部信息大都存在于灰度图上，而这部分信息主要由 Y 通道保存，因此人眼难以察觉丢失的颜色细节。相比较高压缩比带来的优势，这部分损失可以忽略不计。所以，在音视频数据传输及图像存储中，工程上常常采用 YUV420 族下的色彩格式进行保存。
 
 <br>
 <br>
 
->至此，有关音视频工程中的图片色彩处理部分，基本讲解完毕。下一章我们将利用目前已掌握的音视频知识，来做针对一段音频和一张图片基本分析的工程实践。
+至此，有关音视频工程中的图片色彩处理部分，基本讲解完毕。下一章我们将利用目前已掌握的音视频知识，来做针对一段音频和一张图片基本分析的工程实践。
 
 
 [ref]: References_2.md

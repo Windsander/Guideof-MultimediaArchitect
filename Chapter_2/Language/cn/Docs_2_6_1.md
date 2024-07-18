@@ -21,7 +21,7 @@
       width = "350" height = "500"
       src="../../Pictures/RGB_24bits_palette_sample_image.jpeg" alt="">
    <figcaption>
-      <p>图 2.6.1-1 模板彩色鹦鹉原色图片</p>
+      <p>图 2-28 模板彩色鹦鹉原色图片</p>
    </figcaption>
 </figure>
 </center>

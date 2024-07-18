@@ -7,12 +7,9 @@
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "400" height = "400"
-      src="../../Pictures/CIE%201931%20RGB%20cmf.png" alt="">
+   <img width = "400" height = "400" src="../../Pictures/CIE%201931%20RGB%20cmf.png" alt="">
    <figcaption>
-      <p>图 2.3.3-1 CIE 1931 RGB 采用的三原色色感函数</p>
+      <p>图 2-9 CIE 1931 RGB 采用的三原色色感函数</p>
    </figcaption>
 </figure>
 </center>

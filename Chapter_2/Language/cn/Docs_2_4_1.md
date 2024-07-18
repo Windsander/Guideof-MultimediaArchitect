@@ -10,7 +10,7 @@
    <img width = "400" height = "400"
       src="../../Pictures/CIE1931%20xy%20CP.png" alt="">
    <figcaption>
-      <p>图 2.4.1-1 CIE 标准观察者色域在 CIE 色度图上的表示</p>
+      <p>图 2-12 CIE 标准观察者色域在 CIE 色度图上的表示</p>
    </figcaption>
 </figure>
 </center>

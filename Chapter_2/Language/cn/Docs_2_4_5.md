@@ -16,13 +16,9 @@ CIE 标准光源主要分为由 A 到 F，外加 LED 的 7 个类别，分别是
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "600" height = "600"
+   <img 
+      width = "800" height = "830"
       src="../../Pictures/Standard%20Illuminants.png" alt="">
-   <figcaption>
-      <p>图 2.4.5-1 常用 CIE 标准光源信息表<a href="References_3.md">[36][37][38][39]</a></p>
-   </figcaption>
 </figure>
 </center>
 
@@ -42,13 +38,9 @@ $$
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+   <img 
       width = "650" height = "600"
       src="../../Pictures/daylight%20chroma.png" alt="">
-   <figcaption>
-      <p>图 2.4.5-2 常用于作为白点的日光色温对应色度表</p>
-   </figcaption>
 </figure>
 </center>
 
@@ -56,12 +48,11 @@ $$
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "1000" height = "220"
+   <img 
+      width = "800" height = "180"
       src="../../Pictures/Color_temperature_black_body_800-12200K.png" alt="">
    <figcaption>
-      <p>图 2.4.5-3 从 1000K 到 12000K 色温颜色表示</p>
+      <p>图 2-17 从 1000K 到 12000K 色温颜色表示</p>
    </figcaption>
 </figure>
 </center>

@@ -13,10 +13,10 @@
 
 <center>
 <figure>
-   <img width = "300" height = "270"
+   <img width = "300" height = "260"
       src="../../Pictures/Grassmann_Circle_partly.png" alt="">
    <figcaption>
-      <p>图 2.2.2-1 格拉斯曼的饱和度定义说明</p>
+      <p>图 2-5 格拉斯曼的饱和度定义说明</p>
    </figcaption>
 </figure>
 </center>

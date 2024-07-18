@@ -6,10 +6,10 @@
 <center>
 <figure>
    <img style="border-radius: 0.3125em;" 
-      width = "800" height = "1000"
+      width = "800" height = "980"
       src="../../Pictures/Modern%20Color%20System.png" alt="">
    <figcaption>
-      <p>图 2.3.5-1 现代色彩体系（Modern Color System）关系图谱<a href="References_2.md">[20]</a></p>
+      <p>图 2-11 现代色彩体系（Modern Color System）关系图谱<a href="References_2.md">[20]</a></p>
    </figcaption>
 </figure>
 </center>

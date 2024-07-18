@@ -12,7 +12,7 @@ CIE XYZ 将色度定义为：XYZ 色彩空间内代表颜色的三维向量，�
    <img width = "400" height = "400"
       src="../../Pictures/CIE1931%20xyY.png" alt="">
    <figcaption>
-      <p>图 2.4.2-1 CIE 色度平面切割标准色域并投影色度图的示意图</p>
+      <p>图 2-13 CIE 色度平面切割标准色域并投影色度图的示意图</p>
    </figcaption>
 </figure>
 </center>

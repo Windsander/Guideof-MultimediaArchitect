@@ -14,7 +14,7 @@
       width = "300" height = "400"
       src="../../Pictures/color wheel.jpg" alt="">
    <figcaption>
-      <p>图 2.1-1 色轮（Color Wheel）与颜色（Vienna，1772）<a href="References_3.md">[2]</a></p>
+      <p>图 2-1 色轮（Color Wheel）与颜色（Vienna，1772）<a href="References_3.md">[2]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -30,7 +30,7 @@
       width = "400" height = "250"
       src="../../Pictures/YoungHelm.jpg" alt="">
    <figcaption>
-      <p>图 2.1-2 赫尔曼·冯·亥姆霍兹的三色理论，关于视锥细胞感知范围的手稿</p>
+      <p>图 2-2 赫尔曼·冯·亥姆霍兹的三色理论，关于视锥细胞感知范围的手稿</p>
    </figcaption>
 </figure>
 </center>

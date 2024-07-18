@@ -8,7 +8,7 @@
    <img width = "300" height = "300"
       src="../../Pictures/cs_rgbclrs1.png" alt="">
    <figcaption>
-      <p>图 2.5.1-1 光学三原色色彩空间（RGB Color Space）坐标系</p>
+      <p>图 2-19 光学三原色色彩空间（RGB Color Space）坐标系</p>
    </figcaption>
 </figure>
 </center>

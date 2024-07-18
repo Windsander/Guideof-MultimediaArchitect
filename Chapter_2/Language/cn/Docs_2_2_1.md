@@ -7,10 +7,10 @@
 
 <center>
 <figure>
-   <img width = "300" height = "260"
+   <img width = "300" height = "240"
       src="../../Pictures/Grassmann_Circle.png" alt="">
    <figcaption>
-      <p>图 2.2.1-1 格拉斯曼的混合律颜色推算演示</p>
+      <p>图 2-4 格拉斯曼的混合律颜色推算演示</p>
    </figcaption>
 </figure>
 </center>
