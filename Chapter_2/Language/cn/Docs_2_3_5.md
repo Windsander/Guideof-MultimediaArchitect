@@ -5,7 +5,7 @@
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;" 
+   <img 
       width = "800" height = "980"
       src="../../Pictures/Modern%20Color%20System.png" alt="">
    <figcaption>
