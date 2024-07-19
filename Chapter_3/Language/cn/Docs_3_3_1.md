@@ -40,10 +40,10 @@ $$
 <center>
 <figure>
    <img  
-      width = "500" height = "200"
+      width = "600" height = "220"
       src="../../Pictures/gamma_correction_flow_02.png" alt="">
     <figcaption>
-      <p>图 3.3.1-1 原数据经过伽马编解码（伽马矫正）的还原过程示意图</p>
+      <p>图 3-4 原数据经过伽马编解码（伽马矫正）的还原过程示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -92,16 +92,16 @@ $$
     G_x =& K_x \cdot 
     {
       \begin{bmatrix} 
-        +1 ,&  \quad \ \ 0   ,&  \quad \ \ -1      \\
-        +2 ,&  \quad \ \ 0   ,&  \quad \ \ -2      \\
-        +1 ,&  \quad \ \ 0   ,&  \quad \ \ -1
+        +1 ,&  \quad \quad 0   ,&  \quad \ -1      \\
+        +2 ,&  \quad \quad 0   ,&  \quad \ -2      \\
+        +1 ,&  \quad \quad 0   ,&  \quad \ -1
       \end{bmatrix}
     } \cdot S_o(\vec{x_c})^{3 \times 3} \\
     G_y =& K_y \cdot 
     {
       \begin{bmatrix} 
         +1 ,&  \quad \  +2   ,&  \quad \     +1      \\
-         0 ,&  \quad \ \ 0   ,&  \quad \quad  0      \\
+        \ \ \ 0 ,&  \quad \quad 0   ,&  \quad \quad  0      \\
         -1 ,&  \quad \  -2   ,&  \quad \     -1
       \end{bmatrix}
     } \cdot S_o(\vec{x_c})^{3 \times 3} \\
@@ -231,10 +231,10 @@ $$
 <center>
 <figure>
    <img  
-      width = "420" height = "300"
+      width = "490" height = "350"
       src="../../Pictures/hog-histogram-1.png" alt="">
     <figcaption>
-      <p>图 3.3.1-2 核大小  的无符号梯度（Unsigned Gradient）分组示意图</p>
+      <p>图 3-5 核大小 8x8 的无符号梯度（Unsigned Gradient）分组示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -247,7 +247,7 @@ $$
       width = "420" height = "300"
       src="../../Pictures/histogram-8x8-cell.png" alt="">
     <figcaption>
-      <p>图 3.3.1-3 无符号梯度分组的单组采样核内统计结果示意直方图</p>
+      <p>图 3-6 无符号梯度分组的单组采样核内统计结果示意直方图</p>
    </figcaption>
 </figure>
 </center>
@@ -285,10 +285,10 @@ $$
 <center>
 <figure>
    <img  
-      width = "400" height = "700"
+      width = "340" height = "600"
       src="../../Pictures/hog-example-1.png" alt="">
     <figcaption>
-      <p>图 3.3.1-4 块归一化说明图例（数据源）</p>
+      <p>图 3-7 块归一化说明图例（数据源）</p>
    </figcaption>
 </figure>
 </center>
@@ -298,10 +298,10 @@ $$
 <center>
 <figure>
    <img  
-      width = "500" height = "490"
+      width = "700" height = "650"
       src="../../Pictures/hog-example-2.png" alt="">
     <figcaption>
-      <p>图 3.3.1-5 图例（数据源）绿色框中四个分组特征向量直方图表示</p>
+      <p>图 3-8 图例（数据源）绿色框中四个分组特征向量直方图表示</p>
    </figcaption>
 </figure>
 </center>
@@ -317,10 +317,10 @@ $$
 <center>
 <figure>
    <img  
-      width = "100" height = "100"
+      width = "120" height = "120"
       src="../../Pictures/hog-example-4.png" alt="">
     <figcaption>
-      <p>图 3.3.1-6 图例（数据源）块划分单一块示意图</p>
+      <p>图 3-9 图例（数据源）块划分单一块示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -353,10 +353,10 @@ $$
 <center>
 <figure>
    <img  
-      width = "600" height = "290"
+      width = "700" height = "300"
       src="../../Pictures/hog-example-3.png" alt="">
     <figcaption>
-      <p>图 3.3.1-7 图例（数据源）绿色框对应块的块归一化特征向量结果</p>
+      <p>图 3-10 图例（数据源）绿色框对应块的块归一化特征向量结果</p>
    </figcaption>
 </figure>
 </center>

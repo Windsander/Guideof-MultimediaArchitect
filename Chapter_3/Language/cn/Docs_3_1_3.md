@@ -126,10 +126,10 @@ $$
 
 <center>
 <figure>
-   <img width = "500" height = "500"
+   <img width = "600" height = "600"
       src="../../Pictures/3_1_3-1.png" alt="">
    <figcaption>
-      <p>图 3.1.3-1 旋转因子的三角函数系取值演示</p>
+      <p>图 3-1 旋转因子的三角函数系取值演示</p>
    </figcaption>
 </figure>
 </center>
@@ -332,24 +332,26 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   \because \hat{f}_k(n) &=\sum_{(k-1)N}^{kN-1} \vert_t \ f(t) \cdot  \mathcal{F}_{\omega}^{-1}(tn) \quad \quad \quad \quad \quad \quad
+   \because \hat{f}_k(n) =&\sum_{(k-1)N}^{kN-1} \vert_t \ f(t) \cdot  \mathcal{F}_{\omega}^{-1}(tn) \quad \quad \quad \quad \quad \quad
                           mark: R_i(n) \cdot \mathcal{F}_{\omega_{ij}}^{-1}(n) = R_{ij}(n)  \vert_{(T=4,K=2)} \\
-   \therefore \hat{f}_1(n) &= \ \mathcal{F}_{\omega_{11}}^{-1}(n) \cdot f_1(0) \quad +\  (-1)^n \cdot \mathcal{F}_{\omega_{12}}^{-1}(n) \cdot f_1(1) \\
-                           &= \quad \quad \quad f(0) \quad \quad \ +\  (-1)^n \cdot \mathcal{F}_{\omega_{12}}^{-1}(n) \cdot f(2) =\quad DFT(f_1(n)) \\
-              \hat{f}_2(n) &= \ \mathcal{F}_{\omega_{21}}^{-1}(n) \cdot f_2(0) \quad +\  (-1)^n \cdot \mathcal{F}_{\omega_{22}}^{-1}(n) \cdot f_2(1) \\
-                           &= \quad \quad \quad f(1) \quad \quad \ +\  (-1)^n \cdot \mathcal{F}_{\omega_{22}}^{-1}(n) \cdot f(3) =\quad DFT(f_2(n)) \\
-   \therefore \hat{f}(n)   &= [\quad \quad \quad \quad \quad \quad \quad \quad \quad \hat{f}_1(n) \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad +
-                              \quad \quad \quad \quad \ (-1)^n \cdot R_2(n) \cdot \hat{f}_2(n)\quad \quad \quad \quad \ ]\vert_{(T=8,K=2)}  \\
-                           &= \quad \quad \quad \quad \quad \quad \quad \ R_1(n) \cdot DFT(f_1(n))\ \quad \quad \quad \quad \quad \quad \quad +
-                              \quad \quad \quad \quad \ (-1)^n \cdot R_2(n) \cdot DFT(f_2(n)) \\
-                           &= \ R_1(n) \cdot \mathcal{F}_{\omega_{11}}^{-1}(n) \cdot f(0) \ +
-                              \ (-1)^n \cdot R_1(n) \cdot \mathcal{F}_{\omega_{12}}^{-1}(n) \cdot f(2) \ + 
-                              \ (-1)^n \cdot R_2(n) \cdot f(1) \ +
-                              \ R_2(n) \cdot \mathcal{F}_{\omega_{22}}^{-1}(n) \cdot f(3)   \\
-                           &= \quad \quad \ R_{11}(n) \cdot f(0)\quad \quad +
-                              \quad \quad \ (-1)^n \cdot R_{12}(n)\cdot f(2) \quad \quad + 
-                              \ (-1)^n \cdot R_{21}(n) \cdot f(1) +
-                              \quad \quad \  R_{22}(n)\cdot f(3)   \\
+   \therefore \hat{f}_1(n) =& \ \mathcal{F}_{\omega_{11}}^{-1}(n) \cdot f_1(0) \quad +\  (-1)^n \cdot \mathcal{F}_{\omega_{12}}^{-1}(n) \cdot f_1(1) \\
+                           =& \ +\  (-1)^n \cdot \mathcal{F}_{\omega_{12}}^{-1}(n) \cdot f(2) \\
+                           =& \ DFT(f_1(n)) \\
+              \hat{f}_2(n) =& \ \mathcal{F}_{\omega_{21}}^{-1}(n) \cdot f_2(0) \quad +\  (-1)^n \cdot \mathcal{F}_{\omega_{22}}^{-1}(n) \cdot f_2(1) \\
+                           =& \ f(1) \ +\  (-1)^n \cdot \mathcal{F}_{\omega_{22}}^{-1}(n) \cdot f(3) \\
+                           =& \ DFT(f_2(n)) \\
+                           \\
+   \therefore \hat{f}(n)   =& [\ \hat{f}_1(n)\ +\ (-1)^n \cdot R_2(n) \cdot \hat{f}_2(n)\ ]\vert_{(T=8,K=2)}  \\
+                           =& \ R_1(n) \cdot DFT(f_1(n)) \quad +\ (-1)^n \cdot R_2(n) \cdot DFT(f_2(n)) \\
+                           =& \ R_1(n) \cdot \mathcal{F}_{\omega_{11}}^{-1}(n) \cdot f(0) \ \ +
+                              \ (-1)^n \cdot R_1(n) \cdot \mathcal{F}_{\omega_{12}}^{-1}(n) \cdot f(2) \quad + \\
+                            & \ (-1)^n \cdot R_2(n) \cdot f(1) \quad + 
+                              \quad \quad R_2(n) \cdot \mathcal{F}_{\omega_{22}}^{-1}(n) \cdot f(3)   \\
+                           \Rightarrow \\   
+              \hat{f}(n)   =& \quad \quad \ R_{11}(n) \cdot f(0)\quad \quad +\ 
+                              \quad (-1)^n \cdot R_{12}(n)\cdot f(2)\quad +\ \\
+                            & (-1)^n \cdot R_{21}(n) \cdot f(1) \quad +\ 
+                              \quad \quad \quad \ R_{22}(n)\cdot f(3)   \\
  \end{aligned}
 }
 $$
@@ -375,9 +377,9 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   \hat{f}(n)  =& \ R_{11}(n) \cdot \hat{f}_{11}(n) \vert_{0,4} \quad \quad +
-                  \quad \quad \ (-1)^n \cdot R_{12}(n)\cdot \hat{f}_{12}(n) \vert_{1,5} \quad \quad + 
-                  \ (-1)^n \cdot R_{21}(n) \cdot \hat{f}_{21}(1) \vert_{2,6} +
+   \hat{f}(n)  =& \quad \quad \ R_{11}(n) \cdot \hat{f}_{11}(n) \vert_{0,4} \quad \quad +
+                  \quad \quad \ (-1)^n \cdot R_{12}(n)\cdot \hat{f}_{12}(n) \vert_{1,5} \quad \quad + \\
+                & \ (-1)^n \cdot R_{21}(n) \cdot \hat{f}_{21}(1) \vert_{2,6}  \quad +
                   \quad \quad \  R_{22}(n)\cdot \hat{f}_{22}(3) \vert_{3,7}   \\
                =& [ R_{111}(n) \cdot f(0)\  +
                   \ (-1)^n \cdot R_{112}(n) \cdot f(4)  +
@@ -441,7 +443,7 @@ $$
 <center>
 <figure>
    <img  
-      width = "500" height = "550"
+      width = "450" height = "500"
       src="../../Pictures/3_1_3-7.png" alt="">
 </figure>
 </center>
@@ -451,7 +453,7 @@ $$
 <center>
 <figure>
    <img  
-      width = "500" height = "550"
+      width = "450" height = "500"
       src="../../Pictures/3_1_3-8.png" alt="">
 </figure>
 </center>

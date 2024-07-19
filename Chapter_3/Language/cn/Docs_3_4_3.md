@@ -41,7 +41,7 @@ $$
       width = "300" height = "300"
       src="../../Pictures/PROF-p4-example.png" alt="">
     <figcaption>
-      <p>图 3.4.3-1 PROF 子块光流与块运动矢量示意图<a href="References_3.md">[30]</a></p>
+      <p>图 3-18 PROF 子块光流与块运动矢量示意图 <a href="References_3.md">[30]</a></p>
    </figcaption>
 </figure>
 </center>

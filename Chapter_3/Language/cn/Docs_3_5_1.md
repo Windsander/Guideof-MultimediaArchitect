@@ -90,7 +90,7 @@ $$
       width = "400" height = "250"
       src="../../Pictures/3_5_1-1.png" alt="">
     <figcaption>
-      <p>图 3.5.1-1 事例样本取值与切片索引关系图示</p>
+      <p>图 3-21 事例样本取值与切片索引关系图示</p>
    </figcaption>
 </figure>
 </center>
@@ -103,7 +103,7 @@ $$
       width = "400" height = "400"
       src="../../Pictures/3_5_1-2.png" alt="">
     <figcaption>
-      <p>图 3.5.1-2 事例样本目标 DST 补充后与切片索引关系图示</p>
+      <p>图 3-22 事例样本目标 DST 补充后与切片索引关系图示</p>
    </figcaption>
 </figure>
 </center>
@@ -120,7 +120,7 @@ $$
       width = "400" height = "250"
       src="../../Pictures/3_5_1-3.png" alt="">
     <figcaption>
-      <p>图 3.5.1-3 事例样本目标 DCT 补充后与切片索引关系图示</p>
+      <p>图 3-23 事例样本目标 DCT 补充后与切片索引关系图示</p>
    </figcaption>
 </figure>
 </center>

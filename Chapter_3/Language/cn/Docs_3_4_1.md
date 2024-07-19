@@ -13,7 +13,7 @@
       width = "800" height = "270"
       src="../../Pictures/Opticfloweg.png" alt="">
     <figcaption>
-      <p>图 3.4.1-1 观察者、光动场、光流场投射变化视图<a href="References_3.md">[24]</a></p>
+      <p>图 3-15 观察者、光动场、光流场投射变化视图<a href="References_3.md">[24]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -139,10 +139,10 @@ $$
 <center>
 <figure>
    <img  
-      width = "300" height = "300"
+      width = "250" height = "250"
       src="../../Pictures/Opticfloweg-HS-Kernel.png" alt="">
     <figcaption>
-      <p>图 3.4.1-2 Horn–Schunck 法采用的中心光流平滑度逼近卷积核<a href="References_3.md">[27]</a></p>
+      <p>图 3-16 Horn–Schunck 法采用的中心光流平滑度逼近卷积核<a href="References_3.md">[27]</a></p>
    </figcaption>
 </figure>
 </center>

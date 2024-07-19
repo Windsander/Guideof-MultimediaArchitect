@@ -14,10 +14,10 @@ $$
 <center>
 <figure>
    <img  
-      width = "330" height = "270"
+      width = "440" height = "360"
       src="../../Pictures/3_2_1-1.png" alt="">
     <figcaption>
-      <p>图 3.2.1-1 一维正态分布示意图</p>
+      <p>图 3-2 一维正态分布示意图</p>
    </figcaption>
 </figure>
 </center>

@@ -17,7 +17,7 @@
       width = "420" height = "300"
       src="../../Pictures/Optic-BDOF-introduce.png" alt="">
     <figcaption>
-      <p>图 3.4.2-1 BDOF 构建参考对称光流示意图<a href="References_3.md">[29]</a></p>
+      <p>图 3-17 BDOF 构建参考对称光流示意图<a href="References_3.md">[29]</a></p>
    </figcaption>
 </figure>
 </center>
