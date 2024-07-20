@@ -6,10 +6,10 @@
 <center>
 <figure>
    <img  
-      width = "500" height = "340"
+      width = "600" height = "410"
       src="../../Pictures/Neuron_2.png" alt="">
     <figcaption>
-      <p>图 4.3-1 激活函数作用阶段（图中蓝色线条）示意图</p>
+      <p>图 4-8 激活函数作用阶段（图中蓝色线条）示意图</p>
    </figcaption>
 </figure>
 </center>

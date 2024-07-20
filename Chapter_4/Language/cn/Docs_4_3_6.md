@@ -32,7 +32,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/Mish.png" alt="">
     <figcaption>
-      <p>图 4.3.6-1 Mish 函数图</p>
+      <p>图 4-15 Mish 函数图</p>
    </figcaption>
 </figure>
 </center>

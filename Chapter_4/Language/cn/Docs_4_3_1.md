@@ -19,7 +19,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/Sigmoid.png" alt="">
     <figcaption>
-      <p>图 4.3.1-1 Sigmoid 函数图</p>
+      <p>图 4-9 Sigmoid 函数图</p>
    </figcaption>
 </figure>
 </center>

@@ -23,7 +23,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/Huber.png" alt="">
     <figcaption>
-      <p>图 4.5.3-1 Huber Loss 函数图</p>
+      <p>图 4-26 Huber Loss 函数图</p>
    </figcaption>
 </figure>
 </center>

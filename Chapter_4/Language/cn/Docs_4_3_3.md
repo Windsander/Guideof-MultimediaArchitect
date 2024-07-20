@@ -19,7 +19,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/Softplus.png" alt="">
     <figcaption>
-      <p>图 4.3.3-1 Softplus 函数图</p>
+      <p>图 4-11 Softplus 函数图</p>
    </figcaption>
 </figure>
 </center>

@@ -9,7 +9,7 @@
       width = "600" height = "420"
       src="../../Pictures/Neuron_5.png" alt="">
     <figcaption>
-      <p>图 4.6-1 优化器作用阶段（图中蓝色线条）示意图</p>
+      <p>图 4-35 优化器作用阶段（图中蓝色线条）示意图</p>
    </figcaption>
 </figure>
 </center>

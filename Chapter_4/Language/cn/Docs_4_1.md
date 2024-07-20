@@ -15,7 +15,7 @@
       width = "900" height = "350"
       src="../../Pictures/ML_Classic_supervised _learning_association_map.png" alt="">
     <figcaption>
-      <p>图 4.1-1 经典有监督学习关联图谱</p>
+      <p>图 4-1 经典有监督学习关联图谱</p>
    </figcaption>
 </figure>
 </center>
@@ -40,7 +40,7 @@
       width = "900" height = "550"
       src="../../Pictures/ML_Classic_Unsupervised_Learning_Association_Atlas.png" alt="">
     <figcaption>
-      <p>图 4.1-2 经典无监督学习关联图谱</p>
+      <p>图 4-2 经典无监督学习关联图谱</p>
    </figcaption>
 </figure>
 </center>
@@ -64,7 +64,7 @@ AlexNet 的出现，将深度学习送上了高速发展的快车道。深度学
       width = "900" height = "500"
       src="../../Pictures/ML_Machine_Learning_Association_Map.png" alt="">
     <figcaption>
-      <p>图 4.1-3 深度学习与传统及相关进展关联图谱</p>
+      <p>图 4-3 深度学习与传统及相关进展关联图谱</p>
    </figcaption>
 </figure>
 </center>
@@ -88,7 +88,7 @@ AlexNet 的出现，将深度学习送上了高速发展的快车道。深度学
       width = "500" height = "500"
       src="../../Pictures/ML_Relationship_between_Deep_Learning_and_Traditional_and_Related_Fields.png" alt="">
     <figcaption>
-      <p>图 4.1-4 深度学习与传统及相关领域关系图（图小圆有重叠部分）</p>
+      <p>图 4-4 深度学习与传统及相关领域关系图（图小圆有重叠部分）</p>
    </figcaption>
 </figure>
 </center>

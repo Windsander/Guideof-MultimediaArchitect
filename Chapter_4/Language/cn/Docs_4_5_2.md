@@ -19,7 +19,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/MSE.png" alt="">
     <figcaption>
-      <p>图 4.5.2-1 MSE 函数图</p>
+      <p>图 4-25 MSE 函数图</p>
    </figcaption>
 </figure>
 </center>

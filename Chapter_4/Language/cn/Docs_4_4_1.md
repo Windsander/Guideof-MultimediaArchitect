@@ -22,10 +22,10 @@ $$
 <center>
 <figure>
    <img  
-      width = "400" height = "310"
+      width = "500" height = "400"
       src="../../Pictures/Dropout.png" alt="">
     <figcaption>
-      <p>图 4.4.2-1 Dropout 输入输出作用示意图</p>
+      <p>图 4-19 Dropout 输入输出作用示意图</p>
    </figcaption>
 </figure>
 </center>

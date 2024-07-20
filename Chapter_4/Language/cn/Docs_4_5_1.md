@@ -19,7 +19,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/MAE.png" alt="">
     <figcaption>
-      <p>图 4.5.1-1 MAE 函数图</p>
+      <p>图 4-24 MAE 函数图</p>
    </figcaption>
 </figure>
 </center>

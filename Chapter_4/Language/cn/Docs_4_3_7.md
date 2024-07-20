@@ -33,7 +33,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/Swish.png" alt="">
     <figcaption>
-      <p>图 4.3.7-1 Swish 函数图</p>
+      <p>图 4-16 Swish 函数图</p>
    </figcaption>
 </figure>
 </center>
@@ -73,7 +73,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/h-Swish.png" alt="">
     <figcaption>
-      <p>图 4.3.7-2 h-Swish 函数图</p>
+      <p>图 4-17 h-Swish 函数图</p>
    </figcaption>
 </figure>
 </center>

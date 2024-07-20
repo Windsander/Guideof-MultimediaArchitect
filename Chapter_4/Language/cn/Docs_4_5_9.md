@@ -18,10 +18,10 @@ $$
 <center>
 <figure>
    <img  
-      width = "400" height = "110"
+      width = "500" height = "137"
       src="../../Pictures/Triplet_loss.png" alt="">
     <figcaption>
-      <p>图 4.5.9-1 Triplet Loss 函数图<a href="References_4.md">[15]</a></p>
+      <p>图 4-33 Triplet Loss 函数图<a href="References_4.md">[15]</a></p>
    </figcaption>
 </figure>
 </center>

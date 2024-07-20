@@ -19,7 +19,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/Log_loss.png" alt="">
     <figcaption>
-      <p>图 4.5.5-1 Log Loss 函数图</p>
+      <p>图 4-29 Log Loss 函数图</p>
    </figcaption>
 </figure>
 </center>

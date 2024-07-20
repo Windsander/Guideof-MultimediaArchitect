@@ -23,7 +23,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/ReLU.png" alt="">
     <figcaption>
-      <p>图 4.3.4-1 ReLU 函数图</p>
+      <p>图 4-12 ReLU 函数图</p>
    </figcaption>
 </figure>
 </center>
@@ -66,7 +66,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/PReLU.png" alt="">
     <figcaption>
-      <p>图 4.3.4-2 PReLU & LReLU & RReLU 函数图</p>
+      <p>图 4-13 PReLU & LReLU & RReLU 函数图</p>
    </figcaption>
 </figure>
 </center>

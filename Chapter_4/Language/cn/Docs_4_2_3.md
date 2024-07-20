@@ -13,7 +13,7 @@
       width = "800" height = "260"
       src="../../Pictures/Alexnet.png" alt="">
     <figcaption>
-      <p>图 4.2.3-1 完整的 Alexnet 示意图（工程版）</p>
+      <p>图 4-7 完整的 Alexnet 示意图（工程版）</p>
    </figcaption>
 </figure>
 </center>

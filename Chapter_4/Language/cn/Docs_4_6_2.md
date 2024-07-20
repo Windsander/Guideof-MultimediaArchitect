@@ -47,7 +47,7 @@ $$
       width = "600" height = "180"
       src="../../Pictures/NAG.png" alt="">
     <figcaption>
-      <p>图 4.6.2-1 NAG 加速作用过程示意图<a href="References_4.md">[17]</a></p>
+      <p>图 4-36 NAG 加速作用过程示意图<a href="References_4.md">[17]</a></p>
    </figcaption>
 </figure>
 </center>

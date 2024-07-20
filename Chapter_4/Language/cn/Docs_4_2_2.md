@@ -9,7 +9,7 @@
       width = "400" height = "400"
       src="../../Pictures/Neuron_bio.png" alt="">
     <figcaption>
-      <p>图 4.2.2-1 生物神经元示意图</p>
+      <p>图 4-6 生物神经元示意图</p>
    </figcaption>
 </figure>
 </center>

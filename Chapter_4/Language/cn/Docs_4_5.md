@@ -9,7 +9,7 @@
       width = "600" height = "420"
       src="../../Pictures/Neuron_4.png" alt="">
     <figcaption>
-      <p>图 4.5-1 损失函数作用阶段（图中蓝色线条）示意图</p>
+      <p>图 4-23 损失函数作用阶段（图中蓝色线条）示意图</p>
    </figcaption>
 </figure>
 </center>
