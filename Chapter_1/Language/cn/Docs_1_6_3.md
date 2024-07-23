@@ -54,7 +54,7 @@
       width = "600" height = "400"
       src="../../Pictures/AF_FLAC_Working_Flow_cn.png" alt="">
     <figcaption>
-      <p>图 1.6.3-1 FLAC 音频格式编解码执行作业流水线</p>
+      <p>图 1-51 FLAC 音频格式编解码执行作业流水线</p>
    </figcaption>
 </figure>
 </center>
@@ -148,7 +148,7 @@ $$
       width = "500" height = "530"
       src="../../Pictures/AF_flac_structure_1.png" alt="">
     <figcaption>
-      <p>图 1.6.3-2 完整 FLAC 音频格式文件的文件结构示意图 <a href="References_1.md">[26]</a></p>
+      <p>图 1-52 完整 FLAC 音频格式文件的文件结构示意图 <a href="References_1.md">[26]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -290,7 +290,7 @@ $$
       width = "700" height = "600"
       src="../../Pictures/AF_FLAC_Metadata_block.png" alt="">
     <figcaption>
-      <p>图 1.6.3-3 FLAC 音频格式的元数据信息块统一结构示意图</p>
+      <p>图 1-53 FLAC 音频格式的元数据信息块统一结构示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -706,7 +706,7 @@ ba a8 d4 1d 8c d9 8f 00 b2 04 e9 80 09 98 ec f8 42 7e 86 01 f4 35 00 00 <br>
       width = "700" height = "720"
       src="../../Pictures/AF_flac_bytes_example.png" alt="">
     <figcaption>
-      <p>图 1.6.3-4 演示用 138 bytes 的 FLAC 音频文件数据解析</p>
+      <p>图 1-54 演示用 138 bytes 的 FLAC 音频文件数据解析</p>
    </figcaption>
 </figure>
 </center>

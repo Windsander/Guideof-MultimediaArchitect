@@ -8,7 +8,7 @@
    <img width = "300" height = "300"
       src="../../Pictures/cs_cmyclrs1.png" alt="">
    <figcaption>
-      <p>图 2.5.2-1 颜料三原色色彩空间（CMY/CMYK Color Space）坐标系</p>
+      <p>图 2-20 颜料三原色色彩空间（CMY/CMYK Color Space）坐标系</p>
    </figcaption>
 </figure>
 </center>

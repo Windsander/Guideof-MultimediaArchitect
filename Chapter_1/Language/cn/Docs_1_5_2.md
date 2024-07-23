@@ -17,7 +17,7 @@
       width = "600" height = "450"
       src="../../Pictures/ADDA_AD_Nyquist_Shannon_sampling_theorem_example.png" alt="">
     <figcaption>
-      <p>图 1.5.2-1 香农采样定律取 1.3 倍于被采样频率时的采样失真演示</p>
+      <p>图 1-39 香农采样定律取 1.3 倍于被采样频率时的采样失真演示</p>
    </figcaption>
 </figure>
 </center>
@@ -58,7 +58,7 @@ $$
       width = "600" height = "450"
       src="../../Pictures/ADDA_AD_mapping.png" alt="">
     <figcaption>
-      <p>图 1.5.2-2 在 ADC 量化采样公式作用下的 A/D 映射结果</p>
+      <p>图 1-40 在 ADC 量化采样公式作用下的 A/D 映射结果</p>
    </figcaption>
 </figure>
 </center>
@@ -73,7 +73,7 @@ $$
       width = "600" height = "450"
       src="../../Pictures/ADDA_AD_example_0.png" alt="">
     <figcaption>
-      <p>图 1.5.2-3 模拟信号经 ADC 量化采样演示</p>
+      <p>图 1-41 模拟信号经 ADC 量化采样演示</p>
    </figcaption>
 </figure>
 </center>

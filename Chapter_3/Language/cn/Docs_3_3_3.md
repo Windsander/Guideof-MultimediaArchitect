@@ -13,7 +13,7 @@
       width = "700" height = "520"
       src="../../Pictures/SimViT.png" alt="">
     <figcaption>
-      <p>图 3.3.3-1 滑动窗口在 SimViT 中的运用<a href="References_3.md">[23]</a></p>
+      <p>图 3-14 滑动窗口在 SimViT 中的运用<a href="References_3.md">[23]</a></p>
    </figcaption>
 </figure>
 </center>

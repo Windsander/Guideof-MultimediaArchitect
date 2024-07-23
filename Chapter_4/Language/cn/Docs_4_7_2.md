@@ -15,7 +15,7 @@
       width = "500" height = "320"
       src="../../Pictures/Neuron_1.png" alt="">
     <figcaption>
-      <p>图 4.7.2-1 经典层分类在简单神经网络中位置示意图（切片）</p>
+      <p>图 4-43 经典层分类在简单神经网络中位置示意图（切片）</p>
    </figcaption>
 </figure>
 </center>
@@ -28,7 +28,7 @@
       width = "600" height = "120"
       src="../../Pictures/RNN_1_0.png" alt="">
     <figcaption>
-      <p>图 4.7.2-2 经典层分类在简单神经网络中位置简化图（切片）</p>
+      <p>图 4-44 经典层分类在简单神经网络中位置简化图（切片）</p>
    </figcaption>
 </figure>
 </center>
@@ -47,7 +47,7 @@
       width = "600" height = "320"
       src="../../Pictures/RNN_1_3.png" alt="">
     <figcaption>
-      <p>图 4.7.2-3 长短期记忆（LSTM）网络结构类比 MLP 的时序关联性示意图</p>
+      <p>图 4-45 长短期记忆（LSTM）网络结构类比 MLP 的时序关联性示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -81,7 +81,7 @@
       width = "600" height = "220"
       src="../../Pictures/RNN_LSTMx3.png" alt="">
     <figcaption>
-      <p>图 4.7.2-4 长短期记忆（LSTM）的三连元胞结构图（即绿框内实际情况）<a href="References_4.md">[20]</a></p>
+      <p>图 4-46 长短期记忆（LSTM）的三连元胞结构图（即绿框内实际情况）<a href="References_4.md">[20]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -100,7 +100,7 @@
       width = "600" height = "420"
       src="../../Pictures/Structure-of-an-LSTM-cell.png" alt="">
     <figcaption>
-      <p>图 4.7.2-5 长短期记忆（LSTM）的元胞结构详情 <a href="References_4.md">[21]</a></p>
+      <p>图 4-47 长短期记忆（LSTM）的元胞结构详情 <a href="References_4.md">[21]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -156,7 +156,7 @@ $$
       width = "600" height = "310"
       src="../../Pictures/RNN_LSTM_vs_GRU.png" alt="">
     <figcaption>
-      <p>图 4.7.2-6 LSTM 与 GRU-LSTM 的元胞结构对比</p>
+      <p>图 4-48 LSTM 与 GRU-LSTM 的元胞结构对比</p>
    </figcaption>
 </figure>
 </center>

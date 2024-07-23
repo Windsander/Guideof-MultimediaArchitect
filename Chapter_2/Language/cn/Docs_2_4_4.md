@@ -88,17 +88,16 @@ $$
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "400" height = "400"
+   <img 
+      width = "500" height = "500"
       src="../../Pictures/CIE%201960%20Planckian%20Locus.png" alt="">
    <figcaption>
-      <p>图 2.4.4-1 普朗克轨迹在 UCS 色度图上的表示</p>
+      <p>图 2-14 普朗克轨迹在 UCS 色度图上的表示</p>
    </figcaption>
 </figure>
 </center>
 
-把 UCS 色温函数转到 XYZ 的色度表示，就有：
+**把 UCS 色温函数转到 XYZ 的色度表示**，就有：
 
 $$
 {\displaystyle 
@@ -113,19 +112,20 @@ $$
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "400" height = "400"
+   <img 
+      width = "500" height = "500"
       src="../../Pictures/CIE%201931%20Planckian%20Locus.png" alt="">
    <figcaption>
-      <p>图 2.4.4-2 普朗克轨迹在 CIE 色度图上的表示</p>
+      <p>图 2-15 普朗克轨迹在 CIE 色度图上的表示</p>
    </figcaption>
 </figure>
 </center>
 
-含有普朗克轨迹的 CIE 色度图，让我们能够直观的表现自然辐射源在 CIE 标准下的色彩特点。但是人眼对色温的感受并不会如此精准，很多在感知上近似物理色温的颜色，实际色度却在普朗克轨迹外。
+<br>
 
-如何在色温基础上引入人眼感受特征呢？相信已经有读者注意到图中，与普朗克轨迹垂直或交叉的直线了。这就是解决人眼感受问题而用到相关色温和等色温线工具。作为 CIE 体系内的标准度量衡工具，相关色温和等色温线必须具有体系内完全可求的特点，即：从指定色度推算相关色温，和从相关色温推算对应色度的能力。
+含有 **普朗克轨迹** 的 CIE 色度图，让我们能够 **直观的表现自然辐射源 在 CIE 标准下的色彩特点**。但是人眼对色温的感受并不会如此精准，很多在感知上近似物理色温的颜色，实际色度却在普朗克轨迹外。
+
+如何在色温基础上引入人眼感受特征呢？相信已经有读者注意到图中，**与 普朗克轨迹 垂直或交叉的直线** 了。这就是解决人眼感受问题而用到 **相关色温** 和 **等色温线** 工具。作为 CIE 体系内的标准度量衡工具，相关色温和等色温线必须具有体系内完全可求的特点，即：**从指定色度推算相关色温，和从相关色温推算对应色度的能力**。
 
 >那么，什么是相关色温？
 
@@ -159,17 +159,16 @@ $$
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "400" height = "400"
+   <img 
+      width = "400" height = "380"
       src="../../Pictures/Robertson's_CCT_computation_method.png" alt="">
    <figcaption>
-      <p>图 2.4.4-3 罗伯逊相关色温算法（Robertson's CCT method）示意图</p>
+      <p>图 2-16 罗伯逊相关色温算法（Robertson's CCT method）示意图</p>
    </figcaption>
 </figure>
 </center>
 
-如图 2.4.4-3 所示， $$(u_T, v_T)$$ 代表目标相关色温 $$T_c$$ 色度， $$T_i$$ 、 $$T_{i+1}$$ 代表普朗克轨迹上以指定麦勒德分割的量个最近相邻色温， $$d_i$$ 、 $$d_{i+1}$$ 为 $$(u_T, v_T)$$ 与 $$T_i$$ 、 $$T_{i+1}$$ 所在等温线的垂直距离， $$\theta _1$$ 、 $$\theta _2$$ 为延 $$(u_T, v_T)$$ 所做等温线与 $$T_i$$ 、 $$T_{i+1}$$ 所在等温线的交点处夹脚。有罗伯逊相关色温公式就可以如下表示：
+如图 2-16 所示， $$(u_T, v_T)$$ 代表目标相关色温 $$T_c$$ 色度， $$T_i$$ 、 $$T_{i+1}$$ 代表普朗克轨迹上以指定麦勒德分割的量个最近相邻色温， $$d_i$$ 、 $$d_{i+1}$$ 为 $$(u_T, v_T)$$ 与 $$T_i$$ 、 $$T_{i+1}$$ 所在等温线的垂直距离， $$\theta _1$$ 、 $$\theta _2$$ 为延 $$(u_T, v_T)$$ 所做等温线与 $$T_i$$ 、 $$T_{i+1}$$ 所在等温线的交点处夹脚。有罗伯逊相关色温公式就可以如下表示：
 
 $$
 \frac{1}T_c=\frac{1}{T_i}+\frac{\theta_1}{\theta_1+\theta_2} \left( \frac{1}{T_{i+1}} - \frac{1}{T_i} \right)
@@ -221,17 +220,13 @@ $$
 {\displaystyle T_c = A_{0}+A_{1} \cdot e^{\frac{-n}{T_{1}}} + A_{2} \cdot e^{\frac{-n}{T_{2}}} + A_{3} \cdot e^{\frac{-n}{T_{3}}} }
 $$
 
-对应生效范围被分为两段，$$n$$ 值计算同麦卡米，其余固定参照点参数取如下值：
+对应生效范围被分为两段，$$n$$ 值计算同麦卡米，其余固定参照点参数取如下《改进指数估值法适用范围表》[\[33\]][ref] 的标定值：
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+   <img 
       width = "600" height = "300"
       src="../../Pictures/CCT_modified_exponential_lite.png" alt="">
-   <figcaption>
-      <p>图 2.4.4-4 改进指数估值法的适用范围<a href="References_3.md">[33]</a></p>
-   </figcaption>
 </figure>
 </center>
 
@@ -268,8 +263,6 @@ $$
 $$
 
 但是这一套算法，仍然无法代替非精确场景下，直接通过对应物理色温计算普朗克轨迹上色度的方法实用。因此，CIE 也和麦卡米指数逼近的情况一样，仅是将其列入了相关色温在需求精确值情况下的补充。这里有所了解即可。
-
->时至今日，此方向也还在等待更 SOTA 的突破
 
 
 [ref]: References_2.md

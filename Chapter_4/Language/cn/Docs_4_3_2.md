@@ -21,7 +21,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/Tanh.png" alt="">
     <figcaption>
-      <p>图 4.3.2-1 Tanh 函数图</p>
+      <p>图 4-10 Tanh 函数图</p>
    </figcaption>
 </figure>
 </center>

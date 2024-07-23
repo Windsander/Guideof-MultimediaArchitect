@@ -11,7 +11,7 @@
       width = "800" height = "260"
       src="../../Pictures/Alexnet.png" alt="">
     <figcaption>
-      <p>图 4.7.1-1 完整的 Alexnet 示意图（工程版）</p>
+      <p>图 4-37 完整的 Alexnet 示意图（工程版）</p>
    </figcaption>
 </figure>
 </center>
@@ -25,7 +25,7 @@
       width = "800" height = "400"
       src="../../Pictures/Alexnet_using.png" alt="">
     <figcaption>
-      <p>图 4.7.1-2 以 AlexNet 部署的 MINST 字母识别模型</p>
+      <p>图 4-38 以 AlexNet 部署的 MINST 字母识别模型</p>
    </figcaption>
 </figure>
 </center>
@@ -76,7 +76,7 @@
       width = "600" height = "210"
       src="../../Pictures/CNN_kernel.png" alt="">
     <figcaption>
-      <p>图 4.7.1-3 CNN 卷积层的计算过程示例</p>
+      <p>图 4-39 CNN 卷积层的计算过程示例</p>
    </figcaption>
 </figure>
 </center>
@@ -102,7 +102,7 @@
       width = "400" height = "400"
       src="../../Pictures/CNN_pool.png" alt="">
     <figcaption>
-      <p>图 4.7.1-4 CNN 池化层的计算过程示例 <a href="References_4.md">[18]</a></p>
+      <p>图 4-40 CNN 池化层的计算过程示例 <a href="References_4.md">[18]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -123,7 +123,7 @@
       width = "400" height = "300"
       src="../../Pictures/CNN_flatten.png" alt="">
     <figcaption>
-      <p>图 4.7.1-5 CNN 平化层的计算过程示例</p>
+      <p>图 4-41 CNN 平化层的计算过程示例</p>
    </figcaption>
 </figure>
 </center>

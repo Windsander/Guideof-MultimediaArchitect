@@ -25,7 +25,7 @@ $$
       width = "600" height = "450"
       src="../../Pictures/ADDA_DA_mapping.png" alt="">
     <figcaption>
-      <p>图 1.5.3-1 在 DAC 数模转换公式作用下的 D/A 映射结果</p>
+      <p>图 1-42 在 DAC 数模转换公式作用下的 D/A 映射结果</p>
    </figcaption>
 </figure>
 </center>
@@ -38,7 +38,7 @@ $$
       width = "600" height = "450"
       src="../../Pictures/ADDA_DA_example_0.png" alt="">
     <figcaption>
-      <p>图 1.5.3-2 数字信号经 DAC 数模转换演示</p>
+      <p>图 1-43 数字信号经 DAC 数模转换演示</p>
    </figcaption>
 </figure>
 </center>

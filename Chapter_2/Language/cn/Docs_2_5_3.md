@@ -12,7 +12,7 @@
    <img width = "500" height = "215"
       src="../../Pictures/RGB_Cube.jpg" alt="">
    <figcaption>
-      <p>图 2.5.3-1 CIE RGB 色彩空间（CIE RGB Color Space）顶点色示意图</p>
+      <p>图 2-21 CIE RGB 色彩空间（CIE RGB Color Space）顶点色示意图</p>
    </figcaption>
 </figure>
 </center>

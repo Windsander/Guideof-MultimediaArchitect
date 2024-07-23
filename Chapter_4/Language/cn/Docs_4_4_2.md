@@ -20,10 +20,10 @@ $$
 <center>
 <figure>
    <img  
-      width = "400" height = "280"
+      width = "500" height = "350"
       src="../../Pictures/Maxout.png" alt="">
     <figcaption>
-      <p>图 4.4.2-1 Maxout 输入输出作用示意图</p>
+      <p>图 4-20 Maxout 输入输出作用示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -51,7 +51,7 @@ Maxout 能够有效的原理是，任何 ReLU 及其变体等激活函数都可�
       width = "600" height = "210"
       src="../../Pictures/Maxout-introduce.png" alt="">
     <figcaption>
-      <p>图 4.4.2-2 Maxout 凸函数拟合示意图<a href="References_4.md">[13]</a></p>
+      <p>图 4-21 Maxout 凸函数拟合示意图<a href="References_4.md">[13]</a></p>
    </figcaption>
 </figure>
 </center>

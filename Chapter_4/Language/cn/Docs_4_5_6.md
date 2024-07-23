@@ -19,7 +19,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/CrossEntropy_loss.png" alt="">
     <figcaption>
-      <p>图 4.5.6-1 Cross Entropy Loss 函数图</p>
+      <p>图 4-30 Cross Entropy Loss 函数图</p>
    </figcaption>
 </figure>
 </center>

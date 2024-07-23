@@ -38,10 +38,10 @@
 <center>
 <figure>
    <img  
-      width = "500" height = "320"
+      width = "600" height = "385"
       src="../../Pictures/Neuron_1.png" alt="">
     <figcaption>
-      <p>图 4.2.1-1 经典层分类在简单神经网络中位置示意图（切片）</p>
+      <p>图 4-5 经典层分类在简单神经网络中位置示意图（切片）</p>
    </figcaption>
 </figure>
 </center>

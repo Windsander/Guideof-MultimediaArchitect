@@ -50,7 +50,7 @@
       width = "400" height = "70"
       src="../../Pictures/Fraunhofer-logo.png" alt="">
     <figcaption>
-      <p>图 1.6.4-1 弗劳恩霍夫应用研究促进协会的 logo</p>
+      <p>图 1-55 弗劳恩霍夫应用研究促进协会的 logo</p>
    </figcaption>
 </figure>
 </center>
@@ -69,7 +69,7 @@ MP3 的处理流水线如下（红线编码，绿线解码，解码逆运算）�
       width = "600" height = "650"
       src="../../Pictures/AF_MP3_Working_Flow_cn.png" alt="">
     <figcaption>
-      <p>图 1.6.3-2 MP3 音频格式编解码执行作业流水线（简）</p>
+      <p>图 1-56 MP3 音频格式编解码执行作业流水线（简）</p>
    </figcaption>
 </figure>
 </center>
@@ -138,7 +138,7 @@ $$
       width = "600" height = "400"
       src="../../Pictures/AF_MP3_subband_no_psych.png" alt="">
     <figcaption>
-      <p>图 1.6.3-3 MP3 音频格式经过子带滤波后的子带分组情况</p>
+      <p>图 1-57 MP3 音频格式经过子带滤波后的子带分组情况</p>
    </figcaption>
 </figure>
 </center>
@@ -157,7 +157,7 @@ $$
       width = "800" height = "500"
       src="../../Pictures/AF_MP3_subband_psych_flow.png" alt="">
     <figcaption>
-      <p>图 1.6.3-4 MP3 音频格式在 MPEG-1 中的子带及心理声学模型工作流（立体声）<a href="References_1.md">[27]</a></p>
+      <p>图 1-58 MP3 音频格式在 MPEG-1 中的子带及心理声学模型工作流（立体声）<a href="References_1.md">[27]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -170,7 +170,7 @@ $$
       width = "600" height = "400"
       src="../../Pictures/AF_MP3_subband_by_psych.png" alt="">
     <figcaption>
-      <p>图 1.6.3-5 MP3 音频格式经过心理声学模型动态处理后的子带分组情况（模拟）</p>
+      <p>图 1-59 MP3 音频格式经过心理声学模型动态处理后的子带分组情况（模拟）</p>
    </figcaption>
 </figure>
 </center>
@@ -183,7 +183,7 @@ $$
       width = "600" height = "500"
       src="../../Pictures/AF_MP3_frame_structure.png" alt="">
     <figcaption>
-      <p>图 1.6.3-6 MP3 音频格式的数据组帧后的单帧示例</p>
+      <p>图 1-60 MP3 音频格式的数据组帧后的单帧示例</p>
    </figcaption>
 </figure>
 </center>
@@ -607,7 +607,7 @@ MP3 的文件结构，依旧为 **两部分组成（简单示意）**：
       width = "600" height = "550"
       src="../../Pictures/AF_MP3_file_structure.png" alt="">
     <figcaption>
-      <p>图 1.6.3-7 完整 MP3 音频格式文件的文件结构举例</p>
+      <p>图 1-61 完整 MP3 音频格式文件的文件结构举例</p>
    </figcaption>
 </figure>
 </center>

@@ -18,7 +18,7 @@ $$
    <img width = "500" height = "350"
       src="../../Pictures/luminance%20definition.png" alt=""/>
    <figcaption>
-      <p>图 2.2.3-1 光亮度测量实验与关键变量示意图</p>
+      <p>图 2-6 光亮度测量实验与关键变量示意图</p>
    </figcaption>
 </figure>
 </center>

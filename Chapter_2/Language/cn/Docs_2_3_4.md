@@ -5,12 +5,9 @@ CIE 在 1931 年同年提出 CIE XYZ 色彩空间，尝试通过人为设计的�
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "400" height = "400"
-      src="../../Pictures/CIE%201931%20XYZ%20cmf.png" alt="">
+   <img width = "400" height = "400" src="../../Pictures/CIE%201931%20XYZ%20cmf.png" alt="">
    <figcaption>
-      <p>图 2.3.4-1 CIE 1931 XYZ 采用的三原色色感函数</p>
+      <p>图 2-10 CIE 1931 XYZ 采用的三原色色感函数</p>
    </figcaption>
 </figure>
 </center>

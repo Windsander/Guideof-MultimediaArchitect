@@ -24,7 +24,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/ELU.png" alt="">
     <figcaption>
-      <p>图 4.3.5-1 ELU & SELU 函数图</p>
+      <p>图 4-14 ELU & SELU 函数图</p>
    </figcaption>
 </figure>
 </center>

@@ -19,7 +19,7 @@
       width = "600" height = "600"
       src="../../Pictures/spectrogram_example_A4_instruments.png" alt="">
     <figcaption>
-      <p>图 1.4.5-1 一组乐器演奏 A4 音调约 12s 的 3D 频谱图</p>
+      <p>图 1-34 一组乐器演奏 A4 音调约 12s 的 3D 频谱图</p>
    </figcaption>
 </figure>
 </center>
@@ -32,7 +32,7 @@
       width = "500" height = "345"
       src="../../Pictures/FLC_instruments_A4_5_100.png" alt="">
     <figcaption>
-      <p>图 1.4.5-2 多乐器演奏音调 A4 时在 5s 处取 100ms 所得频率响度特征</p>
+      <p>图 1-35 多乐器演奏音调 A4 时在 5s 处取 100ms 所得频率响度特征</p>
    </figcaption>
 </figure>
 </center>
@@ -67,7 +67,7 @@
       width = "600" height = "600"
       src="../../Pictures/spectrogram_example_A4_instruments_TFS.png" alt="">
     <figcaption>
-      <p>图 1.4.5-3 一组乐器演奏 A4 音调约 12s 的 3D 频谱图 & 投影所得 语谱图（上）</p>
+      <p>图 1-36 一组乐器演奏 A4 音调约 12s 的 3D 频谱图 & 投影所得 语谱图（上）</p>
    </figcaption>
 </figure>
 </center>
@@ -86,7 +86,7 @@
       width = "600" height = "600"
       src="../../Pictures/spectrogram_example_A4_instruments_TLS.png" alt="">
     <figcaption>
-      <p>图 1.4.5-4 一组乐器演奏 A4 音调约 12s 的 3D 频谱图 & 投影所得 波形图（右）</p>
+      <p>图 1-37 一组乐器演奏 A4 音调约 12s 的 3D 频谱图 & 投影所得 波形图（右）</p>
    </figcaption>
 </figure>
 </center>
@@ -108,7 +108,7 @@
       width = "600" height = "600"
       src="../../Pictures/spectrogram_example_A4_instruments_FLS.png" alt="">
     <figcaption>
-      <p>图 1.4.5-5 一组乐器演奏 A4 音调约 12s 的 3D 频谱图 & 投影所得 完整频域（前）</p>
+      <p>图 1-38 一组乐器演奏 A4 音调约 12s 的 3D 频谱图 & 投影所得 完整频域（前）</p>
    </figcaption>
 </figure>
 </center>

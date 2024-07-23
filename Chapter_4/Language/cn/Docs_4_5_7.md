@@ -19,7 +19,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/Hinge.png" alt="">
     <figcaption>
-      <p>图 4.5.7-1 Hinge Loss 函数图</p>
+      <p>图 4-31 Hinge Loss 函数图</p>
    </figcaption>
 </figure>
 </center>

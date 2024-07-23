@@ -11,7 +11,7 @@
       width = "800" height = "360"
       src="../../Pictures/IoU-introduce.png" alt="">
     <figcaption>
-      <p>图 3.3.2-1 原论文中交并比示意图<a href="References_3.md">[19]</a></p>
+      <p>图 3-11 原论文中交并比示意图<a href="References_3.md">[19]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -215,10 +215,10 @@ GIoU 采用的处理办法为，在原有 IoU 计算的基础上，引入预测�
 <center>
 <figure>
    <img  
-      width = "250" height = "300"
+      width = "250" height = "310"
       src="../../Pictures/GIoU-introduce.png" alt="">
     <figcaption>
-      <p>图 3.3.2-2 红框即为 IoU 图例中，I 和 U 的最小外接矩形</p>
+      <p>图 3-12 红框即为 IoU 图例中，I 和 U 的最小外接矩形</p>
    </figcaption>
 </figure>
 </center>
@@ -361,23 +361,20 @@ bool static GIoU_simple(Vector_4f anchor_box_, Vector_4f ground_box_, float thre
       width = "200" height = "400"
       src="../../Pictures/GIoU-negative.png" alt="">
     <figcaption>
-      <p>图 3.3.2-3 预测框（绿）包含标注框时 GIoU 退化为 IoU 示意图<a href="References_3.md">[20]</a></p>
+      <p>图 3-13 预测框（绿）包含标注框时 GIoU 退化为 IoU 示意图<a href="References_3.md">[20]</a></p>
    </figcaption>
 </figure>
 </center>
 
 针对这种情形，后续的一些研究试图通过引入 **框中心点（DIoU [Distance-IoU]）** [\[21\]][ref] ，结合 **长宽一致性（CIoU [Complete-IoU]）** [\[21\]][ref] ，并在中心点基础上 **进一步优化损失函数的设计（EIoU [Efficient-IoU]）** [\[22\]][ref] 来解决此问题。虽然取得了不错的效果，但算法复杂度也有较大变化，考虑到实际工程情况取舍可以酌情选用，本书不再展开讲解。
 
-几种算法的对比结果如下，仅供参考：
+几种算法的对比结果如表 **《当前主流 IoU 算法族基于 COCO val-2017 数据集的对比结果》** 所示 [\[22\]][ref]，仅供参考：
 
 <center>
 <figure>
    <img  
-      width = "800" height = "350"
+      width = "600" height = "260"
       src="../../Pictures/IoU-compare.png" alt="">
-    <figcaption>
-      <p>图 3.3.2-4 当前主流 IoU 算法族基于 COCO val-2017 数据集的对比结果<a href="References_3.md">[22]</a></p>
-   </figcaption>
 </figure>
 </center>
 

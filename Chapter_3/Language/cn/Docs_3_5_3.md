@@ -344,7 +344,7 @@ $$
       width = "440" height = "400"
       src="../../Pictures/R-LFNST-flow.png" alt="">
     <figcaption>
-      <p>图 3.5.3-1 RST 的 8x8 输入理示意图<a href="References_3.md">[32]</a></p>
+      <p>图 3-24 RST 的 8x8 输入理示意图<a href="References_3.md">[32]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -358,7 +358,7 @@ $$
       width = "300" height = "300"
       src="../../Pictures/NSST-8x8.png" alt="">
     <figcaption>
-      <p>图 3.5.3-1 RST 的 8x8 输入 NSST 处理结果示意图（蓝线扫描顺序归零）<a href="References_3.md">[35]</a></p>
+      <p>图 3-25 RST 的 8x8 输入 NSST 处理结果示意图（蓝线扫描顺序归零）<a href="References_3.md">[35]</a></p>
    </figcaption>
 </figure>
 </center>

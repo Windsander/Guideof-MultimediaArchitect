@@ -18,7 +18,7 @@
       width = "450" height = "620"
       src="../../Pictures/transformer.png" alt="">
     <figcaption>
-      <p>图 4.7.3-1 Transformer 网络结构 <a href="References_4.md">[23]</a></p>
+      <p>图 4-49 Transformer 网络结构 <a href="References_4.md">[23]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -69,7 +69,7 @@ Transformer 在结构中，参考了 RNN 和早期 自编解码网络系统的�
       width = "800" height = "220"
       src="../../Pictures/TF_attention_example.png" alt="">
     <figcaption>
-      <p>图 4.7.3-2 Transformer 的输入转换过程 <a href="References_4.md">[23]</a></p>
+      <p>图 4-50 Transformer 的输入转换过程 <a href="References_4.md">[23]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -118,7 +118,7 @@ $$
       width = "400" height = "450"
       src="../../Pictures/TF_SDPA_2.png" alt="">
     <figcaption>
-      <p>图 4.7.3-2 Transformer 的 SDPA 单元 <a href="References_4.md">[23]</a></p>
+      <p>图 4-51 Transformer 的 SDPA 单元 <a href="References_4.md">[23]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -169,7 +169,7 @@ $$
       width = "600" height = "300"
       src="../../Pictures/TF_MHA_SDPA.png" alt="">
     <figcaption>
-      <p>图 4.7.3-3 Transformer 的 MHA 单元与 SDPA 单元的关系</p>
+      <p>图 4-52 Transformer 的 MHA 单元与 SDPA 单元的关系</p>
    </figcaption>
 </figure>
 </center>
@@ -184,7 +184,7 @@ $$
       width = "400" height = "520"
       src="../../Pictures/TF_MHA_2.png" alt="">
     <figcaption>
-      <p>图 4.7.3-3 Transformer 的 MHA 单元 <a href="References_4.md">[23]</a></p>
+      <p>图 4-53 Transformer 的 MHA 单元 <a href="References_4.md">[23]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -265,7 +265,7 @@ $$
       width = "450" height = "620"
       src="../../Pictures/TF_others.png" alt="">
     <figcaption>
-      <p>图 4.7.3-4 Transformer 辅助机制作用位置</p>
+      <p>图 4-54 Transformer 辅助机制作用位置</p>
    </figcaption>
 </figure>
 </center>
@@ -312,7 +312,7 @@ $$
       width = "450" height = "620"
       src="../../Pictures/TF_Encoder_Decoder.png" alt="">
     <figcaption>
-      <p>图 4.7.3-5 Transformer 编解码器示意图</p>
+      <p>图 4-55 Transformer 编解码器示意图</p>
    </figcaption>
 </figure>
 </center>

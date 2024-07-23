@@ -9,12 +9,11 @@
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "900" height = "150"
+   <img 
+      width = "800" height = "150"
       src="../../Pictures/RGB_3bits_palette.png" alt="">
    <figcaption>
-      <p>图 2.6.2-1-1 4-bit RGBI 可表示的所有颜色</p>
+      <p>图 2-29 4-bit RGBI 可表示的所有颜色</p>
    </figcaption>
 </figure>
 </center>
@@ -28,7 +27,7 @@
       width = "350" height = "500"
       src="../../Pictures/RGB_3bits_palette_sample_image.png" alt="">
    <figcaption>
-      <p>图 2.6.2-1-2 3-bit RGB 表示的鹦鹉图</p>
+      <p>图 2-30 3-bit RGB 表示的鹦鹉图</p>
    </figcaption>
 </figure>
 </center>
@@ -41,12 +40,11 @@
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "900" height = "250"
+   <img 
+      width = "800" height = "250"
       src="../../Pictures/RGBI_4bits_palette.png" alt="">
    <figcaption>
-      <p>图 2.6.2-2-1 4-bit RGBI 可表示的所有颜色</p>
+      <p>图 2-31 4-bit RGBI 可表示的所有颜色</p>
    </figcaption>
 </figure>
 </center>
@@ -60,7 +58,7 @@
       width = "350" height = "500"
       src="../../Pictures/RGBI_4bits_palette_sample_image.png" alt="">
    <figcaption>
-      <p>图 2.6.2-2-2 4-bit RGBI 表示的鹦鹉图</p>
+      <p>图 2-32 4-bit RGBI 表示的鹦鹉图</p>
    </figcaption>
 </figure>
 </center>
@@ -73,12 +71,11 @@
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "900" height = "350"
+   <img 
+      width = "800" height = "260"
       src="../../Pictures/RGB_6bits_palette.png" alt="">
    <figcaption>
-      <p>图 2.6.2-3-1 6-bit RGB 可表示的所有颜色</p>
+      <p>图 2-33 6-bit RGB 可表示的所有颜色</p>
    </figcaption>
 </figure>
 </center>
@@ -92,7 +89,7 @@
       width = "350" height = "500"
       src="../../Pictures/RGB_6bits_palette_sample_image.png" alt="">
    <figcaption>
-      <p>图 2.6.2-3-2 6-bit RGB 表示的鹦鹉图</p>
+      <p>图 2-34 6-bit RGB 表示的鹦鹉图</p>
    </figcaption>
 </figure>
 </center>
@@ -105,12 +102,11 @@
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "900" height = "300"
+   <img 
+      width = "800" height = "220"
       src="../../Pictures/RGB_9bits_palette.png" alt="">
    <figcaption>
-      <p>图 2.6.2-4-1 9-bit RGB 可表示的所有颜色</p>
+      <p>图 2-35 9-bit RGB 可表示的所有颜色</p>
    </figcaption>
 </figure>
 </center>
@@ -124,7 +120,7 @@
       width = "350" height = "500"
       src="../../Pictures/RGB_9bits_palette_sample_image.png" alt="">
    <figcaption>
-      <p>图 2.6.2-4-2 9-bit RGB 表示的鹦鹉图</p>
+      <p>图 2-36 9-bit RGB 表示的鹦鹉图</p>
    </figcaption>
 </figure>
 </center>
@@ -137,12 +133,11 @@
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "900" height = "400"
+   <img 
+      width = "800" height = "350"
       src="../../Pictures/RGB_12bits_palette.png" alt="">
    <figcaption>
-      <p>图 2.6.2-5-1 12-bit RGB 可表示的所有颜色</p>
+      <p>图 2-37 12-bit RGB 可表示的所有颜色</p>
    </figcaption>
 </figure>
 </center>
@@ -156,7 +151,7 @@
       width = "350" height = "500"
       src="../../Pictures/RGB_12bits_palette_sample_image.png" alt="">
    <figcaption>
-      <p>图 2.6.2-5-2 12-bit RGB 表示的鹦鹉图</p>
+      <p>图 2-38 12-bit RGB 表示的鹦鹉图</p>
    </figcaption>
 </figure>
 </center>
@@ -169,12 +164,11 @@
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "900" height = "600"
+   <img 
+      width = "800" height = "440"
       src="../../Pictures/RGB_15bits_palette.png" alt="">
    <figcaption>
-      <p>图 2.6.2-5-1 15-bit RGB 可表示的所有颜色</p>
+      <p>图 2-39 15-bit RGB 可表示的所有颜色</p>
    </figcaption>
 </figure>
 </center>
@@ -188,7 +182,7 @@
       width = "350" height = "500"
       src="../../Pictures/RGB_15bits_palette_sample_image.png" alt="">
    <figcaption>
-      <p>图 2.6.2-5-2 15-bit RGB 表示的鹦鹉图</p>
+      <p>图 2-40 15-bit RGB 表示的鹦鹉图</p>
    </figcaption>
 </figure>
 </center>
@@ -201,12 +195,11 @@
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "600" height = "600"
+   <img 
+      width = "800" height = "600"
       src="../../Pictures/RGB_16bits_palette.png" alt="">
    <figcaption>
-      <p>图 2.6.2-6-1 16-bit RGB 可表示的所有颜色</p>
+      <p>图 2-41 16-bit RGB 可表示的所有颜色</p>
    </figcaption>
 </figure>
 </center>
@@ -220,7 +213,7 @@
       width = "350" height = "500"
       src="../../Pictures/RGB_16bits_palette_sample_image.png" alt="">
    <figcaption>
-      <p>图 2.6.2-6-2 16-bit RGB 表示的鹦鹉图</p>
+      <p>图 2-42 16-bit RGB 表示的鹦鹉图</p>
    </figcaption>
 </figure>
 </center>
@@ -233,12 +226,11 @@
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "600" height = "600"
+   <img 
+      width = "800" height = "840"
       src="../../Pictures/RGB_18bits_palette.png" alt="">
    <figcaption>
-      <p>图 2.6.2-7-1 18-bit RGB 可表示的所有颜色</p>
+      <p>图 2-43 18-bit RGB 可表示的所有颜色</p>
    </figcaption>
 </figure>
 </center>
@@ -252,7 +244,7 @@
       width = "350" height = "500"
       src="../../Pictures/RGB_18bits_palette_sample_image.png" alt="">
    <figcaption>
-      <p>图 2.6.2-7-2 18-bit RGB 表示的鹦鹉图</p>
+      <p>图 2-44 18-bit RGB 表示的鹦鹉图</p>
    </figcaption>
 </figure>
 </center>
@@ -265,12 +257,11 @@
 
 <center>
 <figure>
-   <img style="border-radius: 0.3125em;
-      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-      width = "600" height = "600"
+   <img 
+      width = "800" height = "880"
       src="../../Pictures/RGB_24bits_palette.png" alt="">
    <figcaption>
-      <p>图 2.6.2-8-1 24-bit RGB 可表示的所有颜色</p>
+      <p>图 2-45 24-bit RGB 可表示的所有颜色</p>
    </figcaption>
 </figure>
 </center>
@@ -284,7 +275,7 @@
       width = "350" height = "500"
       src="../../Pictures/RGB_24bits_palette_sample_image.jpeg" alt="">
    <figcaption>
-      <p>图 2.6.2-8-2 24-bit RGB 表示的鹦鹉图</p>
+      <p>图 2-46 24-bit RGB 表示的鹦鹉图</p>
    </figcaption>
 </figure>
 </center>

@@ -19,7 +19,7 @@
       width = "600" height = "115"
       src="../../Pictures/Line_up_of_harmonics_for_PU_P5.png" alt="">
     <figcaption>
-      <p>图 1.4.2-1 某钢琴同音级下纯一度（P1）与纯五度（P5）的泛音链和声图</p>
+      <p>图 1-13 某钢琴同音级下纯一度（P1）与纯五度（P5）的泛音链和声图</p>
    </figcaption>
 </figure>
 </center>
@@ -32,7 +32,7 @@
       width = "600" height = "115"
       src="../../Pictures/Line_up_of_harmonics_for_PU_M2.png" alt="">
     <figcaption>
-      <p>图 1.4.2-2 某钢琴同音级下纯一度（P1）与大二度（M2）的泛音链和声图</p>
+      <p>图 1-14 某钢琴同音级下纯一度（P1）与大二度（M2）的泛音链和声图</p>
    </figcaption>
 </figure>
 </center>
@@ -54,12 +54,71 @@
 仍然采用该音级 4 的例子。以 12 个音调间和声情况统计。距离 C4 基础音调的音程（Interval）和 大致频率比（C4: 当前音调，精确小数点后一位）如下：
 
 <center>
-<figure>
-   <img  
-      width = "600" height = "150"
-      src="../../Pictures/Octave_harmony_interval_table_1.png" alt="">
-</figure>
+<table style="width:90%; border-collapse: collapse;">
+  <tr style="background-color: #d5d5d5; text-align: center; vertical-align: middle;">
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">C4</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">C♯<br>D♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">D</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">D♯<br>E♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">E</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">F</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">F♯<br>G♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">G</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">G♯<br>A♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">A</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">A♯<br>B♭</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">B</th>
+    <th style="border: 1px solid #ddd; border-bottom: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">C5</th>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #f1711f; height: 40px">P1</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #0077b7;">m2</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #54c2fc;">M2</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #ffd84b;">m3</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #ffd84b;">M3</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #f1711f;">P4</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #54c2fc;">A4/d5</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #f1711f;">P5</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #ffd84b;">m6</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #ffd84b;">M6</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #54c2fc;">m7</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #0077b7;">M7</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #f1711f;">P8</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #f1711f; height: 40px">0</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #0077b7;">0.5</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #54c2fc;">1</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #ffd84b;">1.5</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #ffd84b;">2</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #f1711f;">2.5</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #54c2fc;">3</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #f1711f;">3.5</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #ffd84b;">4</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #ffd84b;">4.5</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #54c2fc;">5</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #0077b7;">5.5</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #f1711f;">6</td>
+  </tr>
+  <tr style="background-color: #ffd84b; text-align: center; vertical-align: middle;">
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #f1711f; height: 40px">1:1</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #0077b7;">16:15</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #54c2fc;">9:8</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #ffd84b;">6:5</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #ffd84b;">5:4</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #f1711f;">4:3</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #54c2fc;">45:32</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #f1711f;">3:2</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #ffd84b;">8:5</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #ffd84b;">5:3</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #54c2fc;">16:9</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #0077b7;">15:8</td>
+    <td style="border: 1px solid #ddd; width: 7%; background-color: #f1711f;">2:1</td>
+  </tr>
+</table>
 </center>
+
+<br>
 
 表中，**橙色** 表示与 C4 完美协和，**黄色** 表示与 C4 不完美协和，**蓝色** 表示与 C4 不协，**靛色** 表示与 C4 完全不协。将统计扩展到整个当前音级中两两音调时，就有（音程 P1 省略比例）：
 
@@ -142,7 +201,7 @@ $$
       width = "600" height = "290"
       src="../../Pictures/Eulers_tonnetz.png" alt="">
     <figcaption>
-      <p>图 1.4.2-3 欧拉论文原稿中的调性网络（Euler's Tonnetz）示意图</p>
+      <p>图 1-15 欧拉论文原稿中的调性网络（Euler's Tonnetz）示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -161,7 +220,7 @@ $$
       width = "400" height = "230"
       src="../../Pictures/PLR_on_tonnetz.png" alt="">
     <figcaption>
-      <p>图 1.4.2-4 新里曼理论（Neo-Riemannian Theory）的三主要变换</p>
+      <p>图 1-16 新里曼理论（Neo-Riemannian Theory）的三主要变换</p>
    </figcaption>
 </figure>
 </center>
@@ -204,7 +263,7 @@ L变换，让我们能够快速完成 **相邻调间 大/小三和弦** 的转�
       width = "800" height = "400"
       src="../../Pictures/Neo-Riemannian_Tonnetz.png" alt="">
     <figcaption>
-      <p>图 1.4.2-5 以新里曼理论（Neo-Riemannian Theory）绘制的调性网络</p>
+      <p>图 1-17 以新里曼理论（Neo-Riemannian Theory）绘制的调性网络</p>
    </figcaption>
 </figure>
 </center>

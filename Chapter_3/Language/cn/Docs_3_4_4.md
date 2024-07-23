@@ -62,7 +62,7 @@ $$
       width = "800" height = "180"
       src="../../Pictures/LMCS-example-0.png" alt="">
     <figcaption>
-      <p>图 3.4.4-1 位深 10-bit 亮度映射码字子区域分段示意图（无修正）</p>
+      <p>图 3-19 位深 10-bit 亮度映射码字子区域分段示意图（无修正）</p>
    </figcaption>
 </figure>
 </center>
@@ -229,7 +229,7 @@ $$
       width = "800" height = "260"
       src="../../Pictures/LMCS-example-1.png" alt="">
     <figcaption>
-      <p>图 3.4.4-2 位深 10-bit 亮度映射码字子区域分段示意图（修正后）</p>
+      <p>图 3-20 位深 10-bit 亮度映射码字子区域分段示意图（修正后）</p>
    </figcaption>
 </figure>
 </center>

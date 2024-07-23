@@ -32,7 +32,7 @@
       width = "400" height = "360"
       src="../../Pictures/A-zoomed-view-for-the-spectrum-of-piano-note-B3.png" alt="">
     <figcaption>
-      <p>图 1.3.3-1 某钢琴标准 B3 调音的频率响度特征（响度归一化） <a href="References_1.md">[8]</a></p>
+      <p>图 1-9 某钢琴标准 B3 调音的频率响度特征（响度归一化） <a href="References_1.md">[8]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -91,7 +91,7 @@ $$
       width = "400" height = "360"
       src="../../Pictures/A-zoomed-view-for-the-spectrum-of-piano-note-B3_2.png" alt="">
     <figcaption>
-      <p>图 1.3.3-2 某钢琴标准 B3 调音的谐波链（响度归一化）示意图 <a href="References_1.md">[8]</a></p>
+      <p>图 1-10 某钢琴标准 B3 调音的谐波链（响度归一化）示意图 <a href="References_1.md">[8]</a></p>
    </figcaption>
 </figure>
 </center>

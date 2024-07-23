@@ -64,10 +64,10 @@ $$
 <center>
 <figure>
    <img  
-      width = "400" height = "280"
+      width = "500" height = "350"
       src="../../Pictures/SoftMax.png" alt="">
     <figcaption>
-      <p>图 4.4.3-1 Softmax 输入输出作用示意图</p>
+      <p>图 4-22 Softmax 输入输出作用示意图</p>
    </figcaption>
 </figure>
 </center>

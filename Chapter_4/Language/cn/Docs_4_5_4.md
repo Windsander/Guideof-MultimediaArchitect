@@ -23,7 +23,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/Quantile.png" alt="">
     <figcaption>
-      <p>图 4.5.4-1 Quantile Loss 函数图</p>
+      <p>图 4-27 Quantile Loss 函数图</p>
    </figcaption>
 </figure>
 </center>
@@ -34,7 +34,7 @@ $$
       width = "400" height = "300"
       src="../../Pictures/Quantile-introduce.png" alt="">
     <figcaption>
-      <p>图 4.5.4-2 Quantile Loss 样本拟合示意图</p>
+      <p>图 4-28 Quantile Loss 样本拟合示意图</p>
    </figcaption>
 </figure>
 </center>

@@ -14,7 +14,7 @@
       width = "400" height = "600"
       src="../../Pictures/Georges Valensi‘s HSL.png" alt="">
    <figcaption>
-      <p>图 2.5.7-1 乔治·瓦伦西（Georges Valensi）于 1945 年在美专利局注册手稿 <a href="References_3.md">[15]</a></p>
+      <p>图 2-22 乔治·瓦伦西（Georges Valensi）于 1945 年在美专利局注册手稿 <a href="References_3.md">[15]</a></p>
    </figcaption>
 </figure>
 </center>
@@ -39,10 +39,10 @@ HSV 和 HSI 以灰度线作为法线，取过黑点的平面为投影平面，�
 
 <center>
 <figure>
-   <img swidth = "300" height = "350"
+   <img width = "400" height = "400"
       src="../../Pictures/cs_HSV:HSL_cp.png" alt="">
    <figcaption>
-      <p>图 2.5.7-2 RGB 色彩空间投影建立 HSL 色度平面（HSL Chromaticity Plane）示意图</p>
+      <p>图 2-23 RGB 色彩空间投影建立 HSL 色度平面（HSL Chromaticity Plane）示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -53,19 +53,21 @@ HSL 色彩空间，以该平面做为 **基准平面**。取从 **青色（Cyan�
 
 <center>
 <figure>
-   <img width = "400" height = "330"
+   <img width = "400" height = "320"
       src="../../Pictures/cs_HSV:HSL_CP2-2.png" alt="">
    <figcaption>
-      <p>图 2.5.7-3 HSL 色度平面（HSL Chromaticity Plane）示意图</p>
+      <p>图 2-24 HSL 色度平面（HSL Chromaticity Plane）示意图</p>
    </figcaption>
 </figure>
 </center>
 
-需要注意的是，引入色相是为了用一个中间变量，把 $${C_{RGB}}^{\prime}$$ 的投影平面特性转化为颜色三要素的物理表述 [\[14\]][ref] [\[18\]][ref] 。**色相本身并不是一个标准概念**，在此处的意义为白点颜色与选定颜色之间的欧式距离，而 **并非指** 色度（Chromaticity）。它是 HSL 引入的对同色调下颜色饱和度的代称，即狭义色差（sCA）。
+需要注意的是，引入色相是为了用一个中间变量，把 $${C_{RGB}}^{\prime}$$ 的投影平面特性转化为颜色三要素的物理表述 [\[14\]][ref] [\[18\]][ref] 。**色相本身并不是一个标准概念**，在此处的意义为白点颜色与选定颜色之间的欧式距离，而 **并非指** 色度（Chromaticity）。它是 HSL 引入的对同色调下颜色饱和度的代称，即 **狭义色差（sCA）**。
 
-所以，为了便于说明，我们将 HSL 的中间量 $$C$$ 按照更贴近的含义，称为色差。
+<br>
 
-显然， 实际上就是色调（Hue），有 $$H$$ 、 $$C$$ 的关系为：
+介于此，为了便于说明，我们 **将 HSL 的中间量 $$C$$ 按照更贴近的含义，称为色差**。
+
+而 **实际上 $$H$$ 就是 色调（Hue）**，有 $$H$$ 、 $$C$$ 的关系为：
 
 $$
 {\displaystyle 
@@ -87,10 +89,10 @@ $$
 
 <center>
 <figure>
-   <img width = "400" height = "180"
+   <img width = "600" height = "250"
       src="../../Pictures/cs_HSV:HSL_mask.png" alt="">
    <figcaption>
-      <p>图 2.5.7-4 HSL 色度平面（HSL Chromaticity Plane）连续性处理拓扑示意图</p>
+      <p>图 2-25 HSL 色度平面（HSL Chromaticity Plane）连续性处理拓扑示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -149,7 +151,7 @@ $$
    <img width = "500" height = "190"
       src="../../Pictures/cs_c_HSVIL.png" alt="">
    <figcaption>
-      <p>图 2.5.7-5 HSV、HSI、HSL（Lightness）色差切面（Chrominance Slice）示意图</p>
+      <p>图 2-26 HSV、HSI、HSL（Lightness）色差切面（Chrominance Slice）示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -189,7 +191,7 @@ $$
    <img width = "400" height = "700"
       src="../../Pictures/cs_s_HSVIL.png" alt="">
    <figcaption>
-      <p>图 2.5.7-6 HSV、HSI、HSL（Lightness）切面拓扑示意图</p>
+      <p>图 2-27 HSV、HSI、HSL（Lightness）切面拓扑示意图</p>
    </figcaption>
 </figure>
 </center>
