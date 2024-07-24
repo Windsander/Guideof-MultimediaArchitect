@@ -15,9 +15,9 @@
         "epub": "styles/common.css"
     },
     "plugins": [
-		"theme-default",
-        "-lunr", "-fontsettings", "-highlight",
-        "-search", "search-pro",
+		"theme-default", "highlight",
+        "fontsettings",
+        "-lunr", "-search", "search-pro",
 		"insert-logo", "custom-favicon",
 		"rss", "github",
 		"expandable-chapters", "chapter-fold", 
@@ -50,7 +50,7 @@
 		"fontsettings": {
 			"theme": "white",
 			"family": "sans",
-			"size": 2
+			"size": 1
 		},
 		"tbfed-pagefooter": {
             "copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved",
