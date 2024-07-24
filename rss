@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 20 Jul 2024 07:43:46 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 24 Jul 2024 07:44:46 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -934,6 +934,27 @@
             <description><![CDATA[[1] Hinton, G. E.; Salakhutdinov, R. R. (2006). "Reducing the Dimensionality of Data with Neural Networks.Science". 313 (5786): 504–507.]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_4/Language/cn/References_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_4/Language/cn/References_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[五、音视频帧分析与实践]]></title>
+            <description><![CDATA[历经四个章节，我们详细探讨了音频与色彩的相关知识，以及常用算法和机器学习在音视频中的工程方向和理论原型。通过整理并学习这些内容，我们已经对音视频处理的基本概念和技术工具有了初步的了解。而音视频处理的核心任务之一，便是对音视频帧的分析与处理。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Apex_5_Introduce.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Apex_5_Introduce.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.1 音视频帧 与 环境准备]]></title>
+            <description><![CDATA[什么是音视频帧呢？首先需要了解，什么是帧。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）]]></title>
+            <description><![CDATA[工程里对 数据分析和科学计算 的过程中，常用数学库是不可或缺的工具。这些库不仅提供了高效的数据处理能力，还为我们提供了 丰富的数学函数 和 可视化工具。其中，最为重要的库有三个，即 Numpy、Pandas、Mateplotlib，分别对应 [ 基础计算、数理统计、图表绘制 ] 的需求。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
     </channel>

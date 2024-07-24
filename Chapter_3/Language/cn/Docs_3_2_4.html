@@ -17,6 +17,14 @@
     
             
                 
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
@@ -1999,6 +2007,122 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="../../../Chapter_5/Language/cn/Apex_5_Introduce.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Apex_5_Introduce.html">
+            
+                    
+                    五、音视频帧分析与数据处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../Chapter_5/Language/cn/Docs_5_1.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_1.html">
+            
+                    
+                    5.1 音视频帧与环境准备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../../Chapter_5/Language/cn/Docs_5_1_1.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_1_1.html">
+            
+                    
+                    5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../../../Chapter_5/Language/cn/Docs_5_1_2.md">
+            
+                <span>
+            
+                    
+                    5.1.2 视频分析库（ffmpeg-py、color-science）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../../../Chapter_5/Language/cn/Docs_5_1_3.md">
+            
+                <span>
+            
+                    
+                    5.1.3 音频分析库（librosa、resampler）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="../../../Chapter_5/Language/cn/Docs_5_1_4.md">
+            
+                <span>
+            
+                    
+                    5.1.4 分析环境准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.5" data-path="../../../Chapter_5/Language/cn/Docs_5_1_5.md">
+            
+                <span>
+            
+                    
+                    5.1.5 其他分析软件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../Chapter_5/Language/cn/References_5.md">
+            
+                <span>
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -2101,68 +2225,68 @@
 <h2 id="&#x9A6C;&#x5C14;&#x6EE4;&#x6CE2;&#x7684;-glsl-&#x6E32;&#x67D3;&#x7A0B;&#x5E8F;&#x7247;"><strong>&#x9A6C;&#x5C14;&#x6EE4;&#x6CE2;&#x7684; GLSL &#x6E32;&#x67D3;&#x7A0B;&#x5E8F;&#x7247;</strong></h2>
 <p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F9D;&#x636E;&#x7406;&#x8BBA;&#x6765;&#x505A; GPU &#x7684;&#x52A8;&#x6001;&#x7BA1;&#x7EBF;&#x7A0B;&#x5E8F;&#x7247;&#x5C01;&#x88C5;&#x3002;</p>
 <p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B9A;&#x4E49; <strong>&#x9876;&#x70B9;&#x7A0B;&#x5E8F;&#x7247;&#xFF08;Vertex Shader&#xFF09;</strong>&#x3002;&#x901A;&#x8FC7;&#x8BE5;&#x7A0B;&#x5E8F;&#x7247;&#x6307;&#x5B9A; GPU &#x7684;&#x7ED8;&#x5236;&#x533A;&#x57DF;&#xFF0C;&#x4EE5;&#x53CA;&#x7EB9;&#x7406;&#x4E0E;&#x7269;&#x4F53;&#x7684;&#x70B9;&#x4F4D;&#x6620;&#x5C04;&#x3002;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x662F;&#x5BF9;&#x6574;&#x4E2A;&#x89C6;&#x7A97;&#x754C;&#x9762;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x5BF9;&#x4F20;&#x5165;&#x7684;&#x9876;&#x70B9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5750;&#x6807;&#x53D8;&#x6362;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6765;&#x6C42;&#x5F97;&#x9876;&#x70B9;&#x6620;&#x5C04;&#x7684;&#x7EB9;&#x7406;&#x5750;&#x6807;&#xFF0C;&#x51CF;&#x5C11;&#x5C11;&#x91CF;&#x6570;&#x636E;&#x901A;&#x4FE1;&#xFF1A;</p>
-<pre><code class="lang-glsl">attribute vec3 position;
+<pre><code class="lang-glsl"><span class="hljs-keyword">attribute</span> <span class="hljs-type">vec3</span> position;
 
-varying vec4 fs_position;
-varying vec2 fs_texcoord;
+<span class="hljs-keyword">varying</span> <span class="hljs-type">vec4</span> fs_position;
+<span class="hljs-keyword">varying</span> <span class="hljs-type">vec2</span> fs_texcoord;
 
-void main()
+<span class="hljs-type">void</span> main()
 {
-    fs_position = vec4(position.x, position.y, position.z, 1.0);
-    fs_texcoord = (position.xy + vec2(1.0, 1.0)) / 2.0;
-    gl_Position = fs_position;
+    fs_position = <span class="hljs-type">vec4</span>(position.x, position.y, position.z, <span class="hljs-number">1.0</span>);
+    fs_texcoord = (position.xy + <span class="hljs-type">vec2</span>(<span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>)) / <span class="hljs-number">2.0</span>;
+    <span class="hljs-built_in">gl_Position</span> = fs_position;
 }
 </code></pre>
 <p>&#x7A0B;&#x5E8F;&#x5316;&#x9A6C;&#x5C14;&#x6EE4;&#x6CE2;&#x7684;&#x5173;&#x952E;&#x5904;&#x7406;&#x90E8;&#x5206;&#xFF0C;&#x4F9D;&#x65E7;&#x5728; <strong>&#x50CF;&#x7D20;&#x7A0B;&#x5E8F;&#x7247;&#xFF08;Pixel Shader/Fragment Shader&#xFF09;&#x4E0A;&#x548C; CPU &#x7684;&#x9A6C;&#x5C14;&#x7B97;&#x5B50;&#x7684;&#x8BA1;&#x7B97;&#x4E0A;</strong>&#x3002;&#x6211;&#x4EEC;&#x5148;&#x770B;&#x50CF;&#x7D20;&#x7A0B;&#x5E8F;&#x7247;&#xFF08;Pixel Shader/Fragment Shader&#xFF09;&#x662F;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;</p>
-<pre><code class="lang-glsl">precision mediump float;
+<pre><code class="lang-glsl"><span class="hljs-keyword">precision</span> <span class="hljs-keyword">mediump</span> <span class="hljs-type">float</span>;
 
-const int n = 5;
+<span class="hljs-keyword">const</span> <span class="hljs-type">int</span> n = <span class="hljs-number">5</span>;
 
-varying vec4 fs_position;
-varying vec2 fs_texcoord;
+<span class="hljs-keyword">varying</span> <span class="hljs-type">vec4</span> fs_position;
+<span class="hljs-keyword">varying</span> <span class="hljs-type">vec2</span> fs_texcoord;
 
-uniform vec2 pixel_bias;
-uniform float marr_matrix[n * n];
-uniform sampler2D target_texture;
+<span class="hljs-keyword">uniform</span> <span class="hljs-type">vec2</span> pixel_bias;
+<span class="hljs-keyword">uniform</span> <span class="hljs-type">float</span> marr_matrix[n * n];
+<span class="hljs-keyword">uniform</span> <span class="hljs-type">sampler2D</span> target_texture;
 
-void main()
+<span class="hljs-type">void</span> main()
 {
-    vec3 output_;
-    for (int i = 0; i &lt; n; i++) {
-        for (int j = 0; j &lt; n; j++) {
-            vec2 bias = vec2(i-1, j-1) * pixel_bias;
-            output_ += texture2D(target_texture, fs_texcoord.xy + bias).rgb * marr_matrix[i + j * n];
+    <span class="hljs-type">vec3</span> output_;
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {
+            <span class="hljs-type">vec2</span> bias = <span class="hljs-type">vec2</span>(i<span class="hljs-number">-1</span>, j<span class="hljs-number">-1</span>) * pixel_bias;
+            output_ += <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy + bias).rgb * marr_matrix[i + j * n];
         }
     }
-    gl_FragColor = vec4(output_, 1.0);
+    <span class="hljs-built_in">gl_FragColor</span> = <span class="hljs-type">vec4</span>(output_, <span class="hljs-number">1.0</span>);
 }
 </code></pre>
 <p>&#x5B8C;&#x5168;&#x5C31;&#x662F;&#x9AD8;&#x65AF;&#x7684;&#x50CF;&#x7D20;&#x7A0B;&#x5E8F;&#x7247;&#x3002;&#x6216;&#x8005;&#x8BF4;&#xFF0C;&#x5BF9;&#x4E8E;&#x4EE5;&#x77E9;&#x9635;&#x5F62;&#x5F0F;&#x4F20;&#x5165;&#x7684;&#x56FA;&#x5B9A;&#x7B97;&#x5B50;&#xFF0C;&#x5728;&#x7A0B;&#x5E8F;&#x7247;&#x7684;&#x5B9E;&#x73B0;&#x4E0A;&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x590D;&#x7528;&#x7684;&#x3002;<strong>&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x9047;&#x5230;&#x7C7B;&#x4F3C;&#x573A;&#x666F;&#xFF0C;&#x6B64;&#x7C7B;&#x7A0B;&#x5E8F;&#x7247;&#x4E5F;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x5408;&#x5E76;&#x6216;&#x8005;&#x540C;&#x6001;&#x8F6C;&#x6362;&#x3002;</strong></p>
 <p>&#x800C;&#x4F20;&#x5165;&#x7684; <strong>&#x9A6C;&#x5C14;&#x7B97;&#x5B50; marr_matrix</strong> &#x548C; <strong>&#x76F8;&#x90BB;&#x50CF;&#x7D20;&#x5F52;&#x4E00;&#x5316;&#x7684;&#x504F;&#x79FB;&#x8DDD;&#x79BB; pixel_bias</strong> &#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x6267;&#x884C;&#x524D;&#x7531; CPU &#x8BA1;&#x7B97;&#x4E00;&#x6B21;&#x5373;&#x53EF;&#x3002;&#x4EE5; JavaScript &#x8BED;&#x6CD5;&#x5B9E;&#x73B0;&#xFF1A;</p>
-<pre><code class="lang-js">function pixel_bias(width, height) {
-    return new Float32Array([
-        1.0 / width, 1.0 / height
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pixel_bias</span>(<span class="hljs-params">width, height</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Float32Array</span>([
+        <span class="hljs-number">1.0</span> / width, <span class="hljs-number">1.0</span> / height
     ]);
 }
 
-function calculate_marr_kernel(step, delta) {
-    let n = step * 2 + 1;
-    let kernel = new Float32Array(n * n);
-    let factor_1 = 1.0 / (Math.PI * Math.pow(delta, 4)); // trick: normalized skip
-    let factor_2 = 1.0 / (2.0 * delta * delta);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculate_marr_kernel</span>(<span class="hljs-params">step, delta</span>) </span>{
+    <span class="hljs-keyword">let</span> n = step * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">let</span> kernel = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Float32Array</span>(n * n);
+    <span class="hljs-keyword">let</span> factor_1 = <span class="hljs-number">1.0</span> / (<span class="hljs-built_in">Math</span>.PI * <span class="hljs-built_in">Math</span>.pow(delta, <span class="hljs-number">4</span>)); <span class="hljs-comment">// trick: normalized skip</span>
+    <span class="hljs-keyword">let</span> factor_2 = <span class="hljs-number">1.0</span> / (<span class="hljs-number">2.0</span> * delta * delta);
 
-    let normalize_div = 0;
-    for (let i = 0; i &lt; n; i++) {
-        for (let j = 0; j &lt; n; j++) {
-            let diff = Math.pow(i - step, 2) + Math.pow(j - step, 2);
-            kernel[j + n * i] = /*factor_1 * (skip) */ (1 - diff * factor_2) * Math.exp(-diff * factor_2);
+    <span class="hljs-keyword">let</span> normalize_div = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {
+            <span class="hljs-keyword">let</span> diff = <span class="hljs-built_in">Math</span>.pow(i - step, <span class="hljs-number">2</span>) + <span class="hljs-built_in">Math</span>.pow(j - step, <span class="hljs-number">2</span>);
+            kernel[j + n * i] = <span class="hljs-comment">/*factor_1 * (skip) */</span> (<span class="hljs-number">1</span> - diff * factor_2) * <span class="hljs-built_in">Math</span>.exp(-diff * factor_2);
             normalize_div += kernel[i];
         }
     }
-    for (let i = 0; i &lt; kernel.length; i++) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; kernel.length; i++) {
         kernel[i] /= normalize_div;
     }
-    return kernel;
+    <span class="hljs-keyword">return</span> kernel;
 }
 </code></pre>
 <p>&#x81F3;&#x6B64;&#xFF0C;&#x7B80;&#x6613;&#x9A6C;&#x5C14;&#x6EE4;&#x6CE2;&#x5668;&#x7A0B;&#x5E8F;&#x7247;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
@@ -2193,105 +2317,105 @@ function calculate_marr_kernel(step, delta) {
 <h2 id="&#x9A6C;&#x5C14;&#x9510;&#x5316;&#x7684;-glsl-&#x6E32;&#x67D3;&#x7A0B;&#x5E8F;&#x7247;"><strong>&#x9A6C;&#x5C14;&#x9510;&#x5316;&#x7684; GLSL &#x6E32;&#x67D3;&#x7A0B;&#x5E8F;&#x7247;</strong></h2>
 <p>&#x6839;&#x636E;&#x4E0A;&#x6587;&#x7684;&#x5206;&#x6790;&#xFF0C;&#x9A6C;&#x5C14;&#x9510;&#x5316;&#x5305;&#x542B;&#x4E24;&#x90E8;&#x5206;&#xFF1A;&#x524D;&#x7EA7;&#x6570;&#x636E; &#x548C; &#x540E;&#x7EA7;&#x6570;&#x636E;&#x3002;&#x524D;&#x7EA7;&#x6570;&#x636E;&#x7528;&#x4E8E;&#x5185;&#x5BB9;&#x4E3B;&#x4F53;&#xFF0C;&#x540E;&#x7EA7;&#x6570;&#x636E;&#x7528;&#x4E8E;&#x53E0;&#x52A0;&#x9510;&#x5316;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53D6;&#x7528;&#x53EF;&#x914D;&#x7F6E;&#x662F;&#x5426;&#x91C7;&#x7528;&#x9AD8;&#x65AF;&#x6A21;&#x7CCA;&#xFF0C;&#x4F5C;&#x4E3A;&#x53EF;&#x9009;&#x524D;&#x7EA7;&#x6570;&#x636E;&#x7684;&#x7A0B;&#x5E8F;&#x7247;&#x65B9;&#x6848;&#xFF0C;&#x5BF9;&#x5DF2;&#x5B9E;&#x73B0;&#x7684;&#x9A6C;&#x5C14;&#x6EE4;&#x6CE2;&#x8FDB;&#x884C;&#x6539;&#x9020;&#x3002;</p>
 <p>&#x7531;&#x4E8E;&#x9876;&#x70B9;&#x7A0B;&#x5E8F;&#x7247;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x88AB;&#x6CBF;&#x7528;&#xFF0C;&#x6B64;&#x5904;&#x6211;&#x4EEC;&#x5355;&#x72EC;&#x6765;&#x770B; <strong>&#x50CF;&#x7D20;&#x7A0B;&#x5E8F;&#x7247;&#xFF08;Pixel Shader/Fragment Shader&#xFF09;</strong> &#x8BE5;&#x600E;&#x4E48;&#x5B9A;&#x4E49;&#xFF1A;</p>
-<pre><code class="lang-glsl">precision mediump float;
+<pre><code class="lang-glsl"><span class="hljs-keyword">precision</span> <span class="hljs-keyword">mediump</span> <span class="hljs-type">float</span>;
 
-const int n = 3;
-const int m = 5;
+<span class="hljs-keyword">const</span> <span class="hljs-type">int</span> n = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-type">int</span> m = <span class="hljs-number">5</span>;
 
-varying vec4 fs_position;
-varying vec2 fs_texcoord;
+<span class="hljs-keyword">varying</span> <span class="hljs-type">vec4</span> fs_position;
+<span class="hljs-keyword">varying</span> <span class="hljs-type">vec2</span> fs_texcoord;
 
-uniform bool only_edge;
-uniform bool marr_blur;
-uniform vec2 pixel_bias;
-uniform float gaussian_matrix[n * n];
-uniform float marr_matrix[m * m];
-uniform float str_factor;
-uniform sampler2D target_texture;
+<span class="hljs-keyword">uniform</span> <span class="hljs-type">bool</span> only_edge;
+<span class="hljs-keyword">uniform</span> <span class="hljs-type">bool</span> marr_blur;
+<span class="hljs-keyword">uniform</span> <span class="hljs-type">vec2</span> pixel_bias;
+<span class="hljs-keyword">uniform</span> <span class="hljs-type">float</span> gaussian_matrix[n * n];
+<span class="hljs-keyword">uniform</span> <span class="hljs-type">float</span> marr_matrix[m * m];
+<span class="hljs-keyword">uniform</span> <span class="hljs-type">float</span> str_factor;
+<span class="hljs-keyword">uniform</span> <span class="hljs-type">sampler2D</span> target_texture;
 
-vec3 gauss_operation()
+<span class="hljs-type">vec3</span> gauss_operation()
 {
-    vec3 output_;
-    for (int i = 0; i &lt; n; i++) {
-        for (int j = 0; j &lt; n; j++) {
-            vec2 bias = vec2(i-1, j-1) * pixel_bias;
-            output_ += texture2D(target_texture, fs_texcoord.xy + bias).rgb * gaussian_matrix[i + j * n];
+    <span class="hljs-type">vec3</span> output_;
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {
+            <span class="hljs-type">vec2</span> bias = <span class="hljs-type">vec2</span>(i<span class="hljs-number">-1</span>, j<span class="hljs-number">-1</span>) * pixel_bias;
+            output_ += <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy + bias).rgb * gaussian_matrix[i + j * n];
         }
     }
-    return texture2D(target_texture, fs_texcoord.xy).rgb;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy).rgb;
 }
 
-vec3 edge_operation()
+<span class="hljs-type">vec3</span> edge_operation()
 {
-    vec3 output_;
-    for (int i = 0; i &lt; m; i++) {
-        for (int j = 0; j &lt; m; j++) {
-            vec2 bias = vec2(i-1, j-1) * pixel_bias;
-            vec4 color_sample = texture2D(target_texture, fs_texcoord.xy + bias);
+    <span class="hljs-type">vec3</span> output_;
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; m; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; m; j++) {
+            <span class="hljs-type">vec2</span> bias = <span class="hljs-type">vec2</span>(i<span class="hljs-number">-1</span>, j<span class="hljs-number">-1</span>) * pixel_bias;
+            <span class="hljs-type">vec4</span> color_sample = <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy + bias);
             output_ += color_sample.rgb * marr_matrix[i + j * m];
         }
     }
-    return output_;
+    <span class="hljs-keyword">return</span> output_;
 }
 
-void main()
+<span class="hljs-type">void</span> main()
 {
-    vec3 output_;
-    if (only_edge) {
+    <span class="hljs-type">vec3</span> output_;
+    <span class="hljs-keyword">if</span> (only_edge) {
         output_ = edge_operation();
-    } else if (marr_blur) {
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (marr_blur) {
         output_ = gauss_operation() - str_factor * edge_operation();
-    } else {
-        output_ = texture2D(target_texture, fs_texcoord.xy).rgb - str_factor * edge_operation();
+    } <span class="hljs-keyword">else</span> {
+        output_ = <span class="hljs-built_in">texture2D</span>(target_texture, fs_texcoord.xy).rgb - str_factor * edge_operation();
     }
-    gl_FragColor = vec4(output_, 1.0);
+    <span class="hljs-built_in">gl_FragColor</span> = <span class="hljs-type">vec4</span>(output_, <span class="hljs-number">1.0</span>);
 }
 </code></pre>
 <p>&#x663E;&#x7136;&#xFF0C;&#x4F5C;&#x4E3A;&#x524D;&#x7EA7;&#x8F93;&#x5165;&#x7684;&#x9AD8;&#x65AF;&#x6EE4;&#x6CE2;&#xFF0C;&#x5176;&#x6EE4;&#x6CE2;&#x6838;&#x5927;&#x5C0F;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x9700;&#x8981;&#x548C;&#x540E;&#x7EA7;&#x5904;&#x7406;&#x6838;&#x5927;&#x5C0F;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;&#x6211;&#x4EEC;&#x4F9D;&#x65E7;&#x91C7;&#x7528; <strong>&#x5F3A;&#x5EA6;&#x53C2;&#x6570; str_factor</strong>&#xFF0C;&#x5BF9;&#x9510;&#x5316;&#x4ECB;&#x5165;&#x7684;&#x5F3A;&#x5EA6;&#x8FDB;&#x884C;&#x4E86;&#x76F4;&#x63A5;&#x8C03;&#x63A7;&#x3002;&#x800C;&#x4F20;&#x5165;&#x7684; <strong>&#x9AD8;&#x65AF;&#x7B97;&#x5B50; gaussian_matrix</strong> &#x3001; <strong>&#x9A6C;&#x5C14;&#x7B97;&#x5B50; marr_matrix</strong> &#x548C; <strong>&#x76F8;&#x90BB;&#x50CF;&#x7D20;&#x5F52;&#x4E00;&#x5316;&#x7684;&#x504F;&#x79FB;&#x8DDD;&#x79BB; pixel_bias</strong> &#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x6267;&#x884C;&#x524D;&#x7531; CPU &#x8BA1;&#x7B97;&#x4E00;&#x6B21;&#x5373;&#x53EF;&#x3002;&#x4EE5; JavaScript &#x8BED;&#x6CD5;&#x5B9E;&#x73B0;&#xFF1A;</p>
-<pre><code class="lang-js">function pixel_bias(width, height) {
-    return new Float32Array([
-        1.0 / width, 1.0 / height
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pixel_bias</span>(<span class="hljs-params">width, height</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Float32Array</span>([
+        <span class="hljs-number">1.0</span> / width, <span class="hljs-number">1.0</span> / height
     ]);
 }
 
-function calculate_gaussian_kernel(step, delta) {
-    let n = step * 2 + 1;
-    let kernel = new Float32Array(n * n);
-    let factor_1 = 1.0 / (Math.sqrt(2.0 * Math.PI) * delta);
-    let factor_2 = 1.0 / (2.0 * delta * delta);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculate_gaussian_kernel</span>(<span class="hljs-params">step, delta</span>) </span>{
+    <span class="hljs-keyword">let</span> n = step * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">let</span> kernel = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Float32Array</span>(n * n);
+    <span class="hljs-keyword">let</span> factor_1 = <span class="hljs-number">1.0</span> / (<span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-number">2.0</span> * <span class="hljs-built_in">Math</span>.PI) * delta);
+    <span class="hljs-keyword">let</span> factor_2 = <span class="hljs-number">1.0</span> / (<span class="hljs-number">2.0</span> * delta * delta);
 
-    let normalize_div = 0;
-    for (let i = 0; i &lt; n; i++) {
-        for (let j = 0; j &lt; n; j++) {
-            let diff = Math.pow(i - step, 2) + Math.pow(j - step, 2);
-            kernel[j + n * i] = factor_1 * Math.exp(-diff * factor_2);
+    <span class="hljs-keyword">let</span> normalize_div = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {
+            <span class="hljs-keyword">let</span> diff = <span class="hljs-built_in">Math</span>.pow(i - step, <span class="hljs-number">2</span>) + <span class="hljs-built_in">Math</span>.pow(j - step, <span class="hljs-number">2</span>);
+            kernel[j + n * i] = factor_1 * <span class="hljs-built_in">Math</span>.exp(-diff * factor_2);
             normalize_div += kernel[i];
         }
     }
-    for (let i = 0; i &lt; kernel.length; i++) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; kernel.length; i++) {
         kernel[i] /= normalize_div;
     }
-    return kernel;
+    <span class="hljs-keyword">return</span> kernel;
 }
 
-function calculate_marr_kernel(step, delta) {
-    let n = step * 2 + 1;
-    let kernel = new Float32Array(n * n);
-    let factor_1 = 1.0 / (Math.PI * Math.pow(delta, 4)); // trick: normalized skip
-    let factor_2 = 1.0 / (2.0 * delta * delta);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculate_marr_kernel</span>(<span class="hljs-params">step, delta</span>) </span>{
+    <span class="hljs-keyword">let</span> n = step * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">let</span> kernel = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Float32Array</span>(n * n);
+    <span class="hljs-keyword">let</span> factor_1 = <span class="hljs-number">1.0</span> / (<span class="hljs-built_in">Math</span>.PI * <span class="hljs-built_in">Math</span>.pow(delta, <span class="hljs-number">4</span>)); <span class="hljs-comment">// trick: normalized skip</span>
+    <span class="hljs-keyword">let</span> factor_2 = <span class="hljs-number">1.0</span> / (<span class="hljs-number">2.0</span> * delta * delta);
 
-    let normalize_div = 0;
-    for (let i = 0; i &lt; n; i++) {
-        for (let j = 0; j &lt; n; j++) {
-            let diff = Math.pow(i - step, 2) + Math.pow(j - step, 2);
-            kernel[j + n * i] = /*factor_1 * (skip) */ (1 - diff * factor_2) * Math.exp(-diff * factor_2);
+    <span class="hljs-keyword">let</span> normalize_div = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {
+            <span class="hljs-keyword">let</span> diff = <span class="hljs-built_in">Math</span>.pow(i - step, <span class="hljs-number">2</span>) + <span class="hljs-built_in">Math</span>.pow(j - step, <span class="hljs-number">2</span>);
+            kernel[j + n * i] = <span class="hljs-comment">/*factor_1 * (skip) */</span> (<span class="hljs-number">1</span> - diff * factor_2) * <span class="hljs-built_in">Math</span>.exp(-diff * factor_2);
             normalize_div += kernel[i];
         }
     }
-    for (let i = 0; i &lt; kernel.length; i++) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; kernel.length; i++) {
         kernel[i] /= normalize_div;
     }
-    return kernel;
+    <span class="hljs-keyword">return</span> kernel;
 }
 </code></pre>
 <p>&#x81F3;&#x6B64;&#xFF0C;&#x9A6C;&#x5C14;&#x9510;&#x5316;&#x57FA;&#x672C;&#x5B8C;&#x6210;&#x3002;</p>
@@ -2299,7 +2423,7 @@ function calculate_marr_kernel(step, delta) {
 <p>&#x770B;&#x6765;&#x66F4;&#x7A33;&#x5B9A;&#x7684;&#x8FB9;&#x7F18;&#x68C0;&#x6D4B;&#xFF0C;&#x8FD8;&#x662F;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x53BB;&#x4E2D;&#x5FC3;&#x5316;&#x7684;&#x7D22;&#x8D1D;&#x5C14;&#x6EE4;&#x6CE2;&#x4E86;&#x3002;</p>
 </blockquote>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2024-07-19 10:00:35
+2024-07-23 08:39:29
 </span></footer>
                                 
                                 </section>
@@ -2343,7 +2467,7 @@ function calculate_marr_kernel(step, delta) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2.4 马尔滤波（Marr Filter）","level":"1.4.2.4","depth":3,"next":{"title":"3.2.5 索贝尔滤波（Sobel Filter）","level":"1.4.2.5","depth":3,"path":"Chapter_3/Language/cn/Docs_3_2_5.md","ref":"Chapter_3/Language/cn/Docs_3_2_5.md","articles":[]},"previous":{"title":"3.2.3 拉普拉斯滤波（Laplacian Filter）","level":"1.4.2.3","depth":3,"path":"Chapter_3/Language/cn/Docs_3_2_3.md","ref":"Chapter_3/Language/cn/Docs_3_2_3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","-lunr","-fontsettings","-highlight","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_3/Language/cn/Docs_3_2_4.md","mtime":"2024-07-19T02:00:35.950Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-20T07:43:01.826Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.2.4 马尔滤波（Marr Filter）","level":"1.4.2.4","depth":3,"next":{"title":"3.2.5 索贝尔滤波（Sobel Filter）","level":"1.4.2.5","depth":3,"path":"Chapter_3/Language/cn/Docs_3_2_5.md","ref":"Chapter_3/Language/cn/Docs_3_2_5.md","articles":[]},"previous":{"title":"3.2.3 拉普拉斯滤波（Laplacian Filter）","level":"1.4.2.3","depth":3,"path":"Chapter_3/Language/cn/Docs_3_2_3.md","ref":"Chapter_3/Language/cn/Docs_3_2_3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_3/Language/cn/Docs_3_2_4.md","mtime":"2024-07-23T00:39:29.610Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-24T03:59:02.501Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2351,6 +2475,10 @@ function calculate_marr_kernel(step, delta) {
         
     <script src="../../../gitbook/gitbook.js"></script>
     <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
     
         
         <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
