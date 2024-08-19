@@ -17,40 +17,143 @@
 
 #### 基础库（np.）的常用函数（简，仅列出名称）：
 
-1. 算术运算：[add](https://numpy.org/doc/stable/reference/generated/numpy.add.html), [subtract](https://numpy.org/doc/stable/reference/generated/numpy.subtract.html), [multiply](https://numpy.org/doc/stable/reference/generated/numpy.multiply.html), [divide](https://numpy.org/doc/stable/reference/generated/numpy.divide.html), [power](https://numpy.org/doc/stable/reference/generated/numpy.power.html), [mod](https://numpy.org/doc/stable/reference/generated/numpy.mod.html), [remainder](https://numpy.org/doc/stable/reference/generated/numpy.remainder.html)
-2. 比较运算：[greater](https://numpy.org/doc/stable/reference/generated/numpy.greater.html), [greater_equal](https://numpy.org/doc/stable/reference/generated/numpy.greater_equal.html), [less](https://numpy.org/doc/stable/reference/generated/numpy.less.html), [less_equal](https://numpy.org/doc/stable/reference/generated/numpy.less_equal.html), [equal](https://numpy.org/doc/stable/reference/generated/numpy.equal.html), [not_equal](https://numpy.org/doc/stable/reference/generated/numpy.not_equal.html)
-3. 逻辑运算：[logical_and](https://numpy.org/doc/stable/reference/generated/numpy.logical_and.html), [logical_or](https://numpy.org/doc/stable/reference/generated/numpy.logical_or.html), [logical_not](https://numpy.org/doc/stable/reference/generated/numpy.logical_not.html), [logical_xor](https://numpy.org/doc/stable/reference/generated/numpy.logical_xor.html)
-4. 基本统计：[mean](https://numpy.org/doc/stable/reference/generated/numpy.mean.html), [median](https://numpy.org/doc/stable/reference/generated/numpy.median.html), [std](https://numpy.org/doc/stable/reference/generated/numpy.std.html), [var](https://numpy.org/doc/stable/reference/generated/numpy.var.html), [min](https://numpy.org/doc/stable/reference/generated/numpy.amin.html), [max](https://numpy.org/doc/stable/reference/generated/numpy.amax.html), [sum](https://numpy.org/doc/stable/reference/generated/numpy.sum.html), [cumsum](https://numpy.org/doc/stable/reference/generated/numpy.cumsum.html), [prod](https://numpy.org/doc/stable/reference/generated/numpy.prod.html), [cumprod](https://numpy.org/doc/stable/reference/generated/numpy.cumprod.html)
-5. 排序搜索：[sort](https://numpy.org/doc/stable/reference/generated/numpy.sort.html), [argsort](https://numpy.org/doc/stable/reference/generated/numpy.argsort.html), [argmax](https://numpy.org/doc/stable/reference/generated/numpy.argmax.html), [argmin](https://numpy.org/doc/stable/reference/generated/numpy.argmin.html), [searchsorted](https://numpy.org/doc/stable/reference/generated/numpy.searchsorted.html)
-6. 三角函数：[sin](https://numpy.org/doc/stable/reference/generated/numpy.sin.html), [cos](https://numpy.org/doc/stable/reference/generated/numpy.cos.html), [tan](https://numpy.org/doc/stable/reference/generated/numpy.tan.html), [arcsin](https://numpy.org/doc/stable/reference/generated/numpy.arcsin.html), [arccos](https://numpy.org/doc/stable/reference/generated/numpy.arccos.html), [arctan](https://numpy.org/doc/stable/reference/generated/numpy.arctan.html), [arctan2](https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html)
-7. 双曲函数：[sinh](https://numpy.org/doc/stable/reference/generated/numpy.sinh.html), [cosh](https://numpy.org/doc/stable/reference/generated/numpy.cosh.html), [tanh](https://numpy.org/doc/stable/reference/generated/numpy.tanh.html), [arcsinh](https://numpy.org/doc/stable/reference/generated/numpy.arcsinh.html), [arccosh](https://numpy.org/doc/stable/reference/generated/numpy.arccosh.html), [arctanh](https://numpy.org/doc/stable/reference/generated/numpy.arctanh.html)
-8. 指数对数：[exp](https://numpy.org/doc/stable/reference/generated/numpy.exp.html), [expm1](https://numpy.org/doc/stable/reference/generated/numpy.expm1.html), [log](https://numpy.org/doc/stable/reference/generated/numpy.log.html), [log10](https://numpy.org/doc/stable/reference/generated/numpy.log10.html), [log2](https://numpy.org/doc/stable/reference/generated/numpy.log2.html), [log1p](https://numpy.org/doc/stable/reference/generated/numpy.log1p.html)
-9. 矩阵运算：[dot](https://numpy.org/doc/stable/reference/generated/numpy.dot.html), [vdot](https://numpy.org/doc/stable/reference/generated/numpy.vdot.html), [inner](https://numpy.org/doc/stable/reference/generated/numpy.inner.html), [outer](https://numpy.org/doc/stable/reference/generated/numpy.outer.html), [matmul](https://numpy.org/doc/stable/reference/generated/numpy.matmul.html)
-10. 直方图：[histogram](https://numpy.org/doc/stable/reference/generated/numpy.histogram.html), [histogram2d](https://numpy.org/doc/stable/reference/generated/numpy.histogram2d.html), [histogramdd](https://numpy.org/doc/stable/reference/generated/numpy.histogramdd.html)
-11. 多项式（**需依托 np.poly1d 多项式类**）：[poly](https://numpy.org/doc/stable/reference/generated/numpy.poly.html), [polyval](https://numpy.org/doc/stable/reference/generated/numpy.polyval.html), [polyfit](https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html), [roots](https://numpy.org/doc/stable/reference/generated/numpy.roots.html), [polyder](https://numpy.org/doc/stable/reference/generated/numpy.polyder.html), [polyint](https://numpy.org/doc/stable/reference/generated/numpy.polyint.html)
+1. 算术运算：
+   [add](https://numpy.org/doc/stable/reference/generated/numpy.add.html), 
+   [subtract](https://numpy.org/doc/stable/reference/generated/numpy.subtract.html), 
+   [multiply](https://numpy.org/doc/stable/reference/generated/numpy.multiply.html), 
+   [divide](https://numpy.org/doc/stable/reference/generated/numpy.divide.html), 
+   [power](https://numpy.org/doc/stable/reference/generated/numpy.power.html), 
+   [mod](https://numpy.org/doc/stable/reference/generated/numpy.mod.html), 
+   [remainder](https://numpy.org/doc/stable/reference/generated/numpy.remainder.html)
+2. 比较运算：
+   [greater](https://numpy.org/doc/stable/reference/generated/numpy.greater.html), 
+   [greater_equal](https://numpy.org/doc/stable/reference/generated/numpy.greater_equal.html), 
+   [less](https://numpy.org/doc/stable/reference/generated/numpy.less.html), 
+   [less_equal](https://numpy.org/doc/stable/reference/generated/numpy.less_equal.html), 
+   [equal](https://numpy.org/doc/stable/reference/generated/numpy.equal.html), 
+   [not_equal](https://numpy.org/doc/stable/reference/generated/numpy.not_equal.html)
+3. 逻辑运算：
+   [logical_and](https://numpy.org/doc/stable/reference/generated/numpy.logical_and.html), 
+   [logical_or](https://numpy.org/doc/stable/reference/generated/numpy.logical_or.html), 
+   [logical_not](https://numpy.org/doc/stable/reference/generated/numpy.logical_not.html), 
+   [logical_xor](https://numpy.org/doc/stable/reference/generated/numpy.logical_xor.html)
+4. 基本统计：
+   [mean](https://numpy.org/doc/stable/reference/generated/numpy.mean.html), 
+   [median](https://numpy.org/doc/stable/reference/generated/numpy.median.html), 
+   [std](https://numpy.org/doc/stable/reference/generated/numpy.std.html), 
+   [var](https://numpy.org/doc/stable/reference/generated/numpy.var.html), 
+   [min](https://numpy.org/doc/stable/reference/generated/numpy.amin.html), 
+   [max](https://numpy.org/doc/stable/reference/generated/numpy.amax.html), 
+   [sum](https://numpy.org/doc/stable/reference/generated/numpy.sum.html), 
+   [cumsum](https://numpy.org/doc/stable/reference/generated/numpy.cumsum.html), 
+   [prod](https://numpy.org/doc/stable/reference/generated/numpy.prod.html), 
+   [cumprod](https://numpy.org/doc/stable/reference/generated/numpy.cumprod.html)
+5. 排序搜索：
+   [sort](https://numpy.org/doc/stable/reference/generated/numpy.sort.html), 
+   [argsort](https://numpy.org/doc/stable/reference/generated/numpy.argsort.html), 
+   [argmax](https://numpy.org/doc/stable/reference/generated/numpy.argmax.html), 
+   [argmin](https://numpy.org/doc/stable/reference/generated/numpy.argmin.html), 
+   [searchsorted](https://numpy.org/doc/stable/reference/generated/numpy.searchsorted.html)
+6. 三角函数：
+   [sin](https://numpy.org/doc/stable/reference/generated/numpy.sin.html), 
+   [cos](https://numpy.org/doc/stable/reference/generated/numpy.cos.html), 
+   [tan](https://numpy.org/doc/stable/reference/generated/numpy.tan.html), 
+   [arcsin](https://numpy.org/doc/stable/reference/generated/numpy.arcsin.html), 
+   [arccos](https://numpy.org/doc/stable/reference/generated/numpy.arccos.html), 
+   [arctan](https://numpy.org/doc/stable/reference/generated/numpy.arctan.html), 
+   [arctan2](https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html)
+7. 双曲函数：
+   [sinh](https://numpy.org/doc/stable/reference/generated/numpy.sinh.html), 
+   [cosh](https://numpy.org/doc/stable/reference/generated/numpy.cosh.html), 
+   [tanh](https://numpy.org/doc/stable/reference/generated/numpy.tanh.html), 
+   [arcsinh](https://numpy.org/doc/stable/reference/generated/numpy.arcsinh.html), 
+   [arccosh](https://numpy.org/doc/stable/reference/generated/numpy.arccosh.html), 
+   [arctanh](https://numpy.org/doc/stable/reference/generated/numpy.arctanh.html)
+8. 指数对数：
+   [exp](https://numpy.org/doc/stable/reference/generated/numpy.exp.html), 
+   [expm1](https://numpy.org/doc/stable/reference/generated/numpy.expm1.html), 
+   [log](https://numpy.org/doc/stable/reference/generated/numpy.log.html), 
+   [log10](https://numpy.org/doc/stable/reference/generated/numpy.log10.html), 
+   [log2](https://numpy.org/doc/stable/reference/generated/numpy.log2.html), 
+   [log1p](https://numpy.org/doc/stable/reference/generated/numpy.log1p.html)
+9. 矩阵运算：
+   [dot](https://numpy.org/doc/stable/reference/generated/numpy.dot.html), 
+   [vdot](https://numpy.org/doc/stable/reference/generated/numpy.vdot.html), 
+   [inner](https://numpy.org/doc/stable/reference/generated/numpy.inner.html), 
+   [outer](https://numpy.org/doc/stable/reference/generated/numpy.outer.html), 
+   [matmul](https://numpy.org/doc/stable/reference/generated/numpy.matmul.html)
+10. 直方图：
+   [histogram](https://numpy.org/doc/stable/reference/generated/numpy.histogram.html), 
+   [histogram2d](https://numpy.org/doc/stable/reference/generated/numpy.histogram2d.html), 
+   [histogramdd](https://numpy.org/doc/stable/reference/generated/numpy.histogramdd.html)
+11. 多项式（**需依托 np.poly1d 多项式类**）：
+   [poly](https://numpy.org/doc/stable/reference/generated/numpy.poly.html), 
+   [polyval](https://numpy.org/doc/stable/reference/generated/numpy.polyval.html), 
+   [polyfit](https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html), 
+   [roots](https://numpy.org/doc/stable/reference/generated/numpy.roots.html), 
+   [polyder](https://numpy.org/doc/stable/reference/generated/numpy.polyder.html), 
+   [polyint](https://numpy.org/doc/stable/reference/generated/numpy.polyint.html)
 
 #### 线性代数扩展（np.linalg.）的常用函数（简，仅列出名称）：
 
-1. 矩阵分解：[cholesky](https://numpy.org/doc/stable/reference/generated/numpy.linalg.cholesky.html), [qr](https://numpy.org/doc/stable/reference/generated/numpy.linalg.qr.html), [svd](https://numpy.org/doc/stable/reference/generated/numpy.linalg.svd.html)
-2. 求逆和解线性方程组：[inv](https://numpy.org/doc/stable/reference/generated/numpy.linalg.inv.html), [pinv](https://numpy.org/doc/stable/reference/generated/numpy.linalg.pinv.html), [solve](https://numpy.org/doc/stable/reference/generated/numpy.linalg.solve.html)
-3. 特征值和特征向量：[eig](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eig.html), [eigh](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigh.html), [eigvals](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigvals.html), [eigvalsh](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigvalsh.html)
-4. 矩阵范数（L1/L2/inf）：[norm](https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html)
-5. 矩阵行列式和秩：[det](https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html), [matrix_rank](https://numpy.org/doc/stable/reference/generated/numpy.linalg.matrix_rank.html)
+1. 矩阵分解：
+   [cholesky](https://numpy.org/doc/stable/reference/generated/numpy.linalg.cholesky.html), 
+   [qr](https://numpy.org/doc/stable/reference/generated/numpy.linalg.qr.html), 
+   [svd](https://numpy.org/doc/stable/reference/generated/numpy.linalg.svd.html)
+2. 求逆和解线性方程组：
+   [inv](https://numpy.org/doc/stable/reference/generated/numpy.linalg.inv.html), 
+   [pinv](https://numpy.org/doc/stable/reference/generated/numpy.linalg.pinv.html), 
+   [solve](https://numpy.org/doc/stable/reference/generated/numpy.linalg.solve.html)
+3. 特征值和特征向量：
+   [eig](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eig.html), 
+   [eigh](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigh.html), 
+   [eigvals](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigvals.html), 
+   [eigvalsh](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigvalsh.html)
+4. 矩阵范数（L1/L2/inf）：
+   [norm](https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html)
+5. 矩阵行列式和秩：
+   [det](https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html), 
+   [matrix_rank](https://numpy.org/doc/stable/reference/generated/numpy.linalg.matrix_rank.html)
 
 #### 傅立叶变换扩展（np.fft.）的常用函数（简，仅列出名称）：
 
-1. 一维傅里叶变换：[fft](https://numpy.org/doc/stable/reference/generated/numpy.fft.fft.html), [ifft](https://numpy.org/doc/stable/reference/generated/numpy.fft.ifft.html)
-2. 二维傅里叶变换：[fft2](https://numpy.org/doc/stable/reference/generated/numpy.fft.fft2.html), [ifft2](https://numpy.org/doc/stable/reference/generated/numpy.fft.ifft2.html)
-3. 多维傅里叶变换：[fftn](https://numpy.org/doc/stable/reference/generated/numpy.fft.fftn.html), [ifftn](https://numpy.org/doc/stable/reference/generated/numpy.fft.ifftn.html)
-4. 一维快速傅立叶法：[rfft](https://numpy.org/doc/stable/reference/generated/numpy.fft.rfft.html), [irfft](https://numpy.org/doc/stable/reference/generated/numpy.fft.irfft.html)
-5. 一维亥姆霍兹变换：[hfft](https://numpy.org/doc/stable/reference/generated/numpy.fft.hfft.html), [ihfft](https://numpy.org/doc/stable/reference/generated/numpy.fft.ihfft.html)
+1. 一维傅里叶变换：
+   [fft](https://numpy.org/doc/stable/reference/generated/numpy.fft.fft.html), 
+   [ifft](https://numpy.org/doc/stable/reference/generated/numpy.fft.ifft.html)
+2. 二维傅里叶变换：
+   [fft2](https://numpy.org/doc/stable/reference/generated/numpy.fft.fft2.html), 
+   [ifft2](https://numpy.org/doc/stable/reference/generated/numpy.fft.ifft2.html)
+3. 多维傅里叶变换：
+   [fftn](https://numpy.org/doc/stable/reference/generated/numpy.fft.fftn.html), 
+   [ifftn](https://numpy.org/doc/stable/reference/generated/numpy.fft.ifftn.html)
+4. 一维快速傅立叶法：
+   [rfft](https://numpy.org/doc/stable/reference/generated/numpy.fft.rfft.html), 
+   [irfft](https://numpy.org/doc/stable/reference/generated/numpy.fft.irfft.html)
+5. 一维亥姆霍兹变换：
+   [hfft](https://numpy.org/doc/stable/reference/generated/numpy.fft.hfft.html), 
+   [ihfft](https://numpy.org/doc/stable/reference/generated/numpy.fft.ihfft.html)
 
 #### 随机数生成扩展（np.random.）的常用函数（简，仅列出名称）：
 
-1. 简单随机：[rand](https://numpy.org/doc/stable/reference/random/generated/numpy.random.rand.html), [randn](https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html), [randint](https://numpy.org/doc/stable/reference/random/generated/numpy.random.randint.html), [choice](https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html)
-2. 概率分布：[normal](https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html), [uniform](https://numpy.org/doc/stable/reference/random/generated/numpy.random.uniform.html), [binomial](https://numpy.org/doc/stable/reference/random/generated/numpy.random.binomial.html), [poisson](https://numpy.org/doc/stable/reference/random/generated/numpy.random.poisson.html), [exponential](https://numpy.org/doc/stable/reference/random/generated/numpy.random.exponential.html), [beta](https://numpy.org/doc/stable/reference/random/generated/numpy.random.beta.html), [gamma](https://numpy.org/doc/stable/reference/random/generated/numpy.random.gamma.html), [chisquare](https://numpy.org/doc/stable/reference/random/generated/numpy.random.chisquare.html)
-3. 乱序函数：[shuffle](https://numpy.org/doc/stable/reference/random/generated/numpy.random.shuffle.html), [permutation](https://numpy.org/doc/stable/reference/random/generated/numpy.random.permutation.html)
-4. 随机种子：[seed](https://numpy.org/doc/stable/reference/random/generated/numpy.random.seed.html)
+1. 简单随机：
+   [rand](https://numpy.org/doc/stable/reference/random/generated/numpy.random.rand.html), 
+   [randn](https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html), 
+   [randint](https://numpy.org/doc/stable/reference/random/generated/numpy.random.randint.html), 
+   [choice](https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html)
+2. 概率分布：
+   [normal](https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html), 
+   [uniform](https://numpy.org/doc/stable/reference/random/generated/numpy.random.uniform.html), 
+   [binomial](https://numpy.org/doc/stable/reference/random/generated/numpy.random.binomial.html), 
+   [poisson](https://numpy.org/doc/stable/reference/random/generated/numpy.random.poisson.html), 
+   [exponential](https://numpy.org/doc/stable/reference/random/generated/numpy.random.exponential.html), 
+   [beta](https://numpy.org/doc/stable/reference/random/generated/numpy.random.beta.html), 
+   [gamma](https://numpy.org/doc/stable/reference/random/generated/numpy.random.gamma.html), 
+   [chisquare](https://numpy.org/doc/stable/reference/random/generated/numpy.random.chisquare.html)
+3. 乱序函数：
+   [shuffle](https://numpy.org/doc/stable/reference/random/generated/numpy.random.shuffle.html), 
+   [permutation](https://numpy.org/doc/stable/reference/random/generated/numpy.random.permutation.html)
+4. 随机种子：
+   [seed](https://numpy.org/doc/stable/reference/random/generated/numpy.random.seed.html)
 
 其他如 **特殊函数扩展（np.special.）** 等，在具体使用时，可自行前往 **[官网档案馆](https://numpy.org/doc/)** 查阅。
 
@@ -69,28 +172,187 @@
 
 #### 基础库（pd.）的常用函数（简，仅列出名称）：
 
-1. 数据结构：[&lt;Series&gt;](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html), [&lt;DataFrame&gt;](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), [&lt;Index&gt;](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html)
-2. 时序结构：[&lt;DatetimeIndex&gt;](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html), [&lt;Timedelta&gt;](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.html), [&lt;Period&gt;](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.html)
-3. 数据创建：[read_csv](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html), [read_excel](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html), [read_sql](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html), [read_json](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html), [read_html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html), [read_clipboard](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_clipboard.html), [read_parquet](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_parquet.html), [read_feather](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_feather.html), [read_orc](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_orc.html), [read_sas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sas.html), [read_spss](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_spss.html), [read_stata](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_stata.html), [read_hdf](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_hdf.html), [read_pickle](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html)
-4. 数据导出：[to_csv](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html), [to_excel](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html), [to_sql](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html), [to_json](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html), [to_html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_html.html), [to_clipboard](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_clipboard.html), [to_parquet](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_parquet.html), [to_feather](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_feather.html), [to_orc](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_orc.html), [to_sas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sas.html), [to_spss](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_spss.html), [to_stata](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_stata.html), [to_hdf](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_hdf.html), [to_pickle](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_pickle.html)
-5. 数据变换：[assign](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.assign.html), [drop](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html), [rename](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html), [pivot](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html), [pivot_table](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html), [melt](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html), [stack](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.stack.html), [unstack](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.unstack.html), [get_dummies](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html)
-6. 数据聚合：[groupby](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html), [agg](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html), [aggregate](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html), [transform](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transform.html), [apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html), [rolling](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html), [expanding](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.expanding.html), [resample](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html)
-7. 数据清洗：[isnull](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.isnull.html), [notnull](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.notnull.html), [dropna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html), [fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html), [replace](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html), [interpolate](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.interpolate.html), [duplicated](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html), [drop_duplicates](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html)
-8. 数据合并：[merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html), [concat](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html), [join](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html), [append](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.append.html)
-9. 选择过滤：[loc](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html), [iloc](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html), [at](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.at.html), [iat](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iat.html), [ix](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.ix.html)
-10. 基本统计：[mean](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mean.html), [median](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.median.html), [std](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.std.html), [var](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.var.html), [min](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.min.html), [max](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.max.html), [sum](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sum.html), [cumsum](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cumsum.html), [prod](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.prod.html), [cumprod](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cumprod.html), [describe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html)
-
+1. 数据结构：
+   [&lt;Series&gt;](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html), 
+   [&lt;DataFrame&gt;](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), 
+   [&lt;Index&gt;](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html)
+2. 时序结构：
+   [&lt;DatetimeIndex&gt;](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html), 
+   [&lt;Timedelta&gt;](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.html), 
+   [&lt;Period&gt;](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.html)
+3. 数据创建：
+   [read_csv](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html), 
+   [read_excel](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html), 
+   [read_sql](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html), 
+   [read_json](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html), 
+   [read_html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html), 
+   [read_clipboard](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_clipboard.html), 
+   [read_parquet](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_parquet.html), 
+   [read_feather](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_feather.html), 
+   [read_orc](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_orc.html), 
+   [read_sas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sas.html), 
+   [read_spss](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_spss.html), 
+   [read_stata](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_stata.html), 
+   [read_hdf](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_hdf.html), 
+   [read_pickle](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html)
+4. 数据导出：
+   [to_csv](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html), 
+   [to_excel](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html), 
+   [to_sql](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html), 
+   [to_json](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html), 
+   [to_html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_html.html), 
+   [to_clipboard](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_clipboard.html), 
+   [to_parquet](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_parquet.html), 
+   [to_feather](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_feather.html), 
+   [to_orc](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_orc.html), 
+   [to_sas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sas.html), 
+   [to_spss](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_spss.html), 
+   [to_stata](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_stata.html), 
+   [to_hdf](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_hdf.html), 
+   [to_pickle](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_pickle.html)
+5. 数据变换：
+   [assign](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.assign.html), 
+   [drop](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html), 
+   [rename](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html), 
+   [pivot](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html), 
+   [pivot_table](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html), 
+   [melt](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html), 
+   [stack](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.stack.html), 
+   [unstack](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.unstack.html), 
+   [get_dummies](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html)
+6. 数据聚合：
+   [groupby](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html), 
+   [agg](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html), 
+   [aggregate](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html), 
+   [transform](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transform.html), 
+   [apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html), 
+   [rolling](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html), 
+   [expanding](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.expanding.html), 
+   [resample](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html)
+7. 数据清洗：
+   [isnull](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.isnull.html), 
+   [notnull](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.notnull.html), 
+   [dropna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html), 
+   [fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html), 
+   [replace](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html), 
+   [interpolate](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.interpolate.html), 
+   [duplicated](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html), 
+   [drop_duplicates](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html)
+8. 数据合并：
+   [merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html), 
+   [concat](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html), 
+   [join](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html), 
+   [append](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.append.html)
+9. 选择过滤：
+   [loc](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html), 
+   [iloc](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html), 
+   [at](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.at.html), 
+   [iat](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iat.html), 
+   [ix](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.ix.html)
+10. 基本统计：
+    [mean](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mean.html), 
+    [median](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.median.html), 
+    [std](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.std.html), 
+    [var](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.var.html), 
+    [min](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.min.html), 
+    [max](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.max.html), 
+    [sum](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sum.html), 
+    [cumsum](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cumsum.html), 
+    [prod](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.prod.html), 
+    [cumprod](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cumprod.html), 
+    [describe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html)
+    
 #### 数据结构扩展（pd.Series, pd.DataFrame）的辅助方法（简，仅列出名称）：
 
-1. Series 方法：[append](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.append.html), [drop](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.drop.html), [drop_duplicates](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.drop_duplicates.html), [dropna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dropna.html), [fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.fillna.html), [replace](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.replace.html), [interpolate](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.interpolate.html), [isnull](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.isnull.html), [notnull](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.notnull.html), [unique](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.unique.html), [value_counts](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html), [apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.apply.html), [map](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html), [astype](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.astype.html), [copy](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.copy.html), [shift](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.shift.html), [diff](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.diff.html), [pct_change](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.pct_change.html), [rank](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.rank.html), [sort_values](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sort_values.html), [sort_index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sort_index.html)
+1. **&lt;Series&gt;** 方法：
+   [append](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.append.html), 
+   [drop](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.drop.html), 
+   [drop_duplicates](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.drop_duplicates.html), 
+   [dropna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dropna.html), 
+   [fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.fillna.html), 
+   [replace](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.replace.html), 
+   [interpolate](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.interpolate.html), 
+   [isnull](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.isnull.html), 
+   [notnull](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.notnull.html), 
+   [unique](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.unique.html), 
+   [value_counts](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html), 
+   [apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.apply.html), 
+   [map](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html), 
+   [astype](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.astype.html), 
+   [copy](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.copy.html), 
+   [shift](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.shift.html), 
+   [diff](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.diff.html), 
+   [pct_change](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.pct_change.html), 
+   [rank](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.rank.html), 
+   [sort_values](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sort_values.html), 
+   [sort_index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sort_index.html)
 
-2. DataFrame 方法：[append](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.append.html), [drop](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html), [drop_duplicates](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html), [dropna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html), [fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html), [replace](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html), [interpolate](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.interpolate.html), [isnull](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.isnull.html), [notnull](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.notnull.html), [pivot](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html), [pivot_table](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html), [melt](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html), [stack](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.stack.html), [unstack](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.unstack.html), [get_dummies](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html), [merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html), [concat](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html), [join](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html), [groupby](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html), [agg](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html), [aggregate](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html), [transform](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transform.html), [apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html), [rolling](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html), [expanding](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.expanding.html), [resample](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html), [sort_values](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html), [sort_index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_index.html), [rank](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rank.html), [describe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html), [corr](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html), [cov](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cov.html), [hist](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.hist.html), [boxplot](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.boxplot.html), [plot](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html)
+2. **&lt;DataFrame&gt;** 方法：
+   [append](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.append.html), 
+   [drop](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html), 
+   [drop_duplicates](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html), 
+   [dropna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html), 
+   [fillna](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html), 
+   [replace](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html), 
+   [interpolate](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.interpolate.html), 
+   [isnull](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.isnull.html), 
+   [notnull](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.notnull.html), 
+   [pivot](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html), 
+   [pivot_table](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html), 
+   [melt](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html), 
+   [stack](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.stack.html), 
+   [unstack](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.unstack.html), 
+   [get_dummies](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html), 
+   [merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html), 
+   [concat](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html), 
+   [join](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html), 
+   [groupby](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html), 
+   [agg](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html), 
+   [aggregate](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html), 
+   [transform](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transform.html), 
+   [apply](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html), 
+   [rolling](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html), 
+   [expanding](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.expanding.html), 
+   [resample](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html), 
+   [sort_values](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html), 
+   [sort_index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_index.html), 
+   [rank](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rank.html), 
+   [describe](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html), 
+   [corr](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html), 
+   [cov](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cov.html), 
+   [hist](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.hist.html), 
+   [boxplot](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.boxplot.html), 
+   [plot](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html)
 
 #### 时间序列扩展（pd.DatetimeIndex, pd.Timedelta, pd.Period）的辅助方法（简）：
 
-1. DatetimeIndex 方法：[to_pydatetime](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_pydatetime.html), [to_period](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_period.html), [to_series](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_series.html), [to_frame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_frame.html), [normalize](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.normalize.html), [strftime](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.strftime.html), [snap](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.snap.html), [shift](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.shift.html), [tz_convert](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.tz_convert.html), [tz_localize](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.tz_localize.html), [floor](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.floor.html), [ceil](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.ceil.html), [round](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.round.html)
-2. Timedelta 方法：[total_seconds](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.total_seconds.html), [to_pytimedelta](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.to_pytimedelta.html), [components](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.components.html), [is_leap_year](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.is_leap_year.html)
-3. Period 方法：[asfreq](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.asfreq.html), [start_time](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.start_time.html), [end_time](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.end_time.html), [to_timestamp](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.to_timestamp.html), [strftime](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.strftime.html)
+1. **&lt;DatetimeIndex&gt;** 方法：
+   [to_pydatetime](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_pydatetime.html), 
+   [to_period](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_period.html), 
+   [to_series](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_series.html), 
+   [to_frame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_frame.html), 
+   [normalize](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.normalize.html), 
+   [strftime](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.strftime.html), 
+   [snap](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.snap.html), 
+   [shift](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.shift.html), 
+   [tz_convert](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.tz_convert.html), 
+   [tz_localize](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.tz_localize.html), 
+   [floor](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.floor.html), 
+   [ceil](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.ceil.html), 
+   [round](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.round.html)
+
+2. **&lt;Timedelta&gt;** 方法：
+   [total_seconds](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.total_seconds.html), 
+   [to_pytimedelta](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.to_pytimedelta.html), 
+   [components](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.components.html), 
+   [is_leap_year](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.is_leap_year.html)
+
+3. **&lt;Period&gt;** 方法：
+   [asfreq](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.asfreq.html), 
+   [start_time](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.start_time.html), 
+   [end_time](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.end_time.html), 
+   [to_timestamp](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.to_timestamp.html), 
+   [strftime](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.strftime.html)
 
 <br>
 
@@ -114,36 +376,155 @@
 
 #### 基础库（matplotlib.pyplot. as plt.）的常用函数（简，仅列出名称）：
 
-1. 图形容器：[&lt;Figure&gt;](https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure), [&lt;Axes&gt;](https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes), [&lt;Axes3D&gt;](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D)
-2. 样式类型：略（如 [&lt;FontProperties&gt;](https://matplotlib.org/stable/api/font_manager_api.html#matplotlib.font_manager.FontProperties) 等，有关样式有较多扩展库，详见官方文档）
-3. 创建图形和子图：[figure](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html), [subplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html), [subplots](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html), [add_subplot](https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.add_subplot), [subplots_adjust](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html)
-4. 图形导入：[imread](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imread.html), [imshow](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html)
-5. 绘图函数：[plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html), [scatter](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html), [bar](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html), [barh](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html), [hist](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html), [pie](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html), [boxplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html), [errorbar](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html), [fill](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill.html), [fill_between](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill_between.html), [stackplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.stackplot.html), [stem](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.stem.html), [step](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.step.html)
-6. 图形属性：[title](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html), [xlabel](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html), [ylabel](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html), [xlim](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlim.html), [ylim](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylim.html), [xticks](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html), [yticks](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html), [grid](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.grid.html), [legend](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html), [text](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html), [annotate](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html)
-7. 图形样式：[style.use](https://matplotlib.org/stable/api/_as_gen/matplotlib.style.use.html), [set_cmap](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.set_cmap.html), [get_cmap](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.get_cmap.html), [colormaps](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colormaps.html)
-8. 线条样式：[set_linestyle](https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_linestyle.html), [set_linewidth](https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_linewidth.html), [set_color](https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_color.html), [set_marker](https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_marker.html), [set_markersize](https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_markersize.html)
-9. 文本样式：[set_fontsize](https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontsize.html), [set_fontweight](https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontweight.html), [set_fontstyle](https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontstyle.html), [set_fontname](https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontname.html)
-10. 布局样式：[tight_layout](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html), [subplots_adjust](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html), [get_current_fig_manager](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.get_current_fig_manager.html)
-11. 交互工具：[ginput](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ginput.html), [waitforbuttonpress](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.waitforbuttonpress.html), [connect](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.connect.html), [disconnect](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.disconnect.html)
-12. 事件处理：[mpl_connect](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.connect.html), [mpl_disconnect](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.disconnect.html)
-13. 图形保存：[savefig](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html)
+1. 图形容器：
+   [&lt;Figure&gt;](https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure), 
+   [&lt;Axes&gt;](https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes), 
+   [&lt;Axes3D&gt;](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D)
+2. 样式类型：
+   略（如 [&lt;FontProperties&gt;](https://matplotlib.org/stable/api/font_manager_api.html#matplotlib.font_manager.FontProperties) 等，有关样式有较多扩展库，详见官方文档）
+3. 创建图形和子图：
+   [figure](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html), 
+   [subplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html), 
+   [subplots](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html), 
+   [add_subplot](https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.add_subplot), 
+   [subplots_adjust](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html)
+4. 图形导入：
+   [imread](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imread.html), 
+   [imshow](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html)
+5. 绘图函数：
+   [plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html), 
+   [scatter](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html), 
+   [bar](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html), 
+   [barh](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html), 
+   [hist](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html), 
+   [pie](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html), 
+   [boxplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html), 
+   [errorbar](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html), 
+   [fill](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill.html), 
+   [fill_between](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill_between.html), 
+   [stackplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.stackplot.html), 
+   [stem](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.stem.html), 
+   [step](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.step.html)
+6. 图形属性：
+   [title](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html), 
+   [xlabel](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html), 
+   [ylabel](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html), 
+   [xlim](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlim.html), 
+   [ylim](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylim.html), 
+   [xticks](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html), 
+   [yticks](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html), 
+   [grid](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.grid.html), 
+   [legend](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html), 
+   [text](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html), 
+   [annotate](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html)
+7. 图形样式：
+   [style.use](https://matplotlib.org/stable/api/_as_gen/matplotlib.style.use.html), 
+   [set_cmap](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.set_cmap.html), 
+   [get_cmap](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.get_cmap.html), 
+   [colormaps](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colormaps.html)
+8. 线条样式：
+   [set_linestyle](https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_linestyle.html), 
+   [set_linewidth](https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_linewidth.html), 
+   [set_color](https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_color.html), 
+   [set_marker](https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_marker.html), 
+   [set_markersize](https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_markersize.html)
+9. 文本样式：
+   [set_fontsize](https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontsize.html), 
+   [set_fontweight](https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontweight.html), 
+   [set_fontstyle](https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontstyle.html), 
+   [set_fontname](https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontname.html)
+10. 布局样式：
+   [tight_layout](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html), 
+   [subplots_adjust](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html), 
+   [get_current_fig_manager](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.get_current_fig_manager.html)
+11. 交互工具：
+   [ginput](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ginput.html), 
+   [waitforbuttonpress](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.waitforbuttonpress.html), 
+   [connect](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.connect.html), 
+   [disconnect](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.disconnect.html)
+12. 事件处理：
+   [mpl_connect](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.connect.html), 
+   [mpl_disconnect](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.disconnect.html)
+13. 图形保存：
+   [savefig](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html)
 
 #### 颜色映射（matplotlib.cm. as cm.）的常用函数（简，仅列出名称）：
 
-1. 映射对象（颜色映射结构）：[&lt;ScalarMappable&gt;](https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.ScalarMappable)
-2. 映射注册与获取：[get_cmap](https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.get_cmap), [register_cmap](https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.register_cmap)
-3. 常用映射：[viridis](https://matplotlib.org/stable/tutorials/colors/colormaps.html#viridis), [plasma](https://matplotlib.org/stable/tutorials/colors/colormaps.html#plasma), [inferno](https://matplotlib.org/stable/tutorials/colors/colormaps.html#inferno), [magma](https://matplotlib.org/stable/tutorials/colors/colormaps.html#magma)
+1. 映射对象（颜色映射结构）：
+   [&lt;ScalarMappable&gt;](https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.ScalarMappable)
+2. 映射注册与获取：
+   [get_cmap](https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.get_cmap), 
+   [register_cmap](https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.register_cmap)
+3. 常用映射：
+   [viridis](https://matplotlib.org/stable/tutorials/colors/colormaps.html#viridis), 
+   [plasma](https://matplotlib.org/stable/tutorials/colors/colormaps.html#plasma), 
+   [inferno](https://matplotlib.org/stable/tutorials/colors/colormaps.html#inferno), 
+   [magma](https://matplotlib.org/stable/tutorials/colors/colormaps.html#magma)
 
 #### 图形容器（plt.Figure, plt.Axes）的常用函数（简，仅列出名称）：
 
-1. Figure 方法：[add_subplot](https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.add_subplot), [add_axes](https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.add_axes), [subplots](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html), [subplots_adjust](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html), [savefig](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html), [clf](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.clf.html), [gca](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html), [tight_layout](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html), [subplots_adjust](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html), [get_current_fig_manager](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.get_current_fig_manager.html)
-2. Axes 方法：[plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html), [scatter](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.scatter.html), [bar](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.bar.html), [barh](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.barh.html), [hist](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html), [pie](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.pie.html), [boxplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.boxplot.html), [errorbar](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.errorbar.html), [fill](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.fill.html), [fill_between](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.fill_between.html), [stackplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.stackplot.html), [stem](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.stem.html), [step](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.step.html), [set_title](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_title.html), [set_xlabel](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html), [set_ylabel](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_ylabel.html), [set_xlim](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlim.html), [set_ylim](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_ylim.html), [set_xticks](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xticks.html), [set_yticks](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_yticks.html), [grid](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.grid.html), [legend](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.legend.html), [text](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.text.html), [annotate](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.annotate.html), [cla](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.cla.html), [twinx](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.twinx.html), [twiny](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.twiny.html), [set_aspect](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_aspect.html), [set_facecolor](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_facecolor.html)
+1. **&lt;Figure&gt;** 方法：
+   [add_subplot](https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.add_subplot), 
+   [add_axes](https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.add_axes), 
+   [subplots](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html), 
+   [subplots_adjust](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html), 
+   [savefig](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html), 
+   [clf](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.clf.html), 
+   [gca](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html), 
+   [tight_layout](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html), 
+   [subplots_adjust](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html), 
+   [get_current_fig_manager](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.get_current_fig_manager.html)
+
+2. **&lt;Axes&gt;** 方法：
+   [plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html), 
+   [scatter](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.scatter.html), 
+   [bar](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.bar.html), 
+   [barh](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.barh.html), 
+   [hist](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html), 
+   [pie](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.pie.html), 
+   [boxplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.boxplot.html), 
+   [errorbar](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.errorbar.html), 
+   [fill](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.fill.html), 
+   [fill_between](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.fill_between.html), 
+   [stackplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.stackplot.html), 
+   [stem](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.stem.html), 
+   [step](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.step.html), 
+   [set_title](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_title.html), 
+   [set_xlabel](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html), 
+   [set_ylabel](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_ylabel.html), 
+   [set_xlim](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlim.html), 
+   [set_ylim](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_ylim.html), 
+   [set_xticks](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xticks.html), 
+   [set_yticks](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_yticks.html), 
+   [grid](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.grid.html), 
+   [legend](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.legend.html), 
+   [text](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.text.html), 
+   [annotate](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.annotate.html), 
+   [cla](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.cla.html), 
+   [twinx](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.twinx.html), 
+   [twiny](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.twiny.html), 
+   [set_aspect](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_aspect.html), 
+   [set_facecolor](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_facecolor.html)
 
 #### 3D 绘图（mpl_toolkits.mplot3d.）的常用函数（简，仅列出名称）：
 
-1. 3D 图形容器：[&lt;Axes3D&gt;](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D)
-2. 3D 图形属性：[set_xlabel](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_xlabel), [set_ylabel](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_ylabel), [set_zlabel](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_zlabel), [set_xlim](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_xlim), [set_ylim](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_ylim), [set_zlim](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_zlim), [view_init](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.view_init)
-3. 常用通用方法：[text](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.text), [annotate](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.annotate), [grid](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.grid), [legend](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.legend), [set_aspect](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_aspect), [set_facecolor](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_facecolor)
+1. 3D 图形容器：
+   [&lt;Axes3D&gt;](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D)
+2. 3D 图形属性：
+   [set_xlabel](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_xlabel), 
+   [set_ylabel](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_ylabel), 
+   [set_zlabel](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_zlabel), 
+   [set_xlim](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_xlim), 
+   [set_ylim](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_ylim), 
+   [set_zlim](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_zlim), 
+   [view_init](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.view_init)
+3. 常用通用方法：
+   [text](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.text), 
+   [annotate](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.annotate), 
+   [grid](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.grid), 
+   [legend](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.legend), 
+   [set_aspect](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_aspect), 
+   [set_facecolor](https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_facecolor)
 
 其他如 **描绘效果扩展（matplotlib.patheffects）** 等，在具体使用时，可自行前往 **[官网档案馆](https://matplotlib.org/stable/users/index.html)** 查阅。
 
