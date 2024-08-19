@@ -170,7 +170,7 @@ stream = p.open(
 
 ## **Librosa**
 
-**Librosa** 是一个功能强大且易于使用的 **音频/乐理（工程）科学分析库**，成体系的提供了用于 **音频特征提取**、**节拍节奏分析**、**音高（工程）估计**、**音频效果器（滤波、特效接口）** 等处理的算法实现。其设计理念来自于 SciPy 2015 年的第十四届 Python 科学大会中，有关音频处理、音频潜藏信息提取与分析快捷化的讨论 [\[6\]][ref] 。因此，在设计之初就完全采用了，与其他科学计算库（如 NumPy、SciPy）和可视化库（主要指 Matplotlib）的 **无缝集成**。而极强的分析能力和可操作性（工程层面），使 Librosa 成为了我们做 **音频分析与操作时的重要工具**。
+**Librosa** 是一个功能强大且易于使用的 **音频/乐理（工程）科学分析原生 Python 库**，成体系的提供了用于 **音频特征提取**、**节拍节奏分析**、**音高（工程）估计**、**音频效果器（滤波、特效接口）** 等处理的算法实现。其设计理念来自于 SciPy 2015 年的第十四届 Python 科学大会中，有关音频处理、音频潜藏信息提取与分析快捷化的讨论 [\[6\]][ref] 。因此，在设计之初就完全采用了，与其他科学计算库（如 NumPy、SciPy）和可视化库（主要指 Matplotlib）的 **无缝集成**。而极强的分析能力和可操作性（工程层面），使 Librosa 成为了我们做 **音频分析与操作时的重要工具**。
 
 **必须熟练掌握。**
 
@@ -472,6 +472,196 @@ stream = p.open(
 
 Librosa 在音频方面，涵盖了大多数基本的科学分析手段，足够一般工程使用。
 
-但在数据科学方面的高度倾注，也让 Librosa 的 **实时性相对有所降低**（本质为复杂度和精度上升，所伴随算力消耗的升高）。可若此时我们对误差有相对较高的容忍度，且更**希望音频处理足够实时和高效时**，就得采用 Aubio 库来达成这一点了。**Aubio 和 Librosa 的特性相反，是满足这种情况有效补充手段。**
+但在 **数据科学方面** 和 **集成性** 的高度倾注，也让 Librosa 的 **实时性相对有所降低**（本质为复杂度和精度上升，所伴随算力消耗的升高）。可若此时我们对误差有相对较高的容忍度，且更**希望音频处理足够实时和高效时**，就得采用 Aubio 库来达成这一点了。**Aubio 和 Librosa 的特性相反，是满足这种情况有效补充手段。**
+
+## **Aubio**
+
+**Aubio** 是主要用于 **音乐信息检索（MIR [Music Information Retrieval]）** 的 **跨平台轻量级分析库**。设计之初就是期望实时进行 MIR 使 **Aubio 采用了 C语言 作为库的核心语言**。不过，因其已在自身的开源项目中，实现了 Python 的套接调用入口 [7] ，我们仍然可以在 Python 中使用。
+
+功能性方面，Aubio 和 Librosa 在音频浅层信息处理上，如果排除效率因素，则几乎不相上下。但 Aubio 的处理效率，不论从整体架构还是本位支撑上，都着实比 Librosa 更加高效。
+
+因此，在音频分析领域，对于类似 **‘音高检测’ 等以实时性作为主要求的分析点**，我们常采用 Aubio 而不是 Librosa 处理。而对于 梅尔频率倒谱系数（MFCC）之类的科学分析，则多数用 Librosa 解决，虽然 Aubio 也有此功能。除此外，科学分析不以 Aubio 合并解决的另一原因，还在于 Aubio 对主流科学计算库的兼容程度，要略逊 Librosa 一筹，并向当局限。即有利有弊。
+
+此外，**相比 Librosa，Aubio 仅能提供相对基础的分析**。
+
+#### 主要功能：
+
+1. **实时处理能力**，面向低延迟的音频处理能力，专为快速高效设计
+2. **专精通用检测**，提供 节拍检测、起音检测、音符分割等通用基础音频分析
+3. **简易实时效果**，提供快速重采样、过滤、归一化能力，**只能实现部分简易效果**
+4. **跨平台支持**，可以在主流操作系统（Windows、macOS、Linux）上运行
+5. **有限集成性**，提供 Python 入口，虽不完美兼容计算库，但仍可有效利用实时特性
+6. **受局限的调用方式，但官方提供了很多样例，学习门槛较低**
+
+#### 基础库（aubio.）对常用过程的类封装（简，仅列出名称）：
+
+1. 数据读写：
+   [&lt;Source&gt;](https://aubio.readthedocs.io/en/latest/py_io.html#aubio.source)、
+   [&lt;Sink&gt;](https://aubio.readthedocs.io/en/latest/py_io.html#aubio.sink)
+2. 乐理分析：
+   [&lt;Pitch&gt;](https://aubio.readthedocs.io/en/latest/py_analysis.html#aubio.pitch)、
+   [&lt;Tempo&gt;](https://aubio.readthedocs.io/en/latest/py_analysis.html#aubio.tempo)、
+   [&lt;Onset&gt;](https://aubio.readthedocs.io/en/latest/py_analysis.html#aubio.onset)、
+   [&lt;Notes&gt;](https://aubio.readthedocs.io/en/latest/py_analysis.html#aubio.notes)、
+3. 频谱分析：
+   [&lt;DCT&gt;](https://aubio.readthedocs.io/en/latest/py_spectral.html#aubio.dct)、
+   [&lt;FFT&gt;](https://aubio.readthedocs.io/en/latest/py_spectral.html#aubio.fft)、
+   [&lt;MFCC&gt;](https://aubio.readthedocs.io/en/latest/py_spectral.html#aubio.mfcc)、
+   [&lt;FilterBank&gt;](https://aubio.readthedocs.io/en/latest/py_spectral.html#aubio.filterbank)、
+   [&lt;SpecDesc&gt;](https://aubio.readthedocs.io/en/latest/py_spectral.html#aubio.specdesc)、
+   [&lt;PVOC&gt;](https://aubio.readthedocs.io/en/latest/py_spectral.html#aubio.pvoc)
+4. 简易滤波：
+   [&lt;DigitalFilter&gt;](https://aubio.readthedocs.io/en/latest/py_temporal.html#aubio.digital_filter)
+
+#### 一些常用过程封装的常用操作简示（非所有，仅列出名称）：
+1. 音高 **&lt;Pitch&gt;** 相关：\[entity\](\[source\]), \[entity\].set_unit, \[entity\].set_tolerance
+2. 节奏 **&lt;Tempo&gt;** 相关：\[entity\](\[source\]), \[entity\].get_bpm
+3. 起音 **&lt;Onset&gt;** 检测：\[entity\](\[source\]), \[entity\].set_threshold
+4. 音频写入 **&lt;Sink&gt;** 类：
+   [\[entity\].close](https://aubio.readthedocs.io/en/latest/py_io.html#aubio.sink.close)
+5. 音频读取 **&lt;Source&gt;** 类：
+   [\[entity\].seek](https://aubio.readthedocs.io/en/latest/py_io.html#aubio.source.seek), 
+   [\[entity\].close](https://aubio.readthedocs.io/en/latest/py_io.html#aubio.source.close)
+
+官方样例，可从 **[项目官网](https://github.com/aubio/aubio)** 获取，而各个封装结构内的 **额外参数配置/获取方式**，可查阅 **[官方档案馆查阅](https://aubio.readthedocs.io/en/latest/)** 。
+
+<br>
+
+由于是 C语言库，其 Python 套接后的使用形式，也 **相对更接近 C 的使用习惯**。所以，Aubio 的的过程类，**在创建实体时就需要传入配置参数**，如下例：
+
+```python
+# 创建音频源读取实例
+source = aubio.source('example.wav', 44100, 512)
+
+# 创建音频写入实例
+sink = aubio.sink('output.wav', 44100, 1)
+
+# 创建音高检测实例
+pitch_o = aubio.pitch("yin", 1024, 512, 44100)
+pitch_o.set_unit("Hz")
+pitch_o.set_silence(-40)
+
+# 创建节拍检测实例
+tempo_o = aubio.tempo("default", 1024, 512, 44100)
+
+# 创建起音检测实例
+onset_o = aubio.onset("default", 1024, 512, 44100)
+
+# 创建音调检测实例
+notes_o = aubio.notes("default", 1024, 512, 44100)
+
+# 创建离散余弦变换实例
+dct_o = aubio.cqt(16)
+
+# 创建快速傅里叶变换实例
+fft_o = aubio.fft(1024)
+
+# 创建梅尔频率倒谱系数实例
+mfcc_o = aubio.mfcc(40, 1024, 44100)
+
+# 创建滤波器组实例
+filterbank_o = aubio.filterbank(40, 1024)
+
+# 创建频谱描述符实例
+specdesc_o = aubio.specdesc(aubio.specdesc_type.centroid, 1024)
+
+# 创建相位声码器实例
+pvoc_o = aubio.pvoc(1024, 512)
+```
+
+上述过程中，我们进行了一些配置，基本涵盖了 Aubio 在 Python 上的 **大部分经常被使用到的实用功能** 。以上例中的配置，对创建的实体意义进行说明，有：
+- **音频读取（&lt;Source&gt;）**：读取 example.wav，采样率 44100 Hz，每次读取 512 帧
+- **音频写入（&lt;Sink&gt;）**：写入 output.wav，采样率 44100 Hz，单声道
+- **音高检测（&lt;Pitch&gt;）**：yin 算法，窗口 1024/跳频 512/采样率 44100 Hz，静音阈 -40 dB
+- **节拍检测（&lt;Tempo&gt;）**：使用默认算法，窗口 1024，跳频 512，采样率 44100 Hz
+- **起音检测（&lt;Onset&gt;）**：使用默认算法，窗口 1024，跳频 512，采样率 44100 Hz
+- **音调检测（&lt;Notes&gt;）**：使用默认音集，窗口 1024，跳频 512，采样率 44100 Hz
+- **离散余弦变换（&lt;DCT&gt;）**：离散余弦变换，以 16 个由短至长余弦周期构成解集（见前文）
+- **快速傅里叶变换（&lt;FFT&gt;）**：快速傅里叶变换，窗口 1024
+- **梅尔频率倒谱系数（&lt;MFCC&gt;）**：提取 MFCC，梅尔带 40，窗口 1024，采样率 44100 Hz
+- **滤波器组（&lt;FilterBank&gt;）**：分解为 40 个频率带，窗口 1024
+- **频谱描述符（&lt;SpecDesc&gt;）**：提取频谱描述符，计算频谱流，窗口 1024
+- **相位声码器（&lt;PVOC&gt;）**：配置相位声码器，窗口 1024/每次取 512 个样本 **（即跳频 512）**
+
+而其使用时的方式，由于是以 **\_\_call\_\_** 的 Python 调用实现的，有：
+
+```python
+# 读取音频数据并处理
+while True:
+    samples, read = source()
+    
+    # 音高检测
+    pitch = pitch_o(samples)[0]
+    print(f"Detected pitch: {pitch} Hz")
+    
+    # 节拍检测
+    is_beat = tempo_o(samples)
+    if is_beat:
+        print(f"Beat detected at {source.positions}")
+    
+    # 起音检测
+    is_onset = onset_o(samples)
+    if is_onset:
+        print(f"Onset detected at {source.positions}")
+    
+   # 音调检测
+    notes = notes_o(samples)
+    print(f"Detected notes: {notes}")
+
+    # 离散余弦变换
+    dct_data = dct_o(samples)
+    print(f"DCT Data: {dct_data}")
+
+    # 快速傅里叶变换
+    fft_data = fft_o(samples)
+    print(f"FFT Data: {fft_data}")
+       
+    # 提取梅尔频率倒谱系数
+    mfcc_data = mfcc_o(samples)
+    print(f"MFCC Data: {mfcc_data}")
+    
+    # 滤波处理
+    filtered_data = filterbank_o(samples)
+    print(f"Filtered Data: {filtered_data}")
+    
+    # 提取频谱描述符
+    specdesc_data = specdesc_o(samples)
+    print(f"Spectral Descriptor: {specdesc_data}")
+    
+   # 使用 pvoc 对象处理样本
+    spec = pvoc_o(samples)
+    spectrogram.append(spec)
+   
+    # 写入音频数据
+    sink(samples, read)
+    
+    if read < 512:
+        break
+
+# 将结果转换为 NumPy 数组
+spectrogram = np.array([s for s in spectrogram])
+```
+
+即，直接用创建并配置好的对应功能实体，循环取 **&lt;Source&gt;** 获取的 **采样片段 samples** 传入，就可以得到检测处理结果了。可见，Aubio 的使用非常的 **“面向过程”**，创建出的实体，与其说是 “对象”，不如说是对 **“过程的封装”**。
+
+从 Aubio 的设计体现出了，其作为库的有限调用方式，**并没有为使用者提供基于调用侧的功能扩展入口**。
+
+所以，除实时处理外，Aubio 的能力有限。只适合作为 **补充手段** 应用于分析中。
+
+<br>
+
+四个关键音频库介绍完毕，那么现在，让我们用它们做些简单的实践。
+
+---
+
+## **简单练习：用 常用音频库 完成 带有实时频响图的音频播放器**
+
+为了更贴近数据处理中所面临的真实情况，我们这里使用 Google 开源的 **[加利福尼亚州模拟房地产统计信息](https://download.mlcc.google.cn/mledu-datasets/california_housing_train.csv)**，作为数据源。
+
+练习事例按照标准工程工作流进行。
+
+#### 第一步，确立已知信息：
+
+
 
 [ref]: References_5.md
