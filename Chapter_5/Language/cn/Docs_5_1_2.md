@@ -476,7 +476,7 @@ Librosa 在音频方面，涵盖了大多数基本的科学分析手段，足够
 
 ## **Aubio**
 
-**Aubio** 是主要用于 **音乐信息检索（MIR [Music Information Retrieval]）** 的 **跨平台轻量级分析库**。设计之初就是期望实时进行 MIR 使 **Aubio 采用了 C语言 作为库的核心语言**。不过，因其已在自身的开源项目中，实现了 Python 的套接调用入口 [7] ，我们仍然可以在 Python 中使用。
+**Aubio** 是主要用于 **音乐信息检索（MIR [Music Information Retrieval]）** 的 **跨平台轻量级分析库**。设计之初就是期望实时进行 MIR 使 **Aubio 采用了 C语言 作为库的核心语言**。不过，因其已在自身的开源项目中，实现了 Python 的套接调用入口 [\[7\]][ref] ，我们仍然可以在 Python 中使用。
 
 功能性方面，Aubio 和 Librosa 在音频浅层信息处理上，如果排除效率因素，则几乎不相上下。但 Aubio 的处理效率，不论从整体架构还是本位支撑上，都着实比 Librosa 更加高效。
 
