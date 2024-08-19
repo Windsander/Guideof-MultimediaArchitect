@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 24 Jul 2024 07:44:46 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 19 Aug 2024 08:48:57 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -955,6 +955,13 @@
             <description><![CDATA[工程里对 数据分析和科学计算 的过程中，常用数学库是不可或缺的工具。这些库不仅提供了高效的数据处理能力，还为我们提供了 丰富的数学函数 和 可视化工具。其中，最为重要的库有三个，即 Numpy、Pandas、Mateplotlib，分别对应 [ 基础计算、数理统计、图表绘制 ] 的需求。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）]]></title>
+            <description><![CDATA[在完成对基础库的熟悉后，我们接下来需要做的就是对工程中，音视频分析的相关核心功能库的学习。以音频分析库为切入点。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
     </channel>

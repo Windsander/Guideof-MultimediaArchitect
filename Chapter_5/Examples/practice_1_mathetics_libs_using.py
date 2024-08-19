@@ -44,12 +44,13 @@ def preprocess_features(data):
     return processed_features
 
 
-def preprocess_targets(data):
+def preprocess_targets(data, need_normalize):
     """
     Preprocess the target values from the data.
 
     Args:
         data (pd.DataFrame): The input data containing the target values.
+        need_normalize: Whether to normalize the output median_house_value
 
     Returns:
         pd.DataFrame: A DataFrame containing the processed target values.
@@ -61,21 +62,9 @@ def preprocess_targets(data):
     output_targets["median_house_value"] = (
             data["median_house_value"] / 1000.0
     )
+    if need_normalize:
+        output_targets["median_house_value"] /= output_targets["median_house_value"].max()
     return output_targets
-
-
-def construct_feature_columns(input_features):
-    """
-    Construct TensorFlow feature columns from the input features.
-
-    Args:
-        input_features (list): A list of feature names.
-
-    Returns:
-        set: A set of TensorFlow feature columns.
-    """
-    return set([tf.feature_column.numeric_column(feature)
-                for feature in input_features])
 
 
 def ploting_2d_histogram(examples, targets):
@@ -108,20 +97,21 @@ def ploting_2d_histogram(examples, targets):
         examples["longitude"],
         examples["latitude"],
         cmap="coolwarm",
-        c=targets["median_house_value"] / targets["median_house_value"].max()
+        c=targets
     )
 
     # Display the plot
     plt.show()
 
 
-def ploting_3d_histogram(examples, targets):
+def ploting_3d_histogram(examples, targets, z_label):
     """
     Plot a 3D histogram of the examples and targets.
 
     Args:
         examples (pd.DataFrame): The input features to plot.
         targets (pd.DataFrame): The target values to plot.
+        z_label (string): The Z-Label descriptions
 
     Returns:
         None
@@ -136,23 +126,20 @@ def ploting_3d_histogram(examples, targets):
     ax.set_title("California Housing 3D Data")
     ax.set_xlabel("Longitude")
     ax.set_ylabel("Latitude")
-    ax.set_zlabel("Median House Value (in $1000's)")
-
-    # Normalize the house values for color mapping
-    normalized_values = targets["median_house_value"] / targets["median_house_value"].max()
+    ax.set_zlabel(z_label)
 
     # Create a 3D scatter plot
     scatter = ax.scatter(
         examples["longitude"],
         examples["latitude"],
-        targets["median_house_value"],
-        c=normalized_values,
+        targets,
+        c=targets,
         cmap="coolwarm"
     )
 
     # Add a color bar which maps values to colors
     cbar = fig.colorbar(scatter, ax=ax, shrink=0.5, aspect=5)
-    cbar.set_label('Normalized Median House Value')
+    cbar.set_label('Color State')
 
     # <3D special>: Set initial view angle
     ax.view_init(elev=30, azim=30)
@@ -162,10 +149,11 @@ def ploting_3d_histogram(examples, targets):
 
 
 total_examples = preprocess_features(california_housing_dataframe.head(17000))
-total_targets = preprocess_targets(california_housing_dataframe.head(17000))
+total_targets = preprocess_targets(california_housing_dataframe.head(17000), True)
 print("total::\n")
 print(total_examples.describe())
 print(total_targets.describe())
 
-ploting_2d_histogram(total_examples, total_targets)
-ploting_3d_histogram(total_examples, total_targets)
+ploting_2d_histogram(total_examples, total_targets["median_house_value"])
+ploting_3d_histogram(total_examples, total_targets["median_house_value"], "Median House Value (in $1000's)")
+ploting_3d_histogram(total_examples, total_examples["rooms_per_person"], "Rooms/Person")

@@ -98,7 +98,7 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Docs_5_1_2.md" />
+    <link rel="next" href="Docs_5_1_2.html" />
     
     
     <link rel="prev" href="Docs_5_1.html" />
@@ -2048,12 +2048,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.2" data-path="Docs_5_1_2.md">
+        <li class="chapter " data-level="1.6.1.2" data-path="Docs_5_1_2.html">
             
-                <span>
+                <a href="Docs_5_1_2.html">
             
                     
-                    5.1.2 视频分析库（ffmpeg-py、color-science）
+                    5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）
             
                 </a>
             
@@ -2066,7 +2066,7 @@
                 <span>
             
                     
-                    5.1.3 音频分析库（librosa、resampler）
+                    5.1.3 视频分析库（ffmpeg-py、color-science）
             
                 </a>
             
@@ -2182,40 +2182,143 @@
 </ol>
 <h4 id="&#x57FA;&#x7840;&#x5E93;&#xFF08;np&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;">&#x57FA;&#x7840;&#x5E93;&#xFF08;np.&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;</h4>
 <ol>
-<li>&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.add.html" target="_blank">add</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.subtract.html" target="_blank">subtract</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.multiply.html" target="_blank">multiply</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.divide.html" target="_blank">divide</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.power.html" target="_blank">power</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.mod.html" target="_blank">mod</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.remainder.html" target="_blank">remainder</a></li>
-<li>&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.greater.html" target="_blank">greater</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.greater_equal.html" target="_blank">greater_equal</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.less.html" target="_blank">less</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.less_equal.html" target="_blank">less_equal</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.equal.html" target="_blank">equal</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.not_equal.html" target="_blank">not_equal</a></li>
-<li>&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.logical_and.html" target="_blank">logical_and</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.logical_or.html" target="_blank">logical_or</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.logical_not.html" target="_blank">logical_not</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.logical_xor.html" target="_blank">logical_xor</a></li>
-<li>&#x57FA;&#x672C;&#x7EDF;&#x8BA1;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html" target="_blank">mean</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.median.html" target="_blank">median</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.std.html" target="_blank">std</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.var.html" target="_blank">var</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.amin.html" target="_blank">min</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.amax.html" target="_blank">max</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.sum.html" target="_blank">sum</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.cumsum.html" target="_blank">cumsum</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.prod.html" target="_blank">prod</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.cumprod.html" target="_blank">cumprod</a></li>
-<li>&#x6392;&#x5E8F;&#x641C;&#x7D22;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.sort.html" target="_blank">sort</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.argsort.html" target="_blank">argsort</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html" target="_blank">argmax</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmin.html" target="_blank">argmin</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.searchsorted.html" target="_blank">searchsorted</a></li>
-<li>&#x4E09;&#x89D2;&#x51FD;&#x6570;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.sin.html" target="_blank">sin</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.cos.html" target="_blank">cos</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.tan.html" target="_blank">tan</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.arcsin.html" target="_blank">arcsin</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.arccos.html" target="_blank">arccos</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.arctan.html" target="_blank">arctan</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html" target="_blank">arctan2</a></li>
-<li>&#x53CC;&#x66F2;&#x51FD;&#x6570;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.sinh.html" target="_blank">sinh</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.cosh.html" target="_blank">cosh</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.tanh.html" target="_blank">tanh</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.arcsinh.html" target="_blank">arcsinh</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.arccosh.html" target="_blank">arccosh</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.arctanh.html" target="_blank">arctanh</a></li>
-<li>&#x6307;&#x6570;&#x5BF9;&#x6570;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.exp.html" target="_blank">exp</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.expm1.html" target="_blank">expm1</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html" target="_blank">log</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.log10.html" target="_blank">log10</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.log2.html" target="_blank">log2</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.log1p.html" target="_blank">log1p</a></li>
-<li>&#x77E9;&#x9635;&#x8FD0;&#x7B97;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html" target="_blank">dot</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.vdot.html" target="_blank">vdot</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.inner.html" target="_blank">inner</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.outer.html" target="_blank">outer</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.matmul.html" target="_blank">matmul</a></li>
-<li>&#x76F4;&#x65B9;&#x56FE;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.histogram.html" target="_blank">histogram</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.histogram2d.html" target="_blank">histogram2d</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.histogramdd.html" target="_blank">histogramdd</a></li>
-<li>&#x591A;&#x9879;&#x5F0F;&#xFF08;<strong>&#x9700;&#x4F9D;&#x6258; np.poly1d &#x591A;&#x9879;&#x5F0F;&#x7C7B;</strong>&#xFF09;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.poly.html" target="_blank">poly</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.polyval.html" target="_blank">polyval</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html" target="_blank">polyfit</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.roots.html" target="_blank">roots</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.polyder.html" target="_blank">polyder</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.polyint.html" target="_blank">polyint</a></li>
+<li>&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.add.html" target="_blank">add</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.subtract.html" target="_blank">subtract</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.multiply.html" target="_blank">multiply</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.divide.html" target="_blank">divide</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.power.html" target="_blank">power</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.mod.html" target="_blank">mod</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.remainder.html" target="_blank">remainder</a></li>
+<li>&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.greater.html" target="_blank">greater</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.greater_equal.html" target="_blank">greater_equal</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.less.html" target="_blank">less</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.less_equal.html" target="_blank">less_equal</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.equal.html" target="_blank">equal</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.not_equal.html" target="_blank">not_equal</a></li>
+<li>&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.logical_and.html" target="_blank">logical_and</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.logical_or.html" target="_blank">logical_or</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.logical_not.html" target="_blank">logical_not</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.logical_xor.html" target="_blank">logical_xor</a></li>
+<li>&#x57FA;&#x672C;&#x7EDF;&#x8BA1;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html" target="_blank">mean</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.median.html" target="_blank">median</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.std.html" target="_blank">std</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.var.html" target="_blank">var</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.amin.html" target="_blank">min</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.amax.html" target="_blank">max</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.sum.html" target="_blank">sum</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.cumsum.html" target="_blank">cumsum</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.prod.html" target="_blank">prod</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.cumprod.html" target="_blank">cumprod</a></li>
+<li>&#x6392;&#x5E8F;&#x641C;&#x7D22;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.sort.html" target="_blank">sort</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.argsort.html" target="_blank">argsort</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html" target="_blank">argmax</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.argmin.html" target="_blank">argmin</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.searchsorted.html" target="_blank">searchsorted</a></li>
+<li>&#x4E09;&#x89D2;&#x51FD;&#x6570;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.sin.html" target="_blank">sin</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.cos.html" target="_blank">cos</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.tan.html" target="_blank">tan</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.arcsin.html" target="_blank">arcsin</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.arccos.html" target="_blank">arccos</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.arctan.html" target="_blank">arctan</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.arctan2.html" target="_blank">arctan2</a></li>
+<li>&#x53CC;&#x66F2;&#x51FD;&#x6570;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.sinh.html" target="_blank">sinh</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.cosh.html" target="_blank">cosh</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.tanh.html" target="_blank">tanh</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.arcsinh.html" target="_blank">arcsinh</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.arccosh.html" target="_blank">arccosh</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.arctanh.html" target="_blank">arctanh</a></li>
+<li>&#x6307;&#x6570;&#x5BF9;&#x6570;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.exp.html" target="_blank">exp</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.expm1.html" target="_blank">expm1</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html" target="_blank">log</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.log10.html" target="_blank">log10</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.log2.html" target="_blank">log2</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.log1p.html" target="_blank">log1p</a></li>
+<li>&#x77E9;&#x9635;&#x8FD0;&#x7B97;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html" target="_blank">dot</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.vdot.html" target="_blank">vdot</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.inner.html" target="_blank">inner</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.outer.html" target="_blank">outer</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.matmul.html" target="_blank">matmul</a></li>
+<li>&#x76F4;&#x65B9;&#x56FE;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.histogram.html" target="_blank">histogram</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.histogram2d.html" target="_blank">histogram2d</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.histogramdd.html" target="_blank">histogramdd</a></li>
+<li>&#x591A;&#x9879;&#x5F0F;&#xFF08;<strong>&#x9700;&#x4F9D;&#x6258; np.poly1d &#x591A;&#x9879;&#x5F0F;&#x7C7B;</strong>&#xFF09;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.poly.html" target="_blank">poly</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.polyval.html" target="_blank">polyval</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html" target="_blank">polyfit</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.roots.html" target="_blank">roots</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.polyder.html" target="_blank">polyder</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.polyint.html" target="_blank">polyint</a></li>
 </ol>
 <h4 id="&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x6269;&#x5C55;&#xFF08;nplinalg&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;">&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x6269;&#x5C55;&#xFF08;np.linalg.&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;</h4>
 <ol>
-<li>&#x77E9;&#x9635;&#x5206;&#x89E3;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.cholesky.html" target="_blank">cholesky</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.qr.html" target="_blank">qr</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.svd.html" target="_blank">svd</a></li>
-<li>&#x6C42;&#x9006;&#x548C;&#x89E3;&#x7EBF;&#x6027;&#x65B9;&#x7A0B;&#x7EC4;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.inv.html" target="_blank">inv</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.pinv.html" target="_blank">pinv</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.solve.html" target="_blank">solve</a></li>
-<li>&#x7279;&#x5F81;&#x503C;&#x548C;&#x7279;&#x5F81;&#x5411;&#x91CF;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.eig.html" target="_blank">eig</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigh.html" target="_blank">eigh</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigvals.html" target="_blank">eigvals</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigvalsh.html" target="_blank">eigvalsh</a></li>
-<li>&#x77E9;&#x9635;&#x8303;&#x6570;&#xFF08;L1/L2/inf&#xFF09;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html" target="_blank">norm</a></li>
-<li>&#x77E9;&#x9635;&#x884C;&#x5217;&#x5F0F;&#x548C;&#x79E9;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html" target="_blank">det</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.matrix_rank.html" target="_blank">matrix_rank</a></li>
+<li>&#x77E9;&#x9635;&#x5206;&#x89E3;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.cholesky.html" target="_blank">cholesky</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.qr.html" target="_blank">qr</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.svd.html" target="_blank">svd</a></li>
+<li>&#x6C42;&#x9006;&#x548C;&#x89E3;&#x7EBF;&#x6027;&#x65B9;&#x7A0B;&#x7EC4;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.inv.html" target="_blank">inv</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.pinv.html" target="_blank">pinv</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.solve.html" target="_blank">solve</a></li>
+<li>&#x7279;&#x5F81;&#x503C;&#x548C;&#x7279;&#x5F81;&#x5411;&#x91CF;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.eig.html" target="_blank">eig</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigh.html" target="_blank">eigh</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigvals.html" target="_blank">eigvals</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigvalsh.html" target="_blank">eigvalsh</a></li>
+<li>&#x77E9;&#x9635;&#x8303;&#x6570;&#xFF08;L1/L2/inf&#xFF09;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html" target="_blank">norm</a></li>
+<li>&#x77E9;&#x9635;&#x884C;&#x5217;&#x5F0F;&#x548C;&#x79E9;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.det.html" target="_blank">det</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.matrix_rank.html" target="_blank">matrix_rank</a></li>
 </ol>
 <h4 id="&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;&#x6269;&#x5C55;&#xFF08;npfft&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;">&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;&#x6269;&#x5C55;&#xFF08;np.fft.&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;</h4>
 <ol>
-<li>&#x4E00;&#x7EF4;&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.fft.html" target="_blank">fft</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.ifft.html" target="_blank">ifft</a></li>
-<li>&#x4E8C;&#x7EF4;&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.fft2.html" target="_blank">fft2</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.ifft2.html" target="_blank">ifft2</a></li>
-<li>&#x591A;&#x7EF4;&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.fftn.html" target="_blank">fftn</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.ifftn.html" target="_blank">ifftn</a></li>
-<li>&#x4E00;&#x7EF4;&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x6CD5;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.rfft.html" target="_blank">rfft</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.irfft.html" target="_blank">irfft</a></li>
-<li>&#x4E00;&#x7EF4;&#x4EA5;&#x59C6;&#x970D;&#x5179;&#x53D8;&#x6362;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.hfft.html" target="_blank">hfft</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.ihfft.html" target="_blank">ihfft</a></li>
+<li>&#x4E00;&#x7EF4;&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.fft.html" target="_blank">fft</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.ifft.html" target="_blank">ifft</a></li>
+<li>&#x4E8C;&#x7EF4;&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.fft2.html" target="_blank">fft2</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.ifft2.html" target="_blank">ifft2</a></li>
+<li>&#x591A;&#x7EF4;&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.fftn.html" target="_blank">fftn</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.ifftn.html" target="_blank">ifftn</a></li>
+<li>&#x4E00;&#x7EF4;&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x6CD5;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.rfft.html" target="_blank">rfft</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.irfft.html" target="_blank">irfft</a></li>
+<li>&#x4E00;&#x7EF4;&#x4EA5;&#x59C6;&#x970D;&#x5179;&#x53D8;&#x6362;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.hfft.html" target="_blank">hfft</a>, 
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.fft.ihfft.html" target="_blank">ihfft</a></li>
 </ol>
 <h4 id="&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x6269;&#x5C55;&#xFF08;nprandom&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;">&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x6269;&#x5C55;&#xFF08;np.random.&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;</h4>
 <ol>
-<li>&#x7B80;&#x5355;&#x968F;&#x673A;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.rand.html" target="_blank">rand</a>, <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html" target="_blank">randn</a>, <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.randint.html" target="_blank">randint</a>, <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html" target="_blank">choice</a></li>
-<li>&#x6982;&#x7387;&#x5206;&#x5E03;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html" target="_blank">normal</a>, <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.uniform.html" target="_blank">uniform</a>, <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.binomial.html" target="_blank">binomial</a>, <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.poisson.html" target="_blank">poisson</a>, <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.exponential.html" target="_blank">exponential</a>, <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.beta.html" target="_blank">beta</a>, <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.gamma.html" target="_blank">gamma</a>, <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.chisquare.html" target="_blank">chisquare</a></li>
-<li>&#x4E71;&#x5E8F;&#x51FD;&#x6570;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.shuffle.html" target="_blank">shuffle</a>, <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.permutation.html" target="_blank">permutation</a></li>
-<li>&#x968F;&#x673A;&#x79CD;&#x5B50;&#xFF1A;<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.seed.html" target="_blank">seed</a></li>
+<li>&#x7B80;&#x5355;&#x968F;&#x673A;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.rand.html" target="_blank">rand</a>, 
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html" target="_blank">randn</a>, 
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.randint.html" target="_blank">randint</a>, 
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html" target="_blank">choice</a></li>
+<li>&#x6982;&#x7387;&#x5206;&#x5E03;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html" target="_blank">normal</a>, 
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.uniform.html" target="_blank">uniform</a>, 
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.binomial.html" target="_blank">binomial</a>, 
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.poisson.html" target="_blank">poisson</a>, 
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.exponential.html" target="_blank">exponential</a>, 
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.beta.html" target="_blank">beta</a>, 
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.gamma.html" target="_blank">gamma</a>, 
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.chisquare.html" target="_blank">chisquare</a></li>
+<li>&#x4E71;&#x5E8F;&#x51FD;&#x6570;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.shuffle.html" target="_blank">shuffle</a>, 
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.permutation.html" target="_blank">permutation</a></li>
+<li>&#x968F;&#x673A;&#x79CD;&#x5B50;&#xFF1A;
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.seed.html" target="_blank">seed</a></li>
 </ol>
 <p>&#x5176;&#x4ED6;&#x5982; <strong>&#x7279;&#x6B8A;&#x51FD;&#x6570;&#x6269;&#x5C55;&#xFF08;np.special.&#xFF09;</strong> &#x7B49;&#xFF0C;&#x5728;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x53EF;&#x81EA;&#x884C;&#x524D;&#x5F80; <strong><a href="https://numpy.org/doc/" target="_blank">&#x5B98;&#x7F51;&#x6863;&#x6848;&#x9986;</a></strong> &#x67E5;&#x9605;&#x3002;</p>
 <h2 id="pandas&#xFF08;python-data-analysis-library&#xFF09;"><strong>Pandas&#xFF08;Python Data Analysis Library&#xFF09;</strong></h2>
@@ -2231,29 +2334,189 @@
 </ol>
 <h4 id="&#x57FA;&#x7840;&#x5E93;&#xFF08;pd&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;">&#x57FA;&#x7840;&#x5E93;&#xFF08;pd.&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;</h4>
 <ol>
-<li>&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html" target="_blank">&lt;Series&gt;</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html" target="_blank">&lt;DataFrame&gt;</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html" target="_blank">&lt;Index&gt;</a></li>
-<li>&#x65F6;&#x5E8F;&#x7ED3;&#x6784;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html" target="_blank">&lt;DatetimeIndex&gt;</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.html" target="_blank">&lt;Timedelta&gt;</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.html" target="_blank">&lt;Period&gt;</a></li>
-<li>&#x6570;&#x636E;&#x521B;&#x5EFA;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html" target="_blank">read_csv</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html" target="_blank">read_excel</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html" target="_blank">read_sql</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html" target="_blank">read_json</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html" target="_blank">read_html</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_clipboard.html" target="_blank">read_clipboard</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_parquet.html" target="_blank">read_parquet</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_feather.html" target="_blank">read_feather</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_orc.html" target="_blank">read_orc</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sas.html" target="_blank">read_sas</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_spss.html" target="_blank">read_spss</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_stata.html" target="_blank">read_stata</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_hdf.html" target="_blank">read_hdf</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html" target="_blank">read_pickle</a></li>
-<li>&#x6570;&#x636E;&#x5BFC;&#x51FA;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html" target="_blank">to_csv</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html" target="_blank">to_excel</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html" target="_blank">to_sql</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html" target="_blank">to_json</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_html.html" target="_blank">to_html</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_clipboard.html" target="_blank">to_clipboard</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_parquet.html" target="_blank">to_parquet</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_feather.html" target="_blank">to_feather</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_orc.html" target="_blank">to_orc</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sas.html" target="_blank">to_sas</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_spss.html" target="_blank">to_spss</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_stata.html" target="_blank">to_stata</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_hdf.html" target="_blank">to_hdf</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_pickle.html" target="_blank">to_pickle</a></li>
-<li>&#x6570;&#x636E;&#x53D8;&#x6362;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.assign.html" target="_blank">assign</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html" target="_blank">drop</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html" target="_blank">rename</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">pivot</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html" target="_blank">pivot_table</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html" target="_blank">melt</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.stack.html" target="_blank">stack</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.unstack.html" target="_blank">unstack</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html" target="_blank">get_dummies</a></li>
-<li>&#x6570;&#x636E;&#x805A;&#x5408;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html" target="_blank">groupby</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html" target="_blank">agg</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html" target="_blank">aggregate</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transform.html" target="_blank">transform</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html" target="_blank">apply</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html" target="_blank">rolling</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.expanding.html" target="_blank">expanding</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html" target="_blank">resample</a></li>
-<li>&#x6570;&#x636E;&#x6E05;&#x6D17;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.isnull.html" target="_blank">isnull</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.notnull.html" target="_blank">notnull</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html" target="_blank">dropna</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html" target="_blank">fillna</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html" target="_blank">replace</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.interpolate.html" target="_blank">interpolate</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html" target="_blank">duplicated</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html" target="_blank">drop_duplicates</a></li>
-<li>&#x6570;&#x636E;&#x5408;&#x5E76;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">merge</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">concat</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html" target="_blank">join</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.append.html" target="_blank">append</a></li>
-<li>&#x9009;&#x62E9;&#x8FC7;&#x6EE4;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html" target="_blank">loc</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html" target="_blank">iloc</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.at.html" target="_blank">at</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iat.html" target="_blank">iat</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.ix.html" target="_blank">ix</a></li>
-<li>&#x57FA;&#x672C;&#x7EDF;&#x8BA1;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mean.html" target="_blank">mean</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.median.html" target="_blank">median</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.std.html" target="_blank">std</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.var.html" target="_blank">var</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.min.html" target="_blank">min</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.max.html" target="_blank">max</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sum.html" target="_blank">sum</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cumsum.html" target="_blank">cumsum</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.prod.html" target="_blank">prod</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cumprod.html" target="_blank">cumprod</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html" target="_blank">describe</a></li>
+<li>&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html" target="_blank">&lt;Series&gt;</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html" target="_blank">&lt;DataFrame&gt;</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html" target="_blank">&lt;Index&gt;</a></li>
+<li>&#x65F6;&#x5E8F;&#x7ED3;&#x6784;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html" target="_blank">&lt;DatetimeIndex&gt;</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.html" target="_blank">&lt;Timedelta&gt;</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.html" target="_blank">&lt;Period&gt;</a></li>
+<li>&#x6570;&#x636E;&#x521B;&#x5EFA;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html" target="_blank">read_csv</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html" target="_blank">read_excel</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html" target="_blank">read_sql</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html" target="_blank">read_json</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html" target="_blank">read_html</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_clipboard.html" target="_blank">read_clipboard</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_parquet.html" target="_blank">read_parquet</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_feather.html" target="_blank">read_feather</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_orc.html" target="_blank">read_orc</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sas.html" target="_blank">read_sas</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_spss.html" target="_blank">read_spss</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_stata.html" target="_blank">read_stata</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_hdf.html" target="_blank">read_hdf</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html" target="_blank">read_pickle</a></li>
+<li>&#x6570;&#x636E;&#x5BFC;&#x51FA;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html" target="_blank">to_csv</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html" target="_blank">to_excel</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html" target="_blank">to_sql</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html" target="_blank">to_json</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_html.html" target="_blank">to_html</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_clipboard.html" target="_blank">to_clipboard</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_parquet.html" target="_blank">to_parquet</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_feather.html" target="_blank">to_feather</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_orc.html" target="_blank">to_orc</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sas.html" target="_blank">to_sas</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_spss.html" target="_blank">to_spss</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_stata.html" target="_blank">to_stata</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_hdf.html" target="_blank">to_hdf</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_pickle.html" target="_blank">to_pickle</a></li>
+<li>&#x6570;&#x636E;&#x53D8;&#x6362;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.assign.html" target="_blank">assign</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html" target="_blank">drop</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html" target="_blank">rename</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">pivot</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html" target="_blank">pivot_table</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html" target="_blank">melt</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.stack.html" target="_blank">stack</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.unstack.html" target="_blank">unstack</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html" target="_blank">get_dummies</a></li>
+<li>&#x6570;&#x636E;&#x805A;&#x5408;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html" target="_blank">groupby</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html" target="_blank">agg</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html" target="_blank">aggregate</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transform.html" target="_blank">transform</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html" target="_blank">apply</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html" target="_blank">rolling</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.expanding.html" target="_blank">expanding</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html" target="_blank">resample</a></li>
+<li>&#x6570;&#x636E;&#x6E05;&#x6D17;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.isnull.html" target="_blank">isnull</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.notnull.html" target="_blank">notnull</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html" target="_blank">dropna</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html" target="_blank">fillna</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html" target="_blank">replace</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.interpolate.html" target="_blank">interpolate</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html" target="_blank">duplicated</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html" target="_blank">drop_duplicates</a></li>
+<li>&#x6570;&#x636E;&#x5408;&#x5E76;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">merge</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">concat</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html" target="_blank">join</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.append.html" target="_blank">append</a></li>
+<li>&#x9009;&#x62E9;&#x8FC7;&#x6EE4;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html" target="_blank">loc</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html" target="_blank">iloc</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.at.html" target="_blank">at</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iat.html" target="_blank">iat</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.ix.html" target="_blank">ix</a></li>
+<li>&#x57FA;&#x672C;&#x7EDF;&#x8BA1;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mean.html" target="_blank">mean</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.median.html" target="_blank">median</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.std.html" target="_blank">std</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.var.html" target="_blank">var</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.min.html" target="_blank">min</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.max.html" target="_blank">max</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sum.html" target="_blank">sum</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cumsum.html" target="_blank">cumsum</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.prod.html" target="_blank">prod</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cumprod.html" target="_blank">cumprod</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html" target="_blank">describe</a></li>
 </ol>
 <h4 id="&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6269;&#x5C55;&#xFF08;pdseries-pddataframe&#xFF09;&#x7684;&#x8F85;&#x52A9;&#x65B9;&#x6CD5;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;">&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6269;&#x5C55;&#xFF08;pd.Series, pd.DataFrame&#xFF09;&#x7684;&#x8F85;&#x52A9;&#x65B9;&#x6CD5;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;</h4>
 <ol>
-<li><p>Series &#x65B9;&#x6CD5;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.append.html" target="_blank">append</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.drop.html" target="_blank">drop</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.drop_duplicates.html" target="_blank">drop_duplicates</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dropna.html" target="_blank">dropna</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.fillna.html" target="_blank">fillna</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.replace.html" target="_blank">replace</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.interpolate.html" target="_blank">interpolate</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.isnull.html" target="_blank">isnull</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.notnull.html" target="_blank">notnull</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.unique.html" target="_blank">unique</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html" target="_blank">value_counts</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.apply.html" target="_blank">apply</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html" target="_blank">map</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.astype.html" target="_blank">astype</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.copy.html" target="_blank">copy</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.shift.html" target="_blank">shift</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.diff.html" target="_blank">diff</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.pct_change.html" target="_blank">pct_change</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.rank.html" target="_blank">rank</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sort_values.html" target="_blank">sort_values</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sort_index.html" target="_blank">sort_index</a></p>
+<li><p><strong>&lt;Series&gt;</strong> &#x65B9;&#x6CD5;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.append.html" target="_blank">append</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.drop.html" target="_blank">drop</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.drop_duplicates.html" target="_blank">drop_duplicates</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dropna.html" target="_blank">dropna</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.fillna.html" target="_blank">fillna</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.replace.html" target="_blank">replace</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.interpolate.html" target="_blank">interpolate</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.isnull.html" target="_blank">isnull</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.notnull.html" target="_blank">notnull</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.unique.html" target="_blank">unique</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html" target="_blank">value_counts</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.apply.html" target="_blank">apply</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html" target="_blank">map</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.astype.html" target="_blank">astype</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.copy.html" target="_blank">copy</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.shift.html" target="_blank">shift</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.diff.html" target="_blank">diff</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.pct_change.html" target="_blank">pct_change</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.rank.html" target="_blank">rank</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sort_values.html" target="_blank">sort_values</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sort_index.html" target="_blank">sort_index</a></p>
 </li>
-<li><p>DataFrame &#x65B9;&#x6CD5;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.append.html" target="_blank">append</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html" target="_blank">drop</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html" target="_blank">drop_duplicates</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html" target="_blank">dropna</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html" target="_blank">fillna</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html" target="_blank">replace</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.interpolate.html" target="_blank">interpolate</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.isnull.html" target="_blank">isnull</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.notnull.html" target="_blank">notnull</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">pivot</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html" target="_blank">pivot_table</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html" target="_blank">melt</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.stack.html" target="_blank">stack</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.unstack.html" target="_blank">unstack</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html" target="_blank">get_dummies</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">merge</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">concat</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html" target="_blank">join</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html" target="_blank">groupby</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html" target="_blank">agg</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html" target="_blank">aggregate</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transform.html" target="_blank">transform</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html" target="_blank">apply</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html" target="_blank">rolling</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.expanding.html" target="_blank">expanding</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html" target="_blank">resample</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html" target="_blank">sort_values</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_index.html" target="_blank">sort_index</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rank.html" target="_blank">rank</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html" target="_blank">describe</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html" target="_blank">corr</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cov.html" target="_blank">cov</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.hist.html" target="_blank">hist</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.boxplot.html" target="_blank">boxplot</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html" target="_blank">plot</a></p>
+<li><p><strong>&lt;DataFrame&gt;</strong> &#x65B9;&#x6CD5;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.append.html" target="_blank">append</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html" target="_blank">drop</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html" target="_blank">drop_duplicates</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html" target="_blank">dropna</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html" target="_blank">fillna</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html" target="_blank">replace</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.interpolate.html" target="_blank">interpolate</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.isnull.html" target="_blank">isnull</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.notnull.html" target="_blank">notnull</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html" target="_blank">pivot</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html" target="_blank">pivot_table</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html" target="_blank">melt</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.stack.html" target="_blank">stack</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.unstack.html" target="_blank">unstack</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html" target="_blank">get_dummies</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank">merge</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank">concat</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.join.html" target="_blank">join</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html" target="_blank">groupby</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html" target="_blank">agg</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html" target="_blank">aggregate</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.transform.html" target="_blank">transform</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html" target="_blank">apply</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html" target="_blank">rolling</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.expanding.html" target="_blank">expanding</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html" target="_blank">resample</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html" target="_blank">sort_values</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_index.html" target="_blank">sort_index</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rank.html" target="_blank">rank</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html" target="_blank">describe</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html" target="_blank">corr</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cov.html" target="_blank">cov</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.hist.html" target="_blank">hist</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.boxplot.html" target="_blank">boxplot</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html" target="_blank">plot</a></p>
 </li>
 </ol>
 <h4 id="&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x6269;&#x5C55;&#xFF08;pddatetimeindex-pdtimedelta-pdperiod&#xFF09;&#x7684;&#x8F85;&#x52A9;&#x65B9;&#x6CD5;&#xFF08;&#x7B80;&#xFF09;&#xFF1A;">&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x6269;&#x5C55;&#xFF08;pd.DatetimeIndex, pd.Timedelta, pd.Period&#xFF09;&#x7684;&#x8F85;&#x52A9;&#x65B9;&#x6CD5;&#xFF08;&#x7B80;&#xFF09;&#xFF1A;</h4>
 <ol>
-<li>DatetimeIndex &#x65B9;&#x6CD5;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_pydatetime.html" target="_blank">to_pydatetime</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_period.html" target="_blank">to_period</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_series.html" target="_blank">to_series</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_frame.html" target="_blank">to_frame</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.normalize.html" target="_blank">normalize</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.strftime.html" target="_blank">strftime</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.snap.html" target="_blank">snap</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.shift.html" target="_blank">shift</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.tz_convert.html" target="_blank">tz_convert</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.tz_localize.html" target="_blank">tz_localize</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.floor.html" target="_blank">floor</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.ceil.html" target="_blank">ceil</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.round.html" target="_blank">round</a></li>
-<li>Timedelta &#x65B9;&#x6CD5;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.total_seconds.html" target="_blank">total_seconds</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.to_pytimedelta.html" target="_blank">to_pytimedelta</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.components.html" target="_blank">components</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.is_leap_year.html" target="_blank">is_leap_year</a></li>
-<li>Period &#x65B9;&#x6CD5;&#xFF1A;<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.asfreq.html" target="_blank">asfreq</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.start_time.html" target="_blank">start_time</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.end_time.html" target="_blank">end_time</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.to_timestamp.html" target="_blank">to_timestamp</a>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.strftime.html" target="_blank">strftime</a></li>
+<li><p><strong>&lt;DatetimeIndex&gt;</strong> &#x65B9;&#x6CD5;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_pydatetime.html" target="_blank">to_pydatetime</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_period.html" target="_blank">to_period</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_series.html" target="_blank">to_series</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.to_frame.html" target="_blank">to_frame</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.normalize.html" target="_blank">normalize</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.strftime.html" target="_blank">strftime</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.snap.html" target="_blank">snap</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.shift.html" target="_blank">shift</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.tz_convert.html" target="_blank">tz_convert</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.tz_localize.html" target="_blank">tz_localize</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.floor.html" target="_blank">floor</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.ceil.html" target="_blank">ceil</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.round.html" target="_blank">round</a></p>
+</li>
+<li><p><strong>&lt;Timedelta&gt;</strong> &#x65B9;&#x6CD5;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.total_seconds.html" target="_blank">total_seconds</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.to_pytimedelta.html" target="_blank">to_pytimedelta</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timedelta.components.html" target="_blank">components</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.is_leap_year.html" target="_blank">is_leap_year</a></p>
+</li>
+<li><p><strong>&lt;Period&gt;</strong> &#x65B9;&#x6CD5;&#xFF1A;
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.asfreq.html" target="_blank">asfreq</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.start_time.html" target="_blank">start_time</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.end_time.html" target="_blank">end_time</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.to_timestamp.html" target="_blank">to_timestamp</a>, 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.strftime.html" target="_blank">strftime</a></p>
+</li>
 </ol>
 <p><br></p>
 <p>&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x548C;&#x7ED3;&#x6784;&#x7C7B;&#x578B;&#xFF0C;&#x6DB5;&#x76D6;&#x4E86;&#x6570;&#x636E;&#x521B;&#x5EFA;&#x3001;&#x9009;&#x62E9;&#x3001;&#x8FC7;&#x6EE4;&#x3001;&#x53D8;&#x6362;&#x3001;&#x805A;&#x5408;&#x3001;&#x6E05;&#x6D17;&#x3001;&#x5408;&#x5E76;&#x3001;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x5904;&#x7406;&#x4EE5;&#x53CA;&#x6570;&#x636E;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x7B49;&#x591A;&#x4E2A;&#x65B9;&#x9762;&#xFF0C;&#x8FDB;&#x800C;&#x4F7F;&#x5F97; Pandas &#x6210;&#x4E3A;&#x4E86;&#x6570;&#x636E;&#x79D1;&#x5B66;&#x548C;&#x6570;&#x636E;&#x5206;&#x6790;&#x9886;&#x57DF;&#x7684;&#x57FA;&#x7840;&#x5DE5;&#x5177;&#xFF0C;&#x4EA6;&#x88AB;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x6E05;&#x6D17;&#x3001;&#x6570;&#x636E;&#x53D8;&#x6362;&#x3001;&#x6570;&#x636E;&#x5206;&#x6790;&#x3001;&#x6570;&#x636E;&#x53EF;&#x89C6;&#x5316;&#x7B49;&#x4EFB;&#x52A1;&#x3002;</p>
@@ -2271,36 +2534,156 @@
 </ol>
 <h4 id="&#x57FA;&#x7840;&#x5E93;&#xFF08;matplotlibpyplot-as-plt&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;">&#x57FA;&#x7840;&#x5E93;&#xFF08;matplotlib.pyplot. as plt.&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;</h4>
 <ol>
-<li>&#x56FE;&#x5F62;&#x5BB9;&#x5668;&#xFF1A;<a href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" target="_blank">&lt;Figure&gt;</a>, <a href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" target="_blank">&lt;Axes&gt;</a>, <a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D" target="_blank">&lt;Axes3D&gt;</a></li>
-<li>&#x6837;&#x5F0F;&#x7C7B;&#x578B;&#xFF1A;&#x7565;&#xFF08;&#x5982; <a href="https://matplotlib.org/stable/api/font_manager_api.html#matplotlib.font_manager.FontProperties" target="_blank">&lt;FontProperties&gt;</a> &#x7B49;&#xFF0C;&#x6709;&#x5173;&#x6837;&#x5F0F;&#x6709;&#x8F83;&#x591A;&#x6269;&#x5C55;&#x5E93;&#xFF0C;&#x8BE6;&#x89C1;&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF09;</li>
-<li>&#x521B;&#x5EFA;&#x56FE;&#x5F62;&#x548C;&#x5B50;&#x56FE;&#xFF1A;<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html" target="_blank">figure</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html" target="_blank">subplot</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html" target="_blank">subplots</a>, <a href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.add_subplot" target="_blank">add_subplot</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html" target="_blank">subplots_adjust</a></li>
-<li>&#x56FE;&#x5F62;&#x5BFC;&#x5165;&#xFF1A;<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imread.html" target="_blank">imread</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html" target="_blank">imshow</a></li>
-<li>&#x7ED8;&#x56FE;&#x51FD;&#x6570;&#xFF1A;<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html" target="_blank">plot</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html" target="_blank">scatter</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html" target="_blank">bar</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html" target="_blank">barh</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html" target="_blank">hist</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html" target="_blank">pie</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html" target="_blank">boxplot</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html" target="_blank">errorbar</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill.html" target="_blank">fill</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill_between.html" target="_blank">fill_between</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.stackplot.html" target="_blank">stackplot</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.stem.html" target="_blank">stem</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.step.html" target="_blank">step</a></li>
-<li>&#x56FE;&#x5F62;&#x5C5E;&#x6027;&#xFF1A;<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html" target="_blank">title</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html" target="_blank">xlabel</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html" target="_blank">ylabel</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlim.html" target="_blank">xlim</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylim.html" target="_blank">ylim</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html" target="_blank">xticks</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html" target="_blank">yticks</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.grid.html" target="_blank">grid</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html" target="_blank">legend</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html" target="_blank">text</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html" target="_blank">annotate</a></li>
-<li>&#x56FE;&#x5F62;&#x6837;&#x5F0F;&#xFF1A;<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.style.use.html" target="_blank">style.use</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.set_cmap.html" target="_blank">set_cmap</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.get_cmap.html" target="_blank">get_cmap</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colormaps.html" target="_blank">colormaps</a></li>
-<li>&#x7EBF;&#x6761;&#x6837;&#x5F0F;&#xFF1A;<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_linestyle.html" target="_blank">set_linestyle</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_linewidth.html" target="_blank">set_linewidth</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_color.html" target="_blank">set_color</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_marker.html" target="_blank">set_marker</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_markersize.html" target="_blank">set_markersize</a></li>
-<li>&#x6587;&#x672C;&#x6837;&#x5F0F;&#xFF1A;<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontsize.html" target="_blank">set_fontsize</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontweight.html" target="_blank">set_fontweight</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontstyle.html" target="_blank">set_fontstyle</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontname.html" target="_blank">set_fontname</a></li>
-<li>&#x5E03;&#x5C40;&#x6837;&#x5F0F;&#xFF1A;<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html" target="_blank">tight_layout</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html" target="_blank">subplots_adjust</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.get_current_fig_manager.html" target="_blank">get_current_fig_manager</a></li>
-<li>&#x4EA4;&#x4E92;&#x5DE5;&#x5177;&#xFF1A;<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ginput.html" target="_blank">ginput</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.waitforbuttonpress.html" target="_blank">waitforbuttonpress</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.connect.html" target="_blank">connect</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.disconnect.html" target="_blank">disconnect</a></li>
-<li>&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#xFF1A;<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.connect.html" target="_blank">mpl_connect</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.disconnect.html" target="_blank">mpl_disconnect</a></li>
-<li>&#x56FE;&#x5F62;&#x4FDD;&#x5B58;&#xFF1A;<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html" target="_blank">savefig</a></li>
+<li>&#x56FE;&#x5F62;&#x5BB9;&#x5668;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" target="_blank">&lt;Figure&gt;</a>, 
+<a href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" target="_blank">&lt;Axes&gt;</a>, 
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D" target="_blank">&lt;Axes3D&gt;</a></li>
+<li>&#x6837;&#x5F0F;&#x7C7B;&#x578B;&#xFF1A;
+&#x7565;&#xFF08;&#x5982; <a href="https://matplotlib.org/stable/api/font_manager_api.html#matplotlib.font_manager.FontProperties" target="_blank">&lt;FontProperties&gt;</a> &#x7B49;&#xFF0C;&#x6709;&#x5173;&#x6837;&#x5F0F;&#x6709;&#x8F83;&#x591A;&#x6269;&#x5C55;&#x5E93;&#xFF0C;&#x8BE6;&#x89C1;&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF09;</li>
+<li>&#x521B;&#x5EFA;&#x56FE;&#x5F62;&#x548C;&#x5B50;&#x56FE;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html" target="_blank">figure</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html" target="_blank">subplot</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html" target="_blank">subplots</a>, 
+<a href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.add_subplot" target="_blank">add_subplot</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html" target="_blank">subplots_adjust</a></li>
+<li>&#x56FE;&#x5F62;&#x5BFC;&#x5165;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imread.html" target="_blank">imread</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html" target="_blank">imshow</a></li>
+<li>&#x7ED8;&#x56FE;&#x51FD;&#x6570;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html" target="_blank">plot</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html" target="_blank">scatter</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html" target="_blank">bar</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html" target="_blank">barh</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html" target="_blank">hist</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html" target="_blank">pie</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html" target="_blank">boxplot</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html" target="_blank">errorbar</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill.html" target="_blank">fill</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill_between.html" target="_blank">fill_between</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.stackplot.html" target="_blank">stackplot</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.stem.html" target="_blank">stem</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.step.html" target="_blank">step</a></li>
+<li>&#x56FE;&#x5F62;&#x5C5E;&#x6027;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html" target="_blank">title</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html" target="_blank">xlabel</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html" target="_blank">ylabel</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlim.html" target="_blank">xlim</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylim.html" target="_blank">ylim</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html" target="_blank">xticks</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html" target="_blank">yticks</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.grid.html" target="_blank">grid</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html" target="_blank">legend</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html" target="_blank">text</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html" target="_blank">annotate</a></li>
+<li>&#x56FE;&#x5F62;&#x6837;&#x5F0F;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.style.use.html" target="_blank">style.use</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.set_cmap.html" target="_blank">set_cmap</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.get_cmap.html" target="_blank">get_cmap</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colormaps.html" target="_blank">colormaps</a></li>
+<li>&#x7EBF;&#x6761;&#x6837;&#x5F0F;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_linestyle.html" target="_blank">set_linestyle</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_linewidth.html" target="_blank">set_linewidth</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_color.html" target="_blank">set_color</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_marker.html" target="_blank">set_marker</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.set_markersize.html" target="_blank">set_markersize</a></li>
+<li>&#x6587;&#x672C;&#x6837;&#x5F0F;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontsize.html" target="_blank">set_fontsize</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontweight.html" target="_blank">set_fontweight</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontstyle.html" target="_blank">set_fontstyle</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.text.Text.set_fontname.html" target="_blank">set_fontname</a></li>
+<li>&#x5E03;&#x5C40;&#x6837;&#x5F0F;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html" target="_blank">tight_layout</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html" target="_blank">subplots_adjust</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.get_current_fig_manager.html" target="_blank">get_current_fig_manager</a></li>
+<li>&#x4EA4;&#x4E92;&#x5DE5;&#x5177;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ginput.html" target="_blank">ginput</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.waitforbuttonpress.html" target="_blank">waitforbuttonpress</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.connect.html" target="_blank">connect</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.disconnect.html" target="_blank">disconnect</a></li>
+<li>&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.connect.html" target="_blank">mpl_connect</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.disconnect.html" target="_blank">mpl_disconnect</a></li>
+<li>&#x56FE;&#x5F62;&#x4FDD;&#x5B58;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html" target="_blank">savefig</a></li>
 </ol>
 <h4 id="&#x989C;&#x8272;&#x6620;&#x5C04;&#xFF08;matplotlibcm-as-cm&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;">&#x989C;&#x8272;&#x6620;&#x5C04;&#xFF08;matplotlib.cm. as cm.&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;</h4>
 <ol>
-<li>&#x6620;&#x5C04;&#x5BF9;&#x8C61;&#xFF08;&#x989C;&#x8272;&#x6620;&#x5C04;&#x7ED3;&#x6784;&#xFF09;&#xFF1A;<a href="https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.ScalarMappable" target="_blank">&lt;ScalarMappable&gt;</a></li>
-<li>&#x6620;&#x5C04;&#x6CE8;&#x518C;&#x4E0E;&#x83B7;&#x53D6;&#xFF1A;<a href="https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.get_cmap" target="_blank">get_cmap</a>, <a href="https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.register_cmap" target="_blank">register_cmap</a></li>
-<li>&#x5E38;&#x7528;&#x6620;&#x5C04;&#xFF1A;<a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html#viridis" target="_blank">viridis</a>, <a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html#plasma" target="_blank">plasma</a>, <a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html#inferno" target="_blank">inferno</a>, <a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html#magma" target="_blank">magma</a></li>
+<li>&#x6620;&#x5C04;&#x5BF9;&#x8C61;&#xFF08;&#x989C;&#x8272;&#x6620;&#x5C04;&#x7ED3;&#x6784;&#xFF09;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.ScalarMappable" target="_blank">&lt;ScalarMappable&gt;</a></li>
+<li>&#x6620;&#x5C04;&#x6CE8;&#x518C;&#x4E0E;&#x83B7;&#x53D6;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.get_cmap" target="_blank">get_cmap</a>, 
+<a href="https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.register_cmap" target="_blank">register_cmap</a></li>
+<li>&#x5E38;&#x7528;&#x6620;&#x5C04;&#xFF1A;
+<a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html#viridis" target="_blank">viridis</a>, 
+<a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html#plasma" target="_blank">plasma</a>, 
+<a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html#inferno" target="_blank">inferno</a>, 
+<a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html#magma" target="_blank">magma</a></li>
 </ol>
 <h4 id="&#x56FE;&#x5F62;&#x5BB9;&#x5668;&#xFF08;pltfigure-pltaxes&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;">&#x56FE;&#x5F62;&#x5BB9;&#x5668;&#xFF08;plt.Figure, plt.Axes&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;</h4>
 <ol>
-<li>Figure &#x65B9;&#x6CD5;&#xFF1A;<a href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.add_subplot" target="_blank">add_subplot</a>, <a href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.add_axes" target="_blank">add_axes</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html" target="_blank">subplots</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html" target="_blank">subplots_adjust</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html" target="_blank">savefig</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.clf.html" target="_blank">clf</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html" target="_blank">gca</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html" target="_blank">tight_layout</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html" target="_blank">subplots_adjust</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.get_current_fig_manager.html" target="_blank">get_current_fig_manager</a></li>
-<li>Axes &#x65B9;&#x6CD5;&#xFF1A;<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html" target="_blank">plot</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.scatter.html" target="_blank">scatter</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.bar.html" target="_blank">bar</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.barh.html" target="_blank">barh</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html" target="_blank">hist</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.pie.html" target="_blank">pie</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.boxplot.html" target="_blank">boxplot</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.errorbar.html" target="_blank">errorbar</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.fill.html" target="_blank">fill</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.fill_between.html" target="_blank">fill_between</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.stackplot.html" target="_blank">stackplot</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.stem.html" target="_blank">stem</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.step.html" target="_blank">step</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_title.html" target="_blank">set_title</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html" target="_blank">set_xlabel</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_ylabel.html" target="_blank">set_ylabel</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlim.html" target="_blank">set_xlim</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_ylim.html" target="_blank">set_ylim</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xticks.html" target="_blank">set_xticks</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_yticks.html" target="_blank">set_yticks</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.grid.html" target="_blank">grid</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.legend.html" target="_blank">legend</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.text.html" target="_blank">text</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.annotate.html" target="_blank">annotate</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.cla.html" target="_blank">cla</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.twinx.html" target="_blank">twinx</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.twiny.html" target="_blank">twiny</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_aspect.html" target="_blank">set_aspect</a>, <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_facecolor.html" target="_blank">set_facecolor</a></li>
+<li><p><strong>&lt;Figure&gt;</strong> &#x65B9;&#x6CD5;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.add_subplot" target="_blank">add_subplot</a>, 
+<a href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.add_axes" target="_blank">add_axes</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html" target="_blank">subplots</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html" target="_blank">subplots_adjust</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html" target="_blank">savefig</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.clf.html" target="_blank">clf</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html" target="_blank">gca</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html" target="_blank">tight_layout</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots_adjust.html" target="_blank">subplots_adjust</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.get_current_fig_manager.html" target="_blank">get_current_fig_manager</a></p>
+</li>
+<li><p><strong>&lt;Axes&gt;</strong> &#x65B9;&#x6CD5;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html" target="_blank">plot</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.scatter.html" target="_blank">scatter</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.bar.html" target="_blank">bar</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.barh.html" target="_blank">barh</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html" target="_blank">hist</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.pie.html" target="_blank">pie</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.boxplot.html" target="_blank">boxplot</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.errorbar.html" target="_blank">errorbar</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.fill.html" target="_blank">fill</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.fill_between.html" target="_blank">fill_between</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.stackplot.html" target="_blank">stackplot</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.stem.html" target="_blank">stem</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.step.html" target="_blank">step</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_title.html" target="_blank">set_title</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html" target="_blank">set_xlabel</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_ylabel.html" target="_blank">set_ylabel</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlim.html" target="_blank">set_xlim</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_ylim.html" target="_blank">set_ylim</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xticks.html" target="_blank">set_xticks</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_yticks.html" target="_blank">set_yticks</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.grid.html" target="_blank">grid</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.legend.html" target="_blank">legend</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.text.html" target="_blank">text</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.annotate.html" target="_blank">annotate</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.cla.html" target="_blank">cla</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.twinx.html" target="_blank">twinx</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.twiny.html" target="_blank">twiny</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_aspect.html" target="_blank">set_aspect</a>, 
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_facecolor.html" target="_blank">set_facecolor</a></p>
+</li>
 </ol>
 <h4 id="3d-&#x7ED8;&#x56FE;&#xFF08;mpltoolkitsmplot3d&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;">3D &#x7ED8;&#x56FE;&#xFF08;mpl_toolkits.mplot3d.&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;</h4>
 <ol>
-<li>3D &#x56FE;&#x5F62;&#x5BB9;&#x5668;&#xFF1A;<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D" target="_blank">&lt;Axes3D&gt;</a></li>
-<li>3D &#x56FE;&#x5F62;&#x5C5E;&#x6027;&#xFF1A;<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_xlabel" target="_blank">set_xlabel</a>, <a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_ylabel" target="_blank">set_ylabel</a>, <a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_zlabel" target="_blank">set_zlabel</a>, <a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_xlim" target="_blank">set_xlim</a>, <a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_ylim" target="_blank">set_ylim</a>, <a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_zlim" target="_blank">set_zlim</a>, <a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.view_init" target="_blank">view_init</a></li>
-<li>&#x5E38;&#x7528;&#x901A;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.text" target="_blank">text</a>, <a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.annotate" target="_blank">annotate</a>, <a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.grid" target="_blank">grid</a>, <a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.legend" target="_blank">legend</a>, <a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_aspect" target="_blank">set_aspect</a>, <a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_facecolor" target="_blank">set_facecolor</a></li>
+<li>3D &#x56FE;&#x5F62;&#x5BB9;&#x5668;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D" target="_blank">&lt;Axes3D&gt;</a></li>
+<li>3D &#x56FE;&#x5F62;&#x5C5E;&#x6027;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_xlabel" target="_blank">set_xlabel</a>, 
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_ylabel" target="_blank">set_ylabel</a>, 
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_zlabel" target="_blank">set_zlabel</a>, 
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_xlim" target="_blank">set_xlim</a>, 
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_ylim" target="_blank">set_ylim</a>, 
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_zlim" target="_blank">set_zlim</a>, 
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.view_init" target="_blank">view_init</a></li>
+<li>&#x5E38;&#x7528;&#x901A;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.text" target="_blank">text</a>, 
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.annotate" target="_blank">annotate</a>, 
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.grid" target="_blank">grid</a>, 
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.legend" target="_blank">legend</a>, 
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_aspect" target="_blank">set_aspect</a>, 
+<a href="https://matplotlib.org/stable/api/toolkits/mplot3d.html#mpl_toolkits.mplot3d.Axes3D.set_facecolor" target="_blank">set_facecolor</a></li>
 </ol>
 <p>&#x5176;&#x4ED6;&#x5982; <strong>&#x63CF;&#x7ED8;&#x6548;&#x679C;&#x6269;&#x5C55;&#xFF08;matplotlib.patheffects&#xFF09;</strong> &#x7B49;&#xFF0C;&#x5728;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x53EF;&#x81EA;&#x884C;&#x524D;&#x5F80; <strong><a href="https://matplotlib.org/stable/users/index.html" target="_blank">&#x5B98;&#x7F51;&#x6863;&#x6848;&#x9986;</a></strong> &#x67E5;&#x9605;&#x3002;</p>
 <p><br></p>
@@ -2626,7 +3009,7 @@ ploting_3d_histogram(total_examples, total_examples[<span class="hljs-string">&q
 
 <p>&#x81F3;&#x6B64;&#xFF0C;&#x5BF9;&#x57FA;&#x7840;&#x5E93;&#x7684;&#x7EC3;&#x4E60;&#x5B8C;&#x6BD5;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2024-07-24 15:44:04
+2024-08-19 10:44:53
 </span></footer>
                                 
                                 </section>
@@ -2659,7 +3042,7 @@ ploting_3d_histogram(total_examples, total_examples[<span class="hljs-string">&q
                 </a>
                 
                 
-                <a href="Docs_5_1_2.md" class="navigation navigation-next " aria-label="Next page: 5.1.2 视频分析库（ffmpeg-py、color-science）">
+                <a href="Docs_5_1_2.html" class="navigation navigation-next " aria-label="Next page: 5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2670,7 +3053,7 @@ ploting_3d_histogram(total_examples, total_examples[<span class="hljs-string">&q
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）","level":"1.6.1.1","depth":3,"next":{"title":"5.1.2 视频分析库（ffmpeg-py、color-science）","level":"1.6.1.2","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_2.md","ref":"Chapter_5/Language/cn/Docs_5_1_2.md","articles":[]},"previous":{"title":"5.1 音视频帧与环境准备","level":"1.6.1","depth":2,"path":"Chapter_5/Language/cn/Docs_5_1.md","ref":"Chapter_5/Language/cn/Docs_5_1.md","articles":[{"title":"5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）","level":"1.6.1.1","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_1.md","ref":"Chapter_5/Language/cn/Docs_5_1_1.md","articles":[]},{"title":"5.1.2 视频分析库（ffmpeg-py、color-science）","level":"1.6.1.2","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_2.md","ref":"Chapter_5/Language/cn/Docs_5_1_2.md","articles":[]},{"title":"5.1.3 音频分析库（librosa、resampler）","level":"1.6.1.3","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_3.md","ref":"Chapter_5/Language/cn/Docs_5_1_3.md","articles":[]},{"title":"5.1.4 分析环境准备","level":"1.6.1.4","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_4.md","ref":"Chapter_5/Language/cn/Docs_5_1_4.md","articles":[]},{"title":"5.1.5 其他分析软件","level":"1.6.1.5","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_5.md","ref":"Chapter_5/Language/cn/Docs_5_1_5.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_5/Language/cn/Docs_5_1_1.md","mtime":"2024-07-24T07:44:04.960Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-24T03:59:02.501Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）","level":"1.6.1.1","depth":3,"next":{"title":"5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）","level":"1.6.1.2","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_2.md","ref":"Chapter_5/Language/cn/Docs_5_1_2.md","articles":[]},"previous":{"title":"5.1 音视频帧与环境准备","level":"1.6.1","depth":2,"path":"Chapter_5/Language/cn/Docs_5_1.md","ref":"Chapter_5/Language/cn/Docs_5_1.md","articles":[{"title":"5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）","level":"1.6.1.1","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_1.md","ref":"Chapter_5/Language/cn/Docs_5_1_1.md","articles":[]},{"title":"5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）","level":"1.6.1.2","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_2.md","ref":"Chapter_5/Language/cn/Docs_5_1_2.md","articles":[]},{"title":"5.1.3 视频分析库（ffmpeg-py、color-science）","level":"1.6.1.3","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_3.md","ref":"Chapter_5/Language/cn/Docs_5_1_3.md","articles":[]},{"title":"5.1.4 分析环境准备","level":"1.6.1.4","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_4.md","ref":"Chapter_5/Language/cn/Docs_5_1_4.md","articles":[]},{"title":"5.1.5 其他分析软件","level":"1.6.1.5","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_5.md","ref":"Chapter_5/Language/cn/Docs_5_1_5.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_5/Language/cn/Docs_5_1_1.md","mtime":"2024-08-19T02:44:53.330Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-19T08:47:21.608Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
