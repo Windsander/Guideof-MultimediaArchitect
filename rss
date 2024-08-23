@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 19 Aug 2024 08:48:57 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 Aug 2024 07:24:50 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -962,6 +962,13 @@
             <description><![CDATA[在完成对基础库的熟悉后，我们接下来需要做的就是对工程中，音视频分析的相关核心功能库的学习。以音频分析库为切入点。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[五、【参考文献】]]></title>
+            <description><![CDATA[[1] Oliphant, Travis E. Guide to numpy. Vol. 1. USA: Trelgol Publishing, 2006.]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/References_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/References_5.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
     </channel>
