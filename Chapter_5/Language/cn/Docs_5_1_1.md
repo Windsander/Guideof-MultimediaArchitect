@@ -677,7 +677,7 @@ if __name__ == "__main__":
 	python install_math_libs.py
 ```
 
-如果包已安装，则会输出 **"package_name is already installed."**。如果包未安装，则会安装该包并输出 **"package_name has been installed."**，并显示包的详细信息。
+如果包已安装，则会输出 **"[基础数学库] is already installed."**。如果包未安装，则会安装该包并输出 **"[基础数学库] has been installed."**，并显示包的详细信息。
 
 到此，完成基础库的环境准备工作。
 

@@ -82,10 +82,7 @@ class AudioPlayer:
         if self.playing:
             self.play_pause_button.config(text="Play")
             self.playing = False
-            if self.stream is not None:
-                self.stream.stop_stream()
-                self.stream.close()
-                self.stream = None
+            self.pause_audio()
             self.update_thread_event.set()  # Stop update thread
         else:
             self.play_pause_button.config(text="Pause")
@@ -101,6 +98,12 @@ class AudioPlayer:
         if self.current_frame >= len(self.audio_data):
             return (data, pyaudio.paComplete)
         return (data, pyaudio.paContinue)
+
+    def pause_audio(self):
+        if self.stream is not None:
+            self.stream.stop_stream()
+            self.stream.close()
+            self.stream = None
 
     def play_audio(self):
         self.stream = self.pyaudio_instance.open(

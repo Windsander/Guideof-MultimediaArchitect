@@ -656,12 +656,340 @@ spectrogram = np.array([s for s in spectrogram])
 
 ## **简单练习：用 常用音频库 完成 带有实时频响图的音频播放器**
 
-为了更贴近数据处理中所面临的真实情况，我们这里使用 Google 开源的 **[加利福尼亚州模拟房地产统计信息](https://download.mlcc.google.cn/mledu-datasets/california_housing_train.csv)**，作为数据源。
+为了相对可能的便利，我们需要让这个练习用播放器有一个 UI 界面，且能根据需要的自主选择音频文件。而 **波形图（Waveform）** 就是整个音频所有频段在 **波形切面（TLS）** 叠加后的投影。
+
+对于界面，我们需要引入 **Tkinter** 库来协助进行绘制。Tkinter 是 Python 标准模块其中之一，专用于创建图形用户界面（GUI）的工具，提供了一系列简易的按钮、图表、交互组件和标准布局。这里只需了解即可。
 
 练习事例按照标准工程工作流进行。
 
 #### 第一步，确立已知信息：
 
+1. 数据来源：用户自选的 "*.wav *.flac *.mp3" 音频格式文件（如需可自行在源码中拓展）
+2. 处理环境：依赖 <常用数学库>、<常用音频库>，Python 脚本执行
+3. 工程目标：
+    1) 提供一个具有 GUI 的简易音频格式文件播放器，自选择播放音频文件，可控播放/暂停
+    2) 图形界面显示选定音频文件的波形图，并提供 Seekbar 可进行 Seek 操作
+
+#### 第二步，准备执行环境：
+
+检测是否已经安装了 **Python** 和 **pip（对应 Python 版本 2.x）** 或 **pip3（对应 Python 版本 3.x）** 包管理器。此步骤同我们在 **[&lt;常用数学库&gt; 的练习](Docs_5_1_1.md)** 中的操作一致，执行脚本即可：
+
+```bash
+	python install_pip.py
+	python install_math_libs.py
+```
+
+完成对 **Python 环境** 的准备和 **<常用数学库>** 的安装。具体脚本实现，可回顾上一节。
+
+同理，对于 **<常用音频库>** 的准备工作，我们也按照脚本方式进行流程化的封装。创建自动化脚本 **<a href="../../Examples/env_prepare/install_acoustic_libs.py" target="_blank">install_acoustic_libs.py</a>** 如下：
+
+```python
+import subprocess
+import sys
+import platform
+
+
+def is_package_installed(package_name):
+    try:
+        subprocess.run([sys.executable, "-m", "pip", "show", package_name], check=True, stdout=subprocess.PIPE,
+                       stderr=subprocess.PIPE)
+        return True
+    except subprocess.CalledProcessError:
+        return False
+
+
+def install_package(package_name):
+    print(f"Installing {package_name}...")
+    subprocess.run([sys.executable, "-m", "pip", "install", package_name], check=True)
+    subprocess.run([sys.executable, "-m", "pip", "show", package_name], check=True)
+
+def is_portaudio_installed():
+    try:
+        if platform.system() == "Darwin":  # macOS
+            result = subprocess.run(["brew", "list", "portaudio"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        elif platform.system() == "Linux":
+            result = subprocess.run(["dpkg", "-s", "portaudio19-dev"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        else:
+            return True  # Assume portaudio is handled manually on other platforms
+        return result.returncode == 0
+    except subprocess.CalledProcessError:
+        return False
+
+def install_portaudio():
+    if platform.system() == "Darwin":  # macOS
+        print("Installing portaudio using Homebrew...")
+        subprocess.run(["brew", "install", "portaudio"], check=True)
+    elif platform.system() == "Linux":
+        print("Installing portaudio using APT...")
+        subprocess.run(["sudo", "apt-get", "install", "-y", "portaudio19-dev"], check=True)
+    else:
+        print("Please install portaudio manually for your platform.")
+        sys.exit(1)
+
+def main():
+    packages = ["soundfile", "pyaudio", "librosa"]
+
+    for package in packages:
+        if package == "pyaudio":
+            if not is_portaudio_installed():
+                install_portaudio()
+            if is_package_installed(package):
+                print(f"{package} is already installed.")
+            else:
+                install_package(package)
+                print(f"{package} has been installed.")
+        else:
+            if is_package_installed(package):
+                print(f"{package} is already installed.")
+            else:
+                install_package(package)
+                print(f"{package} has been installed.")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+此处有个流程上的关键，即 PyAudio 依赖于 PortAudio 库提供的 **音频输入输出设备拨接**。我们需要在安装 PyAudio 前，**先行安装 PortAudio** 以保证 PyAudio 的正常执行，否则会报如下的 **IO访问错误**：
+
+```bash
+    OSError: [Errno -9986] Internal PortAudio error
+```
+
+PyAudio 的安装过程由于 **未配置对 PortAudio 的强依赖标注**，且 **PortAudio 并未提供 pip 的可用包**。因此，不会在 pip 包管理安装过程中，自行获取前置库。需要我们 **手动在脚本中完成 检测 与 安装**。
+
+随后，使用 Python 执行脚本：
+
+```bash
+	python install_acoustic_libs.py
+```
+
+如果包已安装，则会输出 **"[基础音频库] is already installed."**。如果包未安装，则会安装该包并输出 **"[基础音频库] has been installed."**，并显示包的详细信息。
+
+到此，完成音频库的环境准备工作。
+
+为什么建议 **采用执行脚本的形式**，对需要的库进行准备流水封装呢？因为这是一个非常好的习惯。而随着工作的积累，相关的 **工具库快速部署脚本会逐步的累积**，形成足够支撑大部分情况的 **一键部署工具集**。在这过程中，工程师 **可以养成对环境准备以流水线方式处理的逻辑链**，使之后再遇到新的情况时，也能快速的理清思维，便于减轻维护工作压力。
+
+#### 第二步，搭建音频播放器：
+
+由于只是个简易播放器，我们选择在单一文件中实现所有基本功能。
+
+首先，需要思考一下，必要包含于 GUI 的交互组件都有哪些。有：
+1. **停止（Stop）**：用于在音频开始播放后，停止播放并重置音频到起始位置；
+2. **播放/暂停（Play/Pause）**：用于控制音频的播放，与过程中暂停；
+3. **打开（Open）**：用于满足选择要播放的音频格式文件；
+4. **进度条（Seekbar）**：用于提供 Seek 功能，并实时显示播放进度
+
+而纯粹的用于显示展示于 GUI 的组件，只有：	
+1. **波形图（Waveform）**：在 “打开” 选择音频文件后，显示该音频波形图；
+
+至此，我们获得了此播放器的基本交互逻辑。
+
+<center>
+<figure>
+   <img  
+      width = "800" height = "520"
+      src="../../Pictures/parctice_2_logistics.png" alt="">
+    <figcaption>
+      <p>图 5-4 简易音频播放器的交互逻辑关系示意图</p>
+   </figcaption>
+</figure>
+</center>
+
+根据上图交互关系，**将每一个节点作为函数封装**，就能轻松完成相关实现了。编写代码：
+
+```python
+import tkinter as tk
+from tkinter import filedialog
+import numpy as np
+import soundfile as sf
+import pyaudio
+import threading
+import queue
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+
+class AudioPlayer:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Simple Audio Player")
+
+        # Initialize pyaudio
+        self.pyaudio_instance = pyaudio.PyAudio()
+
+        # Create control buttons frame
+        self.control_frame = tk.Frame(self.root)
+        self.control_frame.pack(side=tk.TOP, fill=tk.X)
+
+        self.stop_button = tk.Button(self.control_frame, text="Stop", command=self.stop_audio)
+        self.stop_button.pack(side=tk.LEFT)
+
+        self.play_pause_button = tk.Button(self.control_frame, text="Play", command=self.toggle_play_pause)
+        self.play_pause_button.pack(side=tk.LEFT)
+
+        self.open_button = tk.Button(self.control_frame, text="Open", command=self.open_file)
+        self.open_button.pack(side=tk.LEFT)
+
+        self.playing = False
+        self.audio_data = None
+        self.fs = None
+        self.current_frame = 0
+        self.stream = None
+
+        # Create matplotlib figure and axes for waveform display
+        self.fig, self.ax_waveform = plt.subplots(figsize=(6, 3.6))
+        self.canvas = FigureCanvasTkAgg(self.fig, master=self.root)
+        self.canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+        # Create progress bar
+        self.progress_frame = tk.Frame(self.root)
+        self.progress_frame.pack(side=tk.TOP, fill=tk.X)
+        self.progress_bar = tk.Scale(self.progress_frame, from_=0, to=1000, orient=tk.HORIZONTAL, showvalue=0)
+        self.progress_bar.pack(fill=tk.X, expand=True)
+
+        # Timer to update waveform line
+        self.update_interval = 1  # milliseconds
+
+        # Create thread event to stop update thread
+        self.update_thread_event = threading.Event()
+
+        # Queue for inter-thread communication
+        self.queue = queue.Queue()
+
+        # Flag variable to detect if the progress bar is being dragged
+        self.is_seeking = False
+        self.was_playing = False  # Mark the playback state when seeking
+
+        # Bind events
+        self.progress_bar.bind("<Button-1>", self.on_seek_start)
+        self.progress_bar.bind("<ButtonRelease-1>", self.on_seek_end)
+        self.progress_bar.bind("<B1-Motion>", self.on_seek)
+
+        # Start thread to update progress bar
+        self.root.after(self.update_interval, self.update_progress_bar)
+
+    def open_file(self):
+        file_path = filedialog.askopenfilename(filetypes=[("Audio Files", "*.wav *.flac *.mp3")])
+        if file_path:
+            self.audio_data, self.fs = sf.read(file_path, dtype='float32')
+            self.current_frame = 0
+            duration = len(self.audio_data) / self.fs
+            self.progress_bar.config(to=duration * 1000)  # Set the maximum value of the progress bar to the audio duration in milliseconds
+            self.play_pause_button.config(text="Play")
+            self.playing = False
+            self.plot_waveform()
+
+    def toggle_play_pause(self):
+        if self.playing:
+            self.play_pause_button.config(text="Play")
+            self.playing = False
+            self.pause_audio()
+            self.update_thread_event.set()  # Stop update thread
+        else:
+            self.play_pause_button.config(text="Pause")
+            self.playing = True
+            self.update_thread_event.clear()  # Clear update thread event
+            threading.Thread(target=self.play_audio).start()
+
+    def audio_callback(self, in_data, frame_count, time_info, status):
+        end_frame = self.current_frame + frame_count
+        data = self.audio_data[self.current_frame:end_frame].tobytes()
+        self.current_frame = end_frame
+        self.queue.put(end_frame / self.fs * 1000)  # Current time (milliseconds)
+        if self.current_frame >= len(self.audio_data):
+            return (data, pyaudio.paComplete)
+        return (data, pyaudio.paContinue)
+
+    def pause_audio(self):
+        if self.stream is not None:
+            self.stream.stop_stream()
+            self.stream.close()
+            self.stream = None
+
+    def play_audio(self):
+        self.stream = self.pyaudio_instance.open(
+            format=pyaudio.paFloat32,
+            channels=self.audio_data.shape[1],
+            rate=self.fs,
+            output=True,
+            stream_callback=self.audio_callback
+        )
+        self.stream.start_stream()
+
+    def stop_audio(self):
+        self.playing = False
+        self.current_frame = 0
+        if self.stream is not None:
+            self.stream.stop_stream()
+            self.stream.close()
+            self.stream = None
+        self.play_pause_button.config(text="Play")
+        # Reset the red line to the beginning
+        self.update_thread_event.set()  # Stop update thread
+        self.plot_waveform()  # Reset waveform plot
+        self.progress_bar.set(0)
+
+    def plot_waveform(self):
+        self.ax_waveform.clear()
+        time_axis = np.linspace(0, len(self.audio_data) / self.fs, num=len(self.audio_data))
+        self.ax_waveform.plot(time_axis, self.audio_data)
+        self.ax_waveform.set_title("Waveform")
+        self.ax_waveform.set_xlabel("Time (s)")  # Set x-axis label to seconds
+        self.ax_waveform.set_ylabel("Amplitude")
+        self.canvas.draw()
+
+    def update_progress_bar(self):
+        try:
+            while not self.queue.empty():
+                current_time = self.queue.get_nowait()
+                if not self.is_seeking:  # Only update when not dragging the progress bar
+                    self.progress_bar.set(current_time)
+        except queue.Empty:
+            pass
+        self.root.after(self.update_interval, self.update_progress_bar)
+
+    def on_seek_start(self, event):
+        self.was_playing = self.playing  # Record the playback state when seeking
+        if self.playing:
+            self.toggle_play_pause()  # Pause playback
+        self.is_seeking = True  # Mark that the progress bar is being dragged
+
+    def on_seek(self, event):
+        # Update current_frame in real-time
+        value = self.progress_bar.get()
+        self.current_frame = int(float(value) / 1000 * self.fs)
+
+    def on_seek_end(self, event):
+        self.is_seeking = False  # Mark that dragging has ended
+        self.plot_waveform()  # Update waveform plot
+        if self.was_playing:  # If it was playing before, resume playback
+            self.toggle_play_pause()
+
+    def seek(self, value):
+        if self.audio_data is not None:
+            self.current_frame = int(float(value) / 1000 * self.fs)
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = AudioPlayer(root)
+    root.mainloop()
+```
+
+有运行效果如下：
+
+<center>
+<figure>
+   <img  
+      width = "600" height = "435"
+      src="../../Pictures/parctice_2_GUI_example.png" alt="">
+    <figcaption>
+      <p>图 5-5 简易音频播放器的运行效果图</p>
+   </figcaption>
+</figure>
+</center>
+
+
+至此，对音频库的练习完毕。
 
 
 [ref]: References_5.md
