@@ -17,7 +17,7 @@
 
 ## **SoundFile（Python Sound File）**
 
-**SoundFile（PySoundFile [Python Sound File]）** 是一个 **用于读写音频文件的 Python 库**，主要被用于解码（或者编码）常用的 **音频格式文件** [\[4\]][ref] 。例如前文介绍过的 **WAV**、**AIFF**、**FLAC** 等大多数常见音频格式，SoundFile 都已完整支持。并且，通过 SoundFile 取出的音频数据，可以和其他音频分析库（如 Librosa、Aubio 等）和科学计算库（如 Numpy、SciPy 等）配合使用。
+**SoundFile（PySoundFile [Python Sound File]）** 是一个 **用于读写音频文件的 Python 库**，主要被用于解码（或者编码）常用的 **音频格式文件** [\[4\]][ref] 。例如前文介绍过的 **WAV**、**AIFF**、**FLAC** 等大多数常见音频格式，SoundFile 都已完整支持。并且，通过 SoundFile 取出的音频数据，可以和其他音频分析库（如 Librosa、Aubio 等）和科学计算库（如 NumPy、SciPy 等）配合使用。
 
 实际上，SoundFile 核心能力来自于 **C开源库 Libsndfile**，正是 Libsndfile 为它 **提供了多种音频文件格式的支撑**。而 PySoundFile 则可以看做是 Libsndfile 这个 C语言库的 Python 套接访问入口。因此，如果我们在常规工程中存在对音频文件的读写需求，不妨考虑采用 Libsndfile 来处理，它的官网位于 [http://www.mega-nerd.com/libsndfile/](http://www.mega-nerd.com/libsndfile) ，含有该库的相关技术参数。
 
@@ -27,7 +27,7 @@
 2. **支持长音频处理**，提供快速读写大文件的功能，并可用于临时性的（分块）流式处理
 3. 提供 **高可定制化的 API**，允许用户自定义音频处理流程和数据操作，适合快速分析
 4. 允许以不同的数据格式（如浮点型、整型）读取和写入音频数据，及 **基本元数据访问**
-5. 与主流科学计算库（如 Numpy、Pandas、SciPy 等）的 **无缝集成**
+5. 与主流科学计算库（如 NumPy、Pandas、SciPy 等）的 **无缝集成**
 6. **单一的文件操作专精库**，不存在多个子模块，仅有有限但明确的 API 入口
 
 #### 基础库（sf.）的常用函数（简，仅列出名称）：
