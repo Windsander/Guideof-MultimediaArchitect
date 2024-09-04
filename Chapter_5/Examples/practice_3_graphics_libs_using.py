@@ -1,4 +1,7 @@
 import cv2
+import numpy as np
+import colour
+from collections import deque
 
 # 加载 Haar 级联分类器用于人脸检测
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
@@ -9,6 +12,65 @@ cap = cv2.VideoCapture(0)
 # 初始化跟踪器标志
 init_tracker = False
 tracker = None
+
+# 定义一个队列来保存历史颜色数据
+history_length = 100  # 只保留最近 100 帧的数据
+history_rgb = [deque(maxlen=history_length) for _ in range(3)]
+history_xyz = [deque(maxlen=history_length) for _ in range(3)]
+history_lab = [deque(maxlen=history_length) for _ in range(3)]
+
+def calculate_colour_metrics(frame, bounding_box):
+    x, y, w, h = bounding_box
+    face_roi = frame[int(y):int(y + h), int(x):int(x + w)]
+
+    # 计算 RGB 平均值
+    mean_rgb = np.mean(face_roi, axis=(0, 1)) / 255.0  # 归一化到 [0, 1] 范围
+
+    # 获取 D65 光源的色度坐标
+    illuminant = colour.CCS_ILLUMINANTS['CIE 1931 2 Degree Standard Observer']['D65']
+
+    # 转换到 XYZ 颜色空间
+    mean_xyz = colour.RGB_to_XYZ(mean_rgb, colour.RGB_COLOURSPACES['sRGB'], illuminant=illuminant)
+
+    # 转换到 Lab 颜色空间
+    mean_lab = colour.XYZ_to_Lab(mean_xyz, illuminant)
+
+    return mean_rgb, mean_xyz, mean_lab
+
+def draw_graph(frame, data, position, colors, title):
+    """
+    在 frame 上绘制图表
+    :param frame: 要绘制图表的帧
+    :param data: 要绘制的数据（deque）
+    :param position: 图表的位置
+    :param colors: 图表的颜色列表
+    :param title: 图表的名称
+    """
+    graph_height = 100
+    graph_width = 200
+    x, y = position
+
+    # 创建半透明背景
+    overlay = frame.copy()
+    cv2.rectangle(overlay, (x, y - graph_height), (x + graph_width, y), (0, 0, 0), -1)  # 黑色背景
+    alpha = 0.5  # 透明度
+    cv2.addWeighted(overlay, alpha, frame, 1 - alpha, 0, frame)
+
+    # 绘制坐标轴
+    cv2.line(frame, (x, y), (x + graph_width, y), (0, 0, 0), 1)
+    cv2.line(frame, (x, y), (x, y - graph_height), (0, 0, 0), 1)
+
+    # 绘制图表名称
+    cv2.putText(frame, title, (x, y - graph_height - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
+
+    # 绘制数据曲线
+    for channel, color in enumerate(colors):
+        if len(data[channel]) > 1:
+            for i in range(1, len(data[channel])):
+                cv2.line(frame,
+                         (x + int((i-1) * graph_width / (history_length - 1)), y - int(data[channel][i-1] * graph_height)),
+                         (x + int(i * graph_width / (history_length - 1)), y - int(data[channel][i] * graph_height)),
+                         color, 1)
 
 while True:
     # 读取摄像头帧
@@ -61,7 +123,35 @@ while True:
                 p1 = (int(bounding_box[0]), int(bounding_box[1]))
                 p2 = (int(bounding_box[0] + bounding_box[2]), int(bounding_box[1] + bounding_box[3]))
                 cv2.rectangle(frame, p1, p2, (0, 255, 0), 2, 1)
-                cv2.putText(frame, "Tracking success detected", (100, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 255, 0), 2)
+                cv2.putText(frame, "Tracking", (100, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 255, 0), 2)
+
+                # 计算并显示 Colour-Science 相关分析
+                mean_rgb, mean_xyz, mean_lab = calculate_colour_metrics(frame, bounding_box)
+                text = (f"RGB: {mean_rgb[0]:.2f}, {mean_rgb[1]:.2f}, {mean_rgb[2]:.2f}\n"
+                        f"XYZ: {mean_xyz[0]:.2f}, {mean_xyz[1]:.2f}, {mean_xyz[2]:.2f}\n"
+                        f"Lab: {mean_lab[0]:.2f}, {mean_lab[1]:.2f}, {mean_lab[2]:.2f}")
+                y0, dy = 20, 20
+                for i, line in enumerate(text.split('\n')):
+                    y = y0 + i * dy
+                    cv2.putText(frame, line, (100, y + 100), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
+
+                # 将数据添加到历史记录中
+                for i in range(3):
+                    history_rgb[i].append(mean_rgb[i])
+                    history_xyz[i].append(mean_xyz[i] / max(mean_xyz))  # 归一化
+                    history_lab[i].append(mean_lab[i] / 100.0)  # 归一化为 [0, 1]
+
+                # 绘制图表
+                draw_graph(frame, history_rgb,
+                           (10, frame.shape[0] - 10), [(0, 0, 255), (0, 255, 0), (255, 0, 0)],
+                           "RGB")  # 红色, 绿色, 蓝色
+                draw_graph(frame, history_xyz,
+                           (220, frame.shape[0] - 10), [(0, 0, 255), (0, 255, 0), (255, 0, 0)],
+                           "XYZ")  # 红色, 绿色, 蓝色
+                draw_graph(frame, history_lab,
+                           (430, frame.shape[0] - 10), [(0, 0, 255), (0, 255, 0), (255, 0, 0)],
+                           "Lab")  # 红色, 绿色, 蓝色
+
             else:
                 cv2.putText(frame, "Tracking failure detected", (100, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
                 init_tracker = False
