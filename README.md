@@ -202,7 +202,7 @@
 	* [5.1 音视频帧与环境准备](Chapter_5/Language/cn/Docs_5_1.md)
 		* [5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）](Chapter_5/Language/cn/Docs_5_1_1.md)
 		* [5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）](Chapter_5/Language/cn/Docs_5_1_2.md)
-		* [5.1.3 视频分析库（ffmpeg-py、color-science）](Chapter_5/Language/cn/Docs_5_1_3.md)
+		* [5.1.3 视频分析库（PyOpenCV、Color-Science）](Chapter_5/Language/cn/Docs_5_1_3.md)
 		* [5.1.4 分析环境准备](Chapter_5/Language/cn/Docs_5_1_4.md)
 		* [5.1.5 其他分析软件](Chapter_5/Language/cn/Docs_5_1_5.md)
 	* [【参考文献】](Chapter_5/Language/cn/References_5.md)
