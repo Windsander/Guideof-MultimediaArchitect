@@ -309,7 +309,7 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
 10. 形状匹配：
    [matchShapes](https://docs.opencv.org/4.x/d5/d45/tutorial_py_contours_more_functions.html)
 
-#### 视频处理模块（cv2.videoio）的常用函数（简，仅列出名称）：
+#### 视频读写模块（cv2.videoio）的常用函数（简，仅列出名称）：
 
 1. 视频捕获：
    [&lt;VideoCapture&gt;](https://docs.opencv.org/4.x/d8/dfe/classcv_1_1VideoCapture.html), 
@@ -326,9 +326,283 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
 4. 视频编码：
    [&lt;VideoWriter_fourcc&gt;](https://docs.opencv.org/4.x/dd/d9e/classcv_1_1VideoWriter.html#afec93f94dc6c0b3e28f4dd153bc5a7f0)
 
+#### 图形用户界面模块（cv2.highgui）的常用函数（简，仅列出名称）：
+
+1. 创建窗口：
+   [namedWindow](https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga5afdf8410934fd099df85c75b2e0888b)
+2. 显示图像：
+   [imshow](https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga453d42fe4cb60e5723281a89973ee563)
+3. 等待键盘事件：
+   [waitKey](https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga5628525ad33f52eab17feebcfba38bd7)
+4. 销毁窗口：
+   [destroyWindow](https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga851ccdd6961022d1d5b4c4f255dbab34), 
+   [destroyAllWindows](https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga6b7fc1c1a8960438156912027b38f481)
+5. 鼠标事件：
+   [setMouseCallback](https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga89e7806b0a616f6f1d502bd8c183ad3e)
+6. 滑动条（Trackbar）：
+   [createTrackbar](https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#gaf78d2155d30b728fc413803745b67a9b), 
+   [getTrackbarPos](https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga122632e9e91b9ec06943472c55d9cda8), 
+   [setTrackbarPos](https://docs.opencv.org/4.x/d7/dfc/group__highgui.html#ga67d73c4c9430f13481fd58410d01bd8d)
+
+#### 传统机器学习对象检测模块（cv2.objdetect）的常用函数（简，仅列出名称）：
+
+1. 分类器实例：
+   [&lt;CascadeClassifier&gt;](https://docs.opencv.org/4.x/db/d28/classcv_1_1CascadeClassifier.html)
+2. 使用分类器检测对象：
+   [detectMultiScale](https://docs.opencv.org/4.x/db/d28/classcv_1_1CascadeClassifier.html#a8a6e981de494fcd32a0b48578a35a75d)
+3. 保存和加载 XML 分类器文件：
+   [save](https://docs.opencv.org/4.x/db/d28/classcv_1_1CascadeClassifier.html#a5e7a3c3d4ca3f0c7ca3c78a7f6a16c5d), 
+   [load](https://docs.opencv.org/4.x/db/d28/classcv_1_1CascadeClassifier.html#a1f6cbd39bf5d7ea0e503bdc0e8814eda) （为 [&lt;CascadeClassifier&gt;](https://docs.opencv.org/4.x/db/d28/classcv_1_1CascadeClassifier.html) 加载分类器）
+4. 官方提供的 XML 分类器文件，位于 OpenCV 的安装目录，主要有两类，加载方式一致：
+   - [data/haarcascades](https://github.com/opencv/opencv/tree/4.x/data/haarcascades) 为 Haar 分类器（矩形像素差）的指定目标训练所得分类特征
+   - [data/lbpcascades](https://github.com/opencv/opencv/tree/4.x/data/lbpcascades) 为 LBP 分类器（纹理描述符）的指定目标训练所得分类特征
+
+#### 特征检测与匹配模块（cv2.features2d）的常用函数（简，仅列出名称）：
+
+1. 特征检测对象：
+   [&lt;SIFT&gt;](https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html#autotoc_md1256)、 
+   [&lt;SURF&gt;](https://docs.opencv.org/4.x/df/dd2/tutorial_py_surf_intro.html#autotoc_md1259)、 
+   [&lt;ORB&gt;](https://docs.opencv.org/4.x/d1/d89/tutorial_py_orb.html#autotoc_md1244)、 
+   [&lt;FAST&gt;](https://docs.opencv.org/4.x/df/d0c/tutorial_py_fast.html#autotoc_md1223)、 
+   [&lt;BRISK&gt;](https://docs.opencv.org/4.x/de/dbf/classcv_1_1BRISK.html)
+2. 特征匹配对象：
+   [&lt;BFMatcher&gt;](https://docs.opencv.org/4.x/d3/da1/classcv_1_1BFMatcher.html)、 
+   [&lt;FlannBasedMatcher&gt;](https://docs.opencv.org/4.x/dc/de2/classcv_1_1FlannBasedMatcher.html)
+3. 特征检测创建：
+   [SIFT_create](https://docs.opencv.org/4.x/d7/d60/classcv_1_1SIFT.html), 
+   [SURF_create](https://docs.opencv.org/4.x/d5/df7/classcv_1_1xfeatures2d_1_1SURF.html), 
+   [ORB_create](https://docs.opencv.org/4.x/db/d95/classcv_1_1ORB.html), 
+   [FastFeatureDetector_create](https://docs.opencv.org/4.x/df/d74/classcv_1_1FastFeatureDetector.html), 
+   [BRISK::create](https://docs.opencv.org/4.x/de/dbf/classcv_1_1BRISK.html#ad3b513ded80119670e5efa90a31705ac)
+4. 特征描述获取：
+   [compute](https://docs.opencv.org/4.x/d0/d13/classcv_1_1Feature2D.html#ab3cce8d56f4fc5e1d530b5931e1e8dc0), 
+   [detect](https://docs.opencv.org/4.x/d0/d13/classcv_1_1Feature2D.html#aa4e9a7082ec61ebc108806704fbd7887)（由 [xx]_create 创造的对应特征检测方法的对象调用）
+5. 特征匹配：
+   [match](https://docs.opencv.org/4.x/db/d39/classcv_1_1DescriptorMatcher.html#a0f046f47b68ec7074391e1e85c750cba), 
+   [knnMatch](https://docs.opencv.org/4.x/db/d39/classcv_1_1DescriptorMatcher.html#a378f35c9b1a5dfa4022839a45cdf0e89)（由 [&lt;BFMatcher&gt;](https://docs.opencv.org/4.x/d3/da1/classcv_1_1BFMatcher.html) 等特征匹配对象调用）
+6. 关键点绘制：
+   [drawKeypoints](https://docs.opencv.org/4.x/d4/d5d/group__features2d__draw.html#ga5d2bafe8c1c45289bc3403a40fb88920), 
+   [drawMatches](https://docs.opencv.org/4.x/d4/d5d/group__features2d__draw.html#gaf92cd1c6e9400e4753ce393d2fdc06b0)
+
+#### 相机校正与三维影射模块（cv2.calib3d）的常用函数（简，仅列出名称）：
+
+1. 相机校正：
+   [findChessboardCorners](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga93efa9b0aa890de240ca32b11253dd4a), 
+   [cornerSubPix](https://docs.opencv.org/4.x/dd/d1a/group__imgproc__feature.html#ga354e0d7c86d0d9da75de9b9701a9a87e), 
+   [calibrateCamera](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga687a1ab946686f0d85ae0363b5af1d7b), 
+   [initUndistortRectifyMap](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga7dfb72c9cf9780a347fbe3d1c47e5d5a), 
+   [undistort](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga69f2545a8b62a6b0fc2ee060dc30559d), 
+   [undistortPoints](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga887960ea1bde84784e7f1710a922b93c), 
+   [getOptimalNewCameraMatrix](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga7a6c4e032c97f03ba747966e6ad862b1)
+2. 立体校正：
+   [stereoCalibrate](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga91018d80e2a93ade37539f01e6f07de5), 
+   [stereoRectify](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga617b1685d4059c6040827800e72ad2b6), 
+   [stereoBM_create](https://docs.opencv.org/4.x/d9/dba/classcv_1_1StereoBM.html), 
+   [stereoSGBM_create](https://docs.opencv.org/4.x/d2/d85/classcv_1_1StereoSGBM.html)
+3. 匹配校正：
+   [correctMatches](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#gaf32c99d17908e175ac71e7a08fad587b)
+4. 3D 重建：
+   [reprojectImageTo3D](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga1bc1152bd57d63bc524204f21fde6e02)
+5. 基本矩阵与本质矩阵（重要）：
+   [findFundamentalMat](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga59b0d57f46f8677fb5904294a23d404a), 
+   [findEssentialMat](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#gab705726dc6b655acf50bc936942824ef), 
+   [recoverPose](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga2ee9f187170acece29c5172c2175e7ae)
+6. 三角化：
+   [triangulatePoints](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#gad3fc9a0c82b08df034234979960b778c)
+
+#### 图像分割模块（cv2.segmentation）的常用函数（简，仅列出名称）：
+1. 阈值分割：
+   [threshold](https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html), 
+   [adaptiveThreshold](https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html#autotoc_md1416)（同 [结构分析与形态学函数] 已并入基础库）
+2. 路径分割：
+   [findContours](https://docs.opencv.org/4.x/d4/d73/tutorial_py_contours_begin.html), 
+   [drawContours](https://docs.opencv.org/4.x/d4/d73/tutorial_py_contours_begin.html)（同 [结构分析与形态学函数] 已并入基础库）
+3. 形态学分割：
+   [morphologyEx](https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html)（套接，基于图像形状 膨胀、腐蚀、开/闭运算，增减益）
+4. 分水岭算法：
+   [watershed](https://docs.opencv.org/4.x/d3/db4/tutorial_py_watershed.html)
+5. 图割（Graph Cut）算法：
+   [grabCut](https://docs.opencv.org/4.x/d8/d83/tutorial_py_grabcut.html)
+6. 超像素分割（需引入 opencv-contrib-python 扩展的 **cv2.ximgproc** 模块）：
+   - [ximgproc.createSuperpixelLSC](https://docs.opencv.org/4.x/df/d6c/group__ximgproc__superpixel.html#ga713f45545332289d43abcb6878455ffd) 为创建 **线性光谱聚类（LSC）** 超像素分割器
+   - [ximgproc.createSuperpixelSLIC](https://docs.opencv.org/4.x/df/d6c/group__ximgproc__superpixel.html#ga503d462461962668b3bffbf2d7b72038) 为创建 **简单线性迭代聚类（SLIC）** 超像素分割器
+   - [ximgproc.createSuperpixelSEEDS](https://docs.opencv.org/4.x/df/d6c/group__ximgproc__superpixel.html#ga99234c30e4c9e711867d8088783dfde5) 为创建 **能量驱动采样（SEEDS）** 超像素分割器
+
+#### 图像拼接模块（cv2.stitching）的常用函数（简，仅列出名称）：
+
+1. 图像拼接对象：
+   [&lt;Stitcher&gt;](https://docs.opencv.org/4.x/d2/d8d/classcv_1_1Stitcher.html)
+2. 图像拼接创建：
+   [create](https://docs.opencv.org/4.x/d2/d8d/classcv_1_1Stitcher.html#a94ea28f7f5005571aeb3f75a6de59484), 
+   [createStitcher](https://docs.opencv.org/4.x/d1/d46/group__stitching.html#gae96b5068d3b50d7d3a03a4cb5026111e)
+3. 设置参数：
+   [setPanoConfidenceThresh](https://docs.opencv.org/4.x/d2/d8d/classcv_1_1Stitcher.html#a6f5e62bc1dd5d7bdb5f9313a2c21c558), 
+   [setWaveCorrection](https://docs.opencv.org/4.x/d2/d8d/classcv_1_1Stitcher.html#a968a2f4a1faddfdacbcfce54b44bab70)（由 [&lt;Stitcher&gt;](https://docs.opencv.org/4.x/d2/d8d/classcv_1_1Stitcher.html) 对象调用）
+4. 图像拼接：
+   [stitch](https://docs.opencv.org/4.x/d2/d8d/classcv_1_1Stitcher.html#a3156a44286a7065ba9e8802023ad2074)（由 [&lt;Stitcher&gt;](https://docs.opencv.org/4.x/d2/d8d/classcv_1_1Stitcher.html) 对象调用）
+5. 特征检索：
+   [featuresFinder](https://docs.opencv.org/4.x/d2/d8d/classcv_1_1Stitcher.html#a81b3c104e13f9d23a7f5803e8dfa613b)（由 [&lt;Stitcher&gt;](https://docs.opencv.org/4.x/d2/d8d/classcv_1_1Stitcher.html) 对象调用）
+
+#### 图像修复与 HDR 模块（cv2.photo）的常用函数（简，仅列出名称）：
+1. 图像修复：
+   [inpaint](https://docs.opencv.org/4.x/df/d3d/tutorial_py_inpainting.html)
+2. 去噪：
+   [fastNlMeansDenoising](https://docs.opencv.org/4.x/d1/d79/group__photo__denoise.html#ga8c5d4e4f8974255b18f2837f94a08375), 
+   [fastNlMeansDenoisingColored](https://docs.opencv.org/4.x/d1/d79/group__photo__denoise.html#ga44b8dd2d24f2a8826c685fdfed9817ac)
+3. HDR 合成：
+   [createMergeDebevec](https://docs.opencv.org/4.x/d6/df5/group__photo__hdr.html#gab2c9fc25252aee0915733ff8ea987190), 
+   [createMergeMertens](https://docs.opencv.org/4.x/d6/df5/group__photo__hdr.html#ga5b47e51f0df49349dfa75d3cd4088e02), 
+   [createMergeRobertson](https://docs.opencv.org/4.x/d6/df5/group__photo__hdr.html#gaf16f8881a274f98f2113d18c30c40eb6)
+4. 色调映射：
+   [createTonemap](https://docs.opencv.org/4.x/d6/df5/group__photo__hdr.html#ga35801537a741f0d6f8fa12dada5eb5cf), 
+   [createTonemapDrago](https://docs.opencv.org/4.x/d6/df5/group__photo__hdr.html#gabee085b5aa954d11c882099596606348), 
+   [createTonemapMantiuk](https://docs.opencv.org/4.x/d6/df5/group__photo__hdr.html#gaad4a1210a770e4e7841a8e4321191755), 
+   [createTonemapReinhard](https://docs.opencv.org/4.x/d6/df5/group__photo__hdr.html#ga6dbf067773f51401ba49e822fdad0644)
+5. 辐射校正：
+   [createCalibrateDebevec](https://docs.opencv.org/4.x/d6/df5/group__photo__hdr.html#ga670bbeecf0aac14abf386083a57b7958), 
+   [createCalibrateRobertson](https://docs.opencv.org/4.x/d6/df5/group__photo__hdr.html#ga35f1652aa5e908c91a8d4a1fd78502c4)
+
+#### 图像质量评估模块（cv2.quality）的常用函数（简，仅列出名称）：
+1. 图像质量评估对象（重要）：
+   - [&lt;QualityBRISQUE&gt;](https://docs.opencv.org/4.x/d8/d99/classcv_1_1quality_1_1QualityBRISQUE.html) **无参考图像空间质量评估（BRISQUE）** 评估实例
+   - [&lt;QualityGMSD&gt;](https://docs.opencv.org/4.x/d8/d81/classcv_1_1quality_1_1QualityGMSD.html) **梯度幅度相似性偏差（GMSD）** 评估实例
+   - [&lt;QualityMSE&gt;](https://docs.opencv.org/4.x/d7/d80/classcv_1_1quality_1_1QualityMSE.html) **通用像素点间均方误差（MSE）** 评估实例
+   - [&lt;QualityPSNR&gt;](https://docs.opencv.org/4.x/d8/d0c/classcv_1_1quality_1_1QualityPSNR.html) **像素峰值信噪比（PSNR）** 评估实例
+   - [&lt;QualitySSIM&gt;](https://docs.opencv.org/4.x/d9/db5/classcv_1_1quality_1_1QualitySSIM.html) **结构相似性指数（SSIM）** 评估实例
+2. 图像质量评估创建：
+   [create](https://docs.opencv.org/4.x/d9/db5/classcv_1_1quality_1_1QualitySSIM.html#a4ec6e4557fd24782e619f00852ea3289)
+3. 图像质量评估计算：
+   [compute](https://docs.opencv.org/4.x/d9/db5/classcv_1_1quality_1_1QualitySSIM.html#a49d5ecc72e83b8876c8293244c3667e4)
+4. 预训练模型加载：
+   [load](https://docs.opencv.org/4.x/d3/d46/classcv_1_1Algorithm.html#a86c6f0f5d41e382831e7a69afe1a16c4)（继承自 [&lt;cv::Algorithm&gt;](https://docs.opencv.org/4.x/d3/d46/classcv_1_1Algorithm.html) 的关键方法）
+
+#### 文本处理模块（cv2.text）的常用函数（简，仅列出名称）：
+
+1. 文本检测对象：
+   [&lt;ERFilter&gt;](https://docs.opencv.org/4.x/da/def/classcv_1_1text_1_1ERFilter.html)
+2. 文本识别对象：
+   [&lt;OCRHMMDecoder&gt;](https://docs.opencv.org/4.x/d0/d74/classcv_1_1text_1_1OCRHMMDecoder.html), 
+   [&lt;OCRTesseract&gt;](https://docs.opencv.org/4.x/d7/ddc/classcv_1_1text_1_1OCRTesseract.html)
+3. 文本检测创建：
+   [createERFilterNM1](https://docs.opencv.org/4.x/da/d56/group__text__detect.html#ga55ceace3712e9b97c3d0192e27e4b646), 
+   [createERFilterNM2](https://docs.opencv.org/4.x/da/d56/group__text__detect.html#gac108f079a9bf8baa367b46079e0398d4)
+4. 文本识别创建：
+   [createOCRHMMDecoder](https://docs.opencv.org/4.x/d0/d74/classcv_1_1text_1_1OCRHMMDecoder.html#aaa9442992b0889dc947f235e0178265c), 
+   [createOCRHMMTransitionsTable](https://docs.opencv.org/4.x/d8/df2/group__text__recognize.html#gadfc8fe61325b04caf837633f36f74c77)
+5. 文本检测：
+   [detectRegions](https://docs.opencv.org/4.x/da/d56/group__text__detect.html#gacead6485d0966726892094fc4aaf9dc6)
+6. 文本识别：
+   [run](https://docs.opencv.org/4.x/d0/d74/classcv_1_1text_1_1OCRHMMDecoder.html#a9212b8054453d8c90b4f2f31196f0403)（由所创建 [&lt;识别对象&gt;](https://docs.opencv.org/4.x/d0/d74/classcv_1_1text_1_1OCRHMMDecoder.html) 调用）
+7. 字符识别：
+   [loadOCRHMMClassifierNM](https://docs.opencv.org/4.x/d8/df2/group__text__recognize.html#ga290880e14c5d2d744020068a2b91f161), 
+   [loadOCRHMMClassifierCNN](https://docs.opencv.org/4.x/d8/df2/group__text__recognize.html#ga769fa62768bb2e19c1f0390c00f014d5)
+
+#### 视频分析模块（cv2.video）的常用函数（简，仅列出名称）：
+
+1. 背景建模：
+   [&lt;BackgroundSubtractorMOG2&gt;](https://docs.opencv.org/4.x/d7/d7b/classcv_1_1BackgroundSubtractorMOG2.html), 
+   [&lt;BackgroundSubtractorKNN&gt;](https://docs.opencv.org/4.x/db/d88/classcv_1_1BackgroundSubtractorKNN.html)
+2. 光流计算：
+   [calcOpticalFlowFarneback](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga5d10ebbd59fe09c5f650289ec0ece5af)（HS 法）, 
+   [calcOpticalFlowPyrLK](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga473e4b886d0bcc6b65831eb88ed93323)（LK 法）
+3. 运动检测：
+   [CamShift](https://docs.opencv.org/4.x/d7/d00/tutorial_meanshift.html#autotoc_md1140), 
+   [meanShift](https://docs.opencv.org/4.x/d7/d00/tutorial_meanshift.html#autotoc_md1138)
+4. 视频稳定化：
+   [estimateRigidTransform](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga762cbe5efd52cf078950196f3c616d48), 
+   [findTransformECC](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga1aa357007eaec11e9ed03500ecbcbe47)
+
+#### 轨迹跟踪模块（cv2.tracking）的常用函数，用于物体跟踪（重要，节省算力），仅列出名称：
+
+1. 跟踪器对象：
+   [&lt;Tracker&gt;](https://docs.opencv.org/4.x/d0/d0a/classcv_1_1Tracker.html)、 
+   [&lt;MultiTracker&gt;](https://docs.opencv.org/4.x/df/d4a/classcv_1_1legacy_1_1MultiTracker.html)
+2. 单目标跟踪（[&lt;Tracker&gt;](https://docs.opencv.org/4.x/d0/d0a/classcv_1_1Tracker.html) 跟踪器）：
+   [Tracker_create](https://docs.opencv.org/4.x/d0/d0a/classcv_1_1Tracker.html), 
+   [TrackerKCF_create](https://docs.opencv.org/4.x/d2/dff/classcv_1_1TrackerKCF.html), 
+   [TrackerMIL_create](https://docs.opencv.org/4.x/d0/d26/classcv_1_1TrackerMIL.html), 
+   [TrackerBoosting_create](https://docs.opencv.org/4.x/db/df1/classcv_1_1legacy_1_1TrackerBoosting.html), 
+   [TrackerMedianFlow_create](https://docs.opencv.org/4.x/dd/d94/classcv_1_1legacy_1_1TrackerMedianFlow.html), 
+   [TrackerTLD_create](https://docs.opencv.org/4.x/d0/d3e/classcv_1_1TrackerTLD.html#a2fb60f8c8c57b0dcd2a9b8c04d5e1b67), 
+   [TrackerGOTURN_create](https://docs.opencv.org/4.x/dc/d3c/classcv_1_1TrackerGOTURN.html#aebd8507b8d4d55ae6b0e3c9ff4b6d1f9), 
+   [TrackerMOSSE_create](https://docs.opencv.org/4.x/d0/d20/classcv_1_1legacy_1_1TrackerMOSSE.html), 
+   [TrackerCSRT_create](https://docs.opencv.org/4.x/d2/da2/classcv_1_1TrackerCSRT.html)
+3. 多目标跟踪（[&lt;MultiTracker&gt;](https://docs.opencv.org/4.x/df/d4a/classcv_1_1legacy_1_1MultiTracker.html) 跟踪器集）：
+   [MultiTracker_create](https://docs.opencv.org/4.x/df/d4a/classcv_1_1legacy_1_1MultiTracker.html#a7a6e469ed6a3acf87c5cd5ae34ef4b94), 
+   [add](https://docs.opencv.org/4.x/df/d4a/classcv_1_1legacy_1_1MultiTracker.html#a63700e4f7291959acc1eee87e03a8e39)
+4. 跟踪初始化：
+   [init](https://docs.opencv.org/4.x/d0/d0a/classcv_1_1Tracker.html#a7793a7ccf44ad5c3557ea6029a42a198)
+5. 跟踪当前帧：
+   [update](https://docs.opencv.org/4.x/d0/d0a/classcv_1_1Tracker.html#a92d2012f576e6c06eb2e257d110a6529)
+
 <br>
 
-四个关键音频库介绍完毕，那么现在，让我们用它们做些简单的实践。
+### 其次，是扩展库（opencv-contrib-python）所包含的额外模块。
+
+扩展库涵盖了较多 **传统计算机视觉（CV）高级算法**，部分使用配参会较核心库更为复杂。同时，其中涉及 **3D 匹配** 的功能，大部分会用到 **空间位姿计算（Spatial Posture Calculation）** 来表示物体 **在场景中的定位情况**。而对于此类涉及具有实际意义 3D 场景或物体的算法，**想要展示其处理结果，一般都需要用构建空间化的渲染管线完成**，而无法再直接使用 Matplotlib 做快速绘制（除非引入外部位姿库，或自实现）。介于此，有关 3D 绘制的部分，我们于未来再行讨论。
+
+现在，让我们来看都有哪些 **功能扩展**。
+
+#### 生物识别扩展模块（cv2.bioinspired）的常用函数（简，仅列出名称），用于感知模拟（重要）：
+
+1. 视网膜模型（需 opencv-contrib-python 扩展的 **cv2.bioinspired_Retina** 模块），通过[（cv2.）bioinspired_Retina.create](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html#aaf627494d7758eeb10d09c8fa5fd098b) 创建实例：
+   - [&lt;Retina&gt;](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html) 视网膜模拟类型实例
+   - [&lt;Retina&gt;.clearBuffers](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html#a09603d1ed6c8f82459526bbe2ac4eac6) 初始化清空模型历史缓冲
+   - [&lt;Retina&gt;.run](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html#a9d18358b520c4dd7931a9154cc053649) 运行模型分析传入数据
+   - [&lt;Retina&gt;.getParvo](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html#a89bbd0119f52b9936cabdfba97561c0f) 获取视网膜小细胞（Parvo Cells）的感知模拟
+   - [&lt;Retina&gt;.getMagno](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html#ad8ec45e39a333eeb759e0925357f4ec5) 获取视网膜大细胞（Magno Cells）的感知模拟
+   - [&lt;Retina&gt;.write](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html#af0fb1fda44face9993785ef41b38430d) 配置视网膜模型参数，需要 .xml 格式的模型参数配置文件
+   - [&lt;Retina&gt;.setupIPLMagnoChannel](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html#acfec2a2bef33e6ef73a38576f645278b) 设置视网膜大细胞通道数
+   - [&lt;Retina&gt;.setupOPLandIPLParvoChannel](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html#ac6d6767e14212b5ebd7c5bbc6477fa7a) 设置视网膜小细胞通道数
+2. 脉冲神经网络对象（需 opencv-contrib-python 扩展的 **cv2.bioinspired** 模块），通过[（cv2.）bioinspired.TransientAreasSegmentationModule.create](https://docs.opencv.org/4.x/da/d6e/classcv_1_1bioinspired_1_1TransientAreasSegmentationModule.html#a0dee76bf05a2918cdd0ac92060f52774) 创建实例：
+   - [&lt;TransientAreasSegmentationModule&gt;](https://docs.opencv.org/4.x/da/d6e/classcv_1_1bioinspired_1_1TransientAreasSegmentationModule.html) 脉冲神经网络进行瞬态区域检测实例
+   - [&lt;TransientAreasSegmentatio&gt;.run](https://docs.opencv.org/4.x/da/d6e/classcv_1_1bioinspired_1_1TransientAreasSegmentationModule.html#a843674ce05963fc006b0639eb6f2c6d4) 运行模型分析传入数据
+   - [&lt;TransientAreasSegmentatio&gt;.getSegmentationPicture](https://docs.opencv.org/4.x/da/d6e/classcv_1_1bioinspired_1_1TransientAreasSegmentationModule.html#ac1bd67fe5739616e317cdcec339c1d58) 获取检测结果
+
+#### 结构光扩展模块（cv2.structured_light）的常用函数（简，仅列出名称）：
+
+1. 扫描蒙皮光栅生成器（需 opencv-contrib-python 扩展的 **cv2.structured_light** 模块），通过（cv2.）structured_light.<光栅器实例类型名>.create 创建实例：
+   - [&lt;GrayCodePattern&gt;](https://docs.opencv.org/4.x/d1/dec/classcv_1_1structured__light_1_1GrayCodePattern.html)、 
+     [&lt;SinusoidalPattern&gt;](https://docs.opencv.org/4.x/d6/d96/classcv_1_1structured__light_1_1SinusoidalPattern.html)
+   - [&lt;Entity&gt;.setWhiteThreshold](https://docs.opencv.org/4.x/d1/dec/classcv_1_1structured__light_1_1GrayCodePattern.html#aeaf08cd487c5d2894eda4ebd1eea6322) 设置白色阈值
+   - [&lt;Entity&gt;.setBlackThreshold](https://docs.opencv.org/4.x/d1/dec/classcv_1_1structured__light_1_1GrayCodePattern.html#a3607cba801a696881df31bbd6c59c4fd) 设置黑色阈值
+   - [&lt;Entity&gt;.getImagesForShadowMasks](https://docs.opencv.org/4.x/d1/dec/classcv_1_1structured__light_1_1GrayCodePattern.html#ae67bd95cfab3a78721d978f6ba0fd3f3) 获取阴影校验图像（用于结构光解码）
+   - [&lt;Entity&gt;.generate](https://docs.opencv.org/4.x/d9/dbb/classcv_1_1structured__light_1_1StructuredLightPattern.html#aa7170486475603d4756f2c23990b7668) 生成用于投影到被扫描物体上的光栅化蒙皮（锚点定位，必须）
+2. 扫描结果范式解码（需 opencv-contrib-python 扩展的 **cv2.structured_light** 模块），方法提供自 <扫描蒙皮光栅生成器> 继承的 [&lt;StructuredLightPattern&gt;](https://docs.opencv.org/4.x/d9/dbb/classcv_1_1structured__light_1_1StructuredLightPattern.html) 父类：
+   - [&lt;StructuredLightPattern&gt;](https://docs.opencv.org/4.x/d9/dbb/classcv_1_1structured__light_1_1StructuredLightPattern.html) 实物结构光光栅化投影解码器
+   - [&lt;Entity&gt;.decode](https://docs.opencv.org/4.x/d9/dbb/classcv_1_1structured__light_1_1StructuredLightPattern.html#a4cc409edf8a330eeccba6737d391da34) 解码捕获的光栅投影
+3. 三维重建，**需要用到核心库三维影射模块（cv2.calib3d）能力**：
+   [triangulatePoints](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#gad3fc9a0c82b08df034234979960b778c), 
+   [reprojectImageTo3D](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga1bc1152bd57d63bc524204f21fde6e02), 
+   [convertPointsFromHomogeneous](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#gac42edda3a3a0f717979589fcd6ac0035)
+
+#### 表面检测点对特征匹配（PPF）扩展模块（cv2.ppf_match_3d）的常用函数（简，仅列出名称）：
+
+1. 点云模型（需 opencv-contrib-python 扩展的 **cv2.ppf_match_3d** 模块），通过（cv2.） ppf_match_3d.loadPLYSimple 加载 **多边形点云格式（PLY [Polygon File Format]）文件（.ply）**，来创建点云模型实例：
+   - [&lt;Mat&gt;](https://docs.opencv.org/4.x/d3/d63/classcv_1_1Mat.html) 模型被加载 PLY 文件的光栅化与法线等信息，以 OpenCV 的 Mat 格式储存
+2. 模型检测器（基于局部几何特征匹配），即粗配准（Coarse Global Registeration）。需要在使用[（cv2.）ppf_match_3d.&lt;PPF3DDetector&gt;](https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html) 创建时指定 关联采样步长（relativeSamplingStep）决定使用时的模型检测精度，值越小则越严格（精确匹配）：
+   - [&lt;PPF3DDetector&gt;](https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html) 采用点对特征匹配（Point Pair Features）算法的场景模型检测
+   - [&lt;Entity&gt;.trainModel](https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html#acd125802f8339b1ecb67316318a4670d) 将点云模型传入检测器训练，制作指定模型的场景内检测器
+   - [&lt;Entity&gt;.match](https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html#a13757c035f9c95841f7f14f6170c8ffc) 使用训练好的模型检测器实例，检测 3D 场景内模型/位姿匹配
+3. 位姿匹配器（基于初始位姿特征匹配），即精配准（Fine Local Registeration）。需要在使用[（cv2.）surface_matching.&lt;ICP&gt;](https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html) 创建时，对使用的 **临近点迭代（ICP [Iterative Closest Point]）** 算法进行初始设定 [\[10\]][ref] 。位姿匹配器是对 粗配准 结果的进一步优化，用于细化点位，需要注意，&lt;ICP&gt; 有这些参数：
+   - **iterations** 为 ICP 算法的最大迭代次数
+   - **tolerence** 为 ICP 算法的收敛容差，变换矩阵更新差值小于该值时，停止迭代
+   - **rejectionScale** 为 ICP 剔除放缩因子，剔除点对距离大于该因子乘平均距离时的点对
+   - **numLevels** 为 ICP 点云对齐时的分辨率像素金字塔层数，层数越多越耗时，越精确
+   - **sampleType** 为 ICP 点云对齐 采样类型，一般为 0 默认值
+   - **numMaxCorr** 为 ICP 算法的最大对应点对（Point Pairs）数，可调节模型结果精度
+4. 位姿匹配器执行后，可以取得 **源模型（Model）在场景（Scene）中的具体点位的场景内位置情况**。常被用于 SLAM、场景重建、3D 环境分析。以：
+   - [&lt;ICP&gt;.registerModelToScene](https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html#accd9744cedf9cd9cd175d2c5bd77951e) 注册物体点云到场景，来获关键点场景内的位姿矩阵
+   
+   得到经过 ICP 校准后的 PPF 结果（需要在调用 [&lt;ICP&gt;.registerModelToScene](https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html#accd9744cedf9cd9cd175d2c5bd77951e) 方法时，传入 PPF 返回的各点位姿矩阵数组）。
+
+更多的使用细节，可自行前往项目 **[官方档案馆查阅](https://docs.opencv.org/4.x/index.html)** 。
+
+<br>
+
+注意，上文中，**并行计算扩展模块（cv2.parallel）并未例入其中**。因为其主要为库内部加速，且对外的自定义函数自由度太高，使用时应对可能存在数据访问冲突进行自管理。考虑到必要程度不高（存在替代方案且库本身的 CUDA 加速就能满足性能要求），**不太建议使用**。
+
+仍然如前，让我们用它们做些简单的实践。
 
 ---
 
