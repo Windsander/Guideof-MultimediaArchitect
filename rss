@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 23 Aug 2024 07:24:50 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 11 Sep 2024 03:30:10 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -951,8 +951,8 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）]]></title>
-            <description><![CDATA[工程里对 数据分析和科学计算 的过程中，常用数学库是不可或缺的工具。这些库不仅提供了高效的数据处理能力，还为我们提供了 丰富的数学函数 和 可视化工具。其中，最为重要的库有三个，即 Numpy、Pandas、Mateplotlib，分别对应 [ 基础计算、数理统计、图表绘制 ] 的需求。]]></description>
+            <title><![CDATA[5.1.1 常用数学库（NumPy、Pandas、Mateplotlib）]]></title>
+            <description><![CDATA[工程里对 数据分析和科学计算 的过程中，常用数学库是不可或缺的工具。这些库不仅提供了高效的数据处理能力，还为我们提供了 丰富的数学函数 和 可视化工具。其中，最为重要的库有三个，即 NumPy、Pandas、Mateplotlib，分别对应 [ 基础计算、数理统计、图表绘制 ] 的需求。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_1.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_1.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -962,6 +962,13 @@
             <description><![CDATA[在完成对基础库的熟悉后，我们接下来需要做的就是对工程中，音视频分析的相关核心功能库的学习。以音频分析库为切入点。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.1.3 视频分析库（PyOpenCV、Color-Science）]]></title>
+            <description><![CDATA[和音频一样，外部工程里，对视频的分析处理焦点多在于 帧分析，并非于流分析。或者说，有关音视频编解码与网络流的评估，是属于完整编解码工程内部范畴。其更多的是与网络子系统进行结合，并依托于诸如 ITU-T（或其他音视频组织，较少）提出的相关协议（如 H.264、H.265 等）约束之标准规格背景，来作为整体工程中的 子评估系统。所以，音视频流分析（Audio/Video Stream Analysis）和编解码协议是强耦合的，一般会将之归属于 编解码器内部监测 部分，平行于项目的正常作业流水线，来监控各个环节。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
