@@ -596,7 +596,133 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
    
    得到经过 ICP 校准后的 PPF 结果（需要在调用 [&lt;ICP&gt;.registerModelToScene](https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html#accd9744cedf9cd9cd175d2c5bd77951e) 方法时，传入 PPF 返回的各点位姿矩阵数组）。
 
-更多的使用细节，可自行前往项目 **[官方档案馆查阅](https://docs.opencv.org/4.x/index.html)** 。
+#### 二维条码定位校准 ArUco 标记模块（cv2.aruco）的常用函数（简，仅列出名称）：
+
+1. 创建标记字典：
+   [aruco.Dictionary_create](https://docs.opencv.org/4.x/d5/d0b/classcv_1_1aruco_1_1Dictionary.html), 
+   [aruco.getPredefinedDictionary](https://docs.opencv.org/4.x/de/d67/group__objdetect__aruco.html#ga68e0379bcf3799b1ff7145769f8a09c8)
+2. 标记检测：
+   [aruco.detectMarkers](https://docs.opencv.org/4.x/d2/d1a/classcv_1_1aruco_1_1ArucoDetector.html#a0c1d14251bf1cbb06277f49cfe1c9b61)
+3. 标记绘制：
+   [aruco.drawDetectedMarkers](https://docs.opencv.org/4.x/de/d67/group__objdetect__aruco.html#ga2ad34b0f277edebb6a132d3069ed2909), 
+   [aruco.drawDetectedCornersCharuco](https://docs.opencv.org/4.x/de/d67/group__objdetect__aruco.html#ga7225eee644190f791e1583c499b7ab10)
+4. 标记校准：
+   [aruco.calibrateCameraAruco](https://docs.opencv.org/4.x/d9/d6a/group__aruco.html#ga9952135f6bf4ec17894a103c238f6979)
+5. 姿态估计：
+   [aruco.estimatePoseSingleMarkers](https://docs.opencv.org/4.x/d9/d6a/group__aruco.html#gaba7f1e107f93451e2bc43b8ea96eef8c), 
+   [aruco.estimatePoseBoard](https://docs.opencv.org/4.x/d9/d6a/group__aruco.html#ga366993d29fdddd995fba8c2e6ca811ea), 
+   [aruco.estimatePoseCharucoBoard](https://docs.opencv.org/4.x/d9/d6a/group__aruco.html#ga21b51b9e8c6422a4bac27e48fa0a150b)
+6. 标记板创建：
+   [aruco.GridBoard_create](https://docs.opencv.org/4.x/d9/d6a/group__aruco.html#ga9ddc2255d1f7b25c252a9f0e4f0f1f0f), 
+   [aruco.CharucoBoard_create](https://docs.opencv.org/4.x/d0/d3c/classcv_1_1aruco_1_1CharucoBoard.html)
+7. 坐标面绘制：
+   [aruco.drawPlanarBoard](https://docs.opencv.org/4.x/d9/d6a/group__aruco.html#gac67daa408c85fe7faf8baf4a045ec09f)
+8. Charuco 标记：
+   [aruco.drawCharucoDiamond](https://docs.opencv.org/4.x/d9/d6a/group__aruco.html#gaf71fb897d5f03f7424c0c84715aa6228), 
+   [aruco.detectCharucoDiamond](https://docs.opencv.org/4.x/d9/d6a/group__aruco.html#ga28e187562a007d9ff94c4e9ca005ce12), 
+   [aruco.interpolateCornersCharuco](https://docs.opencv.org/4.x/d9/d6a/group__aruco.html#gadcc5dc30c9ad33dcf839e84e8638dcd1)
+
+#### 机器学习模块（cv2.ml）常用方法封装（简，仅列出名称），提供传统机器学习分类算法：
+
+1. 数据准备：
+   [ml.TrainData_create](https://docs.opencv.org/4.x/dc/d32/classcv_1_1ml_1_1TrainData.html)
+2. 支持向量机：
+   [ml.SVM_create](https://docs.opencv.org/4.x/d1/d2d/classcv_1_1ml_1_1SVM.html), 
+   [&lt;Entity&gt;.trainAuto](https://docs.opencv.org/4.x/d1/d2d/classcv_1_1ml_1_1SVM.html#a533d3d3f950fed3f75be0d8692eeff58), 
+   [&lt;Entity&gt;.predict](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#a1a7e49e1febd10392452727498771bc1)
+3. K 近邻：
+   [ml.KNearest_create](https://docs.opencv.org/4.x/dd/de1/classcv_1_1ml_1_1KNearest.html), 
+   [&lt;Entity&gt;.train](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#af96a0e04f1677a835cc25263c7db3c0c), 
+   [&lt;Entity&gt;.findNearest](https://docs.opencv.org/4.x/dd/de1/classcv_1_1ml_1_1KNearest.html#a312f975c24725b57200e221a97474b45)
+4. 决策树：
+   [ml.DTrees_create](https://docs.opencv.org/4.x/d8/d89/classcv_1_1ml_1_1DTrees.html), 
+   [&lt;Entity&gt;.train](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#af96a0e04f1677a835cc25263c7db3c0c), 
+   [&lt;Entity&gt;.predict](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#a1a7e49e1febd10392452727498771bc1)
+5. 随机森林：
+   [ml.RTrees_create](https://docs.opencv.org/4.x/d0/d65/classcv_1_1ml_1_1RTrees.html), 
+   [&lt;Entity&gt;.train](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#af96a0e04f1677a835cc25263c7db3c0c), 
+   [&lt;Entity&gt;.predict](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#a1a7e49e1febd10392452727498771bc1)
+6. 加速树分类：
+   [ml.Boost_create](https://docs.opencv.org/4.x/d6/d7a/classcv_1_1ml_1_1Boost.html), 
+   [&lt;Entity&gt;.train](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#af96a0e04f1677a835cc25263c7db3c0c), 
+   [&lt;Entity&gt;.predict](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#a1a7e49e1febd10392452727498771bc1)
+7. 正态贝叶斯分类器：
+   [ml.NormalBayesClassifier_create](https://docs.opencv.org/4.x/d4/d8e/classcv_1_1ml_1_1NormalBayesClassifier.html), 
+   [&lt;Entity&gt;.train](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#af96a0e04f1677a835cc25263c7db3c0c), 
+   [&lt;Entity&gt;.predict](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#a1a7e49e1febd10392452727498771bc1)
+8. 神经网络：
+   [ml.ANN_MLP_create](https://docs.opencv.org/4.x/d0/dce/classcv_1_1ml_1_1ANN__MLP.html), 
+   [&lt;Entity&gt;.train](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#af96a0e04f1677a835cc25263c7db3c0c), 
+   [&lt;Entity&gt;.predict](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#a1a7e49e1febd10392452727498771bc1)
+9. EM 聚类：
+   [ml.EM_create](https://docs.opencv.org/4.x/d1/dfb/classcv_1_1ml_1_1EM.html), 
+   [&lt;Entity&gt;.trainEM](https://docs.opencv.org/4.x/d1/dfb/classcv_1_1ml_1_1EM.html#a5a6a7badbc0c85a8c9fa50a41bf1bcd2), 
+   [&lt;Entity&gt;.trainM](https://docs.opencv.org/4.x/d1/dfb/classcv_1_1ml_1_1EM.html#ac21fbae3a09972de0a0a1cb4c2c434d0), 
+   [&lt;Entity&gt;.predict](https://docs.opencv.org/4.x/db/d7d/classcv_1_1ml_1_1StatModel.html#a1a7e49e1febd10392452727498771bc1)
+
+#### 深度学习模块（cv2.dnn）常用方法封装（简，仅列出名称），提供深度学习单一模型前向推理：
+
+1. 模型加载：
+   [&lt;Net&gt;](https://docs.opencv.org/4.x/db/d30/classcv_1_1dnn_1_1Net.html), 
+   [dnn.readNet](https://docs.opencv.org/4.x/d6/d0f/group__dnn.html#ga138439da76f26266fdefec9723f6c5cd), 
+   [dnn.readNetFromCaffe](https://docs.opencv.org/4.x/d6/d0f/group__dnn.html#ga946b342af1355185a7107640f868b64a), 
+   [dnn.readNetFromTensorflow](https://docs.opencv.org/4.x/d6/d0f/group__dnn.html#gacdba30a7c20db2788efbf5bb16a7884d), 
+   [dnn.readNetFromTorch](https://docs.opencv.org/4.x/d6/d0f/group__dnn.html#ga73785dd1e95cd3070ef36f3109b053fe), 
+   [dnn.readNetFromONNX](https://docs.opencv.org/4.x/d6/d0f/group__dnn.html#ga9198ecaac7c32ddf0aa7a1bcbd359567), 
+   [dnn.readNetFromDarknet](https://docs.opencv.org/4.x/d6/d0f/group__dnn.html#ga351c327837e9e2d98035487695f74836)
+2. 输入处理：
+   [dnn.blobFromImage](https://docs.opencv.org/4.x/d6/d0f/group__dnn.html#ga29f34df9376379a603acd8df581ac8d7), 
+   [dnn.blobFromImages](https://docs.opencv.org/4.x/d6/d0f/group__dnn.html#ga0b7b7c3c530b747ef738178835e1e70f)
+3. 输入设置：
+   [&lt;Entity&gt;.setInput](https://docs.opencv.org/4.x/db/d30/classcv_1_1dnn_1_1Net.html#a5586b0bb38700bd7294133e81eea6219)
+4. 推理后端：
+   [&lt;Entity&gt;.setPreferableBackend](https://docs.opencv.org/4.x/db/d30/classcv_1_1dnn_1_1Net.html#a7f767df11386d39374db49cd8df8f59e), 
+   [&lt;Entity&gt;.setPreferableTarget](https://docs.opencv.org/4.x/db/d30/classcv_1_1dnn_1_1Net.html#a9dddbefbc7f3defbe3eeb5dc3d3483f4)
+5. 模型推理：
+   [&lt;Entity&gt;.forward](https://docs.opencv.org/4.x/db/d30/classcv_1_1dnn_1_1Net.html#a98ed94cb6ef7063d3697259566da310b)
+
+#### GPU 加速扩展模块（cv2.cuda）的常用函数，是同名基础模块算法 CUDA 加速版，仅列出名称：
+
+1. GPU 信息：
+   [cuda.getCudaEnabledDeviceCount](https://docs.opencv.org/4.x/d8/d40/group__cudacore__init.html#gaaa93892f9189163e5d53790b4b1e88db), 
+   [cuda.printCudaDeviceInfo](https://docs.opencv.org/4.x/d8/d40/group__cudacore__init.html#gaa37afdfb8efe85b6252ca2bb8bea8ff2)
+2. 内存管理：
+   [&lt;GpuMat&gt;](https://docs.opencv.org/4.x/d0/d60/classcv_1_1cuda_1_1GpuMat.html), 
+   [cuda.registerPageLocked](https://docs.opencv.org/4.x/d9/d41/group__cudacore__struct.html#ga6d25da8194cc95035994ae98e9eebc02), 
+   [cuda.unregisterPageLocked](https://docs.opencv.org/4.x/d9/d41/group__cudacore__struct.html#ga68dd974fb5e19f6306122a4b49c6a428)
+3. 图像处理：
+   [cuda.cvtColor](https://docs.opencv.org/4.x/db/d8c/group__cudaimgproc__color.html#ga48d0f208181d5ca370d8ff6b62cbe826), 
+   [cuda.resize](https://docs.opencv.org/4.x/db/d29/group__cudawarping.html#ga4f5fa0770d1c9efbadb9be1b92a6452a), 
+   [cuda.threshold](https://docs.opencv.org/4.x/d8/d34/group__cudaarithm__elem.html#ga40f1c94ae9a9456df3cad48e3cb008e1), 
+   [cuda.warpAffine](https://docs.opencv.org/4.x/db/d29/group__cudawarping.html#gac8f09935373800353afc90dd2f74866e), 
+   [cuda.warpPerspective](https://docs.opencv.org/4.x/db/d29/group__cudawarping.html#ga7a6cf95065536712de6b155f3440ccff)
+4. 图像滤波：
+   [cuda.createBoxFilter](https://docs.opencv.org/4.x/dc/d66/group__cudafilters.html#ga87a9e866fad3af00aadd35f97691f46e), 
+   [cuda.createGaussianFilter](https://docs.opencv.org/4.x/dc/d66/group__cudafilters.html#gaff23afdd5f0e3732be55aff958b2887f), 
+   [cuda.createSobelFilter](https://docs.opencv.org/4.x/dc/d66/group__cudafilters.html#ga8d316d4867b295332501c85f67516ac5), 
+   [cuda.createLaplacianFilter](https://docs.opencv.org/4.x/dc/d66/group__cudafilters.html#ga89a6f97f1ca9b7a6cfe10571ff70a476), 
+   [cuda.createCannyEdgeDetector](https://docs.opencv.org/4.x/d0/d05/group__cudaimgproc.html#ga3d69684eb04e0517cf32fc01ecbc3935)
+5. 特征检测：
+   [cuda.ORB_create](https://docs.opencv.org/4.x/da/d44/classcv_1_1cuda_1_1ORB.html), 
+   [cuda.SURF_CUDA_create](https://docs.opencv.org/4.x/db/d06/classcv_1_1cuda_1_1SURF__CUDA.html#ac6522a440dea4b95807d3a3b3417e6a0)
+6. 立体匹配：
+   [cuda.createStereoBM](https://docs.opencv.org/4.x/dd/d47/group__cudastereo.html#ga878eb3ce77274540fa51d24046b778c2), 
+   [cuda.createStereoBeliefPropagation](https://docs.opencv.org/4.x/dd/d47/group__cudastereo.html#ga1ab9b8570f0f490f921a92195475cd39), 
+   [cuda.createStereoConstantSpaceBP](https://docs.opencv.org/4.x/dd/d47/group__cudastereo.html#ga993eaa25ccab472186452c86e95a43ec)
+7. 视频处理：
+   [cuda.createBackgroundSubtractorMOG](https://docs.opencv.org/4.x/d6/d17/group__cudabgsegm.html#ga64bcfdf675ef277bd642ca8176bf5735), 
+   [cuda.createBackgroundSubtractorMOG2](https://docs.opencv.org/4.x/d6/d17/group__cudabgsegm.html#ga74b11316d24dda57b75978cf8d3effdf)
+8. 光流计算：
+   [cuda.calcOpticalFlowFarneback](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga5d10ebbd59fe09c5f650289ec0ece5af), 
+   [cuda.calcOpticalFlowPyrLK](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga473e4b886d0bcc6b65831eb88ed93323)
+9. 空频变换：
+   [cuda.dft](https://docs.opencv.org/4.x/d9/d88/group__cudaarithm__arithm.html#gadea99cb15a715c983bcc2870d65a2e78)（1D/2D 离散傅立叶）, 
+   [cuda.mulSpectrums](https://docs.opencv.org/4.x/d9/d88/group__cudaarithm__arithm.html#gab3e8900d67c4f59bdc137a0495206cd8)（频域乘）
+10. 图像金字塔：
+   [cuda.pyrUp](https://docs.opencv.org/4.x/db/d29/group__cudawarping.html#ga2048da0dfdb9e4a726232c5cef7e5747), 
+   [cuda.pyrDown](https://docs.opencv.org/4.x/db/d29/group__cudawarping.html#ga9c8456de9792d96431e065f407c7a91b)
+
+**以上只列出了少部分常用的函数，仅覆盖了 OpenCV 的部分常用基础能力。** 更多的使用细节，可自行前往项目 **[官方档案馆查阅](https://docs.opencv.org/4.x/index.html)** 。
 
 <br>
 
@@ -608,19 +734,19 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
 
 ## **简单练习：用 常用视频库 完成 带有均色分析的简易单人脸跟踪识别**
 
-为了相对可能的便利，我们需要让这个练习用播放器有一个 UI 界面，且能根据需要的自主选择音频文件。而 **波形图（Waveform）** 就是整个音频所有频段在 **波形切面（TLS）** 叠加后的投影。
+这次，我们尝试完成，用 OpenCV 的 **传统机器学习对象检测** 和 **视频分析对象跟踪算法** 来实现对 **单一人脸的识别与跟踪**。且对人脸区域的 RGB、XYZ、LAB 三类色彩空间通道均值进行实时监测，绘制历史图表并显示在 UI 界面。
 
-对于界面，我们需要引入 **Tkinter** 库来协助进行绘制。Tkinter 是 Python 标准模块其中之一，专用于创建图形用户界面（GUI）的工具，提供了一系列简易的按钮、图表、交互组件和标准布局。这里只需了解即可。
+由于 OpenCV 提供了部分图形功能，能够做基础绘图（点、线、几何面等）。我们直接选用 OpenCV 来创建练习的图形用户界面（GUI）。而色彩分析则用在此领域更专业的 Colour-Science 完成。
 
 练习事例按照标准工程工作流进行。
 
 #### 第一步，确立已知信息：
 
-1. 数据来源：用户自选的 "*.wav *.flac *.mp3" 音频格式文件（如需可自行在源码中拓展）
-2. 处理环境：依赖 <常用数学库>、<常用音频库>，Python 脚本执行
+1. 数据来源：使用电脑自带（或默认外接）摄像头的采样作为输入
+2. 处理环境：依赖 <常用数学库>、<常用视频库>，Python 脚本执行
 3. 工程目标：
-    1) 提供一个具有 GUI 的简易音频格式文件播放器，自选择播放音频文件，可控播放/暂停
-    2) 图形界面显示选定音频文件的波形图，并提供 Seekbar 可进行 Seek 操作
+      1) 提供一个具有 GUI 的简易单人脸（Single Face）区域监测，并在监测到人脸后跟踪
+      2) 对人脸区域内的像素值进行关于 RGB、XYZ、LAB 色彩空间的区域内均值分析
 
 #### 第二步，准备执行环境：
 
@@ -633,13 +759,11 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
 
 完成对 **Python 环境** 的准备和 **<常用数学库>** 的安装。具体脚本实现，可回顾上一节。
 
-同理，对于 **<常用音频库>** 的准备工作，我们也按照脚本方式进行流程化的封装。创建自动化脚本 **<a href="../../Examples/env_prepare/install_acoustic_libs.py" target="_blank">install_acoustic_libs.py</a>** 如下：
+同理，对于 **<常用视频库>** 的准备工作，我们也按照脚本方式进行流程化的封装。创建自动化脚本 **<a href="../../Examples/env_prepare/install_grapic_libs.py" target="_blank">install_grapic_libs.py</a>** 如下：
 
 ```python
 import subprocess
 import sys
-import platform
-
 
 def is_package_installed(package_name):
     try:
@@ -649,282 +773,250 @@ def is_package_installed(package_name):
     except subprocess.CalledProcessError:
         return False
 
-
 def install_package(package_name):
     print(f"Installing {package_name}...")
-    subprocess.run([sys.executable, "-m", "pip", "install", package_name], check=True)
-    subprocess.run([sys.executable, "-m", "pip", "show", package_name], check=True)
-
-def is_portaudio_installed():
     try:
-        if platform.system() == "Darwin":  # macOS
-            result = subprocess.run(["brew", "list", "portaudio"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        elif platform.system() == "Linux":
-            result = subprocess.run(["dpkg", "-s", "portaudio19-dev"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        else:
-            return True  # Assume portaudio is handled manually on other platforms
-        return result.returncode == 0
+        subprocess.run([sys.executable, "-m", "pip", "install", package_name], check=True)
+        print(f"{package_name} has been installed.")
     except subprocess.CalledProcessError:
-        return False
-
-def install_portaudio():
-    if platform.system() == "Darwin":  # macOS
-        print("Installing portaudio using Homebrew...")
-        subprocess.run(["brew", "install", "portaudio"], check=True)
-    elif platform.system() == "Linux":
-        print("Installing portaudio using APT...")
-        subprocess.run(["sudo", "apt-get", "install", "-y", "portaudio19-dev"], check=True)
-    else:
-        print("Please install portaudio manually for your platform.")
-        sys.exit(1)
+        print(f"Failed to install {package_name}. Please try installing it manually.")
 
 def main():
-    packages = ["soundfile", "pyaudio", "librosa"]
+    packages = ["colour-science", "opencv-python", "opencv-contrib-python"]
 
     for package in packages:
-        if package == "pyaudio":
-            if not is_portaudio_installed():
-                install_portaudio()
-            if is_package_installed(package):
-                print(f"{package} is already installed.")
-            else:
-                install_package(package)
-                print(f"{package} has been installed.")
+        if is_package_installed(package):
+            print(f"{package} is already installed.")
         else:
-            if is_package_installed(package):
-                print(f"{package} is already installed.")
-            else:
-                install_package(package)
-                print(f"{package} has been installed.")
-
+            install_package(package)
 
 if __name__ == "__main__":
     main()
 ```
-
-此处有个流程上的关键，即 PyAudio 依赖于 PortAudio 库提供的 **音频输入输出设备拨接**。我们需要在安装 PyAudio 前，**先行安装 PortAudio** 以保证 PyAudio 的正常执行，否则会报如下的 **IO访问错误**：
-
-```bash
-    OSError: [Errno -9986] Internal PortAudio error
-```
-
-PyAudio 的安装过程由于 **未配置对 PortAudio 的强依赖标注**，且 **PortAudio 并未提供 pip 的可用包**。因此，不会在 pip 包管理安装过程中，自行获取前置库。需要我们 **手动在脚本中完成 检测 与 安装**。
-
-随后，使用 Python 执行脚本：
+这套脚本流程应该相当熟悉了。随后，使用 Python 执行脚本：
 
 ```bash
-	python install_acoustic_libs.py
+   python install_grapic_libs.py
 ```
 
-如果包已安装，则会输出 **"[基础音频库] is already installed."**。如果包未安装，则会安装该包并输出 **"[基础音频库] has been installed."**，并显示包的详细信息。
+如果包已安装，则会输出 **"[基础视频库] is already installed."**。如果包未安装，则会安装该包并输出 **"[基础视频库] has been installed."**，并显示包的详细信息。
 
 到此，完成音频库的环境准备工作。
 
-为什么建议 **采用执行脚本的形式**，对需要的库进行准备流水封装呢？因为这是一个非常好的习惯。而随着工作的积累，相关的 **工具库快速部署脚本会逐步的累积**，形成足够支撑大部分情况的 **一键部署工具集**。在这过程中，工程师 **可以养成对环境准备以流水线方式处理的逻辑链**，使之后再遇到新的情况时，也能快速的理清思维，便于减轻维护工作压力。
+#### 第三步，搭建人脸检测分析 Demo：
 
-#### 第三步，搭建音频播放器：
+际上，这一次的 Demo 较上节的 <简易音频播放器> 来说，在交互逻辑上会少很多内容（基本没有操作上的交互）。但其功能逻辑链路，会比 <简易音频播放器> 要深一些。所以，我们可以把 **功能上的诉求按照同一条执行流水线**，进行概念原型设计。
 
-由于只是个简易播放器，我们选择在单一文件中实现所有基本功能。
-
-首先，需要思考一下，必要包含于 GUI 的交互组件都有哪些。有：
-1. **停止（Stop）**：用于在音频开始播放后，停止播放并重置音频到起始位置；
-2. **播放/暂停（Play/Pause）**：用于控制音频的播放，与过程中暂停；
-3. **打开（Open）**：用于满足选择要播放的音频格式文件；
-4. **进度条（Seekbar）**：用于提供 Seek 功能，并实时显示播放进度
-
-而纯粹的用于显示展示于 GUI 的组件，只有：	
-1. **波形图（Waveform）**：在 “打开” 选择音频文件后，显示该音频波形图；
-
-至此，我们获得了此播放器的基本交互逻辑。
+而细化的两个 <工程目标> 就是执行流水线的 **“必要目标节点”**，有关键步骤图：
 
 <center>
 <figure>
    <img  
-      width = "800" height = "520"
-      src="../../Pictures/parctice_2_logistics.png" alt="">
+      width = "800" height = "710"
+      src="../../Pictures/parctice_3_logistics.png" alt="">
     <figcaption>
-      <p>图 5-4 简易音频播放器的交互逻辑关系示意图</p>
+      <p>图 5-7 人脸检测分析 Demo 处理过程节点示意图</p>
    </figcaption>
 </figure>
 </center>
 
-根据上图交互关系，**将每一个节点作为函数封装**，就能轻松完成相关实现了。编写代码：
+至此，我们获得了此播放器的基本运行逻辑。根据上图节点作函数封装，**构建实时处理流水线**。编写代码：
 
 ```python
-import tkinter as tk
-from tkinter import filedialog
+import cv2
 import numpy as np
-import soundfile as sf
-import pyaudio
-import threading
-import queue
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import colour
+from collections import deque
 
-class AudioPlayer:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Simple Audio Player")
+# 加载 Haar 级联分类器用于人脸检测
+face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-        # Initialize pyaudio
-        self.pyaudio_instance = pyaudio.PyAudio()
+# 打开摄像头
+cap = cv2.VideoCapture(0)
 
-        # Create control buttons frame
-        self.control_frame = tk.Frame(self.root)
-        self.control_frame.pack(side=tk.TOP, fill=tk.X)
+# 初始化跟踪器标志
+init_tracker = False
+tracker = None
 
-        self.stop_button = tk.Button(self.control_frame, text="Stop", command=self.stop_audio)
-        self.stop_button.pack(side=tk.LEFT)
+# 定义一个队列来保存历史颜色数据
+history_length = 100  # 只保留最近 100 帧的数据
+history_rgb = [deque(maxlen=history_length) for _ in range(3)]
+history_xyz = [deque(maxlen=history_length) for _ in range(3)]
+history_lab = [deque(maxlen=history_length) for _ in range(3)]
 
-        self.play_pause_button = tk.Button(self.control_frame, text="Play", command=self.toggle_play_pause)
-        self.play_pause_button.pack(side=tk.LEFT)
 
-        self.open_button = tk.Button(self.control_frame, text="Open", command=self.open_file)
-        self.open_button.pack(side=tk.LEFT)
+def calculate_colour_metrics(frame, bounding_box):
+    x, y, w, h = bounding_box
+    face_roi = frame[int(y):int(y + h), int(x):int(x + w)]
 
-        self.playing = False
-        self.audio_data = None
-        self.fs = None
-        self.current_frame = 0
-        self.stream = None
+    # 计算 RGB 平均值
+    mean_rgb = np.mean(face_roi, axis=(0, 1)) / 255.0  # 归一化到 [0, 1] 范围
 
-        # Create matplotlib figure and axes for waveform display
-        self.fig, self.ax_waveform = plt.subplots(figsize=(6, 3.6))
-        self.canvas = FigureCanvasTkAgg(self.fig, master=self.root)
-        self.canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+    # 获取 D65 光源的色度坐标
+    illuminant = colour.CCS_ILLUMINANTS['CIE 1931 2 Degree Standard Observer']['D65']
 
-        # Create progress bar
-        self.progress_frame = tk.Frame(self.root)
-        self.progress_frame.pack(side=tk.TOP, fill=tk.X)
-        self.progress_bar = tk.Scale(self.progress_frame, from_=0, to=1000, orient=tk.HORIZONTAL, showvalue=0)
-        self.progress_bar.pack(fill=tk.X, expand=True)
+    # 转换到 XYZ 颜色空间
+    mean_xyz = colour.RGB_to_XYZ(mean_rgb, colour.RGB_COLOURSPACES['sRGB'], illuminant=illuminant)
 
-        # Timer to update waveform line
-        self.update_interval = 1  # milliseconds
+    # 转换到 Lab 颜色空间
+    mean_lab = colour.XYZ_to_Lab(mean_xyz, illuminant)
 
-        # Create thread event to stop update thread
-        self.update_thread_event = threading.Event()
+    return mean_rgb, mean_xyz, mean_lab
 
-        # Queue for inter-thread communication
-        self.queue = queue.Queue()
 
-        # Flag variable to detect if the progress bar is being dragged
-        self.is_seeking = False
-        self.was_playing = False  # Mark the playback state when seeking
+def draw_graph(frame, data, position, colors, title):
+    """
+    在 frame 上绘制图表
+    :param frame: 要绘制图表的帧
+    :param data: 要绘制的数据（deque）
+    :param position: 图表的位置
+    :param colors: 图表的颜色列表
+    :param title: 图表的名称
+    """
+    graph_height = 100
+    graph_width = 200
+    x, y = position
 
-        # Bind events
-        self.progress_bar.bind("<Button-1>", self.on_seek_start)
-        self.progress_bar.bind("<ButtonRelease-1>", self.on_seek_end)
-        self.progress_bar.bind("<B1-Motion>", self.on_seek)
+    # 创建半透明背景
+    overlay = frame.copy()
+    cv2.rectangle(overlay, (x, y - graph_height), (x + graph_width, y), (0, 0, 0), -1) 
+    alpha = 0.5  # 透明度
+    cv2.addWeighted(overlay, alpha, frame, 1 - alpha, 0, frame)
 
-        # Start thread to update progress bar
-        self.root.after(self.update_interval, self.update_progress_bar)
+    # 绘制坐标轴
+    cv2.line(frame, (x, y), (x + graph_width, y), (0, 0, 0), 1)
+    cv2.line(frame, (x, y), (x, y - graph_height), (0, 0, 0), 1)
 
-    def open_file(self):
-        file_path = filedialog.askopenfilename(filetypes=[("Audio Files", "*.wav *.flac *.mp3")])
-        if file_path:
-            self.audio_data, self.fs = sf.read(file_path, dtype='float32')
-            self.current_frame = 0
-            duration = len(self.audio_data) / self.fs
-            self.progress_bar.config(to=duration * 1000)  # Set the maximum value of the progress bar to the audio duration in milliseconds
-            self.play_pause_button.config(text="Play")
-            self.playing = False
-            self.plot_waveform()
+    # 绘制图表名称
+    cv2.putText(
+        frame, title, (x, y - graph_height - 10),
+        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1
+    )
 
-    def toggle_play_pause(self):
-        if self.playing:
-            self.play_pause_button.config(text="Play")
-            self.playing = False
-            self.pause_audio()
-            self.update_thread_event.set()  # Stop update thread
-        else:
-            self.play_pause_button.config(text="Pause")
-            self.playing = True
-            self.update_thread_event.clear()  # Clear update thread event
-            threading.Thread(target=self.play_audio).start()
+    # 绘制数据曲线
+    for channel, color in enumerate(colors):
+        if len(data[channel]) > 1:
+            for i in range(1, len(data[channel])):
+                cv2.line(
+                    frame,
+                    (x + int((i - 1) * graph_width / (history_length - 1)),
+                     y - int(data[channel][i - 1] * graph_height)),
+                    (x + int(i * graph_width / (history_length - 1)),
+                     y - int(data[channel][i] * graph_height)),
+                         color, 1
+                )
 
-    def audio_callback(self, in_data, frame_count, time_info, status):
-        end_frame = self.current_frame + frame_count
-        data = self.audio_data[self.current_frame:end_frame].tobytes()
-        self.current_frame = end_frame
-        self.queue.put(end_frame / self.fs * 1000)  # Current time (milliseconds)
-        if self.current_frame >= len(self.audio_data):
-            return (data, pyaudio.paComplete)
-        return (data, pyaudio.paContinue)
 
-    def pause_audio(self):
-        if self.stream is not None:
-            self.stream.stop_stream()
-            self.stream.close()
-            self.stream = None
+while True:
+    # 读取摄像头帧
+    ret, frame = cap.read()
+    if not ret:
+        break
 
-    def play_audio(self):
-        self.stream = self.pyaudio_instance.open(
-            format=pyaudio.paFloat32,
-            channels=self.audio_data.shape[1],
-            rate=self.fs,
-            output=True,
-            stream_callback=self.audio_callback
+    # 转换为灰度图像
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    if not init_tracker:
+        # 检测人脸
+        faces = face_cascade.detectMultiScale(
+            gray,
+            scaleFactor=1.1s,
+            minNeighbors=5,
+            minSize=(120, 120),  # 增大最小尺寸以减少局部特征检测
+            flags=cv2.CASCADE_SCALE_IMAGE
         )
-        self.stream.start_stream()
 
-    def stop_audio(self):
-        self.playing = False
-        self.current_frame = 0
-        if self.stream is not None:
-            self.stream.stop_stream()
-            self.stream.close()
-            self.stream = None
-        self.play_pause_button.config(text="Play")
-        # Reset the red line to the beginning
-        self.update_thread_event.set()  # Stop update thread
-        self.plot_waveform()  # Reset waveform plot
-        self.progress_bar.set(0)
+        # 如果检测到人脸，选择最大的矩形框初始化跟踪器
+        if len(faces) > 0:
+            # 选择最大的矩形框
+            largest_face = max(faces, key=lambda rect: rect[2] * rect[3])
+            x, y, w, h = largest_face
+            bounding_box = (x, y, w, h)
 
-    def plot_waveform(self):
-        self.ax_waveform.clear()
-        time_axis = np.linspace(0, len(self.audio_data) / self.fs, num=len(self.audio_data))
-        self.ax_waveform.plot(time_axis, self.audio_data)
-        self.ax_waveform.set_title("Waveform")
-        self.ax_waveform.set_xlabel("Time (s)")  # Set x-axis label to seconds
-        self.ax_waveform.set_ylabel("Amplitude")
-        self.canvas.draw()
+            # 确保检测到的是整张人脸而不是局部特征（例如通过宽高比）
+            aspect_ratio = w / h
+            if 0.75 < aspect_ratio < 1.5:  # 简单的宽高比过滤
+                # 创建 KCF 跟踪器
+                tracker = cv2.TrackerKCF_create()
+                tracker.init(frame, bounding_box)
+                # 绘制跟踪框
+                p1 = (int(bounding_box[0]), int(bounding_box[1]))
+                p2 = (int(bounding_box[0] + bounding_box[2]), 
+                        int(bounding_box[1] + bounding_box[3]))
+                cv2.rectangle(frame, p1, p2, (0, 0, 255), 2, 1)
+                cv2.putText(
+                    frame, "Detecting", (100, 80),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2
+                )
+                init_tracker = True
+    else:
+        # 确保 tracker 已初始化
+        if tracker:
+            # 更新跟踪器
+            success, bounding_box = tracker.update(frame)
+            if success:
+                # 检查跟踪窗口是否仍然包含整张人脸
+                x, y, w, h = bounding_box
+                aspect_ratio = w / h
+                # 绘制跟踪框
+                p1 = (int(bounding_box[0]), int(bounding_box[1]))
+                p2 = (int(bounding_box[0] + bounding_box[2]),
+                      int(bounding_box[1] + bounding_box[3]))
+                cv2.rectangle(frame, p1, p2, (0, 255, 0), 2, 1)
+                cv2.putText(
+                    frame, "Tracking", (100, 80),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 255, 0), 2
+                )
 
-    def update_progress_bar(self):
-        try:
-            while not self.queue.empty():
-                current_time = self.queue.get_nowait()
-                if not self.is_seeking:  # Only update when not dragging the progress bar
-                    self.progress_bar.set(current_time)
-        except queue.Empty:
-            pass
-        self.root.after(self.update_interval, self.update_progress_bar)
+                # 计算并显示 Colour-Science 相关分析
+                mean_rgb, mean_xyz, mean_lab = calculate_colour_metrics(
+                    frame, bounding_box
+                )
+                text = (f"RGB: {mean_rgb[0]:.2f}, {mean_rgb[1]:.2f}, {mean_rgb[2]:.2f}\n"
+                        f"XYZ: {mean_xyz[0]:.2f}, {mean_xyz[1]:.2f}, {mean_xyz[2]:.2f}\n"
+                        f"Lab: {mean_lab[0]:.2f}, {mean_lab[1]:.2f}, {mean_lab[2]:.2f}")
+                y0, dy = 20, 20
+                for i, line in enumerate(text.split('\n')):
+                    y = y0 + i * dy
+                    cv2.putText(
+                        frame, line, (100, y + 100),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2
+                    )
 
-    def on_seek_start(self, event):
-        self.was_playing = self.playing  # Record the playback state when seeking
-        if self.playing:
-            self.toggle_play_pause()  # Pause playback
-        self.is_seeking = True  # Mark that the progress bar is being dragged
+                # 将数据添加到历史记录中
+                for i in range(3):
+                    history_rgb[i].append(mean_rgb[i])
+                    history_xyz[i].append(mean_xyz[i] / max(mean_xyz))  # 归一化
+                    history_lab[i].append(mean_lab[i] / 100.0)  # 归一化为 [0, 1]
 
-    def on_seek(self, event):
-        # Update current_frame in real-time
-        value = self.progress_bar.get()
-        self.current_frame = int(float(value) / 1000 * self.fs)
+                # 绘制图表
+                draw_graph(frame, history_rgb,
+                           (10, frame.shape[0] - 10), [(0, 0, 255), (0, 255, 0), (255, 0, 0)],
+                           "RGB")  # R红色, G绿色, B蓝色
+                draw_graph(frame, history_xyz,
+                           (220, frame.shape[0] - 10), [(0, 0, 255), (0, 255, 0), (255, 0, 0)],
+                           "XYZ")  # X红色, Y绿色, Z蓝色
+                draw_graph(frame, history_lab,
+                           (430, frame.shape[0] - 10), [(0, 0, 255), (0, 255, 0), (255, 0, 0)],
+                           "Lab")  # L红色, A绿色, B蓝色
 
-    def on_seek_end(self, event):
-        self.is_seeking = False  # Mark that dragging has ended
-        self.plot_waveform()  # Update waveform plot
-        if self.was_playing:  # If it was playing before, resume playback
-            self.toggle_play_pause()
+            else:
+                cv2.putText(
+                    frame, "Tracking failure detected", (100, 80),
+                    cv2.FONT_HERSHEY_SIMPLEX,
+                    0.75, (0, 0, 255), 2
+                )
+                init_tracker = False
 
-    def seek(self, value):
-        if self.audio_data is not None:
-            self.current_frame = int(float(value) / 1000 * self.fs)
+    # 显示结果
+    cv2.imshow('Face Tracking', frame)
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = AudioPlayer(root)
-    root.mainloop()
+    # 按 'q' 键退出
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
 ```
 
 有运行效果如下：
@@ -932,16 +1024,16 @@ if __name__ == "__main__":
 <center>
 <figure>
    <img  
-      width = "600" height = "435"
-      src="../../Pictures/parctice_2_GUI_example.png" alt="">
+      width = "600" height = "350"
+      src="../../Pictures/parctice_3_GUI_example.png" alt="">
     <figcaption>
-      <p>图 5-5 简易音频播放器的运行效果图</p>
+      <p>图 5-8 带有均色分析的简易单人脸跟踪识别 Demo 效果图</p>
    </figcaption>
 </figure>
 </center>
 
 
-至此，对音频库的练习完毕。
+完成针对视频分析库的练习。
 
 
 [ref]: References_5.md
