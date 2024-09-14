@@ -503,8 +503,8 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
    [&lt;BackgroundSubtractorMOG2&gt;](https://docs.opencv.org/4.x/d7/d7b/classcv_1_1BackgroundSubtractorMOG2.html), 
    [&lt;BackgroundSubtractorKNN&gt;](https://docs.opencv.org/4.x/db/d88/classcv_1_1BackgroundSubtractorKNN.html)
 2. 光流计算：
-   [calcOpticalFlowFarneback](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga5d10ebbd59fe09c5f650289ec0ece5af)（HS 法）, 
-   [calcOpticalFlowPyrLK](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga473e4b886d0bcc6b65831eb88ed93323)（LK 法）
+   [calcOpticalFlowFarneback](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga5d10ebbd59fe09c5f650289ec0ece5af)（**[HS 法](../../../Chapter_3/Language/cn/Docs_3_4_1.html?h=Horn–Schunck)**）, 
+   [calcOpticalFlowPyrLK](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga473e4b886d0bcc6b65831eb88ed93323)（**[LK 法](../../../Chapter_3/Language/cn/Docs_3_4_1.html?h=Lucas-Kanade%20Method)**）
 3. 运动检测：
    [CamShift](https://docs.opencv.org/4.x/d7/d00/tutorial_meanshift.html#autotoc_md1140), 
    [meanShift](https://docs.opencv.org/4.x/d7/d00/tutorial_meanshift.html#autotoc_md1138)
@@ -543,7 +543,7 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
 
 现在，让我们来看都有哪些 **功能扩展**。
 
-#### 生物识别扩展模块（cv2.bioinspired）的常用函数（简，仅列出名称），用于感知模拟（重要）：
+#### 生物识别扩展模块（cv2.bioinspired）的常用函数（简），用于感知模拟（重要）：
 
 1. 视网膜模型（需 opencv-contrib-python 扩展的 **cv2.bioinspired_Retina** 模块），通过[（cv2.）bioinspired_Retina.create](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html#aaf627494d7758eeb10d09c8fa5fd098b) 创建实例：
    - [&lt;Retina&gt;](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html) 视网膜模拟类型实例
@@ -576,7 +576,7 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
    [reprojectImageTo3D](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga1bc1152bd57d63bc524204f21fde6e02), 
    [convertPointsFromHomogeneous](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#gac42edda3a3a0f717979589fcd6ac0035)
 
-#### 表面检测点对特征匹配（PPF）扩展模块（cv2.ppf_match_3d）的常用函数（简，仅列出名称）：
+#### 表面检测点对特征匹配（PPF）扩展模块（cv2.ppf_match_3d）的常用函数，简：
 
 1. 点云模型（需 opencv-contrib-python 扩展的 **cv2.ppf_match_3d** 模块），通过（cv2.） ppf_match_3d.loadPLYSimple 加载 **多边形点云格式（PLY [Polygon File Format]）文件（.ply）**，来创建点云模型实例：
    - [&lt;Mat&gt;](https://docs.opencv.org/4.x/d3/d63/classcv_1_1Mat.html) 模型被加载 PLY 文件的光栅化与法线等信息，以 OpenCV 的 Mat 格式储存
@@ -681,7 +681,7 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
 5. 模型推理：
    [&lt;Entity&gt;.forward](https://docs.opencv.org/4.x/db/d30/classcv_1_1dnn_1_1Net.html#a98ed94cb6ef7063d3697259566da310b)
 
-#### GPU 加速扩展模块（cv2.cuda）的常用函数，是同名基础模块算法 CUDA 加速版，仅列出名称：
+#### GPU 加速扩展模块（cv2.cuda）的常用函数，是同名基础模块算法 CUDA 加速版，简：
 
 1. GPU 信息：
    [cuda.getCudaEnabledDeviceCount](https://docs.opencv.org/4.x/d8/d40/group__cudacore__init.html#gaaa93892f9189163e5d53790b4b1e88db), 
