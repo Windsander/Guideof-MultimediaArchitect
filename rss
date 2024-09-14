@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 12 Sep 2024 02:20:15 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 14 Sep 2024 03:29:57 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -969,6 +969,13 @@
             <description><![CDATA[和音频一样，外部工程里，对视频的分析处理焦点多在于 帧分析，并非于流分析。或者说，有关音视频编解码与网络流的评估，是属于完整编解码工程内部范畴。其更多的是与网络子系统进行结合，并依托于诸如 ITU-T（或其他音视频组织，较少）提出的相关协议（如 H.264、H.265 等）约束之标准规格背景，来作为整体工程中的 子评估系统。所以，音视频流分析（Audio/Video Stream Analysis）和编解码协议是强耦合的，一般会将之归属于 编解码器内部监测 部分，平行于项目的正常作业流水线，来监控各个环节。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.1.4 其他分析软件]]></title>
+            <description><![CDATA[除了使用前三节提及的开源库，以自编辑脚本的方式进行分析外。工作中也能采用其他收费或免费的 第三方分析软件，处理需要查验的数据。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_4.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
