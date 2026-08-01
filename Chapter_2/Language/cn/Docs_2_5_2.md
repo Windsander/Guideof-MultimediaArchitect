@@ -19,7 +19,7 @@ $$
 C_{CMY} =  C \cdot Cyan + M \cdot Magenta  + Y \cdot Yellow = Vector[C, M, Y]
 $$
 
-可以发现 CMY 色彩空间与 RGB 色彩空间，恰好以立方体质心堆成。因此存在转换：
+可以发现 CMY 色彩空间与 RGB 色彩空间，恰好以立方体质心对称。因此存在转换：
 
 $$
 C_{CMY} = 1 - C_{RGB}
@@ -49,7 +49,7 @@ $$
 {\begin{bmatrix} C^{\prime}  \\ M^{\prime} \\ Y^{\prime} \end{bmatrix}} = {\begin{bmatrix} (1-K) \cdot C + K \\ (1-K) \cdot M + K \\ (1-K) \cdot Y + K \end{bmatrix}}
 $$
 
-而对于 CYMK 色彩空间和 RGB 色彩空间互转，就有需要以 CMY 色彩空间作为桥梁。先根据转换方向，通过 CMY 色彩空间进行 $$C_{RGB} \rightarrow C_{CMY}$$ 或者 $$ C_{CMYK} \rightarrow C_{CMY}$$ ，再通过 CMY 与 RGB 与 CMYK 的关系，进行间接转换。
+而对于 CMYK 色彩空间和 RGB 色彩空间互转，就需要以 CMY 色彩空间作为桥梁。先根据转换方向，通过 CMY 色彩空间进行 $$C_{RGB} \rightarrow C_{CMY}$$ 或者 $$ C_{CMYK} \rightarrow C_{CMY}$$ ，再通过 CMY 与 RGB、CMYK 的关系，进行间接转换。
 
 
 [ref]: References_2.md

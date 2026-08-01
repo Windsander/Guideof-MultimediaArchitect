@@ -3,7 +3,7 @@
 
 **[1]** Isaac Newton, Hypothesis explaining the properties of light, Letter from Newton to Henry Oldenburg, dated 14 December 1675.
 
-**[2]** Moses Harris, The Natural System of Colours and Ignaz Schiffermüller, Versuch eines Farbensystems (Vienna, 1772), plate I - project Gutenberg Ignaz Schiffermüller, Versuch eines Farbensystems (Vienna, 1772), plate I.
+**[2]** Moses Harris, The Natural System of Colours; Ignaz Schiffermüller, Versuch eines Farbensystems (Vienna, 1772), plate I — Project Gutenberg.
 
 **[3]** Young, T. (1802). "Bakerian Lecture: On the Theory of Light and Colours". Phil. Trans. R. Soc. Lond. 92: 12–48. doi:10.1098/rstl.1803.0004.
 
