@@ -65,7 +65,7 @@
     * [3.1 信号分析的核心算法 - 傅立叶变换](Chapter_3/Language/cn/Docs_3_1.md)
         * [3.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）](Chapter_3/Language/cn/Docs_3_1_1.md)
         * [3.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）](Chapter_3/Language/cn/Docs_3_1_2.md)
-        * [3.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）](Chapter_3/Language/cn/Docs_3_1_3.md)
+        * [3.1.3 傅立叶变换的经典 - 快速傅立叶变换（FFT）](Chapter_3/Language/cn/Docs_3_1_3.md)
 		* [3.1.4 傅立叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）](Chapter_3/Language/cn/Docs_3_1_4.md)
     * [3.2 频率信息提取 - 常用滤波算法](Chapter_3/Language/cn/Docs_3_2.md)
 	    * [3.2.1 高斯滤波（Gauss Filter）](Chapter_3/Language/cn/Docs_3_2_1.md)

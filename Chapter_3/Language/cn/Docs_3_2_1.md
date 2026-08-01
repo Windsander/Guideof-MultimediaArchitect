@@ -22,7 +22,7 @@ $$
 </figure>
 </center>
 
-从图像可见，高斯分布的 $$\mu$$ 决定了分部的中心，而 $$\delta$$ 决定了形变的剧烈程度。而线下曲线面积，则代表了对应区间段内的取值发生概率。从离散角度则指 $$x \in int[x_c-\tfrac{n}2, x_c+\tfrac{n}2]$$ 范围内，有 $$x = x_c$$ 的取值概率为 $$f(x_c)$$ 。
+从图像可见，高斯分布的 $$\mu$$ 决定了分布的中心，而 $$\delta$$ 决定了形变的剧烈程度。而线下曲线面积，则代表了对应区间段内的取值发生概率。从离散角度则指 $$x \in int[x_c-\tfrac{n}2, x_c+\tfrac{n}2]$$ 范围内，有 $$x = x_c$$ 的取值概率为 $$f(x_c)$$ 。
 
 记原信号为 $$S(x)$$ 。以 $$\vert target \vert_1$$ 表示归一化操作，则 $$\vert {\sum}_{x_c -n/2}^{x_c+n/2}(f(x) \cdot S(x)) \vert_1$$ 代表在当前给定 $$(\delta, \mu)$$ 的高斯分布 $$f(x, \mu)$$ 下，考虑 $$x = x_c$$ 时左右相邻含 $$x_c$$ 在内共 $$n$$ 个节点取值情况的 $$S(x_c)$$ 的概率均值。我们记 $$x_c$$ 为中心点，数据采样数为 $$T$$ ，有：
 
@@ -38,7 +38,7 @@ $$
 
 上式中，$$F_n(x_c)$$  即为一维情况下的 $$n$$ 步滑动窗口，也可以称为 $$n \times 1$$ 卷积核。通过沿信号的数据顺序，滑动 $$F_n(x_c)$$ 求取原值 $$x_c$$ 替换值的操作。我们可以在一定程度上利用分布的概率关系，以调整 $$\delta$$ 取值的方式来影响核内相邻数据的波动性，进而影响整体波动性达到滤波目的。 **取 $$\delta$$ 越小，波动性越强越激烈，图片越尖锐；反之 $$\delta$$ 越大，波动性越弱越平缓，图片越模糊。** 
 
-一维信号早期常用这种手段来一定程度的进行降噪（现今已被优秀和复杂的多的算法替换了）。而二维信号，即图片，在我们之前讲解傅里叶变化时以提到过，和一维主要差别是在维度上。所以当我们记数据采样数为 $$(W \times H)$$ ，有将 $$x$$ 换为向量 $$\vec{x} = (x,y)$$ 表示：
+一维信号早期常用这种手段来一定程度的进行降噪（现今已被优秀和复杂得多的算法替换了）。而二维信号，即图片，在我们之前讲解傅立叶变换时已提到过，和一维主要差别是在维度上。所以当我们记数据采样数为 $$(W \times H)$$ ，有将 $$x$$ 换为向量 $$\vec{x} = (x,y)$$ 表示：
 
 $$
 {\displaystyle 
@@ -120,7 +120,7 @@ $$
 }
 $$
 
-为了保证输入输出数据一致。根据卷积核的大小，我们还需要在数据的外围补充一圈空值，以保证感受野等大数据源。如果当前需要处理的数据为 $$(W \times H) = (5 \times 5)$$ ，即总共 $$25$$ 个像素的单通道灰度图。经过 $$n \times n = 3 \times 3$$ 大小的高斯卷积核处理后，有如下结果：
+为了保证输入输出数据一致。根据卷积核的大小，我们还需要在数据的外围补充一圈空值，以保证感受野与数据源等大。如果当前需要处理的数据为 $$(W \times H) = (5 \times 5)$$ ，即总共 $$25$$ 个像素的单通道灰度图。经过 $$n \times n = 3 \times 3$$ 大小的高斯卷积核处理后，有如下结果：
 
 <br>
 
@@ -196,7 +196,7 @@ uniform sampler2D target_texture;
 
 void main()
 {
-    vec3 output_;
+    vec3 output_ = vec3(0.0);
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             vec2 bias = vec2(i-1, j-1) * pixel_bias;
@@ -227,7 +227,7 @@ function calculate_gaussian_kernel(step, delta) {
         for (let j = 0; j < n; j++) {
             let diff = Math.pow(i - step, 2) + Math.pow(j - step, 2);
             kernel[j + n * i] = factor_1 * Math.exp(-diff * factor_2);
-            normalize_div += kernel[i];
+            normalize_div += kernel[j + n * i];
         }
     }
     for (let i = 0; i < kernel.length; i++) {
@@ -241,9 +241,9 @@ function calculate_gaussian_kernel(step, delta) {
 
 而如果要求在保证滤波效果的同时，还能精简运算。那么我们就需更为快捷且采样更少的高斯单元了。
 
-## **高斯滤波的线性插值采加速**
+## **高斯滤波的线性插值采样加速**
 
-一种通用的方式，就是在采样时引入 **线性插值（Linear Sampling）**，减少采样次数。我们用 $$W$$ 代表高斯算子，用 $$W_{ij} =w(\vec{x})$$ 代表高斯算子在 $$\vec{x}$$ 所处 $$\vec{N_{3 \times 3}}$$ 中位置的对应 $$f_{ij} ( \vec{N_{3 \times 3}})$$ 值，用 $$s(\vec{x})$$ 代表 $$\vec{x}$$ 在图片中的像素值。则对于采样 $$3 \times 3$$ 的 $$\vec{N_{3 \times 3}}$$ 来说，由差值公式：
+一种通用的方式，就是在采样时引入 **线性插值（Linear Sampling）**，减少采样次数。我们用 $$W$$ 代表高斯算子，用 $$W_{ij} =w(\vec{x})$$ 代表高斯算子在 $$\vec{x}$$ 所处 $$\vec{N_{3 \times 3}}$$ 中位置的对应 $$f_{ij} ( \vec{N_{3 \times 3}})$$ 值，用 $$s(\vec{x})$$ 代表 $$\vec{x}$$ 在图片中的像素值。则对于采样 $$3 \times 3$$ 的 $$\vec{N_{3 \times 3}}$$ 来说，由插值公式：
 
 $$
 {\displaystyle 
@@ -253,7 +253,7 @@ $$
 }
 $$
 
-可知，$$9$$ 次采样能够两两差值，从而减少到只需 $$5$$ 次实际的纹理数据读。卷积核的采样位置，取四角记为 $$[C_1, C_2, C_3, C_4] =[S_{(x_c-1,y_c-1)} , S_{(x_c-1,y_c+1)}, S_{(x_c+1,y_c-1)}, S_{(x_c+1,y_c+1)}]$$ 和中心 $$C_0 = S_{(x_c,y_c)}$$ ，如下：
+可知，$$9$$ 次采样能够两两插值，从而减少到只需 $$5$$ 次实际的纹理数据读。卷积核的采样位置，取四角记为 $$[C_1, C_2, C_3, C_4] =[S_{(x_c-1,y_c-1)} , S_{(x_c-1,y_c+1)}, S_{(x_c+1,y_c-1)}, S_{(x_c+1,y_c+1)}]$$ 和中心 $$C_0 = S_{(x_c,y_c)}$$ ，如下：
 
 $$
 {\displaystyle 
@@ -347,7 +347,7 @@ uniform sampler2D target_texture;
 void main()
 {
     float gauss_factor = gaussian_matrix[0][0]+gaussian_matrix[0][1];
-    vec3 output_;
+    vec3 output_ = vec3(0.0);
     output_ += texture2D(target_texture, fs_texcoord.xy ).rgb * gaussian_matrix[1][1];
     output_ += texture2D(target_texture, fs_texcoord.xy + vec2(-1, -1) * pixel_bias).rgb * gauss_factor;
     output_ += texture2D(target_texture, fs_texcoord.xy + vec2(-1, +1) * pixel_bias).rgb * gauss_factor;
@@ -363,7 +363,7 @@ void main()
 
 由于高斯滤波的通用卷积核是 **各向同性（Isotropic）** 的，在核范围内的各方向向量与中心点的方差，仅和向量终点与核中心点的相对距离有关。因此，高斯滤波并不是没有弊端的。
 
-我们仍然选择 $$\mu = \vec{x_c}$$ 为核中心，假设核范围内有不包含 $$\vec{x_c}$$ 在内的，总计为 $$N$$ 的 $$n$$ 维向量 $$\vec{x} = (x_1,x_2,\ ...\ ,x_n) \in \mathbb{R}^n$$ 的采样数据 $$S_N = \{ S_{\vec{x_1}} , S_{\vec{x_2}},\ ...\ , S_{\vec{x_N}}  \}$$ 。将高斯滤波卷积核的离散程度，以非概率密度 **协方差矩阵（Covariance Matrix）** 的 $$M_{cov}(\vec{x})$$ 形式表示，记 $$I$$ 为单位对角矩阵，有：
+我们仍然选择 $$\mu = \vec{x_c}$$ 为核中心，假设核范围内不包含 $$\vec{x_c}$$ 在内的，总计为 $$N$$ 的 $$n$$ 维向量 $$\vec{x} = (x_1,x_2,\ ...\ ,x_n) \in \mathbb{R}^n$$ 的采样数据 $$S_N = \{ S_{\vec{x_1}} , S_{\vec{x_2}},\ ...\ , S_{\vec{x_N}}  \}$$ 。将高斯滤波卷积核的离散程度，以非概率密度 **协方差矩阵（Covariance Matrix）** 的 $$M_{cov}(\vec{x})$$ 形式表示，记 $$I$$ 为单位对角矩阵，有：
 
 $$
 {\displaystyle 

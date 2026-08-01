@@ -17,7 +17,7 @@ HOG 有一套相对固定的标准过程的。基本可以按照如下顺序进�
 2. 梯度计算，通过梯度滤波器（如索贝尔滤波）提取图像每个像素的梯度矢量；
 3. 分组抽象，指定梯度矢量采样卷积核范围，即分组（Cell）
 4. 矢量合并，将分组内所有像素的梯度矢量，以方向投票统计合并权重，获取 HOG
-5. 块归一化，指定块大小（由分组为单位），整合 HOG 统计结果并归一化快内分组权重
+5. 块归一化，指定块大小（由分组为单位），整合 HOG 统计结果并归一化块内分组权重
 
 五个步骤，共同构成了方向梯度直方图方法论本身。 **且四五两步概念不同，但密不可分。**
 
@@ -57,9 +57,9 @@ $$
 
 在经过优化得到高对比度的 **灰度（光亮度）图** 后，就可以利用一些方向梯度卷积核算法，来计算每一个像素点光亮度变换的梯度矢量了。
 
-此时应用边缘检测索贝尔滤波，目的同 HOG 的默认设定中，采用横纵方向均取 **单一中线** 的简化 **普雷维特算子（Prewitt Operator）**，以求取梯度 **方向（Orientate）** 和 **强度（Magnitude）** 的作用一致。显然，并不只有索贝尔算法或普雷维特算法，适用于方向梯度直方图中梯度矢量的计算。**只要能够提供中心点周边梯度变化的大小和方向的算子，都可以被应用于 HOG 的此步的求解计算中。**
+此时应用边缘检测索贝尔滤波，目的同 HOG 的默认设定中，采用横纵方向均取 **单一中线** 的简化 **普雷维特算子（Prewitt Operator）**，以求取梯度 **方向（Orientation）** 和 **强度（Magnitude）** 的作用一致。显然，并不只有索贝尔算法或普雷维特算法，适用于方向梯度直方图中梯度矢量的计算。**只要能够提供中心点周边梯度变化的大小和方向的算子，都可以被应用于 HOG 的此步的求解计算中。**
 
-我们记方向为 $$\Theta$$ ，强度为 $$A$$ ，横向 $$x$$ 轴方向的滤波核函数 $$G_x$$ ，纵向 $$y$$ 轴方向的滤波核函数 $$G_y$$ 。强度系数 $$K$$ 为同态值 $$K= K_x = K_y$$$ 。此处不含推导展示结论。
+我们记方向为 $$\Theta$$ ，强度为 $$A$$ ，横向 $$x$$ 轴方向的滤波核函数 $$G_x$$ ，纵向 $$y$$ 轴方向的滤波核函数 $$G_y$$ 。强度系数 $$K$$ 为同态值 $$K= K_x = K_y$$ 。此处不含推导展示结论。
 
 记 **边缘检测普雷维特滤波核函数** 为 $$\mathcal{P}_p(\vec{x_c})$$ ，有：
 
@@ -150,7 +150,7 @@ $$
 {\displaystyle 
  \begin{aligned}
     \vec{G_a} =& (W_a \cdot A_c ,\ W_a \cdot \Theta_c) \\
-    \vec{G_b} =& (W_b \cdot A_c ,\ W_a \cdot \Theta_c) \\
+    \vec{G_b} =& (W_b \cdot A_c ,\ W_b \cdot \Theta_c) \\
     \vec{G}(\vec{x_c}) &= \vec{G_a} + \vec{G_b} \\
  \end{aligned}
 }
@@ -252,7 +252,7 @@ $$
 </figure>
 </center>
 
-统计完毕时，特征向量 $$\vec{Cell}$$ 随即生成完毕。我们以 $$W_{\theta}$$ 表示分组的特征向量，在方向 $$\theta$$ 上的强度大小（即此方向矢量的秩），则对于无符号梯度（Unsigned Gradient）分组：
+统计完毕时，特征向量 $$\vec{Cell}$$ 随即生成完毕。我们以 $$W_{\theta}$$ 表示分组的特征向量，在方向 $$\theta$$ 上的强度大小（即此方向矢量的模），则对于无符号梯度（Unsigned Gradient）分组：
 
 $$
 {\displaystyle 
@@ -335,7 +335,7 @@ $$
 }
 $$
 
-可见，在 $$2 \times 2$$ 大小的固定分块下，分块特征向量  的维度即为分组特征向量方向的 $$4$$ 倍，即 $$(N \times N) \cdot \theta$$ 。如果我们采用 L-2 归一化（即 L2范数）处理，记归一化因子为 $$L_2$$ ，则：
+可见，在 $$2 \times 2$$ 大小的固定分块下，分块特征向量  的维度即为分组特征向量维度的 $$4$$ 倍，即 $$(N \times N) \cdot \theta$$ 。如果我们采用 L-2 归一化（即 L2范数）处理，记归一化因子为 $$L_2$$ ，则：
 
 $$
 {\displaystyle 
@@ -437,7 +437,7 @@ float grey(vec3 c)
     return 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2];
 }
 
-/* Calucate HOG Orient-hog Density (pixel by pixel) */
+/* Calculate HOG Orient-hog Density (pixel by pixel) */
 float hog_density(vec2 target_coord, vec3 field_vector) {
     vec2 ori_pos = target_coord.xy / pixel_bias;
     vec2 tile_center = (floor(ori_pos / HOG_TILE_SIZE) + 0.5) * HOG_TILE_SIZE;
@@ -455,14 +455,14 @@ float hog_density(vec2 target_coord, vec3 field_vector) {
     return 0.0;
 }
 
-/* Calucate Sobel Field at target center */
+/* Calculate Sobel Field at target center */
 vec3 sobel_edge_detection(vec2 target_coord) {
-    float gradient_center_x;
-    float gradient_center_y;
+    float gradient_center_x = 0.0;
+    float gradient_center_y = 0.0;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             vec2 bias = vec2(i-1, j-1) * pixel_bias;
-            vec4 color_sample = texture2D(target_texture, fs_texcoord.xy + bias);
+            vec4 color_sample = texture2D(target_texture, target_coord.xy + bias);
             float check_grey = grey(color_sample.rgb);
             gradient_center_x += check_grey * sobel_matrix_x[i][j];
             gradient_center_y += check_grey * sobel_matrix_y[i][j];
@@ -474,9 +474,9 @@ vec3 sobel_edge_detection(vec2 target_coord) {
     return vec3(orientate, magnitude);
 }
 
-/* Calucate Cell Feature at target center */
+/* Calculate Cell Feature at target center */
 mat3 cell_feature_extraction(vec2 target_coord) {
-    mat3  result;
+    mat3  result = mat3(0.0);
     float bias_unit = float(n-1)/2.0;
     vec2 ori_pos = target_coord.xy / pixel_bias;
     vec2 cell_center = (floor(ori_pos / CELL_TILE_SIZE) + 0.5) * CELL_TILE_SIZE;
@@ -487,46 +487,44 @@ mat3 cell_feature_extraction(vec2 target_coord) {
             vec2 bias = vec2(float(i)-bias_unit, float(j)-bias_unit) * pixel_bias;
             vec3 field_vector = sobel_edge_detection(cell_center.xy + bias);
             float seek_to =  (field_vector.x+ 0.0001)  / (field_vector.y + 0.0001) ;
-            float wight = 0.0;
-            float wight_as = 0.0;
+            float weight_as = 0.0;
             {
-                wight = field_vector[2] * wight_as;
                 if (ANGLE_0.z>= seek_to && seek_to >= ANGLE_20.z){
-                    wight_as = abs((seek_to - ANGLE_0.z)/(ANGLE_20.z - ANGLE_0.z));
-                    result[0][0] += field_vector[2] *wight_as;
-                    result[0][1] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_0.z)/(ANGLE_20.z - ANGLE_0.z));
+                    result[0][0] += field_vector[2] *weight_as;
+                    result[0][1] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_20.z>= seek_to && seek_to >= ANGLE_40.z){
-                    wight_as = abs((seek_to - ANGLE_20.z)/(ANGLE_40.z - ANGLE_20.z));
-                    result[0][1] += field_vector[2] * wight_as;
-                    result[0][2] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_20.z)/(ANGLE_40.z - ANGLE_20.z));
+                    result[0][1] += field_vector[2] * weight_as;
+                    result[0][2] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_40.z>= seek_to && seek_to >= ANGLE_60.z){
-                    wight_as = abs((seek_to - ANGLE_40.z)/(ANGLE_60.z - ANGLE_40.z));
-                    result[0][2] += field_vector[2] * wight_as;
-                    result[1][0] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_40.z)/(ANGLE_60.z - ANGLE_40.z));
+                    result[0][2] += field_vector[2] * weight_as;
+                    result[1][0] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_60.z>= seek_to && seek_to >= ANGLE_80.z){
-                    wight_as = abs((seek_to - ANGLE_60.z)/(ANGLE_80.z - ANGLE_60.z));
-                    result[1][0] += field_vector[2] * wight_as;
-                    result[1][1] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_60.z)/(ANGLE_80.z - ANGLE_60.z));
+                    result[1][0] += field_vector[2] * weight_as;
+                    result[1][1] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_80.z>= seek_to && seek_to >= ANGLE_100.z){
-                    wight_as = abs((seek_to - ANGLE_80.z)/(ANGLE_100.z - ANGLE_80.z));
-                    result[1][1] += field_vector[2] * wight_as;
-                    result[1][2] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_80.z)/(ANGLE_100.z - ANGLE_80.z));
+                    result[1][1] += field_vector[2] * weight_as;
+                    result[1][2] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_100.z>= seek_to && seek_to >= ANGLE_120.z){
-                    wight_as = abs((seek_to - ANGLE_100.z)/(ANGLE_120.z - ANGLE_100.z));
-                    result[1][2] += field_vector[2] * wight_as;
-                    result[2][0] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_100.z)/(ANGLE_120.z - ANGLE_100.z));
+                    result[1][2] += field_vector[2] * weight_as;
+                    result[2][0] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_120.z>= seek_to && seek_to >= ANGLE_140.z){
-                    wight_as = abs((seek_to - ANGLE_120.z)/(ANGLE_140.z - ANGLE_120.z));
-                    result[2][0] += field_vector[2] * wight_as;
-                    result[2][1] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_120.z)/(ANGLE_140.z - ANGLE_120.z));
+                    result[2][0] += field_vector[2] * weight_as;
+                    result[2][1] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_140.z>= seek_to && seek_to >= ANGLE_160.z){
-                    wight_as = abs((seek_to - ANGLE_140.z)/(ANGLE_160.z - ANGLE_140.z));
-                    result[2][1] += field_vector[2] * wight_as;
-                    result[2][2] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_140.z)/(ANGLE_160.z - ANGLE_140.z));
+                    result[2][1] += field_vector[2] * weight_as;
+                    result[2][2] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_160.z>= seek_to && seek_to >= ANGLE_180.z){
-                    wight_as = abs((seek_to - ANGLE_160.z)/(ANGLE_180.z - ANGLE_160.z));
-                    result[2][2] += field_vector[2] * wight_as;
-                    result[0][0] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_160.z)/(ANGLE_180.z - ANGLE_160.z));
+                    result[2][2] += field_vector[2] * weight_as;
+                    result[0][0] += field_vector[2] * (1.0 - weight_as);
                 }
             }
         }
@@ -534,7 +532,7 @@ mat3 cell_feature_extraction(vec2 target_coord) {
     return result;
 }
 
-/* Calucate Block Feature at target center */
+/* Calculate Block Feature at target center */
 float block_feature_extraction(vec2 target_coord) {
     float orient_hog_density = 0.0;
     float block_feature_vector[SIZE_BV];
@@ -645,7 +643,7 @@ float grey(vec3 c)
     return 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2];
 }
 
-/* Calucate HOG Orient-hog Density (pixel by pixel) */
+/* Calculate HOG Orient-hog Density (pixel by pixel) */
 float hog_density(vec2 target_coord, vec3 field_vector) {
     vec2 ori_pos = target_coord.xy / pixel_bias;
     vec2 tile_center = (floor(ori_pos / HOG_TILE_SIZE) + 0.5) * HOG_TILE_SIZE;
@@ -664,23 +662,23 @@ float hog_density(vec2 target_coord, vec3 field_vector) {
 }
 ```
 
-灰度（光亮度）值采用 **BT.601 的狭隘区间（Narrow Range）** 标准快速计算，运用中也可以替换为均值（部分场景）或根据情况更换其他标准（ **如 RGB数据 非采样得原始数据的标准原色格式而来，则因根据转换前的传输格式来选择配套的规格**，见上一章）。
+灰度（光亮度）值采用 **BT.601 的狭隘区间（Narrow Range）** 标准快速计算，运用中也可以替换为均值（部分场景）或根据情况更换其他标准（ **如 RGB数据 非采样得原始数据的标准原色格式而来，则应根据转换前的传输格式来选择配套的规格**，见上一章）。
 
 注意以 **HOG_[xx]** 为格式的常量。**这些常量被用于计算，上屏显示的无符号梯度（Unsigned Gradient）对应方向上的权重柱形轴。** 柱形轴过分块中心，轴的长度和颜色的深浅（即能量密度）代表归一化后的权重大小。而方法计算所得 density 则为当前像素点对应块内位置的能量密度值。显然，密度值只有在轴方向上才存在有效值。另一方面，较小的能量密度也不具有代表性，需要通过 **阈值限定进行过滤**，此处采用 **max(HOG_MIN_MAGNITUDE, hog_magnitude_limit)** 进行设置。
 
-准备完成后，就该正式流程的处理了。这里的封装思路，是以 **生成的最小结果单元为分割依据** 进行的。所以，将 HOG 步骤方法封为一下三个：
+准备完成后，就该正式流程的处理了。这里的封装思路，是以 **生成的最小结果单元为分割依据** 进行的。所以，将 HOG 步骤方法封装为一下三个：
 
 - sobel_edge_detection 针对 **像素点（Pixel）梯度矢量** 的 **索贝尔边界检测**
 
 ```glsl
-/* Calucate Sobel Field at target center */
+/* Calculate Sobel Field at target center */
 vec3 sobel_edge_detection(vec2 target_coord) {
-    float gradient_center_x;
-    float gradient_center_y;
+    float gradient_center_x = 0.0;
+    float gradient_center_y = 0.0;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             vec2 bias = vec2(i-1, j-1) * pixel_bias;
-            vec4 color_sample = texture2D(target_texture, fs_texcoord.xy + bias);
+            vec4 color_sample = texture2D(target_texture, target_coord.xy + bias);
             float check_grey = grey(color_sample.rgb);
             gradient_center_x += check_grey * sobel_matrix_x[i][j];
             gradient_center_y += check_grey * sobel_matrix_y[i][j];
@@ -696,9 +694,9 @@ vec3 sobel_edge_detection(vec2 target_coord) {
 - cell_feature_extraction 针对 **分组（Cell）特征提取** 为结果的 **矢量统计合并**
 
 ```glsl
-/* Calucate Cell Feature at target center */
+/* Calculate Cell Feature at target center */
 mat3 cell_feature_extraction(vec2 target_coord) {
-    mat3  result;
+    mat3  result = mat3(0.0);
     float bias_unit = float(n-1)/2.0;
     vec2 ori_pos = target_coord.xy / pixel_bias;
     vec2 cell_center = (floor(ori_pos / CELL_TILE_SIZE) + 0.5) * CELL_TILE_SIZE;
@@ -709,46 +707,44 @@ mat3 cell_feature_extraction(vec2 target_coord) {
             vec2 bias = vec2(float(i)-bias_unit, float(j)-bias_unit) * pixel_bias;
             vec3 field_vector = sobel_edge_detection(cell_center.xy + bias);
             float seek_to =  (field_vector.x+ 0.0001)  / (field_vector.y + 0.0001) ;
-            float wight = 0.0;
-            float wight_as = 0.0;
+            float weight_as = 0.0;
             {
-                wight = field_vector[2] * wight_as;
                 if (ANGLE_0.z>= seek_to && seek_to >= ANGLE_20.z){
-                    wight_as = abs((seek_to - ANGLE_0.z)/(ANGLE_20.z - ANGLE_0.z));
-                    result[0][0] += field_vector[2] *wight_as;
-                    result[0][1] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_0.z)/(ANGLE_20.z - ANGLE_0.z));
+                    result[0][0] += field_vector[2] *weight_as;
+                    result[0][1] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_20.z>= seek_to && seek_to >= ANGLE_40.z){
-                    wight_as = abs((seek_to - ANGLE_20.z)/(ANGLE_40.z - ANGLE_20.z));
-                    result[0][1] += field_vector[2] * wight_as;
-                    result[0][2] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_20.z)/(ANGLE_40.z - ANGLE_20.z));
+                    result[0][1] += field_vector[2] * weight_as;
+                    result[0][2] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_40.z>= seek_to && seek_to >= ANGLE_60.z){
-                    wight_as = abs((seek_to - ANGLE_40.z)/(ANGLE_60.z - ANGLE_40.z));
-                    result[0][2] += field_vector[2] * wight_as;
-                    result[1][0] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_40.z)/(ANGLE_60.z - ANGLE_40.z));
+                    result[0][2] += field_vector[2] * weight_as;
+                    result[1][0] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_60.z>= seek_to && seek_to >= ANGLE_80.z){
-                    wight_as = abs((seek_to - ANGLE_60.z)/(ANGLE_80.z - ANGLE_60.z));
-                    result[1][0] += field_vector[2] * wight_as;
-                    result[1][1] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_60.z)/(ANGLE_80.z - ANGLE_60.z));
+                    result[1][0] += field_vector[2] * weight_as;
+                    result[1][1] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_80.z>= seek_to && seek_to >= ANGLE_100.z){
-                    wight_as = abs((seek_to - ANGLE_80.z)/(ANGLE_100.z - ANGLE_80.z));
-                    result[1][1] += field_vector[2] * wight_as;
-                    result[1][2] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_80.z)/(ANGLE_100.z - ANGLE_80.z));
+                    result[1][1] += field_vector[2] * weight_as;
+                    result[1][2] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_100.z>= seek_to && seek_to >= ANGLE_120.z){
-                    wight_as = abs((seek_to - ANGLE_100.z)/(ANGLE_120.z - ANGLE_100.z));
-                    result[1][2] += field_vector[2] * wight_as;
-                    result[2][0] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_100.z)/(ANGLE_120.z - ANGLE_100.z));
+                    result[1][2] += field_vector[2] * weight_as;
+                    result[2][0] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_120.z>= seek_to && seek_to >= ANGLE_140.z){
-                    wight_as = abs((seek_to - ANGLE_120.z)/(ANGLE_140.z - ANGLE_120.z));
-                    result[2][0] += field_vector[2] * wight_as;
-                    result[2][1] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_120.z)/(ANGLE_140.z - ANGLE_120.z));
+                    result[2][0] += field_vector[2] * weight_as;
+                    result[2][1] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_140.z>= seek_to && seek_to >= ANGLE_160.z){
-                    wight_as = abs((seek_to - ANGLE_140.z)/(ANGLE_160.z - ANGLE_140.z));
-                    result[2][1] += field_vector[2] * wight_as;
-                    result[2][2] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_140.z)/(ANGLE_160.z - ANGLE_140.z));
+                    result[2][1] += field_vector[2] * weight_as;
+                    result[2][2] += field_vector[2] * (1.0 - weight_as);
                 } else if (ANGLE_160.z>= seek_to && seek_to >= ANGLE_180.z){
-                    wight_as = abs((seek_to - ANGLE_160.z)/(ANGLE_180.z - ANGLE_160.z));
-                    result[2][2] += field_vector[2] * wight_as;
-                    result[0][0] += field_vector[2] * (1.0 - wight_as);
+                    weight_as = abs((seek_to - ANGLE_160.z)/(ANGLE_180.z - ANGLE_160.z));
+                    result[2][2] += field_vector[2] * weight_as;
+                    result[0][0] += field_vector[2] * (1.0 - weight_as);
                 }
             }
         }
@@ -760,7 +756,7 @@ mat3 cell_feature_extraction(vec2 target_coord) {
 - block_feature_extraction 针对 **分块（Block）特征提取** 为结果的 **块归一化**
 
 ```glsl
-/* Calucate Block Feature at target center */
+/* Calculate Block Feature at target center */
 float block_feature_extraction(vec2 target_coord) {
     float orient_hog_density = 0.0;
     float block_feature_vector[SIZE_BV];
@@ -814,7 +810,7 @@ float block_feature_extraction(vec2 target_coord) {
 
 考虑到思路连贯性，样例中的实现将所有步骤放在一张纹理过程中处理，且没有对核计算做优化。这会导致每个像素都存在一次 **HOG 计算金字塔**，而按理来说 **一个块内并不需要重复计算**。样例中相当于将块内运算重复了 $$16 \times 16$$ 次，极大的增加了消耗。
 
-因此，在实际应用中，需要对上文的实现进行改造。 **把文中程序片内的各个步骤的方法，分配到不同阶的程序片中，并优化纹理过程。** 之后才能被更为高效的予以运用。介于骨干并无不同，此处就不再展开赘述。
+因此，在实际应用中，需要对上文的实现进行改造。 **把文中程序片内的各个步骤的方法，分配到不同阶的程序片中，并优化纹理过程。** 之后才能被更为高效的予以运用。鉴于骨干并无不同，此处就不再展开赘述。
 
 经过处理后的最终结果，以能量密度的形式附加到当前像素点的色彩值上，实现最终的图形化展示：
 
@@ -831,13 +827,13 @@ void main()
 
 现在，整个 HOG 的简易程序片就完成了。
 
-**到此为止，方向梯度直方图技术可以初步应用于音视频当中了。** 虽然在上文样例的渲染程序片实现过程中，但从普遍意义上来讲，HOG 仍然属于相对高消耗的算法， HOG 提供的方法论更多被应用在 **编解码规格制定的时域冗余处理** 上。其本身具有一定的 **硬件门槛**。
+**到此为止，方向梯度直方图技术可以初步应用于音视频当中了。** 在上文样例的渲染程序片实现过程中，从普遍意义上来讲，HOG 仍然属于相对高消耗的算法， HOG 提供的方法论更多被应用在 **编解码规格制定的时域冗余处理** 上。其本身具有一定的 **硬件门槛**。
 
 ## **HOG 最终产物的用处**
 
 假设输入帧长宽为 $$W \times H = 256 \times 256$$ 。按照前文采用块大小 $$2 \times 2$$ ，分组大小 $$8 \times 8$$ 进行处理，则得到方向梯度直方图最终输出结果为包含 $$16 \times 16 = 256$$ 个块特征向量的数据集合。每一个块特征向量由 $$(2 \times 2) \cdot 9  = 36$$ 维（参数）构成。为了方便描述，我们将输出数据集称为 **HOG 数据帧**。
 
-**HOG 数据帧（HOG Frame）更多被作为经过特征提取后的预处理输入数据，传入目标物体检测等人工智能计算机视觉方向的算法模型。** 通过模型获取的物体识别结果后，再利用训练好的目标跟踪模型，或传统目标跟踪算法（诸如：核卷积滤波（KCF [Kernelized Correlation Filter]）[18] 、MOSSE 算法等）等，来获取视频流中运动物体在时序上的关联性。
+**HOG 数据帧（HOG Frame）更多被作为经过特征提取后的预处理输入数据，传入目标物体检测等人工智能计算机视觉方向的算法模型。** 通过模型获取的物体识别结果后，再利用训练好的目标跟踪模型，或传统目标跟踪算法（诸如：核卷积滤波（KCF [Kernelized Correlation Filter]）[\[18\]][ref] 、MOSSE 算法等）等，来获取视频流中运动物体在时序上的关联性。
 
 那么，用于判断目标检测结果是否准确的方法，也就是目标检测模型的 **损失函数（Loss Function）** 是什么呢？
 
