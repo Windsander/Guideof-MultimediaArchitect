@@ -6,15 +6,15 @@
 <a href="https://github.com/Windsander/Guideof-MultimediaArchitect" target="_blank"><img alt="GitBook" src="https://img.shields.io/github/stars/Windsander/Guideof-MultimediaArchitect?label=Stars&style=flat&logo=GitBook"></a>
 </p>
 
-[<font color=oragan> =[>> 关于作者© <<]= </font>](AUTHOR.md)
+[<font color=orange> =[>> 关于作者© <<]= </font>](AUTHOR.md)
 
-[<font color=oragan> =[>> 赞助本作© <<]= </font>](DONATE.md)
+[<font color=orange> =[>> 赞助本作© <<]= </font>](DONATE.md)
 
-[<font color=red> =[>> 版权申明© <<]= </font>](COPYRIGHT.md)
+[<font color=red> =[>> 版权声明© <<]= </font>](COPYRIGHT.md)
 
 ## **目标**
 
-对于音视频工程师/架构师来说，日常工作长中总会有大量的知识技术积累，亟待梳理以期望能够被快速检索查阅。但由于工程技术所处领域的复合特征，往往针对一个工程问题所需要的专业知识，不论深浅程度，都会横跨几门学科。而想要获取有效的处理问题所能使用的信息，都需要依次回顾、搜集和关联。这样必不可少会花费大量时间查阅各类大部头资料和文献。而这么做往往是因为，对于待解答问题非常重要的知识点，分布碎片化导致的。
+对于音视频工程师/架构师来说，日常工作中总会有大量的知识技术积累，亟待梳理以期望能够被快速检索查阅。但由于工程技术所处领域的复合特征，往往针对一个工程问题所需要的专业知识，不论深浅程度，都会横跨几门学科。而想要获取有效的处理问题所能使用的信息，都需要依次回顾、搜集和关联。这样必不可少会花费大量时间查阅各类大部头资料和文献。而这么做往往是因为，对于待解答问题非常重要的知识点，分布碎片化导致的。
 
 **音视频规格的跨度构成了本身技术的多个维度，使得我们并不能按照以往的工程思维，从单一角度来考虑涉及此类型的复合问题**。
 
@@ -22,11 +22,11 @@
 
 ## **特色**
 
-本书结合作者工作实践，对架构师日常工作工程中涉及使用到的：数字信号处理、计算机图形学、色彩学、相关工程规格规范、驱动特征及软件框架设计等，领域的专业学科知识进行了梳理和提炼。从音视频工程师不同的技术阶段需要面临的问题为出发点，将
+本书结合作者工作实践，对架构师日常工作过程中涉及使用到的：数字信号处理、计算机图形学、色彩学、相关工程规格规范、驱动特征及软件框架设计等，领域的专业学科知识进行了梳理和提炼。从音视频工程师不同的技术阶段需要面临的问题为出发点，将
 
-全书分为，**音视频基础与音视分析**、**流媒体规格与简易编解码播放框架设计**、**通用统一化音视频编辑框架与渲染驱动设计**，三大阶段。每一阶段，统一采用知识图谱串联工程规格与编码实践，全面讲解对应技术阶段下需要掌握的，多媒体（音视频）技术之简史、原理、算法、设计及相关推导、制定、架构与应用。
+全书分为，**音视频基础与音视频分析**、**流媒体规格与简易编解码播放框架设计**、**通用统一化音视频编辑框架与渲染驱动设计**，三大阶段。每一阶段，统一采用知识图谱串联工程规格与编码实践，全面讲解对应技术阶段下需要掌握的，多媒体（音视频）技术之简史、原理、算法、设计及相关推导、制定、架构与应用。
 
-基于此，全书按照技术逐级递进的关系，构成了整体音视频从数据分析、编解码器开发、播放器开发到图形化与图像处理、特效与特效引擎的 **完整技术栈**。使得全书每个章节内部自成一体但确相互关联，从而便于做技术字典、工程手册和整体学习之用。
+基于此，全书按照技术逐级递进的关系，构成了整体音视频从数据分析、编解码器开发、播放器开发到图形化与图像处理、特效与特效引擎的 **完整技术栈**。使得全书每个章节内部自成一体但却相互关联，从而便于做技术字典、工程手册和整体学习之用。
 
 ## **面向**
 
@@ -81,7 +81,7 @@
 		* [1.6.1 音频格式（Audio Format）](Chapter_1/Language/cn/Docs_1_6_1.md)
 		* [1.6.2 无压缩编码格式（Uncompressed Encode）](Chapter_1/Language/cn/Docs_1_6_2.md)
 		* [1.6.3 无损压缩编码格式（Lossless Encode）](Chapter_1/Language/cn/Docs_1_6_3.md)
-		* [1.6.4 有损压缩编码格式（Uncompressed Encode）](Chapter_1/Language/cn/Docs_1_6_4.md)
+		* [1.6.4 有损压缩编码格式（Lossy Encode）](Chapter_1/Language/cn/Docs_1_6_4.md)
 	* [【参考文献】](Chapter_1/Language/cn/References_1.md)
 
 <br>
@@ -200,7 +200,7 @@
 
 * [五、音视频帧分析与数据处理](Chapter_5/Language/cn/Apex_5_Introduce.md)
 	* [5.1 音视频帧与环境准备](Chapter_5/Language/cn/Docs_5_1.md)
-		* [5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）](Chapter_5/Language/cn/Docs_5_1_1.md)
+		* [5.1.1 常用数学库（Numpy、Pandas、Matplotlib）](Chapter_5/Language/cn/Docs_5_1_1.md)
 		* [5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）](Chapter_5/Language/cn/Docs_5_1_2.md)
 		* [5.1.3 视频分析库（PyOpenCV、Color-Science）](Chapter_5/Language/cn/Docs_5_1_3.md)
 		* [5.1.4 其他分析软件](Chapter_5/Language/cn/Docs_5_1_4.md)

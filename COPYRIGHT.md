@@ -1,4 +1,4 @@
-# 版权申明©
+# 版权声明©
 
 **本书由 李述博©（Arikan.Li©）独立完成**
 
@@ -8,7 +8,7 @@
 <a href="https://github.com/Windsander/Guideof-MultimediaArchitect" target="_blank"><img alt="GitBook" src="https://img.shields.io/github/stars/Windsander/Guideof-MultimediaArchitect?label=Stars&style=flat&logo=GitBook"></a>
 </p>
 
-本人的所有作品，包括但不限于文字，图片等内容受《著作权》法的保护，凡未经权利人明确书面授权，转载上述内容，本人有权追究侵权行为。　　
+本人的所有作品，包括但不限于文字，图片等内容受《著作权法》的保护，凡未经权利人明确书面授权，转载上述内容，本人有权追究侵权行为。　　
 
 本人关于图片作品版权的声明：
 　　
