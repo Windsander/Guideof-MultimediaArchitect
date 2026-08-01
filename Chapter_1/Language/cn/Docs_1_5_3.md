@@ -43,7 +43,7 @@ $$
 </figure>
 </center>
 
-对于一款 DAC 单元，在设计确定了 **时钟频率（Clock Frequency）**、**最大比特分辨率（Max Bit Resolution）** 和 **参考输入（Reference Input）** 后，对于该设备的这些相关属性，既成 **常数固定**。其中，最大比特分辨率（Max Bit Resolution）取值  ，被标注为 DAC 设备的 **解析位深（Analytical Bit Depth）**，即俗称的解析力。
+对于一款 DAC 单元，在设计确定了 **时钟频率（Clock Frequency）**、**最大比特分辨率（Max Bit Resolution）** 和 **参考输入（Reference Input）** 后，对于该设备的这些相关属性，即成 **常数固定**。其中，最大比特分辨率（Max Bit Resolution）取值 $$N$$ ，被标注为 DAC 设备的 **解析位深（Analytical Bit Depth）**，即俗称的解析力。
 
 同样的，想要达到 **较好的还原** 模拟信号效果，**DAC 的 时钟频率（Clock Frequency），需要和 ADC 的工业标准保持一致**。因此，有时也被用 ADC 的采样率（Samplerate）的称谓代指，即所谓 DAC 采样率。这种称谓其实是不准确的。
 

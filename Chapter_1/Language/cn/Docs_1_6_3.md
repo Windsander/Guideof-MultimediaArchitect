@@ -26,19 +26,19 @@
 
 常用无损压缩算法主要为 **四类**，分别是：
 
-- **熵编码算法（Entropy Coding）**，采用如 **哈夫曼编码（Huffman Coding）**[\[21\]][ref] 、**香农-范诺编码（Shannon–Fano Coding）**[\[22\]][ref] 、**算数编码（Arithmetic Coding）**[\[23\]][ref] 等。此类算法通过调整信息熵，为高出现频次信息分配较短字节位，而低出现频次信息分配较长字节位的方式，缩减整体所占字节空间大小。
+- **熵编码算法（Entropy Coding）**，采用如 **哈夫曼编码（Huffman Coding）**[\[21\]][ref] 、**香农-范诺编码（Shannon–Fano Coding）**[\[22\]][ref] 、**算术编码（Arithmetic Coding）**[\[23\]][ref] 等。此类算法通过调整信息熵，为高出现频次信息分配较短比特位，而低出现频次信息分配较长比特位的方式，缩减整体所占字节空间大小。
 
-- **预测编码算法（Predictive Coding）**，如 **线性预测编码（LPC [Linear Predictive Coding]）**[\[24\]][ref]、**自适应差分脉冲编码调制（ADPCM [Adaptive Differential Pulse Code Modulation）**[\[25\]][ref] 等。这类算法通过预测下一个数据点的值，并仅存储预测误差，从而减少数据量。除了 ADPCM 外，一些诸如 差分脉冲编码调制（DPCM [Differential Pulse Code Modulation]）等的主要被运用于 数模模数转换 的调制方法，也是可以被在此处的。这种调制类方法，一般通过存储相邻采样点之间的差值来减少数据量，当运用于压缩时，也可归类至预测编码算法分类。
+- **预测编码算法（Predictive Coding）**，如 **线性预测编码（LPC [Linear Predictive Coding]）**[\[24\]][ref]、**自适应差分脉冲编码调制（ADPCM [Adaptive Differential Pulse Code Modulation]）**[\[25\]][ref] 等。这类算法通过预测下一个数据点的值，并仅存储预测误差，从而减少数据量。除了 ADPCM 外，一些诸如 差分脉冲编码调制（DPCM [Differential Pulse Code Modulation]）等的主要被运用于 数模模数转换 的调制方法，也是可以被归在此处的。这种调制类方法，一般通过存储相邻采样点之间的差值来减少数据量，当运用于压缩时，也可归类至预测编码算法分类。
 
-- **变换编码算法（Transform Coding）**，如 **离散傅里叶变换（DFT）**、**离散余弦变换（DCT）** 等。该类算法通过将时域信号转换为频域信号，来更有效地表示和压缩音频数据。由于其关键程度，在本书[第三章](../../../Chapter_3/Language/cn/Apex_3_Introduce.md)中，会重点讲解。
+- **变换编码算法（Transform Coding）**，如 **离散傅立叶变换（DFT）**、**离散余弦变换（DCT）** 等。该类算法通过将时域信号转换为频域信号，来更有效地表示和压缩音频数据。由于其关键程度，在本书[第三章](../../../Chapter_3/Language/cn/Apex_3_Introduce.md)中，会重点讲解。
 
 - **复合算法（Hybrid）**，是指一类 **采用了多种类型常规算法，按一定处理流排布，共同进行压缩的算法类型**。大部分无损压缩编码格式，都属于此类。比如，结合了熵编码和预测编码 FLAC、ALAC，以及多种算法混合处理的 APE。
 
 另外需要区别一点。从 **原始波源（Original Source）** 到 **数字信号（Digital Signal）** 的过程是 **有损的**。但 **这与此处的压缩算法毫无关联**。
 
-通过前面章节的讲解，我们可以认识到，模拟信号本身采样自原始波源的过程其实是有损的，而从模拟信号到数字信号的过程，依然也是有损的。最简单来看，单 A/D、D/A 中的 **硬件比特分辨率（Bit Resolution**），就可能因存在从 **连续到离散值再回到模拟连续值** 过程，而 **引入损失**。这一过程的损失被称为 **采样损失（Sampling Loss）**。
+通过前面章节的讲解，我们可以认识到，模拟信号本身采样自原始波源的过程其实是有损的，而从模拟信号到数字信号的过程，依然也是有损的。最简单来看，单 A/D、D/A 中的 **硬件比特分辨率（Bit Resolution）**，就可能因存在从 **连续到离散值再回到模拟连续值** 过程，而 **引入损失**。这一过程的损失被称为 **采样损失（Sampling Loss）**。
 
-所以，**无损压缩算法虽然没有损失，但算法接收并处理的信号本身，就已经有一定的数据丢失了**。不过，相比有损算法而言，该损失可以通过部署更优质的硬件设备来降低损失量，且相对更适合在采集模拟信号过程考察。因此，与之算法因素，采样损失并不在格式中计入。
+所以，**无损压缩算法虽然没有损失，但算法接收并处理的信号本身，就已经有一定的数据丢失了**。不过，相比有损算法而言，该损失可以通过部署更优质的硬件设备来降低损失量，且相对更适合在采集模拟信号过程考察。因此，之于算法因素，采样损失并不在格式中计入。
 
 回到格式本身。**无损压缩编码格式（Lossless）** 最常见的主要有 **三种**，分别是 **FLAC（.flac）**、**ALAC（.m4a）** 和 **APE（.ape）**。但因为 APE 的处理流及算法闭源，与 ALAC 的平台兼容性问题，**FLAC 成为当下主流**，全平台兼容且具有三者中最高压缩率（30%～60%）的，无损压缩编码格式首选。
 	
@@ -65,7 +65,7 @@
 
 **通道间去相关（Interchannel Decorrelation）** 是 **针对多通道（Stereo、Multi-Channel）情况** 进行的，以选择的指定 **去相关策略（Decorrelation Strategy）** 计算新组值代原有通道数据，来 **减小原始信息冗余的辅助压缩手段**。
 
-**去相关策略（Decorrelation Strategy）一般有三种**，即： **对称去相关（Symmetric Decorrelation）**、**主成分分析（PCA）**、**奇艺值分解（SVD）**。三者都是可逆的，而 **对称去相关 则是其中最快最简便的算法**。
+**去相关策略（Decorrelation Strategy）一般有三种**，即： **对称去相关（Symmetric Decorrelation）**、**主成分分析（PCA）**、**奇异值分解（SVD）**。三者都是可逆的，而 **对称去相关 则是其中最快最简便的算法**。
 
 记分块后有 $$(C_1, C_2)$$ 数据，对称去相关会根据分组的组内 **平均值（Mean）** 和 **差值（Sub）**，生成该组的中间信号与侧信号结果 $$(M, S)$$ 代替原 $$(C_1, C_2)$$ 。有：
 
@@ -295,7 +295,7 @@ $$
 </figure>
 </center>
 
-现在，让我们顺序了解各类分块的关键参数（包含元数据头）。**方便与系统起见**，我们仍然将 **元数据块（Metadata Block）** 称为 **块（Chunk）**。
+现在，让我们顺序了解各类分块的关键参数（包含元数据头）。**方便起见**，我们仍然将 **元数据块（Metadata Block）** 称为 **块（Chunk）**。
 
 <br>
 
@@ -335,7 +335,7 @@ $$
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">Sample Rate</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x0e~0x10 (2.5 = 20 bits)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">数字信号采样率，由于 SUD 只能存 PCM，<br>对 PCM 来说就是 &lt;PCM 采样率&gt;，有该值<br>== 8000 | 11025 | 24000 | 44100 等</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">数字信号采样率，由于 FLAC 只存 PCM，<br>对 PCM 来说就是 &lt;PCM 采样率&gt;，有该值<br>== 8000 | 11025 | 24000 | 44100 等</td>
   </tr>
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">Num of Channels</th>
@@ -354,7 +354,7 @@ $$
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">MD5 Signature</th>
-    <td style="border: 1px solid #ddd; padding: 10px;">0x16~0x26 (16)</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">0x16~0x25 (16)</td>
     <td style="border: 1px solid #ddd; padding: 10px;">完整性 MD5 签名，<br>用于验证音频数据完整性的 MD5 哈希值，128 位。<br>通过验证 MD5 是否和预期一致，快速检测完整性</td>
   </tr>
 </table>
@@ -484,7 +484,7 @@ $$
     <th style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">User Comment List</th>
     <td style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">0x08+len+4 ~ 0x08+len+4 + (numComments * perCommSize)</td>
     <td style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">
-      由评论构成的 数组（Array），子数据体 Comment 持有者，不同 AIFF 的 Comment FLAC 的该子数据体记录，包括的评论所有音频额外信息键值对字符串，如 "TITLE=Example"
+      由评论构成的 数组（Array），子数据体 Comment 持有者，不同于 AIFF 的 Comment FLAC 的该子数据体记录，包括的评论为音频额外信息键值对字符串，如 "TITLE=Example"
       <table style="width:100%; border-collapse: collapse; margin-top: 10px;">
         <tr style="background-color: #f2f2f2;">
           <th style="border: 1px solid #ddd; padding: 10px;">Comment (bytes)</th>
@@ -541,7 +541,7 @@ $$
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">Number of Tracks</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x60 (1)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">总轨数，表示光盘上的总轨数，即声轨，并非通道数 各声轨间独立，是可以在播放上重叠的</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">总轨数，表示光盘上的总轨数，即声轨，并非通道数，各声轨间独立，是可以在播放上重叠的</td>
   </tr>
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">Track Information</th>
@@ -664,12 +664,12 @@ $$
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">Colors Used</th>
     <td style="border: 1px solid #ddd; padding: 10px;">last_at~last_at+4 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">每像素的颜色数，表示图片使用的颜色数，即颜色总数，例如值 16，像素值为索引，取色自 16 种色的调色板而取 0 则表示，颜色完全由像素自身决定</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">每像素的颜色数，表示图片使用的颜色数，即颜色总数，例如值 16，像素值为索引，取色自 16 种色的调色板，而取 0 则表示，颜色完全由像素自身决定</td>
   </tr>
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">Picture Data Length</th>
     <td style="border: 1px solid #ddd; padding: 10px;">last_at~last_at+4 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">图片数据的长度，表示图片数据的字节数，值为 N 单位 bytes值指向下一字段，当前块的图片数据所占总字节长度</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">图片数据的长度，表示图片数据的字节数，值为 N 单位 bytes，值指向下一字段，当前块的图片数据所占总字节长度</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">Picture Data</th>
@@ -684,7 +684,7 @@ $$
 
 <br>
 
-至此，对于 FLAC 音频格式，我们就能完整解析了。让我们来看一段 138 bytes 的 FLAC 音频文件数据（十六进制格式单字节展开）事例：
+至此，对于 FLAC 音频格式，我们就能完整解析了。让我们来看一段 138 bytes 的 FLAC 音频文件数据（十六进制格式单字节展开）示例：
 
 <body>
 <div class="hex-container">
@@ -717,13 +717,13 @@ ba a8 d4 1d 8c d9 8f 00 b2 04 e9 80 09 98 ec f8 42 7e 86 01 f4 35 00 00 <br>
 
 **作为无损压缩编码音频格式的代表，FLAC 具有重要的地位**。它能够在不丢失任何原始音频信息的情况下，极大的减少文件大小。这使得它被广泛的应用在了高保真音频存储和传输过程中。其 **无损特性确保了音频在解码后与原始音频完全一致**，令其成为了 **音频发烧友 和 专业音频制作 的首选格式**。
 
-同样的，该特点也是无损压缩编码音频格式，**最为显著具的优势**。
+同样的，该特点也是无损压缩编码音频格式，**最为显著具有的优势**。
 
 <br>
 
 然而，尽管无损压缩如 FLAC 提供了最高的音质保真度，**但其文件大小仍然相对较大**。在许多应用场景中，如 **流媒体** 和 **便携设备存储（尤其是在随身听时代，早期有限的存储空间情况）**，依然 **不够便利**。因此，**具有更大压缩比的有损压缩编码音频格式**，如 MP3 和 AAC 便成为了一种 **可以接受的替代方案**。这些格式 **通过舍弃人耳不易察觉的音频信息，进一步减小文件大小，同时在音质和压缩率之间取得平衡**。
 
-虽然为人所带来的听觉感受，介于此，会相对有所衰减。
+虽然为人所带来的听觉感受，鉴于此，会相对有所衰减。
 
 
 [ref]: References_1.md
