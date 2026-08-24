@@ -28,3 +28,5 @@
 **[13]** M. Mauch and S. Dixon, "pYIN: A fundamental frequency estimator using probabilistic threshold distributions," in 2014 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 659-663, 2014, doi: 10.1109/ICASSP.2014.6853678.
 
 **[14]** D. P. W. Ellis, "Beat tracking by dynamic programming," in Journal of New Music Research, vol. 36, no. 1, pp. 51-60, 2007, doi: 10.1080/09298210701653344.
+
+**[15]** G. Farneback, "Two-Frame Motion Estimation Based on Polynomial Expansion," in Image Analysis (SCIA 2003), Lecture Notes in Computer Science, vol. 2749, pp. 363-370, 2003, doi: 10.1007/3-540-45103-X_50.
