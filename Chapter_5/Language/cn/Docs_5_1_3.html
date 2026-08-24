@@ -74,6 +74,8 @@
 
     
         
+        <link rel="stylesheet" href="../../../styles/common.css">
+        
     
         
     
@@ -173,7 +175,7 @@
                 <a href="../../../COPYRIGHT.html">
             
                     
-                     =[>> 版权申明© <<]= 
+                     =[>> 版权声明© <<]= 
             
                 </a>
             
@@ -523,7 +525,7 @@
                 <a href="../../../Chapter_1/Language/cn/Docs_1_6_4.html">
             
                     
-                    1.6.4 有损压缩编码格式（Uncompressed Encode）
+                    1.6.4 有损压缩编码格式（Lossy Encode）
             
                 </a>
             
@@ -1065,7 +1067,7 @@
                 <a href="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
             
                     
-                    3.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）
+                    3.1.3 傅立叶变换的经典 - 快速傅立叶变换（FFT）
             
                 </a>
             
@@ -1078,7 +1080,7 @@
                 <a href="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
             
                     
-                    3.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
+                    3.1.4 傅立叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
             
                 </a>
             
@@ -2040,7 +2042,7 @@
                 <a href="Docs_5_1_1.html">
             
                     
-                    5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）
+                    5.1.1 常用数学库（Numpy、Pandas、Matplotlib）
             
                 </a>
             
@@ -2163,7 +2165,7 @@
 <figure>
    <img width="600" height="225" src="../../Pictures/after_decoder_workflow_simple_cn.png" alt="">
     <figcaption>
-      <p>&#x56FE; 5-6 &#x7B80;&#x6613;&#x97F3;&#x9891;&#x64AD;&#x653E;&#x5668;&#x7684;&#x8FD0;&#x884C;&#x6548;&#x679C;&#x56FE;</p>
+      <p>&#x56FE; 5-6 &#x89E3;&#x7801;&#x540E;&#x5FC5;&#x8981;&#x73AF;&#x8282;&#x6D41;&#x7A0B;&#x793A;&#x610F;&#x56FE;</p>
    </figcaption>
 </figure>
 </center>
@@ -2174,13 +2176,13 @@
 <p><br></p>
 <p>&#x5728;&#x8272;&#x5F69;&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#x540E;&#xFF0C;&#x5219;&#x662F; <strong>&#x5E27;&#x5206;&#x6790;&#x4E0E;&#x9884;&#x5904;&#x7406;&#x6B65;&#x9AA4;</strong>&#x3002;&#x8FD9;&#x4E00;&#x6B65;&#x5B8C;&#x6210; <strong>&#x5BF9;&#x524D;&#x8005;&#x8F93;&#x51FA;&#x5E27;&#x6570;&#x636E;&#x7684;&#x7279;&#x5F81;&#x63D0;&#x53D6;&#x4E0E;&#x89E3;&#x6790;</strong>&#x3002;&#x5C06;&#x4F1A;&#x4F7F;&#x7528;&#x5230;&#x76F8;&#x5173;&#x7684;&#x5206;&#x6790;&#x65B9;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982; <strong><a href="../../../Chapter_3/Language/cn/Docs_3_1_2.html">&#x4E8C;&#x7EF4;&#x5085;&#x7ACB;&#x53F6;</a></strong> &#x6216;&#x5176;&#x4ED6; <strong><a href="../../../Chapter_3/Language/cn/Apex_3_Introduce.html">&#x57FA;&#x7840;&#x56FE;&#x50CF;&#x7B97;&#x6CD5;</a></strong>&#x3001;<strong><a href="../../../Chapter_3/Language/cn/Docs_3_2.html">&#x6EE4;&#x6CE2;&#x6838;</a></strong> &#x6216; <strong><a href="../../../Chapter_4/Language/cn/Apex_4_Introduce.html">&#x6A21;&#x578B;&#x63A5;&#x5165;</a></strong>&#x3002;&#x6B64;&#x5904;&#x4E5F;&#x662F;&#x6211;&#x4EEC;&#x672C;&#x8282;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x7684;&#x91CD;&#x70B9;&#x3002;</p>
 <p><br></p>
-<p>&#x6700;&#x540E;&#x4E00;&#x6B65;&#x662F; <strong>GPU &#x4E0A;&#x5C4F;&#x7F13;&#x51B2;&#x548C;&#x901A;&#x4FE1;</strong>&#xFF0C;&#x5219;&#x9700;&#x8981;&#x7531; <strong>&#x9009;&#x5B9A;&#x7684;&#x56FE;&#x5F62;&#x9A71;&#x52A8;&#xFF08;Vulkan &#x7B49;&#xFF09;&#x6765;&#x5EFA;&#x7ACB;&#x76F8;&#x5E94;&#x7684;&#x4FE1;&#x9053;&#xFF0C;&#x63D0;&#x4F9B;&#x6307;&#x4EE4;&#x901A;&#x4FE1;&#x548C;&#x663E;&#x5B58;&#x66F4;&#x65B0;&#x529F;&#x80FD;</strong>&#x3002;&#x672C;&#x8282;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x76F8;&#x5173;&#x7684;&#x73AF;&#x5883;&#x548C;&#x4E0A;&#x5C4F;&#x66F4;&#x65B0;&#xFF0C;&#x662F;&#x7531; <strong>Python &#x7684; Tinker &#x754C;&#x9762;&#x5E93;&#x8D70;&#x7CFB;&#x7EDF; UI &#x73AF;&#x5883;</strong> &#x6216; <strong>&#x5E38;&#x7528;&#x89C6;&#x9891;&#x5206;&#x6790;&#x5E93;&#xFF08;&#x5982; OpenCV&#xFF09;&#x5728; &#x5E93;&#x5185;&#x81EA;&#x884C;&#x7EF4;&#x62A4;</strong>&#x3002;&#x6682;&#x4E0D;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x4ECB;&#x5165;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x4E00;&#x6B65;&#x662F; <strong>GPU &#x4E0A;&#x5C4F;&#x7F13;&#x51B2;&#x548C;&#x901A;&#x4FE1;</strong>&#xFF0C;&#x5219;&#x9700;&#x8981;&#x7531; <strong>&#x9009;&#x5B9A;&#x7684;&#x56FE;&#x5F62;&#x9A71;&#x52A8;&#xFF08;Vulkan &#x7B49;&#xFF09;&#x6765;&#x5EFA;&#x7ACB;&#x76F8;&#x5E94;&#x7684;&#x4FE1;&#x9053;&#xFF0C;&#x63D0;&#x4F9B;&#x6307;&#x4EE4;&#x901A;&#x4FE1;&#x548C;&#x663E;&#x5B58;&#x66F4;&#x65B0;&#x529F;&#x80FD;</strong>&#x3002;&#x672C;&#x8282;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x76F8;&#x5173;&#x7684;&#x73AF;&#x5883;&#x548C;&#x4E0A;&#x5C4F;&#x66F4;&#x65B0;&#xFF0C;&#x662F;&#x7531; <strong>Python &#x7684; Tkinter &#x754C;&#x9762;&#x5E93;&#x8D70;&#x7CFB;&#x7EDF; UI &#x73AF;&#x5883;</strong> &#x6216; <strong>&#x5E38;&#x7528;&#x89C6;&#x9891;&#x5206;&#x6790;&#x5E93;&#xFF08;&#x5982; OpenCV&#xFF09;&#x5728; &#x5E93;&#x5185;&#x81EA;&#x884C;&#x7EF4;&#x62A4;</strong>&#x3002;&#x6682;&#x4E0D;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x4ECB;&#x5165;&#x3002;</p>
 <p>&#x800C;&#x5F53;&#x9700;&#x8981;&#x9879;&#x76EE;&#x81EA;&#x884C;&#x5904;&#x7406;&#x9A71;&#x52A8;&#x548C; GPU &#x901A;&#x4FE1;&#x73AF;&#x5883;&#x4E0A;&#x4E0B;&#x6587;&#x7EF4;&#x62A4;&#x65F6;&#xFF0C;&#x6574;&#x4E2A;&#x6E32;&#x67D3;&#x5F15;&#x64CE;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x90FD;&#x5E94;&#x5F53;&#x5728; <strong>&#x540C;&#x4E00;&#x4E2A;&#x4E3B;&#x4F53;&#x73AF;&#x5883;&#x4E0B;</strong>&#xFF08;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4EE3;&#x8868;&#x5176;&#x901A;&#x4FE1;&#x53E5;&#x67C4;&#x540D;&#x7684;&#xFF0C;&#x5B9E;&#x65F6;&#x4E0A;&#x4E0B;&#x6587;/&#x901A;&#x4FE1;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x6765;&#x4EE3;&#x6307;&#xFF09;&#xFF0C;&#x8F85;&#x52A9;&#x5176;&#x4ED6;&#xFF08;&#x5982;&#x679C;&#x9700;&#x8981;&#xFF09;&#x7528;&#x4E8E; <strong>&#x65F6;&#x95F4;&#x7247;&#x590D;&#x7528;</strong> &#x6216; <strong>GPU &#x4FE1;&#x4EE4;&#x9884;&#x5C01;&#x88C5;</strong> &#x7684; <strong>&#x8F85;&#x52A9;&#x73AF;&#x5883;</strong>&#xFF08;&#x5982; &#x5EF6;&#x8FDF;&#x4E0A;&#x4E0B;&#x6587; &#x6216; &#x7C7B;&#x4F3C;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6307;&#x4EE4;&#x7EC4;&#x88C5;&#x7ED3;&#x6784;&#xFF09;&#x4F7F;&#x7528;&#x3002;&#x4ECE;&#x800C;&#x65B9;&#x4FBF;&#x5404;&#x4E2A; <strong>&#x524D;&#x540E;&#x5173;&#x8054;&#x5BC6;&#x5207;&#x73AF;&#x8282;&#x7684;&#x5904;&#x7406;&#x7ED3;&#x679C;</strong>&#xFF0C;&#x5728; <strong>GPU &#x8D44;&#x6E90;&#x6C60;&#x4E2D;&#x5B9E;&#x73B0;&#x4E92;&#x901A;</strong>&#x3002;</p>
 <p>&#x8FD9;&#x4E00;&#x6D89;&#x53CA;&#x9A71;&#x52A8;&#x8D44;&#x6E90;&#x534F;&#x540C;&#x548C;&#x6C60;&#x5316;&#x8BBE;&#x8BA1;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5C31;&#x5C5E;&#x4E8E; <strong>&#x56FE;&#x5F62;&#x5F15;&#x64CE;&#xFF08;Graphics Engine&#xFF09;</strong> &#x7684;&#x5173;&#x952E;&#x5904;&#x7406;&#x6280;&#x672F;&#x4E4B;&#x4E00;&#x4E86;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x5728;&#x672A;&#x6765;&#x7684;&#x8FDB;&#x9636;&#x4E00;&#x518C;&#x4E2D;&#x518D;&#x5355;&#x72EC;&#x8BB2;&#x89E3;&#x3002;</p>
 <p>&#x5E38;&#x7528;&#x7684;&#x89C6;&#x9891;&#x5206;&#x6790;&#x5E93;&#x4E3B;&#x8981;&#x6709;&#x4E24;&#x4E2A;&#xFF0C;&#x4E3A; <strong>Colour-Science</strong>&#x3001;<strong>PyOpenCV</strong>&#xFF0C;&#x5206;&#x522B;&#x5BF9;&#x5E94; [ <strong>&#x989C;&#x8272;&#x79D1;&#x5B66;&#x7EFC;&#x5408;&#x5206;&#x6790;</strong>&#x3001;<strong>&#x56FE;&#x50CF;&#x5904;&#x7406;&#x4E0E;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;</strong> ] &#x7684;&#x9700;&#x6C42;&#x3002;&#x5E38;&#x88AB;&#x7528;&#x4E8E; <strong>&#x5DE5;&#x7A0B;&#x539F;&#x578B;&#x9A8C;&#x8BC1;&#xFF08;&#x5373;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#x7684;&#x9A8C;&#x8BC1;&#xFF09;</strong> &#x548C; <strong>&#x5916;&#x90E8;&#xFF08;&#x6307;&#x5DE5;&#x7A0B;&#x5916;&#xFF09;&#x5E27;&#x5206;&#x6790;</strong>&#x3002;</p>
 <p><strong>&#x5C24;&#x5176;&#x662F; PyOpenCV&#xFF0C;&#x8BE5;&#x5E93;&#x662F;&#x91CD;&#x4E2D;&#x4E4B;&#x91CD;&#x3002;&#x4E0D;&#x4EC5;&#x662F;&#x89C6;&#x9891;&#x5206;&#x6790;&#x7684;&#x6838;&#x5FC3;&#x5E93;&#xFF0C;&#x5728;&#x4E1A;&#x52A1;&#x4E2D;&#x4E5F;&#x4F1A;&#x7ECF;&#x5E38;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5230;&#x5B83;&#x7684; C++ &#x5185;&#x6838;&#x3002;</strong></p>
 <h2 id="colour-science&#xFF08;color-science&#xFF09;"><strong>Colour-Science&#xFF08;Color-Science&#xFF09;</strong></h2>
-<p><strong>Colour-Science&#xFF08;Color-Science&#xFF09;</strong> &#x662F;&#x4E00;&#x4E2A;&#x4E13;&#x6CE8;&#x4E8E; <strong>&#x8272;&#x5F69;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;</strong>&#x3001;<strong>&#x5149;&#x8C31;&#x5206;&#x6790;</strong>&#x3001;<strong>&#x8272;&#x5F69;&#x8F6C;&#x6362;</strong> &#x548C; <strong>&#x8272;&#x5F69;&#x7BA1;&#x7406;</strong> &#x7684; <strong>Python &#x8BA1;&#x7B97;&#x5E93;</strong>&#x3002;&#x5176;&#x7531; Colour Developers &#x5F00;&#x53D1;&#x548C;&#x7EF4;&#x62A4;&#xFF0C;&#x65E8;&#x5728;&#x4E3A;&#x8272;&#x5F69;&#x79D1;&#x5B66;&#x9886;&#x57DF;&#x7684;&#x7814;&#x7A76;&#x548C;&#x5E94;&#x7528;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A; <strong>&#x5168;&#x9762;&#x800C;&#x5F3A;&#x5927;&#x7684;&#x5DE5;&#x5177;&#x96C6;</strong> <a href="References_5.html">[8]</a> &#x3002;<strong>&#x6CE8;&#x610F;&#x533A;&#x522B;&#x5E93;&#x540D;&#x4E3A; Colour-Science &#x3002;</strong></p>
+<p><strong>Colour-Science&#xFF08;Color-Science&#xFF09;</strong> &#x662F;&#x4E00;&#x4E2A;&#x4E13;&#x6CE8;&#x4E8E; <strong>&#x8272;&#x5F69;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;</strong>&#x3001;<strong>&#x5149;&#x8C31;&#x5206;&#x6790;</strong>&#x3001;<strong>&#x8272;&#x5F69;&#x8F6C;&#x6362;</strong> &#x548C; <strong>&#x8272;&#x5F69;&#x7BA1;&#x7406;</strong> &#x7684; <strong>Python &#x8BA1;&#x7B97;&#x5E93;</strong>&#x3002;&#x5176;&#x7531; Colour Developers &#x5F00;&#x53D1;&#x548C;&#x7EF4;&#x62A4;&#xFF0C;&#x65E8;&#x5728;&#x4E3A;&#x8272;&#x5F69;&#x79D1;&#x5B66;&#x9886;&#x57DF;&#x7684;&#x7814;&#x7A76;&#x548C;&#x5E94;&#x7528;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A; <strong>&#x5168;&#x9762;&#x800C;&#x5F3A;&#x5927;&#x7684;&#x5DE5;&#x5177;&#x96C6;</strong> <a href="References_5.html">[8]</a> &#x3002;<strong>&#x6CE8;&#x610F;&#x533A;&#x5206;&#x5E93;&#x540D;&#x4E3A; Colour-Science &#x3002;</strong></p>
 <h4 id="&#x4E3B;&#x8981;&#x529F;&#x80FD;&#xFF1A;">&#x4E3B;&#x8981;&#x529F;&#x80FD;&#xFF1A;</h4>
 <ol>
 <li>&#x8272;&#x5F69;&#x7A7A;&#x95F4;&#x8F6C;&#x6362;&#xFF0C;&#x652F;&#x6301; CIE &#x6807;&#x51C6;&#x4E0B;&#x7684; <strong><a href="../../../Chapter_2/Language/cn/Docs_2_5_3.html">RGB</a></strong>&#x3001;<strong><a href="../../../Chapter_2/Language/cn/Docs_2_5_4.html">XYZ</a></strong>&#x3001;<strong><a href="../../../Chapter_2/Language/cn/Docs_2_5_5.html">LAB</a></strong>&#x3001;<strong><a href="../../../Chapter_2/Language/cn/Docs_2_5_6.html">LUV</a></strong> &#x7B49;&#x5404;&#x79CD; <strong><a href="../../../Chapter_2/Language/cn/Docs_2_5.html">&#x8272;&#x5F69;&#x7A7A;&#x95F4;</a></strong> <strong>&#x8F6C;&#x6362;&#x4E0E;&#x4E92;&#x8F6C;</strong></li>
@@ -2268,7 +2270,7 @@
 <a href="https://colour.readthedocs.io/en/latest/generated/colour.plotting.plot_single_luminance_function.html" target="_blank">plot_single_luminance_function</a>, 
 <a href="https://colour.readthedocs.io/en/latest/generated/colour.plotting.plot_multi_luminance_functions.html" target="_blank">plot_multi_luminance_functions</a></li>
 <li>&#x8BFB;&#x5199;&#x6269;&#x5C55;&#xFF08;<strong>io.</strong>&#xFF09;&#xFF1A;
-<a href="https://colour.readthedocs.io/en/latest/generated/colour.io.image_specification_OpenImageIO.html" target="_blank">image_specification_OpenImageI</a>
+<a href="https://colour.readthedocs.io/en/latest/generated/colour.io.image_specification_OpenImageIO.html" target="_blank">image_specification_OpenImageIO</a>
 <a href="https://colour.readthedocs.io/en/latest/generated/colour.io.LUT_to_LUT.html" target="_blank">LUT_to_LUT</a>, </li>
 <li>&#x8272;&#x5F69;&#x6A21;&#x578B;&#xFF08;<strong>models.</strong>&#xFF09;&#xFF1A;
 <a href="https://colour.readthedocs.io/en/latest/generated/colour.models.RGB_COLOURSPACE_CIE_RGB.html" target="_blank">RGB_COLOURSPACE_CIE_RGB</a>, 
@@ -2306,7 +2308,7 @@
 <li><strong>&#x673A;&#x5668;&#x5B66;&#x4E60;</strong>&#xFF0C;&#x652F;&#x6301;&#x591A;&#x79CD;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7B97;&#x6CD5;&#xFF0C;&#x5982; SVM&#x3001;KNN&#x3001;&#x51B3;&#x7B56;&#x6811;&#x7B49;</li>
 <li><strong>&#x4E09;&#x7EF4;&#x91CD;&#x5EFA;</strong>&#xFF0C;&#x63D0;&#x4F9B;&#x7ACB;&#x4F53;&#x5339;&#x914D;&#x3001;&#x76F8;&#x673A;&#x6807;&#x5B9A;&#x3001;&#x4E09;&#x7EF4;&#x91CD;&#x5EFA;&#x529F;&#x80FD;&#xFF08;&#x6709;&#x9650;&#xFF09;</li>
 <li><strong>&#x56FE;&#x50CF;&#x5206;&#x5272;</strong>&#xFF0C;&#x652F;&#x6301;&#x9608;&#x503C;&#x5206;&#x5272;&#x3001;&#x8F6E;&#x5ED3;&#x68C0;&#x6D4B;&#x3001;&#x5206;&#x6C34;&#x5CAD;&#x7B97;&#x6CD5;&#x7B49;</li>
-<li><strong>&#x76F8;&#x673A;&#x8865;&#x76CA;</strong>&#xFF0C;&#x652F;&#x6301;&#x955C;&#x5934;&#x7578;&#x53D8;&#x6821;&#x6B63;&#x548C;&#x56FE;&#x50CF;&#x589E;&#x5F3A;</li>
+<li><strong>&#x76F8;&#x673A;&#x8865;&#x507F;</strong>&#xFF0C;&#x652F;&#x6301;&#x955C;&#x5934;&#x7578;&#x53D8;&#x6821;&#x6B63;&#x548C;&#x56FE;&#x50CF;&#x589E;&#x5F3A;</li>
 <li><strong>&#x8FD0;&#x52A8;&#x5206;&#x6790;</strong>&#xFF0C;&#x63D0;&#x4F9B;&#x5149;&#x6D41;&#x8BA1;&#x7B97;&#x548C;&#x8FD0;&#x52A8;&#x8DDF;&#x8E2A;&#x529F;&#x80FD;</li>
 <li><strong>&#x56FE;&#x50CF;&#x62FC;&#x63A5;</strong>&#xFF0C;&#x652F;&#x6301;&#x5168;&#x666F;&#x56FE;&#x50CF;&#x62FC;&#x63A5;&#x548C;&#x56FE;&#x50CF;&#x5BF9;&#x9F50;</li>
 <li><strong>GPU &#x52A0;&#x901F;</strong>&#xFF0C;&#x90E8;&#x5206;&#x7B97;&#x6CD5;&#x652F;&#x6301; GPU &#x52A0;&#x901F;&#xFF0C;&#x63D0;&#x5347;&#x8BA1;&#x7B97;&#x6027;&#x80FD;</li>
@@ -2513,7 +2515,7 @@
 <a href="https://docs.opencv.org/4.x/d4/d5d/group__features2d__draw.html#ga5d2bafe8c1c45289bc3403a40fb88920" target="_blank">drawKeypoints</a>, 
 <a href="https://docs.opencv.org/4.x/d4/d5d/group__features2d__draw.html#gaf92cd1c6e9400e4753ce393d2fdc06b0" target="_blank">drawMatches</a></li>
 </ol>
-<h4 id="&#x76F8;&#x673A;&#x6821;&#x6B63;&#x4E0E;&#x4E09;&#x7EF4;&#x5F71;&#x5C04;&#x6A21;&#x5757;&#xFF08;cv2calib3d&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;">&#x76F8;&#x673A;&#x6821;&#x6B63;&#x4E0E;&#x4E09;&#x7EF4;&#x5F71;&#x5C04;&#x6A21;&#x5757;&#xFF08;cv2.calib3d&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;</h4>
+<h4 id="&#x76F8;&#x673A;&#x6821;&#x6B63;&#x4E0E;&#x4E09;&#x7EF4;&#x6620;&#x5C04;&#x6A21;&#x5757;&#xFF08;cv2calib3d&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;">&#x76F8;&#x673A;&#x6821;&#x6B63;&#x4E0E;&#x4E09;&#x7EF4;&#x6620;&#x5C04;&#x6A21;&#x5757;&#xFF08;cv2.calib3d&#xFF09;&#x7684;&#x5E38;&#x7528;&#x51FD;&#x6570;&#xFF08;&#x7B80;&#xFF0C;&#x4EC5;&#x5217;&#x51FA;&#x540D;&#x79F0;&#xFF09;&#xFF1A;</h4>
 <ol>
 <li>&#x76F8;&#x673A;&#x6821;&#x6B63;&#xFF1A;
 <a href="https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga93efa9b0aa890de240ca32b11253dd4a" target="_blank">findChessboardCorners</a>, 
@@ -2711,7 +2713,7 @@
 <li><a href="https://docs.opencv.org/4.x/d9/dbb/classcv_1_1structured__light_1_1StructuredLightPattern.html#a4cc409edf8a330eeccba6737d391da34" target="_blank">&lt;Entity&gt;.decode</a> &#x89E3;&#x7801;&#x6355;&#x83B7;&#x7684;&#x5149;&#x6805;&#x6295;&#x5F71;</li>
 </ul>
 </li>
-<li>&#x4E09;&#x7EF4;&#x91CD;&#x5EFA;&#xFF0C;<strong>&#x9700;&#x8981;&#x7528;&#x5230;&#x6838;&#x5FC3;&#x5E93;&#x4E09;&#x7EF4;&#x5F71;&#x5C04;&#x6A21;&#x5757;&#xFF08;cv2.calib3d&#xFF09;&#x80FD;&#x529B;</strong>&#xFF1A;
+<li>&#x4E09;&#x7EF4;&#x91CD;&#x5EFA;&#xFF0C;<strong>&#x9700;&#x8981;&#x7528;&#x5230;&#x6838;&#x5FC3;&#x5E93;&#x4E09;&#x7EF4;&#x6620;&#x5C04;&#x6A21;&#x5757;&#xFF08;cv2.calib3d&#xFF09;&#x80FD;&#x529B;</strong>&#xFF1A;
 <a href="https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#gad3fc9a0c82b08df034234979960b778c" target="_blank">triangulatePoints</a>, 
 <a href="https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga1bc1152bd57d63bc524204f21fde6e02" target="_blank">reprojectImageTo3D</a>, 
 <a href="https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#gac42edda3a3a0f717979589fcd6ac0035" target="_blank">convertPointsFromHomogeneous</a></li>
@@ -2722,15 +2724,15 @@
 <li><a href="https://docs.opencv.org/4.x/d3/d63/classcv_1_1Mat.html" target="_blank">&lt;Mat&gt;</a> &#x6A21;&#x578B;&#x88AB;&#x52A0;&#x8F7D; PLY &#x6587;&#x4EF6;&#x7684;&#x5149;&#x6805;&#x5316;&#x4E0E;&#x6CD5;&#x7EBF;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x4EE5; OpenCV &#x7684; Mat &#x683C;&#x5F0F;&#x50A8;&#x5B58;</li>
 </ul>
 </li>
-<li>&#x6A21;&#x578B;&#x68C0;&#x6D4B;&#x5668;&#xFF08;&#x57FA;&#x4E8E;&#x5C40;&#x90E8;&#x51E0;&#x4F55;&#x7279;&#x5F81;&#x5339;&#x914D;&#xFF09;&#xFF0C;&#x5373;&#x7C97;&#x914D;&#x51C6;&#xFF08;Coarse Global Registeration&#xFF09;&#x3002;&#x9700;&#x8981;&#x5728;&#x4F7F;&#x7528;<a href="https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html" target="_blank">&#xFF08;cv2.&#xFF09;ppf_match_3d.&lt;PPF3DDetector&gt;</a> &#x521B;&#x5EFA;&#x65F6;&#x6307;&#x5B9A; &#x5173;&#x8054;&#x91C7;&#x6837;&#x6B65;&#x957F;&#xFF08;relativeSamplingStep&#xFF09;&#x51B3;&#x5B9A;&#x4F7F;&#x7528;&#x65F6;&#x7684;&#x6A21;&#x578B;&#x68C0;&#x6D4B;&#x7CBE;&#x5EA6;&#xFF0C;&#x503C;&#x8D8A;&#x5C0F;&#x5219;&#x8D8A;&#x4E25;&#x683C;&#xFF08;&#x7CBE;&#x786E;&#x5339;&#x914D;&#xFF09;&#xFF1A;<ul>
+<li>&#x6A21;&#x578B;&#x68C0;&#x6D4B;&#x5668;&#xFF08;&#x57FA;&#x4E8E;&#x5C40;&#x90E8;&#x51E0;&#x4F55;&#x7279;&#x5F81;&#x5339;&#x914D;&#xFF09;&#xFF0C;&#x5373;&#x7C97;&#x914D;&#x51C6;&#xFF08;Coarse Global Registration&#xFF09;&#x3002;&#x9700;&#x8981;&#x5728;&#x4F7F;&#x7528;<a href="https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html" target="_blank">&#xFF08;cv2.&#xFF09;ppf_match_3d.&lt;PPF3DDetector&gt;</a> &#x521B;&#x5EFA;&#x65F6;&#x6307;&#x5B9A; &#x5173;&#x8054;&#x91C7;&#x6837;&#x6B65;&#x957F;&#xFF08;relativeSamplingStep&#xFF09;&#x51B3;&#x5B9A;&#x4F7F;&#x7528;&#x65F6;&#x7684;&#x6A21;&#x578B;&#x68C0;&#x6D4B;&#x7CBE;&#x5EA6;&#xFF0C;&#x503C;&#x8D8A;&#x5C0F;&#x5219;&#x8D8A;&#x4E25;&#x683C;&#xFF08;&#x7CBE;&#x786E;&#x5339;&#x914D;&#xFF09;&#xFF1A;<ul>
 <li><a href="https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html" target="_blank">&lt;PPF3DDetector&gt;</a> &#x91C7;&#x7528;&#x70B9;&#x5BF9;&#x7279;&#x5F81;&#x5339;&#x914D;&#xFF08;Point Pair Features&#xFF09;&#x7B97;&#x6CD5;&#x7684;&#x573A;&#x666F;&#x6A21;&#x578B;&#x68C0;&#x6D4B;</li>
 <li><a href="https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html#acd125802f8339b1ecb67316318a4670d" target="_blank">&lt;Entity&gt;.trainModel</a> &#x5C06;&#x70B9;&#x4E91;&#x6A21;&#x578B;&#x4F20;&#x5165;&#x68C0;&#x6D4B;&#x5668;&#x8BAD;&#x7EC3;&#xFF0C;&#x5236;&#x4F5C;&#x6307;&#x5B9A;&#x6A21;&#x578B;&#x7684;&#x573A;&#x666F;&#x5185;&#x68C0;&#x6D4B;&#x5668;</li>
 <li><a href="https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html#a13757c035f9c95841f7f14f6170c8ffc" target="_blank">&lt;Entity&gt;.match</a> &#x4F7F;&#x7528;&#x8BAD;&#x7EC3;&#x597D;&#x7684;&#x6A21;&#x578B;&#x68C0;&#x6D4B;&#x5668;&#x5B9E;&#x4F8B;&#xFF0C;&#x68C0;&#x6D4B; 3D &#x573A;&#x666F;&#x5185;&#x6A21;&#x578B;/&#x4F4D;&#x59FF;&#x5339;&#x914D;</li>
 </ul>
 </li>
-<li>&#x4F4D;&#x59FF;&#x5339;&#x914D;&#x5668;&#xFF08;&#x57FA;&#x4E8E;&#x521D;&#x59CB;&#x4F4D;&#x59FF;&#x7279;&#x5F81;&#x5339;&#x914D;&#xFF09;&#xFF0C;&#x5373;&#x7CBE;&#x914D;&#x51C6;&#xFF08;Fine Local Registeration&#xFF09;&#x3002;&#x9700;&#x8981;&#x5728;&#x4F7F;&#x7528;<a href="https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html" target="_blank">&#xFF08;cv2.&#xFF09;surface_matching.&lt;ICP&gt;</a> &#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x5BF9;&#x4F7F;&#x7528;&#x7684; <strong>&#x4E34;&#x8FD1;&#x70B9;&#x8FED;&#x4EE3;&#xFF08;ICP [Iterative Closest Point]&#xFF09;</strong> &#x7B97;&#x6CD5;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x8BBE;&#x5B9A; <a href="References_5.html">[10]</a> &#x3002;&#x4F4D;&#x59FF;&#x5339;&#x914D;&#x5668;&#x662F;&#x5BF9; &#x7C97;&#x914D;&#x51C6; &#x7ED3;&#x679C;&#x7684;&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#xFF0C;&#x7528;&#x4E8E;&#x7EC6;&#x5316;&#x70B9;&#x4F4D;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&lt;ICP&gt; &#x6709;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#xFF1A;<ul>
+<li>&#x4F4D;&#x59FF;&#x5339;&#x914D;&#x5668;&#xFF08;&#x57FA;&#x4E8E;&#x521D;&#x59CB;&#x4F4D;&#x59FF;&#x7279;&#x5F81;&#x5339;&#x914D;&#xFF09;&#xFF0C;&#x5373;&#x7CBE;&#x914D;&#x51C6;&#xFF08;Fine Local Registration&#xFF09;&#x3002;&#x9700;&#x8981;&#x5728;&#x4F7F;&#x7528;<a href="https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html" target="_blank">&#xFF08;cv2.&#xFF09;surface_matching.&lt;ICP&gt;</a> &#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x5BF9;&#x4F7F;&#x7528;&#x7684; <strong>&#x4E34;&#x8FD1;&#x70B9;&#x8FED;&#x4EE3;&#xFF08;ICP [Iterative Closest Point]&#xFF09;</strong> &#x7B97;&#x6CD5;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x8BBE;&#x5B9A; <a href="References_5.html">[10]</a> &#x3002;&#x4F4D;&#x59FF;&#x5339;&#x914D;&#x5668;&#x662F;&#x5BF9; &#x7C97;&#x914D;&#x51C6; &#x7ED3;&#x679C;&#x7684;&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#xFF0C;&#x7528;&#x4E8E;&#x7EC6;&#x5316;&#x70B9;&#x4F4D;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&lt;ICP&gt; &#x6709;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#xFF1A;<ul>
 <li><strong>iterations</strong> &#x4E3A; ICP &#x7B97;&#x6CD5;&#x7684;&#x6700;&#x5927;&#x8FED;&#x4EE3;&#x6B21;&#x6570;</li>
-<li><strong>tolerence</strong> &#x4E3A; ICP &#x7B97;&#x6CD5;&#x7684;&#x6536;&#x655B;&#x5BB9;&#x5DEE;&#xFF0C;&#x53D8;&#x6362;&#x77E9;&#x9635;&#x66F4;&#x65B0;&#x5DEE;&#x503C;&#x5C0F;&#x4E8E;&#x8BE5;&#x503C;&#x65F6;&#xFF0C;&#x505C;&#x6B62;&#x8FED;&#x4EE3;</li>
+<li><strong>tolerance</strong> &#x4E3A; ICP &#x7B97;&#x6CD5;&#x7684;&#x6536;&#x655B;&#x5BB9;&#x5DEE;&#xFF0C;&#x53D8;&#x6362;&#x77E9;&#x9635;&#x66F4;&#x65B0;&#x5DEE;&#x503C;&#x5C0F;&#x4E8E;&#x8BE5;&#x503C;&#x65F6;&#xFF0C;&#x505C;&#x6B62;&#x8FED;&#x4EE3;</li>
 <li><strong>rejectionScale</strong> &#x4E3A; ICP &#x5254;&#x9664;&#x653E;&#x7F29;&#x56E0;&#x5B50;&#xFF0C;&#x5254;&#x9664;&#x70B9;&#x5BF9;&#x8DDD;&#x79BB;&#x5927;&#x4E8E;&#x8BE5;&#x56E0;&#x5B50;&#x4E58;&#x5E73;&#x5747;&#x8DDD;&#x79BB;&#x65F6;&#x7684;&#x70B9;&#x5BF9;</li>
 <li><strong>numLevels</strong> &#x4E3A; ICP &#x70B9;&#x4E91;&#x5BF9;&#x9F50;&#x65F6;&#x7684;&#x5206;&#x8FA8;&#x7387;&#x50CF;&#x7D20;&#x91D1;&#x5B57;&#x5854;&#x5C42;&#x6570;&#xFF0C;&#x5C42;&#x6570;&#x8D8A;&#x591A;&#x8D8A;&#x8017;&#x65F6;&#xFF0C;&#x8D8A;&#x7CBE;&#x786E;</li>
 <li><strong>sampleType</strong> &#x4E3A; ICP &#x70B9;&#x4E91;&#x5BF9;&#x9F50; &#x91C7;&#x6837;&#x7C7B;&#x578B;&#xFF0C;&#x4E00;&#x822C;&#x4E3A; 0 &#x9ED8;&#x8BA4;&#x503C;</li>
@@ -2739,7 +2741,7 @@
 </li>
 <li><p>&#x4F4D;&#x59FF;&#x5339;&#x914D;&#x5668;&#x6267;&#x884C;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x53D6;&#x5F97; <strong>&#x6E90;&#x6A21;&#x578B;&#xFF08;Model&#xFF09;&#x5728;&#x573A;&#x666F;&#xFF08;Scene&#xFF09;&#x4E2D;&#x7684;&#x5177;&#x4F53;&#x70B9;&#x4F4D;&#x7684;&#x573A;&#x666F;&#x5185;&#x4F4D;&#x7F6E;&#x60C5;&#x51B5;</strong>&#x3002;&#x5E38;&#x88AB;&#x7528;&#x4E8E; SLAM&#x3001;&#x573A;&#x666F;&#x91CD;&#x5EFA;&#x3001;3D &#x73AF;&#x5883;&#x5206;&#x6790;&#x3002;&#x4EE5;&#xFF1A;</p>
 <ul>
-<li><a href="https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html#accd9744cedf9cd9cd175d2c5bd77951e" target="_blank">&lt;ICP&gt;.registerModelToScene</a> &#x6CE8;&#x518C;&#x7269;&#x4F53;&#x70B9;&#x4E91;&#x5230;&#x573A;&#x666F;&#xFF0C;&#x6765;&#x83B7;&#x5173;&#x952E;&#x70B9;&#x573A;&#x666F;&#x5185;&#x7684;&#x4F4D;&#x59FF;&#x77E9;&#x9635;</li>
+<li><a href="https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html#accd9744cedf9cd9cd175d2c5bd77951e" target="_blank">&lt;ICP&gt;.registerModelToScene</a> &#x6CE8;&#x518C;&#x7269;&#x4F53;&#x70B9;&#x4E91;&#x5230;&#x573A;&#x666F;&#xFF0C;&#x6765;&#x83B7;&#x53D6;&#x5173;&#x952E;&#x70B9;&#x5728;&#x573A;&#x666F;&#x5185;&#x7684;&#x4F4D;&#x59FF;&#x77E9;&#x9635;</li>
 </ul>
 <p>&#x5F97;&#x5230;&#x7ECF;&#x8FC7; ICP &#x6821;&#x51C6;&#x540E;&#x7684; PPF &#x7ED3;&#x679C;&#xFF08;&#x9700;&#x8981;&#x5728;&#x8C03;&#x7528; <a href="https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html#accd9744cedf9cd9cd175d2c5bd77951e" target="_blank">&lt;ICP&gt;.registerModelToScene</a> &#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x4F20;&#x5165; PPF &#x8FD4;&#x56DE;&#x7684;&#x5404;&#x70B9;&#x4F4D;&#x59FF;&#x77E9;&#x9635;&#x6570;&#x7EC4;&#xFF09;&#x3002;</p>
 </li>
@@ -2878,7 +2880,7 @@
 <h2 id="&#x7B80;&#x5355;&#x7EC3;&#x4E60;&#xFF1A;&#x7528;-&#x5E38;&#x7528;&#x89C6;&#x9891;&#x5E93;-&#x5B8C;&#x6210;-&#x5E26;&#x6709;&#x5747;&#x8272;&#x5206;&#x6790;&#x7684;&#x7B80;&#x6613;&#x5355;&#x4EBA;&#x8138;&#x8DDF;&#x8E2A;&#x8BC6;&#x522B;"><strong>&#x7B80;&#x5355;&#x7EC3;&#x4E60;&#xFF1A;&#x7528; &#x5E38;&#x7528;&#x89C6;&#x9891;&#x5E93; &#x5B8C;&#x6210; &#x5E26;&#x6709;&#x5747;&#x8272;&#x5206;&#x6790;&#x7684;&#x7B80;&#x6613;&#x5355;&#x4EBA;&#x8138;&#x8DDF;&#x8E2A;&#x8BC6;&#x522B;</strong></h2>
 <p>&#x8FD9;&#x6B21;&#xFF0C;&#x6211;&#x4EEC;&#x5C1D;&#x8BD5;&#x5B8C;&#x6210;&#xFF0C;&#x7528; OpenCV &#x7684; <strong>&#x4F20;&#x7EDF;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5BF9;&#x8C61;&#x68C0;&#x6D4B;</strong> &#x548C; <strong>&#x89C6;&#x9891;&#x5206;&#x6790;&#x5BF9;&#x8C61;&#x8DDF;&#x8E2A;&#x7B97;&#x6CD5;</strong> &#x6765;&#x5B9E;&#x73B0;&#x5BF9; <strong>&#x5355;&#x4E00;&#x4EBA;&#x8138;&#x7684;&#x8BC6;&#x522B;&#x4E0E;&#x8DDF;&#x8E2A;</strong>&#x3002;&#x4E14;&#x5BF9;&#x4EBA;&#x8138;&#x533A;&#x57DF;&#x7684; RGB&#x3001;XYZ&#x3001;LAB &#x4E09;&#x7C7B;&#x8272;&#x5F69;&#x7A7A;&#x95F4;&#x901A;&#x9053;&#x5747;&#x503C;&#x8FDB;&#x884C;&#x5B9E;&#x65F6;&#x76D1;&#x6D4B;&#xFF0C;&#x7ED8;&#x5236;&#x5386;&#x53F2;&#x56FE;&#x8868;&#x5E76;&#x663E;&#x793A;&#x5728; UI &#x754C;&#x9762;&#x3002;</p>
 <p>&#x7531;&#x4E8E; OpenCV &#x63D0;&#x4F9B;&#x4E86;&#x90E8;&#x5206;&#x56FE;&#x5F62;&#x529F;&#x80FD;&#xFF0C;&#x80FD;&#x591F;&#x505A;&#x57FA;&#x7840;&#x7ED8;&#x56FE;&#xFF08;&#x70B9;&#x3001;&#x7EBF;&#x3001;&#x51E0;&#x4F55;&#x9762;&#x7B49;&#xFF09;&#x3002;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x9009;&#x7528; OpenCV &#x6765;&#x521B;&#x5EFA;&#x7EC3;&#x4E60;&#x7684;&#x56FE;&#x5F62;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF08;GUI&#xFF09;&#x3002;&#x800C;&#x8272;&#x5F69;&#x5206;&#x6790;&#x5219;&#x7528;&#x5728;&#x6B64;&#x9886;&#x57DF;&#x66F4;&#x4E13;&#x4E1A;&#x7684; Colour-Science &#x5B8C;&#x6210;&#x3002;</p>
-<p>&#x7EC3;&#x4E60;&#x4E8B;&#x4F8B;&#x6309;&#x7167;&#x6807;&#x51C6;&#x5DE5;&#x7A0B;&#x5DE5;&#x4F5C;&#x6D41;&#x8FDB;&#x884C;&#x3002;</p>
+<p>&#x7EC3;&#x4E60;&#x793A;&#x4F8B;&#x6309;&#x7167;&#x6807;&#x51C6;&#x5DE5;&#x7A0B;&#x5DE5;&#x4F5C;&#x6D41;&#x8FDB;&#x884C;&#x3002;</p>
 <h4 id="&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x786E;&#x7ACB;&#x5DF2;&#x77E5;&#x4FE1;&#x606F;&#xFF1A;">&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x786E;&#x7ACB;&#x5DF2;&#x77E5;&#x4FE1;&#x606F;&#xFF1A;</h4>
 <ol>
 <li>&#x6570;&#x636E;&#x6765;&#x6E90;&#xFF1A;&#x4F7F;&#x7528;&#x7535;&#x8111;&#x81EA;&#x5E26;&#xFF08;&#x6216;&#x9ED8;&#x8BA4;&#x5916;&#x63A5;&#xFF09;&#x6444;&#x50CF;&#x5934;&#x7684;&#x91C7;&#x6837;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;</li>
@@ -2893,7 +2895,7 @@
     python install_math_libs.py
 </code></pre>
 <p>&#x5B8C;&#x6210;&#x5BF9; <strong>Python &#x73AF;&#x5883;</strong> &#x7684;&#x51C6;&#x5907;&#x548C; <strong>&lt;&#x5E38;&#x7528;&#x6570;&#x5B66;&#x5E93;&gt;</strong> &#x7684;&#x5B89;&#x88C5;&#x3002;&#x5177;&#x4F53;&#x811A;&#x672C;&#x5B9E;&#x73B0;&#xFF0C;&#x53EF;&#x56DE;&#x987E;&#x4E0A;&#x4E00;&#x8282;&#x3002;</p>
-<p>&#x540C;&#x7406;&#xFF0C;&#x5BF9;&#x4E8E; <strong>&lt;&#x5E38;&#x7528;&#x89C6;&#x9891;&#x5E93;&gt;</strong> &#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x6309;&#x7167;&#x811A;&#x672C;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x6D41;&#x7A0B;&#x5316;&#x7684;&#x5C01;&#x88C5;&#x3002;&#x521B;&#x5EFA;&#x81EA;&#x52A8;&#x5316;&#x811A;&#x672C; <strong><a href="../../Examples/env_prepare/install_grapic_libs.py" target="_blank">install_grapic_libs.py</a></strong> &#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x540C;&#x7406;&#xFF0C;&#x5BF9;&#x4E8E; <strong>&lt;&#x5E38;&#x7528;&#x89C6;&#x9891;&#x5E93;&gt;</strong> &#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x6309;&#x7167;&#x811A;&#x672C;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x6D41;&#x7A0B;&#x5316;&#x7684;&#x5C01;&#x88C5;&#x3002;&#x521B;&#x5EFA;&#x81EA;&#x52A8;&#x5316;&#x811A;&#x672C; <strong><a href="../../Examples/env_prepare/install_graphic_libs.py" target="_blank">install_graphic_libs.py</a></strong> &#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-python"><span class="hljs-keyword">import</span> subprocess
 <span class="hljs-keyword">import</span> sys
 
@@ -2926,12 +2928,12 @@
     main()
 </code></pre>
 <p>&#x8FD9;&#x5957;&#x811A;&#x672C;&#x6D41;&#x7A0B;&#x5E94;&#x8BE5;&#x76F8;&#x5F53;&#x719F;&#x6089;&#x4E86;&#x3002;&#x968F;&#x540E;&#xFF0C;&#x4F7F;&#x7528; Python &#x6267;&#x884C;&#x811A;&#x672C;&#xFF1A;</p>
-<pre><code class="lang-bash">   python install_grapic_libs.py
+<pre><code class="lang-bash">   python install_graphic_libs.py
 </code></pre>
 <p>&#x5982;&#x679C;&#x5305;&#x5DF2;&#x5B89;&#x88C5;&#xFF0C;&#x5219;&#x4F1A;&#x8F93;&#x51FA; <strong>&quot;[&#x57FA;&#x7840;&#x89C6;&#x9891;&#x5E93;] is already installed.&quot;</strong>&#x3002;&#x5982;&#x679C;&#x5305;&#x672A;&#x5B89;&#x88C5;&#xFF0C;&#x5219;&#x4F1A;&#x5B89;&#x88C5;&#x8BE5;&#x5305;&#x5E76;&#x8F93;&#x51FA; <strong>&quot;[&#x57FA;&#x7840;&#x89C6;&#x9891;&#x5E93;] has been installed.&quot;</strong>&#xFF0C;&#x5E76;&#x663E;&#x793A;&#x5305;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x3002;</p>
-<p>&#x5230;&#x6B64;&#xFF0C;&#x5B8C;&#x6210;&#x97F3;&#x9891;&#x5E93;&#x7684;&#x73AF;&#x5883;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>&#x5230;&#x6B64;&#xFF0C;&#x5B8C;&#x6210;&#x89C6;&#x9891;&#x5E93;&#x7684;&#x73AF;&#x5883;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x3002;</p>
 <h4 id="&#x7B2C;&#x4E09;&#x6B65;&#xFF0C;&#x642D;&#x5EFA;&#x4EBA;&#x8138;&#x68C0;&#x6D4B;&#x5206;&#x6790;-demo&#xFF1A;">&#x7B2C;&#x4E09;&#x6B65;&#xFF0C;&#x642D;&#x5EFA;&#x4EBA;&#x8138;&#x68C0;&#x6D4B;&#x5206;&#x6790; Demo&#xFF1A;</h4>
-<p>&#x9645;&#x4E0A;&#xFF0C;&#x8FD9;&#x4E00;&#x6B21;&#x7684; Demo &#x8F83;&#x4E0A;&#x8282;&#x7684; &lt;&#x7B80;&#x6613;&#x97F3;&#x9891;&#x64AD;&#x653E;&#x5668;&gt; &#x6765;&#x8BF4;&#xFF0C;&#x5728;&#x4EA4;&#x4E92;&#x903B;&#x8F91;&#x4E0A;&#x4F1A;&#x5C11;&#x5F88;&#x591A;&#x5185;&#x5BB9;&#xFF08;&#x57FA;&#x672C;&#x6CA1;&#x6709;&#x64CD;&#x4F5C;&#x4E0A;&#x7684;&#x4EA4;&#x4E92;&#xFF09;&#x3002;&#x4F46;&#x5176;&#x529F;&#x80FD;&#x903B;&#x8F91;&#x94FE;&#x8DEF;&#xFF0C;&#x4F1A;&#x6BD4; &lt;&#x7B80;&#x6613;&#x97F3;&#x9891;&#x64AD;&#x653E;&#x5668;&gt; &#x8981;&#x6DF1;&#x4E00;&#x4E9B;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A; <strong>&#x529F;&#x80FD;&#x4E0A;&#x7684;&#x8BC9;&#x6C42;&#x6309;&#x7167;&#x540C;&#x4E00;&#x6761;&#x6267;&#x884C;&#x6D41;&#x6C34;&#x7EBF;</strong>&#xFF0C;&#x8FDB;&#x884C;&#x6982;&#x5FF5;&#x539F;&#x578B;&#x8BBE;&#x8BA1;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x8FD9;&#x4E00;&#x6B21;&#x7684; Demo &#x8F83;&#x4E0A;&#x8282;&#x7684; &lt;&#x7B80;&#x6613;&#x97F3;&#x9891;&#x64AD;&#x653E;&#x5668;&gt; &#x6765;&#x8BF4;&#xFF0C;&#x5728;&#x4EA4;&#x4E92;&#x903B;&#x8F91;&#x4E0A;&#x4F1A;&#x5C11;&#x5F88;&#x591A;&#x5185;&#x5BB9;&#xFF08;&#x57FA;&#x672C;&#x6CA1;&#x6709;&#x64CD;&#x4F5C;&#x4E0A;&#x7684;&#x4EA4;&#x4E92;&#xFF09;&#x3002;&#x4F46;&#x5176;&#x529F;&#x80FD;&#x903B;&#x8F91;&#x94FE;&#x8DEF;&#xFF0C;&#x4F1A;&#x6BD4; &lt;&#x7B80;&#x6613;&#x97F3;&#x9891;&#x64AD;&#x653E;&#x5668;&gt; &#x8981;&#x6DF1;&#x4E00;&#x4E9B;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A; <strong>&#x529F;&#x80FD;&#x4E0A;&#x7684;&#x8BC9;&#x6C42;&#x6309;&#x7167;&#x540C;&#x4E00;&#x6761;&#x6267;&#x884C;&#x6D41;&#x6C34;&#x7EBF;</strong>&#xFF0C;&#x8FDB;&#x884C;&#x6982;&#x5FF5;&#x539F;&#x578B;&#x8BBE;&#x8BA1;&#x3002;</p>
 <p>&#x800C;&#x7EC6;&#x5316;&#x7684;&#x4E24;&#x4E2A; &lt;&#x5DE5;&#x7A0B;&#x76EE;&#x6807;&gt; &#x5C31;&#x662F;&#x6267;&#x884C;&#x6D41;&#x6C34;&#x7EBF;&#x7684; <strong>&#x201C;&#x5FC5;&#x8981;&#x76EE;&#x6807;&#x8282;&#x70B9;&#x201D;</strong>&#xFF0C;&#x6709;&#x5173;&#x952E;&#x6B65;&#x9AA4;&#x56FE;&#xFF1A;</p>
 <center>
 <figure>
@@ -3040,7 +3042,7 @@ history_lab = [deque(maxlen=history_length) <span class="hljs-keyword">for</span
         <span class="hljs-comment"># &#x68C0;&#x6D4B;&#x4EBA;&#x8138;</span>
         faces = face_cascade.detectMultiScale(
             gray,
-            scaleFactor=<span class="hljs-number">1.1</span>s,
+            scaleFactor=<span class="hljs-number">1.1</span>,
             minNeighbors=<span class="hljs-number">5</span>,
             minSize=(<span class="hljs-number">120</span>, <span class="hljs-number">120</span>),  <span class="hljs-comment"># &#x589E;&#x5927;&#x6700;&#x5C0F;&#x5C3A;&#x5BF8;&#x4EE5;&#x51CF;&#x5C11;&#x5C40;&#x90E8;&#x7279;&#x5F81;&#x68C0;&#x6D4B;</span>
             flags=cv2.CASCADE_SCALE_IMAGE
@@ -3151,7 +3153,7 @@ cv2.destroyAllWindows()
 
 <p>&#x5B8C;&#x6210;&#x9488;&#x5BF9;&#x89C6;&#x9891;&#x5206;&#x6790;&#x5E93;&#x7684;&#x7EC3;&#x4E60;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2024-09-14 10:15:42
+2026-08-24 21:40:44
 </span></footer>
                                 
                                 </section>
@@ -3195,7 +3197,7 @@ cv2.destroyAllWindows()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.1.3 视频分析库（PyOpenCV、Color-Science）","level":"1.6.1.3","depth":3,"next":{"title":"5.1.4 其他分析软件","level":"1.6.1.4","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_4.md","ref":"Chapter_5/Language/cn/Docs_5_1_4.md","articles":[]},"previous":{"title":"5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）","level":"1.6.1.2","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_2.md","ref":"Chapter_5/Language/cn/Docs_5_1_2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_5/Language/cn/Docs_5_1_3.md","mtime":"2024-09-14T02:15:42.250Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-14T03:29:12.787Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.1.3 视频分析库（PyOpenCV、Color-Science）","level":"1.6.1.3","depth":3,"next":{"title":"5.1.4 其他分析软件","level":"1.6.1.4","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_4.md","ref":"Chapter_5/Language/cn/Docs_5_1_4.md","articles":[]},"previous":{"title":"5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）","level":"1.6.1.2","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_2.md","ref":"Chapter_5/Language/cn/Docs_5_1_2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_5/Language/cn/Docs_5_1_3.md","mtime":"2026-08-24T13:40:44.928Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-08-24T13:41:27.489Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -3254,10 +3256,6 @@ cv2.destroyAllWindows()
     
         
         <script src="../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
 

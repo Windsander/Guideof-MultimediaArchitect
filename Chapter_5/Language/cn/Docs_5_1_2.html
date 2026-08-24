@@ -74,6 +74,8 @@
 
     
         
+        <link rel="stylesheet" href="../../../styles/common.css">
+        
     
         
     
@@ -173,7 +175,7 @@
                 <a href="../../../COPYRIGHT.html">
             
                     
-                     =[>> 版权申明© <<]= 
+                     =[>> 版权声明© <<]= 
             
                 </a>
             
@@ -523,7 +525,7 @@
                 <a href="../../../Chapter_1/Language/cn/Docs_1_6_4.html">
             
                     
-                    1.6.4 有损压缩编码格式（Uncompressed Encode）
+                    1.6.4 有损压缩编码格式（Lossy Encode）
             
                 </a>
             
@@ -1065,7 +1067,7 @@
                 <a href="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
             
                     
-                    3.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）
+                    3.1.3 傅立叶变换的经典 - 快速傅立叶变换（FFT）
             
                 </a>
             
@@ -1078,7 +1080,7 @@
                 <a href="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
             
                     
-                    3.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
+                    3.1.4 傅立叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
             
                 </a>
             
@@ -2040,7 +2042,7 @@
                 <a href="Docs_5_1_1.html">
             
                     
-                    5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）
+                    5.1.1 常用数学库（Numpy、Pandas、Matplotlib）
             
                 </a>
             
@@ -2165,7 +2167,7 @@
 <p>&#x73B0;&#x5728;&#xFF0C;&#x8BA9;&#x7126;&#x70B9;&#x56DE;&#x5230;&#x97F3;&#x9891;&#x5206;&#x6790;&#x5E93;&#x4E0A;&#x3002;&#x5E38;&#x7528;&#x7684;&#x97F3;&#x9891;&#x5206;&#x6790;&#x5E93;&#x4E3B;&#x8981;&#x6709;&#x56DB;&#x4E2A;&#xFF0C;&#x4E3A; <strong>SoundFile</strong>&#x3001;<strong>PyAudio</strong>&#x3001;<strong>Librosa</strong>&#x3001;<strong>Aubio</strong>&#xFF0C;&#x5206;&#x522B;&#x5BF9;&#x5E94; [ <strong>&#x97F3;&#x9891;&#x6587;&#x4EF6;&#x8BFB;&#x5199;</strong>&#x3001;<strong>&#x97F3;&#x9891;&#x6D41;&#x6570;&#x636E;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;</strong>&#x3001;<strong>&#x5DE5;&#x7A0B;&#x4E50;&#x7406;&#x5206;&#x6790;</strong>&#x3001;<strong>&#x5B9E;&#x65F6;&#x97F3;&#x9891;&#x5904;&#x7406;</strong> ] &#x7684;&#x9700;&#x6C42;&#x3002;</p>
 <h2 id="soundfile&#xFF08;python-sound-file&#xFF09;"><strong>SoundFile&#xFF08;Python Sound File&#xFF09;</strong></h2>
 <p><strong>SoundFile&#xFF08;PySoundFile [Python Sound File]&#xFF09;</strong> &#x662F;&#x4E00;&#x4E2A; <strong>&#x7528;&#x4E8E;&#x8BFB;&#x5199;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#x7684; Python &#x5E93;</strong>&#xFF0C;&#x4E3B;&#x8981;&#x88AB;&#x7528;&#x4E8E;&#x89E3;&#x7801;&#xFF08;&#x6216;&#x8005;&#x7F16;&#x7801;&#xFF09;&#x5E38;&#x7528;&#x7684; <strong>&#x97F3;&#x9891;&#x683C;&#x5F0F;&#x6587;&#x4EF6;</strong> <a href="References_5.html">[4]</a> &#x3002;&#x4F8B;&#x5982;&#x524D;&#x6587;&#x4ECB;&#x7ECD;&#x8FC7;&#x7684; <strong>WAV</strong>&#x3001;<strong>AIFF</strong>&#x3001;<strong>FLAC</strong> &#x7B49;&#x5927;&#x591A;&#x6570;&#x5E38;&#x89C1;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#xFF0C;SoundFile &#x90FD;&#x5DF2;&#x5B8C;&#x6574;&#x652F;&#x6301;&#x3002;&#x5E76;&#x4E14;&#xFF0C;&#x901A;&#x8FC7; SoundFile &#x53D6;&#x51FA;&#x7684;&#x97F3;&#x9891;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x548C;&#x5176;&#x4ED6;&#x97F3;&#x9891;&#x5206;&#x6790;&#x5E93;&#xFF08;&#x5982; Librosa&#x3001;Aubio &#x7B49;&#xFF09;&#x548C;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x5E93;&#xFF08;&#x5982; NumPy&#x3001;SciPy &#x7B49;&#xFF09;&#x914D;&#x5408;&#x4F7F;&#x7528;&#x3002;</p>
-<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;SoundFile &#x6838;&#x5FC3;&#x80FD;&#x529B;&#x6765;&#x81EA;&#x4E8E; <strong>C&#x5F00;&#x6E90;&#x5E93; Libsndfile</strong>&#xFF0C;&#x6B63;&#x662F; Libsndfile &#x4E3A;&#x5B83; <strong>&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x7684;&#x652F;&#x6491;</strong>&#x3002;&#x800C; PySoundFile &#x5219;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F; Libsndfile &#x8FD9;&#x4E2A; C&#x8BED;&#x8A00;&#x5E93;&#x7684; Python &#x5957;&#x63A5;&#x8BBF;&#x95EE;&#x5165;&#x53E3;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;&#x5E38;&#x89C4;&#x5DE5;&#x7A0B;&#x4E2D;&#x5B58;&#x5728;&#x5BF9;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x5199;&#x9700;&#x6C42;&#xFF0C;&#x4E0D;&#x59A8;&#x8003;&#x8651;&#x91C7;&#x7528; Libsndfile &#x6765;&#x5904;&#x7406;&#xFF0C;&#x5B83;&#x7684;&#x5B98;&#x7F51;&#x4F4D;&#x4E8E; <a href="http://www.mega-nerd.com/libsndfile" target="_blank">http://www.mega-nerd.com/libsndfile/</a> &#xFF0C;&#x542B;&#x6709;&#x8BE5;&#x5E93;&#x7684;&#x76F8;&#x5173;&#x6280;&#x672F;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;SoundFile &#x6838;&#x5FC3;&#x80FD;&#x529B;&#x6765;&#x81EA;&#x4E8E; <strong>C &#x5F00;&#x6E90;&#x5E93; Libsndfile</strong>&#xFF0C;&#x6B63;&#x662F; Libsndfile &#x4E3A;&#x5B83; <strong>&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x7684;&#x652F;&#x6491;</strong>&#x3002;&#x800C; PySoundFile &#x5219;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F; Libsndfile &#x8FD9;&#x4E2A; C &#x8BED;&#x8A00;&#x5E93;&#x7684; Python &#x5957;&#x63A5;&#x8BBF;&#x95EE;&#x5165;&#x53E3;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;&#x5E38;&#x89C4;&#x5DE5;&#x7A0B;&#x4E2D;&#x5B58;&#x5728;&#x5BF9;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x5199;&#x9700;&#x6C42;&#xFF0C;&#x4E0D;&#x59A8;&#x8003;&#x8651;&#x91C7;&#x7528; Libsndfile &#x6765;&#x5904;&#x7406;&#xFF0C;&#x5B83;&#x7684;&#x5B98;&#x7F51;&#x4F4D;&#x4E8E; <a href="http://www.mega-nerd.com/libsndfile" target="_blank">http://www.mega-nerd.com/libsndfile/</a> &#xFF0C;&#x542B;&#x6709;&#x8BE5;&#x5E93;&#x7684;&#x76F8;&#x5173;&#x6280;&#x672F;&#x53C2;&#x6570;&#x3002;</p>
 <h4 id="&#x4E3B;&#x8981;&#x529F;&#x80FD;&#xFF1A;">&#x4E3B;&#x8981;&#x529F;&#x80FD;&#xFF1A;</h4>
 <ol>
 <li>&#x652F;&#x6301; <strong>WAV</strong>&#x3001;<strong>AIFF</strong>&#x3001;<strong>FLAC</strong>&#x3001;<strong>OGG</strong> &#x7B49;&#x591A;&#x79CD;&#x5E38;&#x89C1; <strong>&#x97F3;&#x9891;&#x6587;&#x4EF6;&#x683C;&#x5F0F;</strong>&#xFF0C;&#x9002;&#x7528;&#x4E8E; <strong>&#x5E7F;&#x6CDB;&#x7684;</strong> &#x97F3;&#x9891;&#x8BFB;&#x5199;&#x9700;&#x6C42;</li>
@@ -2210,7 +2212,7 @@
 </ol>
 <p>&#x7531;&#x4E0A;&#x53EF;&#x77E5;&#xFF0C;SoundFile &#x672C;&#x8EAB;&#x7684;&#x8C03;&#x7528;&#x6781;&#x5176;&#x7B80;&#x4FBF;&#xFF0C;&#x4F46;&#x5DF2;&#x6EE1;&#x8DB3;&#x5B8C;&#x6574;&#x7684;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#x8BFB;&#x5199;&#x9700;&#x6C42;&#x3002;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x4F4D;&#x4E8E; <strong><a href="https://github.com/bastibe/python-soundfile" target="_blank">Github:bastibe/python-soundfile</a></strong>&#x3002;&#x4F7F;&#x7528;&#x7EC6;&#x8282;&#xFF0C;&#x53EF;&#x81EA;&#x884C;&#x524D;&#x5F80; <strong><a href="https://python-soundfile.readthedocs.io/en/0.11.0/" target="_blank">&#x5B98;&#x65B9;&#x6863;&#x6848;&#x9986;&#x67E5;&#x9605;</a></strong>&#x3002;</p>
 <h2 id="pyaudio&#xFF08;python-audio&#xFF09;"><strong>PyAudio&#xFF08;Python Audio&#xFF09;</strong></h2>
-<p><strong>PyAudio&#xFF08;Python Audio&#xFF09;</strong> &#x662F;&#x97F3;&#x9891;&#x5206;&#x6790;&#x4E2D; <strong>&#x5E38;&#x7528;&#x7684;&#x97F3;&#x9891;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x64CD;&#x4F5C;&#x5E93;</strong>&#xFF0C;&#x5373; <strong>&#x97F3;&#x9891; I/O &#x5E93;</strong> <a href="References_5.html">[5]</a> &#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7EC4;&#x5DE5;&#x5177;&#x548C;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x5F97;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5728;&#x9879;&#x76EE;&#x7684; Python &#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x5229;&#x7528; PyAudio &#x5DF2;&#x6709;&#x7684;&#x51FD;&#x6570;&#x63A5;&#x53E3;&#xFF0C;<strong>&#x5FEB;&#x901F;&#x8FDB;&#x884C;&#x97F3;&#x9891;&#x7684;&#x6D41;&#x5F0F;&#xFF08;&#x8FD9;&#x91CC;&#x6307;&#x672C;&#x5730;&#x6D41;&#xFF09;&#x5F55;&#x5236;&#x548C;&#x8F93;&#x51FA;</strong>&#x3002;&#x540C; SoundFile &#x4E00;&#x6837;&#xFF0C;PyAudio &#x4F9D;&#x8D56;&#x4E8E;&#x5E95;&#x5C42; <strong>C&#x8BED;&#x8A00;&#x5E93; PortAudio</strong> &#x7684;&#x5E2E;&#x52A9;&#xFF0C;&#x800C;&#x5176;&#x5185;&#x6838; PortAudio &#x5E93;&#x5B9E;&#x5219;&#x4E3A;&#x4E00;&#x4E2A; <strong>&#x4E13;&#x7CBE;&#x4E8E;&#x591A;&#x79CD;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0A;&#x8FD0;&#x884C;&#xFF08;&#x5373;&#x8DE8; Windows&#x3001;MacOS&#x3001;Linux &#x5E73;&#x53F0;&#xFF09;&#x7684;&#x5E95;&#x5C42;&#x97F3;&#x9891;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#xFF08;I/O&#xFF09;&#x5E93;</strong>&#x3002;</p>
+<p><strong>PyAudio&#xFF08;Python Audio&#xFF09;</strong> &#x662F;&#x97F3;&#x9891;&#x5206;&#x6790;&#x4E2D; <strong>&#x5E38;&#x7528;&#x7684;&#x97F3;&#x9891;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x64CD;&#x4F5C;&#x5E93;</strong>&#xFF0C;&#x5373; <strong>&#x97F3;&#x9891; I/O &#x5E93;</strong> <a href="References_5.html">[5]</a> &#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7EC4;&#x5DE5;&#x5177;&#x548C;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x5F97;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5728;&#x9879;&#x76EE;&#x7684; Python &#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x5229;&#x7528; PyAudio &#x5DF2;&#x6709;&#x7684;&#x51FD;&#x6570;&#x63A5;&#x53E3;&#xFF0C;<strong>&#x5FEB;&#x901F;&#x8FDB;&#x884C;&#x97F3;&#x9891;&#x7684;&#x6D41;&#x5F0F;&#xFF08;&#x8FD9;&#x91CC;&#x6307;&#x672C;&#x5730;&#x6D41;&#xFF09;&#x5F55;&#x5236;&#x548C;&#x8F93;&#x51FA;</strong>&#x3002;&#x540C; SoundFile &#x4E00;&#x6837;&#xFF0C;PyAudio &#x4F9D;&#x8D56;&#x4E8E;&#x5E95;&#x5C42; <strong>C &#x8BED;&#x8A00;&#x5E93; PortAudio</strong> &#x7684;&#x5E2E;&#x52A9;&#xFF0C;&#x800C;&#x5176;&#x5185;&#x6838; PortAudio &#x5E93;&#x5B9E;&#x5219;&#x4E3A;&#x4E00;&#x4E2A; <strong>&#x4E13;&#x7CBE;&#x4E8E;&#x591A;&#x79CD;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0A;&#x8FD0;&#x884C;&#xFF08;&#x5373;&#x8DE8; Windows&#x3001;MacOS&#x3001;Linux &#x5E73;&#x53F0;&#xFF09;&#x7684;&#x5E95;&#x5C42;&#x97F3;&#x9891;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#xFF08;I/O&#xFF09;&#x5E93;</strong>&#x3002;</p>
 <p>&#x6240;&#x4EE5;&#xFF0C;&#x4E0E; SoundFile &#x6CE8;&#x91CD;&#x4E8E;&#x5BF9;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#xFF08;&#x5373;&#x672C;&#x5730;&#x97F3;&#x9891;&#x6D41;&#x7ED3;&#x679C;&#xFF09;&#x7684;&#x64CD;&#x4F5C;&#x4E0D;&#x540C;&#xFF0C;PyAudio &#x6216;&#x8005;&#x8BF4; PortAudio &#x7684;&#x64CD;&#x4F5C;&#x91CD;&#x70B9;&#xFF0C;&#x5728;&#x4E8E; <strong>&#x5904;&#x7406;&#x5BF9; &#x201C;&#x5B9E;&#x65F6;&#x201D; &#x97F3;&#x9891;&#x6D41;&#x7684;&#x6355;&#x83B7;&#x548C;&#x6790;&#x51FA;</strong>&#x3002;&#x5B9E;&#x65F6;&#x97F3;&#x9891;&#x6D41;&#xFF0C;&#x662F;&#x80FD;&#x591F;&#x88AB;&#x8FDE;&#x7EED;&#x5904;&#x7406;&#x4F20;&#x8F93;&#x7684;&#x97F3;&#x9891;&#x6570;&#x636E;&#xFF0C;&#x4F8B;&#x5982;&#x91C7;&#x6837;&#x81EA;&#x9EA6;&#x514B;&#x98CE;&#x8F93;&#x5165;&#x6A21;&#x6570;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x6301;&#x7EED;&#x4E0D;&#x65AD;&#x7684;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#xFF0C;&#x6216;&#x8005;&#x53D6;&#x81EA;&#x64AD;&#x653E;&#x97F3;&#x9891;&#x7684;&#x8FDE;&#x7EED;&#x5230;&#x6765;&#x5206;&#x5757;&#x6570;&#x636E;&#xFF0C;&#x5373; <strong>&#x8FC7;&#x7A0B;&#x4E2D;&#x97F3;&#x9891;&#x6570;&#x636E;</strong>&#x3002;</p>
 <p>&#x7531;&#x6B64;&#xFF0C;&#x97F3;&#x9891;&#x5206;&#x6790;&#x4E2D;&#x5E38;&#x7528; PyAudio &#x6765;&#x5B8C;&#x6210;&#x5BF9;&#x88AB;&#x5206;&#x6790;&#x97F3;&#x9891;&#x7684; <strong>&#x201C;&#x542F;&#x505C;&#x8F6C;&#x64AD;&#x201D;&#xFF08;Play/Stop/Seek/Pause&#xFF09;</strong>&#xFF0C;&#x6240;&#x8C13; <strong>&#x97F3;&#x9891;&#x672C;&#x5730;&#x6D41;&#x63A7;&#xFF08;LASC [Local Audio Stream Control]&#xFF09;</strong>&#x3002;</p>
 <h4 id="&#x4E3B;&#x8981;&#x529F;&#x80FD;&#xFF1A;">&#x4E3B;&#x8981;&#x529F;&#x80FD;&#xFF1A;</h4>
@@ -2280,7 +2282,7 @@ stream = p.open(
                 stream_callback=callback
 )
 </code></pre>
-<p>&#x5176;&#x4E2D;&#xFF0C;<strong>callback(in_data, frame_count, time_info, status)</strong> &#x5373; <strong>&#x56DE;&#x8C03;&#x4F20;&#x5165;</strong>&#xFF0C;&#x5305;&#x542B;&#x56DB;&#x4E2A;&#x5173;&#x952E;&#x53C2;&#xFF1A;</p>
+<p>&#x5176;&#x4E2D;&#xFF0C;<strong>callback(in_data, frame_count, time_info, status)</strong> &#x5373; <strong>&#x56DE;&#x8C03;&#x4F20;&#x5165;</strong>&#xFF0C;&#x5305;&#x542B;&#x56DB;&#x4E2A;&#x5173;&#x952E;&#x53C2;&#x6570;&#xFF1A;</p>
 <ul>
 <li><strong>in_data</strong> &#x4E3A; <strong>&#x97F3;&#x9891;&#x6570;&#x636E;&#x7684;&#x8F93;&#x5165;&#x6D41;</strong>&#xFF0C;&#x901A;&#x5E38;&#x914D;&#x5408; <strong>np.frombuffer(in_data, dtype=np.int16)</strong> &#x8BFB;&#x53D6;&#x6570;&#x636E;</li>
 <li><strong>frame_count</strong> &#x4E3A; <strong>&#x8F93;&#x5165;&#x6D41;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5BF9;&#x5E94;&#x97F3;&#x9891;&#x5E27;&#x6570;</strong>&#xFF0C;&#x5373;&#x5F53;&#x524D; <strong>in_data</strong> &#x6570;&#x636E;&#x8986;&#x76D6;&#x7684; <strong>&#x5E27;&#x6570;</strong></li>
@@ -2310,7 +2312,7 @@ stream = p.open(
 <h4 id="&#x4E3B;&#x8981;&#x529F;&#x80FD;&#xFF1A;">&#x4E3B;&#x8981;&#x529F;&#x80FD;&#xFF1A;</h4>
 <ol>
 <li><strong>&#x4E34;&#x65F6;&#x5904;&#x7406;&#x53CB;&#x597D;</strong>&#xFF0C;&#x63D0;&#x4F9B;&#x7B80;&#x4FBF;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x5FC5;&#x8981;&#x65F6;&#x505A;&#x4E34;&#x65F6;&#x8BFB;&#x53D6;&#x548C;&#x5199;&#x5165;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#xFF0C;&#x652F;&#x6301;&#x591A;&#x79CD;&#x683C;&#x5F0F;</li>
-<li><strong>&#x5FEB;&#x901F;&#x65F6;&#x9891;&#x8F6C;&#x6362;</strong>&#xFF0C;&#x63D0;&#x4F9B;&#x77ED;&#x65F6;&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;&#xFF08;STFT&#xFF09;&#x3001;&#x5E38;&#x89C4;Q&#x53D8;&#x6362;&#xFF08;CQT&#xFF09;&#x7B49;&#xFF0C;&#x65B9;&#x4FBF;&#x65F6;&#x9891;&#x57DF;&#x5206;&#x6790;</li>
+<li><strong>&#x5FEB;&#x901F;&#x65F6;&#x9891;&#x8F6C;&#x6362;</strong>&#xFF0C;&#x63D0;&#x4F9B;&#x77ED;&#x65F6;&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;&#xFF08;STFT&#xFF09;&#x3001;&#x5E38;&#x89C4; Q &#x53D8;&#x6362;&#xFF08;CQT&#xFF09;&#x7B49;&#xFF0C;&#x65B9;&#x4FBF;&#x65F6;&#x9891;&#x57DF;&#x5206;&#x6790;</li>
 <li><strong>&#x97F3;&#x9891;&#x7279;&#x5F81;&#x63D0;&#x53D6;</strong>&#xFF0C;&#x652F;&#x6301;&#x5BF9;&#x6885;&#x5C14;&#x9891;&#x7387;&#x5012;&#x8C31;&#x7CFB;&#x6570;&#xFF08;MFCC&#xFF09;&#x3001;&#x8272;&#x5EA6;&#x7279;&#x5F81;&#x3001;&#x9891;&#x8C31;&#x5BF9;&#x6BD4;&#x5EA6;&#x7B49;&#x7279;&#x5F81;&#x63D0;&#x53D6;</li>
 <li><strong>&#x8282;&#x62CD;&#x8282;&#x594F;&#x5206;&#x6790;</strong>&#xFF0C;&#x5177;&#x6709;&#x8282;&#x62CD;&#x8DDF;&#x8E2A;&#x3001;&#x8D77;&#x97F3;&#x68C0;&#x6D4B;&#x7B49;&#xFF0C;&#x97F3;&#x4E50;&#xFF08;&#x5DE5;&#x7A0B;&#xFF09;&#x5206;&#x6790;&#x80FD;&#x529B;</li>
 <li><strong>&#x5206;&#x5272;&#x4E0E;&#x91CD;&#x91C7;&#x6837;</strong>&#xFF0C;&#x63D0;&#x4F9B;&#x97F3;&#x9891;&#x5206;&#x5272;&#x4E0E;&#x91CD;&#x91C7;&#x6837;&#x5DE5;&#x5177;&#xFF0C;&#x4FBF;&#x4E8E;&#x5FEB;&#x901F;&#x5206;&#x6790;&#x5BF9;&#x6BD4;</li>
@@ -2604,9 +2606,9 @@ stream = p.open(
 <p>Librosa &#x5728;&#x97F3;&#x9891;&#x65B9;&#x9762;&#xFF0C;&#x6DB5;&#x76D6;&#x4E86;&#x5927;&#x591A;&#x6570;&#x57FA;&#x672C;&#x7684;&#x79D1;&#x5B66;&#x5206;&#x6790;&#x624B;&#x6BB5;&#xFF0C;&#x8DB3;&#x591F;&#x4E00;&#x822C;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x3002;</p>
 <p>&#x4F46;&#x5728; <strong>&#x6570;&#x636E;&#x79D1;&#x5B66;&#x65B9;&#x9762;</strong> &#x548C; <strong>&#x96C6;&#x6210;&#x6027;</strong> &#x7684;&#x9AD8;&#x5EA6;&#x503E;&#x6CE8;&#xFF0C;&#x4E5F;&#x8BA9; Librosa &#x7684; <strong>&#x5B9E;&#x65F6;&#x6027;&#x76F8;&#x5BF9;&#x6709;&#x6240;&#x964D;&#x4F4E;</strong>&#xFF08;&#x672C;&#x8D28;&#x4E3A;&#x590D;&#x6742;&#x5EA6;&#x548C;&#x7CBE;&#x5EA6;&#x4E0A;&#x5347;&#xFF0C;&#x6240;&#x4F34;&#x968F;&#x7B97;&#x529B;&#x6D88;&#x8017;&#x7684;&#x5347;&#x9AD8;&#xFF09;&#x3002;&#x53EF;&#x82E5;&#x6B64;&#x65F6;&#x6211;&#x4EEC;&#x5BF9;&#x8BEF;&#x5DEE;&#x6709;&#x76F8;&#x5BF9;&#x8F83;&#x9AD8;&#x7684;&#x5BB9;&#x5FCD;&#x5EA6;&#xFF0C;&#x4E14;&#x66F4;<strong>&#x5E0C;&#x671B;&#x97F3;&#x9891;&#x5904;&#x7406;&#x8DB3;&#x591F;&#x5B9E;&#x65F6;&#x548C;&#x9AD8;&#x6548;&#x65F6;</strong>&#xFF0C;&#x5C31;&#x5F97;&#x91C7;&#x7528; Aubio &#x5E93;&#x6765;&#x8FBE;&#x6210;&#x8FD9;&#x4E00;&#x70B9;&#x4E86;&#x3002;<strong>Aubio &#x548C; Librosa &#x7684;&#x7279;&#x6027;&#x76F8;&#x53CD;&#xFF0C;&#x662F;&#x6EE1;&#x8DB3;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x6709;&#x6548;&#x8865;&#x5145;&#x624B;&#x6BB5;&#x3002;</strong></p>
 <h2 id="aubio"><strong>Aubio</strong></h2>
-<p><strong>Aubio</strong> &#x662F;&#x4E3B;&#x8981;&#x7528;&#x4E8E; <strong>&#x97F3;&#x4E50;&#x4FE1;&#x606F;&#x68C0;&#x7D22;&#xFF08;MIR [Music Information Retrieval]&#xFF09;</strong> &#x7684; <strong>&#x8DE8;&#x5E73;&#x53F0;&#x8F7B;&#x91CF;&#x7EA7;&#x5206;&#x6790;&#x5E93;</strong>&#x3002;&#x8BBE;&#x8BA1;&#x4E4B;&#x521D;&#x5C31;&#x662F;&#x671F;&#x671B;&#x5B9E;&#x65F6;&#x8FDB;&#x884C; MIR &#x4F7F; <strong>Aubio &#x91C7;&#x7528;&#x4E86; C&#x8BED;&#x8A00; &#x4F5C;&#x4E3A;&#x5E93;&#x7684;&#x6838;&#x5FC3;&#x8BED;&#x8A00;</strong>&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x56E0;&#x5176;&#x5DF2;&#x5728;&#x81EA;&#x8EAB;&#x7684;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86; Python &#x7684;&#x5957;&#x63A5;&#x8C03;&#x7528;&#x5165;&#x53E3; <a href="References_5.html">[7]</a> &#xFF0C;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x5728; Python &#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
+<p><strong>Aubio</strong> &#x662F;&#x4E3B;&#x8981;&#x7528;&#x4E8E; <strong>&#x97F3;&#x4E50;&#x4FE1;&#x606F;&#x68C0;&#x7D22;&#xFF08;MIR [Music Information Retrieval]&#xFF09;</strong> &#x7684; <strong>&#x8DE8;&#x5E73;&#x53F0;&#x8F7B;&#x91CF;&#x7EA7;&#x5206;&#x6790;&#x5E93;</strong>&#x3002;&#x8BBE;&#x8BA1;&#x4E4B;&#x521D;&#x5C31;&#x662F;&#x671F;&#x671B;&#x5B9E;&#x65F6;&#x8FDB;&#x884C; MIR &#x4F7F; <strong>Aubio &#x91C7;&#x7528;&#x4E86; C &#x8BED;&#x8A00; &#x4F5C;&#x4E3A;&#x5E93;&#x7684;&#x6838;&#x5FC3;&#x8BED;&#x8A00;</strong>&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x56E0;&#x5176;&#x5DF2;&#x5728;&#x81EA;&#x8EAB;&#x7684;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86; Python &#x7684;&#x5957;&#x63A5;&#x8C03;&#x7528;&#x5165;&#x53E3; <a href="References_5.html">[7]</a> &#xFF0C;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x5728; Python &#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
 <p>&#x529F;&#x80FD;&#x6027;&#x65B9;&#x9762;&#xFF0C;Aubio &#x548C; Librosa &#x5728;&#x97F3;&#x9891;&#x6D45;&#x5C42;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x4E0A;&#xFF0C;&#x5982;&#x679C;&#x6392;&#x9664;&#x6548;&#x7387;&#x56E0;&#x7D20;&#xFF0C;&#x5219;&#x51E0;&#x4E4E;&#x4E0D;&#x76F8;&#x4E0A;&#x4E0B;&#x3002;&#x4F46; Aubio &#x7684;&#x5904;&#x7406;&#x6548;&#x7387;&#xFF0C;&#x4E0D;&#x8BBA;&#x4ECE;&#x6574;&#x4F53;&#x67B6;&#x6784;&#x8FD8;&#x662F;&#x672C;&#x4F4D;&#x652F;&#x6491;&#x4E0A;&#xFF0C;&#x90FD;&#x7740;&#x5B9E;&#x6BD4; Librosa &#x66F4;&#x52A0;&#x9AD8;&#x6548;&#x3002;</p>
-<p>&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x97F3;&#x9891;&#x5206;&#x6790;&#x9886;&#x57DF;&#xFF0C;&#x5BF9;&#x4E8E;&#x7C7B;&#x4F3C; <strong>&#x2018;&#x97F3;&#x9AD8;&#x68C0;&#x6D4B;&#x2019; &#x7B49;&#x4EE5;&#x5B9E;&#x65F6;&#x6027;&#x4F5C;&#x4E3A;&#x4E3B;&#x8981;&#x6C42;&#x7684;&#x5206;&#x6790;&#x70B9;</strong>&#xFF0C;&#x6211;&#x4EEC;&#x5E38;&#x91C7;&#x7528; Aubio &#x800C;&#x4E0D;&#x662F; Librosa &#x5904;&#x7406;&#x3002;&#x800C;&#x5BF9;&#x4E8E; &#x6885;&#x5C14;&#x9891;&#x7387;&#x5012;&#x8C31;&#x7CFB;&#x6570;&#xFF08;MFCC&#xFF09;&#x4E4B;&#x7C7B;&#x7684;&#x79D1;&#x5B66;&#x5206;&#x6790;&#xFF0C;&#x5219;&#x591A;&#x6570;&#x7528; Librosa &#x89E3;&#x51B3;&#xFF0C;&#x867D;&#x7136; Aubio &#x4E5F;&#x6709;&#x6B64;&#x529F;&#x80FD;&#x3002;&#x9664;&#x6B64;&#x5916;&#xFF0C;&#x79D1;&#x5B66;&#x5206;&#x6790;&#x4E0D;&#x4EE5; Aubio &#x5408;&#x5E76;&#x89E3;&#x51B3;&#x7684;&#x53E6;&#x4E00;&#x539F;&#x56E0;&#xFF0C;&#x8FD8;&#x5728;&#x4E8E; Aubio &#x5BF9;&#x4E3B;&#x6D41;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x5E93;&#x7684;&#x517C;&#x5BB9;&#x7A0B;&#x5EA6;&#xFF0C;&#x8981;&#x7565;&#x900A; Librosa &#x4E00;&#x7B79;&#xFF0C;&#x5E76;&#x5411;&#x5F53;&#x5C40;&#x9650;&#x3002;&#x5373;&#x6709;&#x5229;&#x6709;&#x5F0A;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x97F3;&#x9891;&#x5206;&#x6790;&#x9886;&#x57DF;&#xFF0C;&#x5BF9;&#x4E8E;&#x7C7B;&#x4F3C; <strong>&#x2018;&#x97F3;&#x9AD8;&#x68C0;&#x6D4B;&#x2019; &#x7B49;&#x4EE5;&#x5B9E;&#x65F6;&#x6027;&#x4F5C;&#x4E3A;&#x4E3B;&#x8981;&#x8BC9;&#x6C42;&#x7684;&#x5206;&#x6790;&#x70B9;</strong>&#xFF0C;&#x6211;&#x4EEC;&#x5E38;&#x91C7;&#x7528; Aubio &#x800C;&#x4E0D;&#x662F; Librosa &#x5904;&#x7406;&#x3002;&#x800C;&#x5BF9;&#x4E8E; &#x6885;&#x5C14;&#x9891;&#x7387;&#x5012;&#x8C31;&#x7CFB;&#x6570;&#xFF08;MFCC&#xFF09;&#x4E4B;&#x7C7B;&#x7684;&#x79D1;&#x5B66;&#x5206;&#x6790;&#xFF0C;&#x5219;&#x591A;&#x6570;&#x7528; Librosa &#x89E3;&#x51B3;&#xFF0C;&#x867D;&#x7136; Aubio &#x4E5F;&#x6709;&#x6B64;&#x529F;&#x80FD;&#x3002;&#x9664;&#x6B64;&#x5916;&#xFF0C;&#x79D1;&#x5B66;&#x5206;&#x6790;&#x4E0D;&#x4EE5; Aubio &#x5408;&#x5E76;&#x89E3;&#x51B3;&#x7684;&#x53E6;&#x4E00;&#x539F;&#x56E0;&#xFF0C;&#x8FD8;&#x5728;&#x4E8E; Aubio &#x5BF9;&#x4E3B;&#x6D41;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x5E93;&#x7684;&#x517C;&#x5BB9;&#x7A0B;&#x5EA6;&#xFF0C;&#x8981;&#x7565;&#x900A; Librosa &#x4E00;&#x7B79;&#xFF0C;&#x5E76;&#x76F8;&#x5F53;&#x5C40;&#x9650;&#x3002;&#x5373;&#x6709;&#x5229;&#x6709;&#x5F0A;&#x3002;</p>
 <p>&#x6B64;&#x5916;&#xFF0C;<strong>&#x76F8;&#x6BD4; Librosa&#xFF0C;Aubio &#x4EC5;&#x80FD;&#x63D0;&#x4F9B;&#x76F8;&#x5BF9;&#x57FA;&#x7840;&#x7684;&#x5206;&#x6790;</strong>&#x3002;</p>
 <h4 id="&#x4E3B;&#x8981;&#x529F;&#x80FD;&#xFF1A;">&#x4E3B;&#x8981;&#x529F;&#x80FD;&#xFF1A;</h4>
 <ol>
@@ -2650,7 +2652,7 @@ stream = p.open(
 </ol>
 <p>&#x5B98;&#x65B9;&#x6837;&#x4F8B;&#xFF0C;&#x53EF;&#x4ECE; <strong><a href="https://github.com/aubio/aubio" target="_blank">&#x9879;&#x76EE;&#x5B98;&#x7F51;</a></strong> &#x83B7;&#x53D6;&#xFF0C;&#x800C;&#x5404;&#x4E2A;&#x5C01;&#x88C5;&#x7ED3;&#x6784;&#x5185;&#x7684; <strong>&#x989D;&#x5916;&#x53C2;&#x6570;&#x914D;&#x7F6E;/&#x83B7;&#x53D6;&#x65B9;&#x5F0F;</strong>&#xFF0C;&#x53EF;&#x67E5;&#x9605; <strong><a href="https://aubio.readthedocs.io/en/latest/" target="_blank">&#x5B98;&#x65B9;&#x6863;&#x6848;&#x9986;&#x67E5;&#x9605;</a></strong> &#x3002;</p>
 <p><br></p>
-<p>&#x7531;&#x4E8E;&#x662F; C&#x8BED;&#x8A00;&#x5E93;&#xFF0C;&#x5176; Python &#x5957;&#x63A5;&#x540E;&#x7684;&#x4F7F;&#x7528;&#x5F62;&#x5F0F;&#xFF0C;&#x4E5F; <strong>&#x76F8;&#x5BF9;&#x66F4;&#x63A5;&#x8FD1; C &#x7684;&#x4F7F;&#x7528;&#x4E60;&#x60EF;</strong>&#x3002;&#x6240;&#x4EE5;&#xFF0C;Aubio &#x7684;&#x7684;&#x8FC7;&#x7A0B;&#x7C7B;&#xFF0C;<strong>&#x5728;&#x521B;&#x5EFA;&#x5B9E;&#x4F53;&#x65F6;&#x5C31;&#x9700;&#x8981;&#x4F20;&#x5165;&#x914D;&#x7F6E;&#x53C2;&#x6570;</strong>&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#xFF1A;</p>
+<p>&#x7531;&#x4E8E;&#x662F; C &#x8BED;&#x8A00;&#x5E93;&#xFF0C;&#x5176; Python &#x5957;&#x63A5;&#x540E;&#x7684;&#x4F7F;&#x7528;&#x5F62;&#x5F0F;&#xFF0C;&#x4E5F; <strong>&#x76F8;&#x5BF9;&#x66F4;&#x63A5;&#x8FD1; C &#x7684;&#x4F7F;&#x7528;&#x4E60;&#x60EF;</strong>&#x3002;&#x6240;&#x4EE5;&#xFF0C;Aubio &#x7684;&#x7684;&#x8FC7;&#x7A0B;&#x7C7B;&#xFF0C;<strong>&#x5728;&#x521B;&#x5EFA;&#x5B9E;&#x4F53;&#x65F6;&#x5C31;&#x9700;&#x8981;&#x4F20;&#x5165;&#x914D;&#x7F6E;&#x53C2;&#x6570;</strong>&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#xFF1A;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># &#x521B;&#x5EFA;&#x97F3;&#x9891;&#x6E90;&#x8BFB;&#x53D6;&#x5B9E;&#x4F8B;</span>
 source = aubio.source(<span class="hljs-string">&apos;example.wav&apos;</span>, <span class="hljs-number">44100</span>, <span class="hljs-number">512</span>)
 
@@ -2672,7 +2674,7 @@ onset_o = aubio.onset(<span class="hljs-string">&quot;default&quot;</span>, <spa
 notes_o = aubio.notes(<span class="hljs-string">&quot;default&quot;</span>, <span class="hljs-number">1024</span>, <span class="hljs-number">512</span>, <span class="hljs-number">44100</span>)
 
 <span class="hljs-comment"># &#x521B;&#x5EFA;&#x79BB;&#x6563;&#x4F59;&#x5F26;&#x53D8;&#x6362;&#x5B9E;&#x4F8B;</span>
-dct_o = aubio.cqt(<span class="hljs-number">16</span>)
+dct_o = aubio.dct(<span class="hljs-number">16</span>)
 
 <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5FEB;&#x901F;&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;&#x5B9E;&#x4F8B;</span>
 fft_o = aubio.fft(<span class="hljs-number">1024</span>)
@@ -2684,7 +2686,7 @@ mfcc_o = aubio.mfcc(<span class="hljs-number">40</span>, <span class="hljs-numbe
 filterbank_o = aubio.filterbank(<span class="hljs-number">40</span>, <span class="hljs-number">1024</span>)
 
 <span class="hljs-comment"># &#x521B;&#x5EFA;&#x9891;&#x8C31;&#x63CF;&#x8FF0;&#x7B26;&#x5B9E;&#x4F8B;</span>
-specdesc_o = aubio.specdesc(aubio.specdesc_type.centroid, <span class="hljs-number">1024</span>)
+specdesc_o = aubio.specdesc(<span class="hljs-string">&quot;centroid&quot;</span>, <span class="hljs-number">1024</span>)
 
 <span class="hljs-comment"># &#x521B;&#x5EFA;&#x76F8;&#x4F4D;&#x58F0;&#x7801;&#x5668;&#x5B9E;&#x4F8B;</span>
 pvoc_o = aubio.pvoc(<span class="hljs-number">1024</span>, <span class="hljs-number">512</span>)
@@ -2705,7 +2707,10 @@ pvoc_o = aubio.pvoc(<span class="hljs-number">1024</span>, <span class="hljs-num
 <li><strong>&#x76F8;&#x4F4D;&#x58F0;&#x7801;&#x5668;&#xFF08;&lt;PVOC&gt;&#xFF09;</strong>&#xFF1A;&#x914D;&#x7F6E;&#x76F8;&#x4F4D;&#x58F0;&#x7801;&#x5668;&#xFF0C;&#x7A97;&#x53E3; 1024/&#x6BCF;&#x6B21;&#x53D6; 512 &#x4E2A;&#x6837;&#x672C; <strong>&#xFF08;&#x5373;&#x8DF3;&#x9891; 512&#xFF09;</strong></li>
 </ul>
 <p>&#x800C;&#x5176;&#x4F7F;&#x7528;&#x65F6;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x7531;&#x4E8E;&#x662F;&#x4EE5; <strong>__call__</strong> &#x7684; Python &#x8C03;&#x7528;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6709;&#xFF1A;</p>
-<pre><code class="lang-python"><span class="hljs-comment"># &#x8BFB;&#x53D6;&#x97F3;&#x9891;&#x6570;&#x636E;&#x5E76;&#x5904;&#x7406;</span>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x521D;&#x59CB;&#x5316;&#x9891;&#x8C31;&#x7ED3;&#x679C;&#x5217;&#x8868;</span>
+spectrogram = []
+
+<span class="hljs-comment"># &#x8BFB;&#x53D6;&#x97F3;&#x9891;&#x6570;&#x636E;&#x5E76;&#x5904;&#x7406;</span>
 <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
     samples, read = source()
 
@@ -2769,7 +2774,7 @@ spectrogram = np.array([s <span class="hljs-keyword">for</span> s <span class="h
 <h2 id="&#x7B80;&#x5355;&#x7EC3;&#x4E60;&#xFF1A;&#x7528;-&#x5E38;&#x7528;&#x97F3;&#x9891;&#x5E93;-&#x5B8C;&#x6210;-&#x5E26;&#x6709;&#x5B9E;&#x65F6;&#x9891;&#x54CD;&#x56FE;&#x7684;&#x97F3;&#x9891;&#x64AD;&#x653E;&#x5668;"><strong>&#x7B80;&#x5355;&#x7EC3;&#x4E60;&#xFF1A;&#x7528; &#x5E38;&#x7528;&#x97F3;&#x9891;&#x5E93; &#x5B8C;&#x6210; &#x5E26;&#x6709;&#x5B9E;&#x65F6;&#x9891;&#x54CD;&#x56FE;&#x7684;&#x97F3;&#x9891;&#x64AD;&#x653E;&#x5668;</strong></h2>
 <p>&#x4E3A;&#x4E86;&#x76F8;&#x5BF9;&#x53EF;&#x80FD;&#x7684;&#x4FBF;&#x5229;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BA9;&#x8FD9;&#x4E2A;&#x7EC3;&#x4E60;&#x7528;&#x64AD;&#x653E;&#x5668;&#x6709;&#x4E00;&#x4E2A; UI &#x754C;&#x9762;&#xFF0C;&#x4E14;&#x80FD;&#x6839;&#x636E;&#x9700;&#x8981;&#x7684;&#x81EA;&#x4E3B;&#x9009;&#x62E9;&#x97F3;&#x9891;&#x6587;&#x4EF6;&#x3002;&#x800C; <strong>&#x6CE2;&#x5F62;&#x56FE;&#xFF08;Waveform&#xFF09;</strong> &#x5C31;&#x662F;&#x6574;&#x4E2A;&#x97F3;&#x9891;&#x6240;&#x6709;&#x9891;&#x6BB5;&#x5728; <strong>&#x6CE2;&#x5F62;&#x5207;&#x9762;&#xFF08;TLS&#xFF09;</strong> &#x53E0;&#x52A0;&#x540E;&#x7684;&#x6295;&#x5F71;&#x3002;</p>
 <p>&#x5BF9;&#x4E8E;&#x754C;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5F15;&#x5165; <strong>Tkinter</strong> &#x5E93;&#x6765;&#x534F;&#x52A9;&#x8FDB;&#x884C;&#x7ED8;&#x5236;&#x3002;Tkinter &#x662F; Python &#x6807;&#x51C6;&#x6A21;&#x5757;&#x5176;&#x4E2D;&#x4E4B;&#x4E00;&#xFF0C;&#x4E13;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x56FE;&#x5F62;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF08;GUI&#xFF09;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7B80;&#x6613;&#x7684;&#x6309;&#x94AE;&#x3001;&#x56FE;&#x8868;&#x3001;&#x4EA4;&#x4E92;&#x7EC4;&#x4EF6;&#x548C;&#x6807;&#x51C6;&#x5E03;&#x5C40;&#x3002;&#x8FD9;&#x91CC;&#x53EA;&#x9700;&#x4E86;&#x89E3;&#x5373;&#x53EF;&#x3002;</p>
-<p>&#x7EC3;&#x4E60;&#x4E8B;&#x4F8B;&#x6309;&#x7167;&#x6807;&#x51C6;&#x5DE5;&#x7A0B;&#x5DE5;&#x4F5C;&#x6D41;&#x8FDB;&#x884C;&#x3002;</p>
+<p>&#x7EC3;&#x4E60;&#x793A;&#x4F8B;&#x6309;&#x7167;&#x6807;&#x51C6;&#x5DE5;&#x7A0B;&#x5DE5;&#x4F5C;&#x6D41;&#x8FDB;&#x884C;&#x3002;</p>
 <h4 id="&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x786E;&#x7ACB;&#x5DF2;&#x77E5;&#x4FE1;&#x606F;&#xFF1A;">&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x786E;&#x7ACB;&#x5DF2;&#x77E5;&#x4FE1;&#x606F;&#xFF1A;</h4>
 <ol>
 <li>&#x6570;&#x636E;&#x6765;&#x6E90;&#xFF1A;&#x7528;&#x6237;&#x81EA;&#x9009;&#x7684; &quot;<em>.wav </em>.flac *.mp3&quot; &#x97F3;&#x9891;&#x683C;&#x5F0F;&#x6587;&#x4EF6;&#xFF08;&#x5982;&#x9700;&#x53EF;&#x81EA;&#x884C;&#x5728;&#x6E90;&#x7801;&#x4E2D;&#x62D3;&#x5C55;&#xFF09;</li>
@@ -3072,7 +3077,7 @@ spectrogram = np.array([s <span class="hljs-keyword">for</span> s <span class="h
 
 <p>&#x81F3;&#x6B64;&#xFF0C;&#x5BF9;&#x97F3;&#x9891;&#x5E93;&#x7684;&#x7EC3;&#x4E60;&#x5B8C;&#x6BD5;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2024-09-12 12:11:11
+2026-08-24 21:40:44
 </span></footer>
                                 
                                 </section>
@@ -3100,7 +3105,7 @@ spectrogram = np.array([s <span class="hljs-keyword">for</span> s <span class="h
 
             
                 
-                <a href="Docs_5_1_1.html" class="navigation navigation-prev " aria-label="Previous page: 5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）">
+                <a href="Docs_5_1_1.html" class="navigation navigation-prev " aria-label="Previous page: 5.1.1 常用数学库（Numpy、Pandas、Matplotlib）">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -3116,7 +3121,7 @@ spectrogram = np.array([s <span class="hljs-keyword">for</span> s <span class="h
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）","level":"1.6.1.2","depth":3,"next":{"title":"5.1.3 视频分析库（PyOpenCV、Color-Science）","level":"1.6.1.3","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_3.md","ref":"Chapter_5/Language/cn/Docs_5_1_3.md","articles":[]},"previous":{"title":"5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）","level":"1.6.1.1","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_1.md","ref":"Chapter_5/Language/cn/Docs_5_1_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_5/Language/cn/Docs_5_1_2.md","mtime":"2024-09-12T04:11:11.030Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-14T03:29:12.787Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）","level":"1.6.1.2","depth":3,"next":{"title":"5.1.3 视频分析库（PyOpenCV、Color-Science）","level":"1.6.1.3","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_3.md","ref":"Chapter_5/Language/cn/Docs_5_1_3.md","articles":[]},"previous":{"title":"5.1.1 常用数学库（Numpy、Pandas、Matplotlib）","level":"1.6.1.1","depth":3,"path":"Chapter_5/Language/cn/Docs_5_1_1.md","ref":"Chapter_5/Language/cn/Docs_5_1_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_5/Language/cn/Docs_5_1_2.md","mtime":"2026-08-24T13:40:44.928Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-08-24T13:41:27.489Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -3175,10 +3180,6 @@ spectrogram = np.array([s <span class="hljs-keyword">for</span> s <span class="h
     
         
         <script src="../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
 

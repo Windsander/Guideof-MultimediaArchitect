@@ -5,12 +5,9 @@
 
 _book
 node_modules
-deploy.sh
-publish.sh
 cmake-*
 
 *.aux
-*.tex
 *.fls
 *.fdb_latexmk
 *.synctex.gz

@@ -74,6 +74,8 @@
 
     
         
+        <link rel="stylesheet" href="../../../styles/common.css">
+        
     
         
     
@@ -173,7 +175,7 @@
                 <a href="../../../COPYRIGHT.html">
             
                     
-                     =[>> 版权申明© <<]= 
+                     =[>> 版权声明© <<]= 
             
                 </a>
             
@@ -523,7 +525,7 @@
                 <a href="Docs_1_6_4.html">
             
                     
-                    1.6.4 有损压缩编码格式（Uncompressed Encode）
+                    1.6.4 有损压缩编码格式（Lossy Encode）
             
                 </a>
             
@@ -1065,7 +1067,7 @@
                 <a href="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
             
                     
-                    3.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）
+                    3.1.3 傅立叶变换的经典 - 快速傅立叶变换（FFT）
             
                 </a>
             
@@ -1078,7 +1080,7 @@
                 <a href="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
             
                     
-                    3.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
+                    3.1.4 傅立叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
             
                 </a>
             
@@ -2040,7 +2042,7 @@
                 <a href="../../../Chapter_5/Language/cn/Docs_5_1_1.html">
             
                     
-                    5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）
+                    5.1.1 常用数学库（Numpy、Pandas、Matplotlib）
             
                 </a>
             
@@ -2236,7 +2238,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">Subchunk1ID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x0c~0x0f (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D; &#x5B50;&#x5757;-1 &#x7684; ID&#xFF08;&#x5373;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF09;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;fmt&apos; &#x4E09;&#x4E2A;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x666d7420</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D; &#x5B50;&#x5757;-1 &#x7684; ID&#xFF08;&#x5373;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF09;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;fmt &apos; &#x4E09;&#x4E2A;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x548C;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x666d7420</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">Subchunk1Size</th>
@@ -2261,7 +2263,7 @@
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ByteRate</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x1c~0x1f (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6BD4;&#x7279;&#x7387;&#xFF0C;&#x5373;&#x5F53;&#x524D;&#x5168;&#x901A;&#x9053;&#x5355;&#x91C7;&#x6837;&#x5468;&#x671F;&#x6240;&#x5F97;&#x6570;&#x636E;&#x7684;&#x4F20;&#x8F93;&#x7387; == SampleRate * NumChannels * BitsPerSample/8</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x5B57;&#x8282;&#x7387;&#xFF0C;&#x5373;&#x5F53;&#x524D;&#x5168;&#x901A;&#x9053;&#x5355;&#x91C7;&#x6837;&#x5468;&#x671F;&#x6240;&#x5F97;&#x6570;&#x636E;&#x7684;&#x4F20;&#x8F93;&#x7387; == SampleRate * NumChannels * BitsPerSample/8</td>
   </tr>
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">BlockAlign</th>
@@ -2286,7 +2288,7 @@
 </table>
 
 <p><br></p>
-<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#x5B50;&#x5757;&#xFF08;FMT sub-Chunk&#xFF09;&#x4E2D;&#x7684; ExtraParamSize &#x548C; ExtraParams &#x5E76;&#x4E0D;&#x662F;&#x59CB;&#x7EC8;&#x5B58;&#x5728;&#x7684;&#x3002;&#x5BF9;&#x4E8E; <strong>&#x4EE5; PCM &#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x6570;&#x636E;&#x4E3A;&#x4E3B;&#x8981;&#x8F7D;&#x8377;&#x4FE1;&#x606F;&#x7684; WAV &#x683C;&#x5F0F;&#xFF0C;&#x8BE5;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#x5728; fmt &#x5B50;&#x5757;&#x4E2D;&#xFF0C;&#x662F;&#x4E0D;&#x5B58;&#x5728;</strong>&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#x5B50;&#x5757;&#xFF08;FMT sub-Chunk&#xFF09;&#x4E2D;&#x7684; ExtraParamSize &#x548C; ExtraParams &#x5E76;&#x4E0D;&#x662F;&#x59CB;&#x7EC8;&#x5B58;&#x5728;&#x7684;&#x3002;&#x5BF9;&#x4E8E; <strong>&#x4EE5; PCM &#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x6570;&#x636E;&#x4E3A;&#x4E3B;&#x8981;&#x8F7D;&#x8377;&#x4FE1;&#x606F;&#x7684; WAV &#x683C;&#x5F0F;&#xFF0C;&#x8BE5;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#x5728; fmt &#x5B50;&#x5757;&#x4E2D;&#xFF0C;&#x662F;&#x4E0D;&#x5B58;&#x5728;&#x7684;</strong>&#x3002;</p>
 <p>&#x5373;&#xFF0C;<strong>ExtraParamSize &#x548C; ExtraParams&#xFF0C;&#x5728; WAV &#x4E2D;&#x5E76;&#x4E0D;&#x5360;&#x7528;&#x4EFB;&#x4F55;&#x6709;&#x6548;&#x6570;&#x636E;&#x5B57;&#x6BB5;</strong>&#x3002;</p>
 <p><br></p>
 <p><strong>&#x97F3;&#x9891;&#x6570;&#x636E;&#x5B50;&#x5757;&#xFF08;DATA sub-Chunk&#xFF09;</strong> &#x4E3B;&#x8981;&#x5305;&#x542B; 3 &#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5206;&#x522B;&#x662F;&#xFF1A;</p>
@@ -2349,7 +2351,7 @@
 </figure>
 </center>
 
-<p>&#x4ECE;&#x4E0A;&#x53EF;&#x77E5;&#xFF0C;&#x6837;&#x4F8B;&#x5176;&#x5B9E;&#x662F;&#x4ECE;&#x4E00;&#x6BB5; <strong>2048 Bytes &#x7684; PCM &#x97F3;&#x9891;&#x5BF9;&#x5E94; WAV &#x6587;&#x4EF6;</strong> &#x4E2D;&#xFF0C;&#x4ECE;&#x5934; <strong>&#x622A;&#x53D6; 72 Bytes &#x6570;&#x636E;</strong> &#x7EC4;&#x6210;&#x7684;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5229;&#x7528;&#x5934;&#x90E8;&#x4FE1;&#x606F;&#x6765;&#x4EA4;&#x9A8C;&#x6570;&#x636E;&#x5B8C;&#x6574;&#x6027;&#xFF0C;&#x6216;&#x53D6;&#x5F97;&#x66F4;&#x65E9;&#x9636;&#x6BB5;&#xFF08;&#x5373;&#x8C03;&#x5236;&#x9636;&#x6BB5;&#xFF09;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5728; WAV &#x8FD9;&#x79CD; <strong>&#x5177;&#x6709; &#x5206;&#x5757;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#x5757;&#xFF08;Chunk Descriptor&#xFF09;</strong> &#x7684;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#xFF08;Audio Format&#xFF09;&#x91CC;&#x6210;&#x4E3A;&#x4E86;&#x53EF;&#x80FD;&#x3002;</p>
+<p>&#x4ECE;&#x4E0A;&#x53EF;&#x77E5;&#xFF0C;&#x6837;&#x4F8B;&#x5176;&#x5B9E;&#x662F;&#x4ECE;&#x4E00;&#x6BB5; <strong>2048 Bytes &#x7684; PCM &#x97F3;&#x9891;&#x5BF9;&#x5E94; WAV &#x6587;&#x4EF6;</strong> &#x4E2D;&#xFF0C;&#x4ECE;&#x5934; <strong>&#x622A;&#x53D6; 72 Bytes &#x6570;&#x636E;</strong> &#x7EC4;&#x6210;&#x7684;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5229;&#x7528;&#x5934;&#x90E8;&#x4FE1;&#x606F;&#x6765;&#x6821;&#x9A8C;&#x6570;&#x636E;&#x5B8C;&#x6574;&#x6027;&#xFF0C;&#x6216;&#x53D6;&#x5F97;&#x66F4;&#x65E9;&#x9636;&#x6BB5;&#xFF08;&#x5373;&#x8C03;&#x5236;&#x9636;&#x6BB5;&#xFF09;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5728; WAV &#x8FD9;&#x79CD; <strong>&#x5177;&#x6709; &#x5206;&#x5757;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#x5757;&#xFF08;Chunk Descriptor&#xFF09;</strong> &#x7684;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#xFF08;Audio Format&#xFF09;&#x91CC;&#x6210;&#x4E3A;&#x4E86;&#x53EF;&#x80FD;&#x3002;</p>
 <p>&#x8FD9;&#x4E5F;&#x662F;&#x4E3A;&#x4F55;&#x7C7B; WAV &#x7ED3;&#x6784;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#xFF08;&#x5305;&#x62EC;&#x5C06;&#x8981;&#x63D0;&#x5230;&#x7684; SND/AU &#x548C; AIFF &#x7B49;&#xFF09;&#xFF0C;&#x4F1A;&#x4EE3;&#x66FF;&#x4E86;&#x76F4;&#x63A5;&#x4EE5; PCM &#x5728;&#x7535;&#x8111;&#x4E2D;&#x8FDB;&#x884C;&#x975E;&#x5DE5;&#x7A0B;&#x5316;&#x5B58;&#x50A8;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
 <p>&#x4E0D;&#x8FC7;&#xFF0C;&#x8FD9;&#x4E5F;&#x5F15;&#x7533;&#x51FA;&#x4E86; <strong>&#x4E24;&#x79CD;&#x622A;&#x7136;&#x76F8;&#x53CD;&#x7684;</strong>&#xFF0C;&#x6709;&#x5173;&#x672A;&#x538B;&#x7F29;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#x7684; <strong>&#x5236;&#x5B9A;&#x601D;&#x8DEF;</strong>&#xFF1A;<strong>&#x7F29;&#x51CF;&#x5934;&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#x51CF;&#x5C11;&#x590D;&#x6742;&#x5EA6;</strong> &#xFF0C;&#x548C; <strong>&#x589E;&#x52A0;&#x5934;&#x6587;&#x4EF6;&#x6240;&#x80FD;&#x6DB5;&#x76D6;&#x7684;&#x8F85;&#x52A9;&#x6570;&#x636E;</strong>&#x3002;&#x5178;&#x578B;&#x4EE3;&#x8868;&#xFF0C;&#x5206;&#x522B;&#x662F; SND/AU &#x548C; AIFF &#x97F3;&#x9891;&#x683C;&#x5F0F;&#x3002;</p>
 <h2 id="sndau-&#x97F3;&#x9891;&#x683C;&#x5F0F;"><strong>SND/AU &#x97F3;&#x9891;&#x683C;&#x5F0F;</strong></h2>
@@ -2360,7 +2362,7 @@
 <li><strong>&#x53D8;&#x957F;&#x8F85;&#x52A9;&#x4FE1;&#x606F;&#x533A;&#x6BB5;&#xFF08;Variable-length Informational Field&#xFF09;</strong>&#xFF0C;&#x5B58;&#x50A8;&#x9700;&#x8981;&#x7684;&#x989D;&#x5916;&#x4FE1;&#x606F;&#xFF1B;</li>
 <li><strong>&#x97F3;&#x9891;&#x6570;&#x636E;&#x533A;&#x6BB5;&#xFF08;Data&#xFF09;</strong>&#xFF0C;&#x5B58;&#x653E;&#x5F53;&#x524D;&#x5B58;&#x50A8;&#x97F3;&#x9891;&#x7684;&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF1B;</li>
 </ul>
-<p>&#x521D;&#x770B;&#x4E4B;&#x4E0B;&#x53EF;&#x80FD;&#x611F;&#x89C9;&#x540C; WAV &#x683C;&#x5F0F;&#x5E76;&#x65E0;&#x592A;&#x5927;&#x5DEE;&#x5F02;&#xFF0C;&#x7136;&#x800C;&#x4E8B;&#x5B9E;&#x5E76;&#x975E;&#x5982;&#x6B64;&#x3002;SUD/AU &#x7684;&#x76F8;&#x5173;&#x97F3;&#x9891;&#x6570;&#x636E;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x4EE5;&#x53CA;&#x81EA;&#x8EAB;&#x6709;&#x5173;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x6807;&#x5FD7;&#xFF0C;&#x90FD;&#x88AB; <strong>&#x96C6;&#x4E2D;&#x4E8E;&#x5934;&#x4FE1;&#x606F;&#x5B57;&#x6BB5;&#x7684; 6 &#x4E2A;&#x56FA;&#x5B9A;&#x53C2;&#x6570;&#x4E2D;</strong>&#x3002;&#x800C;&#x6D89;&#x53CA;&#x97F3;&#x9891;&#x672C;&#x8EAB;&#xFF0C;&#x8BF8;&#x5982;&#x7248;&#x6743;&#x4FE1;&#x606F;&#x3001;&#x4F5C;&#x8005;&#x540D;&#x79F0;&#x7B49;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x5E76;&#x672A;&#x89C4;&#x8303;&#x5982;&#x4F55;&#x5B58;&#x50A8;&#xFF0C;&#x53EA;&#x6307;&#x5B9A;&#x4E86;&#x5FC5;&#x987B;&#x653E;&#x5165; <strong>&#x53D8;&#x957F;&#x8F85;&#x52A9;&#x4FE1;&#x606F;&#x533A;&#x6BB5;</strong> &#x7684;&#x8981;&#x6C42;&#x3002;&#x8FD9;&#x4F7F; <strong>&#x7CFB;&#x7EDF;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x7BA1;&#x7406;&#x8FD9;&#x90E8;&#x5206;&#x4FE1;&#x606F;</strong>&#x3002;&#x800C;&#x97F3;&#x9891;&#x6570;&#x636E;&#x533A;&#x6BB5;&#xFF0C;&#x5219;&#x53EA;&#x80FD;&#x5B58;&#x653E; PCM &#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x7684;&#x6570;&#x5B57;&#x7801;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x521D;&#x770B;&#x4E4B;&#x4E0B;&#x53EF;&#x80FD;&#x611F;&#x89C9;&#x540C; WAV &#x683C;&#x5F0F;&#x5E76;&#x65E0;&#x592A;&#x5927;&#x5DEE;&#x5F02;&#xFF0C;&#x7136;&#x800C;&#x4E8B;&#x5B9E;&#x5E76;&#x975E;&#x5982;&#x6B64;&#x3002;SND/AU &#x7684;&#x76F8;&#x5173;&#x97F3;&#x9891;&#x6570;&#x636E;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x4EE5;&#x53CA;&#x81EA;&#x8EAB;&#x6709;&#x5173;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x6807;&#x5FD7;&#xFF0C;&#x90FD;&#x88AB; <strong>&#x96C6;&#x4E2D;&#x4E8E;&#x5934;&#x4FE1;&#x606F;&#x5B57;&#x6BB5;&#x7684; 6 &#x4E2A;&#x56FA;&#x5B9A;&#x53C2;&#x6570;&#x4E2D;</strong>&#x3002;&#x800C;&#x6D89;&#x53CA;&#x97F3;&#x9891;&#x672C;&#x8EAB;&#xFF0C;&#x8BF8;&#x5982;&#x7248;&#x6743;&#x4FE1;&#x606F;&#x3001;&#x4F5C;&#x8005;&#x540D;&#x79F0;&#x7B49;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x5E76;&#x672A;&#x89C4;&#x8303;&#x5982;&#x4F55;&#x5B58;&#x50A8;&#xFF0C;&#x53EA;&#x6307;&#x5B9A;&#x4E86;&#x5FC5;&#x987B;&#x653E;&#x5165; <strong>&#x53D8;&#x957F;&#x8F85;&#x52A9;&#x4FE1;&#x606F;&#x533A;&#x6BB5;</strong> &#x7684;&#x8981;&#x6C42;&#x3002;&#x8FD9;&#x4F7F; <strong>&#x7CFB;&#x7EDF;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x7BA1;&#x7406;&#x8FD9;&#x90E8;&#x5206;&#x4FE1;&#x606F;</strong>&#x3002;&#x800C;&#x97F3;&#x9891;&#x6570;&#x636E;&#x533A;&#x6BB5;&#xFF0C;&#x5219;&#x53EA;&#x80FD;&#x5B58;&#x653E; PCM &#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x7684;&#x6570;&#x5B57;&#x7801;&#x6570;&#x636E;&#x3002;</p>
 <p>&#x6240;&#x4EE5;&#xFF0C;<strong>&#x53D8;&#x957F;&#x8F85;&#x52A9;&#x4FE1;&#x606F;&#x533A;&#x6BB5;&#xFF08;Variable-length Informational Field&#xFF09;</strong> &#x53EA;&#x89C4;&#x5B9A; <strong>&#x5FC5;&#x987B;&#x5360;&#x7528; 4 bytes &#x5927;&#x5C0F;</strong>&#xFF0C;&#x5E76;&#x5728;&#x6709; <strong>&#x989D;&#x5916;&#x4FE1;&#x606F;</strong> &#x65F6;&#xFF0C;<strong>&#x4EE5;&#x6574;&#x6570;&#x5B57;&#x8282;&#x589E;&#x52A0;</strong>&#xFF0C;&#x5982;&#xFF1A;5&#xFF08;4+1&#xFF09; bytes&#x3001;6&#xFF08;4+2&#xFF09; bytes &#x7B49;&#x3002;&#x800C; <strong>&#x97F3;&#x9891;&#x6570;&#x636E;&#x533A;&#x6BB5;&#xFF08;Data&#xFF09;&#x5219;&#x7D27;&#x968F;&#x5176;&#x540E;</strong>&#xFF0C;&#x76F4;&#x63A5;&#x4EE5; PCM &#x91C7;&#x6837;&#x6309;&#x901A;&#x9053;&#xFF08;Channels&#xFF09;&#x6570;&#xFF0C;&#x4EA4;&#x66FF;&#x5206; blocks &#x5B58;&#x50A8;&#x5373;&#x53EF;&#xFF08;&#x540C; WAV &#x7684; data &#x90E8;&#x5206;&#xFF09;&#x3002;</p>
 <p><br></p>
 <p><strong>&#x5934;&#x4FE1;&#x606F;&#x533A;&#x6BB5;&#xFF08;Header&#xFF09;</strong> &#x4E3B;&#x8981;&#x5305;&#x542B; 6 &#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5206;&#x522B;&#x662F;&#xFF1A;</p>
@@ -2373,17 +2375,17 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">magic</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;.snd&apos; &#x56DB;&#x4E2A;&#x5B57;&#x7B26;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x2e736e64</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;.snd&apos; &#x56DB;&#x4E2A;&#x5B57;&#x7B26;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x2e736e64</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">hdr_size</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x04~0x07 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x8BB0;&#x5F55;&#x97F3;&#x9891;&#x6570;&#x636E;&#x8D77;&#x59CB;&#x504F;&#x79FB;&#xFF08;bytes&#xFF09;&#xFF0C;&#x7528;&#x4E8E;&#x5FEB;&#x901F;&#x6570;&#x636E;&#xFF0C;&#x6709; == 24 + Informational_Field_Size&#xFF08;bytes&#xFF09;</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x8BB0;&#x5F55;&#x97F3;&#x9891;&#x6570;&#x636E;&#x8D77;&#x59CB;&#x504F;&#x79FB;&#xFF08;bytes&#xFF09;&#xFF0C;&#x7528;&#x4E8E;&#x5FEB;&#x901F;&#x5B9A;&#x4F4D;&#x6570;&#x636E;&#xFF0C;&#x6709; == 24 + Informational_Field_Size&#xFF08;bytes&#xFF09;</td>
   </tr>
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">data_size</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x08~0x0b (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x672C;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x6570;&#x636E;&#x5927;&#x5C0F;&#xFF0C;&#x4F46;&#x7531;&#x4E8E;&#x53EF;&#x901A;&#x8FC7;&#xFF0C;&#x6587;&#x4EF6;&#x5927;&#x5C0F; - hdr_size &#x7B97;&#x5F97;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x53D6; == 0xffffffff &#x8868;&#x793A;&#x65E0;&#x8BB0;&#x5F55;/ == n &#x8868;&#x793A; n bytes &#x5927;&#x5C0F;</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x672C;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x6570;&#x636E;&#x5927;&#x5C0F;&#xFF0C;&#x4F46;&#x7531;&#x4E8E;&#x53EF;&#x901A;&#x8FC7; &#x6587;&#x4EF6;&#x5927;&#x5C0F; - hdr_size &#x7B97;&#x5F97;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x53D6; == 0xffffffff &#x8868;&#x793A;&#x65E0;&#x8BB0;&#x5F55;/ == n &#x8868;&#x793A; n bytes &#x5927;&#x5C0F;</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">encoding</th>
@@ -2393,7 +2395,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">sample_rate</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x10~0x13 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x91C7;&#x6837;&#x7387;&#xFF0C;&#x7531;&#x4E8E; SUD &#x53EA;&#x80FD;&#x5B58; PCM&#xFF0C;&#x5BF9; PCM &#x6765;&#x8BF4;&#x5C31;&#x662F; &lt;PCM &#x91C7;&#x6837;&#x7387;&gt;&#xFF0C;&#x6709;&#x8BE5;&#x503C; == 8000 | 11025 | 24000 | 44100 &#x7B49;</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x91C7;&#x6837;&#x7387;&#xFF0C;&#x7531;&#x4E8E; SND &#x53EA;&#x80FD;&#x5B58; PCM&#xFF0C;&#x5BF9; PCM &#x6765;&#x8BF4;&#x5C31;&#x662F; &lt;PCM &#x91C7;&#x6837;&#x7387;&gt;&#xFF0C;&#x6709;&#x8BE5;&#x503C; == 8000 | 11025 | 24000 | 44100 &#x7B49;</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">channels</th>
@@ -2442,7 +2444,7 @@
     <td style="border: 1px solid #ddd; padding: 10px;">&#x91C7;&#x6837;&#x4F4D;&#x6DF1; &#x4E3A; 32-bit &#x7684; IEEE &#x5F52;&#x4E00;&#x5316;&#x6D6E;&#x70B9; PCM &#x6570;&#x636E;</td>
   </tr>
   <tr>
-    <th style="border: 1px solid #ddd; padding: 10px;">64 bit IEE floating point</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">64 bit IEEE floating point</th>
     <td style="border: 1px solid #ddd; padding: 10px;">7</td>
     <td style="border: 1px solid #ddd; padding: 10px;">&#x91C7;&#x6837;&#x4F4D;&#x6DF1; &#x4E3A; 64-bit &#x7684; IEEE &#x5F52;&#x4E00;&#x5316;&#x6D6E;&#x70B9; PCM &#x6570;&#x636E;</td>
   </tr>
@@ -2488,10 +2490,10 @@
 
 <p><strong>&#x8F83;&#x4E4B; WAV &#x683C;&#x5F0F;&#xFF0C;&#x7B80;&#x5316;&#x4E86;&#x5927;&#x91CF;&#x5757;&#x4FE1;&#x606F;&#x3002;</strong></p>
 <p>&#x4F46;&#x4E5F;&#x6B63;&#x662F;&#x56E0;&#x4E3A;&#x8FD9;&#x4E9B;&#x539F;&#x56E0;&#xFF0C;&#x4F7F;&#x5F97;&#x5DE5;&#x7A0B;&#x4E0A;&#x5728;&#x5904;&#x7406; SND/AU &#x683C;&#x5F0F;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x82B1;&#x8D39;&#x989D;&#x5916;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x6765;&#x5904;&#x7406;&#x88AB;&#x56FA;&#x5B9A;&#x7684;&#x4FE1;&#x606F;&#x6210;&#x5206;&#x3002;<strong>&#x8FD9;&#x76F8;&#x5F53;&#x4E8E;&#x53E6;&#x4E00;&#x79CD;&#x901A;&#x8FC7;&#x89C4;&#x5B9A;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x538B;&#x7F29;&#x624B;&#x6BB5;&#x4E86;&#xFF0C;&#x53D8;&#x76F8;&#x7684;&#x589E;&#x52A0;&#x4E86;&#x7CFB;&#x7EDF;&#x5904;&#x7406;&#x8D44;&#x6E90;&#x6D88;&#x8017;</strong>&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x9664;&#x4E86;&#x5728; NeXT &#x7CFB;&#x7EDF;&#x4E0A;&#x5F97;&#x5230;&#x4E86;&#x5927;&#x8303;&#x56F4;&#x5E94;&#x7528;&#x5916;&#xFF0C;&#x73B0;&#x5982;&#x4ECA; SND/AU &#x683C;&#x5F0F;&#x5DF2;&#x6210;&#x4E3A;&#x9010;&#x6B65;&#x88AB;&#x6DD8;&#x6C70;&#x7684;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x3002;</p>
-<p>&#x800C;&#x4E0E;&#x4E4B;&#x76F8;&#x5BF9;&#x7684;&#xFF0C;WAV &#x548C; AIFF &#x5219;&#x4ECD;&#x88AB;&#x5927;&#x91CF;&#x4F7F;&#x7528;&#x5728; Windows/Linux &#x548C;&#x82F9;&#x679C; MacOS/iOS  &#x7CFB;&#x7EDF;&#x4E2D;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x4E0D;&#x5F97;&#x4E0D;&#x8003;&#x8651;&#xFF0C;<strong>&#x8FC7;&#x6E21;&#x7684;&#x7B80;&#x5316;&#x4FE1;&#x606F;&#xFF0C;&#x662F;&#x5426;&#x4ECD;&#x6709;&#x5FC5;&#x8981;</strong>&#x3002;</p>
+<p>&#x800C;&#x4E0E;&#x4E4B;&#x76F8;&#x5BF9;&#x7684;&#xFF0C;WAV &#x548C; AIFF &#x5219;&#x4ECD;&#x88AB;&#x5927;&#x91CF;&#x4F7F;&#x7528;&#x5728; Windows/Linux &#x548C;&#x82F9;&#x679C; MacOS/iOS  &#x7CFB;&#x7EDF;&#x4E2D;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x4E0D;&#x5F97;&#x4E0D;&#x8003;&#x8651;&#xFF0C;<strong>&#x8FC7;&#x5EA6;&#x7684;&#x7B80;&#x5316;&#x4FE1;&#x606F;&#xFF0C;&#x662F;&#x5426;&#x4ECD;&#x6709;&#x5FC5;&#x8981;</strong>&#x3002;</p>
 <h2 id="aiff-&#x97F3;&#x9891;&#x683C;&#x5F0F;"><strong>AIFF &#x97F3;&#x9891;&#x683C;&#x5F0F;</strong></h2>
 <p><strong>&#x97F3;&#x9891;&#x4EA4;&#x6362;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#xFF08;AIFF [Audio Interchange File Format]&#xFF09;</strong>&#xFF0C;&#x5373; <strong>AIFF &#x97F3;&#x9891;&#x683C;&#x5F0F;&#xFF08;.aif/.aiff&#xFF09;</strong>&#xFF0C;&#x6B63;&#x5982;&#x521A;&#x521A;&#x6240;&#x63D0;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x88AB;&#x4F7F;&#x7528;&#x5728; MacOS/iOS &#x4E0A;&#x7684;&#x672A;&#x538B;&#x7F29;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#x3002;&#x662F;&#x4E00;&#x79CD;&#x96B6;&#x5C5E;&#x4E8E; <strong>&#x4EA4;&#x6362;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#xFF08;IFF [Interchange File Format]&#xFF09;</strong> &#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x4F53;&#x7CFB;&#x7684; <strong>&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#xFF08;File Format&#xFF09;</strong>&#x3002;&#x8BE5;&#x683C;&#x5F0F;&#x7684;&#x7279;&#x70B9;&#x76F8;&#x6BD4; WAV &#x7684; RIFF &#x5206;&#x5757;&#x4F53;&#x7CFB;&#x800C;&#x8A00;&#xFF0C;&#x6709;&#x7740; <strong>&#x66F4;&#x4E3A;&#x590D;&#x6742;&#x7684;&#x5B50;&#x5757;&#x7C7B;&#x522B;</strong>&#x3002;&#x6781;&#x5927;&#x63D0;&#x5347;&#x4E86;&#x80FD;&#x591F;&#x6DB5;&#x76D6;&#x8F85;&#x52A9;&#x4FE1;&#x606F;&#x7684;&#x5E7F;&#x5EA6;&#xFF0C;&#x5E76;&#x4EE5;&#x6B64;&#x4E3A; &#x82F9;&#x679C;/Linux &#x7B49;&#x7CFB;&#x7EDF;&#x7684;&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x4E3A;&#x65B9;&#x4FBF;&#x7684;&#x5F52;&#x7C7B;&#x53C2;&#x8003;&#x9879;&#x3002;</p>
-<p>AIFF &#x97F3;&#x9891;&#x683C;&#x5F0F;&#xFF0C;&#x4ECE;&#x6574;&#x4F53;&#x89D2;&#x5EA6;&#x5305;&#x542B;&#x91CF;&#x79CD;&#x6210;&#x5206;&#xFF1A;</p>
+<p>AIFF &#x97F3;&#x9891;&#x683C;&#x5F0F;&#xFF0C;&#x4ECE;&#x6574;&#x4F53;&#x89D2;&#x5EA6;&#x5305;&#x542B;&#x4E24;&#x79CD;&#x6210;&#x5206;&#xFF1A;</p>
 <ul>
 <li><strong>&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x5757;&#xFF08;FORM Chunk&#xFF09;</strong>&#xFF0C;&#x7528;&#x4EE5;&#x63CF;&#x8FF0;&#x670D;&#x52A1;&#x4E8E;&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x7684;&#x6587;&#x4EF6;&#x672C;&#x8EAB;&#x4FE1;&#x606F;&#xFF1B;</li>
 <li><strong>&#x9644;&#x5C5E;&#x4FE1;&#x606F;&#x5B50;&#x5757;&#xFF08;INFO sub-Chunks&#xFF09;</strong>&#xFF0C;&#x4E00;&#x7CFB;&#x5217;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x6301;&#x7EED;&#x5B58;&#x50A8;&#x5B50;&#x5757;&#xFF1B;</li>
@@ -2527,7 +2529,7 @@
     <td style="border: 1px solid #ddd; padding: 10px;">&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x5757;&#x9664; ckID &#x548C; ckSize &#x5C5E;&#x6027;&#x5916;&#xFF0C;&#x5B8C;&#x6574;&#x6587;&#x4EF6;&#x7684;&#x603B;&#x4F53;&#x5927;&#x5C0F;&#xFF08;bytes&#xFF09;&#xFF0C;== 4 + Sum(Local Chunk Size)</td>
   </tr>
   <tr>
-    <th style="border: 1px solid #ddd; padding: 10px;">fromType</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">formType</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x08~0x0b (4)</td>
     <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D; IFF &#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;AIFF &#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;AIFF&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x41494646</td>
   </tr>
@@ -2612,7 +2614,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;COMM&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x434f4d4d</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;COMM&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x434f4d4d</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -2637,7 +2639,7 @@
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">sampleRate</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x10~0x13 (4) +6 (extendable)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x91C7;&#x6837;&#x7387;&#xFF0C;&#x7531;&#x4E8E; SUD &#x53EA;&#x80FD;&#x5B58; PCM&#xFF0C;&#x5BF9; PCM &#x6765;&#x8BF4;&#x5C31;&#x662F; &lt;PCM &#x91C7;&#x6837;&#x7387;&gt;&#xFF0C;&#x6709;&#x8BE5;&#x503C; == 8000 | 11025 | 24000 | 44100 &#x7B49;</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x91C7;&#x6837;&#x7387;&#xFF0C;&#x7531;&#x4E8E; AIFF &#x53EA;&#x80FD;&#x5B58; PCM&#xFF0C;&#x5BF9; PCM &#x6765;&#x8BF4;&#x5C31;&#x662F; &lt;PCM &#x91C7;&#x6837;&#x7387;&gt;&#xFF0C;&#x6709;&#x8BE5;&#x503C; == 8000 | 11025 | 24000 | 44100 &#x7B49;</td>
   </tr>
 </table>
 
@@ -2652,7 +2654,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;SSND&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x53534e44</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;SSND&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x53534e44</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -2687,7 +2689,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;MARK&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x4d41524b</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;MARK&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x4d41524b</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -2737,7 +2739,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;INST&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x494e5354</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;INST&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x494e5354</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -2777,7 +2779,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">gain</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x0e~0x0f (2)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6307;&#x5B9A;&#x4E50;&#x5668;&#x7247;&#x6BB5;&#x7684;&#x97F3;&#x9AD8;&#xFF08;Loudness&#xFF09;&#x589E;&#x51CF;&#x76CA;&#xFF0C;&#x8BE5;&#x503C;&#x91C7;&#x7528; &#x58F0;&#x538B;&#x7EA7;&#xFF08;SPL&#xFF09;&#x53D6; n = -32768&#xFF5E;+32767 &#xFF0C;&#x4EE3;&#x8868;&#x5728;&#x5F53;&#x524D;&#x64AD;&#x653E;&#x97F3;&#x91CF;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x589E;&#x51CF; n dB</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6307;&#x5B9A;&#x4E50;&#x5668;&#x7247;&#x6BB5;&#x7684;&#x54CD;&#x5EA6;&#xFF08;Loudness&#xFF09;&#x589E;&#x51CF;&#x76CA;&#xFF0C;&#x8BE5;&#x503C;&#x91C7;&#x7528; &#x58F0;&#x538B;&#x7EA7;&#xFF08;SPL&#xFF09;&#x53D6; n = -32768&#xFF5E;+32767 &#xFF0C;&#x4EE3;&#x8868;&#x5728;&#x5F53;&#x524D;&#x64AD;&#x653E;&#x97F3;&#x91CF;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x589E;&#x51CF; n dB</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">sustainLoop</th>
@@ -2858,7 +2860,7 @@
 </center>
 
 <p>&#x6240;&#x4EE5;&#xFF0C;<strong>&#x4E50;&#x5668;&#x4FE1;&#x606F;&#x5757; &#x7684; &#x201C;&#x4E50;&#x5668;&#x201D; &#xFF0C;&#x5B9E;&#x5219;&#x4E3A;&#x8BE5;&#x6307;&#x4EE3;&#x7247;&#x6BB5;&#x6570;&#x636E;&#x4E2D;&#xFF0C;&#x7528;&#x4E8E;&#x4E50;&#x7406;&#x8282;&#x594F;&#x6216;&#x4E50;&#x7406;&#x610F;&#x4E49;&#x4E0A;&#x80CC;&#x666F;&#x8282;&#x62CD;&#x5668;&#xFF08;Metronome&#xFF09;&#x7684;&#x4E50;&#x5668;&#x7EC4;&#x5408;&#x7684;&#x62BD;&#x8C61;&#x4EE3;&#x79F0;</strong>&#x3002;</p>
-<p>&#x81F3;&#x4E8E;&#xFF0C;&#x4E50;&#x7406;&#x57FA;&#x8C03;&#xFF08;baseNote&#xFF09;&#x3001;&#x504F;&#x79FB;&#x97F3;&#x9AD8;&#xFF08;detune&#xFF09;&#x3001;&#x6700;&#x4F4E;&#x97F3;&#x8C03;&#xFF08;lowNote&#xFF09;&#x3001;&#x6700;&#x9AD8;&#x97F3;&#x8C03;&#xFF08;highNote&#xFF09;&#x3001;&#x64AD;&#x901F;&#x4E0B;&#x9650;&#xFF08;lowVelocity&#xFF09;&#x3001;&#x64AD;&#x901F;&#x4E0A;&#x7EBF;&#xFF08;highVelocity&#xFF09;&#x3001;&#x97F3;&#x9AD8;&#x589E;&#x51CF;&#x76CA;&#xFF08;gain&#xFF09;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x90FD;&#x662F;&#x5BF9;&#x6574;&#x4E2A;&#x4FE1;&#x606F;&#x5757;&#x4E2D;&#xFF0C;&#x5168;&#x90E8;&#x5FAA;&#x73AF;&#x7247;&#x6BB5;&#x7684; <strong>&#x8865;&#x5145;&#x4FEE;&#x9970;</strong>&#xFF0C;&#x4EE5; <strong>&#x65B9;&#x4FBF;&#x8FBE;&#x5230;&#x6700;&#x4F73;&#x653E;&#x97F3;&#x6548;&#x679C;</strong>&#x3002;</p>
+<p>&#x81F3;&#x4E8E;&#xFF0C;&#x4E50;&#x7406;&#x57FA;&#x8C03;&#xFF08;baseNote&#xFF09;&#x3001;&#x504F;&#x79FB;&#x97F3;&#x9AD8;&#xFF08;detune&#xFF09;&#x3001;&#x6700;&#x4F4E;&#x97F3;&#x8C03;&#xFF08;lowNote&#xFF09;&#x3001;&#x6700;&#x9AD8;&#x97F3;&#x8C03;&#xFF08;highNote&#xFF09;&#x3001;&#x64AD;&#x901F;&#x4E0B;&#x9650;&#xFF08;lowVelocity&#xFF09;&#x3001;&#x64AD;&#x901F;&#x4E0A;&#x9650;&#xFF08;highVelocity&#xFF09;&#x3001;&#x54CD;&#x5EA6;&#x589E;&#x51CF;&#x76CA;&#xFF08;gain&#xFF09;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x90FD;&#x662F;&#x5BF9;&#x6574;&#x4E2A;&#x4FE1;&#x606F;&#x5757;&#x4E2D;&#xFF0C;&#x5168;&#x90E8;&#x5FAA;&#x73AF;&#x7247;&#x6BB5;&#x7684; <strong>&#x8865;&#x5145;&#x4FEE;&#x9970;</strong>&#xFF0C;&#x4EE5; <strong>&#x65B9;&#x4FBF;&#x8FBE;&#x5230;&#x6700;&#x4F73;&#x653E;&#x97F3;&#x6548;&#x679C;</strong>&#x3002;</p>
 <p><br></p>
 <p><strong>&#x8BC4;&#x8BBA;&#x4FE1;&#x606F;&#x5757;&#xFF08;Comment Chunk&#xFF09;</strong> &#x4E3B;&#x8981;&#x5305;&#x542B; 4 &#x79CD;&#x5C5E;&#x6027;&#x548C; <strong>1 &#x79CD; &#x5B50;&#x6570;&#x636E;&#x4F53;&#xFF08;sub-Data Info&#xFF09;</strong>&#xFF0C;&#x672C;&#x8EAB;&#x5177;&#x6709; <strong>&#x4E24;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6A21;&#x578B;</strong>&#xFF1A;</p>
 <table style="width:100%; border-collapse: collapse;">
@@ -2870,7 +2872,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;COMT&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x434f4d54</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;COMT&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x434f4d54</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -2928,7 +2930,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#xFF08;&#x6CE8;&#x610F;&#x7A7A;&#x683C;&#xFF09;<br> &#x547D;&#x540D;&#x6587;&#x5B57;&#x5757; == &apos;NAME&apos; ==  0x4e414d45<br>&#x4F5C;&#x8005;&#x6587;&#x5B57;&#x5757; == &apos;AUTH&apos; ==  0x41555448<br>&#x7248;&#x6743;&#x6587;&#x5B57;&#x5757; == &apos;(c) &apos; ==  0x28232920<br>&#x58F0;&#x660E;&#x6587;&#x5B57;&#x5757; == &apos;ANNO&apos; ==  0x414e4e4f</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#xFF08;&#x6CE8;&#x610F;&#x7A7A;&#x683C;&#xFF09;<br> &#x547D;&#x540D;&#x6587;&#x5B57;&#x5757; == &apos;NAME&apos; ==  0x4e414d45<br>&#x4F5C;&#x8005;&#x6587;&#x5B57;&#x5757; == &apos;AUTH&apos; ==  0x41555448<br>&#x7248;&#x6743;&#x6587;&#x5B57;&#x5757; == &apos;(c) &apos; ==  0x28632920<br>&#x58F0;&#x660E;&#x6587;&#x5B57;&#x5757; == &apos;ANNO&apos; ==  0x414e4e4f</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -2957,7 +2959,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;AESD&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x41455344</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;AESD&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x41455344</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -2967,7 +2969,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">AESChannelStatus</th>
     <td style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">0x08~0x20 (24)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x8BE5;&#x503C;&#x7528;&#x4E8E;&#x534F;&#x52A9; AES &#x5B9E;&#x65F6;&#x6570;&#x5B57;&#x97F3;&#x9891;&#x4F20;&#x8F93;&#xFF08;&#x8F6C;&#x5F55;&#x65F6;&#xFF09;&#xFF0C;&#x6765;&#x81EA; AES3-1-2009 (r2019) &#x89C4;&#x5B9A;&#xFF0C;&#x901A;&#x5E38;&#x53EA;&#x9700;&#x5173;&#x6CE8;&#x4F4D;&#x4E8E;&#x5B57;&#x8282;&#x7B2C; 0&#x3001;2&#x3001;3&#x3001;4 &#x4F4D;&#x7684;&#x9884;&#x5F3A;&#x8C03;&#xFF08;Pre-emphasis&#xFF09;&#x8F85;&#x52A9;&#x503C; [20] &#x3002;&#x8BE5;&#x503C;&#x81EA;&#x97F3;&#x6E90;&#x751F;&#x6210;&#x540E;&#xFF0C;&#x5C31;&#x662F;&#x56FA;&#x5B9A;&#x53C2;&#x6570;&#x3002;&#x8FD9;&#x91CC;&#x4E0D;&#x505A;&#x5C55;&#x5F00;&#xFF0C;&#x5177;&#x4F53;&#x89C1;&#x53C2;&#x8003;&#x6587;&#x732E; AES3-1-2009 (r2019) &#x89C4;&#x5B9A;</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x8BE5;&#x503C;&#x7528;&#x4E8E;&#x534F;&#x52A9; AES &#x5B9E;&#x65F6;&#x6570;&#x5B57;&#x97F3;&#x9891;&#x4F20;&#x8F93;&#xFF08;&#x8F6C;&#x5F55;&#x65F6;&#xFF09;&#xFF0C;&#x6765;&#x81EA; AES3-1-2009 (r2019) &#x89C4;&#x5B9A;&#xFF0C;&#x901A;&#x5E38;&#x53EA;&#x9700;&#x5173;&#x6CE8;&#x4F4D;&#x4E8E;&#x5B57;&#x8282;&#x7B2C; 0&#x3001;2&#x3001;3&#x3001;4 &#x4F4D;&#x7684;&#x9884;&#x52A0;&#x91CD;&#xFF08;Pre-emphasis&#xFF09;&#x8F85;&#x52A9;&#x503C; [\[20\]][ref] &#x3002;&#x8BE5;&#x503C;&#x81EA;&#x97F3;&#x6E90;&#x751F;&#x6210;&#x540E;&#xFF0C;&#x5C31;&#x662F;&#x56FA;&#x5B9A;&#x53C2;&#x6570;&#x3002;&#x8FD9;&#x91CC;&#x4E0D;&#x505A;&#x5C55;&#x5F00;&#xFF0C;&#x5177;&#x4F53;&#x89C1;&#x53C2;&#x8003;&#x6587;&#x732E; AES3-1-2009 (r2019) &#x89C4;&#x5B9A;</td>
   </tr>
 </table>
 
@@ -2982,7 +2984,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;MIDI&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x4d494449</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;MIDI&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x4d494449</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -3009,7 +3011,7 @@
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;APPL&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x4150504c</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">&#x6807;&#x8BB0;&#x5F53;&#x524D;&#x5B50;&#x5757;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5B58;&#x50A8; &apos;APPL&apos; &#x56DB;&#x4E2A;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x7684; ASCII &#x7801;&#xFF0C;&#x5373; == 0x4150504c</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -3029,12 +3031,12 @@
 </table>
 
 <p><br></p>
-<p>&#x5230;&#x6B64;&#xFF0C; <strong>12 &#x79CD; &#x9644;&#x5C5E;&#x4FE1;&#x606F;&#x5B50;&#x5757;&#xFF08;INFO sub-Chunks&#xFF09;</strong>&#xFF0C;&#x5373; <strong>&#x672C;&#x5730;&#x4FE1;&#x606F;&#x5757;&#xFF08;Local Chunks&#xFF09;</strong>&#xFF0C;&#x7684;&#x4F5C;&#x7528;&#x4ECB;&#x7ECD;&#x5B8C;&#x6BD5;&#x3002;&#x800C;&#x5404;&#x4E2A;&#x5B50;&#x5757;&#x7684; <strong>&#x4FE1;&#x606F;&#x5185;&#x5BB9;&#x4F18;&#x5148;&#x7EA7;</strong>&#xFF0C;&#x4FBF;&#x6709;&#x5982;&#x4E0B;&#x987A;&#x5E8F;&#xFF1A;</p>
+<p>&#x5230;&#x6B64;&#xFF0C; <strong>12 &#x79CD; &#x9644;&#x5C5E;&#x4FE1;&#x606F;&#x5B50;&#x5757;&#xFF08;INFO sub-Chunks&#xFF09;</strong>&#xFF0C;&#x5373; <strong>&#x672C;&#x5730;&#x4FE1;&#x606F;&#x5757;&#xFF08;Local Chunks&#xFF09;</strong> &#x7684;&#x4F5C;&#x7528;&#x4ECB;&#x7ECD;&#x5B8C;&#x6BD5;&#x3002;&#x800C;&#x5404;&#x4E2A;&#x5B50;&#x5757;&#x7684; <strong>&#x4FE1;&#x606F;&#x5185;&#x5BB9;&#x4F18;&#x5148;&#x7EA7;</strong>&#xFF0C;&#x4FBF;&#x6709;&#x5982;&#x4E0B;&#x987A;&#x5E8F;&#xFF1A;</p>
 <center>
 <figure>
    <img width="350" height="400" src="../../Pictures/AF_aiff_chunk_sort.png" alt="">
     <figcaption>
-      <p>&#x56FE; 1-49 AIFF &#x4E50;&#x5668;&#x4FE1;&#x606F;&#x5757; &#x4FE1;&#x606F;&#x4F18;&#x5148;&#x7EA7;&#x6392;&#x5E8F;</p>
+      <p>&#x56FE; 1-49 AIFF &#x672C;&#x5730;&#x4FE1;&#x606F;&#x5757; &#x4FE1;&#x606F;&#x4F18;&#x5148;&#x7EA7;&#x6392;&#x5E8F;</p>
    </figcaption>
 </figure>
 </center>
@@ -3054,7 +3056,7 @@
 <p>&#x501F;&#x6B64;&#xFF0C;&#x5E38;&#x7528;&#x7684; <strong>&#x4E09;&#x79CD;&#x672A;&#x538B;&#x7F29;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF08;&#x6216;&#x8005;&#x8BF4;&#x4E24;&#x79CD;&#xFF0C;&#x5373; WAV &#x548C; AIFF&#xFF09;</strong> &#x4E0E; <strong>PCM &#x57FA;&#x7840;&#x683C;&#x5F0F;</strong>&#xFF0C;&#x5171;&#x540C;&#x6784;&#x6210;&#x4E86; <strong>&#x97F3;&#x9891;&#x683C;&#x5F0F;&#x7684;&#x5730;&#x57FA;</strong>&#x3002;</p>
 <p>&#x4F46;&#x5982;&#x6B64;&#x76F4;&#x63A5;&#x6216;&#x76F8;&#x5BF9;&#x76F4;&#x63A5;&#x7684;&#x5BF9; PCM &#x6570;&#x636E;&#x7684;&#x5B58;&#x653E;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD8;&#x662F;&#x4F1A;&#x6709; <strong>&#x5927;&#x91CF;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x6D6A;&#x8D39;</strong>&#x3002;&#x4E8E;&#x662F;&#xFF0C;<strong>&#x4E3A;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x7F29;&#x51CF;&#x97F3;&#x9891;&#x6570;&#x636E;</strong>&#xFF0C;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x6301;&#x7EED;&#x5316;&#x5B58;&#x50A8;&#x95EE;&#x9898;&#xFF0C;&#x5DE5;&#x7A0B;&#x5E08;&#x4EEC;&#x5F00;&#x59CB;&#x91C7;&#x7528;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#x6765;&#x63D0;&#x9AD8;&#x7A7A;&#x95F4;&#x5229;&#x7528;&#x7387;&#x3002;&#x8FD9;&#x5E26;&#x6765;&#x4E86;&#x643A;&#x5E26;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#x7684;&#xFF0C;<strong>&#x65E0;&#x635F;&#x538B;&#x7F29;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF08;Lossless [Lossless Compression Audio Format]&#xFF09;</strong> &#x548C; <strong>&#x6709;&#x635F;&#x538B;&#x7F29;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF08;Lossy [Lossy Compression Audio Format]&#xFF09;</strong>&#x3002;</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2024-09-12 12:11:10
+2026-08-24 21:40:44
 </span></footer>
                                 
                                 </section>
@@ -3098,7 +3100,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.6.2 无压缩编码格式（Uncompressed Encode）","level":"1.2.6.2","depth":3,"next":{"title":"1.6.3 无损压缩编码格式（Lossless Encode）","level":"1.2.6.3","depth":3,"path":"Chapter_1/Language/cn/Docs_1_6_3.md","ref":"Chapter_1/Language/cn/Docs_1_6_3.md","articles":[]},"previous":{"title":"1.6.1 音频格式（Audio Format）","level":"1.2.6.1","depth":3,"path":"Chapter_1/Language/cn/Docs_1_6_1.md","ref":"Chapter_1/Language/cn/Docs_1_6_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_1/Language/cn/Docs_1_6_2.md","mtime":"2024-09-12T04:11:10.590Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-14T03:29:12.787Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.6.2 无压缩编码格式（Uncompressed Encode）","level":"1.2.6.2","depth":3,"next":{"title":"1.6.3 无损压缩编码格式（Lossless Encode）","level":"1.2.6.3","depth":3,"path":"Chapter_1/Language/cn/Docs_1_6_3.md","ref":"Chapter_1/Language/cn/Docs_1_6_3.md","articles":[]},"previous":{"title":"1.6.1 音频格式（Audio Format）","level":"1.2.6.1","depth":3,"path":"Chapter_1/Language/cn/Docs_1_6_1.md","ref":"Chapter_1/Language/cn/Docs_1_6_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_1/Language/cn/Docs_1_6_2.md","mtime":"2026-08-24T13:40:44.915Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-08-24T13:41:27.489Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -3157,10 +3159,6 @@
     
         
         <script src="../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
 

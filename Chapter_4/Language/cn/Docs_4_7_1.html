@@ -74,6 +74,8 @@
 
     
         
+        <link rel="stylesheet" href="../../../styles/common.css">
+        
     
         
     
@@ -173,7 +175,7 @@
                 <a href="../../../COPYRIGHT.html">
             
                     
-                     =[>> 版权申明© <<]= 
+                     =[>> 版权声明© <<]= 
             
                 </a>
             
@@ -523,7 +525,7 @@
                 <a href="../../../Chapter_1/Language/cn/Docs_1_6_4.html">
             
                     
-                    1.6.4 有损压缩编码格式（Uncompressed Encode）
+                    1.6.4 有损压缩编码格式（Lossy Encode）
             
                 </a>
             
@@ -1065,7 +1067,7 @@
                 <a href="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
             
                     
-                    3.1.3 傅立叶变化的经典 - 快速傅立叶变换（FFT）
+                    3.1.3 傅立叶变换的经典 - 快速傅立叶变换（FFT）
             
                 </a>
             
@@ -1078,7 +1080,7 @@
                 <a href="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
             
                     
-                    3.1.4 傅里叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
+                    3.1.4 傅立叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
             
                 </a>
             
@@ -2040,7 +2042,7 @@
                 <a href="../../../Chapter_5/Language/cn/Docs_5_1_1.html">
             
                     
-                    5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）
+                    5.1.1 常用数学库（Numpy、Pandas、Matplotlib）
             
                 </a>
             
@@ -2167,13 +2169,13 @@
 </figure>
 </center>
 
-<p>&#x6211;&#x4EEC;&#x7528;&#x5B83;&#x6765;&#x505A;&#x4E00;&#x4E2A;&#xFF0C;&#x57FA;&#x4E8E; MINST &#x624B;&#x5199;&#x5B57;&#x6BCD;&#x56FE;&#x50CF;&#x96C6;&#x7684;&#xFF0C;&#x7B80;&#x5355;&#x5B57;&#x6BCD;&#x5206;&#x7C7B;&#x8BC6;&#x522B;&#x6A21;&#x578B;&#x3002;
+<p>&#x6211;&#x4EEC;&#x7528;&#x5B83;&#x6765;&#x505A;&#x4E00;&#x4E2A;&#xFF0C;&#x57FA;&#x4E8E; MNIST &#x624B;&#x5199;&#x5B57;&#x6BCD;&#x56FE;&#x50CF;&#x96C6;&#x7684;&#xFF0C;&#x7B80;&#x5355;&#x5B57;&#x6BCD;&#x5206;&#x7C7B;&#x8BC6;&#x522B;&#x6A21;&#x578B;&#x3002;
 &#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
 <center>
 <figure>
    <img width="800" height="400" src="../../Pictures/Alexnet_using.png" alt="">
     <figcaption>
-      <p>&#x56FE; 4-38 &#x4EE5; AlexNet &#x90E8;&#x7F72;&#x7684; MINST &#x5B57;&#x6BCD;&#x8BC6;&#x522B;&#x6A21;&#x578B;</p>
+      <p>&#x56FE; 4-38 &#x4EE5; AlexNet &#x90E8;&#x7F72;&#x7684; MNIST &#x5B57;&#x6BCD;&#x8BC6;&#x522B;&#x6A21;&#x578B;</p>
    </figcaption>
 </figure>
 </center>
@@ -2181,13 +2183,13 @@
 <p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x8BE5;&#x6A21;&#x578B;&#x5728;&#x5C42;&#x7EA7;&#x8BBE;&#x8BA1;&#x4E0A;&#xFF0C;&#x524D;&#x534A;&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x5230;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7531;&#x591A;&#x4E2A; <strong>&#x66F4;&#x504F;&#x91CD;&#x529F;&#x80FD;&#x6027;</strong> &#x7684;&#x7279;&#x6B8A;&#x9690;&#x85CF;&#x5C42;&#xFF0C;&#x5373;&#x5377;&#x79EF;&#x5C42;&#xFF08;Conv&#xFF09;&#x3001;&#x6C60;&#x5316;&#x5C42;&#xFF08;Pool&#xFF09;&#xFF0C;&#x4EE5;&#x8FDE;&#x63A5;&#x6784;&#x6210;&#x590D;&#x6742;&#x7ED3;&#x6784;&#x3002;&#x4E4B;&#x540E;&#xFF0C;&#x5728;&#x7ECF;&#x8FC7;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x5E73;&#x5316;&#x5C42;&#xFF08;Flatten Layer&#xFF09;&#x5904;&#x7406;&#x591A;&#x901A;&#x9053;&#x6570;&#x636E;&#x5B8C;&#x6BD5;&#xFF0C;&#x624D;&#x5230;&#x8FBE;&#x6211;&#x4EEC;&#x719F;&#x77E5;&#x7C7B;&#x4F3C;&#x4E4B;&#x524D;&#x4ECB;&#x7ECD;&#x7684;&#xFF0C;&#x4E09;&#x5C42;&#x7B80;&#x6613;&#x7ED3;&#x6784;&#x7EC4;&#x6210; <strong>&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#xFF08;MLP&#xFF09;&#x6734;&#x7D20;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF08;Simple Neural Network&#xFF09;</strong> &#x7684;&#x90E8;&#x5206;&#x3002;</p>
 <h2 id="cnn-&#x5C42;&#x7EA7;&#x5206;&#x7C7B;"><strong>CNN &#x5C42;&#x7EA7;&#x5206;&#x7C7B;</strong></h2>
 <p>&#x663E;&#x7136;&#xFF0C;&#x65B0;&#x5F15;&#x5165;&#x7684; <strong>&#x5377;&#x79EF;&#x5C42;&#xFF08;Conv&#xFF09;</strong> &#x3001; <strong>&#x6C60;&#x5316;&#x5C42;&#xFF08;Pool&#xFF09;</strong> &#x3001; <strong>&#x5E73;&#x5316;&#x5C42;&#xFF08;Flatten Layer&#xFF09;</strong>&#xFF0C;&#x4ECE;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7ED3;&#x6784;&#x4E0A;&#x5212;&#x5206;&#xFF0C;<strong>&#x4ECD;&#x7136;&#x5C5E;&#x4E8E;&#x9690;&#x85CF;&#x5C42;</strong>&#x3002;&#x4F46;&#x6240;&#x504F;&#x91CD;&#x7684;&#x5904;&#x7406;&#x5374;&#x66F4;&#x4E3A;&#x7EC6;&#x5206;&#x3002;&#x5355;&#x7EAF;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;&#x7CFB;&#x7684;&#x79F0;&#x8C13;&#xFF0C;&#x5DF2;&#x7ECF;&#x4E0D;&#x80FD;&#x4F53;&#x73B0;&#x5176;&#x5177;&#x4F53;&#x4F5C;&#x7528;&#x4E86;&#x3002;</p>
-<p>&#x4ECB;&#x4E8E;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x5F97;&#x4E0D;&#x91C7;&#x7528; <strong>&#x529F;&#x80FD;&#x5206;&#x7C7B;</strong> &#x65B9;&#x5F0F;&#xFF0C;&#x7EC6;&#x5316;&#x9690;&#x85CF;&#x5C42;&#x7C7B;&#xFF0C;&#x6765;&#x6269;&#x5C55;&#x5BF9; CNN &#x7684;&#x7ED3;&#x6784;&#x63CF;&#x8FF0;&#x80FD;&#x529B;&#x3002;</p>
+<p>&#x9274;&#x4E8E;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x5F97;&#x4E0D;&#x91C7;&#x7528; <strong>&#x529F;&#x80FD;&#x5206;&#x7C7B;</strong> &#x65B9;&#x5F0F;&#xFF0C;&#x7EC6;&#x5316;&#x9690;&#x85CF;&#x5C42;&#x7C7B;&#xFF0C;&#x6765;&#x6269;&#x5C55;&#x5BF9; CNN &#x7684;&#x7ED3;&#x6784;&#x63CF;&#x8FF0;&#x80FD;&#x529B;&#x3002;</p>
 <p>&#x4E8E;&#x662F;&#xFF0C;&#x7ED3;&#x5408;&#x539F;&#x672C;&#x8F93;&#x5165;&#x5C42;&#x3001;&#x8F93;&#x51FA;&#x5C42;&#x7684;&#x76F8;&#x5BF9;&#x51C6;&#x786E;&#x63CF;&#x8FF0;&#xFF0C;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x5C06; CNN &#x7684;&#x5C42;&#x7C7B;&#x578B;&#x5206;&#x4E3A; 6 &#x7C7B;&#x3002;&#x5206;&#x522B;&#x662F;&#xFF1A;</p>
 <ul>
 <li><strong>&#x8F93;&#x5165;&#x5C42;&#xFF08;Input Layer&#xFF09;</strong>&#xFF0C;&#x5904;&#x7406;&#x63A5;&#x6536;&#x6837;&#x672C;&#x7684;&#x524D;&#x5904;&#x7406;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1B;</li>
 <li><strong>&#x5377;&#x79EF;&#x5C42;&#xFF08;Conv [Convolutional Layer]&#xFF09;</strong>&#xFF0C;&#x5904;&#x7406;&#x5377;&#x79EF;&#x6838;&#x7684;&#x79FB;&#x52A8; &#x548C; &#x76F8;&#x5173;&#x6570;&#x636E;&#x8FC7;&#x6EE4;&#x5DE5;&#x4F5C;&#xFF1B;</li>
 <li><strong>&#x6C60;&#x5316;&#x5C42;&#xFF08;Pool [Pooling Layer]&#xFF09;</strong>&#xFF0C;&#x5904;&#x7406;&#x538B;&#x7F29;/&#x63D0;&#x5347;&#x53C2;&#x6570;&#x91CF;&#x7684;&#x5DE5;&#x4F5C;&#xFF1B;</li>
-<li><strong>&#x5E73;&#x5316;&#x5C42;&#xFF08;Flat [Flatten Layer]&#xFF09;</strong>&#xFF0C;&#x5904;&#x7406;&#x63A5;&#x6536;&#x6837;&#x672C;&#x7684;&#x524D;&#x5904;&#x7406;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1B;</li>
+<li><strong>&#x5E73;&#x5316;&#x5C42;&#xFF08;Flat [Flatten Layer]&#xFF09;</strong>&#xFF0C;&#x5904;&#x7406;&#x591A;&#x7EF4;&#x6570;&#x636E;&#x5411;&#x6307;&#x5B9A;&#x7EF4;&#x5EA6;&#x7684;&#x5E73;&#x5316;&#x5C55;&#x5F00;&#x5DE5;&#x4F5C;&#xFF1B;</li>
 <li><strong>&#x5168;&#x8FDE;&#x63A5;&#x5C42;&#xFF08;FC [Fully Connected Layer]&#xFF09;</strong>&#xFF0C;&#x5B8C;&#x6210;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x63D0;&#x53D6;&#x540E;&#x7279;&#x5F81;&#x7684;&#x6743;&#x91CD;&#x8FED;&#x4EE3;&#x90E8;&#x5206;&#xFF1B;</li>
 <li><strong>&#x8F93;&#x51FA;&#x5C42;&#xFF08;Output Layer&#xFF09;</strong>&#xFF0C;&#x5B8C;&#x6210;&#x6700;&#x7EC8;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x7ED3;&#x679C;&#x8F93;&#x51FA;&#xFF0C;&#x4EA4;&#x7531;&#x635F;&#x5931;&#x51FD;&#x6570;&#x5904;&#x7406;</li>
 </ul>
@@ -2238,7 +2240,7 @@
 <p>&#x9664;&#x6B64;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5176;&#x5B83;&#x6C60;&#x5316;&#x7B97;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&#x6DF7;&#x5408;&#x6C60;&#x5316;&#xFF08;Mixed Pooling&#xFF09;&#x3001;&#x7EBF;&#x6027;&#x63A2;&#x6D4B;&#x6C60;&#x5316;&#xFF08;Linear Probing Pooling&#xFF09;<a href="References_4.html">[19]</a> &#x3001;&#x5411;&#x4E0A;&#x91C7;&#x6837;&#xFF08;Upsampling&#xFF09;&#x7684;&#x5168;&#x5C40;&#x6C60;&#x5316;&#xFF08;Global Pooling&#xFF09;&#x7B49;&#x3002; <strong>&#x65B9;&#x6CD5;&#x4E0D;&#x4E00;&#x800C;&#x8DB3;&#x3002;</strong></p>
 <p>&#x4F46;&#x6C60;&#x5316;&#x5C42;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x59CB;&#x7EC8;&#x662F;&#x5BF9;&#x524D;&#x7EA7;&#x8F93;&#x5165;&#x7684;&#x4E00;&#x79CD;&#xFF0C;&#x5F15;&#x5165;&#x76F8;&#x5BF9;&#x5BF9;&#x6297;&#x6027;&#x7684;&#x6821;&#x51C6;&#x65B9;&#x5F0F;&#x3002;&#x4F7F;&#x5F97;&#x7279;&#x5F81;&#x7684;&#x5C0F;&#x8303;&#x56F4;&#x5185;&#x503C;&#x5F97;&#x5230;&#x7A81;&#x51FA;&#xFF0C;&#x6216;&#x7528;&#x4EE5;&#x78E8;&#x5E73;&#x90E8;&#x5206;&#x6838;&#x5185;&#x6570;&#x636E;&#x5E72;&#x6270;&#x7684;&#x624B;&#x6BB5;&#x3002;</p>
 <h2 id="cnn-&#x5E73;&#x5316;&#x5C42;&#xFF08;cnn-flat&#xFF09;"><strong>CNN &#x5E73;&#x5316;&#x5C42;&#xFF08;CNN-Flat&#xFF09;</strong></h2>
-<p><strong>CNN &#x5E73;&#x5316;&#x5C42;&#xFF08;CNN-Flat&#xFF09;</strong>&#xFF0C;&#x4ECE;&#x5B57;&#x9762;&#x610F;&#x4E49;&#x7406;&#x89E3;&#xFF0C;&#x5373;&#x628A;&#x8F93;&#x5165;&#x53D8;&#x6362;&#x5230;&#x6307;&#x5B9A;&#x7EF4;&#x5EA6;&#x5927;&#x5C0F;&#x6570;&#x636E;&#x5F53;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x5C42;&#x3002;&#x5B83;&#x7684;&#x610F;&#x4E49;&#x5728;&#x4E8E;&#xFF0C;<strong>&#x4E3A;&#x4F20;&#x7EDF; MLP &#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x90E8;&#x5206;&#xFF0C;&#x63D0;&#x4F9B;&#x53EF;&#x4F9B;&#x5176;&#x5B66;&#x4E60;&#x7684;&#x8F93;&#x5165;&#x7279;&#x5F81;</strong>&#x3002;</p>
+<p><strong>CNN &#x5E73;&#x5316;&#x5C42;&#xFF08;CNN-Flat&#xFF09;</strong>&#xFF0C;&#x4ECE;&#x5B57;&#x9762;&#x610F;&#x4E49;&#x7406;&#x89E3;&#xFF0C;&#x5373;&#x628A;&#x8F93;&#x5165;&#x53D8;&#x6362;&#x5230;&#x6307;&#x5B9A;&#x7EF4;&#x5EA6;&#x5927;&#x5C0F;&#x6570;&#x636E;&#x7684;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x5C42;&#x3002;&#x5B83;&#x7684;&#x610F;&#x4E49;&#x5728;&#x4E8E;&#xFF0C;<strong>&#x4E3A;&#x4F20;&#x7EDF; MLP &#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x90E8;&#x5206;&#xFF0C;&#x63D0;&#x4F9B;&#x53EF;&#x4F9B;&#x5176;&#x5B66;&#x4E60;&#x7684;&#x8F93;&#x5165;&#x7279;&#x5F81;</strong>&#x3002;</p>
 <p>&#x56E0;&#x6B64;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x5E73;&#x5316;&#x5C42;&#x64CD;&#x4F5C;&#xFF0C;&#x5373;&#x5C06;&#x524D;&#x4E00;&#x7EA7;&#x8F93;&#x5165;&#x76F4;&#x63A5;&#x6309;&#x7167;&#x987A;&#x5E8F;&#x5EF6;&#x5C55;&#x5230;&#x6307;&#x5B9A;&#x7EF4;&#x5EA6;&#x5373;&#x53EF;&#x3002;</p>
 <center>
 <figure>
@@ -2249,7 +2251,7 @@
 </figure>
 </center>
 
-<p>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x9009;&#x62E9;&#x8F93;&#x51FA;&#x6241;&#x5E73;&#x5316;&#x5230; <strong>&#x4E00;&#x7EF4;&#x5F20;&#x91CF;&#xFF08;1-dim Tensor&#xFF0C;&#x5373;  &#x7684;&#x6709; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>&#xD7;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n \times 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mbin">&#xD7;</span><span class="mord mathrm">1</span></span></span></span> &#x4E2A;&#x5143;&#x7D20;&#x7684;&#x5411;&#x91CF;&#xFF09;</strong>&#x3002;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x5982;&#x4E0A;&#x56FE;&#x5C55;&#x793A;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x9009;&#x62E9;&#x8F93;&#x51FA;&#x6241;&#x5E73;&#x5316;&#x5230; <strong>&#x4E00;&#x7EF4;&#x5F20;&#x91CF;&#xFF08;1-dim Tensor&#xFF0C;&#x5373;&#x542B;&#x6709; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>&#xD7;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n \times 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mbin">&#xD7;</span><span class="mord mathrm">1</span></span></span></span> &#x4E2A;&#x5143;&#x7D20;&#x7684;&#x5411;&#x91CF;&#xFF09;</strong>&#x3002;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x5982;&#x4E0A;&#x56FE;&#x5C55;&#x793A;&#x3002;</p>
 <h2 id="cnn-&#x5168;&#x8FDE;&#x63A5;&#x5C42;&#xFF08;cnn-fc&#xFF09;-cnn-&#x8F93;&#x51FA;&#x5C42;&#xFF08;cnn-output&#xFF09;"><strong>CNN &#x5168;&#x8FDE;&#x63A5;&#x5C42;&#xFF08;CNN-FC&#xFF09;&amp; CNN &#x8F93;&#x51FA;&#x5C42;&#xFF08;CNN-Output&#xFF09;</strong></h2>
 <p><strong>CNN &#x5168;&#x8FDE;&#x63A5;&#x5C42;&#xFF08;CNN-FC&#xFF09;</strong> &amp; <strong>CNN &#x8F93;&#x51FA;&#x5C42;&#xFF08;CNN-Output&#xFF09;</strong>&#xFF0C;&#x76F8;&#x6BD4;&#x4E4B;&#x524D;&#x51E0;&#x7C7B;&#xFF0C;&#x548C;&#x5B83;&#x4FE9;&#x5728; MLP &#x65F6;&#x671F;&#x7684;&#x4F5C;&#x7528;&#x57FA;&#x672C;&#x65E0;&#x53D8;&#x5316;&#x3002;</p>
 <ul>
@@ -2274,7 +2276,7 @@
 <figure>
    <img width="800" height="360" src="../../Pictures/Alexnet_detail.png" alt="">
     <figcaption>
-      <p>&#x56FE; 4.7.1-6 &#x4EE5; AlexNet &#x90E8;&#x7F72;&#x7684; ImageNet &#x7269;&#x4F53;&#x8BC6;&#x522B;&#x6A21;&#x578B;</p>
+      <p>&#x56FE; 4-42 &#x4EE5; AlexNet &#x90E8;&#x7F72;&#x7684; ImageNet &#x7269;&#x4F53;&#x8BC6;&#x522B;&#x6A21;&#x578B;</p>
    </figcaption>
 </figure>
 </center>
@@ -2282,7 +2284,7 @@
 <p>&#x5728;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;3 &#x4E2A;&#x5B50;&#x7F51;&#x7ED3;&#x6784;&#x5404;&#x5305;&#x542B;&#x4E86;&#x591A;&#x4E2A; AlexNet &#x7684;&#x4E0D;&#x540C;&#x5C42;&#x7EA7;&#xFF1A;</p>
 <ul>
 <li><strong>&#x7279;&#x5F81;&#x63D0;&#x53D6;&#x5B50;&#x7F51;&#xFF08;FE&#xFF09;</strong>&#xFF0C;&#x5305;&#x542B; &#x8F93;&#x5165;&#x5C42;&#x3001;&#x5E73;&#x5316;&#x5C42;&#xFF0C;&#x4EE5;&#x53CA;&#x4ECE;&#x8F93;&#x5165;&#x5C42;&#x81F3;&#x5E73;&#x5316;&#x5C42;&#x95F4;&#x7684;&#x591A;&#x4E2A;&#x6C60;&#x5316;&#x5C42;&#x3001;&#x5377;&#x79EF;&#x5C42;&#xFF0C;&#x5171;&#x540C;&#x7EC4;&#x6210;&#xFF1B;</li>
-<li><strong>&#x7279;&#x5F81;&#x9009;&#x62E9;&#x5B50;&#x7F51;&#xFF08;FS&#xFF09;</strong>&#xFF0C;&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#x6839;&#x636E;&#x529F;&#x80FD;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A; &#x5206;&#x7C7B;&#x5B50;&#x7F51;&#xFF08;Classification Subnet&#xFF09;&#xFF0C;&#x5305;&#x542B;&#x63A5;&#x6536;&#x5E73;&#x5316;&#x5C42;&#x8F93;&#x51FA;&#x7684;&#x76F8;&#x90BB;&#x9690;&#x85CF;&#x5C42;&#x81F3;&#x8F93;&#x51FA;&#x5C42;&#x524D;&#x4E00;&#x7EA7;&#x9690;&#x85CF;&#x5C42;&#x3002;&#x8FD9;&#x4E9B;&#x9690;&#x85CF;&#x5C42;&#x90FD;&#x662F;&#x5168;&#x94FE;&#x63A5;&#x5C42;&#xFF0C;&#x4EE5;&#x6B64;&#x5B8C;&#x6210;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x63D0;&#x70BC;&#x3002;</li>
+<li><strong>&#x7279;&#x5F81;&#x9009;&#x62E9;&#x5B50;&#x7F51;&#xFF08;FS&#xFF09;</strong>&#xFF0C;&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#x6839;&#x636E;&#x529F;&#x80FD;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A; &#x5206;&#x7C7B;&#x5B50;&#x7F51;&#xFF08;Classification Subnet&#xFF09;&#xFF0C;&#x5305;&#x542B;&#x63A5;&#x6536;&#x5E73;&#x5316;&#x5C42;&#x8F93;&#x51FA;&#x7684;&#x76F8;&#x90BB;&#x9690;&#x85CF;&#x5C42;&#x81F3;&#x8F93;&#x51FA;&#x5C42;&#x524D;&#x4E00;&#x7EA7;&#x9690;&#x85CF;&#x5C42;&#x3002;&#x8FD9;&#x4E9B;&#x9690;&#x85CF;&#x5C42;&#x90FD;&#x662F;&#x5168;&#x8FDE;&#x63A5;&#x5C42;&#xFF0C;&#x4EE5;&#x6B64;&#x5B8C;&#x6210;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x63D0;&#x70BC;&#x3002;</li>
 <li><strong>&#x7ED3;&#x679C;&#x8F93;&#x51FA;&#x5B50;&#x7F51;&#xFF08;RO&#xFF09;</strong>&#xFF0C;&#x5219;&#x662F;&#x5728;&#x63A5;&#x6536; FS &#x8F93;&#x51FA;&#x540E;&#xFF0C;&#x6700;&#x7EC8;&#x751F;&#x6210;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x7684;&#x4F20;&#x7EDF; MLP &#x7EC4;&#x6210;&#x3002;&#x4F8B;&#x5B50;&#x4E2D;&#x91C7;&#x7528;&#x4E86; SoftMax &#x8FDE;&#x63A5;&#x51FD;&#x6570;&#xFF0C;&#x5B8C;&#x6210;&#x4E86;&#x5BF9;&#x6837;&#x672C;&#x7684; <strong>&#x6982;&#x7387;&#x5206;&#x5E03;&#xFF08;Probabilistic Distribution&#xFF09;</strong> &#x5F52;&#x4E00;&#x5316;&#x5411;&#x91CF;&#x8F93;&#x51FA;&#x3002;</li>
 </ul>
 <p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x4F8B;&#x5B50;&#x4E2D;&#x7531;&#x4E8E;&#x662F;&#x8BAD;&#x7EC3;&#x597D;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x753B;&#x51FA;&#x5F53;&#x6A21;&#x578B;&#x8FD8;&#x5728;&#x8BAD;&#x7EC3;&#x65F6;&#xFF0C;&#x635F;&#x5931;&#x51FD;&#x6570;&#x751F;&#x6548;&#x7684;&#x9636;&#x6BB5;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x5728;&#x6211;&#x4EEC;&#x7ECF;&#x8FC7;&#x524D;&#x51E0;&#x8282;&#x7684;&#x8BB2;&#x89E3;&#x540E;&#xFF0C;&#x8FD8;&#x662F;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x5F97;&#x5230;&#xFF0C;&#x5176;&#x751F;&#x6548;&#x4F4D;&#x7F6E;&#x6B63;&#x662F;&#x5728; RO &#x4E4B;&#x540E;&#x3002;
@@ -2290,7 +2292,7 @@
 <p>&#x90A3;&#x4E48; CNN &#x6709;&#x54EA;&#x4E9B;&#x9002;&#x5408;&#x7684;&#x4F18;&#x52BF;&#x573A;&#x666F;&#x5462;&#xFF1F;</p>
 <h2 id="cnn-&#x7684;&#x5E38;&#x89C1;&#x573A;&#x666F;"><strong>CNN &#x7684;&#x5E38;&#x89C1;&#x573A;&#x666F;</strong></h2>
 <p>&#x8003;&#x8651;&#x5230; CNN &#x7684;&#x7279;&#x70B9;&#xFF0C;&#x5176;&#x5B9E;&#x53EA;&#x8981;&#x662F;&#x8D85;&#x8FC7;&#x4E00;&#x7EF4;&#x7684;&#x6837;&#x672C;&#x6570;&#x636E;&#xFF0C;&#x90FD;&#x80FD;&#x591F;&#x4EE5; CNN &#x6765;&#x8FDB;&#x884C;&#x76F8;&#x5173;&#x4F5C;&#x4E1A;&#x3002;&#x8FD9;&#x4E5F;&#x51B3;&#x5B9A;&#x4E86; CNN &#x5177;&#x6709;&#x6781;&#x5F3A;&#x7684;&#x666E;&#x9002;&#x6027;&#x3002;</p>
-<p>&#x76EE;&#x524D;&#x4E0A;&#xFF0C;&#x5DE5;&#x4E1A;&#x754C;&#x5BF9; CNN &#x7684;&#x8FD0;&#x7528;&#x5DF2;&#x7ECF;&#x6DB5;&#x76D6;&#x4E86;&#xFF1A;</p>
+<p>&#x76EE;&#x524D;&#xFF0C;&#x5DE5;&#x4E1A;&#x754C;&#x5BF9; CNN &#x7684;&#x8FD0;&#x7528;&#x5DF2;&#x7ECF;&#x6DB5;&#x76D6;&#x4E86;&#xFF1A;</p>
 <ul>
 <li>&#x56FE;&#x50CF;&#x5206;&#x7C7B;&#xFF0C;&#x5982;&#xFF1A;&#x624B;&#x52BF;&#x8BC6;&#x522B;&#x3001;&#x52A8;&#x4F5C;&#x8BC6;&#x522B;&#x3001;&#x4EBA;&#x8138;&#x8BC6;&#x522B;&#x7B49;&#xFF1B;</li>
 <li>&#x56FE;&#x50CF;&#x5206;&#x5272;&#xFF0C;&#x5982;&#xFF1A;&#x80CC;&#x666F;&#x5206;&#x79BB;&#x3001;&#x667A;&#x80FD;&#x62A0;&#x56FE;&#x3001;&#x8F6E;&#x5ED3;&#x878D;&#x5408;&#x7B49;&#xFF1B;</li>
@@ -2301,7 +2303,7 @@
 <p>&#x76F8;&#x4FE1;&#x672A;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x80FD;&#x591F;&#x4E00;&#x7779; CNN &#x56DE;&#x5F52; LLM &#x591A;&#x6A21;&#x6001;&#x8BED;&#x8A00;&#x5927;&#x6A21;&#x578B;&#x7684;&#x98CE;&#x91C7;&#x3002;</p>
 <p>&#x81F3;&#x6B64;&#xFF0C;CNN &#x7684;&#x521D;&#x7EA7;&#x6982;&#x5FF5;&#x548C;&#x7F51;&#x7EDC;&#x7ED3;&#x6784;&#xFF0C;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;&#x5B8C;&#x6BD5;&#x3002;&#x6709;&#x4E86;&#x8FD9;&#x4E9B;&#x77E5;&#x8BC6;&#x80CC;&#x666F;&#xFF0C;&#x5728;&#x4E86;&#x89E3; CNN &#x7684;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x7F51;&#x7EDC;&#x7684;&#x8BBE;&#x8BA1;&#x65F6;&#xFF0C;&#x4EA6;&#x80FD;&#x7AA5;&#x5F97;&#x5927;&#x6982;&#x3002;&#x5176;&#x4F59;&#x5C31;&#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x94BB;&#x7814;&#x8BBA;&#x6587;&#xFF0C;&#x4EE5;&#x4E86;&#x89E3;&#x5168;&#x8C8C;&#x4E86;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2024-09-12 12:11:10
+2026-08-24 21:40:44
 </span></footer>
                                 
                                 </section>
@@ -2345,7 +2347,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）","level":"1.5.7.1","depth":3,"next":{"title":"4.7.2 循环神经网络（RNN [Recurrent Neural Network]）","level":"1.5.7.2","depth":3,"path":"Chapter_4/Language/cn/Docs_4_7_2.md","ref":"Chapter_4/Language/cn/Docs_4_7_2.md","articles":[]},"previous":{"title":"4.7 模型结构速览","level":"1.5.7","depth":2,"path":"Chapter_4/Language/cn/Docs_4_7.md","ref":"Chapter_4/Language/cn/Docs_4_7.md","articles":[{"title":"4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）","level":"1.5.7.1","depth":3,"path":"Chapter_4/Language/cn/Docs_4_7_1.md","ref":"Chapter_4/Language/cn/Docs_4_7_1.md","articles":[]},{"title":"4.7.2 循环神经网络（RNN [Recurrent Neural Network]）","level":"1.5.7.2","depth":3,"path":"Chapter_4/Language/cn/Docs_4_7_2.md","ref":"Chapter_4/Language/cn/Docs_4_7_2.md","articles":[]},{"title":"4.7.3 自注意力网络（Transformer）","level":"1.5.7.3","depth":3,"path":"Chapter_4/Language/cn/Docs_4_7_3.md","ref":"Chapter_4/Language/cn/Docs_4_7_3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed","livereload"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_4/Language/cn/Docs_4_7_1.md","mtime":"2024-09-12T04:11:10.960Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-14T03:29:12.787Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）","level":"1.5.7.1","depth":3,"next":{"title":"4.7.2 循环神经网络（RNN [Recurrent Neural Network]）","level":"1.5.7.2","depth":3,"path":"Chapter_4/Language/cn/Docs_4_7_2.md","ref":"Chapter_4/Language/cn/Docs_4_7_2.md","articles":[]},"previous":{"title":"4.7 模型结构速览","level":"1.5.7","depth":2,"path":"Chapter_4/Language/cn/Docs_4_7.md","ref":"Chapter_4/Language/cn/Docs_4_7.md","articles":[{"title":"4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）","level":"1.5.7.1","depth":3,"path":"Chapter_4/Language/cn/Docs_4_7_1.md","ref":"Chapter_4/Language/cn/Docs_4_7_1.md","articles":[]},{"title":"4.7.2 循环神经网络（RNN [Recurrent Neural Network]）","level":"1.5.7.2","depth":3,"path":"Chapter_4/Language/cn/Docs_4_7_2.md","ref":"Chapter_4/Language/cn/Docs_4_7_2.md","articles":[]},{"title":"4.7.3 自注意力网络（Transformer）","level":"1.5.7.3","depth":3,"path":"Chapter_4/Language/cn/Docs_4_7_3.md","ref":"Chapter_4/Language/cn/Docs_4_7_3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_4/Language/cn/Docs_4_7_1.md","mtime":"2026-08-24T13:40:44.927Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-08-24T13:41:27.489Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2404,10 +2406,6 @@
     
         
         <script src="../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
 
