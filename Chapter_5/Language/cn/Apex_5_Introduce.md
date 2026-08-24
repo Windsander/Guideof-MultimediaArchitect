@@ -30,5 +30,6 @@
 	* [5.4.1 音频帧处理：滤波、变速与变调（Filtering, Time-Stretch & Pitch-Shift）](Docs_5_4_1.md)
 	* [5.4.2 视频帧处理：色彩、滤波与几何变换（Color, Filtering & Geometric Transform）](Docs_5_4_2.md)
 	* [5.4.3 实战：音视频帧批量处理工程](Docs_5_4_3.md)
+* [5.5 本章小结与进阶指引（Summary & Roadmap）](Docs_5_5.md)
 * [【在线展示】](Playground_5.md)
 * [【参考文献】](References_5.md)
