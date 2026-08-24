@@ -20,13 +20,13 @@
 </figure>
 </center>
 
-对于一些音频基础信息分析，比如：**[绘制频响切面（FLS）](../../../Chapter_1/Language/cn/Docs_1_4_5.html)**、测算 RMS 等。此外，Audacity 也支持插件能力扩展，我们可以去 **[Audacity 的 官网插件入口](https://plugins.audacityteam.org/)**，查询我们需要的 **额外扩展**。
+对于一些音频基础信息分析，比如：**[绘制频响切面（FLS）](../../../Chapter_1/Language/cn/Docs_1_4_5.md)**、测算 RMS 等。此外，Audacity 也支持插件能力扩展，我们可以去 **[Audacity 的 官网插件入口](https://plugins.audacityteam.org/)**，查询我们需要的 **额外扩展**。
 
 软件获取自 **[Audacity 的 官网地址](https://www.audacityteam.org/)**，下载其最新版本。
 
 ## **Sonic Visualiser**
 
-**Sonic Visualiser（SV）** 是一款专门用于音频科学分析的工具软件，由 **英国伦敦大学（Queen Mary University of London）** 的 **音频和音乐技术研究小组** 开发，并选择了 **GNU 通用公共许可证（GPL）开放免费使用**。相比 Audacity，SV 更为的强大而专业，能轻易做到 Audacity 不能做到的事情，比如：**[语谱图（Spectrogram）](../../../Chapter_1/Language/cn/Docs_1_4_5.html) 分析**、**和声分析**、**音高检测** 等高级功能。
+**Sonic Visualiser（SV）** 是一款专门用于音频科学分析的工具软件，由 **英国伦敦大学（Queen Mary University of London）** 的 **音频和音乐技术研究小组** 开发，并选择了 **GNU 通用公共许可证（GPL）开放免费使用**。相比 Audacity，SV 更为的强大而专业，能轻易做到 Audacity 不能做到的事情，比如：**[语谱图（Spectrogram）](../../../Chapter_1/Language/cn/Docs_1_4_5.md) 分析**、**和声分析**、**音高检测** 等高级功能。
 
 <center>
 <figure>

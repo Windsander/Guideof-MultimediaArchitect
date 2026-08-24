@@ -503,8 +503,8 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
    [&lt;BackgroundSubtractorMOG2&gt;](https://docs.opencv.org/4.x/d7/d7b/classcv_1_1BackgroundSubtractorMOG2.html), 
    [&lt;BackgroundSubtractorKNN&gt;](https://docs.opencv.org/4.x/db/d88/classcv_1_1BackgroundSubtractorKNN.html)
 2. 光流计算：
-   [calcOpticalFlowFarneback](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga5d10ebbd59fe09c5f650289ec0ece5af)（**[HS 法](../../../Chapter_3/Language/cn/Docs_3_4_1.html?h=Horn–Schunck)**）, 
-   [calcOpticalFlowPyrLK](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga473e4b886d0bcc6b65831eb88ed93323)（**[LK 法](../../../Chapter_3/Language/cn/Docs_3_4_1.html?h=Lucas-Kanade%20Method)**）
+   [calcOpticalFlowFarneback](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga5d10ebbd59fe09c5f650289ec0ece5af)（**[HS 法](../../../Chapter_3/Language/cn/Docs_3_4_1.md)**）, 
+   [calcOpticalFlowPyrLK](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga473e4b886d0bcc6b65831eb88ed93323)（**[LK 法](../../../Chapter_3/Language/cn/Docs_3_4_1.md)**）
 3. 运动检测：
    [CamShift](https://docs.opencv.org/4.x/d7/d00/tutorial_meanshift.html#autotoc_md1140), 
    [meanShift](https://docs.opencv.org/4.x/d7/d00/tutorial_meanshift.html#autotoc_md1138)
