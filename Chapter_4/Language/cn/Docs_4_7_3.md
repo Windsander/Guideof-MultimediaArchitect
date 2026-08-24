@@ -61,7 +61,7 @@ Transformer 在结构中，参考了 RNN 和早期 自编解码网络系统的�
 - **关键信息，即键值（Keys）**，代表当前输入在查询（Query）下可能提供的信息特征；
 - **标值信息，即取值（Values）**，代表与键值（Key）关联的量化查询积分；
 
-最终，由三者共同借由算法组成 **输出特征（Output Fratures）**，即 **加权平均值的权重**，作为 Transformer 的神经网络内高级特征。
+最终，由三者共同借由算法组成 **输出特征（Output Features）**，即 **加权平均值的权重**，作为 Transformer 的神经网络内高级特征。
 
 <center>
 <figure>
@@ -78,7 +78,7 @@ Transformer 在结构中，参考了 RNN 和早期 自编解码网络系统的�
 
 一般而言，评分函数可分为两类：
 
-- **简单评分函数（Simple Scorer）**，此类以单步函数来完成粗糙的映射，如直接 Sigmod
+- **简单评分函数（Simple Scorer）**，此类以单步函数来完成粗糙的映射，如直接 Sigmoid
 - **复杂评分函数（Complex Scorer）**，此类用朴素神经网络或模型来完成映射，如 MLP 评分
 
 而现有大部分 Transformer 中，采用的都是第二个类型的实现。包括基础 Transformer 的 SDPA 和 MHA 在内，皆属于此类。
@@ -174,9 +174,9 @@ $$
 </figure>
 </center>
 
-如图，蓝色气泡内便是 SDPA 单元。在图例中，由 $$h$$ 个 SDPA 单元，经过链接层（Concat 为简写），和线性归一化（目的是为了保证输入输出等大），构成了最终 MHA 的输出。
+如图，蓝色气泡内便是 SDPA 单元。在图例中，由 $$h$$ 个 SDPA 单元，经过连接层（Concat 为 Concatenation 的简写），和线性归一化（目的是为了保证输入输出等大），构成了最终 MHA 的输出。
 
-所以，从另一个角度来看，链接层函数就相当于 MHA 的评分函数，线性归一化则是输出函数。而 MHA 真正意义上的输入，即每个 SDPA 输入的集合。有：
+所以，从另一个角度来看，连接层函数就相当于 MHA 的评分函数，线性归一化则是输出函数。而 MHA 真正意义上的输入，即每个 SDPA 输入的集合。有：
 
 <center>
 <figure>
@@ -193,11 +193,11 @@ $$
 
 我们仍然取一个输入序列（MHA 和 SDPA 都是对同一序列的操作，仅目标输出不同），其序列长度为 $$T$$ 而查询维度为 $$d$$ 。
 
-记当前一个 MHA 总共有 $$h$$ 个 SDPA 单元，每个单元按照顺序，由角标 $$[_i]$$ 表示序号。则，对于顺序 $$i$$ 的 SDPA 单元输入，有查询 $$Q_i \in \mathbb{R}^{T \times d}$$ 、 键值 $$K_i \in \mathbb{R}^{T \times d}$$ 、 取值 $$V_i \in \mathbb{R}^{T \times d}$$ ，即三者都是 $$T \times d$$ 大小的矩阵。并有经过 SDPA 处理后的输出 $$Output_i \in \mathbb{R}^{T \times d}$$ ，简记为 $$O_i \in \mathbb{R}^{T \times d}$$ 交付链接。
+记当前一个 MHA 总共有 $$h$$ 个 SDPA 单元，每个单元按照顺序，由角标 $$[_i]$$ 表示序号。则，对于顺序 $$i$$ 的 SDPA 单元输入，有查询 $$Q_i \in \mathbb{R}^{T \times d}$$ 、 键值 $$K_i \in \mathbb{R}^{T \times d}$$ 、 取值 $$V_i \in \mathbb{R}^{T \times d}$$ ，即三者都是 $$T \times d$$ 大小的矩阵。并有经过 SDPA 处理后的输出 $$Output_i \in \mathbb{R}^{T \times d}$$ ，简记为 $$O_i \in \mathbb{R}^{T \times d}$$ 交付连接。
 
 由于采用了多组 SDPA 组合，我们不再能以固定形式，确定每个 SDPA 输入的重要程度。因此，需要对每个构成 MHA 的 SDPA 算子的输入 $$[Q_i,\ K_i,\ V_i]$$ 进行确权，来通过训练得到实际 MHA 的输入的初始关注点。
 
-介于这一点，我们对每一组顺序  的 SDPA 单元输入进行加权。引入 **输入权重（Input Wights）**，根据加权对象，分为 $$i$$ 组查询权重 $$W^Q_i \in \mathbb{R}^{d \times T}$$ 、 $$i$$ 组键值权重 $$W^K_i \in \mathbb{R}^{d \times T}$$ 、 $$i$$ 组取值权重 $$W^V_i \in \mathbb{R}^{d \times T}$$ 。 注意，**加权需要用和加权对象维度转置（Transpose）的矩阵**。
+鉴于这一点，我们对每一组顺序 $$i$$ 的 SDPA 单元输入进行加权。引入 **输入权重（Input Weights）**，根据加权对象，分为 $$i$$ 组查询权重 $$W^Q_i \in \mathbb{R}^{d \times T}$$ 、 $$i$$ 组键值权重 $$W^K_i \in \mathbb{R}^{d \times T}$$ 、 $$i$$ 组取值权重 $$W^V_i \in \mathbb{R}^{d \times T}$$ 。 注意，**加权需要用和加权对象维度转置（Transpose）的矩阵**。
 
 加权后，顺序 $$i$$ 的 SDPA 算子的输入就变为了 $$[Q_i \cdot W^Q_i,\ K_i \cdot W^K_i,\ V_i \cdot W^V_i]$$ 。同时，这也是为什么 MHA 中，Q、K、V 需要经过一次线性归一化。即目的是为了保证每一组的输入在样本值上的价值等同。
 
@@ -222,9 +222,9 @@ $$
 }
 $$
 
-其中，**连接函数（Concat [Connection Function]）是简单全链接**。即，将每一个 SDPA 的输出 $$O_i$$ 顺序拼接，构成 $$(FC =\sum O_i )\in \mathbb{R}^{T \times dh}$$ 的输出。 
+其中，**连接函数（Concat [Connection Function]）是简单全连接**。即，将每一个 SDPA 的输出 $$O_i$$ 顺序拼接，构成 $$(FC =\sum O_i )\in \mathbb{R}^{T \times dh}$$ 的输出。 
 
-而输出时采用的输出函数（Output Function），存在迭代的 **目的权重（Target Wight）** 矩阵 $$W^O \in \mathbb{R}^{hd \times T}$$ ，以权重代表注意力积分并参与训练（即动态的积分）。有：
+而输出时采用的输出函数（Output Function），存在迭代的 **目的权重（Target Weight）** 矩阵 $$W^O \in \mathbb{R}^{hd \times T}$$ ，以权重代表注意力积分并参与训练（即动态的积分）。有：
 
 $$
 {\displaystyle 
@@ -257,7 +257,7 @@ $$
 
 在正式开始 Transformer 的网络结构讲解前。我们还需要了解一下，自注意力网络（Transformer）中的 **其它辅助机制**。
 
-在经典结构中，Transformer 除了使用自注意力来完成特征提取外，还使用了由 ResNet 提出在当时已经相对成熟的 **残差连接（Residual Connection）** 技术，并使用简单 **前馈控制（Feed Forward）** 来修正 MHA 特征，提供非线性和引入深层次的 **隐藏权重（Hidden Wight）** 参与训练。
+在经典结构中，Transformer 除了使用自注意力来完成特征提取外，还使用了由 ResNet 提出在当时已经相对成熟的 **残差连接（Residual Connection）** 技术，并使用简单 **前馈控制（Feed Forward）** 来修正 MHA 特征，提供非线性和引入深层次的 **隐藏权重（Hidden Weight）** 参与训练。
 
 <center>
 <figure>
@@ -319,7 +319,7 @@ $$
 
 如图，蓝框内部分即编码器（Encoder）的构成，红框内部分则是解码器（Decoder）。
 
-**编码器（Encoder）** 接收正常顺序的序列，如：“I am eating an apple” 经过 **位子编码（Positional Encoding）**，再以特征工程提炼出的 $$[Q,\ K,\ V]$$ 。
+**编码器（Encoder）** 接收正常顺序的序列，如：“I am eating an apple” 经过 **位置编码（Positional Encoding）**，再以特征工程提炼出的 $$[Q,\ K,\ V]$$ 。
 
 之后，交由 MHA 提取高级特征，并将提取的高级特征经过一次 ANU 归一化。最终，归一化的高级特征通过 FFU 加隐藏的核心权重和偏移，再次经由一次 ANU 归一化，完成当前时代的编码部分处理。记编码器的输出为 $$O_{enc}$$ ，显然 $$O_{enc}$$ 有 $$T \times d$$ 大小。
 
@@ -373,13 +373,13 @@ $$
 
 ## **Transformer 的输出 & 训练迭代**
 
-其实，经过之上的一系列工作，最终编码器的输出 $$O_{dec}$$ ，还需要经过一次 **线性归一化（Linear Normalization）**，再通过 SoftMax 输出概率预测结果 $$P$$ 。预测 $$P$$ 的大小为 $$T \times 1$$ 是一组概率数组。
+其实，经过之上的一系列工作，最终解码器的输出 $$O_{dec}$$ ，还需要经过一次 **线性归一化（Linear Normalization）**，再通过 SoftMax 输出概率预测结果 $$P$$ 。预测 $$P$$ 的大小为 $$T \times 1$$ 是一组概率数组。
 
 这个输出，才是最终参与模型迭代，用于损失函数的结果。
 
 那么，Transformer 采用的损失函数是什么呢？
 
-即然最终操作的对象是概率值，那么不难想到本质仍然属于分类（Classification）。
+既然最终操作的对象是概率值，那么不难想到本质仍然属于分类（Classification）。
 因此，Transformer 通常采用 **交叉熵损失（Cross Entropy Loss）**。即我们在损失函数一节中，提到过的：
 
 $$
@@ -398,9 +398,9 @@ $$
 
 ## **Transformer 的常见场景**
 
-自注意力网络（Transformer）在诞生之后，大部分都被运用在 NLP 由其是 LLM 领域。
+自注意力网络（Transformer）在诞生之后，大部分都被运用在 NLP 尤其是 LLM 领域。
 
-目前上，工业界对 Transformer 的运用已经涵盖了：
+目前，工业界对 Transformer 的运用已经涵盖了：
 
 - 自然语言处理（NLP），如：文本分析（智能输入法）、机器翻译、语音助手等；
 - 音视频生成，如：音乐生成、视频生成、合成编辑、自动裁剪等；

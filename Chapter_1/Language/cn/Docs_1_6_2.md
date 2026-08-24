@@ -98,7 +98,7 @@ RIFF 规定，WAV 数据格式包含了三部分数据，分别是：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">Subchunk1ID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x0c~0x0f (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当前 子块-1 的 ID（即子块类型），固定存储 'fmt' 三个小写字母的 ASCII 码，即 == 0x666d7420</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前 子块-1 的 ID（即子块类型），固定存储 'fmt ' 三个小写字母和一个空格的 ASCII 码，即 == 0x666d7420</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">Subchunk1Size</th>
@@ -123,7 +123,7 @@ RIFF 规定，WAV 数据格式包含了三部分数据，分别是：
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ByteRate</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x1c~0x1f (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">比特率，即当前全通道单采样周期所得数据的传输率 == SampleRate * NumChannels * BitsPerSample/8</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">字节率，即当前全通道单采样周期所得数据的传输率 == SampleRate * NumChannels * BitsPerSample/8</td>
   </tr>
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">BlockAlign</th>
@@ -149,7 +149,7 @@ RIFF 规定，WAV 数据格式包含了三部分数据，分别是：
 
 <br>
 
-需要注意的是，音频格式子块（FMT sub-Chunk）中的 ExtraParamSize 和 ExtraParams 并不是始终存在的。对于 **以 PCM 数字信号数据为主要载荷信息的 WAV 格式，该两个字段在 fmt 子块中，是不存在**。
+需要注意的是，音频格式子块（FMT sub-Chunk）中的 ExtraParamSize 和 ExtraParams 并不是始终存在的。对于 **以 PCM 数字信号数据为主要载荷信息的 WAV 格式，该两个字段在 fmt 子块中，是不存在的**。
 
 即，**ExtraParamSize 和 ExtraParams，在 WAV 中并不占用任何有效数据字段**。
 
@@ -228,7 +228,7 @@ RIFF 规定，WAV 数据格式包含了三部分数据，分别是：
 </figure>
 </center>
 
-从上可知，样例其实是从一段 **2048 Bytes 的 PCM 音频对应 WAV 文件** 中，从头 **截取 72 Bytes 数据** 组成的。所以，利用头部信息来交验数据完整性，或取得更早阶段（即调制阶段）的信息，在 WAV 这种 **具有 分块描述信息块（Chunk Descriptor）** 的音频格式（Audio Format）里成为了可能。
+从上可知，样例其实是从一段 **2048 Bytes 的 PCM 音频对应 WAV 文件** 中，从头 **截取 72 Bytes 数据** 组成的。所以，利用头部信息来校验数据完整性，或取得更早阶段（即调制阶段）的信息，在 WAV 这种 **具有 分块描述信息块（Chunk Descriptor）** 的音频格式（Audio Format）里成为了可能。
 
 这也是为何类 WAV 结构音频格式（包括将要提到的 SND/AU 和 AIFF 等），会代替了直接以 PCM 在电脑中进行非工程化存储的原因。
 
@@ -244,7 +244,7 @@ RIFF 规定，WAV 数据格式包含了三部分数据，分别是：
 - **变长辅助信息区段（Variable-length Informational Field）**，存储需要的额外信息；
 - **音频数据区段（Data）**，存放当前存储音频的存储数据；
 
-初看之下可能感觉同 WAV 格式并无太大差异，然而事实并非如此。SUD/AU 的相关音频数据的参数，以及自身有关文件系统的标志，都被 **集中于头信息字段的 6 个固定参数中**。而涉及音频本身，诸如版权信息、作者名称等数据，则并未规范如何存储，只指定了必须放入 **变长辅助信息区段** 的要求。这使 **系统并不需要管理这部分信息**。而音频数据区段，则只能存放 PCM 数字信号的数字码数据。
+初看之下可能感觉同 WAV 格式并无太大差异，然而事实并非如此。SND/AU 的相关音频数据的参数，以及自身有关文件系统的标志，都被 **集中于头信息字段的 6 个固定参数中**。而涉及音频本身，诸如版权信息、作者名称等数据，则并未规范如何存储，只指定了必须放入 **变长辅助信息区段** 的要求。这使 **系统并不需要管理这部分信息**。而音频数据区段，则只能存放 PCM 数字信号的数字码数据。
 
 所以，**变长辅助信息区段（Variable-length Informational Field）** 只规定 **必须占用 4 bytes 大小**，并在有 **额外信息** 时，**以整数字节增加**，如：5（4+1） bytes、6（4+2） bytes 等。而 **音频数据区段（Data）则紧随其后**，直接以 PCM 采样按通道（Channels）数，交替分 blocks 存储即可（同 WAV 的 data 部分）。
 
@@ -261,17 +261,17 @@ RIFF 规定，WAV 数据格式包含了三部分数据，分别是：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">magic</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当文件类型，固定存储 '.snd' 四个字符文件后缀的 ASCII 码，即 == 0x2e736e64</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前文件类型，固定存储 '.snd' 四个字符文件后缀的 ASCII 码，即 == 0x2e736e64</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">hdr_size</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x04~0x07 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">记录音频数据起始偏移（bytes），用于快速数据，有 == 24 + Informational_Field_Size（bytes）</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">记录音频数据起始偏移（bytes），用于快速定位数据，有 == 24 + Informational_Field_Size（bytes）</td>
   </tr>
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">data_size</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x08~0x0b (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">本用于记录数字信号数据大小，但由于可通过，文件大小 - hdr_size 算得，因此可取 == 0xffffffff 表示无记录/ == n 表示 n bytes 大小</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">本用于记录数字信号数据大小，但由于可通过 文件大小 - hdr_size 算得，因此可取 == 0xffffffff 表示无记录/ == n 表示 n bytes 大小</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">encoding</th>
@@ -281,7 +281,7 @@ RIFF 规定，WAV 数据格式包含了三部分数据，分别是：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">sample_rate</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x10~0x13 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">数字信号采样率，由于 SUD 只能存 PCM，对 PCM 来说就是 &lt;PCM 采样率&gt;，有该值 == 8000 | 11025 | 24000 | 44100 等</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">数字信号采样率，由于 SND 只能存 PCM，对 PCM 来说就是 &lt;PCM 采样率&gt;，有该值 == 8000 | 11025 | 24000 | 44100 等</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">channels</th>
@@ -333,7 +333,7 @@ RIFF 规定，WAV 数据格式包含了三部分数据，分别是：
     <td style="border: 1px solid #ddd; padding: 10px;">采样位深 为 32-bit 的 IEEE 归一化浮点 PCM 数据</td>
   </tr>
   <tr>
-    <th style="border: 1px solid #ddd; padding: 10px;">64 bit IEE floating point</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">64 bit IEEE floating point</th>
     <td style="border: 1px solid #ddd; padding: 10px;">7</td>
     <td style="border: 1px solid #ddd; padding: 10px;">采样位深 为 64-bit 的 IEEE 归一化浮点 PCM 数据</td>
   </tr>
@@ -387,13 +387,13 @@ RIFF 规定，WAV 数据格式包含了三部分数据，分别是：
 
 但也正是因为这些原因，使得工程上在处理 SND/AU 格式时，需要花费额外的工作，来处理被固定的信息成分。**这相当于另一种通过规定来实现的压缩手段了，变相的增加了系统处理资源消耗**。因此，除了在 NeXT 系统上得到了大范围应用外，现如今 SND/AU 格式已成为逐步被淘汰的一种类型。
 
-而与之相对的，WAV 和 AIFF 则仍被大量使用在 Windows/Linux 和苹果 MacOS/iOS  系统中。让我们不得不考虑，**过渡的简化信息，是否仍有必要**。
+而与之相对的，WAV 和 AIFF 则仍被大量使用在 Windows/Linux 和苹果 MacOS/iOS  系统中。让我们不得不考虑，**过度的简化信息，是否仍有必要**。
 
 ## **AIFF 音频格式**
 
 **音频交换文件格式（AIFF [Audio Interchange File Format]）**，即 **AIFF 音频格式（.aif/.aiff）**，正如刚刚所提，是一种被使用在 MacOS/iOS 上的未压缩音频格式。是一种隶属于 **交换文件格式（IFF [Interchange File Format]）** 文件管理体系的 **文件格式（File Format）**。该格式的特点相比 WAV 的 RIFF 分块体系而言，有着 **更为复杂的子块类别**。极大提升了能够涵盖辅助信息的广度，并以此为 苹果/Linux 等系统的文件管理，提供了更为方便的归类参考项。
 
-AIFF 音频格式，从整体角度包含量种成分：
+AIFF 音频格式，从整体角度包含两种成分：
 
 - **文件格式块（FORM Chunk）**，用以描述服务于系统文件管理的文件本身信息；
 - **附属信息子块（INFO sub-Chunks）**，一系列不同类型的持续存储子块；
@@ -436,7 +436,7 @@ AIFF 音频格式，从整体角度包含量种成分：
     <td style="border: 1px solid #ddd; padding: 10px;">记录当前块除 ckID 和 ckSize 属性外，完整文件的总体大小（bytes），== 4 + Sum(Local Chunk Size)</td>
   </tr>
   <tr>
-    <th style="border: 1px solid #ddd; padding: 10px;">fromType</th>
+    <th style="border: 1px solid #ddd; padding: 10px;">formType</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x08~0x0b (4)</td>
     <td style="border: 1px solid #ddd; padding: 10px;">标记当前 IFF 文件类型，AIFF 固定存储 'AIFF' 四个大写字母的 ASCII 码，即 == 0x41494646</td>
   </tr>
@@ -531,7 +531,7 @@ AIFF 音频格式，从整体角度包含量种成分：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当子块类型，固定存储 'COMM' 四个大写字母的 ASCII 码，即 == 0x434f4d4d</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前子块类型，固定存储 'COMM' 四个大写字母的 ASCII 码，即 == 0x434f4d4d</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -556,7 +556,7 @@ AIFF 音频格式，从整体角度包含量种成分：
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">sampleRate</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x10~0x13 (4) +6 (extendable)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">数字信号采样率，由于 SUD 只能存 PCM，对 PCM 来说就是 &lt;PCM 采样率&gt;，有该值 == 8000 | 11025 | 24000 | 44100 等</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">数字信号采样率，由于 AIFF 只能存 PCM，对 PCM 来说就是 &lt;PCM 采样率&gt;，有该值 == 8000 | 11025 | 24000 | 44100 等</td>
   </tr>
 </table>
 
@@ -573,7 +573,7 @@ AIFF 音频格式，从整体角度包含量种成分：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当子块类型，固定存储 'SSND' 四个大写字母的 ASCII 码，即 == 0x53534e44</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前子块类型，固定存储 'SSND' 四个大写字母的 ASCII 码，即 == 0x53534e44</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -610,7 +610,7 @@ AIFF 音频格式，从整体角度包含量种成分：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当子块类型，固定存储 'MARK' 四个大写字母的 ASCII 码，即 == 0x4d41524b</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前子块类型，固定存储 'MARK' 四个大写字母的 ASCII 码，即 == 0x4d41524b</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -662,7 +662,7 @@ AIFF 音频格式，从整体角度包含量种成分：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当子块类型，固定存储 'INST' 四个大写字母的 ASCII 码，即 == 0x494e5354</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前子块类型，固定存储 'INST' 四个大写字母的 ASCII 码，即 == 0x494e5354</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -702,7 +702,7 @@ AIFF 音频格式，从整体角度包含量种成分：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">gain</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x0e~0x0f (2)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">指定乐器片段的音高（Loudness）增减益，该值采用 声压级（SPL）取 n = -32768～+32767 ，代表在当前播放音量基础上，增减 n dB</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">指定乐器片段的响度（Loudness）增减益，该值采用 声压级（SPL）取 n = -32768～+32767 ，代表在当前播放音量基础上，增减 n dB</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">sustainLoop</th>
@@ -792,7 +792,7 @@ AIFF 音频格式，从整体角度包含量种成分：
 
 所以，**乐器信息块 的 “乐器” ，实则为该指代片段数据中，用于乐理节奏或乐理意义上背景节拍器（Metronome）的乐器组合的抽象代称**。
 
-至于，乐理基调（baseNote）、偏移音高（detune）、最低音调（lowNote）、最高音调（highNote）、播速下限（lowVelocity）、播速上线（highVelocity）、音高增减益（gain）参数，则都是对整个信息块中，全部循环片段的 **补充修饰**，以 **方便达到最佳放音效果**。
+至于，乐理基调（baseNote）、偏移音高（detune）、最低音调（lowNote）、最高音调（highNote）、播速下限（lowVelocity）、播速上限（highVelocity）、响度增减益（gain）参数，则都是对整个信息块中，全部循环片段的 **补充修饰**，以 **方便达到最佳放音效果**。
 
 <br>
 
@@ -807,7 +807,7 @@ AIFF 音频格式，从整体角度包含量种成分：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当子块类型，固定存储 'COMT' 四个大写字母的 ASCII 码，即 == 0x434f4d54</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前子块类型，固定存储 'COMT' 四个大写字母的 ASCII 码，即 == 0x434f4d54</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -871,7 +871,7 @@ AIFF 音频格式，从整体角度包含量种成分：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当子块类型，固定（注意空格）<br> 命名文字块 == 'NAME' ==  0x4e414d45<br>作者文字块 == 'AUTH' ==  0x41555448<br>版权文字块 == '(c) ' ==  0x28232920<br>声明文字块 == 'ANNO' ==  0x414e4e4f</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前子块类型，固定（注意空格）<br> 命名文字块 == 'NAME' ==  0x4e414d45<br>作者文字块 == 'AUTH' ==  0x41555448<br>版权文字块 == '(c) ' ==  0x28632920<br>声明文字块 == 'ANNO' ==  0x414e4e4f</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -906,7 +906,7 @@ AIFF 音频格式，从整体角度包含量种成分：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当子块类型，固定存储 'AESD' 四个大写字母的 ASCII 码，即 == 0x41455344</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前子块类型，固定存储 'AESD' 四个大写字母的 ASCII 码，即 == 0x41455344</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -916,7 +916,7 @@ AIFF 音频格式，从整体角度包含量种成分：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">AESChannelStatus</th>
     <td style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">0x08~0x20 (24)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">该值用于协助 AES 实时数字音频传输（转录时），来自 AES3-1-2009 (r2019) 规定，通常只需关注位于字节第 0、2、3、4 位的预强调（Pre-emphasis）辅助值 [20] 。该值自音源生成后，就是固定参数。这里不做展开，具体见参考文献 AES3-1-2009 (r2019) 规定</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">该值用于协助 AES 实时数字音频传输（转录时），来自 AES3-1-2009 (r2019) 规定，通常只需关注位于字节第 0、2、3、4 位的预加重（Pre-emphasis）辅助值 [\[20\]][ref] 。该值自音源生成后，就是固定参数。这里不做展开，具体见参考文献 AES3-1-2009 (r2019) 规定</td>
   </tr>
 </table>
 
@@ -933,7 +933,7 @@ AIFF 音频格式，从整体角度包含量种成分：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当子块类型，固定存储 'MIDI' 四个大写字母的 ASCII 码，即 == 0x4d494449</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前子块类型，固定存储 'MIDI' 四个大写字母的 ASCII 码，即 == 0x4d494449</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -964,7 +964,7 @@ AIFF 音频格式，从整体角度包含量种成分：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">ckID</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x03 (4)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当子块类型，固定存储 'APPL' 四个大写字母的 ASCII 码，即 == 0x4150504c</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前子块类型，固定存储 'APPL' 四个大写字母的 ASCII 码，即 == 0x4150504c</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">ckSize</th>
@@ -985,7 +985,7 @@ AIFF 音频格式，从整体角度包含量种成分：
 
 <br>
 
-到此， **12 种 附属信息子块（INFO sub-Chunks）**，即 **本地信息块（Local Chunks）**，的作用介绍完毕。而各个子块的 **信息内容优先级**，便有如下顺序：
+到此， **12 种 附属信息子块（INFO sub-Chunks）**，即 **本地信息块（Local Chunks）** 的作用介绍完毕。而各个子块的 **信息内容优先级**，便有如下顺序：
 
 <center>
 <figure>
@@ -993,7 +993,7 @@ AIFF 音频格式，从整体角度包含量种成分：
       width = "350" height = "400"
       src="../../Pictures/AF_aiff_chunk_sort.png" alt="">
     <figcaption>
-      <p>图 1-49 AIFF 乐器信息块 信息优先级排序</p>
+      <p>图 1-49 AIFF 本地信息块 信息优先级排序</p>
    </figcaption>
 </figure>
 </center>

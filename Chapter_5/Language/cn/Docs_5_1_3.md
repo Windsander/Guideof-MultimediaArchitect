@@ -13,7 +13,7 @@
       width = "600" height = "225"
       src="../../Pictures/after_decoder_workflow_simple_cn.png" alt="">
     <figcaption>
-      <p>图 5-6 简易音频播放器的运行效果图</p>
+      <p>图 5-6 解码后必要环节流程示意图</p>
    </figcaption>
 </figure>
 </center>
@@ -30,7 +30,7 @@
 
 <br>
 
-最后一步是 **GPU 上屏缓冲和通信**，则需要由 **选定的图形驱动（Vulkan 等）来建立相应的信道，提供指令通信和显存更新功能**。本节中，这些相关的环境和上屏更新，是由 **Python 的 Tinker 界面库走系统 UI 环境** 或 **常用视频分析库（如 OpenCV）在 库内自行维护**。暂不需要我们介入。
+最后一步是 **GPU 上屏缓冲和通信**，则需要由 **选定的图形驱动（Vulkan 等）来建立相应的信道，提供指令通信和显存更新功能**。本节中，这些相关的环境和上屏更新，是由 **Python 的 Tkinter 界面库走系统 UI 环境** 或 **常用视频分析库（如 OpenCV）在 库内自行维护**。暂不需要我们介入。
 
 而当需要项目自行处理驱动和 GPU 通信环境上下文维护时，整个渲染引擎的部分，都应当在 **同一个主体环境下**（也可以用代表其通信句柄名的，实时上下文/通信上下文，来代指），辅助其他（如果需要）用于 **时间片复用** 或 **GPU 信令预封装** 的 **辅助环境**（如 延迟上下文 或 类似的自定义指令组装结构）使用。从而方便各个 **前后关联密切环节的处理结果**，在 **GPU 资源池中实现互通**。
 
@@ -42,7 +42,7 @@
 
 ## **Colour-Science（Color-Science）**
 
-**Colour-Science（Color-Science）** 是一个专注于 **色彩科学计算**、**光谱分析**、**色彩转换** 和 **色彩管理** 的 **Python 计算库**。其由 Colour Developers 开发和维护，旨在为色彩科学领域的研究和应用提供一个 **全面而强大的工具集** [\[8\]][ref] 。**注意区别库名为 Colour-Science 。**
+**Colour-Science（Color-Science）** 是一个专注于 **色彩科学计算**、**光谱分析**、**色彩转换** 和 **色彩管理** 的 **Python 计算库**。其由 Colour Developers 开发和维护，旨在为色彩科学领域的研究和应用提供一个 **全面而强大的工具集** [\[8\]][ref] 。**注意区分库名为 Colour-Science 。**
 
 #### 主要功能：
 
@@ -133,7 +133,7 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
    [plot_single_luminance_function](https://colour.readthedocs.io/en/latest/generated/colour.plotting.plot_single_luminance_function.html), 
    [plot_multi_luminance_functions](https://colour.readthedocs.io/en/latest/generated/colour.plotting.plot_multi_luminance_functions.html)
 2. 读写扩展（**io.**）：
-   [image_specification_OpenImageI](https://colour.readthedocs.io/en/latest/generated/colour.io.image_specification_OpenImageIO.html)
+   [image_specification_OpenImageIO](https://colour.readthedocs.io/en/latest/generated/colour.io.image_specification_OpenImageIO.html)
    [LUT_to_LUT](https://colour.readthedocs.io/en/latest/generated/colour.io.LUT_to_LUT.html), 
 3. 色彩模型（**models.**）：
    [RGB_COLOURSPACE_CIE_RGB](https://colour.readthedocs.io/en/latest/generated/colour.models.RGB_COLOURSPACE_CIE_RGB.html), 
@@ -176,7 +176,7 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
 5. **机器学习**，支持多种机器学习算法，如 SVM、KNN、决策树等
 6. **三维重建**，提供立体匹配、相机标定、三维重建功能（有限）
 7. **图像分割**，支持阈值分割、轮廓检测、分水岭算法等
-8. **相机补益**，支持镜头畸变校正和图像增强
+8. **相机补偿**，支持镜头畸变校正和图像增强
 9. **运动分析**，提供光流计算和运动跟踪功能
 10. **图像拼接**，支持全景图像拼接和图像对齐
 11. **GPU 加速**，部分算法支持 GPU 加速，提升计算性能
@@ -384,7 +384,7 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
    [drawKeypoints](https://docs.opencv.org/4.x/d4/d5d/group__features2d__draw.html#ga5d2bafe8c1c45289bc3403a40fb88920), 
    [drawMatches](https://docs.opencv.org/4.x/d4/d5d/group__features2d__draw.html#gaf92cd1c6e9400e4753ce393d2fdc06b0)
 
-#### 相机校正与三维影射模块（cv2.calib3d）的常用函数（简，仅列出名称）：
+#### 相机校正与三维映射模块（cv2.calib3d）的常用函数（简，仅列出名称）：
 
 1. 相机校正：
    [findChessboardCorners](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga93efa9b0aa890de240ca32b11253dd4a), 
@@ -503,8 +503,8 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
    [&lt;BackgroundSubtractorMOG2&gt;](https://docs.opencv.org/4.x/d7/d7b/classcv_1_1BackgroundSubtractorMOG2.html), 
    [&lt;BackgroundSubtractorKNN&gt;](https://docs.opencv.org/4.x/db/d88/classcv_1_1BackgroundSubtractorKNN.html)
 2. 光流计算：
-   [calcOpticalFlowFarneback](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga5d10ebbd59fe09c5f650289ec0ece5af)（HS 法）, 
-   [calcOpticalFlowPyrLK](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga473e4b886d0bcc6b65831eb88ed93323)（LK 法）
+   [calcOpticalFlowFarneback](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga5d10ebbd59fe09c5f650289ec0ece5af)（**[HS 法](../../../Chapter_3/Language/cn/Docs_3_4_1.md)**）, 
+   [calcOpticalFlowPyrLK](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html#ga473e4b886d0bcc6b65831eb88ed93323)（**[LK 法](../../../Chapter_3/Language/cn/Docs_3_4_1.md)**）
 3. 运动检测：
    [CamShift](https://docs.opencv.org/4.x/d7/d00/tutorial_meanshift.html#autotoc_md1140), 
    [meanShift](https://docs.opencv.org/4.x/d7/d00/tutorial_meanshift.html#autotoc_md1138)
@@ -543,7 +543,7 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
 
 现在，让我们来看都有哪些 **功能扩展**。
 
-#### 生物识别扩展模块（cv2.bioinspired）的常用函数（简，仅列出名称），用于感知模拟（重要）：
+#### 生物识别扩展模块（cv2.bioinspired）的常用函数（简），用于感知模拟（重要）：
 
 1. 视网膜模型（需 opencv-contrib-python 扩展的 **cv2.bioinspired_Retina** 模块），通过[（cv2.）bioinspired_Retina.create](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html#aaf627494d7758eeb10d09c8fa5fd098b) 创建实例：
    - [&lt;Retina&gt;](https://docs.opencv.org/4.x/dc/d54/classcv_1_1bioinspired_1_1Retina.html) 视网膜模拟类型实例
@@ -571,28 +571,28 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
 2. 扫描结果范式解码（需 opencv-contrib-python 扩展的 **cv2.structured_light** 模块），方法提供自 <扫描蒙皮光栅生成器> 继承的 [&lt;StructuredLightPattern&gt;](https://docs.opencv.org/4.x/d9/dbb/classcv_1_1structured__light_1_1StructuredLightPattern.html) 父类：
    - [&lt;StructuredLightPattern&gt;](https://docs.opencv.org/4.x/d9/dbb/classcv_1_1structured__light_1_1StructuredLightPattern.html) 实物结构光光栅化投影解码器
    - [&lt;Entity&gt;.decode](https://docs.opencv.org/4.x/d9/dbb/classcv_1_1structured__light_1_1StructuredLightPattern.html#a4cc409edf8a330eeccba6737d391da34) 解码捕获的光栅投影
-3. 三维重建，**需要用到核心库三维影射模块（cv2.calib3d）能力**：
+3. 三维重建，**需要用到核心库三维映射模块（cv2.calib3d）能力**：
    [triangulatePoints](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#gad3fc9a0c82b08df034234979960b778c), 
    [reprojectImageTo3D](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#ga1bc1152bd57d63bc524204f21fde6e02), 
    [convertPointsFromHomogeneous](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#gac42edda3a3a0f717979589fcd6ac0035)
 
-#### 表面检测点对特征匹配（PPF）扩展模块（cv2.ppf_match_3d）的常用函数（简，仅列出名称）：
+#### 表面检测点对特征匹配（PPF）扩展模块（cv2.ppf_match_3d）的常用函数，简：
 
 1. 点云模型（需 opencv-contrib-python 扩展的 **cv2.ppf_match_3d** 模块），通过（cv2.） ppf_match_3d.loadPLYSimple 加载 **多边形点云格式（PLY [Polygon File Format]）文件（.ply）**，来创建点云模型实例：
    - [&lt;Mat&gt;](https://docs.opencv.org/4.x/d3/d63/classcv_1_1Mat.html) 模型被加载 PLY 文件的光栅化与法线等信息，以 OpenCV 的 Mat 格式储存
-2. 模型检测器（基于局部几何特征匹配），即粗配准（Coarse Global Registeration）。需要在使用[（cv2.）ppf_match_3d.&lt;PPF3DDetector&gt;](https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html) 创建时指定 关联采样步长（relativeSamplingStep）决定使用时的模型检测精度，值越小则越严格（精确匹配）：
+2. 模型检测器（基于局部几何特征匹配），即粗配准（Coarse Global Registration）。需要在使用[（cv2.）ppf_match_3d.&lt;PPF3DDetector&gt;](https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html) 创建时指定 关联采样步长（relativeSamplingStep）决定使用时的模型检测精度，值越小则越严格（精确匹配）：
    - [&lt;PPF3DDetector&gt;](https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html) 采用点对特征匹配（Point Pair Features）算法的场景模型检测
    - [&lt;Entity&gt;.trainModel](https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html#acd125802f8339b1ecb67316318a4670d) 将点云模型传入检测器训练，制作指定模型的场景内检测器
    - [&lt;Entity&gt;.match](https://docs.opencv.org/4.x/db/d25/classcv_1_1ppf__match__3d_1_1PPF3DDetector.html#a13757c035f9c95841f7f14f6170c8ffc) 使用训练好的模型检测器实例，检测 3D 场景内模型/位姿匹配
-3. 位姿匹配器（基于初始位姿特征匹配），即精配准（Fine Local Registeration）。需要在使用[（cv2.）surface_matching.&lt;ICP&gt;](https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html) 创建时，对使用的 **临近点迭代（ICP [Iterative Closest Point]）** 算法进行初始设定 [\[10\]][ref] 。位姿匹配器是对 粗配准 结果的进一步优化，用于细化点位，需要注意，&lt;ICP&gt; 有这些参数：
+3. 位姿匹配器（基于初始位姿特征匹配），即精配准（Fine Local Registration）。需要在使用[（cv2.）surface_matching.&lt;ICP&gt;](https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html) 创建时，对使用的 **临近点迭代（ICP [Iterative Closest Point]）** 算法进行初始设定 [\[10\]][ref] 。位姿匹配器是对 粗配准 结果的进一步优化，用于细化点位，需要注意，&lt;ICP&gt; 有这些参数：
    - **iterations** 为 ICP 算法的最大迭代次数
-   - **tolerence** 为 ICP 算法的收敛容差，变换矩阵更新差值小于该值时，停止迭代
+   - **tolerance** 为 ICP 算法的收敛容差，变换矩阵更新差值小于该值时，停止迭代
    - **rejectionScale** 为 ICP 剔除放缩因子，剔除点对距离大于该因子乘平均距离时的点对
    - **numLevels** 为 ICP 点云对齐时的分辨率像素金字塔层数，层数越多越耗时，越精确
    - **sampleType** 为 ICP 点云对齐 采样类型，一般为 0 默认值
    - **numMaxCorr** 为 ICP 算法的最大对应点对（Point Pairs）数，可调节模型结果精度
 4. 位姿匹配器执行后，可以取得 **源模型（Model）在场景（Scene）中的具体点位的场景内位置情况**。常被用于 SLAM、场景重建、3D 环境分析。以：
-   - [&lt;ICP&gt;.registerModelToScene](https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html#accd9744cedf9cd9cd175d2c5bd77951e) 注册物体点云到场景，来获关键点场景内的位姿矩阵
+   - [&lt;ICP&gt;.registerModelToScene](https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html#accd9744cedf9cd9cd175d2c5bd77951e) 注册物体点云到场景，来获取关键点在场景内的位姿矩阵
    
    得到经过 ICP 校准后的 PPF 结果（需要在调用 [&lt;ICP&gt;.registerModelToScene](https://docs.opencv.org/4.x/dc/d9b/classcv_1_1ppf__match__3d_1_1ICP.html#accd9744cedf9cd9cd175d2c5bd77951e) 方法时，传入 PPF 返回的各点位姿矩阵数组）。
 
@@ -681,7 +681,7 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
 5. 模型推理：
    [&lt;Entity&gt;.forward](https://docs.opencv.org/4.x/db/d30/classcv_1_1dnn_1_1Net.html#a98ed94cb6ef7063d3697259566da310b)
 
-#### GPU 加速扩展模块（cv2.cuda）的常用函数，是同名基础模块算法 CUDA 加速版，仅列出名称：
+#### GPU 加速扩展模块（cv2.cuda）的常用函数，是同名基础模块算法 CUDA 加速版，简：
 
 1. GPU 信息：
    [cuda.getCudaEnabledDeviceCount](https://docs.opencv.org/4.x/d8/d40/group__cudacore__init.html#gaaa93892f9189163e5d53790b4b1e88db), 
@@ -738,7 +738,7 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
 
 由于 OpenCV 提供了部分图形功能，能够做基础绘图（点、线、几何面等）。我们直接选用 OpenCV 来创建练习的图形用户界面（GUI）。而色彩分析则用在此领域更专业的 Colour-Science 完成。
 
-练习事例按照标准工程工作流进行。
+练习示例按照标准工程工作流进行。
 
 #### 第一步，确立已知信息：
 
@@ -759,7 +759,7 @@ Colour-Science 是一个 **相当齐全的色彩科学库**，其方法基本涵
 
 完成对 **Python 环境** 的准备和 **<常用数学库>** 的安装。具体脚本实现，可回顾上一节。
 
-同理，对于 **<常用视频库>** 的准备工作，我们也按照脚本方式进行流程化的封装。创建自动化脚本 **<a href="../../Examples/env_prepare/install_grapic_libs.py" target="_blank">install_grapic_libs.py</a>** 如下：
+同理，对于 **<常用视频库>** 的准备工作，我们也按照脚本方式进行流程化的封装。创建自动化脚本 **<a href="../../Examples/env_prepare/install_graphic_libs.py" target="_blank">install_graphic_libs.py</a>** 如下：
 
 ```python
 import subprocess
@@ -796,16 +796,16 @@ if __name__ == "__main__":
 这套脚本流程应该相当熟悉了。随后，使用 Python 执行脚本：
 
 ```bash
-   python install_grapic_libs.py
+   python install_graphic_libs.py
 ```
 
 如果包已安装，则会输出 **"[基础视频库] is already installed."**。如果包未安装，则会安装该包并输出 **"[基础视频库] has been installed."**，并显示包的详细信息。
 
-到此，完成音频库的环境准备工作。
+到此，完成视频库的环境准备工作。
 
 #### 第三步，搭建人脸检测分析 Demo：
 
-际上，这一次的 Demo 较上节的 <简易音频播放器> 来说，在交互逻辑上会少很多内容（基本没有操作上的交互）。但其功能逻辑链路，会比 <简易音频播放器> 要深一些。所以，我们可以把 **功能上的诉求按照同一条执行流水线**，进行概念原型设计。
+实际上，这一次的 Demo 较上节的 <简易音频播放器> 来说，在交互逻辑上会少很多内容（基本没有操作上的交互）。但其功能逻辑链路，会比 <简易音频播放器> 要深一些。所以，我们可以把 **功能上的诉求按照同一条执行流水线**，进行概念原型设计。
 
 而细化的两个 <工程目标> 就是执行流水线的 **“必要目标节点”**，有关键步骤图：
 
@@ -920,7 +920,7 @@ while True:
         # 检测人脸
         faces = face_cascade.detectMultiScale(
             gray,
-            scaleFactor=1.1s,
+            scaleFactor=1.1,
             minNeighbors=5,
             minSize=(120, 120),  # 增大最小尺寸以减少局部特征检测
             flags=cv2.CASCADE_SCALE_IMAGE

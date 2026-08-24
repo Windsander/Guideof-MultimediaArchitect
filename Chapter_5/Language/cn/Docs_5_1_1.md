@@ -1,7 +1,7 @@
 
-# 5.1.1 常用数学库（NumPy、Pandas、Mateplotlib）
+# 5.1.1 常用数学库（NumPy、Pandas、Matplotlib）
 
-工程里对 **数据分析和科学计算** 的过程中，常用数学库是不可或缺的工具。这些库不仅提供了高效的数据处理能力，还为我们提供了 **丰富的数学函数** 和 **可视化工具**。其中，最为重要的库有三个，即 **NumPy**、**Pandas**、**Mateplotlib**，分别对应 \[ **基础计算**、**数理统计**、**图表绘制** \] 的需求。
+工程里对 **数据分析和科学计算** 的过程中，常用数学库是不可或缺的工具。这些库不仅提供了高效的数据处理能力，还为我们提供了 **丰富的数学函数** 和 **可视化工具**。其中，最为重要的库有三个，即 **NumPy**、**Pandas**、**Matplotlib**，分别对应 \[ **基础计算**、**数理统计**、**图表绘制** \] 的需求。
 
 ## **NumPy（Numerical Python）**
 
@@ -117,19 +117,19 @@
 
 #### 傅立叶变换扩展（np.fft.）的常用函数（简，仅列出名称）：
 
-1. 一维傅里叶变换：
+1. 一维傅立叶变换：
    [fft](https://numpy.org/doc/stable/reference/generated/numpy.fft.fft.html), 
    [ifft](https://numpy.org/doc/stable/reference/generated/numpy.fft.ifft.html)
-2. 二维傅里叶变换：
+2. 二维傅立叶变换：
    [fft2](https://numpy.org/doc/stable/reference/generated/numpy.fft.fft2.html), 
    [ifft2](https://numpy.org/doc/stable/reference/generated/numpy.fft.ifft2.html)
-3. 多维傅里叶变换：
+3. 多维傅立叶变换：
    [fftn](https://numpy.org/doc/stable/reference/generated/numpy.fft.fftn.html), 
    [ifftn](https://numpy.org/doc/stable/reference/generated/numpy.fft.ifftn.html)
-4. 一维快速傅立叶法：
+4. 一维实数傅立叶变换（实输入 FFT）：
    [rfft](https://numpy.org/doc/stable/reference/generated/numpy.fft.rfft.html), 
    [irfft](https://numpy.org/doc/stable/reference/generated/numpy.fft.irfft.html)
-5. 一维亥姆霍兹变换：
+5. 一维厄米对称变换（Hermitian FFT）：
    [hfft](https://numpy.org/doc/stable/reference/generated/numpy.fft.hfft.html), 
    [ihfft](https://numpy.org/doc/stable/reference/generated/numpy.fft.ihfft.html)
 
@@ -358,13 +358,13 @@
 
 这些方法和结构类型，涵盖了数据创建、选择、过滤、变换、聚合、清洗、合并、时间序列处理以及数据输入输出等多个方面，进而使得 Pandas 成为了数据科学和数据分析领域的基础工具，亦被广泛应用于数据清洗、数据变换、数据分析、数据可视化等任务。
 
-不过，在 **可视化方面**，我们一般不会使用 Pandas 自身的绘制模块所提供的绘图功能，而是采用更为专业的 Matplotlib 库协助获取结果。**实际上 Pandas 自身的绘制模块（pd.plotting.）在过程方面，也是采用的 Matplotlib 做为绘制执行器**。调用绘图模块，仅仅是调用了封装好的绘制流而已，而这并不是 Pandas 所擅长的部分。
+不过，在 **可视化方面**，我们一般不会使用 Pandas 自身的绘制模块所提供的绘图功能，而是采用更为专业的 Matplotlib 库协助获取结果。**实际上 Pandas 自身的绘制模块（pd.plotting.）在过程方面，也是采用的 Matplotlib 作为绘制执行器**。调用绘图模块，仅仅是调用了封装好的绘制流而已，而这并不是 Pandas 所擅长的部分。
 
 其他如 **日期类型扩展（pd.DateOffset）** 等，在具体使用时，可自行前往 **[官网档案馆](https://pandas.pydata.org/docs/)** 查阅。
 
 ## **Matplotlib**
 
-**Matplotlib（Mathematics Python Plotting Library**）是基于 Python 语言开发，**专用于数据图形化的高级图表绘制库**。在数据科学、工程、金融、统计等领域有着广泛的应用 [\[3\]][ref] 。通过库所包含的各种核心及辅助模块，我们能够轻松的 **将经由 NumPy 和 Pandas 处理后的数据，以静态、动态 或 交互式图的方式展示出来**。它提供了 **丰富的绘图功能**，可以被用于生成各种类型的图表，如折线图、柱状图、散点图、直方图等。而灵活的 API 设计，则允许我们在自定义图表的各个方面，进行相对自由的定制。因此，其成为了工程中 **首选的数据可视化工具**，帮助我们更为 **直观地展示数据分析** 的结果。
+**Matplotlib（Mathematics Python Plotting Library）** 是基于 Python 语言开发，**专用于数据图形化的高级图表绘制库**。在数据科学、工程、金融、统计等领域有着广泛的应用 [\[3\]][ref] 。通过库所包含的各种核心及辅助模块，我们能够轻松的 **将经由 NumPy 和 Pandas 处理后的数据，以静态、动态 或 交互式图的方式展示出来**。它提供了 **丰富的绘图功能**，可以被用于生成各种类型的图表，如折线图、柱状图、散点图、直方图等。而灵活的 API 设计，则允许我们在自定义图表的各个方面，进行相对自由的定制。因此，其成为了工程中 **首选的数据可视化工具**，帮助我们更为 **直观地展示数据分析** 的结果。
 
 #### 主要功能：
 
@@ -538,7 +538,7 @@
 
 为了更贴近数据处理中所面临的真实情况，我们这里使用 Google 开源的 **[加利福尼亚州模拟房地产统计信息](https://download.mlcc.google.cn/mledu-datasets/california_housing_train.csv)**，作为数据源。
 
-练习事例按照标准工程工作流进行。
+练习示例按照标准工程工作流进行。
 
 #### 第一步，确立已知信息：
 
@@ -683,7 +683,7 @@ if __name__ == "__main__":
 
 #### 第三步，数据预处理：
 
-现在，我们正式进入事例的工作流。
+现在，我们正式进入示例的工作流。
 
 随后的步骤，我们建立 **<a href="../../Examples/practice_1_mathetics_libs_using.py" target="_blank">practice_1_mathetics_libs_using.py</a>** 脚本后，在其中处理。
 
@@ -785,7 +785,7 @@ print(total_targets.describe())
 当下我们已经取得了需要的数据内容，只用通过 Matplotlib 将数据展示即可。由于 <工程目标> 中存在 <2D\3D> 两种图样类型。为了方便起见，我们依然采用封装的形式，**将对应类型图表的绘制流程函数化使用**。有：
 
 ```python
-def ploting_2d_histogram(examples, targets):
+def plotting_2d_histogram(examples, targets):
     """
     Plot a 2D histogram of the examples and targets.
 
@@ -822,7 +822,7 @@ def ploting_2d_histogram(examples, targets):
     plt.show()
 
 
-def ploting_3d_histogram(examples, targets, z_label):
+def plotting_3d_histogram(examples, targets, z_label):
     """
     Plot a 3D histogram of the examples and targets.
 
@@ -869,9 +869,9 @@ def ploting_3d_histogram(examples, targets, z_label):
 而在完成函数化后，绘制的过程就很简单了，直接调用方法即可：
 
 ```python
-ploting_2d_histogram(total_examples, total_targets["median_house_value"])
-ploting_3d_histogram(total_examples, total_targets["median_house_value"], "Median House Value (in $1000's)")
-ploting_3d_histogram(total_examples, total_examples["rooms_per_person"], "Rooms/Person")
+plotting_2d_histogram(total_examples, total_targets["median_house_value"])
+plotting_3d_histogram(total_examples, total_targets["median_house_value"], "Median House Value (in $1000's)")
+plotting_3d_histogram(total_examples, total_examples["rooms_per_person"], "Rooms/Person")
 ```
 
 最终，通过 Python 执行 **<a href="../../Examples/practice_1_mathetics_libs_using.py" target="_blank">practice_1_mathetics_libs_using.py</a>** 脚本，就能得到想要的结果了。执行成功会获得 3 张图表：
@@ -882,7 +882,7 @@ ploting_3d_histogram(total_examples, total_examples["rooms_per_person"], "Rooms/
       width = "600" height = "400"
       src="../../Pictures/practice_1_result_0.png" alt="">
     <figcaption>
-      <p>图 5-1 模拟加利福利亚房价中位值 2D 热力图</p>
+      <p>图 5-1 模拟加利福尼亚房价中位值 2D 热力图</p>
    </figcaption>
 </figure>
 </center>
@@ -894,7 +894,7 @@ ploting_3d_histogram(total_examples, total_examples["rooms_per_person"], "Rooms/
       width = "600" height = "490"
       src="../../Pictures/practice_1_result_1.png" alt="">
     <figcaption>
-      <p>图 5-2 模拟加利福利亚区域房价中位值 3D 热力图</p>
+      <p>图 5-2 模拟加利福尼亚区域房价中位值 3D 热力图</p>
    </figcaption>
 </figure>
 </center>
@@ -906,7 +906,7 @@ ploting_3d_histogram(total_examples, total_examples["rooms_per_person"], "Rooms/
       width = "600" height = "490"
       src="../../Pictures/practice_1_result_2.png" alt="">
     <figcaption>
-      <p>图 5-3 模拟加利福利亚人均占有房间数 3D 热力图</p>
+      <p>图 5-3 模拟加利福尼亚人均占有房间数 3D 热力图</p>
    </figcaption>
 </figure>
 </center>

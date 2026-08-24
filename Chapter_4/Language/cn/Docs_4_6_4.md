@@ -1,7 +1,7 @@
 
 # 4.6.4 自适应实时评估算法（Adam [Adaptive Moment Estimation]）
 
-**自适应实时评估算法（Adam [Adaptive Moment Estimation]）**，相当于RMSprop 和 Momentum 结合的一种算法，标准Adam 可以认为是 一阶AdaDelta 的动量改进版。
+**自适应实时评估算法（Adam [Adaptive Moment Estimation]）**，相当于 RMSprop 和 Momentum 结合的一种算法，标准 Adam 可以认为是 一阶 AdaDelta 的动量改进版。
 
 **迭代公式：**
 
@@ -28,7 +28,7 @@ $$
 }
 $$
 
-取 经验系数 $$\beta_1$$ 、 $$\beta_1$$ ，Hinton建议 $$\beta_1 = 0.9$$ ，$$\beta_2 = 0.999$$
+取 经验系数 $$\beta_1$$ 、 $$\beta_2$$ ，Hinton 建议 $$\beta_1 = 0.9$$ ，$$\beta_2 = 0.999$$
 取 $$\eta$$ 防爆因子，建议 $$\epsilon = \text{10e-8}$$ 避免干扰运算
 
 Adam 很好的结合了前辈们的各种优化处理手段，成为了集大成之优化函数。因此，Adam是被经常使用的，现代主流优化函数之一。

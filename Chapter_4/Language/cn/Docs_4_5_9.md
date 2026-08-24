@@ -38,7 +38,7 @@ $$
 
 **三元损失（Triplet Loss）** 函数来自于论文《FaceNet: A Unified Embedding for Face Recognition and Clustering》中 [\[15\]][ref] ，提出的通过拆分 **三元组（Triplet）**，选取正负样本与原样本进行差异化处理，来让预测值趋近于原样本而远离负样本的一种损失函数。
 
-**三元组（Triplet）** 来自于输入分批的卷积神经网络（CNN）结果，我们需要将输入样本分为三类，在每一时代（Epoch）中都进行相同神经网络隐藏层权重（Wights）影响下的结果计算。累计 **单次样本** 的损失计算（Loss），以求得分批的损失函数（Cost Function）输出评分。
+**三元组（Triplet）** 来自于输入分批的卷积神经网络（CNN）结果，我们需要将输入样本分为三类，在每一时代（Epoch）中都进行相同神经网络隐藏层权重（Weights）影响下的结果计算。累计 **单次样本** 的损失计算（Loss），以求得分批的损失函数（Cost Function）输出评分。
 
 ## **Triplet Loss 的使用**
 
@@ -61,7 +61,7 @@ $$
 最终，计算损失后的三元组，**按照质量** 来划分，可以分为三个类别：
 
 - **易辨三元组（easy triplets）**，可以使得 loss 基本趋近于 0 的类型
-- **难辩三元组（hard triplets）**，有 Dn < Dp 的三元组，一定会误判，尽量避免
+- **难辨三元组（hard triplets）**，有 Dn < Dp 的三元组，一定会误判，尽量避免
 - **模糊三元组（semi-hard triplets）**，有 Dp < Dn < Dp + m，这是我们重点训练的类型
 
 可见，如果构成的三元组一上来就是易辨三元组，那只能证明模型训练参数的启动配置，使模型陷入了过拟合。通常，我们希望每一时代（Epoch）被计算的三元组都具有一定的模糊特性，而方便权重更新。因此，**模糊三元组（semi-hard triplets）才是迭代的选择**。
@@ -81,7 +81,7 @@ $$
 
 我们一般取 $${fraction\_positive} > 0.2$$ 认为是一次有效训练中的模糊三元组数据。
 
-三元损失在对比损失的基础上更近一步，引入了正负样本概念，来使得分类预测结果更加聚集，且使分类间能够更加远离。本身计算并不算非常复杂，因此可以用在如人脸识别、车辆识别等模型的移动端迁移上。但是，三元损失只是在对比损失上引入正负概念，实际处理过程中，每次只能对比一个负样本而忽略了其他的非关联性。这样就很容易造成迭代结果陷入不稳定（在多个距离相近但实际不同的负样本间抖动），或者局部最优解。
+三元损失在对比损失的基础上更进一步，引入了正负样本概念，来使得分类预测结果更加聚集，且使分类间能够更加远离。本身计算并不算非常复杂，因此可以用在如人脸识别、车辆识别等模型的移动端迁移上。但是，三元损失只是在对比损失上引入正负概念，实际处理过程中，每次只能对比一个负样本而忽略了其他的非关联性。这样就很容易造成迭代结果陷入不稳定（在多个距离相近但实际不同的负样本间抖动），或者局部最优解。
 
 ## **Triplet Loss 算子化**
 
@@ -94,8 +94,8 @@ $$
 #include <stdlib.h>
 
 #define BATCH_SIZE 10     // Batch_size = Samples_of_Person x Data/Person
-#define VECTOR_SIZE 128   // Extract output layer Feature vector's dimissions
-#define DEVIDE_SAFE 1e-12 // protect when gridant at 0 will be to lage
+#define VECTOR_SIZE 128   // Extract output layer Feature vector's dimensions
+#define DIVIDE_SAFE 1e-12 // protect when gradient at 0 will be too large
 
 // Pairwise Distance Calculation
 void pairwise_distance(double embeddings[BATCH_SIZE][VECTOR_SIZE],
@@ -190,8 +190,8 @@ double triplet_loss(int labels[BATCH_SIZE],
     }
   }
   // Calculate fraction of positive triplets
-  *fraction_positives = (double)num_positive / ((double)num_validate + DEVIDE_SAFE);
-  return triplet_cost / (double)(num_positive + DEVIDE_SAFE);
+  *fraction_positives = (double)num_positive / ((double)num_validate + DIVIDE_SAFE);
+  return triplet_cost / (double)(num_positive + DIVIDE_SAFE);
 }
 
 int main() {
@@ -236,7 +236,7 @@ $$
 }
 $$
 
-而既然是矩阵乘法，除了本书例子中采用的纯 C 语言实现外，也可以通过 GPU 算子来实现进一步加速。类似于 CUDA 算子，或部分成熟的推理引擎（如 Keras、py-Touch 等）就是这样处理的。
+而既然是矩阵乘法，除了本书例子中采用的纯 C 语言实现外，也可以通过 GPU 算子来实现进一步加速。类似于 CUDA 算子，或部分成熟的推理引擎（如 Keras、PyTorch 等）就是这样处理的。
 
 从这个例子就能看出， **有效的工程化能够极大提升算法的训练效率，减小耗时。**
 

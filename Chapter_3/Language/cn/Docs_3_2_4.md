@@ -3,7 +3,7 @@
 
 **马尔滤波（Marr Filter）** 是拉普拉斯滤波采用 **先行降噪（NRF [Noise Reduction First]）** 的改进算法。利用高斯滤波对频率波动性的处理能力，对图片的高频信息进行模糊过滤。再行使标准拉普拉斯边缘检测，筛选突变明显的剩余高频部分并增强，达到更好的效果 [\[14\]][ref] 。
 
-因此马尔滤波也被称为 **拉普拉斯-高斯滤波（LoG [Laplacian of Gaussian]）**，或 **马尔-希德雷斯算法（Marr–Hildreth Algorithm）**。还是以 $$\vert target \vert_1$$ 表示归一化操作。我们记高斯滤波核函数为 $$F_n(\vec{x_c})$$ ，记 LoG 的边缘检测核函数为 $${LoG}_p(\vec{x_c})$$ ，有：
+因此马尔滤波也被称为 **拉普拉斯-高斯滤波（LoG [Laplacian of Gaussian]）**，或 **马尔-希尔德雷斯算法（Marr–Hildreth Algorithm）**。还是以 $$\vert target \vert_1$$ 表示归一化操作。我们记高斯滤波核函数为 $$F_n(\vec{x_c})$$ ，记 LoG 的边缘检测核函数为 $${LoG}_p(\vec{x_c})$$ ，有：
 
 $$
 {\displaystyle 
@@ -101,10 +101,10 @@ uniform sampler2D target_texture;
 
 void main()
 {
-    vec3 output_;
+    vec3 output_ = vec3(0.0);
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            vec2 bias = vec2(i-1, j-1) * pixel_bias;
+            vec2 bias = vec2(i-2, j-2) * pixel_bias;
             output_ += texture2D(target_texture, fs_texcoord.xy + bias).rgb * marr_matrix[i + j * n];
         }
     }
@@ -134,7 +134,7 @@ function calculate_marr_kernel(step, delta) {
         for (let j = 0; j < n; j++) {
             let diff = Math.pow(i - step, 2) + Math.pow(j - step, 2);
             kernel[j + n * i] = /*factor_1 * (skip) */ (1 - diff * factor_2) * Math.exp(-diff * factor_2);
-            normalize_div += kernel[i];
+            normalize_div += kernel[j + n * i];
         }
     }
     for (let i = 0; i < kernel.length; i++) {
@@ -206,22 +206,22 @@ uniform sampler2D target_texture;
 
 vec3 gauss_operation()
 {
-    vec3 output_;
+    vec3 output_ = vec3(0.0);
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             vec2 bias = vec2(i-1, j-1) * pixel_bias;
             output_ += texture2D(target_texture, fs_texcoord.xy + bias).rgb * gaussian_matrix[i + j * n];
         }
     }
-    return texture2D(target_texture, fs_texcoord.xy).rgb;
+    return output_;
 }
 
 vec3 edge_operation()
 {
-    vec3 output_;
+    vec3 output_ = vec3(0.0);
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < m; j++) {
-            vec2 bias = vec2(i-1, j-1) * pixel_bias;
+            vec2 bias = vec2(i-2, j-2) * pixel_bias;
             vec4 color_sample = texture2D(target_texture, fs_texcoord.xy + bias);
             output_ += color_sample.rgb * marr_matrix[i + j * m];
         }
@@ -263,7 +263,7 @@ function calculate_gaussian_kernel(step, delta) {
         for (let j = 0; j < n; j++) {
             let diff = Math.pow(i - step, 2) + Math.pow(j - step, 2);
             kernel[j + n * i] = factor_1 * Math.exp(-diff * factor_2);
-            normalize_div += kernel[i];
+            normalize_div += kernel[j + n * i];
         }
     }
     for (let i = 0; i < kernel.length; i++) {
@@ -283,7 +283,7 @@ function calculate_marr_kernel(step, delta) {
         for (let j = 0; j < n; j++) {
             let diff = Math.pow(i - step, 2) + Math.pow(j - step, 2);
             kernel[j + n * i] = /*factor_1 * (skip) */ (1 - diff * factor_2) * Math.exp(-diff * factor_2);
-            normalize_div += kernel[i];
+            normalize_div += kernel[j + n * i];
         }
     }
     for (let i = 0; i < kernel.length; i++) {

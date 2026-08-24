@@ -1,11 +1,11 @@
 
 # 4.6.5 优化算法对比与使用建议
 
-这里引用一下特斯拉人工智能主管 **[安德烈·卡尔帕蒂（Andrej Karpathy）](https://github.com/karpathy)** 的 在线 Demo（使用的是 pytouch） ，来做一下演示。
+这里引用一下特斯拉人工智能主管 **[安德烈·卡尔帕蒂（Andrej Karpathy）](https://github.com/karpathy)** 的 在线 Demo（使用的是 ConvNetJS） ，来做一下演示。
 
 我们需要将脚本改成如下（增加 Adam）：
 
-```python
+```javascript
 // lets use an example fully-connected 2-layer ReLU net
 var layer_defs = [];
 layer_defs.push({type:'input', out_sx:24, out_sy:24, out_depth:1});
@@ -56,9 +56,9 @@ https://cs.stanford.edu/people/karpathy/convnetjs/demo/trainers.html
 
 - **如果数据稠密**，实际上简单的算法就能得到鲁棒性很好的结果。参考使用 标准动量 的 SGD/BGD/MBGD + Momentum 。加动量既可以保证相对快的训练速度，也可以一定程度避免局部最小值。
 
-- **如果数据稀疏**，因为需要对关键特征点进行提取，所以需要用一些自适应算法。对于简单凸性和相对不复杂的数据，可以采用 L1、L2正则化 + 组合分桶。而复杂一些的，就需要采用Adagrad, Adadelta, RMSprop, Adam 等方式了。
+- **如果数据稀疏**，因为需要对关键特征点进行提取，所以需要用一些自适应算法。对于简单凸性和相对不复杂的数据，可以采用 L1、L2 正则化 + 组合分桶。而复杂一些的，就需要采用 Adagrad、Adadelta、RMSprop、Adam 等方式了。
 
-- **如果关键参数更多的出现在运算后期**，即梯度稀疏一定程度后，则Adam 比 RMSprop 效果会好。这时 Adam 明显是最好的选择。
+- **如果关键参数更多的出现在运算后期**，即梯度稀疏一定程度后，则 Adam 比 RMSprop 效果会好。这时 Adam 明显是最好的选择。
 
 按照这样的策略，灵活且合理的选取优化器。
 

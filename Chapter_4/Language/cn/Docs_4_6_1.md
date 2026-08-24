@@ -1,7 +1,7 @@
 
 # 4.6.1 经典优化算法（Classic Optimize Function）
 
-常用的经典优化算法，主要有三种，分别是：随即梯度下降法（SGD）、批量梯度下降法（BGD）、小批梯度下降法（MBGD）。
+常用的经典优化算法，主要有三种，分别是：随机梯度下降法（SGD）、批量梯度下降法（BGD）、小批梯度下降法（MBGD）。
 
 ## **随机梯度下降法（SGD [Stochastic Gradient Descent]）**
 
@@ -10,7 +10,7 @@
 $$
 {\displaystyle 
  \begin{aligned}
-   \theta_t = \theta_{t-1} - \eta \dot{} \nabla_\theta J(\theta ; x_i; y_i) \\
+   \theta_t = \theta_{t-1} - \eta \cdot \nabla_\theta J(\theta ; x_i; y_i) \\
  \end{aligned}
 }
 $$
@@ -24,7 +24,7 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   \theta_t = \theta_{t-1} - \eta \dot{} \nabla_\theta J(\theta) \\
+   \theta_t = \theta_{t-1} - \eta \cdot \nabla_\theta J(\theta) \\
  \end{aligned}
 }
 $$
@@ -38,7 +38,7 @@ $$
 $$
 {\displaystyle 
  \begin{aligned}
-   \theta_t = \theta_{t-1} - \eta \dot{} \nabla_\theta J(\theta ; x_{(i:i+n)}; y_{(i:i+n)}) \\
+   \theta_t = \theta_{t-1} - \eta \cdot \nabla_\theta J(\theta ; x_{(i:i+n)}; y_{(i:i+n)}) \\
  \end{aligned}
 }
 $$

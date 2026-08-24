@@ -78,7 +78,7 @@ int main() {
 运行验证可得到结果：
 
 ```C
-The contrastive loss is 0.1250000
+The contrastive loss is 0.490000
 ```
 
 

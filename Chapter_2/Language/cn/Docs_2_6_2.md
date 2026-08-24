@@ -13,7 +13,7 @@
       width = "800" height = "150"
       src="../../Pictures/RGB_3bits_palette.png" alt="">
    <figcaption>
-      <p>图 2-29 4-bit RGBI 可表示的所有颜色</p>
+      <p>图 2-29 3-bit RGB 可表示的所有颜色</p>
    </figcaption>
 </figure>
 </center>
@@ -36,7 +36,7 @@
 
 ## **4-bit RGBI**
 
-1981年，IBM 在其 CGA 中，以 **4-bit RGBI 格式** 对彩色图片进行了存储。在此格式下，颜色被分为 RGBI 4个通道，每个通道各用 1-bit 表示。因此，RGBI 最多只能表示 $$2^3 \times 2 = 16$$ 种颜色：
+1981 年，IBM 在其 CGA 中，以 **4-bit RGBI 格式** 对彩色图片进行了存储。在此格式下，颜色被分为 RGBI 4个通道，每个通道各用 1-bit 表示。因此，RGBI 最多只能表示 $$2^3 \times 2 = 16$$ 种颜色：
 
 <center>
 <figure>
@@ -111,7 +111,7 @@
 </figure>
 </center>
 
-以鹦鹉图为例，在 9-bit RGBI 格式下的展示效果如下
+以鹦鹉图为例，在 9-bit RGB 格式下的展示效果如下
 
 <center>
 <figure>
@@ -125,7 +125,7 @@
 </figure>
 </center>
 
-此格式最早在 **1985年 的土星520ST（Atari 520ST）机型** 上被使用。
+此格式最早在 **1985 年 的雅达利 520ST（Atari 520ST）机型** 上被使用。
 
 ## **12-bit RGB**
 
@@ -142,7 +142,7 @@
 </figure>
 </center>
 
-以鹦鹉图为例，在 12-bit RGBI 格式下的展示效果如下
+以鹦鹉图为例，在 12-bit RGB 格式下的展示效果如下
 
 <center>
 <figure>
@@ -156,7 +156,7 @@
 </figure>
 </center>
 
-此格式被运用在 **Apple IIGS、土星 STE 系列** 和 **世嘉（Sega）Game Gear 游戏机** 上。
+此格式被运用在 **Apple IIGS、雅达利 STE 系列** 和 **世嘉（Sega）Game Gear 游戏机** 上。
 
 ## **15-bit RGB**
 
@@ -173,7 +173,7 @@
 </figure>
 </center>
 
-以鹦鹉图为例，在 15-bit RGBI 格式下的展示效果如下
+以鹦鹉图为例，在 15-bit RGB 格式下的展示效果如下
 
 <center>
 <figure>
@@ -204,7 +204,7 @@
 </figure>
 </center>
 
-以鹦鹉图为例，在 16-bit RGBI 格式下的展示效果如下
+以鹦鹉图为例，在 16-bit RGB 格式下的展示效果如下
 
 <center>
 <figure>
@@ -235,7 +235,7 @@
 </figure>
 </center>
 
-以鹦鹉图为例，在 18-bit RGBI 格式下的展示效果如下
+以鹦鹉图为例，在 18-bit RGB 格式下的展示效果如下
 
 <center>
 <figure>
@@ -266,7 +266,7 @@
 </figure>
 </center>
 
-以鹦鹉图为例，在 24-bit RGBI 格式下的展示效果如下
+以鹦鹉图为例，在 24-bit RGB 格式下的展示效果如下
 
 <center>
 <figure>

@@ -9,7 +9,7 @@
 
 ## **二维拉普拉斯滤波核**
 
-对于二维信号，即图片信号，来说。拉普拉斯卷积核只有 $$xy$$ 两个方向参数。记原信号为 $$S(x)$$ ，原信号的二阶导数为 $$\nabla^2 S(x)$$ 。仍然取用大小 $$n \times n = 3 \times 3$$ ，中心点 $$\vec{x_c}$$ 的卷积核，记边缘检测拉普帕斯滤波核函数为 $$\mathcal{L}_p(\vec{x_c})$$ ，则：
+对于二维信号，即图片信号，来说。拉普拉斯卷积核只有 $$xy$$ 两个方向参数。记原信号为 $$S(x)$$ ，原信号的二阶导数为 $$\nabla^2 S(x)$$ 。仍然取用大小 $$n \times n = 3 \times 3$$ ，中心点 $$\vec{x_c}$$ 的卷积核，记边缘检测拉普拉斯滤波核函数为 $$\mathcal{L}_p(\vec{x_c})$$ ，则：
 
 $$
 {\displaystyle 
@@ -106,7 +106,7 @@ $$
 如果是 **边缘锐化（Edge Sharpening）** 的场景，数据只采用灰度值处理即可。对于 **原色格式（Primaries Format）为 CIE RGB 1931 色彩空间** 的数据，可按下式用 RGB 快速换算：
 
 $$
-Grey = 0.299 \cdot R\ +\ 0.587 \cdot G\ +\ 0.114 \cdot B
+Gray = 0.299 \cdot R\ +\ 0.587 \cdot G\ +\ 0.114 \cdot B
 $$
 
 **此处演示为了便于说明和展示，选择采用更广泛的适用范围，针对广义锐化（Sharpening）构造像素全通道采样的拉普拉斯滤波器。**
@@ -144,10 +144,10 @@ void main()
 {
     vec3 output_;
     output_ += texture2D(target_texture, fs_texcoord.xy).rgb * ((only_edge? 0.0 : 1.0) + laplacian_matrix[1][1]);
-    output_ += texture2D(target_texture, fs_texcoord.xy + vec2(-1, -1) * pixel_bias).rgb * laplacian_matrix[0][0];
-    output_ += texture2D(target_texture, fs_texcoord.xy + vec2(-1, +1) * pixel_bias).rgb * laplacian_matrix[2][0];
-    output_ += texture2D(target_texture, fs_texcoord.xy + vec2(+1, -1) * pixel_bias).rgb * laplacian_matrix[0][2];
-    output_ += texture2D(target_texture, fs_texcoord.xy + vec2(+1, +1) * pixel_bias).rgb * laplacian_matrix[2][2];
+    output_ += texture2D(target_texture, fs_texcoord.xy + vec2(-1,  0) * pixel_bias).rgb * laplacian_matrix[0][1];
+    output_ += texture2D(target_texture, fs_texcoord.xy + vec2(+1,  0) * pixel_bias).rgb * laplacian_matrix[2][1];
+    output_ += texture2D(target_texture, fs_texcoord.xy + vec2( 0, -1) * pixel_bias).rgb * laplacian_matrix[1][0];
+    output_ += texture2D(target_texture, fs_texcoord.xy + vec2( 0, +1) * pixel_bias).rgb * laplacian_matrix[1][2];
     gl_FragColor = vec4(output_, 1.0);
 }
 ```
@@ -213,9 +213,9 @@ function calculate_laplacian_kernel(step, way_count, str_factor) {
 
 四通拉普拉斯，由于引入对角线方向代表的 $$45^{\circ}$$ 、 $$135^{\circ}$$ 、 $$225^{\circ}$$ 、 $$315^{\circ}$$ 的计算，使 $$3 \times 3$$ 核心相邻元素所含所有方向上的梯度都成为等大参考值，因此，四通拉普拉斯的卷积核，为 **各向同性（Isotropic）** 卷积核。
 
-所以，虽然四通拉普拉斯能够更好的提取临界边缘特征，但也会同步的保留并增强高频扰动，从而在结果中留存更多的高频噪音。双通则要相对好一些，但相应的临界特征提取能力也变得更弱。不过，若是能够提升数据源的质量，通过 **先行降噪（NRF [Noise Reduction First]）** 过滤部分干扰。那么理论上，最终提取产物的质量也会有一定程度的提升。**马尔滤波（Marr Filter）** 就是对此方向的探索。
+所以，虽然四通拉普拉斯能够更好的提取临界边缘特征，但也会同步的保留并增强高频扰动，从而在结果中留存更多的高频噪声。双通则要相对好一些，但相应的临界特征提取能力也变得更弱。不过，若是能够提升数据源的质量，通过 **先行降噪（NRF [Noise Reduction First]）** 过滤部分干扰。那么理论上，最终提取产物的质量也会有一定程度的提升。**马尔滤波（Marr Filter）** 就是对此方向的探索。
 
-同时，拉普拉斯滤波 **并非是脱离中心参考值的边缘锐化（Edge Sharpening）算法**，对于一些复杂的边缘位置波动情况，会有 **边缘扩散（Edge Spread）** 的风险。且由于 **包含高权重的中心值参与了计算过程**，使得拉普拉斯滤波对噪声非常敏感，从而极易丢失边缘方向信息，最终导致检测得到的边缘不连续。基于该情况，部分后续的改进算法采用了 ***去中心化（Center Insensitive）** 思想，来一定程度上避免问题发生。比如， **索贝尔滤波（Sobel Filter）**。
+同时，拉普拉斯滤波 **并非是脱离中心参考值的边缘锐化（Edge Sharpening）算法**，对于一些复杂的边缘位置波动情况，会有 **边缘扩散（Edge Spread）** 的风险。且由于 **包含高权重的中心值参与了计算过程**，使得拉普拉斯滤波对噪声非常敏感，从而极易丢失边缘方向信息，最终导致检测得到的边缘不连续。基于该情况，部分后续的改进算法采用了 **去中心化（Center Insensitive）** 思想，来一定程度上避免问题发生。比如， **索贝尔滤波（Sobel Filter）**。
 
 
 [ref]: References_3.md

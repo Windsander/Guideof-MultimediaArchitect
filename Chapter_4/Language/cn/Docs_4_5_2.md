@@ -65,7 +65,7 @@ int main() {
 运行验证可得到结果：
 
 ```C
-The MSE is 0.033333
+The MSE is 0.007500
 ```
 
 

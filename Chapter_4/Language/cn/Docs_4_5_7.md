@@ -72,7 +72,7 @@ int main() {
 运行验证可得到结果：
 
 ```C
-The hinge loss is 0.250000
+The hinge loss is 0.475000
 ```
 
 

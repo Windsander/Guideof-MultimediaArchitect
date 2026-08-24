@@ -1,13 +1,13 @@
 
 # 2.5.5 CIE LAB 色彩空间（CIE 1976 L\*, a\*, b\* color space）
 
-1952 年，色彩科学家 **里查德·塞瓦尔·亨特（Richard Sewall Hunter，1909–1991）** 创建了至今任然是业界最高端颜色解决方案供应商的 **亨特联合实验室（HunterLab [Hunter Associates Laboratory]）**，并在之后提出了著名的 **Hunter L,a,b 色彩空间**。 Hunter L,a,b 色彩空间结合 CIE XYZ 色彩空间，共同组成了 CIE 1976 LAB 色彩空间的前身。所以，CIE LAB 与 RGB 间需要通过 XYZ 来缔结转换关系。
+1952 年，色彩科学家 **理查德·塞瓦尔·亨特（Richard Sewall Hunter，1909–1991）** 创建了至今仍然是业界最高端颜色解决方案供应商的 **亨特联合实验室（HunterLab [Hunter Associates Laboratory]）**，并在之后提出了著名的 **Hunter L,a,b 色彩空间**。 Hunter L,a,b 色彩空间结合 CIE XYZ 色彩空间，共同组成了 CIE 1976 LAB 色彩空间的前身。所以，CIE LAB 与 RGB 间需要通过 XYZ 来缔结转换关系。
 
 1976 年，在经过一系列建议的采纳和对 1931 色彩标准体系的完善后，CIE 尝试用一种全新的角度来处理均色问题。CIE 在 Hunter L,a,b 色彩空间的基础上，**沿用了 Hunter L,a,b 的色度处理方式与 CIE XYZ 体系结合**，将 CIE 标准观察者应用在了 CIE 1976 LAB 色彩空间上。由于 Hunter L,a,b 设定之初的目的，就是将不同颜色间的差异更为显著的客观表示出来，因此 CIE LAB 也继承了这一特点，成为了 **设备无关** 适合于色差比对的色彩空间。
 
 CIE 1976 LAB 将 XYZ 色度图（非色度平面）在其所在平面，以选定白点为中心拓扑变换为圆形，分别代表：**红（Red）、绿（Green）、蓝（Blue）、黄（Yellow）** 的 4 个等大象限（扇区），并以平面中心构建了二维坐标系 $$(a,\ b)$$ 。以平面内向量 $$(a,\ b)$$ 来索引实际色度。
 
-我们知道，单纯的靠色度是没办法完全描述颜色特征的。除了色度外，我们还需要引入光亮度因素。CIE LAB 中的依旧沿用了 1960 UCS 和 1931 XYZ 中对光亮度的处理方式，单取由白到黑的 **灰度线（Grey Line）** 作为了光亮度的刻度。但是对与不同光亮度的切分，LAB 也对 XYZ 原有的亮度表示进行了调整。以在一定程度上保证，每个亮度下切割得到的色度平面都有相对均匀表示。
+我们知道，单纯的靠色度是没办法完全描述颜色特征的。除了色度外，我们还需要引入光亮度因素。CIE LAB 中的依旧沿用了 1960 UCS 和 1931 XYZ 中对光亮度的处理方式，单取由白到黑的 **灰度线（Grey Line）** 作为了光亮度的刻度。但是对于不同光亮度的切分，LAB 也对 XYZ 原有的亮度表示进行了调整。以在一定程度上保证，每个亮度下切割得到的色度平面都有相对均匀表示。
 
 如果记目标颜色为 $$C_{LAB}$$ ，那么 LAB 色彩空间的 **配色函数** 为：
 
@@ -31,7 +31,7 @@ $$
 {\displaystyle 
 {\begin{bmatrix} L^{\star } \\ a^{\star } \\ b^{\star } \end{bmatrix}}= 
 {\begin{bmatrix} 
-  0  &  +116  &    0   & 16  \\
+  0  &  +116  &    0   & -16  \\
 +500 &  -500  &    0   &  0  \\
   0  &  +200  &  -200  &  0  \\
 \end{bmatrix}} \cdot {\begin{bmatrix} F(\tfrac{X}{X_{white}}) \\ F(\tfrac{Y}{Y_{white}}) \\ F(\tfrac{Z}{Z_{white}}) \\ 1 \end{bmatrix}}

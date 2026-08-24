@@ -14,9 +14,8 @@
 
 ## **目录**
 * [5.1 音视频帧与环境准备](Docs_5_1.md)
-	* [5.1.1 常用数学库（Numpy、Pandas、Mateplotlib）](Docs_5_1_1.md)
+	* [5.1.1 常用数学库（Numpy、Pandas、Matplotlib）](Docs_5_1_1.md)
 	* [5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）](Docs_5_1_2.md)
 	* [5.1.3 视频分析库（PyOpenCV、Color-Science）](Docs_5_1_3.md)
-	* [5.1.4 分析环境准备](Docs_5_1_4.md)
-	* [5.1.5 其他分析软件](Docs_5_1_5.md)
+	* [5.1.4 其他分析软件](Docs_5_1_4.md)
 * [【参考文献】](References_5.md)

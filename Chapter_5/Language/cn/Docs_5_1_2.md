@@ -19,7 +19,7 @@
 
 **SoundFile（PySoundFile [Python Sound File]）** 是一个 **用于读写音频文件的 Python 库**，主要被用于解码（或者编码）常用的 **音频格式文件** [\[4\]][ref] 。例如前文介绍过的 **WAV**、**AIFF**、**FLAC** 等大多数常见音频格式，SoundFile 都已完整支持。并且，通过 SoundFile 取出的音频数据，可以和其他音频分析库（如 Librosa、Aubio 等）和科学计算库（如 NumPy、SciPy 等）配合使用。
 
-实际上，SoundFile 核心能力来自于 **C开源库 Libsndfile**，正是 Libsndfile 为它 **提供了多种音频文件格式的支撑**。而 PySoundFile 则可以看做是 Libsndfile 这个 C语言库的 Python 套接访问入口。因此，如果我们在常规工程中存在对音频文件的读写需求，不妨考虑采用 Libsndfile 来处理，它的官网位于 [http://www.mega-nerd.com/libsndfile/](http://www.mega-nerd.com/libsndfile) ，含有该库的相关技术参数。
+实际上，SoundFile 核心能力来自于 **C 开源库 Libsndfile**，正是 Libsndfile 为它 **提供了多种音频文件格式的支撑**。而 PySoundFile 则可以看做是 Libsndfile 这个 C 语言库的 Python 套接访问入口。因此，如果我们在常规工程中存在对音频文件的读写需求，不妨考虑采用 Libsndfile 来处理，它的官网位于 [http://www.mega-nerd.com/libsndfile/](http://www.mega-nerd.com/libsndfile) ，含有该库的相关技术参数。
 
 #### 主要功能：
 
@@ -67,7 +67,7 @@
 
 ## **PyAudio（Python Audio）**
 
-**PyAudio（Python Audio）** 是音频分析中 **常用的音频输入输出操作库**，即 **音频 I/O 库** [\[5\]][ref] 。换句话说，它提供了一组工具和函数，使得开发者可以在项目的 Python 程序中，利用 PyAudio 已有的函数接口，**快速进行音频的流式（这里指本地流）录制和输出**。同 SoundFile 一样，PyAudio 依赖于底层 **C语言库 PortAudio** 的帮助，而其内核 PortAudio 库实则为一个 **专精于多种操作系统上运行（即跨 Windows、MacOS、Linux 平台）的底层音频输入输出（I/O）库**。
+**PyAudio（Python Audio）** 是音频分析中 **常用的音频输入输出操作库**，即 **音频 I/O 库** [\[5\]][ref] 。换句话说，它提供了一组工具和函数，使得开发者可以在项目的 Python 程序中，利用 PyAudio 已有的函数接口，**快速进行音频的流式（这里指本地流）录制和输出**。同 SoundFile 一样，PyAudio 依赖于底层 **C 语言库 PortAudio** 的帮助，而其内核 PortAudio 库实则为一个 **专精于多种操作系统上运行（即跨 Windows、MacOS、Linux 平台）的底层音频输入输出（I/O）库**。
 
 所以，与 SoundFile 注重于对音频文件（即本地音频流结果）的操作不同，PyAudio 或者说 PortAudio 的操作重点，在于 **处理对 “实时” 音频流的捕获和析出**。实时音频流，是能够被连续处理传输的音频数据，例如采样自麦克风输入模数转换后的持续不断的数字信号，或者取自播放音频的连续到来分块数据，即 **过程中音频数据**。
 
@@ -146,7 +146,7 @@ stream = p.open(
 )
 ```
 
-其中，**callback(in_data, frame_count, time_info, status)** 即 **回调传入**，包含四个关键参：
+其中，**callback(in_data, frame_count, time_info, status)** 即 **回调传入**，包含四个关键参数：
 
 - **in_data** 为 **音频数据的输入流**，通常配合 **np.frombuffer(in_data, dtype=np.int16)** 读取数据
 - **frame_count** 为 **输入流当前数据对应音频帧数**，即当前 **in_data** 数据覆盖的 **帧数**
@@ -177,7 +177,7 @@ stream = p.open(
 #### 主要功能：
 
 1. **临时处理友好**，提供简便的方法，在必要时做临时读取和写入音频文件，支持多种格式
-2. **快速时频转换**，提供短时傅里叶变换（STFT）、常规Q变换（CQT）等，方便时频域分析
+2. **快速时频转换**，提供短时傅里叶变换（STFT）、常规 Q 变换（CQT）等，方便时频域分析
 3. **音频特征提取**，支持对梅尔频率倒谱系数（MFCC）、色度特征、频谱对比度等特征提取
 4. **节拍节奏分析**，具有节拍跟踪、起音检测等，音乐（工程）分析能力
 5. **分割与重采样**，提供音频分割与重采样工具，便于快速分析对比
@@ -476,11 +476,11 @@ Librosa 在音频方面，涵盖了大多数基本的科学分析手段，足够
 
 ## **Aubio**
 
-**Aubio** 是主要用于 **音乐信息检索（MIR [Music Information Retrieval]）** 的 **跨平台轻量级分析库**。设计之初就是期望实时进行 MIR 使 **Aubio 采用了 C语言 作为库的核心语言**。不过，因其已在自身的开源项目中，实现了 Python 的套接调用入口 [\[7\]][ref] ，我们仍然可以在 Python 中使用。
+**Aubio** 是主要用于 **音乐信息检索（MIR [Music Information Retrieval]）** 的 **跨平台轻量级分析库**。设计之初就是期望实时进行 MIR 使 **Aubio 采用了 C 语言 作为库的核心语言**。不过，因其已在自身的开源项目中，实现了 Python 的套接调用入口 [\[7\]][ref] ，我们仍然可以在 Python 中使用。
 
 功能性方面，Aubio 和 Librosa 在音频浅层信息处理上，如果排除效率因素，则几乎不相上下。但 Aubio 的处理效率，不论从整体架构还是本位支撑上，都着实比 Librosa 更加高效。
 
-因此，在音频分析领域，对于类似 **‘音高检测’ 等以实时性作为主要求的分析点**，我们常采用 Aubio 而不是 Librosa 处理。而对于 梅尔频率倒谱系数（MFCC）之类的科学分析，则多数用 Librosa 解决，虽然 Aubio 也有此功能。除此外，科学分析不以 Aubio 合并解决的另一原因，还在于 Aubio 对主流科学计算库的兼容程度，要略逊 Librosa 一筹，并向当局限。即有利有弊。
+因此，在音频分析领域，对于类似 **‘音高检测’ 等以实时性作为主要诉求的分析点**，我们常采用 Aubio 而不是 Librosa 处理。而对于 梅尔频率倒谱系数（MFCC）之类的科学分析，则多数用 Librosa 解决，虽然 Aubio 也有此功能。除此外，科学分析不以 Aubio 合并解决的另一原因，还在于 Aubio 对主流科学计算库的兼容程度，要略逊 Librosa 一筹，并相当局限。即有利有弊。
 
 此外，**相比 Librosa，Aubio 仅能提供相对基础的分析**。
 
@@ -527,7 +527,7 @@ Librosa 在音频方面，涵盖了大多数基本的科学分析手段，足够
 
 <br>
 
-由于是 C语言库，其 Python 套接后的使用形式，也 **相对更接近 C 的使用习惯**。所以，Aubio 的的过程类，**在创建实体时就需要传入配置参数**，如下例：
+由于是 C 语言库，其 Python 套接后的使用形式，也 **相对更接近 C 的使用习惯**。所以，Aubio 的的过程类，**在创建实体时就需要传入配置参数**，如下例：
 
 ```python
 # 创建音频源读取实例
@@ -551,7 +551,7 @@ onset_o = aubio.onset("default", 1024, 512, 44100)
 notes_o = aubio.notes("default", 1024, 512, 44100)
 
 # 创建离散余弦变换实例
-dct_o = aubio.cqt(16)
+dct_o = aubio.dct(16)
 
 # 创建快速傅里叶变换实例
 fft_o = aubio.fft(1024)
@@ -563,7 +563,7 @@ mfcc_o = aubio.mfcc(40, 1024, 44100)
 filterbank_o = aubio.filterbank(40, 1024)
 
 # 创建频谱描述符实例
-specdesc_o = aubio.specdesc(aubio.specdesc_type.centroid, 1024)
+specdesc_o = aubio.specdesc("centroid", 1024)
 
 # 创建相位声码器实例
 pvoc_o = aubio.pvoc(1024, 512)
@@ -586,6 +586,9 @@ pvoc_o = aubio.pvoc(1024, 512)
 而其使用时的方式，由于是以 **\_\_call\_\_** 的 Python 调用实现的，有：
 
 ```python
+# 初始化频谱结果列表
+spectrogram = []
+
 # 读取音频数据并处理
 while True:
     samples, read = source()
@@ -660,7 +663,7 @@ spectrogram = np.array([s for s in spectrogram])
 
 对于界面，我们需要引入 **Tkinter** 库来协助进行绘制。Tkinter 是 Python 标准模块其中之一，专用于创建图形用户界面（GUI）的工具，提供了一系列简易的按钮、图表、交互组件和标准布局。这里只需了解即可。
 
-练习事例按照标准工程工作流进行。
+练习示例按照标准工程工作流进行。
 
 #### 第一步，确立已知信息：
 

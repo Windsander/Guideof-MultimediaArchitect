@@ -58,7 +58,7 @@ int main() {
 运行验证可得到结果：
 
 ```C
-The softplus of 0.500000 is 0.648721
+The softplus of 0.500000 is 0.974077
 ```
 
 

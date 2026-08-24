@@ -32,7 +32,7 @@
 
 <br>
 
-从数学角度来看，此类算法大都选择以 **离散傅里叶变换（DFT）**、**小波变换（Wavelet Transform）** 等技术的 **降低算力消耗近似解方案**，作为算法核心。以傅立叶族举例，在实际应用中，当选定解空间的 **[傅立叶基底函数族](../../../Chapter_3/Language/cn/Docs_3_1.md)** 并不是无穷时，**离散傅立叶基所表示的原值**，本就 **会有一定损失**（见本书[第三章](../../../Chapter_3/Language/cn/Docs_3_1.md)详解）。此外，来自数字信号的 **有损采样（Lossy Sampling）** 过程的 **采样损失（Sampling Loss）**，依旧会存在。
+从数学角度来看，此类算法大都选择以 **离散傅立叶变换（DFT）**、**小波变换（Wavelet Transform）** 等技术的 **降低算力消耗近似解方案**，作为算法核心。以傅立叶族举例，在实际应用中，当选定解空间的 **[傅立叶基底函数族](../../../Chapter_3/Language/cn/Docs_3_1.md)** 并不是无穷时，**离散傅立叶基所表示的原值**，本就 **会有一定损失**（见本书[第三章](../../../Chapter_3/Language/cn/Docs_3_1.md)详解）。此外，来自数字信号的 **有损采样（Lossy Sampling）** 过程的 **采样损失（Sampling Loss）**，依旧会存在。
 
 所以，**不可逆压缩算法是会有一定误差的。而误差的引入则来自于算法自身，一经处理后无法消除**。
 
@@ -86,15 +86,15 @@ MP3 的处理流水线如下（红线编码，绿线解码，解码逆运算）�
 
 **分窗（Windowing）** 和 **去窗口化（De-windowing/Inverse Windowing）** 互逆。
 
-**分窗是对每个分块片段，应用加权处理的步骤**。常用的 **窗口函数** 包括 **汉宁窗（Hanning Window）**、 **汉明窗（Hamming Window）** 和 **黑曼窗（Blackman Window）**。几个算法都是对分组后样本片段的缩放处理，目的是 **减少频谱泄漏，提高频谱分析的精度**。记分组总样本数为 $$N$$ ，而当前分块的某个采样点值为 $$n$$ ，则对 $$n$$ 分窗处理的结果 $$w(n)$$ 有：
+**分窗是对每个分块片段，应用加权处理的步骤**。常用的 **窗口函数** 包括 **汉宁窗（Hanning Window）**、 **汉明窗（Hamming Window）** 和 **布莱克曼窗（Blackman Window）**。几个算法都是对分组后样本片段的缩放处理，目的是 **减少频谱泄漏，提高频谱分析的精度**。记分组总样本数为 $$N$$ ，而当前分块的某个采样点值为 $$n$$ ，则对 $$n$$ 分窗处理的结果 $$w(n)$$ 有：
 
 $$
 {\displaystyle 
  \begin{aligned}
    \begin{cases}
-     Hanning  &: \ w(n) = 0.5 \cdot \left( 1 - cos \left( \frac{2\pi n}{N - 1}\right) \right) \\
-     Hamming  &: \ w(n) = 0.54 - 0.46 \cdot cos \left( \frac{2\pi n}{N - 1}\right) \\
-     Blackman &: \ w(n) = 0.42 - 0.5  \cdot cos \left( \frac{2\pi n}{N - 1}\right) + 0.08 \cdot cos \left( \frac{4\pi n}{N - 1}\right)
+     Hanning  &: \ w(n) = 0.5 \cdot \left( 1 - \cos \left( \frac{2\pi n}{N - 1}\right) \right) \\
+     Hamming  &: \ w(n) = 0.54 - 0.46 \cdot \cos \left( \frac{2\pi n}{N - 1}\right) \\
+     Blackman &: \ w(n) = 0.42 - 0.5  \cdot \cos \left( \frac{2\pi n}{N - 1}\right) + 0.08 \cdot \cos \left( \frac{4\pi n}{N - 1}\right)
    \end{cases} \\
  \end{aligned}
 }
@@ -108,7 +108,7 @@ $$
 
 <br>
 
-经过 DCT 所得的频域数据，被用作 **子带滤波（Subband Filtering）** 的输入。子带滤波是一种信号处理技术，用于 **将输入信号分解成多个频率子带（Subband），每个子带包含特定频率范围内的信号成分**。而结合我们在模数转换（A/D）提到的 **香农采样定律（Nyquist–Shannon Sampling Theorem）** 可知，有来自于 A/D 采样率（Samplerate/Sample Rate）不变的条件下， DCT 过程中的 **基底函数族函数**，函数可取用的 **最大频率值为该采样率值的一半**。所以，子带划分依据采样率的半值，**以固定步长来切割出各个子带范围**。
+经过 DCT 所得的频域数据，被用作 **子带滤波（Subband Filtering）** 的输入。子带滤波是一种信号处理技术，用于 **将输入信号分解成多个频率子带（Subband），每个子带包含特定频率范围内的信号成分**。而结合我们在模数转换（A/D）提到的 **香农采样定律（Nyquist–Shannon Sampling Theorem）** 可知，有来自于 A/D 采样率（Samplerate/Sample Rate）不变的条件下， DCT 过程中的 **基底函数族中**，函数可取用的 **最大频率值为该采样率值的一半**。所以，子带划分依据采样率的半值，**以固定步长来切割出各个子带范围**。
 
 记子带计划分组数为 $$M$$ ，每个子带的频率范围长度为固定值 $$S$$ ，则：
 
@@ -120,7 +120,7 @@ $$
 }
 $$
 
-我们以最常用的 **44.1 kHZ 采样率** 为例，其子带滤波后的子带划分，在 MP3 格式里，该采样率下需要分为 $$M = 32$$ 组 [\[27\]][ref] ，即：
+我们以最常用的 **44.1 kHz 采样率** 为例，其子带滤波后的子带划分，在 MP3 格式里，该采样率下需要分为 $$M = 32$$ 组 [\[27\]][ref] ，即：
 
 $$
 {\displaystyle 
@@ -143,7 +143,7 @@ $$
 </figure>
 </center>
 
-但正如本书在 **[等响曲线（ELLC）](Docs_1_4_3.md)** 和 **[收音频响曲线（HFR）](Docs_1_4_4.md)** 章节所提，**人耳对声音的感知本身就是动态的**。声音的 **瞬时特征**、**由突发强信号对弱信号的心理性掩盖（即掩蔽效应）**、**超阈值噪音（即痛觉阈）所产生的噪音遮蔽** 等，都会使人对上述 **不同子带分段代表频率的感知能力发生变化**。以等长划分的子带，显然 **不能充分的** 表示该变化所带来的影响，进而 **无法做到，在筛选掉一些不必要的频段的同时，增强有效频段**。
+但正如本书在 **[等响曲线（ELLC）](Docs_1_4_3.md)** 和 **[收音频响曲线（HFR）](Docs_1_4_4.md)** 章节所提，**人耳对声音的感知本身就是动态的**。声音的 **瞬时特征**、**由突发强信号对弱信号的心理性掩盖（即掩蔽效应）**、**超阈值噪声（即痛觉阈）所产生的噪声遮蔽** 等，都会使人对上述 **不同子带分段代表频率的感知能力发生变化**。以等长划分的子带，显然 **不能充分的** 表示该变化所带来的影响，进而 **无法做到，在筛选掉一些不必要的频段的同时，增强有效频段**。
 
 <br>
 
@@ -162,7 +162,7 @@ $$
 </figure>
 </center>
 
-那么，**假设经过该流水线后**，新的子带集：取低频部分，去除 子带1、子带2 和 子带3。中频部分，略微调整子 带10 到 子带20 的频率范围。高频部分，去除子 带30、子带31 和 子带32，调整 子带29 的频率范围。就有：
+那么，**假设经过该流水线后**，新的子带集：取低频部分，去除 子带1、子带2 和 子带3。中频部分，略微调整子带10 到 子带20 的频率范围。高频部分，去除子带30、子带31 和 子带32，调整 子带29 的频率范围。就有：
 
 <center>
 <figure>
@@ -228,7 +228,7 @@ $$
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">Protection Bit</th>
     <td style="border: 1px solid #ddd; padding: 10px;">16 (1)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">CRC 交验状态标志，0 指启用 CRC 校验，1 指关闭 CRC 校验，CRC 校验用于检测帧数据的传输错误</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">CRC 校验状态标志，0 指启用 CRC 校验，1 指关闭 CRC 校验，CRC 校验用于检测帧数据的传输错误</td>
   </tr>
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">Bitrate Index</th>
@@ -238,7 +238,7 @@ $$
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">Sample Rate Index</th>
     <td style="border: 1px solid #ddd; padding: 10px;">21~22 (2)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">表示音频数据 采样率 的相关查表索引，00 为 44.1 kHz，01 为 48 kHz，02 为 32 kHz，11保留</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">表示音频数据 采样率 的相关查表索引，00 为 44.1 kHz，01 为 48 kHz，10 为 32 kHz，11保留</td>
   </tr>
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">Padding Bit</th>
@@ -273,7 +273,7 @@ $$
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">Emphasis</th>
     <td style="border: 1px solid #ddd; padding: 10px;">31~32 (2)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">预强调（Pre-emphasis）处理类型 的相关查表索引，00 为 无强调，01 为 50/15 微秒（50/15 µs）滤波，10 为 保留字段，11 则采用 ITU-CCITT J.17 标准</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">预加重（Pre-emphasis）处理类型 的相关查表索引，00 为 无加重，01 为 50/15 微秒（50/15 µs）滤波，10 为 保留字段，11 则采用 ITU-CCITT J.17 标准</td>
   </tr>
 </table>
 
@@ -295,7 +295,7 @@ MP3 的文件结构，依旧为 **两部分组成（简单示意）**：
 
 <br>
 
-其中，**MP3 ID3 标签**，被用于做包括 **歌曲标题、艺术家、专辑、年份、流派、评论** 等信息的记录。根据使用位置和复杂度分类，可以分类两种：
+其中，**MP3 ID3 标签**，被用于做包括 **歌曲标题、艺术家、专辑、年份、流派、评论** 等信息的记录。根据使用位置和复杂度分类，可以分为两种：
 
 - **ID3v1 用于 MP3 文件末尾**，固定 128 字节（Bytes），**最多只能包含一个**；
 - **ID3v2 用于 MP3 文件开头**，长度可变不固定，记录复杂数据并存在多个不同版本；
@@ -315,7 +315,7 @@ MP3 的文件结构，依旧为 **两部分组成（简单示意）**：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">Identifier</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x02 (3)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当前标签 ID，固定存储 'TAG' 四个大写字母的 ASCII 码，即 == 0x544147</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前标签 ID，固定存储 'TAG' 三个大写字母的 ASCII 码，即 == 0x544147</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">Title</th>
@@ -372,7 +372,7 @@ MP3 的文件结构，依旧为 **两部分组成（简单示意）**：
   <tr>
     <th style="border: 1px solid #ddd; padding: 10px;">Identifier</th>
     <td style="border: 1px solid #ddd; padding: 10px;">0x00~0x02 (3)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">标记当前标签 ID，固定存储 'ID3' 四个大写字母的 ASCII 码，即 == 0x494433</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">标记当前标签 ID，固定存储 'ID3' 三个大写字母的 ASCII 码，即 == 0x494433</td>
   </tr>
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px;">Version</th>
@@ -400,7 +400,7 @@ MP3 的文件结构，依旧为 **两部分组成（简单示意）**：
 
 在标签头的标志位中，对于 v2.3 和 v2.4 有一个 **专用于扩展的数据结构**，即 **扩展头（Extended Header）** 数据。这一结构体常被用来存放一些额外的自定义信息（一般为一些状态标志，做功能启停和记录），**放置于 ID3 帧数据队列的首位**。
 
-从参数构成上看，**ID3v2.3 的可定制控件较为约束**：
+从参数构成上看，**ID3v2.3 的可定制空间较为约束**：
 
 <table style="width:100%; border-collapse: collapse;">
   <tr style="background-color: #f2f2f2;">
@@ -426,7 +426,7 @@ MP3 的文件结构，依旧为 **两部分组成（简单示意）**：
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">CRC Data</th>
     <td style="border: 1px solid #ddd; padding: 10px; vertical-align: top;">0x08~+X (X)</td>
-    <td style="border: 1px solid #ddd; padding: 10px;">CRC 交验信息，一般为 2 Bytes 的 CRC 交验值</td>
+    <td style="border: 1px solid #ddd; padding: 10px;">CRC 校验信息，一般为 2 Bytes 的 CRC 校验值</td>
   </tr>
 </table>
 
@@ -594,7 +594,7 @@ MP3 的文件结构，依旧为 **两部分组成（简单示意）**：
 
 <br>
 
-依具上述固定值，检测不同标签帧种类的内容信息，即可参考 FLAC 的类似元数据块类型举一反三，读取标签帧内容信息（Tag Frame Contents）。对 MP3 格式来说，**标签帧内容多为编解码自设定**，或着 **较为存粹的数据内容（即非多级结构的纯数据值）**。不再单独举例。
+依据上述固定值，检测不同标签帧种类的内容信息，即可参考 FLAC 的类似元数据块类型举一反三，读取标签帧内容信息（Tag Frame Contents）。对 MP3 格式来说，**标签帧内容多为编解码自设定**，或者 **较为纯粹的数据内容（即非多级结构的纯数据值）**。不再单独举例。
 
 
 <br>

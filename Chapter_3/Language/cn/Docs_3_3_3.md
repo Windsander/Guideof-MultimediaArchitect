@@ -1,5 +1,5 @@
 
-# 3.3.2 朴素目标检测物体锁定 - 分步滑动窗口（Simple Sliding Window）
+# 3.3.3 朴素目标检测物体锁定 - 分步滑动窗口（Simple Sliding Window）
 
 **分步滑动窗口（Simple Sliding Window）** 是一种常用的辅助锁定检测目标的手段。其优势在于，**简单易行且精度可控**。
 
