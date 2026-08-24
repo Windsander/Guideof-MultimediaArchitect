@@ -1,7 +1,7 @@
 
 # 4.6.3 优化算法的优化-应对重点强（弱）化更新
 
-另一个问题，就是针对性处理对结果影响更大/更小的权重，让重要的迭代的迭代更谨慎，而不重要的获得更快衰减。以保证优势权重，剔除不必要影响。
+另一个问题，就是针对性处理对结果影响更大/更小的权重，让重要的迭代更谨慎，而不重要的获得更快衰减。以保证优势权重，剔除不必要影响。
 
 ## **自适应梯度算法（AdaGrad/AGA [Adaptive Gradient Algorithm]）**
 
@@ -12,7 +12,7 @@ $$
  \begin{aligned}
    g_{t,i} &= \nabla_\theta J(\theta_i) \\
    G_{t,i} &= \sum _{\tau=1} ^{t} g_{\tau, i}^2 \\
-   \theta_{t+1,i} &= \theta_{t,i} - \frac{\eta}{\sqrt{G_{t,i}+\epsilon}} \dot{} g_{t,i} \\
+   \theta_{t+1,i} &= \theta_{t,i} - \frac{\eta}{\sqrt{G_{t,i}+\epsilon}} \cdot g_{t,i} \\
  \end{aligned}
 }
 $$
@@ -56,7 +56,7 @@ $$
 
 ## **AdaGrad 和 RMSprop 单位问题**
 
-我们知道，很多单位是有实际价值的。比如是米（meter），天（day）等，就有具体物理含义。所以，对于迭代使用的加速度 $$\Delta\theta_t$$ ，一个很自然的期望是，的单位和是保持一致的。
+我们知道，很多单位是有实际价值的。比如是米（meter），天（day）等，就有具体物理含义。所以，对于迭代使用的加速度 $$\Delta\theta_t$$ ，一个很自然的期望是，它的单位和 $$\theta_t$$ 保持一致。
 
 但是：
 
@@ -74,7 +74,7 @@ $$
 \Delta x \propto H^{-1 }g \propto \frac{\tfrac{\partial f}{\partial x}}{\tfrac{\partial^2 f}{\partial^2 x}} \propto \frac{1}{x}
 $$
 
-上述变化后，便能将 $$x$$ 、 $$\Delta x$$ 和 $$g$$ 单位一致化。但是 Hessian 矩阵计算量太大，我们没办法直接使用。所以，我们还需要模拟退火牛顿法，有：
+上述变化后，便能将 $$x$$ 、 $$\Delta x$$ 和 $$g$$ 单位一致化。但是 Hessian 矩阵计算量太大，我们没办法直接使用。所以，我们还需要近似牛顿法，有：
 
 $$
 \Delta x = \frac{\frac{\partial f}{\partial x}}{\frac{\partial ^2 f}{\partial ^2 x}} \Rightarrow \Delta x_t = -\frac{\sqrt{\sum{ _{\tau=1} ^{t-1}} \Delta x_\tau} }{\sqrt{E[g^2]_t+\epsilon}}
@@ -113,7 +113,7 @@ $$
 
 是一种相对理想的，针对强弱重点的梯度优化算法了。
 
-目前，我们所有的处理方式都是秩针对性的解决单一问题。那么有没有什么方法，可以结合两类的优点呢？既解决鞍点，又能自适应学习速率呢？
+目前，我们所有的处理方式都只是针对性的解决单一问题。那么有没有什么方法，可以结合两类的优点呢？既解决鞍点，又能自适应学习速率呢？
 
 当然有，那就是 Adam 自适应实时评估算法。
 

@@ -83,11 +83,11 @@ $$
 7. stable-Softmax 对指数做了差值限定，但因为除法，可能会导致除零问题
 8. stable-log-Softmax 有 stable 和 log 两者的优点，且无除零问题，但略微增加消耗
 
-Softmax 常用于多目标分类、目标预测、NLP领域。能够将数字特征映射到概率范围内。常用在全联接层后，并配合 Cross-Entropy 损失函数使用。
+Softmax 常用于多目标分类、目标预测、NLP领域。能够将数字特征映射到概率范围内。常用在全连接层后，并配合 Cross-Entropy 损失函数使用。
 
 目前 Softmax 的多种变体中，被使用最多的还是 stable-log-Softmax ，且涵盖了 log-Softmax 的相关情况。因此，一般将 stable-log-Softmax 和  log-Softmax ，统一称为  log-Softmax。
 
-Softmax 被广泛使用的原因，还是在于它自带归一化，且能够稳定神经元的功能。这使得用 Softmax 做链接层算子，能够在分类场景上，更快的达到期望结果。是提升训练速率的有效手段。
+Softmax 被广泛使用的原因，还是在于它自带归一化，且能够稳定神经元的功能。这使得用 Softmax 做连接层算子，能够在分类场景上，更快的达到期望结果。是提升训练速率的有效手段。
 
 ## **Softmax 算子化**
 

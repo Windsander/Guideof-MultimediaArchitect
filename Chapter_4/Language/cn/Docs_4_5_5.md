@@ -69,7 +69,7 @@ int main() {
 运行验证可得到结果：
 
 ```C
-The log loss is -0.056644, for object class 'apple'
+The log loss is 0.462879, for object class 'apple'
 ```
 
 

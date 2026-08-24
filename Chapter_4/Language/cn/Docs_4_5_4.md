@@ -43,7 +43,7 @@ $$
 
 1. 当预测值残差在 $$[ 0,\ +\infty)$$ 时，梯度为设定值 $$\gamma$$ 
 2. 当预测值残差在 $$(-\infty ,\ 0)$$ 时，梯度为设定值 $$1- \gamma$$
-3. 可通过 $$\gamma$$ 的设定，来有指向的调整模型结果，$$\gamma$$ 的可范围在 $$[ 0,\ 1]$$
+3. 可通过 $$\gamma$$ 的设定，来有指向的调整模型结果，$$\gamma$$ 的可选范围在 $$[ 0,\ 1]$$
 4. 适用于区间预测，通过调整 $$\gamma$$ 范围覆盖预测区间
 5. 非光滑（non-smooth）
 6. 非指数计算，算力消耗相对较低
@@ -69,7 +69,7 @@ double quantile_loss(double *y_true, double *y_pred, int size, double q) {
     if (error > 0) {
       sum += q * error;
     } else {
-      sum += (1 - q) * error;
+      sum += (1 - q) * fabs(error);
     }
   }
   return sum / size;
@@ -89,7 +89,7 @@ int main() {
 运行验证可得到结果：
 
 ```C
-The quantile loss is 0.083333
+The quantile loss is 0.041667
 ```
 
 

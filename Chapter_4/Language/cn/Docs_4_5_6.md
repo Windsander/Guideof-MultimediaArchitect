@@ -59,7 +59,7 @@ double cross_entropy_loss(double *y_true, double *y_pred, int size, int num_clas
 }
 
 int main() {
-  int size = 3;
+  int size = 1;
   double y_true[] = {0.5, 0.75, 1.0}; // single sample base 'cat' 'puppy' 'dog'
   double y_pred[] = {0.6, 0.8, 0.9};  // single sample pred 'cat' 'puppy' 'dog'
   int num_classes = 3;
@@ -72,7 +72,7 @@ int main() {
 运行验证可得到结果：
 
 ```C
-The cross entropy loss is 0.1982671, for 'cat' 'puppy' 'dog'
+The cross entropy loss is 0.528131, for 'cat' 'puppy' 'dog'
 ```
 
 上面的代码中，展示了存在三类分类情况下，样本的输入分类和预测特征向量，皆未归一化会产生的结果。交叉熵损失仍然能使用，但不精确。

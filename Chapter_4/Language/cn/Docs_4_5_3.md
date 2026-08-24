@@ -33,13 +33,13 @@ $$
 1. 当绝对误差在 $$[ 0,\ \delta]$$ 时，契合正态分布（Normal distribution）
 2. 当绝对误差在 $$( \delta,\ +\infty)$$ 时，契合拉普拉斯分布（Laplace distribution）
 3. 当绝对误差小于 $$\delta$$ 时，它采用平方误差，导数非常数
-4. 当绝对误差大于 $$\delta$$ 时，采用的线性误差，导数常数 $$\tfrac{\delta}{2}$$ 。
+4. 当绝对误差大于 $$\delta$$ 时，采用的线性误差，导数常数 $$\delta$$ 。
 5. 光滑（smooth），适合优化算法
 6. 非指数计算，算力消耗相对较低
 
 **休伯损失（Huber Loss）** 实际上是基于 MAE 和 MSE 基础上，提出的一种兼容 MAE 与 MSE 各自优点的损失函数设计。
 
-相比于 MSE 和 MAE，Huber Loss 的算力消耗没有太多的提升。相比于 MSE，Huber Loss 降低了 $$\delta$$ 半径外对离群值的惩罚；相比于 MAE，Huber Loss 提高了 $$\delta$$ 半径内回归的收敛速度。可以看出，Huber Loss 的效果首 $$\delta$$ 的选择影响较大。因此，使用它的时候，需要注意 $$\delta$$ 调参问题。
+相比于 MSE 和 MAE，Huber Loss 的算力消耗没有太多的提升。相比于 MSE，Huber Loss 降低了 $$\delta$$ 半径外对离群值的惩罚；相比于 MAE，Huber Loss 提高了 $$\delta$$ 半径内回归的收敛速度。可以看出，Huber Loss 的效果受 $$\delta$$ 的选择影响较大。因此，使用它的时候，需要注意 $$\delta$$ 调参问题。
 
 ## **Huber Loss 算子化**
 
@@ -76,7 +76,7 @@ int main() {
 运行验证可得到结果：
 
 ```C
-The Huber loss is 0.033333
+The Huber loss is 0.003750
 ```
 
 
