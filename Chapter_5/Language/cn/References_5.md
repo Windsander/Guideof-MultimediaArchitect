@@ -30,3 +30,5 @@
 **[14]** D. P. W. Ellis, "Beat tracking by dynamic programming," in Journal of New Music Research, vol. 36, no. 1, pp. 51-60, 2007, doi: 10.1080/09298210701653344.
 
 **[15]** G. Farneback, "Two-Frame Motion Estimation Based on Polynomial Expansion," in Image Analysis (SCIA 2003), Lecture Notes in Computer Science, vol. 2749, pp. 363-370, 2003, doi: 10.1007/3-540-45103-X_50.
+
+**[16]** J. Laroche and M. Dolson, "Improved phase vocoder time-scale modification of audio," in IEEE Transactions on Speech and Audio Processing, vol. 7, no. 3, pp. 323-332, May 1999, doi: 10.1109/89.756322.

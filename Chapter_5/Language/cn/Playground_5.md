@@ -16,4 +16,12 @@
 ../../Examples/Playground/video_frame_analysis.html
 {% endurlembed %}
 
+## 帧处理器（对应 5.4 节）
+
+音频区：播放内置演示音或上传本地音频，一键切换原声（A）与低通滤波（B），拖动滑块调节截止频率。图像区：拖动饱和度、高斯模糊与 USM 锐化滑块，左右对比原图与处理结果。所有数据均在本地处理，不会上传。
+
+{% urlembed %}
+../../Examples/Playground/frame_processing.html
+{% endurlembed %}
+
 [ref]: References_5.md
