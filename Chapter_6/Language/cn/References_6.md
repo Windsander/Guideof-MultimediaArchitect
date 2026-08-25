@@ -18,3 +18,7 @@
 **[8]** ITU-T Recommendation H.264, "Advanced video coding for generic audiovisual services," International Telecommunication Union, 2016.
 
 **[9]** ITU-T Recommendation H.265, "High efficiency video coding," International Telecommunication Union, 2013.
+
+**[10]** M. Lee, H. Song, J. Park, B. Jeon, J. Kang, J.-G. Kim, Y.-L. Lee, J.-W. Kang, and D. Sim, "Overview of Versatile Video Coding (H.266/VVC) and Its Coding Performance Analysis," IEIE Transactions on Smart Processing and Computing, vol. 12, no. 2, pp. 122–154, April 2023, doi: 10.5573/IEIESPC.2023.12.2.122.
+
+**[11]** J. Han, B. Li, D. Mukherjee, C.-H. Chiang, A. Grange, C. Chen, H. Su, S. Parker, S. Deng, U. Joshi, Y. Chen, Y. Wang, P. Wilkins, Y. Xu, and J. Bankoski, "A Technical Overview of AV1," Proceedings of the IEEE, vol. 109, no. 9, pp. 1435–1462, September 2021.
