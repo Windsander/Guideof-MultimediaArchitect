@@ -114,12 +114,16 @@
 </head>
 
 <body>
-    <h3>音频帧处理（对应 5.4.1）：低通滤波 A/B 试听</h3>
+    <h3>音频帧处理（对应 5.4.1）：滤波 → 变速 → 变调 处理链 A/B 试听</h3>
     <div class="toolbar">
         <button id="btnPlayOrig">▶ 播放原声（A）</button>
-        <button id="btnPlayFilt">▶ 播放滤波（B）</button>
+        <button id="btnPlayFilt">▶ 播放处理链（B）</button>
         <label>低通截止频率：<input type="range" id="fcSlider" min="0" max="100" step="1"
                 value="59"><span id="fcVal">2000 Hz</span></label>
+        <label>变速：<input type="range" id="speedSlider" min="50" max="200" step="5"
+                value="100"><span id="speedVal">1.00×</span></label>
+        <label>变调：<input type="range" id="pitchSlider" min="-6" max="6" step="1"
+                value="0"><span id="pitchVal">0 半音</span></label>
         <label>或上传音频：<input type="file" id="audioInput" accept="audio/*"></label>
     </div>
 
@@ -145,8 +149,10 @@
     </div>
 
     <div class="info" id="info">
-        音频区使用 Web Audio 的 BiquadFilter 低通链（2 级级联 ≈ 4 阶，24dB/oct），与 5.4.1 的 Butterworth
-        滤波思想一致；图像区在像素上依次执行 HSV 饱和度增益、可分离高斯模糊与 USM 锐化（见 5.4.2）。<br>
+        音频区处理链与 practice_6 一致：Web Audio BiquadFilter 低通链（2 级级联 ≈ 4 阶，24dB/oct）→
+        <b>OLA 重叠相加变速</b>（相位声码器的帧重排骨架，省略相位修正，长时/极端拉伸会有轻微粗糙感）→
+        <b>变调</b>（OLA 变速 1/p 与播放速率 ×p 的解耦组合，即 5.4.1 "重采样 + 变速" 思路的浏览器等价形态）；
+        图像区在像素上依次执行 HSV 饱和度增益、可分离高斯模糊与 USM 锐化（见 5.4.2）。<br>
         所有计算均在本地浏览器内完成，不会上传任何数据。
     </div>
 
@@ -171,6 +177,56 @@
         }
         fcSlider.addEventListener("input", updateFcLabel);
         updateFcLabel();
+
+        // ---------- Time-stretch & pitch-shift (5.4.1) ----------
+        const speedSlider = document.getElementById("speedSlider");
+        const pitchSlider = document.getElementById("pitchSlider");
+
+        function updateChainLabels() {
+            const s = parseFloat(speedSlider.value) / 100;
+            const semi = parseInt(pitchSlider.value, 10);
+            document.getElementById("speedVal").textContent = s.toFixed(2) + "×";
+            document.getElementById("pitchVal").textContent =
+                (semi > 0 ? "+" : "") + semi + " 半音";
+        }
+        speedSlider.addEventListener("input", updateChainLabels);
+        pitchSlider.addEventListener("input", updateChainLabels);
+        updateChainLabels();
+
+        // OLA overlap-add time-stretch: the frame-relayout backbone of the
+        // phase vocoder (phase correction omitted, see 5.4.1).
+        function olaStretch(data, factor) {
+            const N = 1024, Ha = 256;
+            if (Math.abs(factor - 1) < 1e-3 || data.length < N) return data.slice();
+            const Hs = Math.max(64, Math.round(Ha * factor));
+            const win = new Float32Array(N);
+            for (let i = 0; i < N; i++)
+                win[i] = 0.5 * (1 - Math.cos(2 * Math.PI * i / (N - 1)));   // Hann
+            const nFrames = Math.floor((data.length - N) / Ha) + 1;
+            const outLen = (nFrames - 1) * Hs + N;
+            const out = new Float32Array(outLen);
+            const gain = new Float32Array(outLen);
+            for (let m = 0; m < nFrames; m++) {
+                const ai = m * Ha, si = m * Hs;
+                for (let i = 0; i < N; i++) {
+                    out[si + i] += data[ai + i] * win[i];
+                    gain[si + i] += win[i];
+                }
+            }
+            for (let i = 0; i < outLen; i++) if (gain[i] > 1e-6) out[i] /= gain[i];
+            return out;
+        }
+
+        // Chain: OLA stretch(speed / p) then playbackRate ×p  ==>
+        // duration × speed, pitch × p  (变调 = 变速 + 重采样的解耦组合, 5.4.1)
+        function buildChainBuffer() {
+            const speed = parseFloat(speedSlider.value) / 100;
+            const p = Math.pow(2, parseInt(pitchSlider.value, 10) / 12);
+            const stretched = olaStretch(audioBuffer.getChannelData(0), speed / p);
+            const buf = audioCtx.createBuffer(1, stretched.length, audioBuffer.sampleRate);
+            buf.getChannelData(0).set(stretched);
+            return { buf, rate: p };
+        }
 
         function makeDemoBuffer(ctx) {
             const sr = ctx.sampleRate, dur = 3.0, n = Math.floor(sr * dur);
@@ -199,8 +255,14 @@
             if (!audioBuffer) audioBuffer = makeDemoBuffer(audioCtx);
             audioCtx.resume();
             stopPlayback();
+            let buffer = audioBuffer, rate = 1;
+            if (filtered) {
+                const chain = buildChainBuffer();
+                buffer = chain.buf; rate = chain.rate;
+            }
             const src = audioCtx.createBufferSource();
-            src.buffer = audioBuffer;
+            src.buffer = buffer;
+            src.playbackRate.value = rate;
             src.loop = true;
             let node = src;
             if (filtered) {            // two cascaded biquads ~ 4th-order low-pass
@@ -386,6 +448,26 @@
 
         drawDemoImage(ctxOrig);
         reprocess();
+    </script>
+    <script>
+        // Same-origin GitBook embed: report full content height to the parent
+        // iframe so the page renders without an inner scrollbar.
+        (function () {
+            if (!window.frameElement) return;
+            let last = 0;
+            function fit() {
+                const h = document.documentElement.scrollHeight;
+                if (Math.abs(h - last) > 2) {
+                    last = h;
+                    window.frameElement.style.height = h + "px";
+                }
+            }
+            window.addEventListener("load", fit);
+            window.addEventListener("resize", fit);
+            new MutationObserver(fit).observe(document.body,
+                { childList: true, subtree: true, attributes: true });
+            fit();
+        })();
     </script>
 </body>
 

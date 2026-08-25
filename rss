@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 25 Aug 2026 13:49:38 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Aug 2026 14:44:38 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -1071,7 +1071,7 @@
         </item>
         <item>
             <title><![CDATA[No title]]></title>
-            <description><![CDATA[上传本地音频或使用内置 A4 演示音，调整帧长与窗函数，实时观察频谱泄漏与频率分辨率的变化。所有数据均在本地处理，不会上传。]]></description>
+            <description><![CDATA[上传本地音频或使用内置 A4 演示音，调整帧长与窗函数，实时观察频谱泄漏与频率分辨率的变化；下方特征曲线同步给出整段音频的 RMS、过零率与频谱质心（对应 5.2.2），拖动帧位置滑块可逐帧对照三者取值。所有数据均在本地处理，不会上传。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Playground_5.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Playground_5.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
