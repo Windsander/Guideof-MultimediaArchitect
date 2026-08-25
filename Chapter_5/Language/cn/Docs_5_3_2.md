@@ -7,7 +7,9 @@
 
 最直接的帧间度量是 **帧差**：将相邻两帧转为灰度后逐像素求差的绝对值，再取全图平均，得到标量序列：
 
-$$d[i] = \frac{1}{WH} \sum_{x,y} \left| g_{i+1}(x, y) - g_i(x, y) \right|$$
+$$
+d[i] = \frac{1}{WH} \sum_{x,y} \left| g_{i+1}(x, y) - g_i(x, y) \right|
+$$
 
 其中 $$g_i$$ 为第 $$i$$ 帧的灰度图， $$W \times H$$ 为分辨率。 $$d[i]$$ 的物理含义是 **这一秒画面 "变了多少"**——它就是一条 **运动强度曲线（Motion Intensity Curve）**。
 
@@ -37,7 +39,9 @@ practice_5 在三场景测试视频上的实测结果如下图。两个硬切（
 
 固定阈值的问题是：不同视频的内容、噪声水平、压缩质量差异巨大，没有一个放之四海皆准的数值。工程上更稳健的做法是 **自适应阈值**——用视频自身的统计量来定标。practice_5 采用的是 **中位数 + k 倍 MAD（Median Absolute Deviation，中位数绝对偏差）**：
 
-$$\text{threshold} = \mathrm{median}(d) + k \cdot \mathrm{MAD}(d), \quad \mathrm{MAD}(d) = \mathrm{median}\left( \left| d[i] - \mathrm{median}(d) \right| \right)$$
+$$
+\text{threshold} = \mathrm{median}(d) + k \cdot \mathrm{MAD}(d), \quad \mathrm{MAD}(d) = \mathrm{median}\left( \left| d[i] - \mathrm{median}(d) \right| \right)
+$$
 
 中位数与 MAD 都是 **鲁棒统计量**，不会被切点本身的尖峰带偏。实测中 $$k = 8$$ 时阈值为 0.006，两个真实切点（第 119、239 帧，0 基索引下为切前最后一帧）被精确检出，且 360 帧全程 **零误检**。
 

@@ -19,7 +19,9 @@ out = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2BGR)
 
 **3.2 节** 的六种经典空域滤波，在帧处理中是最常用的画面加工手段。其中 **高斯模糊（Gaussian Blur，[3.2.1](../../../Chapter_3/Language/cn/Docs_3_2_1.md)）** 用作柔化降噪；而它的 "反面"——**USM 锐化（Unsharp Masking）**——则是增强细节的常用手段：
 
-$$g_{sharp} = (1 + \alpha) \cdot g - \alpha \cdot g_{blur}$$
+$$
+g_{sharp} = (1 + \alpha) \cdot g - \alpha \cdot g_{blur}
+$$
 
 即 **原图减去它的低通（模糊）版本，得到高频细节，再加权加回原图**。这与 **[3.2.3](../../../Chapter_3/Language/cn/Docs_3_2_3.md)** 拉普拉斯滤波提取高频的思想一脉相承——拉普拉斯核本质上就是 "中心减邻域" 的差分，USM 不过是把差分结果用作增强而非检测。practice_6 中 `cv2.addWeighted(out, 1 + α, blur, -α, 0)` 一行即完成了这个组合。
 
