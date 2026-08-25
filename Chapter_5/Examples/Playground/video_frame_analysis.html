@@ -111,6 +111,8 @@
     <canvas id="cvFrame" width="480" height="270"></canvas>
     <div class="pane-title">帧差热图（越亮 = 变化越大）</div>
     <canvas id="cvDiff" width="480" height="270"></canvas>
+    <div class="pane-title">光流场（LK 稀疏估计 · HSV 编码：方向 → 色相，幅度 → 亮度）</div>
+    <canvas id="cvFlow" width="480" height="270"></canvas>
     <div class="pane-title">运动强度曲线（红虚线 = 自适应阈值，红竖线 = 检出切点）</div>
     <canvas id="cvCurve" width="960" height="260"></canvas>
 
@@ -130,9 +132,11 @@
         const AW = 480, AH = 270;          // analysis resolution (downscaled)
         const cvFrame = document.getElementById("cvFrame");
         const cvDiff = document.getElementById("cvDiff");
+        const cvFlow = document.getElementById("cvFlow");
         const cvCurve = document.getElementById("cvCurve");
         const ctxFrame = cvFrame.getContext("2d");
         const ctxDiff = cvDiff.getContext("2d");
+        const ctxFlow = cvFlow.getContext("2d");
         const ctxCurve = cvCurve.getContext("2d");
         const info = document.getElementById("info");
         const btnRun = document.getElementById("btnRun");
@@ -231,11 +235,73 @@
                     diffImg.data[p + 2] = v; diffImg.data[p + 3] = 255;
                 }
                 ctxDiff.putImageData(diffImg, 0, 0);
+                drawFlow(prevGray, cur);
                 diffSeries.push(sum / cur.length);
                 frameTimes.push(tSec);
                 drawCurve();
             }
             prevGray = cur;
+        }
+
+        // ------------------------------------------------------------------
+        // Sparse Lucas–Kanade optical flow on a coarse grid (5.3.2)
+        // HSV encoding mirrors practice_5: direction -> hue, magnitude -> value.
+        // (practice_5 工程用 Farneback 稠密光流；此处为浏览器实时性采用 LK 稀疏估计，
+        //  小窗口对快速运动会低估幅度——这正是 5.3.2 讨论的小运动假设。)
+        // ------------------------------------------------------------------
+        const FLOW_CELL = 16, FLOW_WIN = 2;      // 16px 网格，5×5 窗口
+
+        function hsv2rgb(h, s, v) {
+            const c = v * s, x = c * (1 - Math.abs((h / 60) % 2 - 1)), m = v - c;
+            let r, g, b;
+            if (h < 60) [r, g, b] = [c, x, 0];
+            else if (h < 120) [r, g, b] = [x, c, 0];
+            else if (h < 180) [r, g, b] = [0, c, x];
+            else if (h < 240) [r, g, b] = [0, x, c];
+            else if (h < 300) [r, g, b] = [x, 0, c];
+            else [r, g, b] = [c, 0, x];
+            return [Math.round((r + m) * 255), Math.round((g + m) * 255), Math.round((b + m) * 255)];
+        }
+
+        function drawFlow(prev, cur) {
+            const img = ctxFlow.createImageData(AW, AH);
+            for (let i = 3; i < img.data.length; i += 4) img.data[i] = 255;
+            const cols = Math.floor(AW / FLOW_CELL), rows = Math.floor(AH / FLOW_CELL);
+            const MAXV = 4;                      // px/帧 映射到满亮度
+            for (let cy = 0; cy < rows; cy++) {
+                for (let cx = 0; cx < cols; cx++) {
+                    const px = cx * FLOW_CELL + (FLOW_CELL >> 1);
+                    const py = cy * FLOW_CELL + (FLOW_CELL >> 1);
+                    let sxx = 0, sxy = 0, syy = 0, sxt = 0, syt = 0;
+                    for (let wy = -FLOW_WIN; wy <= FLOW_WIN; wy++) {
+                        for (let wx = -FLOW_WIN; wx <= FLOW_WIN; wx++) {
+                            const x = px + wx, y = py + wy;
+                            if (x < 1 || x >= AW - 1 || y < 1 || y >= AH - 1) continue;
+                            const ix = (cur[y * AW + x + 1] - cur[y * AW + x - 1]) / 2;
+                            const iy = (cur[(y + 1) * AW + x] - cur[(y - 1) * AW + x]) / 2;
+                            const it = cur[y * AW + x] - prev[y * AW + x];
+                            sxx += ix * ix; sxy += ix * iy; syy += iy * iy;
+                            sxt += ix * it; syt += iy * it;
+                        }
+                    }
+                    const det = sxx * syy - sxy * sxy;
+                    if (det < 1e-6) continue;    // 纹理不足，法方程病态
+                    const u = (-sxt * syy + syt * sxy) / det;
+                    const v = (-syt * sxx + sxt * sxy) / det;
+                    const mag = Math.hypot(u, v);
+                    if (mag < 0.05 || mag > 25) continue;   // 静止或不可信
+                    const hue = (Math.atan2(v, u) * 180 / Math.PI + 360) % 360;
+                    const val = Math.min(1, mag / MAXV);
+                    const [r, g, b] = hsv2rgb(hue, 1, val);
+                    for (let yy = cy * FLOW_CELL; yy < (cy + 1) * FLOW_CELL; yy++) {
+                        for (let xx = cx * FLOW_CELL; xx < (cx + 1) * FLOW_CELL; xx++) {
+                            const p = (yy * AW + xx) * 4;
+                            img.data[p] = r; img.data[p + 1] = g; img.data[p + 2] = b;
+                        }
+                    }
+                }
+            }
+            ctxFlow.putImageData(img, 0, 0);
         }
 
         // ------------------------------------------------------------------
@@ -415,9 +481,30 @@
             prevGray = null;
             ctxFrame.clearRect(0, 0, AW, AH);
             ctxDiff.clearRect(0, 0, AW, AH);
+            ctxFlow.clearRect(0, 0, AW, AH);
             ctxCurve.clearRect(0, 0, cvCurve.width, cvCurve.height);
             btnRun.textContent = "开始分析";
         }
+    </script>
+    <script>
+        // Same-origin GitBook embed: report full content height to the parent
+        // iframe so the page renders without an inner scrollbar.
+        (function () {
+            if (!window.frameElement) return;
+            let last = 0;
+            function fit() {
+                const h = document.documentElement.scrollHeight;
+                if (Math.abs(h - last) > 2) {
+                    last = h;
+                    window.frameElement.style.height = h + "px";
+                }
+            }
+            window.addEventListener("load", fit);
+            window.addEventListener("resize", fit);
+            new MutationObserver(fit).observe(document.body,
+                { childList: true, subtree: true, attributes: true });
+            fit();
+        })();
     </script>
 </body>
 
