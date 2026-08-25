@@ -11,17 +11,23 @@
 
 **短时能量（STE [Short-Time Energy]）**，第 $$m$$ 帧的能量总和：
 
-$$E_m = \sum_{n=0}^{N-1} x_m^2[n]$$
+$$
+E_m = \sum_{n=0}^{N-1} x_m^2[n]
+$$
 
 工程中更常用其归一化开方形式 **均方根（RMS [Root Mean Square]）**：
 
-$$RMS_m = \sqrt{\frac{1}{N} \sum_{n=0}^{N-1} x_m^2[n]}$$
+$$
+RMS_m = \sqrt{\frac{1}{N} \sum_{n=0}^{N-1} x_m^2[n]}
+$$
 
 RMS 与我们在 **[1.2 节](../../../Chapter_1/Language/cn/Docs_1_2.md)** 讨论的响度感知直接相关，是 **响度随时间变化** 的最常用量化曲线。静音检测、音量包络、动态范围分析都建立在它之上。
 
 **过零率（ZCR [Zero-Crossing Rate]）**，帧内信号穿过零轴的频次：
 
-$$Z_m = \frac{1}{2N} \sum_{n=1}^{N-1} \left| \mathrm{sgn}(x_m[n]) - \mathrm{sgn}(x_m[n-1]) \right|$$
+$$
+Z_m = \frac{1}{2N} \sum_{n=1}^{N-1} \left| \mathrm{sgn}(x_m[n]) - \mathrm{sgn}(x_m[n-1]) \right|
+$$
 
 过零率是信号 **"噪声程度" 的粗略指标**：浊音（如元音、乐音）周期性强、过零率低且稳定；清音与噪声（如摩擦音、打击乐瞬态）过零率高而杂乱。它也常被用作 **基频的粗估计**——对于纯净的单音，每秒过零次数约等于基频的两倍。
 
@@ -31,7 +37,9 @@ $$Z_m = \frac{1}{2N} \sum_{n=1}^{N-1} \left| \mathrm{sgn}(x_m[n]) - \mathrm{sgn}
 
 **频谱质心（Spectral Centroid）**，频谱能量在频率轴上的 "重心"：
 
-$$C_m = \frac{\sum_k f_k \, |X_m[k]|}{\sum_k |X_m[k]|}$$
+$$
+C_m = \frac{\sum_k f_k \, |X_m[k]|}{\sum_k |X_m[k]|}
+$$
 
 质心越高，声音听感越 "明亮"；越低则越 "沉闷"。它与 **[1.3.3 节](../../../Chapter_1/Language/cn/Docs_1_3_3.md)** 讨论的音色感知密切相关，是区分乐器材质的常用指标。
 
@@ -43,7 +51,9 @@ $$C_m = \frac{\sum_k f_k \, |X_m[k]|}{\sum_k |X_m[k]|}$$
 
 **梅尔刻度（Mel Scale）** 是最常用的感知频率刻度，其物理频率 $$f$$ 到梅尔值 $$m$$ 的转换为：
 
-$$m = 2595 \log_{10} \left( 1 + \frac{f}{700} \right)$$
+$$
+m = 2595 \log_{10} \left( 1 + \frac{f}{700} \right)
+$$
 
 在梅尔刻度上，**等间隔的 Mel 值对应人耳等间隔的音高感知**。基于它构建的 **梅尔滤波器组（Mel Filter Bank）**，在低频段密集、高频段稀疏，恰与人耳的分辨能力分布一致。
 
