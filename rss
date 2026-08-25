@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 25 Aug 2026 00:22:06 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Aug 2026 13:20:43 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -980,7 +980,7 @@
         </item>
         <item>
             <title><![CDATA[5.2 音频帧分析实践（Audio Frame Analysis in Practice）]]></title>
-            <description><![CDATA[在 5.1 中，我们已经完成了分析环境的准备，并熟悉了音频分析库的基本用法。所谓磨刀不误砍柴工，现在刀已备好，是时候真正对 音频帧（Audio Frame） 动手了。]]></description>
+            <description><![CDATA[在 5.1 中，我们已经完成了分析环境的准备，并对音频分析库的基本用法做了简单介绍。有了这些工具，接下来就可以真正对 音频帧（Audio Frame） 进行分析实践了。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -1050,7 +1050,7 @@
         </item>
         <item>
             <title><![CDATA[5.4.2 视频帧处理：色彩、滤波与几何变换（Color, Filtering & Geometric Transform）]]></title>
-            <description><![CDATA[视频帧处理与 5.3 的分析同样互为镜像：5.3 的流水线逐帧读取、逐帧分析，而处理流水线逐帧读取、逐帧改写、逐帧写出。骨架不变，换的只是中间的 "帧函数"。这个帧函数里装的内容，几乎全部来自我们在第二章与第三章学过的知识。]]></description>
+            <description><![CDATA[视频帧处理与 5.3 的分析也是一体两面：5.3 的流水线逐帧读取、逐帧分析，而处理流水线逐帧读取、逐帧改写、逐帧写出。骨架不变，换的只是中间的 "帧函数"。这个帧函数里装的内容，几乎全部来自我们在第二章与第三章学过的知识。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_4_2.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_4_2.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
