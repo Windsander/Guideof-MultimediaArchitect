@@ -7,7 +7,9 @@
 
 一个常见的视频文件（如 MP4）内部是一个 **容器（Container）**，其中装着至少一路经过编码的 **视频码流（Video Elementary Stream）**。从文件到帧的完整链路是：
 
-**解封装（Demux）→ 解码（Decode）→ 原始帧（Raw Frame）**
+<center>
+   <b>解封装（Demux）→ 解码（Decode）→ 原始帧（Raw Frame）</b>
+</center>
 
 其中编码与解码的全部细节——帧内预测、变换量化、熵编码——正是 **第六章** 的主题。本节我们站在 "已经拿到解码后的原始帧" 的视角，直接使用 OpenCV 的 [VideoCapture](https://docs.opencv.org/4.x/d8/dfe/classcv_1_1VideoCapture.html) 接口 [\[9\]][ref] ，它把上述链路封装为一次 `read()` 调用：每调用一次，返回一帧的像素矩阵。
 
