@@ -1,0 +1,453 @@
+<!--
+/*
+ * Copyright (c) 2026 Arikan.Li
+ * Chapter_6 Playground: DCT Transform & Quantization (Docs_6_1/6_2 companion)
+ * Self-contained single file. No external resources, no data upload.
+ */
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCT 变换与量化演示器 - DCT & Quantization Playground</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 12px;
+            font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #fafafa;
+            color: #333;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            padding: 10px 12px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .toolbar label {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        button {
+            padding: 6px 14px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 13px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+        }
+
+        button.active {
+            background: #2E5F8A;
+            border-color: #2E5F8A;
+            color: #fff;
+        }
+
+        input[type="range"] {
+            width: 140px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 10px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px 12px;
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            font-size: 14px;
+            color: #2E5F8A;
+        }
+
+        canvas.view {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            image-rendering: pixelated;
+        }
+
+        .metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .metric {
+            flex: 1;
+            min-width: 130px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px 12px;
+            text-align: center;
+        }
+
+        .metric .v {
+            font-size: 20px;
+            font-weight: 700;
+            color: #B5533C;
+        }
+
+        .metric .k {
+            font-size: 12px;
+            color: #777;
+            margin-top: 2px;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <label>纹理：
+            <button id="texGradient" class="active">平滑渐变</button>
+            <button id="texEdge">锐利边缘</button>
+            <button id="texNoise">随机噪声</button>
+            <button id="texImage">上传图片…</button>
+            <input type="file" id="fileInput" accept="image/*" style="display:none">
+        </label>
+        <label id="posXY" style="display:none">取样位置：
+            X <input type="range" id="posX" min="0" max="100" value="50">
+            Y <input type="range" id="posY" min="0" max="100" value="50">
+        </label>
+        <label>量化步长 Q<sub>step</sub>：<input type="range" id="qstep" min="1" max="64" value="8">
+            <b id="qstepVal">8</b>
+        </label>
+        <label><input type="checkbox" id="useJpeg"> 叠加 JPEG 亮度量化表</label>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>① 原始 8×8 像素块</h3>
+            <canvas id="cvSrc" class="view" width="232" height="232"></canvas>
+        </div>
+        <div class="card">
+            <h3>② DCT 系数（|F(u,v)|，对数热力图）</h3>
+            <canvas id="cvDct" class="view" width="232" height="232"></canvas>
+        </div>
+        <div class="card">
+            <h3>③ 量化后系数（蓝：非零；白：归零）</h3>
+            <canvas id="cvQuant" class="view" width="232" height="232"></canvas>
+        </div>
+        <div class="card">
+            <h3>④ 重建块（反量化 + 反变换）</h3>
+            <canvas id="cvRec" class="view" width="232" height="232"></canvas>
+        </div>
+    </div>
+
+    <div class="metrics">
+        <div class="metric"><div class="v" id="mNz">64/64</div><div class="k">非零系数（量化后）</div></div>
+        <div class="metric"><div class="v" id="mEob">63</div><div class="k">Zig-Zag 最后非零位置</div></div>
+        <div class="metric"><div class="v" id="mBits">—</div><div class="k">估算信息量（bits）</div></div>
+        <div class="metric"><div class="v" id="mPsnr">∞</div><div class="k">重建 PSNR（dB）</div></div>
+    </div>
+
+    <div class="hint">
+        对应 6.1.3 与 6.2.4：编码四环中，<b>预测、变换、熵编码均可逆，唯有量化有损</b>。
+        拖动量化步长观察：高频系数（右下）总是最先牺牲；勾迭 JPEG 量化表后，
+        这种 “高频重判” 会被进一步放大。估算信息量按量化系数的符号分布熵计算——
+        步长越大，零游程越长，熵编码能压得越狠。
+    </div>
+
+    <script>
+        "use strict";
+        const N = 8;
+
+        // ---- 8×8 正交 DCT-II 矩阵 ----
+        const C = [];
+        for (let u = 0; u < N; u++) {
+            C.push([]);
+            const cu = u === 0 ? Math.sqrt(1 / N) : Math.sqrt(2 / N);
+            for (let x = 0; x < N; x++)
+                C[u].push(cu * Math.cos(((2 * x + 1) * u * Math.PI) / (2 * N)));
+        }
+
+        function dct2(m) { // F = C · M · Cᵀ（可分离：先行变换，再列变换）
+            const t = Array.from({ length: N }, () => new Array(N).fill(0));
+            const F = Array.from({ length: N }, () => new Array(N).fill(0));
+            for (let u = 0; u < N; u++)
+                for (let x = 0; x < N; x++)
+                    for (let y = 0; y < N; y++) t[u][x] += C[u][y] * m[y][x];
+            for (let u = 0; u < N; u++)
+                for (let v = 0; v < N; v++)
+                    for (let x = 0; x < N; x++) F[u][v] += t[u][x] * C[v][x];
+            return F;
+        }
+
+        function idct2(F) { // M = Cᵀ · F · C
+            const t = Array.from({ length: N }, () => new Array(N).fill(0));
+            const M = Array.from({ length: N }, () => new Array(N).fill(0));
+            for (let y = 0; y < N; y++)
+                for (let v = 0; v < N; v++)
+                    for (let u = 0; u < N; u++) t[y][v] += C[u][y] * F[u][v];
+            for (let y = 0; y < N; y++)
+                for (let x = 0; x < N; x++)
+                    for (let v = 0; v < N; v++) M[y][x] += t[y][v] * C[v][x];
+            return M;
+        }
+
+        // JPEG 标准亮度量化表（质量 50 基准）
+        const JPEG_Q = [
+            [16, 11, 10, 16, 24, 40, 51, 61],
+            [12, 12, 14, 19, 26, 58, 60, 55],
+            [14, 13, 16, 24, 40, 57, 69, 56],
+            [14, 17, 22, 29, 51, 87, 80, 62],
+            [18, 22, 37, 56, 68, 109, 103, 77],
+            [24, 35, 55, 64, 81, 104, 113, 92],
+            [49, 64, 78, 87, 103, 121, 120, 101],
+            [72, 92, 95, 98, 112, 100, 103, 99]
+        ];
+
+        // Zig-Zag 扫描序
+        const ZZ = [];
+        for (let s = 0; s < 2 * N - 1; s++) {
+            const diag = [];
+            for (let y = 0; y < N; y++) {
+                const x = s - y;
+                if (x >= 0 && x < N) diag.push([y, x]);
+            }
+            if (s % 2 === 0) diag.reverse();
+            ZZ.push(...diag);
+        }
+
+        // ---- 纹理生成 ----
+        function makeTexture(kind) {
+            const m = [];
+            let seed = 42;
+            const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+            for (let y = 0; y < N; y++) {
+                m.push([]);
+                for (let x = 0; x < N; x++) {
+                    if (kind === "gradient")
+                        m[y].push(Math.round(30 + (x + y) * 14));
+                    else if (kind === "edge")
+                        m[y].push(x + y < 7 ? 40 : 220);
+                    else
+                        m[y].push(Math.round(rnd() * 255));
+                }
+            }
+            return m;
+        }
+
+        // ---- 状态 ----
+        let texKind = "gradient";
+        let srcBlock = makeTexture("gradient");
+        let imgData = null; // 上传图的 ImageData（灰度化后）
+
+        const $ = (id) => document.getElementById(id);
+
+        function grayBlockFromImage(img, px, py) {
+            const cv = document.createElement("canvas");
+            cv.width = img.naturalWidth; cv.height = img.naturalHeight;
+            const ctx = cv.getContext("2d");
+            ctx.drawImage(img, 0, 0);
+            const W = img.naturalWidth, H = img.naturalHeight;
+            const sx = Math.min(W - N, Math.max(0, Math.round((W - N) * px / 100)));
+            const sy = Math.min(H - N, Math.max(0, Math.round((H - N) * py / 100)));
+            const d = ctx.getImageData(sx, sy, N, N).data;
+            const m = [];
+            for (let y = 0; y < N; y++) {
+                m.push([]);
+                for (let x = 0; x < N; x++) {
+                    const i = (y * N + x) * 4;
+                    m[y].push(Math.round(0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2]));
+                }
+            }
+            return m;
+        }
+
+        // ---- 渲染 ----
+        function drawBlock(cv, m, heat) {
+            const ctx = cv.getContext("2d");
+            const cell = cv.width / N;
+            let vmax = 1;
+            if (heat) {
+                for (const row of m) for (const v of row)
+                    vmax = Math.max(vmax, Math.log1p(Math.abs(v)));
+            }
+            for (let y = 0; y < N; y++)
+                for (let x = 0; x < N; x++) {
+                    let color;
+                    if (heat) {
+                        const t = Math.log1p(Math.abs(m[y][x])) / vmax;
+                        const r = Math.round(255 - t * 209), g = Math.round(255 - t * 160),
+                            b = Math.round(255 - t * 117);
+                        color = `rgb(${r},${g},${b})`;
+                    } else {
+                        const v = Math.max(0, Math.min(255, Math.round(m[y][x])));
+                        color = `rgb(${v},${v},${v})`;
+                    }
+                    ctx.fillStyle = color;
+                    ctx.fillRect(x * cell, y * cell, cell - 1, cell - 1);
+                }
+        }
+
+        function drawQuant(cv, Fq) {
+            const ctx = cv.getContext("2d");
+            const cell = cv.width / N;
+            for (let y = 0; y < N; y++)
+                for (let x = 0; x < N; x++) {
+                    const v = Fq[y][x];
+                    if (v === 0) {
+                        ctx.fillStyle = "#fdfdfd";
+                    } else {
+                        const t = Math.min(1, Math.abs(v) / 8);
+                        ctx.fillStyle = `rgb(${46 + t * 30 | 0},${95 + t * 20 | 0},${138 + t * 20 | 0})`;
+                    }
+                    ctx.fillRect(x * cell, y * cell, cell - 1, cell - 1);
+                    if (v !== 0) {
+                        ctx.fillStyle = "#fff";
+                        ctx.font = `${cell * 0.32 | 0}px monospace`;
+                        ctx.textAlign = "center";
+                        ctx.textBaseline = "middle";
+                        ctx.fillText(String(v), (x + 0.5) * cell, (y + 0.5) * cell);
+                    }
+                }
+        }
+
+        function compute() {
+            const qstep = +$("qstep").value;
+            const useJpeg = $("useJpeg").checked;
+            $("qstepVal").textContent = qstep;
+
+            const F = dct2(srcBlock.map(r => r.map(v => v - 128))); // 电平平移（规格做法）
+
+            // 量化
+            const Fq = F.map((row, y) => row.map((v, x) => {
+                const q = useJpeg ? qstep * JPEG_Q[y][x] / 8 : qstep;
+                return Math.round(v / q);
+            }));
+            // 反量化 + 反变换
+            const Fdq = Fq.map((row, y) => row.map((v, x) => {
+                const q = useJpeg ? qstep * JPEG_Q[y][x] / 8 : qstep;
+                return v * q;
+            }));
+            const rec = idct2(Fdq).map(r => r.map(v => v + 128));
+
+            // 指标
+            let nz = 0, mse = 0, eob = -1;
+            const hist = {};
+            ZZ.forEach(([y, x], k) => {
+                const v = Fq[y][x];
+                hist[v] = (hist[v] || 0) + 1;
+                if (v !== 0) { nz++; eob = k; }
+            });
+            for (let y = 0; y < N; y++)
+                for (let x = 0; x < N; x++)
+                    mse += (rec[y][x] - srcBlock[y][x]) ** 2;
+            mse /= N * N;
+            const psnr = mse === 0 ? "∞" : (10 * Math.log10(255 * 255 / mse)).toFixed(2);
+            let H = 0;
+            for (const v in hist) {
+                const p = hist[v] / (N * N);
+                H -= p * Math.log2(p);
+            }
+
+            drawBlock($("cvSrc"), srcBlock, false);
+            drawBlock($("cvDct"), F, true);
+            drawQuant($("cvQuant"), Fq);
+            drawBlock($("cvRec"), rec, false);
+
+            $("mNz").textContent = `${nz}/64`;
+            $("mEob").textContent = eob < 0 ? "—" : eob;
+            $("mBits").textContent = (H * 64).toFixed(0);
+            $("mPsnr").textContent = psnr;
+        }
+
+        // ---- 事件 ----
+        function setTex(kind, btn) {
+            texKind = kind;
+            for (const b of document.querySelectorAll(".toolbar button"))
+                b.classList.remove("active");
+            btn.classList.add("active");
+            if (kind !== "image") {
+                srcBlock = makeTexture(kind);
+                $("posXY").style.display = "none";
+            }
+            compute();
+        }
+        $("texGradient").onclick = (e) => setTex("gradient", e.target);
+        $("texEdge").onclick = (e) => setTex("edge", e.target);
+        $("texNoise").onclick = (e) => setTex("noise", e.target);
+        $("texImage").onclick = (e) => $("fileInput").click();
+        $("fileInput").onchange = (e) => {
+            const f = e.target.files[0];
+            if (!f) return;
+            const img = new Image();
+            img.onload = () => {
+                imgData = img;
+                setTex("image", $("texImage"));
+                $("posXY").style.display = "";
+                srcBlock = grayBlockFromImage(img, +$("posX").value, +$("posY").value);
+                compute();
+                URL.revokeObjectURL(img.src);
+            };
+            img.src = URL.createObjectURL(f);
+        };
+        $("posX").oninput = $("posY").oninput = () => {
+            if (imgData) {
+                srcBlock = grayBlockFromImage(imgData, +$("posX").value, +$("posY").value);
+                compute();
+            }
+        };
+        $("qstep").oninput = compute;
+        $("useJpeg").onchange = compute;
+
+        compute();
+    </script>
+    <script>
+        // Same-origin GitBook embed: report full content height to the parent
+        // iframe so the page renders without an inner scrollbar.
+        (function () {
+            if (!window.frameElement) return;
+            let last = 0;
+            function fit() {
+                const h = document.documentElement.scrollHeight;
+                if (Math.abs(h - last) > 2) {
+                    last = h;
+                    window.frameElement.style.height = h + "px";
+                }
+            }
+            window.addEventListener("load", fit);
+            window.addEventListener("resize", fit);
+            new MutationObserver(fit).observe(document.body,
+                { childList: true, subtree: true, attributes: true });
+            fit();
+        })();
+    </script>
+</body>
+
+</html>
