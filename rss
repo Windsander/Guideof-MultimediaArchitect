@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 24 Aug 2026 13:41:51 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Aug 2026 00:22:06 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -976,6 +976,104 @@
             <description><![CDATA[除了使用前三节提及的开源库，以自编辑脚本的方式进行分析外。工作中也能采用其他收费或免费的 第三方分析软件，处理需要查验的数据。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_1_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.2 音频帧分析实践（Audio Frame Analysis in Practice）]]></title>
+            <description><![CDATA[在 5.1 中，我们已经完成了分析环境的准备，并熟悉了音频分析库的基本用法。所谓磨刀不误砍柴工，现在刀已备好，是时候真正对 音频帧（Audio Frame） 动手了。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.2.1 音频帧的切分与加窗（Frame Blocking & Windowing）]]></title>
+            <description><![CDATA[音频分析的第一个工程动作，几乎永远是 切帧（Frame Blocking）。为什么是 "几乎"？因为除了播放与试听，我们很少会把一整段音频当作一个不可分割的整体来处理。究其原因，要从音频信号的 平稳性 说起。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_2_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_2_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.2.2 时域与频域特征（Time/Frequency Domain Features）]]></title>
+            <description><![CDATA[完成切帧与加窗后，每一帧都是一个短时平稳的信号片段。接下来的问题是：对每一帧，我们要看什么？]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_2_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_2_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.2.3 实战：A4 标准音的特征分析工程]]></title>
+            <description><![CDATA[前两节完成了理论储备：我们知道如何切帧加窗，也知道该提取哪些特征。本节将按照标准工程工作流，搭建一条完整的 音频帧分析流水线（Audio Frame Analysis Pipeline），并用它分析一段真实素材。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_2_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_2_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.3 视频帧分析实践（Video Frame Analysis in Practice）]]></title>
+            <description><![CDATA[在 5.2 中，我们完成了对音频帧的完整分析实践：从切分加窗，到特征提取，再到一条真实可跑的分析工程。如果说音频帧是 时间轴上的一维片段，那么视频帧则是 空间维度上的二维切片——每一帧都是一幅完整的图像，而整段视频，是这些图像在时间轴上的序列。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.3.1 视频帧的提取与表示（Frame Extraction & Representation）]]></title>
+            <description><![CDATA[音频分析从 "切帧" 开始，视频分析则从 "取帧" 开始。一段存储在磁盘上的视频文件，并不是一连串可以直接访问的图像——它是经过 封装（Muxing） 的压缩码流。要对其进行分析，第一步永远是 解码出原始帧。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_3_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_3_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.3.2 帧间分析：帧差、光流与场景切分（Frame Difference, Optical Flow & Scene-Cut Detection）]]></title>
+            <description><![CDATA[视频与单张图像的本质区别，在于帧与帧之间的 时间相关性。我们在 第三章 已经知道：相邻视频帧通常高度相似，这就是 时域冗余（Temporal Redundancy）。本节换一个方向利用它——不为压缩，而为 分析：帧间的差异里，藏着运动、事件与结构边界。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_3_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_3_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.3.3 实战：测试视频的场景切分与目标跟踪工程]]></title>
+            <description><![CDATA[前两节完成了理论储备：我们知道如何从视频中取帧、以何种表示看待帧，也知道帧差、光流与场景切分的原理。本节将搭建一条完整的 视频帧分析流水线（Video Frame Analysis Pipeline），并在一段 自带标准答案 的测试视频上验证它。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_3_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_3_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.4 音视频帧处理实践（Audio & Video Frame Processing in Practice）]]></title>
+            <description><![CDATA[在 5.2 与 5.3 中，我们解决的是 "看懂" 帧的问题——切分、提取特征、分析帧间关系。而工程实践中，分析往往只是中间步骤，最终目的是 按意图改变帧：让声音更干净、让画面更鲜艳、让时长匹配需求。这就是 帧处理（Frame Processing）。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.4.1 音频帧处理：滤波、变速与变调（Filtering, Time-Stretch & Pitch-Shift）]]></title>
+            <description><![CDATA[音频处理的工程形态与 5.2 的分析实践互为镜像：分析是 "帧 → 特征"，处理是 "帧 → 修改 → 重建"。本节讨论三类最常用的音频帧处理：滤波 改变频率构成，变速 改变时间尺度，变调 改变音高。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_4_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_4_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.4.2 视频帧处理：色彩、滤波与几何变换（Color, Filtering & Geometric Transform）]]></title>
+            <description><![CDATA[视频帧处理与 5.3 的分析同样互为镜像：5.3 的流水线逐帧读取、逐帧分析，而处理流水线逐帧读取、逐帧改写、逐帧写出。骨架不变，换的只是中间的 "帧函数"。这个帧函数里装的内容，几乎全部来自我们在第二章与第三章学过的知识。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_4_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_4_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.4.3 实战：音视频帧批量处理工程]]></title>
+            <description><![CDATA[前两节分别建立了音频与视频的帧处理工具箱。本节将它们组装为两条完整的 批量处理管线（Batch Processing Pipeline），在真实素材上执行，并用前后对比验证每个环节的效果。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_4_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_4_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[5.5 本章小结与进阶指引（Summary & Roadmap）]]></title>
+            <description><![CDATA[至此，第五章的旅程走到了终点。让我们回头望一眼走过的路，再抬头看看前方。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Docs_5_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[上传本地音频或使用内置 A4 演示音，调整帧长与窗函数，实时观察频谱泄漏与频率分辨率的变化。所有数据均在本地处理，不会上传。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Playground_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/Playground_5.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>

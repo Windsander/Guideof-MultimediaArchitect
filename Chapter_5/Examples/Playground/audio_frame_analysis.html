@@ -1,0 +1,334 @@
+<!--
+/*
+ * Copyright (c) 2026 Arikan.Li
+ * Chapter_5 Playground: Audio Frame Analysis (Docs_5_2 companion)
+ * Self-contained single file. No external resources, no data upload.
+ */
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频帧分析器 - Audio Frame Analysis</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 12px;
+            font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #fafafa;
+            color: #333;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 12px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .toolbar label {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        button {
+            padding: 6px 14px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 13px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+        }
+
+        select,
+        input[type="range"] {
+            accent-color: #c0392b;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info {
+            font-size: 12.5px;
+            color: #666;
+            padding: 6px 12px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            line-height: 1.7;
+        }
+
+        .info b {
+            color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <button id="btnDemo">使用内置 A4 演示音</button>
+        <label>或选择本地音频：
+            <input type="file" id="fileInput" accept="audio/*">
+        </label>
+        <label>帧长 N：
+            <select id="selN">
+                <option value="512">512</option>
+                <option value="1024" selected>1024</option>
+                <option value="2048">2048</option>
+                <option value="4096">4096</option>
+            </select>
+        </label>
+        <label>窗函数：
+            <select id="selWin">
+                <option value="rect">矩形窗 Rectangular</option>
+                <option value="hann" selected>汉宁窗 Hann</option>
+                <option value="hamming">汉明窗 Hamming</option>
+                <option value="blackman">布莱克曼窗 Blackman</option>
+            </select>
+        </label>
+        <label style="flex:1; min-width:160px;">帧位置：
+            <input type="range" id="rngPos" min="0" max="1000" value="450" style="flex:1;">
+        </label>
+    </div>
+
+    <canvas id="cvWave" height="180"></canvas>
+    <canvas id="cvSpec" height="240"></canvas>
+
+    <div class="info" id="infoBox">等待音频载入……</div>
+
+    <script>
+        "use strict";
+
+        // ---------- Window functions ----------
+        function makeWindow(type, N) {
+            const w = new Float32Array(N);
+            for (let n = 0; n < N; n++) {
+                const c = Math.cos(2 * Math.PI * n / (N - 1));
+                switch (type) {
+                    case "hann": w[n] = 0.5 * (1 - c); break;
+                    case "hamming": w[n] = 0.54 - 0.46 * c; break;
+                    case "blackman":
+                        w[n] = 0.42 - 0.5 * c + 0.08 * Math.cos(4 * Math.PI * n / (N - 1));
+                        break;
+                    default: w[n] = 1.0;
+                }
+            }
+            return w;
+        }
+
+        // ---------- Iterative radix-2 FFT (real input -> complex arrays) ----------
+        function fftReal(input) {
+            const N = input.length;
+            const re = new Float64Array(N);
+            const im = new Float64Array(N);
+            // bit-reversal permutation
+            for (let i = 0, j = 0; i < N; i++) {
+                re[j] = input[i];
+                let m = N >> 1;
+                while (m >= 1 && j >= m) { j -= m; m >>= 1; }
+                j += m;
+            }
+            for (let size = 2; size <= N; size <<= 1) {
+                const half = size >> 1;
+                const ang = -2 * Math.PI / size;
+                for (let start = 0; start < N; start += size) {
+                    for (let k = 0; k < half; k++) {
+                        const wr = Math.cos(ang * k), wi = Math.sin(ang * k);
+                        const i0 = start + k, i1 = start + k + half;
+                        const tr = wr * re[i1] - wi * im[i1];
+                        const ti = wr * im[i1] + wi * re[i1];
+                        re[i1] = re[i0] - tr; im[i1] = im[i0] - ti;
+                        re[i0] += tr; im[i0] += ti;
+                    }
+                }
+            }
+            return { re, im };
+        }
+
+        // ---------- Audio state ----------
+        let audioData = null;   // Float32Array mono
+        let sampleRate = 44100;
+
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function loadDemoTone() {
+            const dur = 3.0, sr = 44100;
+            const buf = audioCtx.createBuffer(1, sr * dur, sr);
+            const d = buf.getChannelData(0);
+            for (let i = 0; i < d.length; i++) {
+                const t = i / sr;
+                const env = Math.min(1, t * 8) * Math.exp(-t * 0.25);
+                d[i] = env * (0.60 * Math.sin(2 * Math.PI * 440 * t)
+                    + 0.25 * Math.sin(2 * Math.PI * 880 * t)
+                    + 0.10 * Math.sin(2 * Math.PI * 1320 * t));
+            }
+            audioData = d;
+            sampleRate = sr;
+            redraw();
+        }
+
+        document.getElementById("fileInput").addEventListener("change", (ev) => {
+            const f = ev.target.files[0];
+            if (!f) return;
+            const reader = new FileReader();
+            reader.onload = () => {
+                audioCtx.decodeAudioData(reader.result, (buf) => {
+                    const ch0 = buf.getChannelData(0);
+                    if (buf.numberOfChannels > 1) {
+                        const ch1 = buf.getChannelData(1);
+                        const mono = new Float32Array(ch0.length);
+                        for (let i = 0; i < ch0.length; i++) mono[i] = (ch0[i] + ch1[i]) / 2;
+                        audioData = mono;
+                    } else {
+                        audioData = ch0.slice();
+                    }
+                    sampleRate = buf.sampleRate;
+                    redraw();
+                });
+            };
+            reader.readAsArrayBuffer(f);
+        });
+
+        document.getElementById("btnDemo").addEventListener("click", loadDemoTone);
+        document.getElementById("selN").addEventListener("change", redraw);
+        document.getElementById("selWin").addEventListener("change", redraw);
+        document.getElementById("rngPos").addEventListener("input", redraw);
+
+        // ---------- Drawing ----------
+        function fitCanvas(cv) {
+            const w = cv.clientWidth;
+            if (cv.width !== w * 2) { cv.width = w * 2; }  // retina
+        }
+
+        function redraw() {
+            if (!audioData) return;
+            const N = parseInt(document.getElementById("selN").value, 10);
+            const winType = document.getElementById("selWin").value;
+            const posMax = audioData.length - N;
+            const start = Math.floor(posMax * (document.getElementById("rngPos").value / 1000));
+
+            const frame = audioData.slice(start, start + N);
+            const win = makeWindow(winType, N);
+            const winned = new Float32Array(N);
+            for (let i = 0; i < N; i++) winned[i] = frame[i] * win[i];
+
+            const { re, im } = fftReal(winned);
+            const half = N >> 1;
+            const mags = new Float64Array(half);
+            for (let k = 0; k < half; k++) {
+                mags[k] = Math.hypot(re[k], im[k]) / (N / 2);
+            }
+
+            drawWave(frame, winned);
+            const peak = drawSpec(mags, sampleRate, N);
+
+            const df = sampleRate / N;
+            document.getElementById("infoBox").innerHTML =
+                `采样率 fs = <b>${sampleRate}</b> Hz ｜ 帧长 N = <b>${N}</b>（${(N / sampleRate * 1000).toFixed(1)} ms）｜ ` +
+                `频率分辨率 Δf = fs/N = <b>${df.toFixed(2)} Hz</b> ｜ 频谱峰值位于第 <b>${peak}</b> 个频点 → ` +
+                `<b>${(peak * df).toFixed(1)} Hz</b>（单帧峰值法的读数精度受 Δf 限制）`;
+        }
+
+        function drawWave(frame, winned) {
+            const cv = document.getElementById("cvWave");
+            fitCanvas(cv);
+            const ctx = cv.getContext("2d");
+            const W = cv.width, H = cv.height;
+            ctx.clearRect(0, 0, W, H);
+
+            const mid = H / 2, amp = H * 0.42, N = frame.length;
+            ctx.strokeStyle = "#bbb";
+            ctx.beginPath(); ctx.moveTo(0, mid); ctx.lineTo(W, mid); ctx.stroke();
+
+            ctx.strokeStyle = "#999"; ctx.lineWidth = 1;
+            ctx.beginPath();
+            for (let i = 0; i < N; i++) {
+                const x = i / (N - 1) * W, y = mid - frame[i] * amp;
+                i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+            }
+            ctx.stroke();
+
+            ctx.strokeStyle = "#c0392b"; ctx.lineWidth = 1.6;
+            ctx.beginPath();
+            for (let i = 0; i < N; i++) {
+                const x = i / (N - 1) * W, y = mid - winned[i] * amp;
+                i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+            }
+            ctx.stroke();
+
+            ctx.fillStyle = "#666"; ctx.font = "20px sans-serif";
+            ctx.fillText("灰：原始帧 ｜ 红：加窗后", 12, 26);
+        }
+
+        function drawSpec(mags, sr, N) {
+            const cv = document.getElementById("cvSpec");
+            fitCanvas(cv);
+            const ctx = cv.getContext("2d");
+            const W = cv.width, H = cv.height;
+            ctx.clearRect(0, 0, W, H);
+
+            const FMAX = Math.min(2000, sr / 2);
+            const kMax = Math.floor(FMAX / (sr / N));
+            const DB_MIN = -80, DB_MAX = 5;
+
+            // grid & labels
+            ctx.strokeStyle = "#eee"; ctx.fillStyle = "#999"; ctx.font = "18px sans-serif";
+            ctx.beginPath(); ctx.moveTo(0, H - 24); ctx.lineTo(W, H - 24); ctx.stroke();
+            for (let f = 0; f <= FMAX; f += 500) {
+                const x = f / FMAX * W;
+                ctx.strokeStyle = "#f0f0f0";
+                ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H - 24); ctx.stroke();
+                ctx.fillText(f + " Hz", x + 4, H - 6);
+            }
+
+            // spectrum line
+            ctx.strokeStyle = "#c0392b"; ctx.lineWidth = 1.8;
+            ctx.beginPath();
+            for (let k = 0; k <= kMax; k++) {
+                const db = 20 * Math.log10(mags[k] + 1e-12);
+                const y = (1 - (db - DB_MIN) / (DB_MAX - DB_MIN)) * (H - 28);
+                const x = k / kMax * W;
+                k ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+            }
+            ctx.stroke();
+
+            // peak marker
+            let peak = 1;
+            for (let k = 1; k <= kMax; k++) if (mags[k] > mags[peak]) peak = k;
+            const px = peak / kMax * W;
+            const pdb = 20 * Math.log10(mags[peak] + 1e-12);
+            const py = (1 - (pdb - DB_MIN) / (DB_MAX - DB_MIN)) * (H - 28);
+            ctx.fillStyle = "#2c3e50";
+            ctx.beginPath(); ctx.arc(px, py, 5, 0, 7); ctx.fill();
+            ctx.fillText((peak * sr / N).toFixed(1) + " Hz", Math.min(px + 8, W - 90), Math.max(py - 8, 16));
+            return peak;
+        }
+
+        // auto-start with demo tone so the panel is never empty
+        loadDemoTone();
+        window.addEventListener("resize", redraw);
+    </script>
+</body>
+
+</html>
