@@ -1,0 +1,392 @@
+<!--
+/*
+ * Copyright (c) 2026 Arikan.Li
+ * Chapter_5 Playground: Frame Processing (Docs_5_4 companion)
+ * Self-contained single file. No external resources, no data upload.
+ */
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帧处理器 - Frame Processing</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 12px;
+            font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #fafafa;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 14px;
+            margin: 14px 2px 8px;
+            color: #444;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 12px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .toolbar label {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        button {
+            padding: 6px 14px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 13px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+        }
+
+        button.active {
+            border-color: #c0392b;
+            color: #c0392b;
+            font-weight: 600;
+        }
+
+        input[type="range"] {
+            accent-color: #c0392b;
+        }
+
+        .pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .pair figure {
+            margin: 0;
+        }
+
+        .pair figcaption {
+            font-size: 12.5px;
+            color: #666;
+            text-align: center;
+            margin-top: 3px;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .info {
+            font-size: 12.5px;
+            color: #666;
+            padding: 6px 12px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            line-height: 1.7;
+            margin-top: 8px;
+        }
+
+        .info b {
+            color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>音频帧处理（对应 5.4.1）：低通滤波 A/B 试听</h3>
+    <div class="toolbar">
+        <button id="btnPlayOrig">▶ 播放原声（A）</button>
+        <button id="btnPlayFilt">▶ 播放滤波（B）</button>
+        <label>低通截止频率：<input type="range" id="fcSlider" min="0" max="100" step="1"
+                value="59"><span id="fcVal">2000 Hz</span></label>
+        <label>或上传音频：<input type="file" id="audioInput" accept="audio/*"></label>
+    </div>
+
+    <h3>图像帧处理（对应 5.4.2）：饱和度 → 模糊 → 锐化</h3>
+    <div class="toolbar">
+        <label>饱和度：<input type="range" id="satSlider" min="0" max="200" value="140"><span
+                id="satVal">1.40×</span></label>
+        <label>高斯模糊：<input type="range" id="blurSlider" min="0" max="100" value="12"><span
+                id="blurVal">1.2 px</span></label>
+        <label>USM 锐化：<input type="range" id="sharpSlider" min="0" max="200" value="80"><span
+                id="sharpVal">0.80</span></label>
+        <label>或上传图片：<input type="file" id="imgInput" accept="image/*"></label>
+    </div>
+    <div class="pair">
+        <figure>
+            <canvas id="cvOrig" width="480" height="270"></canvas>
+            <figcaption>原图（A）</figcaption>
+        </figure>
+        <figure>
+            <canvas id="cvProc" width="480" height="270"></canvas>
+            <figcaption>处理后（B）＝ 饱和度 → 模糊 → 锐化</figcaption>
+        </figure>
+    </div>
+
+    <div class="info" id="info">
+        音频区使用 Web Audio 的 BiquadFilter 低通链（2 级级联 ≈ 4 阶，24dB/oct），与 5.4.1 的 Butterworth
+        滤波思想一致；图像区在像素上依次执行 HSV 饱和度增益、可分离高斯模糊与 USM 锐化（见 5.4.2）。<br>
+        所有计算均在本地浏览器内完成，不会上传任何数据。
+    </div>
+
+    <script>
+        "use strict";
+
+        // ==================================================================
+        // Audio section: BiquadFilter low-pass chain, A/B playback
+        // ==================================================================
+        let audioCtx = null;
+        let audioBuffer = null;        // current source buffer (demo or uploaded)
+        let playing = null;            // current BufferSource
+        const fcSlider = document.getElementById("fcSlider");
+        const fcVal = document.getElementById("fcVal");
+
+        function sliderToHz(v) {       // log scale 100 Hz .. 16 kHz
+            return Math.round(100 * Math.pow(160, v / 100));
+        }
+
+        function updateFcLabel() {
+            fcVal.textContent = sliderToHz(parseFloat(fcSlider.value)) + " Hz";
+        }
+        fcSlider.addEventListener("input", updateFcLabel);
+        updateFcLabel();
+
+        function makeDemoBuffer(ctx) {
+            const sr = ctx.sampleRate, dur = 3.0, n = Math.floor(sr * dur);
+            const buf = ctx.createBuffer(1, n, sr);
+            const d = buf.getChannelData(0);
+            let seed = 7;
+            const rand = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+            for (let i = 0; i < n; i++) {
+                const t = i / sr;
+                const env = Math.min(1, t * 40) * Math.exp(-t * 0.55);
+                let s = 0;
+                for (let h = 1; h <= 8; h++) s += Math.sin(2 * Math.PI * 440 * h * t) / (h * h);
+                d[i] = 0.5 * env * (s + 0.06 * (rand() - 0.5));   // harmonics + noise
+            }
+            return buf;
+        }
+
+        function stopPlayback() {
+            if (playing) { try { playing.stop(); } catch (e) { } playing = null; }
+            document.getElementById("btnPlayOrig").classList.remove("active");
+            document.getElementById("btnPlayFilt").classList.remove("active");
+        }
+
+        function play(filtered, btn) {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (!audioBuffer) audioBuffer = makeDemoBuffer(audioCtx);
+            audioCtx.resume();
+            stopPlayback();
+            const src = audioCtx.createBufferSource();
+            src.buffer = audioBuffer;
+            src.loop = true;
+            let node = src;
+            if (filtered) {            // two cascaded biquads ~ 4th-order low-pass
+                for (let i = 0; i < 2; i++) {
+                    const bq = audioCtx.createBiquadFilter();
+                    bq.type = "lowpass";
+                    bq.frequency.value = sliderToHz(parseFloat(fcSlider.value));
+                    bq.Q.value = 0.7071;
+                    node.connect(bq);
+                    node = bq;
+                }
+            }
+            node.connect(audioCtx.destination);
+            src.start();
+            playing = src;
+            btn.classList.add("active");
+            src.onended = () => btn.classList.remove("active");
+        }
+
+        document.getElementById("btnPlayOrig").addEventListener("click", e => {
+            if (playing) { stopPlayback(); return; }
+            play(false, e.target);
+        });
+        document.getElementById("btnPlayFilt").addEventListener("click", e => {
+            if (playing) { stopPlayback(); return; }
+            play(true, e.target);
+        });
+
+        document.getElementById("audioInput").addEventListener("change", e => {
+            const f = e.target.files[0];
+            if (!f) return;
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            stopPlayback();
+            f.arrayBuffer().then(ab => audioCtx.decodeAudioData(ab)).then(buf => {
+                audioBuffer = buf;
+                document.getElementById("info").innerHTML =
+                    "已加载音频：<b>" + f.name + "</b>（" + buf.duration.toFixed(1) +
+                    "s @ " + buf.sampleRate + "Hz）。点击播放按钮进行 A/B 对比试听。";
+            });
+        });
+
+        // ==================================================================
+        // Image section: HSV saturation -> separable gaussian blur -> USM
+        // ==================================================================
+        const W = 480, H = 270;
+        const cvOrig = document.getElementById("cvOrig");
+        const cvProc = document.getElementById("cvProc");
+        const ctxOrig = cvOrig.getContext("2d");
+        const ctxProc = cvProc.getContext("2d");
+        const satSlider = document.getElementById("satSlider");
+        const blurSlider = document.getElementById("blurSlider");
+        const sharpSlider = document.getElementById("sharpSlider");
+
+        function drawDemoImage(ctx) {
+            // colorful test scene mirroring practice_5 aesthetics
+            const g = ctx.createLinearGradient(0, 0, W, H);
+            g.addColorStop(0, "#2a1e78"); g.addColorStop(1, "#c2501e");
+            ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+            ctx.fillStyle = "#ffffff";
+            ctx.beginPath(); ctx.arc(W * 0.28, H * 0.45, 34, 0, 7); ctx.fill();
+            ctx.fillStyle = "#e6d91e"; ctx.fillRect(W * 0.52, H * 0.2, 58, 58);
+            ctx.fillStyle = "#2277e6"; ctx.fillRect(W * 0.62, H * 0.55, 58, 58);
+            ctx.fillStyle = "#22aa55";
+            ctx.beginPath();
+            ctx.moveTo(W * 0.85, H * 0.25); ctx.lineTo(W * 0.95, H * 0.6);
+            ctx.lineTo(W * 0.75, H * 0.6); ctx.closePath(); ctx.fill();
+        }
+
+        function rgbaToHsv(r, g, b) {
+            const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
+            let h = 0;
+            if (d) {
+                if (mx === r) h = ((g - b) / d) % 6;
+                else if (mx === g) h = (b - r) / d + 2;
+                else h = (r - g) / d + 4;
+                h *= 60; if (h < 0) h += 360;
+            }
+            return [h, mx ? d / mx : 0, mx];
+        }
+
+        function hsvToRgb(h, s, v) {
+            const c = v * s, x = c * (1 - Math.abs((h / 60) % 2 - 1)), m = v - c;
+            let r, g, b;
+            if (h < 60) [r, g, b] = [c, x, 0];
+            else if (h < 120) [r, g, b] = [x, c, 0];
+            else if (h < 180) [r, g, b] = [0, c, x];
+            else if (h < 240) [r, g, b] = [0, x, c];
+            else if (h < 300) [r, g, b] = [x, 0, c];
+            else [r, g, b] = [c, 0, x];
+            return [r + m, g + m, b + m];
+        }
+
+        function gaussKernel(sigma) {
+            const r = Math.max(1, Math.ceil(sigma * 2.5));
+            const k = new Float32Array(2 * r + 1);
+            let sum = 0;
+            for (let i = -r; i <= r; i++) {
+                k[i + r] = Math.exp(-i * i / (2 * sigma * sigma));
+                sum += k[i + r];
+            }
+            for (let i = 0; i < k.length; i++) k[i] /= sum;
+            return k;
+        }
+
+        function separableBlur(src, sigma) {  // src/dst Float32Array W*H*3
+            const dst = new Float32Array(src.length);
+            if (sigma < 0.1) { dst.set(src); return dst; }
+            const k = gaussKernel(sigma), r = (k.length - 1) / 2;
+            const tmp = new Float32Array(src.length);
+            for (let y = 0; y < H; y++)                    // horizontal
+                for (let x = 0; x < W; x++)
+                    for (let c = 0; c < 3; c++) {
+                        let acc = 0;
+                        for (let i = -r; i <= r; i++) {
+                            const xx = Math.min(W - 1, Math.max(0, x + i));
+                            acc += src[(y * W + xx) * 3 + c] * k[i + r];
+                        }
+                        tmp[(y * W + x) * 3 + c] = acc;
+                    }
+            for (let y = 0; y < H; y++)                    // vertical
+                for (let x = 0; x < W; x++)
+                    for (let c = 0; c < 3; c++) {
+                        let acc = 0;
+                        for (let i = -r; i <= r; i++) {
+                            const yy = Math.min(H - 1, Math.max(0, y + i));
+                            acc += tmp[(yy * W + x) * 3 + c] * k[i + r];
+                        }
+                        dst[(y * W + x) * 3 + c] = acc;
+                    }
+            return dst;
+        }
+
+        function reprocess() {
+            const sat = parseFloat(satSlider.value) / 100;
+            const blurSigma = parseFloat(blurSlider.value) / 10;
+            const sharp = parseFloat(sharpSlider.value) / 100;
+            document.getElementById("satVal").textContent = sat.toFixed(2) + "×";
+            document.getElementById("blurVal").textContent = blurSigma.toFixed(1) + " px";
+            document.getElementById("sharpVal").textContent = sharp.toFixed(2);
+
+            const img = ctxOrig.getImageData(0, 0, W, H);
+            const src = new Float32Array(W * H * 3);
+            for (let i = 0, j = 0; i < img.data.length; i += 4, j += 3) {
+                src[j] = img.data[i] / 255;
+                src[j + 1] = img.data[i + 1] / 255;
+                src[j + 2] = img.data[i + 2] / 255;
+            }
+            // step 1: saturation in HSV
+            for (let j = 0; j < src.length; j += 3) {
+                const [h, s, v] = rgbaToHsv(src[j], src[j + 1], src[j + 2]);
+                const [r, g, b] = hsvToRgb(h, Math.min(1, s * sat), v);
+                src[j] = r; src[j + 1] = g; src[j + 2] = b;
+            }
+            // step 2: gaussian blur  ->  step 3: unsharp mask
+            const blurred = separableBlur(src, blurSigma);
+            const out = ctxProc.createImageData(W, H);
+            for (let i = 0, j = 0; i < out.data.length; i += 4, j += 3) {
+                for (let c = 0; c < 3; c++) {
+                    const v = (1 + sharp) * src[j + c] - sharp * blurred[j + c];
+                    out.data[i + c] = Math.max(0, Math.min(255, Math.round(v * 255)));
+                }
+                out.data[i + 3] = 255;
+            }
+            ctxProc.putImageData(out, 0, 0);
+        }
+
+        satSlider.addEventListener("input", reprocess);
+        blurSlider.addEventListener("input", reprocess);
+        sharpSlider.addEventListener("input", reprocess);
+
+        document.getElementById("imgInput").addEventListener("change", e => {
+            const f = e.target.files[0];
+            if (!f) return;
+            const url = URL.createObjectURL(f);
+            const im = new Image();
+            im.onload = () => {
+                ctxOrig.drawImage(im, 0, 0, W, H);
+                URL.revokeObjectURL(url);
+                reprocess();
+            };
+            im.src = url;
+        });
+
+        drawDemoImage(ctxOrig);
+        reprocess();
+    </script>
+</body>
+
+</html>

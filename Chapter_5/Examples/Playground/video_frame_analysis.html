@@ -1,0 +1,424 @@
+<!--
+/*
+ * Copyright (c) 2026 Arikan.Li
+ * Chapter_5 Playground: Video Frame Analysis (Docs_5_3 companion)
+ * Self-contained single file. No external resources, no data upload.
+ */
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频帧分析器 - Video Frame Analysis</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 12px;
+            font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #fafafa;
+            color: #333;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 12px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .toolbar label {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        button {
+            padding: 6px 14px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 13px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+        }
+
+        button:disabled {
+            opacity: 0.45;
+            cursor: default;
+            box-shadow: none;
+        }
+
+        select,
+        input[type="range"] {
+            accent-color: #c0392b;
+        }
+
+        .pane-title {
+            font-size: 12.5px;
+            color: #666;
+            margin: 2px 2px 4px;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 4px;
+        }
+
+        .info {
+            font-size: 12.5px;
+            color: #666;
+            padding: 6px 12px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            line-height: 1.7;
+            margin-top: 8px;
+        }
+
+        .info b {
+            color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <button id="btnDemo">使用内置演示视频</button>
+        <label>或打开本地视频：<input type="file" id="fileInput" accept="video/*"></label>
+        <label>阈值系数 k：<input type="range" id="kSlider" min="2" max="20" step="0.5" value="8"><span
+                id="kVal">8</span></label>
+        <button id="btnRun" disabled>开始分析</button>
+    </div>
+
+    <div class="pane-title">当前帧（红框闪烁 = 检出切点）</div>
+    <canvas id="cvFrame" width="480" height="270"></canvas>
+    <div class="pane-title">帧差热图（越亮 = 变化越大）</div>
+    <canvas id="cvDiff" width="480" height="270"></canvas>
+    <div class="pane-title">运动强度曲线（红虚线 = 自适应阈值，红竖线 = 检出切点）</div>
+    <canvas id="cvCurve" width="960" height="260"></canvas>
+
+    <div class="info" id="info">
+        尚未加载视频。可点击 <b>使用内置演示视频</b>（三段场景合成，含两次硬切），或打开一个本地视频文件。<br>
+        所有计算均在本地浏览器内完成，不会上传任何数据。
+    </div>
+
+    <video id="video" style="display:none" muted playsinline></video>
+
+    <script>
+        "use strict";
+
+        // ------------------------------------------------------------------
+        // State
+        // ------------------------------------------------------------------
+        const AW = 480, AH = 270;          // analysis resolution (downscaled)
+        const cvFrame = document.getElementById("cvFrame");
+        const cvDiff = document.getElementById("cvDiff");
+        const cvCurve = document.getElementById("cvCurve");
+        const ctxFrame = cvFrame.getContext("2d");
+        const ctxDiff = cvDiff.getContext("2d");
+        const ctxCurve = cvCurve.getContext("2d");
+        const info = document.getElementById("info");
+        const btnRun = document.getElementById("btnRun");
+        const btnDemo = document.getElementById("btnDemo");
+        const kSlider = document.getElementById("kSlider");
+        const kVal = document.getElementById("kVal");
+        const video = document.getElementById("video");
+        const off = document.createElement("canvas");
+        off.width = AW; off.height = AH;
+        const offCtx = off.getContext("2d", { willReadFrequently: true });
+
+        let sourceKind = null;             // "demo" | "file"
+        let diffSeries = [];               // mean abs gray diff per frame pair
+        let frameTimes = [];               // seconds
+        let cuts = [];                     // indices into diffSeries
+        let threshold = 0;
+        let running = false;
+
+        // ------------------------------------------------------------------
+        // Built-in demo video: 3 scenes, hard cuts @ 3.0s and 5.5s, 15 fps
+        // Mirrors practice_5's synthesized test video.
+        // ------------------------------------------------------------------
+        const DEMO_FPS = 15, DEMO_LEN = 8, DEMO_CUTS = [3.0, 5.5];
+        let demoT = 0, demoFrame = 0, noiseSeed = 1;
+
+        function rand() {                  // deterministic LCG noise
+            noiseSeed = (noiseSeed * 1103515245 + 12345) & 0x7fffffff;
+            return noiseSeed / 0x7fffffff;
+        }
+
+        function drawDemoFrame(ctx, t) {
+            const W = AW, H = AH;
+            if (t < DEMO_CUTS[0]) {                        // Scene A: sine circle
+                const ts = t / DEMO_CUTS[0];
+                const g = ctx.createLinearGradient(0, 0, W, 0);
+                g.addColorStop(0, "#2a1e78"); g.addColorStop(1, "#4a3ad0");
+                ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+                const cx = W * (0.15 + 0.7 * ts);
+                const cy = H * (0.5 + 0.3 * Math.sin(2 * Math.PI * ts));
+                ctx.fillStyle = "#ffffff";
+                ctx.beginPath(); ctx.arc(cx, cy, 20, 0, 7); ctx.fill();
+            } else if (t < DEMO_CUTS[1]) {                 // Scene B: two rects
+                const ts = (t - DEMO_CUTS[0]) / (DEMO_CUTS[1] - DEMO_CUTS[0]);
+                ctx.fillStyle = "#a03d1e"; ctx.fillRect(0, 0, W, H);
+                const x1 = W * (0.75 - 0.5 * ts);
+                ctx.fillStyle = "#e6d91e";
+                ctx.fillRect(x1, 45, 52, 52);
+                const phase = (t % 1.2) / 1.2;
+                const y2 = H * (0.15 + 0.6 * (1 - Math.abs(2 * phase - 1)));
+                ctx.fillStyle = "#e67832";
+                ctx.fillRect(322, y2, 52, 52);
+            } else {                                       // Scene C: fast dash
+                const ts = (t - DEMO_CUTS[1]) / (DEMO_LEN - DEMO_CUTS[1]);
+                ctx.fillStyle = "#000000"; ctx.fillRect(0, 0, W, H);
+                const cx = (W * 1.4 * ts + 30) % (W + 60) - 30;
+                const cy = (H * 0.8 * ts + 22) % H;
+                ctx.fillStyle = "#e6e6e6";
+                ctx.fillRect(cx, cy, 30, 30);
+            }
+            // sensor noise
+            const img = ctx.getImageData(0, 0, AW, AH);
+            const d = img.data;
+            for (let i = 0; i < d.length; i += 4) {
+                const n = (rand() - 0.5) * 12;
+                d[i] += n; d[i + 1] += n; d[i + 2] += n;
+            }
+            ctx.putImageData(img, 0, 0);
+        }
+
+        // ------------------------------------------------------------------
+        // Gray extraction + frame difference
+        // ------------------------------------------------------------------
+        let prevGray = null;
+
+        function grabGray() {
+            const img = offCtx.getImageData(0, 0, AW, AH).data;
+            const g = new Float32Array(AW * AH);
+            for (let i = 0, j = 0; i < img.length; i += 4, j++) {
+                g[j] = (img[i] * 299 + img[i + 1] * 587 + img[i + 2] * 114) / 255000;
+            }
+            return g;
+        }
+
+        function processFrame(tSec) {
+            const cur = grabGray();
+            ctxFrame.drawImage(off, 0, 0);
+            if (prevGray) {
+                const diffImg = ctxDiff.createImageData(AW, AH);
+                let sum = 0;
+                for (let j = 0; j < cur.length; j++) {
+                    const d = Math.abs(cur[j] - prevGray[j]);
+                    sum += d;
+                    const v = Math.min(255, d * 255 * 3);   // amplified for visibility
+                    const p = j * 4;
+                    diffImg.data[p] = v; diffImg.data[p + 1] = v;
+                    diffImg.data[p + 2] = v; diffImg.data[p + 3] = 255;
+                }
+                ctxDiff.putImageData(diffImg, 0, 0);
+                diffSeries.push(sum / cur.length);
+                frameTimes.push(tSec);
+                drawCurve();
+            }
+            prevGray = cur;
+        }
+
+        // ------------------------------------------------------------------
+        // Curve + adaptive threshold (median + k * MAD), matching practice_5
+        // ------------------------------------------------------------------
+        function median(arr) {
+            const s = [...arr].sort((a, b) => a - b);
+            const m = s.length >> 1;
+            return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+        }
+
+        function rethreshold() {
+            if (!diffSeries.length) return;
+            const med = median(diffSeries);
+            const mad = median(diffSeries.map(v => Math.abs(v - med))) + 1e-9;
+            threshold = med + parseFloat(kSlider.value) * mad;
+            const cand = diffSeries.map((v, i) => v > threshold ? i : -1)
+                .filter(i => i >= 0);
+            cuts = [];
+            for (const c of cand) {
+                if (!cuts.length || c - cuts[cuts.length - 1] > 10) cuts.push(c);
+            }
+            drawCurve();
+            report(med, mad);
+        }
+
+        function drawCurve() {
+            const W = cvCurve.width, H = cvCurve.height;
+            ctxCurve.fillStyle = "#ffffff";
+            ctxCurve.fillRect(0, 0, W, H);
+            const n = diffSeries.length;
+            if (!n) return;
+            const maxV = Math.max(...diffSeries, threshold) * 1.15;
+            const tMax = frameTimes[n - 1];
+            const xOf = i => 40 + (frameTimes[i] / tMax) * (W - 60);
+            const yOf = v => H - 24 - (v / maxV) * (H - 44);
+            // axes
+            ctxCurve.strokeStyle = "#999"; ctxCurve.lineWidth = 1;
+            ctxCurve.beginPath();
+            ctxCurve.moveTo(40, 10); ctxCurve.lineTo(40, H - 24); ctxCurve.lineTo(W - 20, H - 24);
+            ctxCurve.stroke();
+            ctxCurve.fillStyle = "#666"; ctxCurve.font = "11px sans-serif";
+            ctxCurve.fillText("0s", 38, H - 10);
+            ctxCurve.fillText(tMax.toFixed(1) + "s", W - 46, H - 10);
+            // curve
+            ctxCurve.strokeStyle = "#3366aa"; ctxCurve.lineWidth = 1.2;
+            ctxCurve.beginPath();
+            for (let i = 0; i < n; i++) {
+                const x = xOf(i), y = yOf(diffSeries[i]);
+                i ? ctxCurve.lineTo(x, y) : ctxCurve.moveTo(x, y);
+            }
+            ctxCurve.stroke();
+            // threshold
+            if (threshold > 0) {
+                ctxCurve.strokeStyle = "#cc3333"; ctxCurve.setLineDash([5, 4]);
+                ctxCurve.beginPath();
+                ctxCurve.moveTo(40, yOf(threshold)); ctxCurve.lineTo(W - 20, yOf(threshold));
+                ctxCurve.stroke();
+                ctxCurve.setLineDash([]);
+            }
+            // cuts
+            ctxCurve.strokeStyle = "#cc3333"; ctxCurve.lineWidth = 1.6;
+            for (const c of cuts) {
+                ctxCurve.beginPath();
+                ctxCurve.moveTo(xOf(c), 10); ctxCurve.lineTo(xOf(c), H - 24);
+                ctxCurve.stroke();
+                ctxCurve.fillStyle = "#cc3333";
+                ctxCurve.fillText("cut @" + frameTimes[c].toFixed(2) + "s",
+                    Math.min(xOf(c) + 4, W - 90), 20);
+            }
+        }
+
+        function report(med, mad) {
+            const srcDesc = sourceKind === "demo"
+                ? "内置演示视频（15fps，真值切点 3.00s / 5.50s）"
+                : "本地视频（按 33.3ms 步长采样）";
+            const cutText = cuts.length
+                ? cuts.map(c => "<b>" + frameTimes[c].toFixed(2) + "s</b>").join("、")
+                : "（未检出）";
+            info.innerHTML =
+                "来源：" + srcDesc + "　|　已分析 <b>" + (diffSeries.length + 1) + "</b> 帧<br>" +
+                "帧差中位数 median = " + med.toFixed(4) + "，MAD = " + mad.toFixed(4) +
+                "，k = " + kSlider.value + " → 阈值 = <b>" + threshold.toFixed(4) + "</b><br>" +
+                "检出切点：" + cutText +
+                "　（拖动 k 滑块可实时调整阈值，无需重新分析）";
+        }
+
+        // ------------------------------------------------------------------
+        // Analysis loops
+        // ------------------------------------------------------------------
+        async function analyzeDemo() {
+            demoFrame = 0;
+            const total = DEMO_FPS * DEMO_LEN;
+            while (running && demoFrame < total) {
+                const t = demoFrame / DEMO_FPS;
+                drawDemoFrame(offCtx, t);
+                processFrame(t);
+                demoFrame++;
+                if (demoFrame % 3 === 0) await new Promise(r => setTimeout(r, 0));
+            }
+            finish();
+        }
+
+        async function analyzeFile() {
+            const step = 1 / 30;
+            const dur = Math.min(video.duration || 0, 60);   // cap at 60 s
+            let t = 0;
+            while (running && t < dur) {
+                await new Promise(resolve => {
+                    const onSeek = () => { video.removeEventListener("seeked", onSeek); resolve(); };
+                    video.addEventListener("seeked", onSeek);
+                    video.currentTime = t;
+                });
+                offCtx.drawImage(video, 0, 0, AW, AH);
+                processFrame(t);
+                t += step;
+            }
+            finish();
+        }
+
+        function finish() {
+            running = false;
+            btnRun.disabled = false;
+            btnRun.textContent = "重新分析";
+            rethreshold();
+            // flash red border on the final frame if it was a cut
+            if (cuts.length && cuts[cuts.length - 1] === diffSeries.length - 1) {
+                ctxFrame.strokeStyle = "#cc3333"; ctxFrame.lineWidth = 6;
+                ctxFrame.strokeRect(3, 3, AW - 6, AH - 6);
+            }
+        }
+
+        // ------------------------------------------------------------------
+        // Events
+        // ------------------------------------------------------------------
+        btnDemo.addEventListener("click", () => {
+            if (running) return;
+            sourceKind = "demo";
+            video.pause();
+            reset();
+            btnRun.disabled = false;
+            info.innerHTML = "已就绪：<b>内置演示视频</b>（三段场景合成，8s / 15fps，" +
+                "真值切点 3.00s 与 5.50s）。点击 <b>开始分析</b>。";
+        });
+
+        document.getElementById("fileInput").addEventListener("change", e => {
+            const f = e.target.files[0];
+            if (!f || running) return;
+            sourceKind = "file";
+            video.src = URL.createObjectURL(f);
+            video.addEventListener("loadedmetadata", () => {
+                reset();
+                btnRun.disabled = false;
+                info.innerHTML = "已就绪：<b>" + f.name + "</b>（时长 " +
+                    video.duration.toFixed(1) + "s，将按 33.3ms 步长采样，最长分析前 60s）。" +
+                    "点击 <b>开始分析</b>。";
+            }, { once: true });
+        });
+
+        btnRun.addEventListener("click", () => {
+            if (running || !sourceKind) return;
+            running = true;
+            btnRun.disabled = true;
+            btnRun.textContent = "分析中…";
+            diffSeries = []; frameTimes = []; cuts = []; threshold = 0;
+            prevGray = null; noiseSeed = 1;
+            if (sourceKind === "demo") analyzeDemo(); else analyzeFile();
+        });
+
+        kSlider.addEventListener("input", () => {
+            kVal.textContent = kSlider.value;
+            rethreshold();
+        });
+
+        function reset() {
+            diffSeries = []; frameTimes = []; cuts = []; threshold = 0;
+            prevGray = null;
+            ctxFrame.clearRect(0, 0, AW, AH);
+            ctxDiff.clearRect(0, 0, AW, AH);
+            ctxCurve.clearRect(0, 0, cvCurve.width, cvCurve.height);
+            btnRun.textContent = "开始分析";
+        }
+    </script>
+</body>
+
+</html>
