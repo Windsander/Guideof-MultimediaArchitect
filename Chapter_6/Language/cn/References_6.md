@@ -22,3 +22,9 @@
 **[10]** M. Lee, H. Song, J. Park, B. Jeon, J. Kang, J.-G. Kim, Y.-L. Lee, J.-W. Kang, and D. Sim, "Overview of Versatile Video Coding (H.266/VVC) and Its Coding Performance Analysis," IEIE Transactions on Smart Processing and Computing, vol. 12, no. 2, pp. 122–154, April 2023, doi: 10.5573/IEIESPC.2023.12.2.122.
 
 **[11]** J. Han, B. Li, D. Mukherjee, C.-H. Chiang, A. Grange, C. Chen, H. Su, S. Parker, S. Deng, U. Joshi, Y. Chen, Y. Wang, P. Wilkins, Y. Xu, and J. Bankoski, "A Technical Overview of AV1," Proceedings of the IEEE, vol. 109, no. 9, pp. 1435–1462, September 2021.
+
+**[12]** K. Brandenburg and G. Stoll, "ISO/MPEG-1 audio: A generic standard for coding of high-quality digital audio," Journal of the Audio Engineering Society, vol. 42, no. 10, pp. 780–792, October 1994.
+
+**[13]** M. Bosi, K. Brandenburg, S. Quackenbush, L. Fielder, K. Akagiri, H. Fuchs, and M. Dietz, "ISO/IEC MPEG-2 advanced audio coding," Journal of the Audio Engineering Society, vol. 45, no. 10, pp. 789–814, October 1997.
+
+**[14]** J.-M. Valin, K. Vos, and T. B. Terriberry, "Definition of the Opus Audio Codec," IETF RFC 6716, September 2012.
