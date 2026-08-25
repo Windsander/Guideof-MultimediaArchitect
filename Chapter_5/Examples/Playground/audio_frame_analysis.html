@@ -114,6 +114,7 @@
 
     <canvas id="cvWave" height="180"></canvas>
     <canvas id="cvSpec" height="240"></canvas>
+    <canvas id="cvFeat" height="200"></canvas>
 
     <div class="info" id="infoBox">等待音频载入……</div>
 
@@ -243,11 +244,18 @@
             drawWave(frame, winned);
             const peak = drawSpec(mags, sampleRate, N);
 
+            const feat = computeFeatures(N, winType);
+            const cursor = Math.min(feat.rms.length - 1, Math.round(start / feat.hop));
+            drawFeat(feat, cursor);
+
             const df = sampleRate / N;
             document.getElementById("infoBox").innerHTML =
                 `采样率 fs = <b>${sampleRate}</b> Hz ｜ 帧长 N = <b>${N}</b>（${(N / sampleRate * 1000).toFixed(1)} ms）｜ ` +
                 `频率分辨率 Δf = fs/N = <b>${df.toFixed(2)} Hz</b> ｜ 频谱峰值位于第 <b>${peak}</b> 个频点 → ` +
-                `<b>${(peak * df).toFixed(1)} Hz</b>（单帧峰值法的读数精度受 Δf 限制）`;
+                `<b>${(peak * df).toFixed(1)} Hz</b>（单帧峰值法的读数精度受 Δf 限制）<br>` +
+                `本帧特征（5.2.2）：RMS = <b>${feat.rms[cursor].toFixed(4)}</b> ｜ ` +
+                `ZCR = <b>${feat.zcr[cursor].toFixed(4)}</b> ｜ ` +
+                `频谱质心 = <b>${feat.cen[cursor].toFixed(1)} Hz</b>`;
         }
 
         function drawWave(frame, winned) {
@@ -325,9 +333,109 @@
             return peak;
         }
 
+        // ---------- Feature curves (5.2.2): RMS / ZCR / spectral centroid ----------
+        let featCache = { key: "", rms: null, zcr: null, cen: null, hop: 0 };
+
+        function computeFeatures(N, winType) {
+            const hop = Math.max(N >> 1, Math.ceil((audioData.length - N) / 1200));
+            const key = [N, winType, hop, audioData.length].join("|");
+            if (featCache.key === key) return featCache;
+            const win = makeWindow(winType, N);
+            const nF = Math.max(1, Math.floor((audioData.length - N) / hop) + 1);
+            const rms = new Float64Array(nF), zcr = new Float64Array(nF), cen = new Float64Array(nF);
+            const frame = new Float32Array(N);
+            for (let m = 0; m < nF; m++) {
+                const s0 = m * hop;
+                let e = 0, crossings = 0;
+                for (let i = 0; i < N; i++) {
+                    const v = audioData[s0 + i];
+                    frame[i] = v * win[i];
+                    e += v * v;
+                    if (i > 0) crossings += Math.abs(Math.sign(v) - Math.sign(audioData[s0 + i - 1]));
+                }
+                rms[m] = Math.sqrt(e / N);          // 工程常用形式（见 5.2.2）
+                zcr[m] = crossings / (2 * N);       // Z_m = (1/2N)·Σ|sgn−sgn|
+                const { re, im } = fftReal(frame);  // 质心用加窗后的频谱
+                let num = 0, den = 0;
+                for (let k = 1; k < (N >> 1); k++) {
+                    const mag = Math.hypot(re[k], im[k]);
+                    num += k * mag; den += mag;
+                }
+                cen[m] = den > 1e-12 ? num / den * (sampleRate / N) : 0;
+            }
+            featCache = { key, rms, zcr, cen, hop };
+            return featCache;
+        }
+
+        function drawFeat(feat, cursor) {
+            const cv = document.getElementById("cvFeat");
+            fitCanvas(cv);
+            const ctx = cv.getContext("2d");
+            const W = cv.width, H = cv.height;
+            ctx.clearRect(0, 0, W, H);
+            const n = feat.rms.length;
+            if (n < 2) return;
+            const PAD_L = 12, PAD_R = 12, PAD_T = 30, PAD_B = 12;
+            const xOf = i => PAD_L + i / (n - 1) * (W - PAD_L - PAD_R);
+            const series = [
+                { data: feat.rms, color: "#c0392b", label: "RMS" },
+                { data: feat.zcr, color: "#3366aa", label: "ZCR" },
+                { data: feat.cen, color: "#228855", label: "质心" }
+            ];
+            ctx.lineWidth = 1.6;
+            for (const s of series) {
+                let mx = 1e-12;
+                for (let i = 0; i < n; i++) mx = Math.max(mx, s.data[i]);
+                const yOf = v => PAD_T + (1 - v / mx) * (H - PAD_T - PAD_B);
+                ctx.strokeStyle = s.color;
+                ctx.beginPath();
+                for (let i = 0; i < n; i++) {
+                    const x = xOf(i), y = yOf(s.data[i]);
+                    i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+                }
+                ctx.stroke();
+            }
+            // cursor: current frame position
+            ctx.strokeStyle = "#333"; ctx.setLineDash([4, 3]); ctx.lineWidth = 1.2;
+            ctx.beginPath();
+            ctx.moveTo(xOf(cursor), PAD_T); ctx.lineTo(xOf(cursor), H - PAD_B);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            // legend (each curve normalized to its own max)
+            ctx.font = "18px sans-serif";
+            let lx = 12;
+            for (const s of series) {
+                ctx.fillStyle = s.color;
+                ctx.fillText(s.label, lx, 22);
+                lx += ctx.measureText(s.label).width + 26;
+            }
+            ctx.fillStyle = "#999";
+            ctx.fillText("（三条曲线各自归一化；黑虚线 = 当前帧位置）", lx, 22);
+        }
+
         // auto-start with demo tone so the panel is never empty
         loadDemoTone();
         window.addEventListener("resize", redraw);
+    </script>
+    <script>
+        // Same-origin GitBook embed: report full content height to the parent
+        // iframe so the page renders without an inner scrollbar.
+        (function () {
+            if (!window.frameElement) return;
+            let last = 0;
+            function fit() {
+                const h = document.documentElement.scrollHeight;
+                if (Math.abs(h - last) > 2) {
+                    last = h;
+                    window.frameElement.style.height = h + "px";
+                }
+            }
+            window.addEventListener("load", fit);
+            window.addEventListener("resize", fit);
+            new MutationObserver(fit).observe(document.body,
+                { childList: true, subtree: true, attributes: true });
+            fit();
+        })();
     </script>
 </body>
 
