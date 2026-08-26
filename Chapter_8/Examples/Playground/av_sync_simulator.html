@@ -1,0 +1,396 @@
+<!--
+/*
+ * Copyright (c) 2026 Arikan.Li
+ * Chapter_8 Playground: AV Sync Simulator (Docs_8_2 / Docs_8_3 companion)
+ * Self-contained single file. No external resources, no data upload.
+ *
+ * 教学要点：
+ *   1. 自由运行：解码压力之下，音画偏差单调爬升且永不自愈
+ *   2. 音频主时钟：±40ms 阈值带内丢/重视频帧，偏差被摁住，代价可见
+ *   3. 视频主时钟：音频被迫追赶视频，节拍音变得忽快忽慢 ——
+ *      亲耳体会「为什么工业界让视频迁就音频」
+ */
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音画同步模拟器 - AV Sync Simulator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 12px;
+            font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #fafafa;
+            color: #333;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 12px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .toolbar label {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        select {
+            padding: 4px 8px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            font-size: 13px;
+            background: #fff;
+        }
+
+        input[type="range"] {
+            width: 140px;
+        }
+
+        button {
+            padding: 6px 14px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 13px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+        }
+
+        button.active {
+            background: #2E5F8A;
+            border-color: #2E5F8A;
+            color: #fff;
+        }
+
+        .panel {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+        }
+
+        .panel h3 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            border-radius: 6px;
+            background: #20242b;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            font-size: 13px;
+        }
+
+        .stats .item b {
+            font-size: 17px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .note b {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <button id="btnPlay">▶ 开始</button>
+        <label>主时钟策略
+            <select id="selStrategy">
+                <option value="free">自由运行（无同步）</option>
+                <option value="audio" selected>音频主时钟</option>
+                <option value="video">视频主时钟</option>
+            </select>
+        </label>
+        <button id="btnStress">🔥 解码压力：关</button>
+        <label>静态偏差 <span id="lblOffset">0</span>ms
+            <input type="range" id="rngOffset" min="-500" max="500" step="10" value="0">
+        </label>
+        <button id="btnReset">↺ 重置</button>
+    </div>
+
+    <div class="panel">
+        <h3>同步演示（红 = 视频节拍帧，蓝 = 音频节拍音）</h3>
+        <canvas id="stage" width="860" height="300"></canvas>
+    </div>
+
+    <div class="panel">
+        <div class="stats">
+            <div class="item">当前音画偏差<br><b id="stOffset">0.0</b> ms</div>
+            <div class="item">视频丢帧<br><b id="stDrop">0</b> 帧</div>
+            <div class="item">视频重复<br><b id="stRepeat">0</b> 帧</div>
+            <div class="item">音频被拖拽<br><b id="stAudioPull">0</b> 次</div>
+        </div>
+    </div>
+
+    <div class="panel note">
+        <b>怎么玩：</b>按下「开始」后，每 0.5 秒会有一对节拍——蓝色竖线是节拍音，红色竖线是节拍画面。
+        两者对齐即音画同步。打开「解码压力」模拟机器算力不足（对应 8.3 实测的压力段）：
+        <b>自由运行</b>下偏差会一路爬升；<b>音频主时钟</b>靠丢帧/重复把偏差摁在 ±40ms 阈值带内；
+        <b>视频主时钟</b>反过来拖拽音频，听节拍音的忽快忽慢，就懂工业界为什么默认让视频迁就音频（8.2.2）。
+        「静态偏差」滑块（±500ms）直接给视频加一个固定偏移，用来体验不同程度的音画错位。
+        所有计算均在本地完成，不会上传。
+    </div>
+
+    <script>
+        "use strict";
+
+        // ---------------------------------------------------------------
+        // 常量：与 8.2 / 8.3 的机制一一对应
+        // ---------------------------------------------------------------
+        const FPS = 30;
+        const FRAME_INTERVAL = 1 / FPS;          // 视频帧间隔 33.3ms
+        const BEAT_INTERVAL = 0.5;               // 节拍周期（画面对应每 15 帧一次闪动）
+        const SYNC_THRESHOLD = 0.040;            // 40ms，对齐 ffplay AV_SYNC_THRESHOLD_MIN
+
+        // ---------------------------------------------------------------
+        // 状态
+        // ---------------------------------------------------------------
+        let actx = null, t0 = 0, running = false;
+        let strategy = "audio", stress = false, staticOffsetMs = 0;
+
+        let frames = [];          // {pts, ready} 待显示视频帧队列（pts 含静态偏差）
+        let frameIdx = 0, nextPts = 0, readyClock = 0;
+        let lastShownPts = null, lastDisp = 0;
+        let flashUntil = 0, flashIsRepeat = false;
+        let dropCount = 0, repeatCount = 0, audioPullCount = 0;
+
+        let ticks = [];           // {t, type: 'audio'|'video'} 最近数秒的节拍史
+        let audioBeatIdx = 0;     // 已调度到第几个节拍音
+        let videoClock = 0;       // 视频主时钟策略下，视频自己的走时
+
+        const stage = document.getElementById("stage");
+        const ctx = stage.getContext("2d");
+
+        const $ = id => document.getElementById(id);
+
+        // ---------------------------------------------------------------
+        // 解码代价模型（与 practice_9 相同分布，种子换成实时随机）
+        // ---------------------------------------------------------------
+        function decodeCost() {
+            let c = 0.015 + Math.random() * 0.020;       // 常规帧 15~35ms
+            if (Math.random() < 0.08) c = 0.050 + Math.random() * 0.030;  // 8% 重帧
+            if (stress) c *= 1.5;                        // 压力段：解码均耗 1.5 倍
+            return c;
+        }
+
+        // ---------------------------------------------------------------
+        // 音频节拍调度（WebAudio 前瞻调度器；音频 = 不可压缩的时间基准）
+        // ---------------------------------------------------------------
+        function scheduleAudio(now) {
+            if (!actx) return;
+            while (true) {
+                const beatT = audioBeatIdx * BEAT_INTERVAL;      // 相对 t0 的节拍时刻
+                if (beatT > now + 0.15) break;                   // 只提前 150ms 调度
+                let when = t0 + beatT;
+                if (strategy === "video" && audioBeatIdx > 0) {
+                    // 音频做从时钟：节拍被拖向视频时钟（±10% 以内，8.2.2 C 节）
+                    const target = t0 + videoClock;
+                    const pull = Math.max(-BEAT_INTERVAL * 0.1,
+                        Math.min(BEAT_INTERVAL * 0.1, target - when));
+                    if (Math.abs(pull) > 0.001) audioPullCount++;
+                    when += pull;
+                }
+                if (when >= actx.currentTime - 0.01) {
+                    click(when);
+                    ticks.push({ t: when - t0, type: "audio" });
+                }
+                audioBeatIdx++;
+            }
+        }
+
+        function click(when) {
+            const osc = actx.createOscillator();
+            const gain = actx.createGain();
+            osc.frequency.value = 880;
+            gain.gain.setValueAtTime(0.25, when);
+            gain.gain.exponentialRampToValueAtTime(0.001, when + 0.09);
+            osc.connect(gain).connect(actx.destination);
+            osc.start(when);
+            osc.stop(when + 0.1);
+        }
+
+        // ---------------------------------------------------------------
+        // 视频侧：三策略的显示判决（8.2.2 B 节规则的实时版）
+        // ---------------------------------------------------------------
+        function stepVideo(now) {
+            // 生产：按解码代价把帧推进显示队列
+            while (nextPts < now + 0.5) {
+                readyClock += decodeCost();
+                frames.push({ pts: nextPts + staticOffsetMs / 1000, ready: readyClock });
+                nextPts += FRAME_INTERVAL;
+            }
+            if (frameIdx >= frames.length) return;
+            const f = frames[frameIdx];
+            if (f.ready > now) return;                        // 还没解出来
+
+            if (strategy === "audio") {
+                const diff = now - f.pts;                     // 音频时钟 - 帧 PTS
+                if (diff > SYNC_THRESHOLD) {                  // 落后超阈：丢
+                    dropCount++;
+                    frameIdx++;
+                    return;
+                }
+                if (diff < -SYNC_THRESHOLD) return;           // 未到时刻：等
+                show(f, now, lastShownPts === f.pts);
+                frameIdx++;
+            } else {
+                // free / video 主时钟：视频自己走时，解出即播
+                const disp = Math.max(lastDisp + FRAME_INTERVAL, f.ready);
+                if (now < disp - 0.002) return;
+                videoClock = f.pts;
+                show(f, now, false);
+                frameIdx++;
+            }
+        }
+
+        function show(f, when, isRepeat) {
+            if (isRepeat) repeatCount++;
+            lastShownPts = f.pts;
+            lastDisp = when;
+            // 节拍帧（每 15 帧一次）触发画面闪动
+            const beatPhase = Math.round(f.pts / BEAT_INTERVAL);
+            if (Math.abs(f.pts - beatPhase * BEAT_INTERVAL) < FRAME_INTERVAL) {
+                flashUntil = when + 0.12;
+                flashIsRepeat = isRepeat;
+                ticks.push({ t: when, type: "video" });
+            }
+            const off = (when - f.pts) * 1000;
+            $("stOffset").textContent = off.toFixed(1);
+        }
+
+        // ---------------------------------------------------------------
+        // 绘制：上方闪动球，下方 5 秒节拍史
+        // ---------------------------------------------------------------
+        function draw(now) {
+            const W = stage.width, H = stage.height;
+            ctx.clearRect(0, 0, W, H);
+
+            // 闪动球
+            const flashing = now < flashUntil;
+            ctx.beginPath();
+            ctx.arc(W / 2, 90, 46, 0, Math.PI * 2);
+            ctx.fillStyle = flashing ? (flashIsRepeat ? "#8a6d3b" : "#B5533C") : "#3a3f4a";
+            ctx.fill();
+            ctx.fillStyle = "#cfd3da";
+            ctx.font = "13px sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText(flashing ? "节拍帧" : "视频画面", W / 2, 94);
+
+            // 节拍史时间轴（最近 5 秒）
+            const tEnd = now, tStart = now - 5;
+            ticks = ticks.filter(k => k.t > tStart - 0.5);
+            const y = 210, x = t => 40 + (t - tStart) / 5 * (W - 80);
+            ctx.strokeStyle = "#555c69";
+            ctx.beginPath(); ctx.moveTo(40, y); ctx.lineTo(W - 40, y); ctx.stroke();
+            for (const k of ticks) {
+                ctx.strokeStyle = k.type === "audio" ? "#2E5F8A" : "#B5533C";
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(x(k.t), y - (k.type === "audio" ? 22 : 8));
+                ctx.lineTo(x(k.t), y + (k.type === "audio" ? 8 : 22));
+                ctx.stroke();
+            }
+            ctx.lineWidth = 1;
+            // “此刻”游标
+            ctx.strokeStyle = "#cfd3da";
+            ctx.beginPath(); ctx.moveTo(x(tEnd), y - 30); ctx.lineTo(x(tEnd), y + 30); ctx.stroke();
+
+            $("stDrop").textContent = dropCount;
+            $("stRepeat").textContent = repeatCount;
+            $("stAudioPull").textContent = audioPullCount;
+        }
+
+        // ---------------------------------------------------------------
+        // 主循环
+        // ---------------------------------------------------------------
+        function loop() {
+            if (!running) return;
+            const now = actx.currentTime - t0;
+            scheduleAudio(now);
+            stepVideo(now);
+            draw(now);
+            requestAnimationFrame(loop);
+        }
+
+        function reset() {
+            frames = []; frameIdx = 0; nextPts = 0; readyClock = 0;
+            lastShownPts = null; lastDisp = 0; videoClock = 0;
+            flashUntil = 0; flashIsRepeat = false;
+            dropCount = 0; repeatCount = 0; audioPullCount = 0;
+            ticks = []; audioBeatIdx = 0;
+            $("stOffset").textContent = "0.0";
+        }
+
+        // ---------------------------------------------------------------
+        // 控件
+        // ---------------------------------------------------------------
+        $("btnPlay").addEventListener("click", () => {
+            if (running) {
+                running = false;
+                $("btnPlay").textContent = "▶ 继续";
+                return;
+            }
+            if (!actx) {
+                actx = new (window.AudioContext || window.webkitAudioContext)();
+                t0 = actx.currentTime + 0.1;
+            }
+            actx.resume();
+            running = true;
+            $("btnPlay").textContent = "⏸ 暂停";
+            requestAnimationFrame(loop);
+        });
+
+        $("selStrategy").addEventListener("change", e => {
+            strategy = e.target.value;
+            reset();
+        });
+
+        $("btnStress").addEventListener("click", e => {
+            stress = !stress;
+            e.target.textContent = stress ? "🔥 解码压力：开" : "🔥 解码压力：关";
+            e.target.classList.toggle("active", stress);
+        });
+
+        $("rngOffset").addEventListener("input", e => {
+            staticOffsetMs = Number(e.target.value);
+            $("lblOffset").textContent = staticOffsetMs;
+            reset();
+        });
+
+        $("btnReset").addEventListener("click", reset);
+    </script>
+</body>
+
+</html>
