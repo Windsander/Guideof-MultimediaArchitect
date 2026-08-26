@@ -301,6 +301,21 @@
 	* [8.4 本章小结与进阶指引（Summary & Roadmap）](Chapter_8/Language/cn/Docs_8_4.md)
 	* [【参考文献】](Chapter_8/Language/cn/References_8.md)
 
+* [九、流媒体链路与流分析（Streaming Pipeline & Stream Analysis）](Chapter_9/Language/cn/Apex_9_Introduce.md)
+	* [9.1 现代流媒体链路全景（The Streaming Pipeline）](Chapter_9/Language/cn/Docs_9_1.md)
+		* [9.1.1 一场直播的完整旅程（The Journey of A Live Stream）](Chapter_9/Language/cn/Docs_9_1_1.md)
+		* [9.1.2 端到端延迟：从采集到视网膜（Glass-to-Glass Latency）](Chapter_9/Language/cn/Docs_9_1_2.md)
+		* [9.1.3 链路各环节的角色与故障域（Roles & Failure Domains）](Chapter_9/Language/cn/Docs_9_1_3.md)
+		* [9.1.4 协议在链路两端的分工（Protocols at Both Ends）](Chapter_9/Language/cn/Docs_9_1_4.md)
+	* [9.2 流分析与质量监控（Stream Analysis & QoE）](Chapter_9/Language/cn/Docs_9_2.md)
+		* [9.2.1 QoE 指标体系：给体验号脉（The QoE Metrics）](Chapter_9/Language/cn/Docs_9_2_1.md)
+		* [9.2.2 播放端埋点与上报（Player Instrumentation）](Chapter_9/Language/cn/Docs_9_2_2.md)
+		* [9.2.3 服务端链路监控（Server-Side Monitoring）](Chapter_9/Language/cn/Docs_9_2_3.md)
+		* [9.2.4 从帧级到会话级：数据分析方法（From Frames to Sessions）](Chapter_9/Language/cn/Docs_9_2_4.md)
+	* [9.3 实战：链路搭建与质量分析（practice_10）](Chapter_9/Language/cn/Docs_9_3.md)
+	* [9.4 阶段小结与进阶指引（Summary & Roadmap）](Chapter_9/Language/cn/Docs_9_4.md)
+	* [【参考文献】](Chapter_9/Language/cn/References_9.md)
+
 
 <br>
 <br>
