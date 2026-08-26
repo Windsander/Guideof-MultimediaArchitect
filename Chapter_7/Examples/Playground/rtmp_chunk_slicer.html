@@ -1,0 +1,505 @@
+<!--
+/*
+ * Copyright (c) 2026 Arikan.Li
+ * Chapter_7 Playground: RTMP Chunk Slicer (Docs_7_3 companion)
+ * Self-contained single file. No external resources, no data upload.
+ *
+ * 教学要点：
+ *   1. 一条 Message 如何被切成 Chunk 序列（首块 fmt=0，后续 fmt=3）
+ *   2. Basic Header 三型与 Message Header 四型的真实字节
+ *   3. Chunk Size 的权衡：头部开销 vs 队头阻塞（音视频交织演示）
+ */
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTMP Chunk 切片模拟器 - RTMP Chunk Slicer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 12px;
+            font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #fafafa;
+            color: #333;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 12px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .toolbar label {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        select,
+        input[type="number"] {
+            padding: 4px 8px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            font-size: 13px;
+            background: #fff;
+        }
+
+        button {
+            padding: 6px 14px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 13px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+        }
+
+        .panel {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+        }
+
+        .panel h3 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            font-size: 13px;
+        }
+
+        .stats .item b {
+            font-size: 17px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 12px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        th,
+        td {
+            border-bottom: 1px solid #eee;
+            padding: 4px 6px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        th {
+            background: #f5f5f5;
+            position: sticky;
+            top: 0;
+        }
+
+        .hex {
+            display: inline-block;
+            padding: 1px 4px;
+            margin-right: 2px;
+            border-radius: 4px;
+            font-family: Menlo, Consolas, monospace;
+            font-size: 11px;
+        }
+
+        .hex-basic {
+            background: rgba(46, 95, 138, 0.16);
+            color: #2E5F8A;
+        }
+
+        .hex-msghdr {
+            background: rgba(90, 125, 90, 0.18);
+            color: #44603f;
+        }
+
+        .hex-extts {
+            background: rgba(181, 83, 60, 0.15);
+            color: #B5533C;
+        }
+
+        .hex-data {
+            background: #eee;
+            color: #888;
+        }
+
+        tr.row-audio td {
+            background: rgba(181, 83, 60, 0.05);
+        }
+
+        .legend {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+            line-height: 1.9;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .scrollbox {
+            max-height: none;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="toolbar">
+        <label>消息类型
+            <select id="selType">
+                <option value="18">Data AMF0（18，@setDataFrame）</option>
+                <option value="9" selected>Video（9）</option>
+                <option value="8">Audio（8）</option>
+                <option value="20">Command AMF0（20）</option>
+            </select>
+        </label>
+        <label>消息长度
+            <input type="range" id="sldLen" min="23" max="8192" step="1" value="308" style="width:140px">
+            <span id="lblLen">308</span> B
+        </label>
+        <label>Chunk Size
+            <input type="range" id="sldChunk" min="5" max="16" step="1" value="7" style="width:140px">
+            <span id="lblChunk">128</span> B
+        </label>
+        <label title="时间戳达到 0xFFFFFF 时，每个 Chunk 追加 4 字节扩展时间戳">
+            <input type="checkbox" id="chkExtTs"> 扩展时间戳
+        </label>
+        <label title="加入一条 350B 音频消息，与本消息在同一连接上按块边界交替发送">
+            <input type="checkbox" id="chkInterleave"> 音视频交织
+        </label>
+    </div>
+
+    <div class="toolbar">
+        <span style="font-size:12px;color:#888">预设：</span>
+        <button data-preset="18,308">@setDataFrame 308B（practice_8 实测）</button>
+        <button data-preset="8,350">AAC 音频帧 350B</button>
+        <button data-preset="9,1500">视频 P 帧 1.5KB</button>
+        <button data-preset="9,6000">视频 IDR 帧 6KB</button>
+    </div>
+
+    <div class="panel">
+        <h3>传输统计</h3>
+        <div class="stats">
+            <div class="item">Chunk 数<br><b id="stCount">-</b></div>
+            <div class="item">载荷<br><b id="stPayload">-</b></div>
+            <div class="item">头部合计<br><b id="stHeader">-</b></div>
+            <div class="item">线上总字节<br><b id="stTotal">-</b></div>
+            <div class="item">头部开销<br><b id="stOverhead">-</b></div>
+            <div class="item" id="stAudioBox" style="display:none">音频首块等待<br><b id="stAudio">-</b></div>
+        </div>
+        <div class="legend">
+            <span class="hex hex-basic">AA</span> Basic Header（1B，cs_id &le; 63）
+            <span class="hex hex-msghdr">BB</span> Message Header（fmt=0 时 11B，fmt=3 时 0B）
+            <span class="hex hex-extts">CC</span> Extended Timestamp（可选 4B）
+            <span class="hex hex-data">…</span> Chunk Data（&le; Chunk Size）
+        </div>
+    </div>
+
+    <div class="panel">
+        <h3>Chunk Size 与头部开销（对数坐标）</h3>
+        <canvas id="cvChart" width="760" height="180" style="width:100%;max-width:760px"></canvas>
+        <div class="note">
+            Chunk Size 越小，头部占比越高；但 Chunk 边界是同一连接上「换人发送」的唯一时机 ——
+            块越小，其他流的消息等待越短。规范默认值 128B；practice_8 实测中 ffmpeg 推流协商到 65536B（见 7.6 节）。
+        </div>
+    </div>
+
+    <div class="panel">
+        <h3>Chunk 序列（逐字节还原）</h3>
+        <div class="scrollbox">
+            <table id="tblChunks">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>流</th>
+                        <th>fmt</th>
+                        <th>头部字节（hex）</th>
+                        <th>数据</th>
+                        <th>累计线上字节</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="note" id="ellipsisNote" style="display:none"></div>
+    </div>
+
+    <script>
+        "use strict";
+
+        // ---------------------------------------------------------- 参数与控件
+
+        const selType = document.getElementById("selType");
+        const sldLen = document.getElementById("sldLen");
+        const lblLen = document.getElementById("lblLen");
+        const sldChunk = document.getElementById("sldChunk");
+        const lblChunk = document.getElementById("lblChunk");
+        const chkExtTs = document.getElementById("chkExtTs");
+        const chkInterleave = document.getElementById("chkInterleave");
+        const tblBody = document.querySelector("#tblChunks tbody");
+        const ellipsisNote = document.getElementById("ellipsisNote");
+        const cvChart = document.getElementById("cvChart");
+        const ctxChart = cvChart.getContext("2d");
+
+        const AUDIO_MSG = { type: 8, len: 350, csid: 4, name: "Audio" };
+        const MAX_ROWS = 60;
+
+        // Chunk Size 滑块按 2 的幂取值：32 ... 65536
+        function chunkSize() { return 1 << parseInt(sldChunk.value, 10); }
+
+        // ---------------------------------------------------------- 切片核心
+        // 复刻 RTMP v1.0 §5.3：首块 fmt=0，同消息后续块 fmt=3，
+        // 每块数据不超过 chunkSize；basic header 取 1B 型（cs_id<64）。
+
+        function hex2(n) { return n.toString(16).toUpperCase().padStart(2, "0"); }
+
+        function sliceMessage(msg, cs, extTs) {
+            const chunks = [];
+            let sent = 0, first = true;
+            while (sent < msg.len || (first && msg.len === 0)) {
+                const dataLen = Math.min(cs, msg.len - sent);
+                const fmt = first ? 0 : 3;
+                const hdr = [];
+
+                // Basic Header：fmt(2bit) | cs_id(6bit)
+                hdr.push({ cls: "hex-basic", hex: hex2((fmt << 6) | msg.csid) });
+
+                if (first) {
+                    // Message Header fmt=0：ts(3B) len(3B) type(1B) ms_id(4B LE)
+                    const tsField = extTs ? 0xFFFFFF : 0;
+                    hdr.push({ cls: "hex-msghdr", hex: hex2((tsField >> 16) & 0xFF) });
+                    hdr.push({ cls: "hex-msghdr", hex: hex2((tsField >> 8) & 0xFF) });
+                    hdr.push({ cls: "hex-msghdr", hex: hex2(tsField & 0xFF) });
+                    hdr.push({ cls: "hex-msghdr", hex: hex2((msg.len >> 16) & 0xFF) });
+                    hdr.push({ cls: "hex-msghdr", hex: hex2((msg.len >> 8) & 0xFF) });
+                    hdr.push({ cls: "hex-msghdr", hex: hex2(msg.len & 0xFF) });
+                    hdr.push({ cls: "hex-msghdr", hex: hex2(msg.type) });
+                    [1, 0, 0, 0].forEach(b =>            // ms_id=1，小端
+                        hdr.push({ cls: "hex-msghdr", hex: hex2(b) }));
+                }
+                if (extTs) {
+                    // Extended Timestamp：本演示取 0x01000000（约 194 天级的大时间戳）
+                    [0x01, 0x00, 0x00, 0x00].forEach(b =>
+                        hdr.push({ cls: "hex-extts", hex: hex2(b) }));
+                }
+                const hdrBytes = hdr.length;
+                chunks.push({
+                    stream: msg.name, fmt, hdr, hdrBytes, dataLen,
+                    wire: hdrBytes + dataLen,
+                });
+                sent += dataLen;
+                first = false;
+            }
+            return chunks;
+        }
+
+        // 交织模型：两条消息同时就绪，发送端在每个块边界切换流。
+        // 块越大，音频等待视频独占连接的字节越多 —— 队头阻塞。
+        function interleave(mainChunks, audioChunks) {
+            const seq = [];
+            let i = 0, j = 0;
+            while (i < mainChunks.length || j < audioChunks.length) {
+                if (i < mainChunks.length) seq.push(mainChunks[i++]);
+                if (j < audioChunks.length) seq.push(audioChunks[j++]);
+            }
+            return seq;
+        }
+
+        // ---------------------------------------------------------- 渲染
+
+        function render() {
+            const msg = {
+                type: parseInt(selType.value, 10),
+                len: parseInt(sldLen.value, 10),
+                csid: 6,
+                name: selType.options[selType.selectedIndex].text.split("（")[0],
+            };
+            const cs = chunkSize();
+            const ext = chkExtTs.checked;
+            lblLen.textContent = msg.len;
+            lblChunk.textContent = cs;
+
+            const mainChunks = sliceMessage(msg, cs, ext);
+            let seq = mainChunks, audioChunks = null;
+            if (chkInterleave.checked) {
+                audioChunks = sliceMessage(AUDIO_MSG, cs, ext);
+                seq = interleave(mainChunks, audioChunks);
+            }
+
+            // ---- 统计
+            const hdrTotal = mainChunks.reduce((s, c) => s + c.hdrBytes, 0);
+            const wireTotal = mainChunks.reduce((s, c) => s + c.wire, 0);
+            document.getElementById("stCount").textContent = mainChunks.length;
+            document.getElementById("stPayload").textContent = msg.len + " B";
+            document.getElementById("stHeader").textContent = hdrTotal + " B";
+            document.getElementById("stTotal").textContent = wireTotal + " B";
+            document.getElementById("stOverhead").textContent =
+                (hdrTotal / wireTotal * 100).toFixed(2) + " %";
+
+            const audioBox = document.getElementById("stAudioBox");
+            if (audioChunks) {
+                audioBox.style.display = "";
+                // 音频首块发出前，线路上已被主消息占用的字节数
+                const firstAudioIdx = seq.findIndex(c => c.stream === "Audio");
+                const waited = seq.slice(0, firstAudioIdx)
+                    .reduce((s, c) => s + c.wire, 0);
+                document.getElementById("stAudio").textContent = waited + " B";
+            } else {
+                audioBox.style.display = "none";
+            }
+
+            // ---- 表格
+            tblBody.innerHTML = "";
+            let acc = 0, rows = 0, hidden = 0;
+            const frag = document.createDocumentFragment();
+            for (const c of seq) {
+                acc += c.wire;
+                rows++;
+                if (rows > MAX_ROWS) { hidden++; continue; }
+                const tr = document.createElement("tr");
+                if (c.stream === "Audio") tr.className = "row-audio";
+                const hexHtml = c.hdr.map(h =>
+                    `<span class="hex ${h.cls}">${h.hex}</span>`).join("") +
+                    `<span class="hex hex-data">${c.dataLen}B</span>`;
+                tr.innerHTML =
+                    `<td>${rows}</td><td>${c.stream}</td><td>${c.fmt}</td>` +
+                    `<td>${hexHtml}</td><td>${c.dataLen} B</td><td>${acc} B</td>`;
+                frag.appendChild(tr);
+            }
+            tblBody.appendChild(frag);
+            if (hidden > 0) {
+                ellipsisNote.style.display = "";
+                ellipsisNote.textContent =
+                    `…… 省略后续 ${hidden} 个 Chunk（结构与本页末块相同，仅数据长度不同）。`;
+            } else {
+                ellipsisNote.style.display = "none";
+            }
+
+            drawChart(msg.len, cs, ext);
+        }
+
+        // ---- 开销曲线：overhead%(chunkSize)，x 轴对数
+        function drawChart(len, curCs, ext) {
+            const W = cvChart.width, H = cvChart.height;
+            const padL = 46, padR = 12, padT = 10, padB = 26;
+            ctxChart.clearRect(0, 0, W, H);
+
+            const expMin = 5, expMax = 16;          // 32 .. 65536
+            const xs = e => padL + (e - expMin) / (expMax - expMin) * (W - padL - padR);
+            const overhead = c => {
+                const n = Math.max(1, Math.ceil(len / c));
+                const hdr = n * 1 + 11 + (ext ? n * 4 : 0);
+                return hdr / (len + hdr) * 100;
+            };
+            let yMax = 1;
+            for (let e = expMin; e <= expMax; e++)
+                yMax = Math.max(yMax, overhead(1 << e));
+            yMax = Math.ceil(yMax * 1.15);
+            const ys = v => padT + (1 - v / yMax) * (H - padT - padB);
+
+            // 网格与坐标
+            ctxChart.strokeStyle = "#e5e5e5";
+            ctxChart.fillStyle = "#999";
+            ctxChart.font = "10px Menlo, monospace";
+            ctxChart.textAlign = "right";
+            const yStep = yMax > 10 ? 5 : (yMax > 4 ? 2 : 1);
+            for (let v = 0; v <= yMax; v += yStep) {
+                ctxChart.beginPath();
+                ctxChart.moveTo(padL, ys(v)); ctxChart.lineTo(W - padR, ys(v));
+                ctxChart.stroke();
+                ctxChart.fillText(v + "%", padL - 6, ys(v) + 3);
+            }
+            ctxChart.textAlign = "center";
+            for (let e = expMin; e <= expMax; e += e % 2 === 1 ? 1 : 2) {
+                const label = (1 << e) >= 1024 ? ((1 << e) / 1024) + "K" : (1 << e);
+                ctxChart.fillText(label, xs(e), H - 8);
+            }
+
+            // 曲线
+            ctxChart.strokeStyle = "#2E5F8A";
+            ctxChart.lineWidth = 2;
+            ctxChart.beginPath();
+            for (let e = expMin; e <= expMax; e++) {
+                const v = overhead(1 << e);
+                e === expMin ? ctxChart.moveTo(xs(e), ys(v))
+                    : ctxChart.lineTo(xs(e), ys(v));
+            }
+            ctxChart.stroke();
+
+            // 当前 Chunk Size 标记
+            const ce = Math.log2(curCs);
+            const cv = overhead(curCs);
+            ctxChart.fillStyle = "#B5533C";
+            ctxChart.beginPath();
+            ctxChart.arc(xs(ce), ys(cv), 4.5, 0, Math.PI * 2);
+            ctxChart.fill();
+            ctxChart.font = "11px Menlo, monospace";
+            ctxChart.textAlign = ce > 13 ? "right" : "left";
+            ctxChart.fillText(
+                `当前 ${curCs}B → ${cv.toFixed(2)}%`,
+                xs(ce) + (ce > 13 ? -9 : 9), ys(cv) - 8);
+        }
+
+        // ---------------------------------------------------------- 事件
+
+        [selType, sldLen, sldChunk, chkExtTs, chkInterleave]
+            .forEach(el => el.addEventListener("input", render));
+        document.querySelectorAll("[data-preset]").forEach(btn =>
+            btn.addEventListener("click", () => {
+                const [t, l] = btn.dataset.preset.split(",");
+                selType.value = t;
+                sldLen.value = l;
+                render();
+            }));
+
+        render();
+    </script>
+    <script>
+        // Same-origin GitBook embed: report full content height to the parent
+        // iframe so the page renders without an inner scrollbar.
+        (function () {
+            if (!window.frameElement) return;
+            let last = 0;
+            function fit() {
+                const h = document.documentElement.scrollHeight;
+                if (Math.abs(h - last) > 2) {
+                    last = h;
+                    window.frameElement.style.height = h + "px";
+                }
+            }
+            window.addEventListener("load", fit);
+            window.addEventListener("resize", fit);
+            new MutationObserver(fit).observe(document.body,
+                { childList: true, subtree: true, attributes: true });
+            fit();
+        })();
+    </script>
+</body>
+
+</html>
