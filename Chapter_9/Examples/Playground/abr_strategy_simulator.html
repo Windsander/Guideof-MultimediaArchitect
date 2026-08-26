@@ -324,6 +324,26 @@
             }, 120);
         });
     </script>
+    <script>
+        // Same-origin GitBook embed: report full content height to the parent
+        // iframe so the page renders without an inner scrollbar.
+        (function () {
+            if (!window.frameElement) return;
+            let last = 0;
+            function fit() {
+                const h = document.documentElement.scrollHeight;
+                if (Math.abs(h - last) > 2) {
+                    last = h;
+                    window.frameElement.style.height = h + "px";
+                }
+            }
+            window.addEventListener("load", fit);
+            window.addEventListener("resize", fit);
+            new MutationObserver(fit).observe(document.body,
+                { childList: true, subtree: true, attributes: true });
+            fit();
+        })();
+    </script>
 </body>
 
 </html>

@@ -253,6 +253,8 @@
 	* [6.7 本章小结与进阶指引（Summary & Roadmap）](Chapter_6/Language/cn/Docs_6_7.md)
 	* [【参考文献】](Chapter_6/Language/cn/References_6.md)
 
+<br>
+
 * [七、封装格式与流传输协议（Container Formats & Streaming Protocols）](Chapter_7/Language/cn/Apex_7_Introduce.md)
 	* [7.1 从封装说起：容器的使命（The Mission of Containers）](Chapter_7/Language/cn/Docs_7_1.md)
 		* [7.1.1 裸码流缺什么（What Elementary Streams Lack）](Chapter_7/Language/cn/Docs_7_1_1.md)
@@ -286,6 +288,8 @@
 	* [7.7 本章小结与进阶指引（Summary & Roadmap）](Chapter_7/Language/cn/Docs_7_7.md)
 	* [【参考文献】](Chapter_7/Language/cn/References_7.md)
 
+<br>
+
 * [八、解码与播放（Decoding & Playback）](Chapter_8/Language/cn/Apex_8_Introduce.md)
 	* [8.1 解码器框架设计（Decoder Framework Design）](Chapter_8/Language/cn/Docs_8_1.md)
 		* [8.1.1 从规格到代码：解码器的本质（From Spec to Code）](Chapter_8/Language/cn/Docs_8_1_1.md)
@@ -300,6 +304,8 @@
 	* [8.3 实战：音画同步策略对比实验（practice_9）](Chapter_8/Language/cn/Docs_8_3.md)
 	* [8.4 本章小结与进阶指引（Summary & Roadmap）](Chapter_8/Language/cn/Docs_8_4.md)
 	* [【参考文献】](Chapter_8/Language/cn/References_8.md)
+
+<br>
 
 * [九、流媒体链路与流分析（Streaming Pipeline & Stream Analysis）](Chapter_9/Language/cn/Apex_9_Introduce.md)
 	* [9.1 现代流媒体链路全景（The Streaming Pipeline）](Chapter_9/Language/cn/Docs_9_1.md)

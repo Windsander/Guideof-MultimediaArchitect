@@ -1,11 +1,12 @@
 
-# 第九章 参考文献
+# 九、【参考文献】
 
-[1] IETF. RFC 9317: Operational Considerations for Streaming Media[S]. 2022-10.
-    —— 流媒体端到端延迟（glass-to-glass）定义、延迟四级分类、起播与卡顿的工程考量、
-    ABR 行为模型与测量标准化（CTA-2066 / CMCD）的运营视角权威综述。
+**[1]** J. Holland, A. Begen, and S. Dawkins, "Operational Considerations for Streaming Media," RFC 9317, IETF, October 2022.
 
-[2] S. Rai 等. Toward One-Second Latency: Evolution of Live Media Streaming[J].
-    arXiv:2310.03256, 2023.
-    —— 学术综述：起播延迟（startup delay）与端到端延迟（latency）的严格区分，
-    低延迟直播技术的演进脉络。
+**[2]** A. Bentaleb, M. Lim, M. N. Akcay, A. C. Begen, S. Hammoudi, and R. Zimmermann, "Toward One-Second Latency: Evolution of Live Media Streaming," arXiv:2310.03256, October 2023.
+
+**[3]** Consumer Technology Association, "Streaming Quality of Experience Events, Properties and Metrics," CTA-2066, March 2020.
+
+**[4]** Consumer Technology Association, "Web Application Video Ecosystem — Common Media Client Data (CMCD)," CTA-5004, September 2020.
+
+**[5]** A. Bentaleb, B. Taani, A. C. Begen, C. Timmerer, and R. Zimmermann, "A Survey on Bitrate Adaptation Schemes for Streaming Media over HTTP," IEEE Communications Surveys & Tutorials, vol. 21, no. 1, pp. 562-585, First Quarter 2019.
