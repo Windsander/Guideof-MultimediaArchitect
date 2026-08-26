@@ -1,0 +1,329 @@
+<!--
+/*
+ * Copyright (c) 2026 Arikan.Li
+ * Chapter_9 Playground: ABR Strategy Simulator (Docs_9_2 / Docs_7_4_4 companion)
+ * Self-contained single file. No external resources, no data upload.
+ *
+ * 教学要点：
+ *   1. 同一条带宽波动曲线上，「激进追画质」与「保守求稳」的档位轨迹对比
+ *   2. ABR 选档的双目标权衡：最高可达画质 vs 最低卡顿概率（RFC 9317 §5.3）
+ *   3. 平稳度口径：切换次数 + 档位标准差（9.2.1）；卡顿 = 下载超时耗尽缓冲
+ */
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABR 切换策略模拟器 - ABR Strategy Simulator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 12px;
+            font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #fafafa;
+            color: #333;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 12px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .toolbar label {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        select {
+            padding: 4px 8px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            font-size: 13px;
+            background: #fff;
+        }
+
+        button {
+            padding: 6px 14px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 13px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+        }
+
+        .panel {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+        }
+
+        .panel h3 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            border-radius: 6px;
+            background: #20242b;
+            margin-bottom: 8px;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            font-size: 13px;
+        }
+
+        .stats .item b {
+            font-size: 16px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .note b {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <button id="btnRun">▶ 开始仿真</button>
+        <label>带宽场景
+            <select id="selScenario">
+                <option value="roller">锯齿波动（地铁通勤）</option>
+                <option value="cliff">断崖下跌 + 缓慢恢复（走进电梯）</option>
+                <option value="stable">高位平稳（光纤稳态）</option>
+                <option value="random">随机游走（公共 Wi-Fi）</option>
+            </select>
+        </label>
+        <label>仿真速度
+            <select id="selSpeed">
+                <option value="1">1×</option>
+                <option value="4" selected>4×</option>
+                <option value="16">16×</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="panel">
+        <h3>激进策略：追画质（估计带宽顶格选档、立即切换）</h3>
+        <canvas id="cvAgg" width="860" height="200"></canvas>
+        <div class="stats" id="stAgg"></div>
+    </div>
+
+    <div class="panel">
+        <h3>保守策略：求稳（7 折安全余量、升档需连续 3 次确认）</h3>
+        <canvas id="cvCon" width="860" height="200"></canvas>
+        <div class="stats" id="stCon"></div>
+    </div>
+
+    <div class="panel note">
+        <b>怎么看：</b>灰线是真实带宽，彩色阶梯是策略选择的码率档位（越高画质越好），
+        底部蓝条是缓冲水位（0~10s），红叉是卡顿（分片下载超时、缓冲耗尽）。
+        两屏跑同一条带宽曲线——激进策略画质更高但频繁切档、缓冲薄如纸；
+        保守策略糊一点却稳如老狗。<b>9.2.1 的双目标（最高画质 vs 最低卡顿）没有最优解，只有立场。</b>
+        试试「断崖下跌」场景：激进策略在崖底的卡顿，就是它追画质必须付的学费。
+        所有计算均在本地完成，不会上传。
+    </div>
+
+    <script>
+        "use strict";
+
+        // ---------------------------------------------------------------
+        // 档位阶梯与场景（与 7.4.4 的 ABR 阶梯、9.2.1 的双目标对应）
+        // ---------------------------------------------------------------
+        const LADDER = [400, 800, 1500, 3000, 6000];           // kbps
+        const LADDER_NAME = ["240p", "360p", "480p", "720p", "1080p"];
+        const SEG = 2.0;                    // 分片时长（秒）
+        const N_SEG = 60;                   // 仿真 60 片 = 120 秒
+        const BUF_CAP = 10.0;               // 缓冲上限（秒）
+
+        function bandwidth(scenario, k) {   // 第 k 片的真实带宽（kbps）
+            const t = k / N_SEG;
+            switch (scenario) {
+                case "roller":
+                    return 3500 + 2800 * Math.sin(t * Math.PI * 6)
+                         + 600 * Math.sin(t * Math.PI * 22);
+                case "cliff":
+                    return t < 0.25 ? 6000 :
+                           t < 0.55 ? 700 : 700 + (t - 0.55) / 0.45 * 4800;
+                case "stable":
+                    return 5200 + 300 * Math.sin(t * Math.PI * 8);
+                default: {                  // random 随机游走（种子化可复现）
+                    let v = 3000, s = 0;
+                    for (let i = 0; i <= k; i++) {
+                        s = Math.sin(i * 12.9898) * 43758.5453;
+                        v += ((s - Math.floor(s)) - 0.5) * 1800;
+                        v = Math.max(300, Math.min(6500, v));
+                    }
+                    return v;
+                }
+            }
+        }
+
+        // ---------------------------------------------------------------
+        // 策略：输入吞吐观测序列，输出每片选档
+        // ---------------------------------------------------------------
+        function pickAggressive(est) {        // 顶格选档，立即切换
+            let r = 0;
+            for (let i = 0; i < LADDER.length; i++)
+                if (LADDER[i] <= est) r = i;
+            return r;
+        }
+
+        function makeConservative() {
+            let upVotes = 0, rung = 0;
+            return function (est) {
+                const target = pickAggressive(est * 0.7);   // 7 折安全余量
+                if (target < rung) {                        // 降档立即执行
+                    rung = target; upVotes = 0;
+                } else if (target > rung) {                 // 升档需 3 次确认
+                    if (++upVotes >= 3) { rung++; upVotes = 0; }
+                } else upVotes = 0;
+                return rung;
+            };
+        }
+
+        // ---------------------------------------------------------------
+        // 仿真：逐分片下载 + 缓冲消耗（卡顿 = 下载期间缓冲耗尽）
+        // ---------------------------------------------------------------
+        function simulate(scenario, pickRung) {
+            const trace = [], bws = [];
+            let buffer = 4.0, stalls = 0, stallT = 0, switches = 0, prev = -1;
+            for (let k = 0; k < N_SEG; k++) {
+                const bw = bandwidth(scenario, k);
+                bws.push(bw);
+                const rung = pickRung(bw);          // 观测 = 本片带宽（简化估计）
+                if (prev >= 0 && rung !== prev) switches++;
+                prev = rung;
+                const dl = LADDER[rung] * SEG / bw;  // 下载耗时（秒）
+                let stall = 0;
+                buffer -= dl;
+                if (buffer < 0) { stall = -buffer; buffer = 0; stalls++; stallT += stall; }
+                buffer = Math.min(BUF_CAP, buffer + SEG);
+                trace.push({ rung, bw, buffer, stall });
+            }
+            const brs = trace.map(r => LADDER[r.rung]);
+            const mean = brs.reduce((a, b) => a + b, 0) / brs.length;
+            const std = Math.sqrt(brs.map(b => (b - mean) ** 2)
+                                  .reduce((a, b) => a + b, 0) / brs.length);
+            return { trace, bws, stalls, stallT, switches,
+                     avgKbps: mean, stdKbps: std };
+        }
+
+        // ---------------------------------------------------------------
+        // 绘制
+        // ---------------------------------------------------------------
+        function drawPanel(cv, res, upto) {
+            const ctx = cv.getContext("2d");
+            const W = cv.width, H = cv.height;
+            ctx.clearRect(0, 0, W, H);
+            const pad = 8, bwMax = 7000;
+            const x = k => pad + k / (N_SEG - 1) * (W - 2 * pad);
+            const yBW = v => H - 30 - v / bwMax * (H - 60);
+            const yRung = r => yBW(LADDER[r]);
+            const n = Math.min(upto, res.trace.length);
+
+            // 真实带宽（灰）
+            ctx.strokeStyle = "#777"; ctx.lineWidth = 1;
+            ctx.beginPath();
+            for (let k = 0; k < n; k++)
+                k ? ctx.lineTo(x(k), yBW(res.bws[k])) : ctx.moveTo(x(0), yBW(res.bws[0]));
+            ctx.stroke();
+
+            // 档位阶梯（彩色）
+            ctx.strokeStyle = "#4C9F70"; ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            for (let k = 0; k < n; k++) {
+                const y = yRung(res.trace[k].rung);
+                k ? ctx.lineTo(x(k), y) : ctx.moveTo(x(0), y);
+            }
+            ctx.stroke();
+
+            // 档位名标注
+            ctx.fillStyle = "#9aa0ab"; ctx.font = "10px sans-serif"; ctx.textAlign = "left";
+            LADDER.forEach((v, i) => ctx.fillText(LADDER_NAME[i], pad + 2, yBW(v) - 3));
+
+            // 缓冲水位（底部蓝条）
+            for (let k = 0; k < n; k++) {
+                ctx.fillStyle = "#2E5F8A";
+                const h = res.trace[k].buffer / BUF_CAP * 18;
+                ctx.fillRect(x(k), H - pad - 4, Math.max(1, (W - 2 * pad) / N_SEG - 1), -h);
+            }
+
+            // 卡顿红叉
+            ctx.strokeStyle = "#B5533C"; ctx.lineWidth = 1.4;
+            for (let k = 0; k < n; k++) {
+                if (res.trace[k].stall > 0) {
+                    const cx = x(k), cy = yRung(res.trace[k].rung);
+                    ctx.beginPath();
+                    ctx.moveTo(cx - 5, cy - 5); ctx.lineTo(cx + 5, cy + 5);
+                    ctx.moveTo(cx + 5, cy - 5); ctx.lineTo(cx - 5, cy + 5);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        function renderStats(el, res) {
+            el.innerHTML =
+                `<div class="item">平均码率<br><b>${(res.avgKbps / 1000).toFixed(2)}</b> Mbps</div>` +
+                `<div class="item">切换次数<br><b>${res.switches}</b> 次</div>` +
+                `<div class="item">档位标准差<br><b>${(res.stdKbps / 1000).toFixed(2)}</b> Mbps</div>` +
+                `<div class="item">卡顿<br><b>${res.stalls}</b> 次 / ${res.stallT.toFixed(1)}s</div>`;
+        }
+
+        // ---------------------------------------------------------------
+        // 主控：同一条带宽曲线，双策略并行仿真
+        // ---------------------------------------------------------------
+        let timer = null;
+        document.getElementById("btnRun").addEventListener("click", () => {
+            if (timer) { clearInterval(timer); timer = null; }
+            const scenario = document.getElementById("selScenario").value;
+            const speed = Number(document.getElementById("selSpeed").value);
+            const cons = makeConservative();
+            const agg = simulate(scenario, pickAggressive);
+            const con = simulate(scenario, k => cons(k));
+            let upto = 1;
+            const cvA = document.getElementById("cvAgg");
+            const cvC = document.getElementById("cvCon");
+            timer = setInterval(() => {
+                upto = Math.min(N_SEG, upto + speed);
+                drawPanel(cvA, agg, upto);
+                drawPanel(cvC, con, upto);
+                renderStats(document.getElementById("stAgg"), agg);
+                renderStats(document.getElementById("stCon"), con);
+                if (upto >= N_SEG) { clearInterval(timer); timer = null; }
+            }, 120);
+        });
+    </script>
+</body>
+
+</html>

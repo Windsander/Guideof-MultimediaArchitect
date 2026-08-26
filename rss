@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 25 Aug 2026 15:27:36 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 26 Aug 2026 00:26:32 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -1081,6 +1081,643 @@
             <description><![CDATA[[1] Oliphant, Travis E. Guide to numpy. Vol. 1. USA: Trelgol Publishing, 2006.]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_5/Language/cn/References_5.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_5/Language/cn/References_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[六、音视频编码规格（Audio & Video Codec Specification）]]></title>
+            <description><![CDATA[在第五章的结尾，我们留下了一个悬而未决的问题：已经学会如何看懂一帧、如何改变一帧，那么，该如何高效地 "存下" 一百万帧？]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Apex_6_Introduce.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Apex_6_Introduce.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.1 编码简史与编码四环（Codec History & The Four-Stage Framework）]]></title>
+            <description><![CDATA[上一章的结尾，我们留下了从 "分析帧" 到 "压缩帧" 的悬念。在正式拆开任何一代编码规格之前，需要先回答三个统领全章的问题：编码技术是如何一路走来的？压缩的空间从哪里来？所有编码器共享的顶层框架长什么样？]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.1.1 视频编码编年简史（A Chronology of Video Coding Standards）]]></title>
+            <description><![CDATA[任何技术都不是凭空出现的。视频编码四十年的演进，本质上是一场 "需求牵引、组织角力、工具精进" 的接力赛。在进入具体规格之前，我们先沿时间轴走一遍——看清每一代规格 为何诞生、解决了谁的什么问题，后续的章节才读得出味道。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_1_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_1_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.1.2 压缩何以可能：四类冗余（Four Types of Redundancy）]]></title>
+            <description><![CDATA[上一节的编年史告诉我们，视频编码四十年只做一件事：压缩。但压缩的空间从哪里来？一段未经压缩的 1080p 视频码率约 622 Mbit/s，编码器能把它压到几 Mbit/s 而不怎么 "露馅"——被省掉的比特并非信息，而是冗余。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_1_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_1_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.1.3 编码四环：混合编码框架（The Hybrid Coding Framework）]]></title>
+            <description><![CDATA[有了冗余的地图，就可以设计压缩的机器了。从 1990 年的 H.261 到 2020 年的 H.266，所有主流视频编码规格共享同一套顶层架构——混合编码框架（Hybrid Video Coding Framework）。所谓 "混合"，是指它把 预测编码 与 变换编码 两种范式组合使用：预测负责消除帧间与帧内的相关性，变换负责把残余的相关性进一步压实。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_1_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_1_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.2 H.264/AVC：经典之巅（H.264/AVC in Detail）]]></title>
+            <description><![CDATA[如果说混合编码框架是一座宫殿的图纸，那么 H.264 就是把这张图纸执行得最彻底的建筑。发布二十余年后，它依然是世界上部署最广的视频编码规格——读懂了 H.264，再读 H.265、H.266，看到的都将是 "熟悉的配方，更猛的用料"。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.2.1 诞生背景：JVT 与混合框架的成熟]]></title>
+            <description><![CDATA[H.264 的故事始于一场 "效率翻倍" 的豪赌。1997 年前后，ITU-T 的 VCEG 启动了一个代号 H.26L（L 取 Long-term，长期目标之意）的研究项目 [5]：不设兼容包袱，目标只有一个——在同等画质下，把码率压到当时规格的一半。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_2_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_2_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.2.2 帧内预测（Intra Prediction）]]></title>
+            <description><![CDATA[帧内预测要对付的是 空间冗余（6.1.2）：单帧之内，相邻像素彼此相似。它的必要性来自三个场景：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_2_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_2_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.2.3 帧间预测与运动补偿（Inter Prediction & Motion Compensation）]]></title>
+            <description><![CDATA[帧间预测是视频压缩效率的真正主力——时间冗余（6.1.2）的体量远超空间冗余。H.264 在这一环投入了规格中最豪华的工具箱，可以概括为三把利器：块要切得活、帧要参考得多、位移要量得准。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_2_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_2_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.2.4 变换、量化与熵编码（Transform, Quantization & Entropy Coding）]]></title>
+            <description><![CDATA[预测环把能量压进了残差，接下来轮到四环的后半程：变换负责 "聚能"，量化负责 "取舍"，熵编码负责 "打包"。H.264 在这三环的每一项，都针对前代的痛点做了手术。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_2_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_2_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.2.5 Profile/Level 体系与规格导读]]></title>
+            <description><![CDATA[H.264 的工具箱如此丰富，以至于没有一台设备能（或需要）全部支持：手机芯片的算力、内存与功耗预算，和工作站不可同日而语。如果放任编码器自由组合工具，解码端将无所适从。H.264 的解决方案是把 "能用什么工具" 与 "能扛多大负荷" 拆成两个正交的维度——Profile（档次） 与 Level（等级），合称解码器的 "身份证" [8]。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_2_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_2_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.3 H.265/HEVC：4K 时代的答案（H.265/HEVC in Detail）]]></title>
+            <description><![CDATA[H.264 的成功，很快催生了新的矛盾：2010 年前后，4K 超高清（3840×2160）开始走进量产视野——像素量是 1080p 的四倍，而网络带宽与存储成本并没有同步跟上。业界的诉求与十年前如出一辙：同等画质，码率再减半。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.3.1 编码树单元：CTU 与四叉树划分（Coding Tree Unit & Quadtree）]]></title>
+            <description><![CDATA[H.264 的 16×16 宏块，是为标清/高清时代设计的。到了 4K 画面，矛盾显而易见：一片 4K 的蓝天可能有数百个 16×16 宏块，内容却几乎完全一致——逐块传送模式信息，纯属浪费。HEVC 的答案是：把基本单元放大，并让它可以像树一样递归拆分 [6]。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_3_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_3_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.3.2 预测技术的演进（Evolution of Prediction）]]></title>
+            <description><![CDATA[H.264 的 4×4 九模式（图 6-2）已经让人印象深刻，HEVC 直接把方向预测的密度提升了近四倍：33 种角度模式 + DC + Planar，共 35 种帧内模式 [6]，覆盖从 4×4 到 32×32 的全部 PU 尺寸。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_3_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_3_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.3.3 环路滤波与并行化设计（In-loop Filtering & Parallelism）]]></title>
+            <description><![CDATA[HEVC 的去块滤波在思路上继承 H.264（6.2.4），工程上却做了减法：滤波只作用于 8×8 及以上块的边界，判定逻辑大幅简化。这并非缩水——CTU 时代的大块结构让单位面积内的块边界数量锐减，细粒度滤波的必要性随之下降；简化的判定则天然利于硬件并行实现。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_3_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_3_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.4 H.266/VVC 与 AV1：两条路线的竞赛（H.266/VVC & AV1）]]></title>
+            <description><![CDATA[2013 年 HEVC 发布后，故事并没有沿着 "七年后换一代" 的老剧本平推下去。这一次，舞台上同时出现了两位主角：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.4.1 VVC：向压缩极限推进（Versatile Video Coding）]]></title>
+            <description><![CDATA[2015 年 10 月，JVET（Joint Video Experts Team）成立，启动新一代规格的研究。2020 年 7 月，H.266/VVC 正式定稿（MPEG 侧为 MPEG-I Part 3，ISO/IEC 23090-3）[10]。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_4_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_4_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.4.2 AV1：开源免版税阵营（AOMedia Video 1）]]></title>
+            <description><![CDATA[AV1 的诞生背景，要在 6.4.3 的专利故事里才能完全读懂；这里先看技术谱系。2015 年，Google、Mozilla、Cisco、Netflix、Amazon、Microsoft、Intel 等公司联合成立 AOMedia（Alliance for Open Media），目标是制定一份 开放、免版税 的视频编码规格。三个已有开源项目各献所长 [11]：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_4_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_4_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.4.3 专利池生态与三代规格对照（Patent Ecosystem & Comparison）]]></title>
+            <description><![CDATA[编码规格的采纳从来不只是技术投票。视频编码是 专利密集型 技术——一份规格的实现会踩中数百上千件专利，产业界通过 专利池（Patent Pool） 集中授权：厂商缴纳许可费，换来 "一次打包" 的专利使用权。三代规格的授权生态，恰好构成一条理解产业格局的暗线 [5] [11]：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_4_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_4_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.5 音频编码规格（Audio Codec Specification）]]></title>
+            <description><![CDATA[视频编码的四环故事讲完了，轮到音频。如果说视频压缩的关键词是 "冗余"，那么音频压缩的关键词是 "感知"——声音信号的统计特性当然也可利用，但真正让音频编码实现数量级压缩的，是对 人耳听觉局限 的系统利用。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.5.1 心理声学：音频压缩的地基（Psychoacoustics）]]></title>
+            <description><![CDATA[第一章的 1.4.3 中，等响曲线已经揭示过人耳的第一个局限：灵敏度随频率剧烈起伏——对 2~5 kHz 最敏锐，对极低频与极高频迟钝，20 Hz 与 20 kHz 之外更是直接 "失聪"。只凭这一点，音频编码就能扔掉一批听不见的成分。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_5_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_5_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.5.2 MP3：开启数字音乐时代（MPEG-1 Layer III）]]></title>
+            <description><![CDATA[1993 年，与视频侧的 MPEG-1 一同发布的，还有音频侧的 MPEG-1 Audio [12]。它定义了复杂度递增的三层：Layer I（最简，如 DCC 磁带）、Layer II（广播常用）、Layer III——后者就是大名鼎鼎的 MP3。三层共享同一套感知编码总纲（6.5.1），差别在滤波器组与熵编码的精细程度。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_5_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_5_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.5.3 AAC：青出于蓝（Advanced Audio Coding）]]></title>
+            <description><![CDATA[1997 年，MPEG-2 发布了 AAC（Advanced Audio Coding）（后并入 MPEG-4 体系持续演进）[13]。目标明确：不做兼容性包袱，正面超越 MP3——**同等音质码率降低约 30%**，并支持从单声道到 48 声道的灵活配置。从 iTunes 到 YouTube，从数字广播到流媒体，AAC 至今仍是应用最广泛的音频编码规格。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_5_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_5_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.5.4 Opus：为实时互动而生（Opus, RFC 6716）]]></title>
+            <description><![CDATA[VoIP、视频会议、在线游戏语音，对音频编码提出了一组与音乐分发截然不同的要求 [14]：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_5_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_5_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.6 实战：编码器规格对比实验（practice_7）]]></title>
+            <description><![CDATA[理论清单已经足够长：四环框架、逐代升级、率失真权衡。本节让数据说话——把 x264 与 x265 这两台真实的编码器请上擂台，在双份素材上实测码率-失真表现，并对 GOP 与环路滤波做消融实验。6.2~6.4 讲过的每一项设计，都将在曲线中留下指纹。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[6.7 本章小结与进阶指引（Summary & Roadmap）]]></title>
+            <description><![CDATA[第六章的编年之旅到站了。回望这一章，我们做了一件 "把历史读成结构" 的事。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_7.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Docs_6_7.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[选择内置纹理（平滑渐变 / 锐利边缘 / 随机噪声）或上传本地图片取 8×8 块，依次展示 DCT 系数热力图、量化结果与重建块；拖动量化步长滑块（可叠加 JPEG 标准亮度量化表），实时观察非零系数计数、Zig-Zag 最后非零位置、估算信息量与重建 PSNR 的变化。所有数据均在本地处理，不会上传。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Playground_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/Playground_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[六、【参考文献】]]></title>
+            <description><![CDATA[[1] ITU-T Recommendation H.261, "Video codec for audiovisual services at p × 64 kbit/s," International Telecommunication Union, 1993 (first edition 1988, revised 1990).]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_6/Language/cn/References_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_6/Language/cn/References_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[七、封装格式与流传输协议（Container Formats & Streaming Protocols）]]></title>
+            <description><![CDATA[在第六章的结尾，我们留下了一个新的问题：比特已经压缩好，那么，该如何让它跨越网络，抵达每一块屏幕？]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Apex_7_Introduce.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Apex_7_Introduce.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.1 从封装说起：容器的使命（The Mission of Containers）]]></title>
+            <description><![CDATA[第六章结束时，我们手里已经握着一套完整的编码技术栈：H.264、H.265、H.266 与 AV1 能把像素压成高效的比特流，AAC 与 Opus 能让声音同样瘦身。但请留意一个此前从未深究的细节：编码器的输出只是裸码流（Elementary Stream）——一串 "如何还原画面与声音" 的解码指令。把它直接存成文件、直接发上网络，会发生什么？]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.1.1 裸码流缺什么（What Elementary Streams Lack）]]></title>
+            <description><![CDATA[给 "容器" 下定义之前，不妨先做一场思想实验：把第六章学到的编码器全都跑起来——视频走 x264，音频走 AAC——然后把两路输出原样存盘、发给观众。这条链路上会接连冒出四个绕不开的困境。它们凑在一起，恰好勾勒出容器的全部职责。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_1_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_1_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.1.2 MP4：为随机访问而生的索引树（MP4 & The Index Tree）]]></title>
+            <description><![CDATA[上一节的四个困境里，MP4 对 "索引" 这一题给出了教科书级的答案。我们日常见到的 .mp4 文件，规范血统可以追溯到两条线：Apple 在 2001 年公开的 QuickTime 文件格式（QTFF） [4]，以及以此为母体演进而来的国际标准 ISO BMFF（ISO/IEC 14496-12）——后者正是 MP4、3GP、CMAF 乃至 fMP4 的共同底座 [5]。两份文档的术语几乎一一对应（QTFF 叫 Atom，ISO BMFF 叫 Box），下文统称为 Box。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_1_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_1_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.1.3 FLV：为流式传输而生的标签序列（FLV & The Tag Stream）]]></title>
+            <description><![CDATA[MP4 把索引做到了极致，代价是结构复杂、头部笨重——一个 moov 子树十几层嵌套，显然不是为 "边收边播" 准备的。FLV 走向了另一个极端。这个随 Flash 平台而生的格式，公开规范停在 2010 年的 v10.1 [2]，设计上把 "简单" 二字贯彻到了每个字节：整个文件就是一条从头到尾的标签（Tag）序列，没有树，没有表，没有集中索引。Flash 虽已谢幕，FLV 却远未退场——它是 RTMP 协议的母语容器（7.3 节的主角），直到今天，你仍然能在不少直播平台的拉流地址里看到 .flv 后缀。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_1_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_1_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.1.4 MPEG-TS：为容错传输而生的定长包（MPEG-TS & The Fixed-Length Packets）]]></title>
+            <description><![CDATA[FLV 的 Tag 流有一个隐秘的前提：数据按序到达、完好无损。这在磁盘与 TCP 上成立，换一条信道就不一定了——电视广播走的是无线电波，一次发出、无法重来，误码丢包是家常便饭；观众还随时可能在任意时刻打开电视，要求"从半途立刻看懂"。MPEG-TS（Transport Stream，规范本体是 ITU-T H.222.0，与 ISO/IEC 13818-1 双生 [3]）就是为这样的信道准备的：它的答案激进到底——连 "文件" 的概念都扔掉，整条流由 188 字节的定长小包首尾相接而成。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_1_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_1_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.1.5 三容器设计取向对比（Three Containers, Three Philosophies）]]></title>
+            <description><![CDATA[三份答卷已经摊开：MP4 的索引树、FLV 的 Tag 流、TS 的定长包。它们回答的是同一组问题——7.1.1 的索引、同步、复用与自描述——答案却几乎处处相反。把三份答案并排摆开，一条主线浮出水面：格式的每一处取舍，都能在它的目标场景里找到根因。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_1_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_1_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.2 实时传输奠基：RTP/RTCP（The Foundation of Real-Time Transport）]]></title>
+            <description><![CDATA[7.1 节的三容器回答了 "装" 的问题，但它们都有一个共同的舒适区：数据要么躺在磁盘里，要么走在 TCP 这种 "迟到也要送到" 的可靠通道上。可实时场景根本不接受这个假设——视频会议里，一句迟到半秒才重传成功的语音，除了打断节奏没有任何价值。当 "按时到达" 比 "一定到达" 更重要时，传输协议必须换一套价值观。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.2.1 实时传输的诞生与 UDP 的取舍（Real-Time Transport & The UDP Trade-off）]]></title>
+            <description><![CDATA[文件下载的世界里，可靠性是铁律：少一个字节，压缩包就打不开。TCP 为这条铁律配齐了重传、排序、拥塞控制三件套，代价是——它从不承诺时效。网络一抖，重传的等待会以秒计。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_2_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_2_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.2.2 RTP 固定头：十二字节的自描述（The 12-Byte Self-Describing Header）]]></title>
+            <description><![CDATA[上一节说过，RTP 把可靠性请出了协议，代价是接收方必须自己恢复秩序：哪些包丢了、哪个先播、属于哪路流、该用什么解码。恢复秩序所需的信息，RTP 选择全部缝在每个包的头部——每个包都是自描述的，不依赖任何先验的连接状态。这份自描述的完全体，只有 12 字节固定头外加一段可选的 CSRC 列表。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_2_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_2_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.2.3 RTCP：质量反馈环与唇同步（RTCP: Feedback Loop & Lip Sync）]]></title>
+            <description><![CDATA[上一节结尾留下了一道难题：各路流的时间戳初值随机、速率各异，音视两条流的时间轴互不相认。与此同时，7.2.1 还挂着另一笔账：UDP 没有拥塞控制，发送端对网络状况一无所知，谈何适应。这两道难题，RTP 一个字段都没加——答案全部在孪生协议 RTCP（RTP Control Protocol） 里：一条与数据流并行的、低频的控制信道 [7]。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_2_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_2_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.2.4 从 RTP 到 WebRTC（From RTP to WebRTC）]]></title>
+            <description><![CDATA[前三节把 RTP/RTCP 的设计拆解完毕。回头清点，这套 1996 年定型的框架有两个鲜明的时代胎记：它假设 参与者彼此可达——组播会议室里没有 NAT 与防火墙；它也假设 会话由人事先约好——会议地址靠邮件、电话本口口相传。把这两条假设放进 2010 年代的互联网：绝大多数终端躲在 NAT 之后，而打电话的人变成了浏览器里的 JavaScript。WebRTC 的诞生，就是在 不换骨架 的前提下，为 RTP 补齐这两块时代短板。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_2_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_2_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.3 直播时代的霸主：RTMP（RTMP & The Live Streaming Dynasty）]]></title>
+            <description><![CDATA[7.2 节的天平停在了最激进的一极：RTP 为了毫秒级互动，宁可丢包也不重传。本节要讲的是另一个极端的选择——抱住 TCP 的可靠性不放，用几秒延迟换一路安稳。做出这个选择的 RTMP（Real-Time Messaging Protocol），在直播行业的王座上坐了整整十年，至今仍是推流端的事实标准 [1]。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.3.1 Flash 时代的直播王朝（The Flash-Era Live Dynasty）]]></title>
+            <description><![CDATA[7.2.4 的结尾留下了一个悬念：如果观众要的不是 "实时互动"，而是 "稳定地看完一场直播"，协议该怎么选？RTMP 给出的答案干脆利落——走 TCP，默认端口 1935，一个字节都不许丢 [1]。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_3_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_3_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.3.2 握手：C0/C1/C2 与 S0/S1/S2（The RTMP Handshake）]]></title>
+            <description><![CDATA[上一节的结尾埋了一个说法：RTMP 的握手 "不太像握手"。这不是修辞——规范开篇就承认，握手阶段与协议其余部分格格不入：它由三个定长数据块组成，不带任何头部 [1]。握手之后，线上跑的全是下一节要讲的变长 Chunk；而握手这三板斧，每个方向固定 1 + 1536 + 1536 = 3073 字节，一个 bit 都不多。客户端发出的三块记作 C0、C1、C2，服务器对应回以 S0、S1、S2。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_3_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_3_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.3.3 Chunk 封包：一次消息，多次封装（Chunking & Header Compression）]]></title>
+            <description><![CDATA[上一节握完手，门后的世界豁然开朗：RTMP 连接开始在一条 TCP 上 多路复用 若干条 Chunk 流。音视频消息动辄几十 KB，命令消息却只有几十字节——它们挤在同一根管道里，凭什么互不耽误？答案就是本节的主角：Chunk 封包机制。它是 RTMP 全部灵活性的来源，也是这套协议里最考验字节功夫的部分。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_3_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_3_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.3.4 Message 类型族与 AMF 编码（Message Types & AMF Encoding）]]></title>
+            <description><![CDATA[上一节结束时留了两个问题：type 8、9 之外还有哪些消息类型？命令消息里的字符串用什么编码书写？Chunk 层只负责切与拼，真正赋予字节意义的，是 Message 层的类型族。本节把这张编号地图一次性摊开。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_3_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_3_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.3.5 命令消息与流管理时序（Commands & Stream Management）]]></title>
+            <description><![CDATA[上一节结尾许诺了一场 "完整舞步"：从建立连接到开播，RTMP 的命令如何依次登场。本节兑现它——先立起双层信道的概念骨架，再按规范的官方时序走一遍，最后用一份真实抓包印证：文本与实现，一步不差。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_3_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_3_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.4 直播的 HTTP 化：HLS 与 fMP4（HLS & Fragmented MP4）]]></title>
+            <description><![CDATA[7.3 节的结尾给 RTMP 王朝做了一次体检：握手、Chunk、Message、命令四层运转如飞，但队头阻塞悬顶、秒级延迟在基因里、播放端早已倒向 HTTP。历史没有给这套状态化长连接太多留恋的时间——2009 年 Apple 把草案递到 IETF，2017 年定格为 RFC 8216 的 HLS（HTTP Live Streaming），用一种近乎 "偷懒" 的方式赢下了直播分发 [8]：把直播切成一串小文件，交给最普通的 HTTP 去送。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.4.1 把直播搬进 HTTP（Moving Live Streaming into HTTP）]]></title>
+            <description><![CDATA[上一节对 RTMP 的体检报告可以再补几笔。长连接意味着 每台边缘服务器都要为每个观众维护一份连接状态——十万观众就是十万条 TCP，状态同步与故障转移的重担全压在流媒体专用服务器上；1935 端口与私有协议在穿透企业防火墙、透明代理时步步惊心；最致命的是，它无法沾 HTTP 缓存的光——每一个字节都得从源站或专门的流节点实时推出。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_4_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_4_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.4.2 两级播放列表：Master 与 Media（Master & Media Playlists）]]></title>
+            <description><![CDATA[上一节说，播放器的工作退化为 "定时拉列表、按列表拉分片"。那份列表就是 HLS 的骨架——一份纯文本的 m3u8，却承担着指路、协商、容错三重职责。打开它之前，先建立第一个认知：HLS 的列表是 两级 的。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_4_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_4_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.4.3 分片机制与直播滑动窗（Segments & The Sliding Window）]]></title>
+            <description><![CDATA[上一节结尾放了句狠话：TARGETDURATION 写错了会卡顿，MEDIA-SEQUENCE 错位了会丢片。这不是危言耸听，而是 RFC 8216 用 MUST 与 SHOULD 逐字钉死的语义。本节把这些标签拆开，顺带回答另一个问题：分片文件本身是什么格式——TS 与 fMP4 两种载体，恰好都是 7.1 的老熟人。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_4_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_4_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.4.4 自适应码率：客户端的切换艺术（Adaptive Bitrate Switching）]]></title>
+            <description><![CDATA[前两节把 HLS 的骨架与分片讲透了，但主索引里那行 #EXT-X-STREAM-INF 的属性只认了脸，没算账。BANDWIDTH、CODECS、RESOLUTION——这些字段是客户端选档的全部依据。本节逐个拆开，最后回答那个规范故意不答的问题：客户端到底怎么决定切哪一档。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_4_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_4_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.4.5 延迟之战与 LL-HLS（The Latency Battle & LL-HLS）]]></title>
+            <description><![CDATA[7.4.1 埋下的账单，本节清算。HLS 用文件粒度换来了整个 HTTP 生态，代价是延迟与分片时长死死绑定。这场仗业界打了十年：先与分片长度缠斗，再催生出 LL-HLS 的 "分片之内再切片"。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_4_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_4_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.5 现代协议群像：DASH、WebRTC 与 SRT（The Modern Protocol Landscape）]]></title>
+            <description><![CDATA[7.4 节讲完 HLS，自适应流的天下却只占了一半。同一个年代里，三条路线各自开花结果：MPEG 用国际标准回应 Apple 的私有方案，Google 把 RTP 的血缘锻造成浏览器里的实时通话，Haivision 则为公网弱网回传开出了 ARQ 的药方。本节把这群现代主角请上同一舞台，最后以一幅编年史长卷收束第七章的协议巡礼。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.5.1 DASH：标准化的另一极（MPEG-DASH & The Standards Track）]]></title>
+            <description><![CDATA[HLS 问世三年后的 2012 年，MPEG 发布了 ISO/IEC 23009-1——DASH（Dynamic Adaptive Streaming over HTTP）。它常被读作对 Apple 私有路线的标准化回应：同样是 HTTP 分片加 ABR 的骨架，但出身是国际标准，不绑定任何厂商生态。规范本体是付费文档，本书的引述以 DASH 产业论坛的互操作指南（DASH-IF IOP v4.3）为据 [12]——这个产业联盟的存在本身就很说明问题：标准写得再全，落到实现仍需一份 "怎么才算合规" 的公共约定，这就是 Profile 与 IOP 的意义。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_5_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_5_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.5.2 WebRTC：RTP 的正统继承者（WebRTC & The Real-Time Heir）]]></title>
+            <description><![CDATA[7.5.1 的结尾预告了一位口味完全不同的主角：它不要秒级的 "直播"，要的是毫秒级的 "对话"。这位主角就是 WebRTC。7.2.4 已经讲过它如何为 RTP 补齐 NAT 与信令两块时代短板，本节换个视角，端详它的全貌——一副由熟面孔拼成的协议栈。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_5_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_5_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.5.3 SRT：弱网回传的 ARQ 路线（SRT & The ARQ Prescription）]]></title>
+            <description><![CDATA[7.5.2 的结尾留下了另一位 UDP 选手：它的目标不是双向互动，而是把高码率信号可靠地送过公网弱网。这位选手是 SRT（Secure Reliable Transport）——2013 年由 Haivision 推出、2017 年开源，如今以 IETF 草案（draft-sharabayko-srt，尚未成 RFC）加事实标准的双重身份运行在回传链路上 [11]。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_5_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_5_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.5.4 编年史与全景对照（A Chronicle & The Big Picture）]]></title>
+            <description><![CDATA[7.5.3 的结尾邀请我们退后一步。这个距离是必要的——贴着看，每个协议都是一堆字段与状态机；拉开四分之一个世纪的纵深，它们其实是一场接力：每一代接过上一代的痛点，交出自己时代的答案。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_5_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_5_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.6 实战：推流抓包与低延迟拉流（practice_8）]]></title>
+            <description><![CDATA[理论版图已经拼齐：容器三杰、RTP 价值观、RTMP 四层叠构、HLS 文件哲学、现代协议群像。本节把它们全部按进真实流量里检验——实验一 推一路 RTMP 流，逐字节拆解抓包；实验二 拉起一条 HLS 流，量一量 LL-HLS 的延迟成色。前文每一处 "实测锚点"，都出自这两个实验。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[7.7 本章小结与进阶指引（Summary & Roadmap）]]></title>
+            <description><![CDATA[第七章的公路巡礼到站了。第六章结尾我们问："压缩好的比特，如何跨越网络抵达每一块屏幕？" 这一章给出的答案，是一条从容器到协议、从文件到字节的完整运输线。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_7.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Docs_7_7.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[输入消息长度与 Chunk Size，模拟器按 7.3.3 的规则实时切片：观察 Basic Header 三型与 Message Header 四型（fmt 0/1/2/3）的选择过程、每一片的头部开销，以及切片数量与 Chunk Size 的此消彼长。内置 practice_8 实测参数（ffmpeg 协商 65536B 切片），可一键对照真实推流的封包行为。所有计算均在本地完成，不会上传。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Playground_7.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/Playground_7.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[第七章参考文献（References for Chapter 7）]]></title>
+            <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/References_7.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/References_7.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[八、解码与播放（Decoding & Playback）]]></title>
+            <description><![CDATA[第七章的结尾，我们许下了一个承诺：亲手造一台播放器。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Apex_8_Introduce.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Apex_8_Introduce.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.1 解码器框架设计（Decoder Framework Design）]]></title>
+            <description><![CDATA[第七章结尾，我们许下了一个承诺：亲手造一台播放器。造播放器的第一块基石，是解码器——把第七章运抵的码流还原成帧的那台机器。第六章学编码时我们站在 "生产比特" 的一侧，本章要翻到硬币的另一面：消费比特。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.1.1 从规格到代码：解码器的本质（From Spec to Code）]]></title>
+            <description><![CDATA[第六章建立的编码四环——预测、变换、量化、熵编码——在解码侧恰好镜像成一条反向流水线：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_1_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_1_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.1.2 FFmpeg 六库：分层的艺术（The Six Libraries of FFmpeg）]]></title>
+            <description><![CDATA[上一节结尾预告了 "工业界的标准答案"。这位答题者是 FFmpeg：诞生于 2000 年的开源老兵，二十余年后依然是音视频工程的公共地基——从播放器到转码云，从浏览器到监控摄像头，它的代码跑在几乎每一块能出声的屏幕上。我们解剖它的架构，不只是学一个库，而是学一套被亿级设备验证过的分层方法论。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_1_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_1_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.1.3 收发分离：解码 API 的状态机（The Send/Receive State Machine）]]></title>
+            <description><![CDATA[上一节把 avcodec 定位成 "压缩与原始之间的变换"。这个变换的 API 该怎么长？直觉的回答是 decode(packet) → frame——喂一个包，还一帧。FFmpeg 早年的 API 确实长这样，但它早已作古；现代答案是一对分工明确的函数：**avcodec_send_packet() 与 avcodec_receive_frame()，输入与输出彻底解耦** [1]。这次拆分的背后，是解码器状态机本质对 API 设计的反噬。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_1_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_1_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.1.4 管线与 seek：工程落地的暗坑（Pipelines, Seek & The Pitfalls）]]></title>
+            <description><![CDATA[前三节搭好了框架的骨架：逆运算的本质、六库的分层、收发分离的接口。本节处理剩下的硬骨头——时间与跳转。这是解码管线里最深的水域，无数播放器的花屏与音画错乱，都溺在这片水里。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_1_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_1_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.2 播放器核心系统（Player Core Systems）]]></title>
+            <description><![CDATA[8.1 的结尾留下了一个分界：解码器把帧从码流里解放出来，工作便告完成——它对比特负责，帧解对了就是满分。可播放器的考卷上还有另一半题目，而且更难：时间。一帧解得再正确，早上屏半秒是穿帮，晚上屏半秒是卡顿；音频视频各自解得完美，错开百毫秒就是事故。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.2.1 播放器的三个问题：何时解，何时显，对谁齐]]></title>
+            <description><![CDATA["播放视频" 四个字，说出来毫不费力，做起来步步是坑。把这件直觉之事翻译成工程语言，其实是三个必须逐一作答的问题：何时解码、何时显示、对谁对齐。这一节不负责给出全部答案——它负责把问题立起来，立得足够清楚，让后面三节的解法各有归属。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.2.2 音画同步：主时钟的三种策略]]></title>
+            <description><![CDATA[8.2.1 的第三问停在岔路口：音画两条时钟必然漂移，必须钦定一条为主。候选者有三——音频主时钟、视频主时钟、外部时钟。这不是口味问题，三条路通向三套完全不同的追随机制。ffplay 参考实现把三套都造了出来，还附赠一条回退链 [2]：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.2.3 抖动缓冲：与网络和解的艺术]]></title>
+            <description><![CDATA[8.2.2 解决了播放器内部的宪政问题，但帧不是从解码器里长出来的——它们从网络来。而网络的脾气，第七章已经领教过：RTMP 的块流会堵车，HLS 的分片会迟到，Wi-Fi 的信号说没就没。到达间隔忽快忽慢，这就是抖动（Jitter）。播放器若网络给多少吃多少，画面节奏就会被网络的喷嚏带着走。抖动缓冲的职责，是把一条崎岖的供给曲线，熨成一条平滑的消费曲线——代价只有一个：延迟。这一节，看工程如何在这对冤家之间讨价还价。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.2.4 渲染管线：从 YUV 到视网膜]]></title>
+            <description><![CDATA[主时钟定了节奏，缓冲平了风浪，帧终于排到上屏的队首。可最后一道关卡横在眼前：解码器交出的 Frame 是 YUV 数据，屏幕点亮的却是 RGB 像素——两种色彩语言之间，隔着播放器的最后一公里。这一公里看似只是格式换算，实则暗坑密布：换错矩阵，满屏偏色；算得太慢，拖累帧率。第二章 2.6 埋下了色彩空间的种子，第五章 5.3.1 见过 YUV 采样的排布，本节把它们收成管线末端的实战问题。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.3 实战：音画同步策略对比实验（practice_9）]]></title>
+            <description><![CDATA[8.2 把播放器核心系统拆成了理论零件：水位、主时钟、缓冲、渲染。本节让这些零件转动起来——用 PyAV 造一台播放器骨架，灌入真实素材，再给它施加受控的解码压力，亲眼看看：有同步策略与没有同步策略，音画偏差的命运相差多远。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.4 本章小结与进阶指引（Summary & Roadmap）]]></title>
+            <description><![CDATA[第八章造机之旅到站了。第七章结尾许下的承诺——亲手造一台播放器——至此兑现：从解码器的骨架，到播放器的心脏，再到一台转得动的仿真整机。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[按下开始，每 0.5 秒一对节拍——蓝色竖线是节拍音，红色竖线是节拍画面。打开「解码压力」模拟 8.3 实测中的压力段：自由运行下偏差单调爬升；音频主时钟按 ffplay 的 ±40ms 阈值带丢/重视频帧，把偏差实时摁住；视频主时钟则反过来拖拽音频，亲耳听听节拍音忽快忽慢的代价。「静态偏差」滑块（±500ms）可直接体验不同程度的音画错位。所有计算均在本地完成，不会上传。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Playground_8.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Playground_8.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[第八章参考文献（References for Chapter 8）]]></title>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/References_8.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/References_8.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[九、流媒体链路与流分析（Streaming Pipeline & Stream Analysis）]]></title>
+            <description><![CDATA[第八章的结尾，我们造出了播放器，让画面在屏幕上亮了起来。可一台播放器点亮的只是一块屏幕——真实世界里的流媒体，是千万块屏幕同时亮起的系统工程。当球赛直播的信号从场馆出发，它要穿过推流端、源站、转码集群、CDN 与边缘节点，跨越几千公里与几十个环节，才抵达观众指尖。这条链路上的任何一环打个喷嚏，千万个屏幕就会同时感冒。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Apex_9_Introduce.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Apex_9_Introduce.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.1 现代流媒体链路全景（The Streaming Pipeline）]]></title>
+            <description><![CDATA[前八章带着我们跟着比特走了一路：压缩、打包、运输、拆包、播放。这条路走通之后，一个自然的问题浮上水面——当这条路不再服务一个观众，而是同时服务千万个观众，它会变成什么模样？答案是：路会变成网，机器会组成链路。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.1.1 一场直播的完整旅程：七站接力]]></title>
+            <description><![CDATA[一场球赛从场馆里的真实瞬间，到千万块屏幕上的画面，走的是一条七站接力。前八章我们分别以 "当事人" 的视角拜访过其中几站——现在把她们串成一张全程地图：]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.1.2 端到端延迟：从采集到视网膜]]></title>
+            <description><![CDATA[9.1.1 的接力跑完了，现在要给它掐表。可 "延迟多少" 这个问题，比听上去狡猾——推流端说我的 RTMP 只有两秒，播放器说我的缓冲只有一秒，观众却骂骂咧咧地说慢了半分钟。谁都没撒谎，只是掐的不是同一段表。要给延迟一个严肃的定义，得先把起点与终点钉死。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.1.3 链路各环节的角色与故障域：把 "卡了" 拆到具体环节]]></title>
+            <description><![CDATA[观众的一句 "卡了"，是流媒体工程师最熟悉也最怕听到的反馈。它信息量为零，却可能来自链路的任何一站：推流端的上行在发抖，源站的负载在报警，转码集群掉了队，CDN 边缘没接住，或者只是观众自己的手机在发烧。排障的第一步不是找原因，而是划地盘——每个环节的故障都有自己独特的 "症状签名"，认出签名，才能把锅准确地递到该接的人手里。本节给 9.1.1 的七站接力逐站开出故障档案。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.1.4 协议在链路两端的分工：为什么两端不说同一种语言]]></title>
+            <description><![CDATA[9.1.1 的接力地图上藏着一个耐人寻味的细节：同一场直播，推流端说的是 RTMP 或 SRT，拉流端说的却是 HLS、HTTP-FLV 或 WebRTC——链路两端从来不用同一种语言。这不是历史巧合，而是两段旅程的客源结构根本不同。第七章按编年史逐个解剖过这些协议（7.5.4 的全景对照表），本节换一个问法：把它们按链路位置重新排座次，看看位置如何决定选择。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.2 流分析与质量监控（Stream Analysis & QoE）]]></title>
+            <description><![CDATA[9.1 画出了链路的地图，可地图本身不会报警。当千万观众同时在线，"体验好不好" 不能再靠运营同学刷新弹幕来判断——它需要被翻译成数字：采得上来、算得明白、归因得准。这套翻译体系，就是流分析与质量监控。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.2.1 QoE 指标体系：给体验号脉]]></title>
+            <description><![CDATA[中医号脉看浮沉迟数，QoE 号脉看四个指标：首屏时间、卡顿率、端到端延迟、ABR 平稳度。它们覆盖了观看体验的三个时刻——按下播放的那一刻（等多久）、播放过程中的每一刻（顺不顺）、以及直播场景下贯穿始终的那根弦（慢多少）。指标本身都好懂，真正值钱的是口径——同一个 "卡顿率"，三家厂商能算出三个数。本节逐个立口径，顺带指出每个指标的经典陷阱。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2_1.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2_1.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.2.2 播放端埋点与上报：数据从哪里长出来]]></title>
+            <description><![CDATA[9.2.1 立好了四脉的口径，现在要解决来源问题：这些数字不会自己走进报表，得有人在数据生长的现场搭好采集器。QoE 数据的生长现场只有一个——播放器。首屏发生在播放器里，卡顿发生在播放器里，ABR 切换还是发生在播放器里。服务端能看见网络与文件，唯独看不见观众的体验；想给体验号脉，脉枕只能搭在端上。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2_2.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2_2.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.2.3 服务端链路监控：流水线的巡检艺术]]></title>
+            <description><![CDATA[播放端的账本记的是 "观众感受到什么"，服务端的账本记的是另一件事："流水线交出了什么"。9.1.1 的七站接力里，源站、转码集群、CDN 各自经手码流，每一站都要回答同一个问题：经我手出去的东西，和进我手的东西，还是一回事吗？ 服务端监控就是沿着流水线逐站对账的巡检体系——它看不见观众的体验，却能第一时间看见体验将要变坏的征兆。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.2.4 从帧级到会话级：数据分析方法]]></title>
+            <description><![CDATA[指标有了口径（9.2.1），数据有了来源（9.2.2、9.2.3），还差最后一道工序：海量的单点数据，如何变成一句能指导行动的话。这套从原始事件到决策结论的聚合方法，本书其实早有一面之缘——第五章做视频特征分析时，我们走过同样的路：帧级差分特征太细，聚合成场景切分才有意义（**5.3.2** 的切点检测）。QoE 分析是同一条路，只是数据从像素换成了事件。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.3 实战：链路搭建与质量分析（practice_10）]]></title>
+            <description><![CDATA[9.1 画好了链路地图，9.2 立好了度量体系——本节把它们同时按进真实流量里。我们在本机搭建一条完整直播链路，用条码测延法量出三种拉流路径的 glass-to-glass 延迟，再请弱网中继上场，亲眼看体验如何崩塌。7.4 关于分片延迟的全部论断、9.1.2 的四级分类、9.2.1 的指标口径，都将在数据里对账。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_3.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_3.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.4 阶段小结与进阶指引（Summary & Roadmap）]]></title>
+            <description><![CDATA[第九章的巡检结束了，第二大阶段的旅程也随之到站。从第六章的第一个比特被压缩，到第九章的最后一根延迟曲线落笔，我们走完了一条完整的现代流媒体链路。这一节不只收束本章，更要收束整个阶段。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_4.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[同一条带宽波动曲线，两种选档策略同台竞技：激进策略顶格选档、立即切换，追的是最高画质；保守策略留 7 折安全余量、升档需连续 3 次确认，求的是最低卡顿。观察两者的档位轨迹、缓冲水位与卡顿红叉——9.2.1 的双目标权衡（最高画质 vs 最低卡顿）没有最优解，只有立场。内置四种带宽场景（锯齿波动 / 断崖下跌 / 高位平稳 / 随机游走），重点试试「断崖下跌」：激进策略在崖底的卡顿，就是追画质要付的学费。所有计算均在本地完成，不会上传。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Playground_9.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Playground_9.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[第九章 参考文献]]></title>
+            <description><![CDATA[[1] IETF. RFC 9317: Operational Considerations for Streaming Media[S]. 2022-10.
+—— 流媒体端到端延迟（glass-to-glass）定义、延迟四级分类、起播与卡顿的工程考量、
+ABR 行为模型与测量标准化（CTA-2066 / CMCD）的运营视角权威综述。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/References_9.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/References_9.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
     </channel>

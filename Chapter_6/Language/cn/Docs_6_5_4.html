@@ -1,0 +1,3787 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>6.5.4 Opus：为实时互动而生（Opus, RFC 6716） · 《音视频开发技术：原理与实践》©</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="李述博 (Arikan.Li)">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/common.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Docs_6_6.html" />
+    
+    
+    <link rel="prev" href="Docs_6_5_3.html" />
+    
+
+    
+    <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../../../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../../../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <script src="../../../gitbook/gitbook-plugin-graph/d3.min.js"></script>
+    <script src="../../../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
+
+    <link href="https://arikanli.cyberfederal.io/rss" title="《音视频开发技术：原理与实践》©" rel="alternate" type="application/rss+xml" />
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    《音视频开发技术：原理与实践》©
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../../AUTHOR.html">
+            
+                <a href="../../../AUTHOR.html">
+            
+                    
+                     =[>> 关于作者© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../../COPYRIGHT.html">
+            
+                <a href="../../../COPYRIGHT.html">
+            
+                    
+                     =[>> 版权声明© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../../GUIDER.html">
+            
+                <a href="../../../GUIDER.html">
+            
+                    
+                     =[>> 难度向导© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../../DONATE.html">
+            
+                <a href="../../../DONATE.html">
+            
+                    
+                     =[>> 赞助本作© <<]= 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../Chapter_1/Language/cn/Apex_1_Introduce.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Apex_1_Introduce.html">
+            
+                    
+                    一、音频的保存与还原
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../Chapter_1/Language/cn/Docs_1_1.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_1.html">
+            
+                    
+                    1.1 音频基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../Chapter_1/Language/cn/Docs_1_2.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_2.html">
+            
+                    
+                    1.2 声波三要素（Three Elements of Acoustics）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../Chapter_1/Language/cn/Docs_1_3.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_3.html">
+            
+                    
+                    1.3 声音三要素（Three Elements of Sounds）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../../Chapter_1/Language/cn/Docs_1_3_1.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_3_1.html">
+            
+                    
+                    1.3.1 音高（Pitch）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../../Chapter_1/Language/cn/Docs_1_3_2.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_3_2.html">
+            
+                    
+                    1.3.2 响度（Loudness）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../../../Chapter_1/Language/cn/Docs_1_3_3.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_3_3.html">
+            
+                    
+                    1.3.3 音色（Timbre）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../Chapter_1/Language/cn/Docs_1_4.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_4.html">
+            
+                    
+                    1.4 声音的解构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../../Chapter_1/Language/cn/Docs_1_4_1.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_4_1.html">
+            
+                    
+                    1.4.1 乐理：音调（Notes） & 五度圈（Circle of Fifths）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../../Chapter_1/Language/cn/Docs_1_4_2.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_4_2.html">
+            
+                    
+                    1.4.2 乐理：和声（Harmony） & 和弦（Chord）& 调性网络（Tonnetz）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../../Chapter_1/Language/cn/Docs_1_4_3.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_4_3.html">
+            
+                    
+                    1.4.3 感观：等响曲线（ELLC [Equal Loudness-Level Contour]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../../../Chapter_1/Language/cn/Docs_1_4_4.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_4_4.html">
+            
+                    
+                    1.4.4 感观：频响曲线（FRC [Frequency Response Contour]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="../../../Chapter_1/Language/cn/Docs_1_4_5.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_4_5.html">
+            
+                    
+                    1.4.5 工程：频谱图（Spectrum）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../../Chapter_1/Language/cn/Docs_1_5.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_5.html">
+            
+                    
+                    1.5 声音数字化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../../Chapter_1/Language/cn/Docs_1_5_1.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_5_1.html">
+            
+                    
+                    1.5.1 数字信号（Digital Signal）& 模拟信号（Analog Signal）& 真实波源（Original Source）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../../../Chapter_1/Language/cn/Docs_1_5_2.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_5_2.html">
+            
+                    
+                    1.5.2 模数转换（A/D [Analog-to-Digital]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../../../Chapter_1/Language/cn/Docs_1_5_3.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_5_3.html">
+            
+                    
+                    1.5.3 数模转换（D/A [Digital-to-Analog]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../../../Chapter_1/Language/cn/Docs_1_5_4.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_5_4.html">
+            
+                    
+                    1.5.4 脉冲编码调制（PCM）& 脉冲密度调制（PDM）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../../Chapter_1/Language/cn/Docs_1_6.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_6.html">
+            
+                    
+                    1.6 音频的存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../../../Chapter_1/Language/cn/Docs_1_6_1.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_6_1.html">
+            
+                    
+                    1.6.1 音频格式（Audio Format）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../../../Chapter_1/Language/cn/Docs_1_6_2.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_6_2.html">
+            
+                    
+                    1.6.2 无压缩编码格式（Uncompressed Encode）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../../../Chapter_1/Language/cn/Docs_1_6_3.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_6_3.html">
+            
+                    
+                    1.6.3 无损压缩编码格式（Lossless Encode）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../../../Chapter_1/Language/cn/Docs_1_6_4.html">
+            
+                <a href="../../../Chapter_1/Language/cn/Docs_1_6_4.html">
+            
+                    
+                    1.6.4 有损压缩编码格式（Lossy Encode）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../../Chapter_1/Language/cn/References_1.html">
+            
+                <a href="../../../Chapter_1/Language/cn/References_1.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../Chapter_2/Language/cn/Apex_2_Introduce.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Apex_2_Introduce.html">
+            
+                    
+                    二、色彩的运用与存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../Chapter_2/Language/cn/Docs_2_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_1.html">
+            
+                    
+                    2.1 色彩基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../Chapter_2/Language/cn/Docs_2_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2.html">
+            
+                    
+                    2.2 颜色三要素（Three Elements of Color）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../../Chapter_2/Language/cn/Docs_2_2_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2_1.html">
+            
+                    
+                    2.2.1 色调（Hue）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../../Chapter_2/Language/cn/Docs_2_2_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2_2.html">
+            
+                    
+                    2.2.2 饱和度（Saturation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../../Chapter_2/Language/cn/Docs_2_2_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_2_3.html">
+            
+                    
+                    2.2.3 光亮度（Luminance）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../../Chapter_2/Language/cn/Docs_2_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3.html">
+            
+                    
+                    2.3 色彩的衡量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../../Chapter_2/Language/cn/Docs_2_3_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_1.html">
+            
+                    
+                    2.3.1 辐射亮度（Radiance）& 色温（Color Temperature）& 颜色的量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../../Chapter_2/Language/cn/Docs_2_3_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_2.html">
+            
+                    
+                    2.3.2 配色函数（Color Matching Functions）& 色彩空间（Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../../Chapter_2/Language/cn/Docs_2_3_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_3.html">
+            
+                    
+                    2.3.3 经典三原色函数（Trichromatic Primaries Functions）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../../Chapter_2/Language/cn/Docs_2_3_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_4.html">
+            
+                    
+                    2.3.4 经典三刺激函数（Tristimulus Values Functions）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../../../Chapter_2/Language/cn/Docs_2_3_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_3_5.html">
+            
+                    
+                    2.3.5 现代色彩体系（Modern Color System）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../../Chapter_2/Language/cn/Docs_2_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4.html">
+            
+                    
+                    2.4 色彩的对比
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../../Chapter_2/Language/cn/Docs_2_4_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_1.html">
+            
+                    
+                    2.4.1 色域（Color Gamut ）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../../Chapter_2/Language/cn/Docs_2_4_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_2.html">
+            
+                    
+                    2.4.2 色度（Chroma）& 色度平面（Chroma Plane）& 色度图（Chroma Diagram）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../../Chapter_2/Language/cn/Docs_2_4_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_3.html">
+            
+                    
+                    2.4.3 色差（Chromatic Aberration）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../../../Chapter_2/Language/cn/Docs_2_4_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_4.html">
+            
+                    
+                    2.4.4 色温（Color Temperature）& 相关色温（Correlated Color Temperature）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../../../Chapter_2/Language/cn/Docs_2_4_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_5.html">
+            
+                    
+                    2.4.5 标准光源（Standard Illuminants）& 白点（White Point）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.6" data-path="../../../Chapter_2/Language/cn/Docs_2_4_6.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_4_6.html">
+            
+                    
+                    2.4.6 显色指数（Color Rendering Index）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../../Chapter_2/Language/cn/Docs_2_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5.html">
+            
+                    
+                    2.5 经典色彩空间（Classical Color Space）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="../../../Chapter_2/Language/cn/Docs_2_5_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_1.html">
+            
+                    
+                    2.5.1 光学三原色色彩空间（RGB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2" data-path="../../../Chapter_2/Language/cn/Docs_2_5_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_2.html">
+            
+                    
+                    2.5.2 颜料三原色色彩空间（CMY / CMYK ）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.3" data-path="../../../Chapter_2/Language/cn/Docs_2_5_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_3.html">
+            
+                    
+                    2.5.3 CIE RGB 色彩空间（CIE 1931 RGB Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.4" data-path="../../../Chapter_2/Language/cn/Docs_2_5_4.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_4.html">
+            
+                    
+                    2.5.4 CIE XYZ 色彩空间（CIE 1931 XYZ Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.5" data-path="../../../Chapter_2/Language/cn/Docs_2_5_5.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_5.html">
+            
+                    
+                    2.5.5 CIE LAB 色彩空间（CIE 1976 L*, a*, b* Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.6" data-path="../../../Chapter_2/Language/cn/Docs_2_5_6.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_6.html">
+            
+                    
+                    2.5.6 CIE LUV 色彩空间（CIE 1976 L*, u*, v* Color Space）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.7" data-path="../../../Chapter_2/Language/cn/Docs_2_5_7.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_5_7.html">
+            
+                    
+                    2.5.7 颜色三要素色彩空间（HSV / HSI / HSL）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../../Chapter_2/Language/cn/Docs_2_6.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6.html">
+            
+                    
+                    2.6 色彩的存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="../../../Chapter_2/Language/cn/Docs_2_6_1.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6_1.html">
+            
+                    
+                    2.6.1 色彩格式（Color Format）与色彩存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2" data-path="../../../Chapter_2/Language/cn/Docs_2_6_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6_2.html">
+            
+                    
+                    2.6.2 RGB 体系色彩格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.3" data-path="../../../Chapter_2/Language/cn/Docs_2_6_3.html">
+            
+                <a href="../../../Chapter_2/Language/cn/Docs_2_6_3.html">
+            
+                    
+                    2.6.3 YUV 体系色彩格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../../Chapter_2/Language/cn/References_2.html">
+            
+                <a href="../../../Chapter_2/Language/cn/References_2.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../Chapter_3/Language/cn/Apex_3_Introduce.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Apex_3_Introduce.html">
+            
+                    
+                    三、音视频常用基础算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../Chapter_3/Language/cn/Docs_3_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1.html">
+            
+                    
+                    3.1 信号分析的核心算法 - 傅立叶变换
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../../../Chapter_3/Language/cn/Docs_3_1_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_1.html">
+            
+                    
+                    3.1.1 一维傅立叶（1D-FT）与一维离散傅立叶变换（1D-DFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../../../Chapter_3/Language/cn/Docs_3_1_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_2.html">
+            
+                    
+                    3.1.2 二维傅立叶（2D-FT）与二维离散傅立叶变换（2D-DFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_3.html">
+            
+                    
+                    3.1.3 傅立叶变换的经典 - 快速傅立叶变换（FFT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_1_4.html">
+            
+                    
+                    3.1.4 傅立叶的硬件优化 - 多常数乘法矩阵逼近（Matrix-MCM Approach）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../Chapter_3/Language/cn/Docs_3_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2.html">
+            
+                    
+                    3.2 频率信息提取 - 常用滤波算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../../Chapter_3/Language/cn/Docs_3_2_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_1.html">
+            
+                    
+                    3.2.1 高斯滤波（Gauss Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../../../Chapter_3/Language/cn/Docs_3_2_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_2.html">
+            
+                    
+                    3.2.2 双边滤波（Bilateral Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../../../Chapter_3/Language/cn/Docs_3_2_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_3.html">
+            
+                    
+                    3.2.3 拉普拉斯滤波（Laplacian Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../../../Chapter_3/Language/cn/Docs_3_2_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_4.html">
+            
+                    
+                    3.2.4 马尔滤波（Marr Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../../../Chapter_3/Language/cn/Docs_3_2_5.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_5.html">
+            
+                    
+                    3.2.5 索贝尔滤波（Sobel Filter）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="../../../Chapter_3/Language/cn/Docs_3_2_6.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_2_6.html">
+            
+                    
+                    3.2.6 各向异性扩散（Anisotropic Diffusion）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../Chapter_3/Language/cn/Docs_3_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3.html">
+            
+                    
+                    3.3 时间冗余控制 - 常用特征提取与朴素阈值处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../../../Chapter_3/Language/cn/Docs_3_3_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3_1.html">
+            
+                    
+                    3.3.1 方向梯度直方图（HOG [Histogram of Oriented Gradient]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../../../Chapter_3/Language/cn/Docs_3_3_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3_2.html">
+            
+                    
+                    3.3.2 朴素目标检测结果度量 - IoU & GIoU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="../../../Chapter_3/Language/cn/Docs_3_3_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_3_3.html">
+            
+                    
+                    3.3.3 朴素目标检测物体锁定 - 分步滑动窗口（Simple Sliding Window）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../../Chapter_3/Language/cn/Docs_3_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4.html">
+            
+                    
+                    3.4 空域冗余控制 - 基础光流算法与色度压缩
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../../../Chapter_3/Language/cn/Docs_3_4_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_1.html">
+            
+                    
+                    3.4.1 传统光流法（Classic Optical Flow Methods）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../../../Chapter_3/Language/cn/Docs_3_4_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_2.html">
+            
+                    
+                    3.4.2 双向光流预测（BDOF [Bi-Directional Optical Flow]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../../../Chapter_3/Language/cn/Docs_3_4_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_3.html">
+            
+                    
+                    3.4.3 光流仿射修正（PROF [Affine Prediction Refinement With Optical Flow]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="../../../Chapter_3/Language/cn/Docs_3_4_4.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_4_4.html">
+            
+                    
+                    3.4.4 色度缩放亮度映射（LMCS [Luma Mapping with Chroma Scaling]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../../Chapter_3/Language/cn/Docs_3_5.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5.html">
+            
+                    
+                    3.5 频域冗余控制 - 基础变换编码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../../../Chapter_3/Language/cn/Docs_3_5_1.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5_1.html">
+            
+                    
+                    3.5.1 整数离散正余弦变换（DST/DCT）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../../../Chapter_3/Language/cn/Docs_3_5_2.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5_2.html">
+            
+                    
+                    3.5.2 哈达玛变换（WHT [Walsh-Hadamard Transform]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../../../Chapter_3/Language/cn/Docs_3_5_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Docs_3_5_3.html">
+            
+                    
+                    3.5.3 低频不可分变换（LFNST [Low-Frequency Non-Separable Transform]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../../Chapter_3/Language/cn/Playground_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/Playground_3.html">
+            
+                    
+                    【在线展示】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../../Chapter_3/Language/cn/References_3.html">
+            
+                <a href="../../../Chapter_3/Language/cn/References_3.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../Chapter_4/Language/cn/Apex_4_Introduce.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Apex_4_Introduce.html">
+            
+                    
+                    四、音视频机器学习基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../Chapter_4/Language/cn/Docs_4_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_1.html">
+            
+                    
+                    4.1 发展概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../Chapter_4/Language/cn/Docs_4_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2.html">
+            
+                    
+                    4.2 模型工程基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../../Chapter_4/Language/cn/Docs_4_2_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2_1.html">
+            
+                    
+                    4.2.1 算子（Operator）& 层（Layer）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../../Chapter_4/Language/cn/Docs_4_2_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2_2.html">
+            
+                    
+                    4.2.2 神经元（Neuron）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../../../Chapter_4/Language/cn/Docs_4_2_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2_3.html">
+            
+                    
+                    4.2.3 神经网络（NN [Neural Network]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../../../Chapter_4/Language/cn/Docs_4_2_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_2_4.html">
+            
+                    
+                    4.2.4 特征选择（Feature Selection）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../Chapter_4/Language/cn/Docs_4_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3.html">
+            
+                    
+                    4.3 经典激活函数（Classic Activation Function）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../../Chapter_4/Language/cn/Docs_4_3_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_1.html">
+            
+                    
+                    4.3.1 Sigmoid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../../../Chapter_4/Language/cn/Docs_4_3_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_2.html">
+            
+                    
+                    4.3.2 Tanh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../../../Chapter_4/Language/cn/Docs_4_3_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_3.html">
+            
+                    
+                    4.3.3 Softplus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="../../../Chapter_4/Language/cn/Docs_4_3_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_4.html">
+            
+                    
+                    4.3.4 ReLU 族 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.5" data-path="../../../Chapter_4/Language/cn/Docs_4_3_5.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_5.html">
+            
+                    
+                    4.3.5 ELU & SELU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.6" data-path="../../../Chapter_4/Language/cn/Docs_4_3_6.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_6.html">
+            
+                    
+                    4.3.6 Mish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.7" data-path="../../../Chapter_4/Language/cn/Docs_4_3_7.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_3_7.html">
+            
+                    
+                    4.3.7 Swish 族 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../Chapter_4/Language/cn/Docs_4_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_4.html">
+            
+                    
+                    4.4 连接函数/衰减函数（Connection/Attenuation Function）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../../Chapter_4/Language/cn/Docs_4_4_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_4_1.html">
+            
+                    
+                    4.4.1 Dropout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../../../Chapter_4/Language/cn/Docs_4_4_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_4_2.html">
+            
+                    
+                    4.4.2 Maxout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../../../Chapter_4/Language/cn/Docs_4_4_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_4_3.html">
+            
+                    
+                    4.4.3 SoftMax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../../Chapter_4/Language/cn/Docs_4_5.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5.html">
+            
+                    
+                    4.5 损失函数（Loss Function）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../../../Chapter_4/Language/cn/Docs_4_5_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_1.html">
+            
+                    
+                    4.5.1 回归项-平均绝对误差（MAE [Mean Absolute Error]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="../../../Chapter_4/Language/cn/Docs_4_5_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_2.html">
+            
+                    
+                    4.5.2 回归项-均方误差（MSE [Mean Squared Error]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="../../../Chapter_4/Language/cn/Docs_4_5_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_3.html">
+            
+                    
+                    4.5.3 回归项-休伯损失（Huber Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.4" data-path="../../../Chapter_4/Language/cn/Docs_4_5_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_4.html">
+            
+                    
+                    4.5.4 回归项-分位数损失（Quantile Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.5" data-path="../../../Chapter_4/Language/cn/Docs_4_5_5.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_5.html">
+            
+                    
+                    4.5.5 分类项-对数损失（Log Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.6" data-path="../../../Chapter_4/Language/cn/Docs_4_5_6.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_6.html">
+            
+                    
+                    4.5.6 分类项-交叉熵损失（Cross Entropy Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.7" data-path="../../../Chapter_4/Language/cn/Docs_4_5_7.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_7.html">
+            
+                    
+                    4.5.7 分类项-合页损失（Hinge Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.8" data-path="../../../Chapter_4/Language/cn/Docs_4_5_8.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_8.html">
+            
+                    
+                    4.5.8 分类项-对比损失（Contrastive Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.9" data-path="../../../Chapter_4/Language/cn/Docs_4_5_9.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_9.html">
+            
+                    
+                    4.5.9 分类项-三元损失（Triplet Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.10" data-path="../../../Chapter_4/Language/cn/Docs_4_5_10.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_10.html">
+            
+                    
+                    4.5.10 分类项-对组排异损失（N-Pair Loss）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.11" data-path="../../../Chapter_4/Language/cn/Docs_4_5_11.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_11.html">
+            
+                    
+                    4.5.11 正则项-L1 惩罚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.12" data-path="../../../Chapter_4/Language/cn/Docs_4_5_12.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_5_12.html">
+            
+                    
+                    4.5.12 正则项-L2 惩罚
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../../Chapter_4/Language/cn/Docs_4_6.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6.html">
+            
+                    
+                    4.6 常用最优化算法（Optimizer Operator）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="../../../Chapter_4/Language/cn/Docs_4_6_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_1.html">
+            
+                    
+                    4.6.1 基础优化算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.2" data-path="../../../Chapter_4/Language/cn/Docs_4_6_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_2.html">
+            
+                    
+                    4.6.2 优化算法的优化-应对震荡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.3" data-path="../../../Chapter_4/Language/cn/Docs_4_6_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_3.html">
+            
+                    
+                    4.6.3 优化算法的优化-应对重点强（弱）化更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.4" data-path="../../../Chapter_4/Language/cn/Docs_4_6_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_4.html">
+            
+                    
+                    4.6.4 自适应实时评估算法（Adam [Adaptive Moment Estimation]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.5" data-path="../../../Chapter_4/Language/cn/Docs_4_6_5.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_6_5.html">
+            
+                    
+                    4.6.5 优化算法对比与使用建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../../Chapter_4/Language/cn/Docs_4_7.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_7.html">
+            
+                    
+                    4.7 模型结构速览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.7.1" data-path="../../../Chapter_4/Language/cn/Docs_4_7_1.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_7_1.html">
+            
+                    
+                    4.7.1 卷积神经网络（CNN [Convolutional Neural Network]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.2" data-path="../../../Chapter_4/Language/cn/Docs_4_7_2.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_7_2.html">
+            
+                    
+                    4.7.2 循环神经网络（RNN [Recurrent Neural Network]）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.3" data-path="../../../Chapter_4/Language/cn/Docs_4_7_3.html">
+            
+                <a href="../../../Chapter_4/Language/cn/Docs_4_7_3.html">
+            
+                    
+                    4.7.3 自注意力网络（Transformer）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../../Chapter_4/Language/cn/References_4.html">
+            
+                <a href="../../../Chapter_4/Language/cn/References_4.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../Chapter_5/Language/cn/Apex_5_Introduce.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Apex_5_Introduce.html">
+            
+                    
+                    五、音视频帧分析与数据处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../Chapter_5/Language/cn/Docs_5_1.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_1.html">
+            
+                    
+                    5.1 音视频帧与环境准备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../../Chapter_5/Language/cn/Docs_5_1_1.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_1_1.html">
+            
+                    
+                    5.1.1 常用数学库（Numpy、Pandas、Matplotlib）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../../../Chapter_5/Language/cn/Docs_5_1_2.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_1_2.html">
+            
+                    
+                    5.1.2 音频分析库（SoundFile、PyAudio、Librosa、Aubio）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../../../Chapter_5/Language/cn/Docs_5_1_3.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_1_3.html">
+            
+                    
+                    5.1.3 视频分析库（PyOpenCV、Color-Science）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="../../../Chapter_5/Language/cn/Docs_5_1_4.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_1_4.html">
+            
+                    
+                    5.1.4 其他分析软件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../Chapter_5/Language/cn/Docs_5_2.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_2.html">
+            
+                    
+                    5.2 音频帧分析实践（Audio Frame Analysis）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../../Chapter_5/Language/cn/Docs_5_2_1.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_2_1.html">
+            
+                    
+                    5.2.1 音频帧的切分与加窗（Frame Blocking & Windowing）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../../../Chapter_5/Language/cn/Docs_5_2_2.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_2_2.html">
+            
+                    
+                    5.2.2 时域与频域特征（Time/Frequency Domain Features）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../../../Chapter_5/Language/cn/Docs_5_2_3.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_2_3.html">
+            
+                    
+                    5.2.3 实战：A4 标准音的特征分析工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../../Chapter_5/Language/cn/Docs_5_3.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_3.html">
+            
+                    
+                    5.3 视频帧分析实践（Video Frame Analysis）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../../../Chapter_5/Language/cn/Docs_5_3_1.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_3_1.html">
+            
+                    
+                    5.3.1 视频帧的提取与表示（Frame Extraction & Representation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../../../Chapter_5/Language/cn/Docs_5_3_2.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_3_2.html">
+            
+                    
+                    5.3.2 帧间分析：帧差、光流与场景切分（Frame Difference, Optical Flow & Scene-Cut Detection）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3" data-path="../../../Chapter_5/Language/cn/Docs_5_3_3.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_3_3.html">
+            
+                    
+                    5.3.3 实战：测试视频的场景切分与目标跟踪工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../../Chapter_5/Language/cn/Docs_5_4.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_4.html">
+            
+                    
+                    5.4 音视频帧处理实践（Audio & Video Frame Processing）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../../../Chapter_5/Language/cn/Docs_5_4_1.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_4_1.html">
+            
+                    
+                    5.4.1 音频帧处理：滤波、变速与变调（Filtering, Time-Stretch & Pitch-Shift）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" data-path="../../../Chapter_5/Language/cn/Docs_5_4_2.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_4_2.html">
+            
+                    
+                    5.4.2 视频帧处理：色彩、滤波与几何变换（Color, Filtering & Geometric Transform）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.3" data-path="../../../Chapter_5/Language/cn/Docs_5_4_3.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_4_3.html">
+            
+                    
+                    5.4.3 实战：音视频帧批量处理工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../../Chapter_5/Language/cn/Docs_5_5.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Docs_5_5.html">
+            
+                    
+                    5.5 本章小结与进阶指引（Summary & Roadmap）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../../Chapter_5/Language/cn/Playground_5.html">
+            
+                <a href="../../../Chapter_5/Language/cn/Playground_5.html">
+            
+                    
+                    【在线展示】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../../Chapter_5/Language/cn/References_5.html">
+            
+                <a href="../../../Chapter_5/Language/cn/References_5.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Apex_6_Introduce.html">
+            
+                <a href="Apex_6_Introduce.html">
+            
+                    
+                    六、音视频编码规格（Audio & Video Codec Specification）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="Docs_6_1.html">
+            
+                <a href="Docs_6_1.html">
+            
+                    
+                    6.1 编码简史与编码四环（Codec History & The Four-Stage Framework）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="Docs_6_1_1.html">
+            
+                <a href="Docs_6_1_1.html">
+            
+                    
+                    6.1.1 视频编码编年简史（A Chronology of Video Coding Standards）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="Docs_6_1_2.html">
+            
+                <a href="Docs_6_1_2.html">
+            
+                    
+                    6.1.2 压缩何以可能：四类冗余（Four Types of Redundancy）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.3" data-path="Docs_6_1_3.html">
+            
+                <a href="Docs_6_1_3.html">
+            
+                    
+                    6.1.3 编码四环：混合编码框架（The Hybrid Coding Framework）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="Docs_6_2.html">
+            
+                <a href="Docs_6_2.html">
+            
+                    
+                    6.2 H.264/AVC：经典之巅（H.264/AVC in Detail）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="Docs_6_2_1.html">
+            
+                <a href="Docs_6_2_1.html">
+            
+                    
+                    6.2.1 诞生背景：JVT 与混合框架的成熟
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" data-path="Docs_6_2_2.html">
+            
+                <a href="Docs_6_2_2.html">
+            
+                    
+                    6.2.2 帧内预测（Intra Prediction）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.3" data-path="Docs_6_2_3.html">
+            
+                <a href="Docs_6_2_3.html">
+            
+                    
+                    6.2.3 帧间预测与运动补偿（Inter Prediction & Motion Compensation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.4" data-path="Docs_6_2_4.html">
+            
+                <a href="Docs_6_2_4.html">
+            
+                    
+                    6.2.4 变换、量化与熵编码（Transform, Quantization & Entropy Coding）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.5" data-path="Docs_6_2_5.html">
+            
+                <a href="Docs_6_2_5.html">
+            
+                    
+                    6.2.5 Profile/Level 体系与规格导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="Docs_6_3.html">
+            
+                <a href="Docs_6_3.html">
+            
+                    
+                    6.3 H.265/HEVC：4K 时代的答案（H.265/HEVC in Detail）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.3.1" data-path="Docs_6_3_1.html">
+            
+                <a href="Docs_6_3_1.html">
+            
+                    
+                    6.3.1 编码树单元：CTU 与四叉树划分（Coding Tree Unit & Quadtree）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.2" data-path="Docs_6_3_2.html">
+            
+                <a href="Docs_6_3_2.html">
+            
+                    
+                    6.3.2 预测技术的演进（Evolution of Prediction）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.3" data-path="Docs_6_3_3.html">
+            
+                <a href="Docs_6_3_3.html">
+            
+                    
+                    6.3.3 环路滤波与并行化设计（In-loop Filtering & Parallelism）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="Docs_6_4.html">
+            
+                <a href="Docs_6_4.html">
+            
+                    
+                    6.4 H.266/VVC 与 AV1：两条路线的竞赛（H.266/VVC & AV1）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.4.1" data-path="Docs_6_4_1.html">
+            
+                <a href="Docs_6_4_1.html">
+            
+                    
+                    6.4.1 VVC：向压缩极限推进（Versatile Video Coding）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4.2" data-path="Docs_6_4_2.html">
+            
+                <a href="Docs_6_4_2.html">
+            
+                    
+                    6.4.2 AV1：开源免版税阵营（AOMedia Video 1）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4.3" data-path="Docs_6_4_3.html">
+            
+                <a href="Docs_6_4_3.html">
+            
+                    
+                    6.4.3 专利池生态与三代规格对照（Patent Ecosystem & Comparison）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="Docs_6_5.html">
+            
+                <a href="Docs_6_5.html">
+            
+                    
+                    6.5 音频编码规格（Audio Codec Specification）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.5.1" data-path="Docs_6_5_1.html">
+            
+                <a href="Docs_6_5_1.html">
+            
+                    
+                    6.5.1 心理声学：音频压缩的地基（Psychoacoustics）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5.2" data-path="Docs_6_5_2.html">
+            
+                <a href="Docs_6_5_2.html">
+            
+                    
+                    6.5.2 MP3：开启数字音乐时代（MPEG-1 Layer III）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5.3" data-path="Docs_6_5_3.html">
+            
+                <a href="Docs_6_5_3.html">
+            
+                    
+                    6.5.3 AAC：青出于蓝（Advanced Audio Coding）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.5.4" data-path="Docs_6_5_4.html">
+            
+                <a href="Docs_6_5_4.html">
+            
+                    
+                    6.5.4 Opus：为实时互动而生（Opus, RFC 6716）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="Docs_6_6.html">
+            
+                <a href="Docs_6_6.html">
+            
+                    
+                    6.6 实战：编码器规格对比实验（practice_7）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="Docs_6_7.html">
+            
+                <a href="Docs_6_7.html">
+            
+                    
+                    6.7 本章小结与进阶指引（Summary & Roadmap）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="Playground_6.html">
+            
+                <a href="Playground_6.html">
+            
+                    
+                    【在线展示】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="References_6.html">
+            
+                <a href="References_6.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../../Chapter_7/Language/cn/Apex_7_Introduce.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Apex_7_Introduce.html">
+            
+                    
+                    七、封装格式与流传输协议（Container Formats & Streaming Protocols）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../../Chapter_7/Language/cn/Docs_7_1.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_1.html">
+            
+                    
+                    7.1 从封装说起：容器的使命（The Mission of Containers）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="../../../Chapter_7/Language/cn/Docs_7_1_1.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_1_1.html">
+            
+                    
+                    7.1.1 裸码流缺什么（What Elementary Streams Lack）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2" data-path="../../../Chapter_7/Language/cn/Docs_7_1_2.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_1_2.html">
+            
+                    
+                    7.1.2 MP4：为随机访问而生的索引树（MP4 & The Index Tree）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3" data-path="../../../Chapter_7/Language/cn/Docs_7_1_3.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_1_3.html">
+            
+                    
+                    7.1.3 FLV：为流式传输而生的标签序列（FLV & The Tag Stream）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4" data-path="../../../Chapter_7/Language/cn/Docs_7_1_4.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_1_4.html">
+            
+                    
+                    7.1.4 MPEG-TS：为容错传输而生的定长包（MPEG-TS & The Fixed-Length Packets）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.5" data-path="../../../Chapter_7/Language/cn/Docs_7_1_5.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_1_5.html">
+            
+                    
+                    7.1.5 三容器设计取向对比（Three Containers, Three Philosophies）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../../Chapter_7/Language/cn/Docs_7_2.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_2.html">
+            
+                    
+                    7.2 实时传输奠基：RTP/RTCP（The Foundation of Real-Time Transport）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../../../Chapter_7/Language/cn/Docs_7_2_1.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_2_1.html">
+            
+                    
+                    7.2.1 实时传输的诞生与 UDP 的取舍（Real-Time Transport & The UDP Trade-off）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="../../../Chapter_7/Language/cn/Docs_7_2_2.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_2_2.html">
+            
+                    
+                    7.2.2 RTP 固定头：十二字节的自描述（The 12-Byte Self-Describing Header）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.3" data-path="../../../Chapter_7/Language/cn/Docs_7_2_3.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_2_3.html">
+            
+                    
+                    7.2.3 RTCP：质量反馈环与唇同步（RTCP: Feedback Loop & Lip Sync）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.4" data-path="../../../Chapter_7/Language/cn/Docs_7_2_4.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_2_4.html">
+            
+                    
+                    7.2.4 从 RTP 到 WebRTC（From RTP to WebRTC）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../../Chapter_7/Language/cn/Docs_7_3.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_3.html">
+            
+                    
+                    7.3 直播时代的霸主：RTMP（RTMP & The Live Streaming Dynasty）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../../../Chapter_7/Language/cn/Docs_7_3_1.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_3_1.html">
+            
+                    
+                    7.3.1 Flash 时代的直播王朝（The Flash-Era Live Dynasty）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="../../../Chapter_7/Language/cn/Docs_7_3_2.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_3_2.html">
+            
+                    
+                    7.3.2 握手：C0/C1/C2 与 S0/S1/S2（The RTMP Handshake）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="../../../Chapter_7/Language/cn/Docs_7_3_3.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_3_3.html">
+            
+                    
+                    7.3.3 Chunk 封包：一次消息，多次封装（Chunking & Header Compression）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.4" data-path="../../../Chapter_7/Language/cn/Docs_7_3_4.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_3_4.html">
+            
+                    
+                    7.3.4 Message 类型族与 AMF 编码（Message Types & AMF Encoding）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.5" data-path="../../../Chapter_7/Language/cn/Docs_7_3_5.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_3_5.html">
+            
+                    
+                    7.3.5 命令消息与流管理时序（Commands & Stream Management）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../../Chapter_7/Language/cn/Docs_7_4.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_4.html">
+            
+                    
+                    7.4 直播的 HTTP 化：HLS 与 fMP4（HLS & Fragmented MP4）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.4.1" data-path="../../../Chapter_7/Language/cn/Docs_7_4_1.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_4_1.html">
+            
+                    
+                    7.4.1 把直播搬进 HTTP（Moving Live Streaming into HTTP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.2" data-path="../../../Chapter_7/Language/cn/Docs_7_4_2.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_4_2.html">
+            
+                    
+                    7.4.2 两级播放列表：Master 与 Media（Master & Media Playlists）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.3" data-path="../../../Chapter_7/Language/cn/Docs_7_4_3.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_4_3.html">
+            
+                    
+                    7.4.3 分片机制与直播滑动窗（Segments & The Sliding Window）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.4" data-path="../../../Chapter_7/Language/cn/Docs_7_4_4.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_4_4.html">
+            
+                    
+                    7.4.4 自适应码率：客户端的切换艺术（Adaptive Bitrate Switching）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4.5" data-path="../../../Chapter_7/Language/cn/Docs_7_4_5.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_4_5.html">
+            
+                    
+                    7.4.5 延迟之战与 LL-HLS（The Latency Battle & LL-HLS）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../../../Chapter_7/Language/cn/Docs_7_5.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_5.html">
+            
+                    
+                    7.5 现代协议群像：DASH、WebRTC 与 SRT（The Modern Protocol Landscape）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.5.1" data-path="../../../Chapter_7/Language/cn/Docs_7_5_1.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_5_1.html">
+            
+                    
+                    7.5.1 DASH：标准化的另一极（MPEG-DASH & The Standards Track）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5.2" data-path="../../../Chapter_7/Language/cn/Docs_7_5_2.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_5_2.html">
+            
+                    
+                    7.5.2 WebRTC：RTP 的正统继承者（WebRTC & The Real-Time Heir）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5.3" data-path="../../../Chapter_7/Language/cn/Docs_7_5_3.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_5_3.html">
+            
+                    
+                    7.5.3 SRT：弱网回传的 ARQ 路线（SRT & The ARQ Prescription）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5.4" data-path="../../../Chapter_7/Language/cn/Docs_7_5_4.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_5_4.html">
+            
+                    
+                    7.5.4 编年史与全景对照（A Chronicle & The Big Picture）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../../../Chapter_7/Language/cn/Docs_7_6.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_6.html">
+            
+                    
+                    7.6 实战：推流抓包与低延迟拉流（practice_8）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../../../Chapter_7/Language/cn/Docs_7_7.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Docs_7_7.html">
+            
+                    
+                    7.7 本章小结与进阶指引（Summary & Roadmap）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../../../Chapter_7/Language/cn/Playground_7.html">
+            
+                <a href="../../../Chapter_7/Language/cn/Playground_7.html">
+            
+                    
+                    【在线展示】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../../../Chapter_7/Language/cn/References_7.html">
+            
+                <a href="../../../Chapter_7/Language/cn/References_7.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../../Chapter_8/Language/cn/Apex_8_Introduce.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Apex_8_Introduce.html">
+            
+                    
+                    八、解码与播放（Decoding & Playback）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../../Chapter_8/Language/cn/Docs_8_1.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Docs_8_1.html">
+            
+                    
+                    8.1 解码器框架设计（Decoder Framework Design）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1.1" data-path="../../../Chapter_8/Language/cn/Docs_8_1_1.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Docs_8_1_1.html">
+            
+                    
+                    8.1.1 从规格到代码：解码器的本质（From Spec to Code）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.2" data-path="../../../Chapter_8/Language/cn/Docs_8_1_2.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Docs_8_1_2.html">
+            
+                    
+                    8.1.2 FFmpeg 六库：分层的艺术（The Six Libraries of FFmpeg）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.3" data-path="../../../Chapter_8/Language/cn/Docs_8_1_3.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Docs_8_1_3.html">
+            
+                    
+                    8.1.3 收发分离：解码 API 的状态机（The Send/Receive State Machine）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.1.4" data-path="../../../Chapter_8/Language/cn/Docs_8_1_4.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Docs_8_1_4.html">
+            
+                    
+                    8.1.4 管线与 seek：工程落地的暗坑（Pipelines, Seek & The Pitfalls）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../../Chapter_8/Language/cn/Docs_8_2.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Docs_8_2.html">
+            
+                    
+                    8.2 播放器核心系统（Player Core Systems）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1" data-path="../../../Chapter_8/Language/cn/Docs_8_2_1.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Docs_8_2_1.html">
+            
+                    
+                    8.2.1 播放器的三个问题：何时解，何时显，对谁齐（Three Questions of A Player）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2" data-path="../../../Chapter_8/Language/cn/Docs_8_2_2.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Docs_8_2_2.html">
+            
+                    
+                    8.2.2 音画同步：主时钟的三种策略（A/V Sync & The Three Master Clocks）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.3" data-path="../../../Chapter_8/Language/cn/Docs_8_2_3.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Docs_8_2_3.html">
+            
+                    
+                    8.2.3 抖动缓冲：与网络和解的艺术（Jitter Buffer & The Art of Compromise）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.4" data-path="../../../Chapter_8/Language/cn/Docs_8_2_4.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Docs_8_2_4.html">
+            
+                    
+                    8.2.4 渲染管线：从 YUV 到视网膜（The Render Pipeline）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../../Chapter_8/Language/cn/Docs_8_3.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Docs_8_3.html">
+            
+                    
+                    8.3 实战：音画同步策略对比实验（practice_9）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../../../Chapter_8/Language/cn/Docs_8_4.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Docs_8_4.html">
+            
+                    
+                    8.4 本章小结与进阶指引（Summary & Roadmap）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../../../Chapter_8/Language/cn/Playground_8.html">
+            
+                <a href="../../../Chapter_8/Language/cn/Playground_8.html">
+            
+                    
+                    【在线展示】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../../../Chapter_8/Language/cn/References_8.html">
+            
+                <a href="../../../Chapter_8/Language/cn/References_8.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../../Chapter_9/Language/cn/Apex_9_Introduce.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Apex_9_Introduce.html">
+            
+                    
+                    九、流媒体链路与流分析（Streaming Pipeline & Stream Analysis）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../../Chapter_9/Language/cn/Docs_9_1.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_1.html">
+            
+                    
+                    9.1 现代流媒体链路全景（The Streaming Pipeline）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1.1" data-path="../../../Chapter_9/Language/cn/Docs_9_1_1.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_1_1.html">
+            
+                    
+                    9.1.1 一场直播的完整旅程（The Journey of A Live Stream）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.2" data-path="../../../Chapter_9/Language/cn/Docs_9_1_2.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_1_2.html">
+            
+                    
+                    9.1.2 端到端延迟：从采集到视网膜（Glass-to-Glass Latency）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.3" data-path="../../../Chapter_9/Language/cn/Docs_9_1_3.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_1_3.html">
+            
+                    
+                    9.1.3 链路各环节的角色与故障域（Roles & Failure Domains）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.4" data-path="../../../Chapter_9/Language/cn/Docs_9_1_4.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_1_4.html">
+            
+                    
+                    9.1.4 协议在链路两端的分工（Protocols at Both Ends）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../../Chapter_9/Language/cn/Docs_9_2.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_2.html">
+            
+                    
+                    9.2 流分析与质量监控（Stream Analysis & QoE）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../../../Chapter_9/Language/cn/Docs_9_2_1.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_2_1.html">
+            
+                    
+                    9.2.1 QoE 指标体系：给体验号脉（The QoE Metrics）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2" data-path="../../../Chapter_9/Language/cn/Docs_9_2_2.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_2_2.html">
+            
+                    
+                    9.2.2 播放端埋点与上报（Player Instrumentation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3" data-path="../../../Chapter_9/Language/cn/Docs_9_2_3.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_2_3.html">
+            
+                    
+                    9.2.3 服务端链路监控（Server-Side Monitoring）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.4" data-path="../../../Chapter_9/Language/cn/Docs_9_2_4.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_2_4.html">
+            
+                    
+                    9.2.4 从帧级到会话级：数据分析方法（From Frames to Sessions）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../../../Chapter_9/Language/cn/Docs_9_3.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_3.html">
+            
+                    
+                    9.3 实战：链路搭建与质量分析（practice_10）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../../../Chapter_9/Language/cn/Docs_9_4.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_4.html">
+            
+                    
+                    9.4 阶段小结与进阶指引（Summary & Roadmap）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../../../Chapter_9/Language/cn/Playground_9.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Playground_9.html">
+            
+                    
+                    【在线展示】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../../../Chapter_9/Language/cn/References_9.html">
+            
+                <a href="../../../Chapter_9/Language/cn/References_9.html">
+            
+                    
+                    【参考文献】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >6.5.4 Opus：为实时互动而生（Opus, RFC 6716）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="654-opus&#xFF1A;&#x4E3A;&#x5B9E;&#x65F6;&#x4E92;&#x52A8;&#x800C;&#x751F;&#xFF08;opus-rfc-6716&#xFF09;">6.5.4 Opus&#xFF1A;&#x4E3A;&#x5B9E;&#x65F6;&#x4E92;&#x52A8;&#x800C;&#x751F;&#xFF08;Opus, RFC 6716&#xFF09;</h1>
+<h2 id="&#x4E92;&#x52A8;&#x573A;&#x666F;&#x7684;&#x82DB;&#x523B;&#x7EA6;&#x675F;"><strong>&#x4E92;&#x52A8;&#x573A;&#x666F;&#x7684;&#x82DB;&#x523B;&#x7EA6;&#x675F;</strong></h2>
+<p>VoIP&#x3001;&#x89C6;&#x9891;&#x4F1A;&#x8BAE;&#x3001;&#x5728;&#x7EBF;&#x6E38;&#x620F;&#x8BED;&#x97F3;&#xFF0C;&#x5BF9;&#x97F3;&#x9891;&#x7F16;&#x7801;&#x63D0;&#x51FA;&#x4E86;&#x4E00;&#x7EC4;&#x4E0E;&#x97F3;&#x4E50;&#x5206;&#x53D1;&#x622A;&#x7136;&#x4E0D;&#x540C;&#x7684;&#x8981;&#x6C42; <a href="References_6.html">[14]</a>&#xFF1A;</p>
+<ul>
+<li><strong>&#x7B97;&#x6CD5;&#x5EF6;&#x8FDF;&#x5FC5;&#x987B;&#x6781;&#x4F4E;</strong>&#xFF1A;&#x5F80;&#x8FD4;&#x5EF6;&#x8FDF;&#x8D85;&#x8FC7;&#x7EA6; 150 ms &#x5C31;&#x4F1A;&#x660E;&#x663E;&#x5E72;&#x6270;&#x5BF9;&#x8BDD;&#x8282;&#x594F;&#xFF0C;&#x7F16;&#x7801;&#x5668;&#x81EA;&#x8EAB;&#x53EA;&#x5141;&#x8BB8;&#x8D21;&#x732E;&#x6BEB;&#x79D2;&#x7EA7;&#x2014;&#x2014;MP3/AAC &#x7684;&#x957F;&#x7A97;&#x8BBE;&#x8BA1;&#xFF08;&#x6570;&#x767E;&#x6BEB;&#x79D2;&#x6D41;&#x6C34;&#x7EBF;&#xFF09;&#x76F4;&#x63A5;&#x51FA;&#x5C40;</li>
+<li><strong>&#x5185;&#x5BB9;&#x6DF7;&#x5408;</strong>&#xFF1A;&#x8BED;&#x97F3;&#x4E0E;&#x97F3;&#x4E50;&#x968F;&#x65F6;&#x4EA4;&#x66FF;&#xFF08;&#x901A;&#x8BDD;&#x4E2D;&#x653E;&#x6B4C;&#xFF09;&#xFF0C;&#x5355;&#x4E00;&#x4F18;&#x5316;&#x65B9;&#x5411;&#x7684;&#x7F16;&#x7801;&#x5668;&#x5FC5;&#x7136;&#x504F;&#x79D1;</li>
+<li><strong>&#x7801;&#x7387;&#x4E0E;&#x7F51;&#x7EDC;&#x81EA;&#x9002;&#x5E94;</strong>&#xFF1A;&#x4E22;&#x5305;&#x3001;&#x6296;&#x52A8;&#x3001;&#x5E26;&#x5BBD;&#x6CE2;&#x52A8;&#x662F;&#x5E38;&#x6001;&#xFF0C;&#x7F16;&#x7801;&#x5668;&#x8981;&#x80FD;&#x65E0;&#x7EA7;&#x53D8;&#x901F;</li>
+</ul>
+<p>2012 &#x5E74;&#xFF0C;IETF &#x4EE5; <strong>RFC 6716</strong> &#x6807;&#x51C6;&#x5316;&#x7684; <strong>Opus</strong> &#x5C31;&#x662F;&#x8FD9;&#x4EFD;&#x8003;&#x5377;&#x7684;&#x7B54;&#x5377;&#x2014;&#x2014;&#x7531; Xiph.Org &#x4E0E; Skype&#xFF08;&#x5F7C;&#x65F6;&#x5C5E; Microsoft&#xFF09;&#x8054;&#x624B;&#xFF0C;&#x5F00;&#x6E90;&#x4E14;&#x514D;&#x7248;&#x7A0E;&#x3002;</p>
+<h2 id="&#x6DF7;&#x5408;&#x67B6;&#x6784;&#xFF1A;silk--celt"><strong>&#x6DF7;&#x5408;&#x67B6;&#x6784;&#xFF1A;SILK + CELT</strong></h2>
+<p>Opus &#x7684;&#x89E3;&#x6CD5;&#x522B;&#x5177;&#x4E00;&#x683C;&#xFF1A;<strong>&#x4E0D;&#x662F;&#x6298;&#x4E2D;&#xFF0C;&#x800C;&#x662F;&#x53CC;&#x4FEE;</strong>&#x2014;&#x2014;&#x5185;&#x7F6E;&#x4E24;&#x5957;&#x5F15;&#x64CE;&#xFF0C;&#x6309;&#x5185;&#x5BB9;&#x4E0E;&#x7801;&#x7387;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x751A;&#x81F3;&#x53E0;&#x52A0; <a href="References_6.html">[14]</a>&#xFF1A;</p>
+<ul>
+<li><strong>SILK</strong>&#xFF1A;&#x6E90;&#x81EA; Skype &#x7684;&#x8BED;&#x97F3;&#x7F16;&#x7801;&#x5668;&#x3002;&#x57FA;&#x4E8E; <strong>LPC&#xFF08;&#x7EBF;&#x6027;&#x9884;&#x6D4B;&#x7F16;&#x7801;&#xFF09;</strong> &#x7684;&#x58F0;&#x9053;&#x6A21;&#x578B;&#x2014;&#x2014;&#x628A;&#x8BED;&#x97F3;&#x5EFA;&#x6A21;&#x4E3A; &quot;&#x6FC0;&#x52B1;&#x6E90; + &#x58F0;&#x9053;&#x6EE4;&#x6CE2;&#x5668;&quot;&#xFF08;&#x56DE;&#x5FC6; <strong><a href="../../../Chapter_5/Language/cn/Docs_5_2_2.html">5.2.2</a></strong> &#x7684;&#x7EBF;&#x6027;&#x9884;&#x6D4B;&#x5206;&#x6790;&#xFF09;&#xFF0C;&#x5BF9; 8~24 kHz &#x91C7;&#x6837;&#x7387;&#x7684;&#x8BED;&#x97F3;&#x9AD8;&#x6548;&#x800C;&#x4F4E;&#x5EF6;&#x8FDF;</li>
+<li><strong>CELT&#xFF08;Constrained Energy Lapped Transform&#xFF09;</strong>&#xFF1A;Xiph &#x4E3A;&#x4F4E;&#x5EF6;&#x8FDF;&#x97F3;&#x4E50;&#x7F16;&#x7801;&#x8BBE;&#x8BA1;&#x7684;&#x53D8;&#x6362;&#x7F16;&#x7801;&#x5668;&#x3002;MDCT &#x5BB6;&#x65CF;&#xFF0C;&#x4F46;&#x5E27;&#x957F;&#x53EF;&#x77ED;&#x81F3; <strong>2.5 ms</strong>&#xFF0C;&#x4EE5;&#x80FD;&#x91CF;&#x5B88;&#x6052;&#x4E3A;&#x6838;&#x5FC3;&#x7684;&#x5FEB;&#x901F;&#x6BD4;&#x7279;&#x5206;&#x914D;&#x2014;&#x2014;&#x97F3;&#x4E50;&#x5185;&#x5BB9;&#x4E0E;&#x9AD8;&#x9891;&#x6210;&#x5206;&#x7684;&#x4FDD;&#x969C;</li>
+</ul>
+<p>&#x4E24;&#x8005;&#x7684;&#x534F;&#x540C;&#x5206;&#x4E09;&#x6863;&#xFF1A;&#x4F4E;&#x7801;&#x7387;&#x8BED;&#x97F3;&#x8D70;&#x7EAF; SILK&#xFF0C;&#x9AD8;&#x7801;&#x7387;&#x97F3;&#x4E50;&#x8D70;&#x7EAF; CELT&#xFF0C;&#x4E2D;&#x95F4;&#x5730;&#x5E26;&#xFF08;&#x5982;&#x5E26;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x7684;&#x8BED;&#x97F3;&#xFF09;&#x5219; <strong>&#x6DF7;&#x5408;&#x6A21;&#x5F0F;</strong>&#x2014;&#x2014;SILK &#x5904;&#x7406;&#x4F4E;&#x9891;&#x8BED;&#x97F3;&#x6210;&#x5206;&#xFF0C;CELT &#x63A5;&#x7BA1; 8 kHz &#x4EE5;&#x4E0A;&#x7684;&#x9AD8;&#x9891;&#x3002;</p>
+<h2 id="&#x7075;&#x6D3B;&#x7684;&#x89C4;&#x683C;&#x53C2;&#x6570;"><strong>&#x7075;&#x6D3B;&#x7684;&#x89C4;&#x683C;&#x53C2;&#x6570;</strong></h2>
+<p>Opus &#x7684;&#x53C2;&#x6570;&#x7A7A;&#x95F4;&#x51E0;&#x4E4E;&#x662F;&#x4E3A; &quot;&#x81EA;&#x9002;&#x5E94;&quot; &#x91CF;&#x8EAB;&#x5B9A;&#x5236;&#xFF1A;</p>
+<ul>
+<li><strong>&#x5E27;&#x957F;</strong>&#xFF1A;2.5 / 5 / 10 / 20 / 40 / 60 ms &#x516D;&#x6863;&#xFF0C;&#x5EF6;&#x8FDF;&#x4E0E;&#x6548;&#x7387;&#x6309;&#x9700;&#x53D6;&#x820D;</li>
+<li><strong>&#x7801;&#x7387;</strong>&#xFF1A;6 ~ 510 kbit/s &#x8FDE;&#x7EED;&#x53EF;&#x8C03;&#xFF0C;&#x5355;&#x58F0;&#x9053;&#x5230; 255 &#x58F0;&#x9053;</li>
+<li><strong>&#x91C7;&#x6837;&#x7387;</strong>&#xFF1A;8 / 12 / 16 / 24 / 48 kHz &#x4E94;&#x6863;&#xFF0C;&#x7A84;&#x5E26;&#x7535;&#x8BDD;&#x5230;&#x5168;&#x9891;&#x5E26;&#x97F3;&#x4E50;&#x5168;&#x8986;&#x76D6;</li>
+</ul>
+<p>&#x914D;&#x5408;&#x5185;&#x7F6E;&#x7684; <strong>FEC&#xFF08;&#x524D;&#x5411;&#x7EA0;&#x9519;&#xFF09;</strong> &#x4E0E;&#x4E22;&#x5305;&#x9690;&#x85CF;&#xFF08;PLC&#xFF09;&#x8BBE;&#x8BA1;&#xFF0C;Opus &#x6210;&#x4E3A; <strong>WebRTC &#x7684;&#x5F3A;&#x5236;&#x97F3;&#x9891;&#x7F16;&#x7801;</strong>&#xFF08;&#x7B2C;&#x4E03;&#x7AE0;&#x5C06;&#x518D;&#x4F1A;&#xFF09;&#xFF0C;&#x4E5F;&#x5E7F;&#x6CDB;&#x7528;&#x4E8E; WhatsApp&#x3001;Discord&#x3001;&#x6E38;&#x620F;&#x8BED;&#x97F3;&#x7B49;&#x4E00;&#x5207;&#x5B9E;&#x65F6;&#x573A;&#x666F;&#x3002;</p>
+<h2 id="&#x97F3;&#x9891;&#x7F16;&#x7801;&#x7684;&#x7EC8;&#x70B9;&#xFF1F;"><strong>&#x97F3;&#x9891;&#x7F16;&#x7801;&#x7684;&#x7EC8;&#x70B9;&#xFF1F;</strong></h2>
+<p>&#x4ECE; MP3 &#x5230; Opus&#xFF0C;&#x97F3;&#x9891;&#x7F16;&#x7801;&#x7684;&#x4E09;&#x4EE3;&#x8FDB;&#x5316;&#x6070;&#x597D;&#x5BF9;&#x5E94;&#x4E09;&#x79CD;&#x4EF7;&#x503C;&#x53D6;&#x5411;&#xFF1A;MP3 &#x5F00;&#x521B;&#x4E86; <strong>&quot;&#x591F;&#x7528;&#x5C31;&#x597D;&quot;</strong> &#x7684;&#x611F;&#x77E5;&#x538B;&#x7F29;&#xFF0C;AAC &#x628A; <strong>&#x97F3;&#x8D28;/&#x7801;&#x7387;&#x6BD4;</strong> &#x63A8;&#x5411;&#x6781;&#x81F4;&#xFF0C;Opus &#x5219;&#x8BC1;&#x660E; <strong>&#x4F4E;&#x5EF6;&#x8FDF;&#x4E0E;&#x9AD8;&#x8D28;&#x91CF;&#x53EF;&#x4EE5;&#x517C;&#x5F97;</strong>&#x3002;&#x4E09;&#x6761;&#x7EBF;&#x7D22;&#x5408;&#x6D41;&#x4E4B;&#x5904;&#xFF0C;&#x5C31;&#x662F;&#x4ECA;&#x5929;&#x6D41;&#x5A92;&#x4F53;&#x7684;&#x6807;&#x51C6;&#x97F3;&#x9891;&#x6808;&#x2014;&#x2014;AAC &#x8D1F;&#x8D23;&#x70B9;&#x64AD;&#x5206;&#x53D1;&#xFF0C;Opus &#x8D1F;&#x8D23;&#x5B9E;&#x65F6;&#x4E92;&#x52A8;&#x3002;</p>
+<p>&#x97F3;&#x89C6;&#x9891;&#x4E24;&#x6761;&#x7F16;&#x7801;&#x8FDB;&#x5316;&#x7EBF;&#x81F3;&#x6B64;&#x5168;&#x90E8;&#x6536;&#x62E2;&#x3002;&#x7406;&#x8BBA;&#x6E05;&#x5355;&#x5DF2;&#x7ECF;&#x8DB3;&#x591F;&#x957F;&#x2014;&#x2014;&#x662F;&#x65F6;&#x5019;&#x52A8;&#x624B;&#x9A8C;&#x8BC1;&#x4E86;&#x3002;&#x4E0B;&#x4E00;&#x8282;&#xFF0C;practice_7&#xFF1A;&#x8BA9; x264 &#x4E0E; x265 &#x5728;&#x540C;&#x4E00;&#x6BB5;&#x7D20;&#x6750;&#x4E0A;&#x771F;&#x5200;&#x771F;&#x67AA;&#x5730;&#x6BD4;&#x4E00;&#x573A;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
+2026-08-26 08:25:15
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Docs_6_5_3.html" class="navigation navigation-prev " aria-label="Previous page: 6.5.3 AAC：青出于蓝（Advanced Audio Coding）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Docs_6_6.html" class="navigation navigation-next " aria-label="Next page: 6.6 实战：编码器规格对比实验（practice_7）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"6.5.4 Opus：为实时互动而生（Opus, RFC 6716）","level":"1.7.5.4","depth":3,"next":{"title":"6.6 实战：编码器规格对比实验（practice_7）","level":"1.7.6","depth":2,"path":"Chapter_6/Language/cn/Docs_6_6.md","ref":"Chapter_6/Language/cn/Docs_6_6.md","articles":[]},"previous":{"title":"6.5.3 AAC：青出于蓝（Advanced Audio Coding）","level":"1.7.5.3","depth":3,"path":"Chapter_6/Language/cn/Docs_6_5_3.md","ref":"Chapter_6/Language/cn/Docs_6_5_3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_6/Language/cn/Docs_6_5_4.md","mtime":"2026-08-26T00:25:15.549Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-08-26T00:25:26.890Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-rss/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+
