@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 26 Aug 2026 00:26:32 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 26 Aug 2026 12:54:10 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -1504,7 +1504,8 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[第七章参考文献（References for Chapter 7）]]></title>
+            <title><![CDATA[七、【参考文献】]]></title>
+            <description><![CDATA[[1] Adobe Systems Incorporated, "Real-Time Messaging Protocol (RTMP) Specification," Version 1.0, December 2012.]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_7/Language/cn/References_7.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_7/Language/cn/References_7.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -1588,7 +1589,7 @@
         </item>
         <item>
             <title><![CDATA[8.3 实战：音画同步策略对比实验（practice_9）]]></title>
-            <description><![CDATA[8.2 把播放器核心系统拆成了理论零件：水位、主时钟、缓冲、渲染。本节让这些零件转动起来——用 PyAV 造一台播放器骨架，灌入真实素材，再给它施加受控的解码压力，亲眼看看：有同步策略与没有同步策略，音画偏差的命运相差多远。]]></description>
+            <description><![CDATA[8.2 把播放器核心系统拆成了理论零件：水位、主时钟、缓冲、渲染。本节让这些零件转动起来——用 PyAV（FFmpeg 的 Pythonic 绑定 [7]）造一台播放器骨架，灌入真实素材，再给它施加受控的解码压力，亲眼看看：有同步策略与没有同步策略，音画偏差的命运相差多远。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_3.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_3.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -1608,7 +1609,8 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[第八章参考文献（References for Chapter 8）]]></title>
+            <title><![CDATA[八、【参考文献】]]></title>
+            <description><![CDATA[[1] FFmpeg Developers, "FFmpeg n8.0 Documentation — API References for libavformat / libavcodec / libavutil / libswscale / libswresample / libavfilter," FFmpeg Project, 2025. Available at: https://ffmpeg.org/doxygen/8.0/.]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/References_8.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/References_8.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
@@ -1712,10 +1714,8 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[第九章 参考文献]]></title>
-            <description><![CDATA[[1] IETF. RFC 9317: Operational Considerations for Streaming Media[S]. 2022-10.
-—— 流媒体端到端延迟（glass-to-glass）定义、延迟四级分类、起播与卡顿的工程考量、
-ABR 行为模型与测量标准化（CTA-2066 / CMCD）的运营视角权威综述。]]></description>
+            <title><![CDATA[九、【参考文献】]]></title>
+            <description><![CDATA[[1] J. Holland, A. Begen, and S. Dawkins, "Operational Considerations for Streaming Media," RFC 9317, IETF, October 2022.]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/References_9.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/References_9.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
