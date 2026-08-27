@@ -103,7 +103,7 @@
     <link rel="next" href="Docs_8_2_1.html" />
     
     
-    <link rel="prev" href="Docs_8_1_4.html" />
+    <link rel="prev" href="Docs_8_1_5.html" />
     
 
     
@@ -3257,6 +3257,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.9.1.5" data-path="Docs_8_1_5.html">
+            
+                <a href="Docs_8_1_5.html">
+            
+                    
+                    8.1.5 硬件解码：平台接口与零拷贝（Hardware Decoding & Zero-Copy）
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -3321,6 +3334,32 @@
             
                     
                     8.2.4 渲染管线：从 YUV 到视网膜（The Render Pipeline）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.5" data-path="Docs_8_2_5.html">
+            
+                <a href="Docs_8_2_5.html">
+            
+                    
+                    8.2.5 字幕渲染：从文本到画面（Subtitle Rendering）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.6" data-path="Docs_8_2_6.html">
+            
+                <a href="Docs_8_2_6.html">
+            
+                    
+                    8.2.6 HDR 渲染：色调映射入门（HDR & Tone Mapping）
             
                 </a>
             
@@ -3470,6 +3509,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.10.1.5" data-path="../../../Chapter_9/Language/cn/Docs_9_1_5.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_1_5.html">
+            
+                    
+                    9.1.5 延迟预算：glass-to-glass 的定量拆解（Latency Budgeting）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.6" data-path="../../../Chapter_9/Language/cn/Docs_9_1_6.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_1_6.html">
+            
+                    
+                    9.1.6 多 CDN 调度与容灾（Multi-CDN & Failover）
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -3534,6 +3599,19 @@
             
                     
                     9.2.4 从帧级到会话级：数据分析方法（From Frames to Sessions）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.5" data-path="../../../Chapter_9/Language/cn/Docs_9_2_5.html">
+            
+                <a href="../../../Chapter_9/Language/cn/Docs_9_2_5.html">
+            
+                    
+                    9.2.5 SLO 与告警工程：让指标站岗（SLO & Alerting）
             
                 </a>
             
@@ -3650,16 +3728,18 @@
                                 
                                 <h1 id="82-&#x64AD;&#x653E;&#x5668;&#x6838;&#x5FC3;&#x7CFB;&#x7EDF;&#xFF08;player-core-systems&#xFF09;">8.2 &#x64AD;&#x653E;&#x5668;&#x6838;&#x5FC3;&#x7CFB;&#x7EDF;&#xFF08;Player Core Systems&#xFF09;</h1>
 <p>8.1 &#x7684;&#x7ED3;&#x5C3E;&#x7559;&#x4E0B;&#x4E86;&#x4E00;&#x4E2A;&#x5206;&#x754C;&#xFF1A;&#x89E3;&#x7801;&#x5668;&#x628A;&#x5E27;&#x4ECE;&#x7801;&#x6D41;&#x91CC;&#x89E3;&#x653E;&#x51FA;&#x6765;&#xFF0C;&#x5DE5;&#x4F5C;&#x4FBF;&#x544A;&#x5B8C;&#x6210;&#xFF0C;&#x5B83;&#x5BF9;<strong>&#x6BD4;&#x7279;</strong>&#x8D1F;&#x8D23;&#xFF0C;&#x5E27;&#x89E3;&#x5BF9;&#x4E86;&#x5C31;&#x662F;&#x6EE1;&#x5206;&#x3002;&#x53EF;&#x64AD;&#x653E;&#x5668;&#x7684;&#x8003;&#x5377;&#x4E0A;&#x8FD8;&#x6709;&#x53E6;&#x4E00;&#x534A;&#x9898;&#x76EE;&#xFF0C;&#x800C;&#x4E14;&#x66F4;&#x96BE;&#xFF1A;<strong>&#x65F6;&#x95F4;</strong>&#x3002;&#x4E00;&#x5E27;&#x89E3;&#x5F97;&#x518D;&#x6B63;&#x786E;&#xFF0C;&#x65E9;&#x4E0A;&#x5C4F;&#x534A;&#x79D2;&#x662F;&#x7A7F;&#x5E2E;&#xFF0C;&#x665A;&#x4E0A;&#x5C4F;&#x534A;&#x79D2;&#x662F;&#x5361;&#x987F;&#xFF1B;&#x97F3;&#x9891;&#x89C6;&#x9891;&#x5404;&#x81EA;&#x89E3;&#x5F97;&#x5B8C;&#x7F8E;&#xFF0C;&#x9519;&#x5F00;&#x767E;&#x6BEB;&#x79D2;&#x5C31;&#x662F;&#x4E8B;&#x6545;&#x3002;</p>
-<p>&#x8FD9;&#x5C31;&#x662F;&#x64AD;&#x653E;&#x5668;&#x4E0E;&#x89E3;&#x7801;&#x5668;&#x7684;&#x672C;&#x8D28;&#x5206;&#x5DE5;&#xFF1A;<strong>&#x89E3;&#x7801;&#x5668;&#x56DE;&#x7B54; &quot;&#x5E27;&#x662F;&#x4EC0;&#x4E48;&quot;&#xFF0C;&#x64AD;&#x653E;&#x5668;&#x56DE;&#x7B54; &quot;&#x5E27;&#x5728;&#x4F55;&#x65F6;&quot;</strong>&#x3002;&#x540E;&#x8005;&#x6CA1;&#x6709;&#x89C4;&#x683C;&#x4E66;&#x53EF;&#x67E5;&#xFF0C;&#x7F16;&#x7801;&#x6807;&#x51C6;&#x4ECE;&#x4E0D;&#x89C4;&#x5B9A;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x8BE5;&#x5728;&#x4EC0;&#x4E48;&#x65F6;&#x523B;&#x70B9;&#x4EAE;&#x54EA;&#x4E2A;&#x50CF;&#x7D20;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x7247;&#x7EAF;&#x5DE5;&#x7A0B;&#x7684;&#x6DF1;&#x6C34;&#x533A;&#xFF0C;&#x597D;&#x5728;&#x5DE5;&#x4E1A;&#x754C;&#x6709;&#x4E00;&#x4EFD;&#x6CBF;&#x7528;&#x4E8C;&#x5341;&#x4F59;&#x5E74;&#x7684;&#x73B0;&#x6210;&#x8303;&#x672C;&#xFF1A;ffplay &#x53C2;&#x8003;&#x5B9E;&#x73B0; <a href="References_8.html">[2]</a>&#x3002;&#x672C;&#x8282;&#x7684;&#x8BBA;&#x8FF0;&#x5C06;&#x4EE5;&#x5B83;&#x4E3A;&#x5E95;&#x672C;&#xFF0C;&#x628A; &quot;&#x64AD;&#x653E;&quot; &#x8FD9;&#x4EF6;&#x770B;&#x4F3C;&#x76F4;&#x89C9;&#x7684;&#x4E8B;&#xFF0C;&#x62C6;&#x89E3;&#x6210;&#x56DB;&#x4E2A;&#x53EF;&#x4EE5;&#x8BBE;&#x8BA1;&#x3001;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7684;&#x7CFB;&#x7EDF;&#xFF1A;</p>
+<p>&#x8FD9;&#x5C31;&#x662F;&#x64AD;&#x653E;&#x5668;&#x4E0E;&#x89E3;&#x7801;&#x5668;&#x7684;&#x672C;&#x8D28;&#x5206;&#x5DE5;&#xFF1A;<strong>&#x89E3;&#x7801;&#x5668;&#x56DE;&#x7B54; &quot;&#x5E27;&#x662F;&#x4EC0;&#x4E48;&quot;&#xFF0C;&#x64AD;&#x653E;&#x5668;&#x56DE;&#x7B54; &quot;&#x5E27;&#x5728;&#x4F55;&#x65F6;&quot;</strong>&#x3002;&#x540E;&#x8005;&#x6CA1;&#x6709;&#x89C4;&#x683C;&#x4E66;&#x53EF;&#x67E5;&#xFF0C;&#x7F16;&#x7801;&#x6807;&#x51C6;&#x4ECE;&#x4E0D;&#x89C4;&#x5B9A;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x8BE5;&#x5728;&#x4EC0;&#x4E48;&#x65F6;&#x523B;&#x70B9;&#x4EAE;&#x54EA;&#x4E2A;&#x50CF;&#x7D20;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x7247;&#x7EAF;&#x5DE5;&#x7A0B;&#x7684;&#x6DF1;&#x6C34;&#x533A;&#xFF0C;&#x597D;&#x5728;&#x5DE5;&#x4E1A;&#x754C;&#x6709;&#x4E00;&#x4EFD;&#x6CBF;&#x7528;&#x4E8C;&#x5341;&#x4F59;&#x5E74;&#x7684;&#x73B0;&#x6210;&#x8303;&#x672C;&#xFF1A;ffplay &#x53C2;&#x8003;&#x5B9E;&#x73B0; <a href="References_8.html">[2]</a>&#x3002;&#x672C;&#x8282;&#x7684;&#x8BBA;&#x8FF0;&#x5C06;&#x4EE5;&#x5B83;&#x4E3A;&#x5E95;&#x672C;&#xFF0C;&#x628A; &quot;&#x64AD;&#x653E;&quot; &#x8FD9;&#x4EF6;&#x770B;&#x4F3C;&#x76F4;&#x89C9;&#x7684;&#x4E8B;&#xFF0C;&#x62C6;&#x89E3;&#x6210;&#x516D;&#x4E2A;&#x53EF;&#x4EE5;&#x8BBE;&#x8BA1;&#x3001;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7684;&#x7CFB;&#x7EDF;&#xFF1A;</p>
 <ul>
 <li><strong><a href="Docs_8_2_1.html">8.2.1 &#x64AD;&#x653E;&#x5668;&#x7684;&#x4E09;&#x4E2A;&#x95EE;&#x9898;</a></strong>&#xFF1A;&#x4F55;&#x65F6;&#x89E3;&#x7801;&#x3001;&#x4F55;&#x65F6;&#x663E;&#x793A;&#x3001;&#x5BF9;&#x8C01;&#x5BF9;&#x9F50;&#xFF0C;&#x628A; &quot;&#x64AD;&#x653E;&quot; &#x7FFB;&#x8BD1;&#x6210;&#x5DE5;&#x7A0B;&#x8BED;&#x8A00;&#x7684;&#x4E09;&#x4E2A;&#x63D0;&#x95EE;</li>
 <li><strong><a href="Docs_8_2_2.html">8.2.2 &#x97F3;&#x753B;&#x540C;&#x6B65;&#xFF1A;&#x4E3B;&#x65F6;&#x949F;&#x7684;&#x4E09;&#x79CD;&#x7B56;&#x7565;</a></strong>&#xFF1A;&#x97F3;&#x9891;&#x4E3B;&#x3001;&#x89C6;&#x9891;&#x4E3B;&#x3001;&#x5916;&#x90E8;&#x65F6;&#x949F;&#x5404;&#x81EA;&#x7684;&#x8FFD;&#x968F;&#x673A;&#x5236;&#xFF1B;&#x4E3A;&#x4EC0;&#x4E48;&#x5DE5;&#x4E1A;&#x754C;&#x9ED8;&#x8BA4;&#x8BA9;&#x89C6;&#x9891;&#x8FC1;&#x5C31;&#x97F3;&#x9891;</li>
 <li><strong><a href="Docs_8_2_3.html">8.2.3 &#x6296;&#x52A8;&#x7F13;&#x51B2;&#xFF1A;&#x4E0E;&#x7F51;&#x7EDC;&#x548C;&#x89E3;&#x7684;&#x827A;&#x672F;</a></strong>&#xFF1A;&#x7F13;&#x51B2;&#x6C34;&#x4F4D;&#x7684;&#x53CC;&#x95E8;&#x9650;&#x8BBE;&#x8BA1;&#xFF1B;&#x8D77;&#x64AD;&#x5EF6;&#x8FDF;&#x4E0E;&#x5361;&#x987F;&#x7387;&#x7684;&#x8DF7;&#x8DF7;&#x677F;</li>
 <li><strong><a href="Docs_8_2_4.html">8.2.4 &#x6E32;&#x67D3;&#x7BA1;&#x7EBF;&#xFF1A;&#x4ECE; YUV &#x5230;&#x89C6;&#x7F51;&#x819C;</a></strong>&#xFF1A;&#x8272;&#x5F69;&#x7A7A;&#x95F4;&#x8F6C;&#x6362;&#x7684;&#x6700;&#x540E;&#x4E00;&#x516C;&#x91CC;&#xFF1B;&#x4E0A;&#x5C4F;&#x524D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x6BB5;&#x65C5;&#x7A0B;</li>
+<li><strong><a href="Docs_8_2_5.html">8.2.5 &#x5B57;&#x5E55;&#x6E32;&#x67D3;&#xFF1A;&#x4ECE;&#x6587;&#x672C;&#x5230;&#x753B;&#x9762;</a></strong>&#xFF1A;SRT/WebVTT/ASS &#x7684;&#x683C;&#x5F0F;&#x8C31;&#x7CFB;&#xFF1B;&#x89E3;&#x6790;&#x3001;&#x6392;&#x7248;&#x3001;&#x53E0;&#x52A0;&#x7684;&#x4E09;&#x6BB5;&#x7BA1;&#x7EBF;&#xFF1B;&#x5C0F;&#x6570;&#x636E;&#x7684;&#x9AD8;&#x611F;&#x77E5;</li>
+<li><strong><a href="Docs_8_2_6.html">8.2.6 HDR &#x6E32;&#x67D3;&#xFF1A;&#x8272;&#x8C03;&#x6620;&#x5C04;&#x5165;&#x95E8;</a></strong>&#xFF1A;PQ &#x4E0E; HLG &#x7684;&#x8DEF;&#x7EBF;&#x4E4B;&#x4E89;&#xFF1B;HDR10 &#x5230; Dolby Vision &#x7684;&#x5143;&#x6570;&#x636E;&#x8D2B;&#x5BCC;&#xFF1B;&#x628A;&#x5927;&#x4E16;&#x754C;&#x88C5;&#x8FDB;&#x5C0F;&#x5C4F;&#x5E55;&#x7684;&#x8272;&#x8C03;&#x6620;&#x5C04;</li>
 </ul>
 <p>&#x5B8C;&#x6210;&#x672C;&#x8282;&#x540E;&#xFF0C;&#x64AD;&#x653E;&#x5668;&#x5C06;&#x4E0D;&#x518D;&#x6709;&#x9ED1;&#x76D2;&#xFF0C;8.3 &#x6211;&#x4EEC;&#x4FBF;&#x52A8;&#x624B;&#xFF0C;&#x7528; PyAV &#x4EB2;&#x624B;&#x9020;&#x4E00;&#x53F0;&#x51FA;&#x6765;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Since 2021 &#x674E;&#x8FF0;&#x535A; (Arikan.Li) , All Rights Reserved all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Updated:
-2026-08-27 21:12:49
+2026-08-27 21:51:22
 </span></footer>
                                 
                                 </section>
@@ -3687,7 +3767,7 @@
 
             
                 
-                <a href="Docs_8_1_4.html" class="navigation navigation-prev " aria-label="Previous page: 8.1.4 管线与 seek：工程落地的暗坑（Pipelines, Seek & The Pitfalls）">
+                <a href="Docs_8_1_5.html" class="navigation navigation-prev " aria-label="Previous page: 8.1.5 硬件解码：平台接口与零拷贝（Hardware Decoding & Zero-Copy）">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -3703,7 +3783,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8.2 播放器核心系统（Player Core Systems）","level":"1.9.2","depth":2,"next":{"title":"8.2.1 播放器的三个问题：何时解，何时显，对谁齐（Three Questions of A Player）","level":"1.9.2.1","depth":3,"path":"Chapter_8/Language/cn/Docs_8_2_1.md","ref":"Chapter_8/Language/cn/Docs_8_2_1.md","articles":[]},"previous":{"title":"8.1.4 管线与 seek：工程落地的暗坑（Pipelines, Seek & The Pitfalls）","level":"1.9.1.4","depth":3,"path":"Chapter_8/Language/cn/Docs_8_1_4.md","ref":"Chapter_8/Language/cn/Docs_8_1_4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_8/Language/cn/Docs_8_2.md","mtime":"2026-08-27T13:12:49.496Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-08-27T13:12:50.900Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8.2 播放器核心系统（Player Core Systems）","level":"1.9.2","depth":2,"next":{"title":"8.2.1 播放器的三个问题：何时解，何时显，对谁齐（Three Questions of A Player）","level":"1.9.2.1","depth":3,"path":"Chapter_8/Language/cn/Docs_8_2_1.md","ref":"Chapter_8/Language/cn/Docs_8_2_1.md","articles":[]},"previous":{"title":"8.1.5 硬件解码：平台接口与零拷贝（Hardware Decoding & Zero-Copy）","level":"1.9.1.5","depth":3,"path":"Chapter_8/Language/cn/Docs_8_1_5.md","ref":"Chapter_8/Language/cn/Docs_8_1_5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-default","highlight","fontsettings","-lunr","-search","search-pro","insert-logo","custom-favicon","rss","github","expandable-chapters","chapter-fold","back-to-top-button","tbfed-pagefooter","simple-page-toc","graph","chart","advanced-emoji","splitter","code","katex","-sharing","sharing-plus","alerts","url-embed"],"root":".","styles":{"website":"styles/common.css","ebook":"styles/common.css","pdf":"styles/common.css","mobi":"styles/common.css","epub":"styles/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Since 2021 李述博 (Arikan.Li) , All Rights Reserved","modify_label":"Last Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/Windsander"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"family":"sans","size":1,"theme":"white"},"rss":{"categories":["gitbook"],"title":"《音视频开发技术：原理与实践》©","description":"音视频开发资料查询好帮手","author":"李述博 (Arikan.Li)","feed_url":"https://arikanli.cyberfederal.io/rss","site_url":"https://arikanli.cyberfederal.io/","managingEditor":"me@arikanli.com","webMaster":"me@arikanli.com"},"highlight":{},"favicon":"/Cover/book_favicon.ico","back-to-top-button":{},"alerts":{},"custom-favicon":{},"url-embed":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"chart":{"type":"c3"},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/Cover/book_logo.png"},"expandable-chapters":{}},"theme":"default","author":"李述博 (Arikan.Li)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《音视频开发技术：原理与实践》©","language":"zh-hans","gitbook":"*","description":"音视频开发资料查询好帮手"},"file":{"path":"Chapter_8/Language/cn/Docs_8_2.md","mtime":"2026-08-27T13:51:22.289Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-08-27T13:51:29.705Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

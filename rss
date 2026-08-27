@@ -4,7 +4,7 @@
         <description><![CDATA[音视频开发资料查询好帮手]]></description>
         <link>https://arikanli.cyberfederal.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 27 Aug 2026 13:14:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 27 Aug 2026 13:52:42 GMT</lastBuildDate>
         <atom:link href="https://arikanli.cyberfederal.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[李述博 (Arikan.Li)]]></author>
         <managingEditor><![CDATA[me@arikanli.com]]></managingEditor>
@@ -1553,6 +1553,13 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
+            <title><![CDATA[8.1.5 硬件解码：平台接口与零拷贝（Hardware Decoding & Zero-Copy）]]></title>
+            <description><![CDATA[前四节把解码器框架讲完了，但全都建立在一个默认前提上：解码由 CPU 完成。这个前提在工程现实里只对了一半。打开任何一台手机、平板或近十年的 PC，视频解码的主力都不是 CPU，而是芯片上一块专用的电路。本节要处理的，就是框架与这块电路的接口问题。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_1_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_1_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
             <title><![CDATA[8.2 播放器核心系统（Player Core Systems）]]></title>
             <description><![CDATA[8.1 的结尾留下了一个分界：解码器把帧从码流里解放出来，工作便告完成，它对比特负责，帧解对了就是满分。可播放器的考卷上还有另一半题目，而且更难：时间。一帧解得再正确，早上屏半秒是穿帮，晚上屏半秒是卡顿；音频视频各自解得完美，错开百毫秒就是事故。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2.html</link>
@@ -1585,6 +1592,20 @@
             <description><![CDATA[主时钟定了节奏，缓冲平了风浪，帧终于排到上屏的队首。可最后一道关卡横在眼前：解码器交出的 Frame 是 YUV 数据，屏幕点亮的却是 RGB 像素，两种色彩语言之间，隔着播放器的最后一公里。这一公里看似只是格式换算，实则暗坑密布：换错矩阵，满屏偏色；算得太慢，拖累帧率。第二章 2.6 埋下了色彩空间的种子，第五章 5.3.1 见过 YUV 采样的排布，本节把它们收成管线末端的实战问题。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.2.5 字幕渲染：从文本到画面（Subtitle Rendering）]]></title>
+            <description><![CDATA[8.2 的前四节都在伺候音频与视频两条主流，但播放器几乎总要再伺候第三条流：字幕。它数据量小得可怜，一路 25 集的番剧字幕常常只有几十 KB，可它的用户感知极强，一行乱码、一次错位、一个缺字体的豆腐块，都立刻被观众看见。小数据、高感知，这是字幕的工程画像。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[8.2.6 HDR 渲染：色调映射入门（HDR & Tone Mapping）]]></title>
+            <description><![CDATA[8.2.4 的渲染管线有一个未经声明的前提：画面遵循 BT.709 的色彩体系，亮度上限大约 100 nits。这个前提统治了显示工业几十年，直到 HDR 内容的普及把它打破。今天的片源越来越多地带着另一套参数抵达播放器，本节的任务，就是讲清这套新参数是什么，以及播放器该如何对待它。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_8/Language/cn/Docs_8_2_6.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
@@ -1658,6 +1679,20 @@
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
+            <title><![CDATA[9.1.5 延迟预算：glass-to-glass 的定量拆解（Latency Budgeting）]]></title>
+            <description><![CDATA[9.1.2 给出了端到端延迟的定义与四级体验表，回答了"延迟是什么"。但定义只解决度量问题，工程上更棘手的是另一个：一场直播的 30 秒延迟，到底是哪一环吃掉的？定性地说"分片太长"人人都会，定量地拆开每一环，才知道刀该往哪里下。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1_5.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.1.6 多 CDN 调度与容灾（Multi-CDN & Failover）]]></title>
+            <description><![CDATA[9.1.3 讲过 CDN 如何把内容推到离观众最近的边缘节点，但那幅地图里藏着一个单点：CDN 厂商本身。再大的厂商也只是"很少出事"，不是"从不出事"，骨干网割接、配置事故、区域网络故障，任何一种都能让一家 CDN 在某个地区成片熄灯。千万级观众的直播产品，没法把全部身家押在"厂商很少出事"上。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1_6.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_1_6.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
             <title><![CDATA[9.2 流分析与质量监控（Stream Analysis & QoE）]]></title>
             <description><![CDATA[9.1 画出了链路的地图，可地图本身不会报警。当千万观众同时在线，"体验好不好" 不能再靠运营同学刷新弹幕来判断，它需要被翻译成数字：采得上来、算得明白、归因得准。这套翻译体系，就是流分析与质量监控。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2.html</link>
@@ -1690,6 +1725,13 @@
             <description><![CDATA[指标有了口径（9.2.1），数据有了来源（9.2.2、9.2.3），还差最后一道工序：海量的单点数据，如何变成一句能指导行动的话。这套从原始事件到决策结论的聚合方法，本书其实早有一面之缘，第五章做视频特征分析时，我们走过同样的路：帧级差分特征太细，聚合成场景切分才有意义（**5.3.2** 的切点检测）。QoE 分析是同一条路，只是数据从像素换成了事件。]]></description>
             <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2_4.html</link>
             <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2_4.html</guid>
+            <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[9.2.5 SLO 与告警工程：让指标站岗（SLO & Alerting）]]></title>
+            <description><![CDATA[9.2 的前四节解决了"度量"：指标有了口径（9.2.1），数据有了采集链路（9.2.2），聚合有了方法（9.2.3），体验有了优化策略（9.2.4）。但监控体系建好之后还有一个朴素的问题：谁来盯？靠运维同学二十四小时盯着大盘，盯得住三天，盯不住三年。本节的主角，就是让指标自动站岗的那套机制。]]></description>
+            <link>https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2_5.html</link>
+            <guid isPermaLink="true">https://arikanli.cyberfederal.io/Chapter_9/Language/cn/Docs_9_2_5.html</guid>
             <dc:creator><![CDATA[李述博 (Arikan.Li)]]></dc:creator>
         </item>
         <item>
