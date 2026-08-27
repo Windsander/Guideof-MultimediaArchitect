@@ -10,3 +10,5 @@
 **[4]** Consumer Technology Association, "Web Application Video Ecosystem — Common Media Client Data (CMCD)," CTA-5004, September 2020.
 
 **[5]** A. Bentaleb, B. Taani, A. C. Begen, C. Timmerer, and R. Zimmermann, "A Survey on Bitrate Adaptation Schemes for Streaming Media over HTTP," IEEE Communications Surveys & Tutorials, vol. 21, no. 1, pp. 562-585, First Quarter 2019.
+
+**[6]** B. Beyer, N. R. Murphy, D. K. Rensin, K. Kawahara, and S. Thorne, "The Site Reliability Workbook — Chapter 5: Alerting on SLOs," O'Reilly Media, 2018. Available at: https://sre.google/workbook/alerting-on-slos/.
