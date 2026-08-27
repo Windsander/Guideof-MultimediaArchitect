@@ -14,3 +14,17 @@
 **[6]** ITU-R Recommendation BT.709-6, "Parameter Values for the HDTV Standards for Production and International Programme Exchange," International Telecommunication Union, June 2015.
 
 **[7]** M. Boers and PyAV contributors, "PyAV: Pythonic bindings for FFmpeg's libraries," PyAV-Org. Available at: https://github.com/PyAV-Org/PyAV.
+
+**[8]** FFmpeg Developers, "hw_decode.c — HW-Accelerated decoding example (doc/examples)," FFmpeg source tree. Available at: https://github.com/FFmpeg/FFmpeg/blob/master/doc/examples/hw_decode.c.
+
+**[9]** W3C, "WebVTT: The Web Video Text Tracks Format," W3C Recommendation. Available at: https://www.w3.org/TR/webvtt1/.
+
+**[10]** libass contributors, "libass: A portable subtitle renderer for the ASS/SSA subtitle format," GitHub. Available at: https://github.com/libass/libass.
+
+**[11]** ITU-R Recommendation BT.2100-2, "Image Parameter Values for High Dynamic Range Television for Use in Production and International Programme Exchange," International Telecommunication Union, July 2018.
+
+**[12]** SMPTE ST 2084:2014, "High Dynamic Range Electro-Optical Transfer Function of Mastering Reference Displays," Society of Motion Picture and Television Engineers, 2014.
+
+**[13]** Consumer Technology Association, "HDR Static Metadata Extensions," CTA-861.3, January 2015.
+
+**[14]** ITU-R Recommendation BT.2390-10, "High Dynamic Range Television for Production and International Programme Exchange," International Telecommunication Union, April 2021 (see also ITU-R BT.2446 for HDR/SDR conversion methods).
